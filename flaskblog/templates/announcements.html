@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>Announcements</h1>
+
+    <!-- Announcement Example -->
+    <div class="announcement">
+        <h2>Here we go!</h2>
+        <p>We are excited to announce the launch of our new advanced Catalan learning platform. This platform is designed for learners who want to achieve fluency. Start learn Catalan right now!</p>
+    </div>
+
+
+    <style>
+        .announcement {
+            background-color: #fff;
+            border-radius: 8px;
+            margin: 20px 0;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .announcement h2 {
+            color: #0088cc;
+            margin: 0 0 10px 0;
+        }
+        .announcement p {
+            margin: 0;
+            color: #555;
+        }
+    </style>
+{% endblock content %}
