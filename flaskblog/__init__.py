@@ -28,9 +28,9 @@ def create_app(config_class=Config):
     mail.init_app(app)
     ckeditor.init_app(app)
 
-    with app.app_context():
-        # Create database tables if they do not exist
-        db.create_all()
+    # with app.app_context():
+    #     # Create database tables if they do not exist
+    #     db.create_all()
 
     from flaskblog.users.routes import users
     from flaskblog.posts.routes import posts
