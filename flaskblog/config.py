@@ -5,7 +5,7 @@ class Config:
     # SECRET_KEY = os.environ.get('SECRET_KEY') 
     # SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI')
     SECRET_KEY = os.getenv('SECRET_KEY')
-    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_PUBLIC_URI')
+    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_PUBLIC_URL')
 
     #DB_URL = 'postgresql+psycopg2://{user}:{pw}@{url}/{db}'.format(user=POSTGRES_USER, pw=POSTGRES_PW, url=POSTGRES_URL, db=POSTGRES_DB)
     #SQLALCHEMY_DATABASE_URI = DB_URL
