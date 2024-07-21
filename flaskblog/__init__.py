@@ -5,6 +5,7 @@ from flask_login import LoginManager
 from flask_mail import Mail
 from flask_ckeditor import CKEditor
 from flaskblog.config import Config
+from flask_migrate import Migrate
 
 
 db = SQLAlchemy()
@@ -16,6 +17,7 @@ login_manager.login_message_category = 'info'
 
 mail = Mail()
 ckeditor = CKEditor()
+migrate = Migrate()
 
 
 def create_app(config_class=Config):
@@ -27,6 +29,7 @@ def create_app(config_class=Config):
     login_manager.init_app(app)
     mail.init_app(app)
     ckeditor.init_app(app)
+    migrate.init_app(app, db)
 
     # with app.app_context():
     #     # Create database tables if they do not exist

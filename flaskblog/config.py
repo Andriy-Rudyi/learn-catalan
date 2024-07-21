@@ -5,18 +5,10 @@ class Config:
     # SECRET_KEY = os.environ.get('SECRET_KEY') 
     # SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI')
     SECRET_KEY = os.getenv('SECRET_KEY')
-    # SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL') 
-    # SQLALCHEMY_DATABASE_URI = os.getenv('SQLALCHEMY_DATABASE_URI')
-    # SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_PUBLIC_URI')
-    
-    #POSTGRES_URL = os.getenv('DATABASE_URL')
-    POSTGRES_URL = 'viaduct.proxy.rlwy.net:29772'
-    POSTGRES_USER = os.getenv('PGUSER')
-    POSTGRES_PW = os.getenv('PGPASSWORD')
-    #POSTGRES_PW = 'RJrEpGqHzyAKKrxAeIYugcyFeSTeAxJy'
-    POSTGRES_DB = os.getenv('POSTGRES_DB')
-    DB_URL = 'postgresql+psycopg2://{user}:{pw}@{url}/{db}'.format(user=POSTGRES_USER, pw=POSTGRES_PW, url=POSTGRES_URL, db=POSTGRES_DB)
-    SQLALCHEMY_DATABASE_URI = DB_URL
+    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_PUBLIC_URI')
+
+    #DB_URL = 'postgresql+psycopg2://{user}:{pw}@{url}/{db}'.format(user=POSTGRES_USER, pw=POSTGRES_PW, url=POSTGRES_URL, db=POSTGRES_DB)
+    #SQLALCHEMY_DATABASE_URI = DB_URL
 
 
     MAIL_SERVER = 'smtp.gmail.com'
