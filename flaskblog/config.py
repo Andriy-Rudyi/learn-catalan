@@ -10,14 +10,14 @@ class Config:
     # SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_PUBLIC_URI')
     
     #POSTGRES_URL = os.getenv('DATABASE_URL')
-    #POSTGRES_URL = 'viaduct.proxy.rlwy.net:29772'
+    POSTGRES_URL = 'viaduct.proxy.rlwy.net:29772'
     POSTGRES_USER = os.getenv('PGUSER')
     POSTGRES_PW = os.getenv('PGPASSWORD')
     #POSTGRES_PW = 'RJrEpGqHzyAKKrxAeIYugcyFeSTeAxJy'
     POSTGRES_DB = os.getenv('POSTGRES_DB')
     #DB_URL = 'postgresql+psycopg2://{user}:{pw}@{url}/{db}'.format(user=POSTGRES_USER, pw=POSTGRES_PW, url=POSTGRES_URL, db=POSTGRES_DB)
     DB_URL = 'postgresql://postgres:RJrEpGqHzyAKKrxAeIYugcyFeSTeAxJy@viaduct.proxy.rlwy.net:29772/railway'
-    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_PUBLIC_URI')
+    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
 
 
     MAIL_SERVER = 'smtp.gmail.com'
