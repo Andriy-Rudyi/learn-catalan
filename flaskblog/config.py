@@ -17,7 +17,7 @@ class Config:
     POSTGRES_DB = os.getenv('POSTGRES_DB')
     #DB_URL = 'postgresql+psycopg2://{user}:{pw}@{url}/{db}'.format(user=POSTGRES_USER, pw=POSTGRES_PW, url=POSTGRES_URL, db=POSTGRES_DB)
     DB_URL = 'postgresql://postgres:RJrEpGqHzyAKKrxAeIYugcyFeSTeAxJy@viaduct.proxy.rlwy.net:29772/railway'
-    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
+    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_PUBLIC_URI')
 
 
     MAIL_SERVER = 'smtp.gmail.com'
