@@ -106,14 +106,23 @@ a.article-title:hover {
   }
 }
 
-.media-body#truncating {
+/* .media-body#truncating {
   margin: 2px;
   overflow: hidden;
   display: -webkit-box;
-  /* line-clamp: 2;
-  -webkit-line-clamp: 2; */
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;  
   width:100%; float:left;
+} */
+
+
+.media-body {
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }
 
 
