@@ -116,13 +116,22 @@ a.article-title:hover {
   width:100%; float:left;
 } */
 
-
-.media-body {
+.media-body#truncating {
   width: 100%;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
+}
+
+@media (max-width: 413px) {
+  .media-body#truncating {
+    width: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+  }
 }
 
 
