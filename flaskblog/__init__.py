@@ -7,9 +7,7 @@ from flask_ckeditor import CKEditor
 from flaskblog.config import Config
 
 
-
 db = SQLAlchemy()
-
 #app._context().push()
 bcrypt = Bcrypt()
 login_manager = LoginManager()
@@ -23,7 +21,7 @@ ckeditor = CKEditor()
 def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(Config)
-    db.init_app(app)    
+    db.init_app(app)
     #app._context().push()
     bcrypt.init_app(app)
     login_manager.init_app(app)

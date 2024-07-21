@@ -15,8 +15,7 @@ class Config:
     POSTGRES_PW = os.getenv('PGPASSWORD')
     #POSTGRES_PW = 'RJrEpGqHzyAKKrxAeIYugcyFeSTeAxJy'
     POSTGRES_DB = os.getenv('POSTGRES_DB')
-    #DB_URL = 'postgresql+psycopg2://{user}:{pw}@{url}/{db}'.format(user=POSTGRES_USER, pw=POSTGRES_PW, url=POSTGRES_URL, db=POSTGRES_DB)
-    DB_URL = 'postgresql://postgres:RJrEpGqHzyAKKrxAeIYugcyFeSTeAxJy@viaduct.proxy.rlwy.net:29772/railway'
+    DB_URL = 'postgresql+psycopg2://{user}:{pw}@{url}/{db}'.format(user=POSTGRES_USER, pw=POSTGRES_PW, url=POSTGRES_URL, db=POSTGRES_DB)
     SQLALCHEMY_DATABASE_URI = DB_URL
 
 
