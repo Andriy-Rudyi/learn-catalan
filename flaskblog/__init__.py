@@ -22,11 +22,15 @@ def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(Config)
     db.init_app(app)
-    app._context().push()
+    #app._context().push()
     bcrypt.init_app(app)
     login_manager.init_app(app)
     mail.init_app(app)
     ckeditor.init_app(app)
+
+    with app.app_context():
+        # Create database tables if they do not exist
+        db.create_all()
 
     from flaskblog.users.routes import users
     from flaskblog.posts.routes import posts
