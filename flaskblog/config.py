@@ -11,7 +11,7 @@ class Config:
     #SQLALCHEMY_DATABASE_URI = DB_URL
 
 
-    MAIL_SERVER = 'smtp.gmail.com'
+    MAIL_SERVER = 'smtp-mail.outlook.com'
     MAIL_PORT = 587
     MAIL_USE_TLS = True
 
