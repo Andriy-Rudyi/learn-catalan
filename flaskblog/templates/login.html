@@ -4,7 +4,7 @@
         <form action="" method="POST" novalidate>
             {{ form.hidden_tag() }}
             <fieldset class="form-group row mb-3">
-                <legend class="border-bottom mb-4">Log In</legend>
+                <legend class="border-bottom mb-4">Увійти</legend>
                 
                 <div class="form-group">
                     {{ form.email.label(class="form-control-label") }}
@@ -42,13 +42,13 @@
                 {{ form.submit(class="btn btn-outline-info") }}
             </div>
             <small class="text-muted ml-2">
-                <a href="{{ url_for('users.reset_request') }}">Forgot password?</a>
+                <a href="{{ url_for('users.reset_request') }}">Забули пароль?</a>
             </small>
         </form>
     </div>
     <div class="border-top pt-3">
         <small class="text-muted">
-            Need An Account? <a href="{{ url_for('users.register') }}" class="ml-2">Sign Up Now</a>
+            Потрібен обліковий запис? <a href="{{ url_for('users.register') }}" class="ml-2">Зареєструватися зараз</a>
         </small>
     </div>
 {% endblock content %}
