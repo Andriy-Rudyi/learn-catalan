@@ -3,6 +3,7 @@ from itsdangerous.url_safe import URLSafeTimedSerializer as Serializer
 from flask import current_app
 from flaskblog import db, login_manager
 from flask_login import UserMixin
+from flask_admin.contrib.sqla import ModelView
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -32,6 +33,9 @@ class User(db.Model, UserMixin):
     def __repr__(self):
         return f"User('{self.username}', '{self.email}', '{self.image_file}')"
     
+    def __str__(self):
+        return f"{self.id}. {self.username}"
+    
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
@@ -41,3 +45,7 @@ class Post(db.Model):
 
     def __repr__(self):
         return f"User('{self.title}', '{self.date_posted}')"
+    
+class PostView(ModelView):
+    form_columns = ['title', 'content', 'user_id']
+    column_list = ['title', 'content', 'user_id']

@@ -6,6 +6,9 @@ from flask_mail import Mail
 from flask_ckeditor import CKEditor
 from flaskblog.config import Config
 from flask_migrate import Migrate
+from flask_admin import Admin
+
+from flaskblog.admin.routes import admin_bp, init_admin
 
 
 db = SQLAlchemy()
@@ -19,10 +22,12 @@ mail = Mail()
 ckeditor = CKEditor()
 migrate = Migrate()
 
+admin = Admin()
 
 def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(Config)
+
     db.init_app(app)
     #app._context().push()
     bcrypt.init_app(app)
@@ -30,7 +35,8 @@ def create_app(config_class=Config):
     mail.init_app(app)
     ckeditor.init_app(app)
     migrate.init_app(app, db)
-
+    
+    init_admin(app)
     # with app.app_context():
     #     # Create database tables if they do not exist
     #     db.create_all()
@@ -43,5 +49,6 @@ def create_app(config_class=Config):
     app.register_blueprint(posts)
     app.register_blueprint(main)
     app.register_blueprint(errors)
+    app.register_blueprint(admin_bp)
 
     return app
