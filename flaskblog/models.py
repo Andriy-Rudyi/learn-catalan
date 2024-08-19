@@ -2,8 +2,9 @@ from datetime import datetime
 from itsdangerous.url_safe import URLSafeTimedSerializer as Serializer
 from flask import current_app
 from flaskblog import db, login_manager
-from flask_login import UserMixin
+from flask_login import UserMixin, current_user
 from flask_admin.contrib.sqla import ModelView
+from flask_admin import AdminIndexView
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -46,6 +47,17 @@ class Post(db.Model):
     def __repr__(self):
         return f"User('{self.title}', '{self.date_posted}')"
     
+class MyAdminIndexView(AdminIndexView):
+    def is_accessible(self):
+        return current_user.is_authenticated and current_user.username == 'Andriy'
+
+class UserView(ModelView):
+    def is_accessible(self):
+        return current_user.is_authenticated and current_user.username == 'Andriy'
+
 class PostView(ModelView):
     form_columns = ['title', 'content', 'user_id']
-    column_list = ['title', 'content', 'user_id']
+    column_list = ['title', 'author']
+
+    def is_accessible(self):
+        return current_user.is_authenticated and current_user.username == 'Andriy'

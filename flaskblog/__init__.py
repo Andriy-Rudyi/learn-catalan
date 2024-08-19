@@ -8,7 +8,7 @@ from flaskblog.config import Config
 from flask_migrate import Migrate
 from flask_admin import Admin
 
-from flaskblog.admin.routes import admin_bp, init_admin
+
 
 
 db = SQLAlchemy()
@@ -36,6 +36,7 @@ def create_app(config_class=Config):
     ckeditor.init_app(app)
     migrate.init_app(app, db)
     
+    from flaskblog.admin.routes import admin_bp, init_admin
     init_admin(app)
     # with app.app_context():
     #     # Create database tables if they do not exist
