@@ -71,3 +71,11 @@ class Comment(db.Model):
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id', on_delete="CASCADE"), nullable=False)
     post_id = db.Column(db.Integer, db.ForeignKey('post.id', on_delete="CASCADE"), nullable=False)
+
+class CommentView(ModelView):
+    form_columns = ['text', 'date_posted', 'user_id', 'post_id']
+    column_list = ['id', 'text', 'date_posted', 'user_id', 'post_id']
+
+
+    def is_accessible(self):
+        return current_user.is_authenticated and current_user.username == 'Andriy'

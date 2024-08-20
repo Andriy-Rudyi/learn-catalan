@@ -29,20 +29,11 @@
     </div>
 </article>
 
-<!-- <div class="comments">
-    <form class="input-group mb-3" method="POST" action="/create-comment">
-        <input type="text" id="text" name="text" class="form-control" placeholder="Your comment...">
-    </form>
-</div> -->
-
 <section style="background-color: #eee;">
           <div class="card">
             <div class="card-body">
                 <div class="card-footer p-3 border-0" style="background-color: #f8f9fa;">
                     <div class="d-flex flex-start w-100">
-                      <!-- <img class="rounded-circle shadow-1-strong me-3"
-                        src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(19).webp" alt="avatar" width="40"
-                        height="40" /> -->
                     <form class="input-group mb-3" method="POST" action="/create-comment/{{post.id}}">
                       <div data-mdb-input-init class="form-outline w-100">
                         <textarea type="text" name="text" class="form-control" id="textAreaExample" rows="4" style="background: #fff; " placeholder="Your comment..."></textarea>
@@ -52,15 +43,14 @@
                       </div>
                     </form>
                     </div>
-                    <br>
+                    {% for comment in post.comments %}
+                    <br> 
                     <hr>
                     <br>
-                    {% for comment in post.comments %} 
                     
                     <div class="d-flex flex-start align-items-center">
                         <img class="rounded-circle shadow-1-strong me-3"
-                        src="{{ url_for('static', filename='profile_pics/' + comment.author.image_file) }}" alt="avatar" width="60"
-                            height="60" />
+                        src="{{ url_for('static', filename='profile_pics/' + comment.author.image_file) }}" alt="avatar" width="40" height="40" />
                         <div>
                             <h6 class="fw-bold text-primary mb-1"><a class="me-2" href="/user/{{ comment.author.username }}">{{ comment.author.username }}</a></h6>
                             <p class="text-muted small mb-0">
