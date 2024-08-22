@@ -9,9 +9,11 @@ admin = Admin(name='My Admin Panel', index_view=MyAdminIndexView(), template_mod
 def init_admin(app):
     # Import inside the function to avoid circular imports
     from flaskblog import db
-    from flaskblog.models import User, Post, Comment, UserView, PostView, CommentView
+    from flaskblog.models import User, Post, Comment, Update, Announcement, UserView, PostView, CommentView, UpdateView, AnnouncementView
 
     admin.add_view(UserView(User, db.session))
     admin.add_view(PostView(Post, db.session))
     admin.add_view(CommentView(Comment, db.session))
+    admin.add_view(UpdateView(Update, db.session))
+    admin.add_view(AnnouncementView(Announcement, db.session))
     admin.init_app(app)

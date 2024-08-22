@@ -10,6 +10,10 @@ from flask_admin import AdminIndexView
 def load_user(user_id):
     return User.query.get(int(user_id))
 
+class MyAdminIndexView(AdminIndexView):
+    def is_accessible(self):
+        return current_user.is_authenticated and current_user.username == 'Andriy'
+
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(20), unique=True, nullable=False)
@@ -38,6 +42,10 @@ class User(db.Model, UserMixin):
     def __str__(self):
         return f"{self.id}. {self.username}"
     
+class UserView(ModelView):
+    def is_accessible(self):
+        return current_user.is_authenticated and current_user.username == 'Andriy'
+    
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
@@ -48,14 +56,7 @@ class Post(db.Model):
 
     def __repr__(self):
         return f"User('{self.title}', '{self.date_posted}')"
-    
-class MyAdminIndexView(AdminIndexView):
-    def is_accessible(self):
-        return current_user.is_authenticated and current_user.username == 'Andriy'
 
-class UserView(ModelView):
-    def is_accessible(self):
-        return current_user.is_authenticated and current_user.username == 'Andriy'
 
 class PostView(ModelView):
     form_columns = ['title', 'content', 'user_id']
@@ -76,6 +77,32 @@ class CommentView(ModelView):
     form_columns = ['text', 'date_posted', 'user_id', 'post_id']
     column_list = ['id', 'text', 'date_posted', 'user_id', 'post_id']
 
+
+    def is_accessible(self):
+        return current_user.is_authenticated and current_user.username == 'Andriy'
+    
+class Update(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100), nullable=False)
+    date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    content = db.Column(db.Text, nullable=False)
+
+class UpdateView(ModelView):
+    form_columns = ['title', 'content']
+    column_list = ['date_posted', 'title']
+
+    def is_accessible(self):
+        return current_user.is_authenticated and current_user.username == 'Andriy'
+    
+class Announcement(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100), nullable=False)
+    date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    content = db.Column(db.Text, nullable=False)
+
+class AnnouncementView(ModelView):
+    form_columns = ['title', 'content']
+    column_list = ['title', 'date_posted']
 
     def is_accessible(self):
         return current_user.is_authenticated and current_user.username == 'Andriy'

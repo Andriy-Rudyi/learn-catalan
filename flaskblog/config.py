@@ -2,8 +2,11 @@ import os
 
 
 class Config:
+    # Local db (.bash_profile)
     # SECRET_KEY = os.environ.get('SECRET_KEY') 
     # SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI')
+
+    # Production db
     SECRET_KEY = os.getenv('SECRET_KEY')
     SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_PUBLIC_URL')
 

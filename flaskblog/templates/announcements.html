@@ -4,11 +4,14 @@
     <h1>Оголошення</h1>
 
     <!-- Announcement Example -->
-    <div class="announcement">
-        <h2>Поїхали!</h2>
-        <p>Ми раді оголосити про запуск нашої нової вдосконаленої платформи для вивчення каталонської мови. Ця платформа створена для тих, хто прагне досягти вільного володіння мовою. Розпочніть вивчення каталонської прямо зараз!</p>
-    </div>
-
+        {% for announcement in announcements %}
+        <div class="announcement">
+            <h2>{{ announcement.title }}</h2>
+            <p>{{ announcement.content|safe }}</p>
+        </div>
+        {% endfor %}
+    
+    
 
     <style>
         .announcement {
