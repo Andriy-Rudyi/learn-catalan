@@ -5,6 +5,8 @@ from flaskblog import db, login_manager
 from flask_login import UserMixin, current_user
 from flask_admin.contrib.sqla import ModelView
 from flask_admin import AdminIndexView
+from slugify import slugify
+import json
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -20,8 +22,8 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(120), unique=True, nullable=False)
     image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
     password = db.Column(db.String(60), nullable=False)
-    posts = db.relationship('Post', backref='author', lazy=True)
-    comments = db.relationship('Comment', backref='author', lazy=True)
+    posts = db.relationship('Post', backref='author', lazy=True, cascade="all, delete-orphan")
+    comments = db.relationship('Comment', backref='author', lazy=True, cascade="all, delete-orphan")
 
     def get_reset_token(self):
         s = Serializer(current_app.config['SECRET_KEY'])
@@ -52,14 +54,29 @@ class Post(db.Model):
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     content = db.Column(db.Text, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    comments = db.relationship('Comment', backref='post', lazy=True)
+    comments = db.relationship('Comment', backref='post', lazy=True, cascade="all, delete-orphan")
+    slug = db.Column(db.String(100), unique=True, nullable=False)
+    video_links = db.Column(db.Text, nullable=True)
+
+    def __init__(self, *args, **kwargs):
+        super(Post, self).__init__(*args, **kwargs)
+        if not self.slug:
+            self.slug = slugify(self.title)
+
+    def set_video_links(self, links):
+        self.video_links = json.dumps(links)
+
+    def get_video_links(self):
+        if self.video_links:
+            return json.loads(self.video_links)
+        return []
 
     def __repr__(self):
         return f"User('{self.title}', '{self.date_posted}')"
 
 
 class PostView(ModelView):
-    form_columns = ['title', 'content', 'user_id']
+    form_columns = ['title', 'content', 'user_id', 'video_links']
     column_list = ['title', 'author']
 
     def is_accessible(self):

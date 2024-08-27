@@ -15,7 +15,7 @@
                         </div>
                         {% if post.author == current_user %}
                         <div>
-                            <a href="{{ url_for('posts.update_post', post_id=post.id) }}" class="btn btn-secondary btn-sm mt-1 mb-1">Оновити</a>
+                            <a href="{{ url_for('posts.update_post', slug=post.slug) }}" class="btn btn-secondary btn-sm mt-1 mb-1">Оновити</a>
                             <button type="button" class="btn btn-danger btn-sm m-1" data-bs-toggle="modal" data-bs-target="#deleteModal">Видалити</button>
                         </div>
                         {% endif %}
@@ -34,7 +34,7 @@
             <div class="card-body">
                 <div class="card-footer p-3 border-0" style="background-color: #f8f9fa;">
                     <div class="d-flex flex-start w-100">
-                    <form class="input-group mb-3" method="POST" action="/create-comment/{{post.id}}">
+                    <form class="input-group mb-3" method="POST" action="/create-comment/{{post.slug}}">
                       <div data-mdb-input-init class="form-outline w-100">
                         <textarea type="text" name="text" class="form-control" id="textAreaExample" rows="4" style="background: #fff; " placeholder="Your comment..."></textarea>
                             <div class="float-end mt-2 pt-1">
@@ -43,9 +43,10 @@
                       </div>
                     </form>
                     </div>
-                    {% for comment in post.comments %}
                     <br> 
                     <hr>
+                    {% for comment in post.comments %}
+                    
                     <br>
                     
                     <div class="d-flex flex-start align-items-center">

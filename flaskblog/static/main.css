@@ -146,6 +146,9 @@ a.article-title:hover {
       text-align: center;
       margin-bottom: 10px;
   }
+  main .content-section {
+    margin-top: 15px;
+  }
   .media.content-section .col-md-10 {
       text-align: center;
   }
