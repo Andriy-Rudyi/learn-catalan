@@ -106,7 +106,9 @@ class Update(db.Model):
 
 class UpdateView(ModelView):
     form_columns = ['title', 'content']
-    column_list = ['date_posted', 'title']
+    column_list = ['title', 'date_posted']
+
+    column_default_sort = ('date_posted', True)
 
     def is_accessible(self):
         return current_user.is_authenticated and current_user.username == 'Andriy'
