@@ -5,7 +5,7 @@ from flask_login import current_user, login_required
 from flaskblog import db
 from flaskblog.models import Comment, Post
 from flaskblog.posts.forms import PostForm
-import re
+from slugify import slugify
 
 posts = Blueprint('posts', __name__)
 
@@ -34,7 +34,7 @@ def new_post():
         if form.validate_on_submit():
 
             # Generate a slug from the title
-            slug = re.sub(r'\W+', '-', form.title.data).lower()
+            slug = slugify(form.title.data)
             slug = generate_unique_slug(slug)
 
             post = Post(
