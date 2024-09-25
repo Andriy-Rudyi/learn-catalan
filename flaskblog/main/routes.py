@@ -21,8 +21,8 @@ def home():
 @main.route("/lessons")
 def lessons():
     page = request.args.get('page', 1, type=int)
-    #posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=5)
-    posts = Post.query.paginate(page=page, per_page=5)
+    posts = Post.query.order_by(Post.date_posted).paginate(page=page, per_page=5)
+    #posts = Post.query.paginate(page=page, per_page=5)
     return render_template('lessons.html', title='Уроки', posts=posts)
 
 
