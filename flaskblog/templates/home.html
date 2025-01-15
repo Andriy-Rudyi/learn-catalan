@@ -1,20 +1,30 @@
-{% extends "layout.html" %}
+{% extends "home_layout.html" %}
 
 {% block content %}
-<div class="jumbotron text-center">
-    <h1 class="display-4">Ласкаво просимо до Learn Catalan!</h1>
-    <p class="lead">Найкращий ресурс для вивчення каталонської мови.</p>
-    <hr class="my-4">
-    <p>Досліджуйте наші ресурси та розпочніть свою подорож у вивченні каталонської мови.</p>
-    <a class="btn btn-outline-info btn-lg" href="{{ url_for('main.lessons') }}" role="button">Розпочати навчання</a>
-</div>
-<br>
-<br>
-<br>
-<div class="container">
-    <div style="text-align: center;">
-        <h2>Що вас чекає?</h2>
-        <p>Незабаром ми надамо різноманітні ресурси для вивчення каталонської мови, включаючи відеоуроки для початківців, граматичні інстурменти та можливість формування власного словникового запасу. Слідкуйте за оновленнями!</p>
+<div class="d-flex justify-content-center text-center" style="width: 100%;">
+    <div>
+        <div class="jumbotron">
+            <h1 class="display-4">Ласкаво просимо до Learn Catalan!</h1>
+            <p class="lead">Найкращий ресурс для вивчення каталонської мови.</p>
+            <hr class="my-4">
+            <p>Досліджуйте наші ресурси та розпочніть свою подорож у вивченні каталонської мови.</p>
+            <a class="btn btn-outline-info btn-lg" href="{{ url_for('main.lessons') }}" role="button">Розпочати навчання</a>
+        </div>
+        <div class="mt-4">
+            <h2>Що вас чекає?</h2>
+            <p>Незабаром ми надамо різноманітні ресурси для вивчення каталонської мови, включаючи відеоуроки для початківців, граматичні інструменти та можливість формування власного словникового запасу. Слідкуйте за оновленнями!</p>
+        </div>
     </div>
 </div>
+<!-- <div class="col-md-4">
+    <div class="content-section">
+      <h3>Дізнайтеся про новини та оновлення</h3>
+      <p class='text-muted'>
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-light"><a href="{{ url_for('main.announcements') }}">Оголошення</a></li>
+          <li class="list-group-item list-group-item-light"><a href="{{ url_for('main.updates') }}">Оновлення</a></li>
+        </ul>
+      </p>
+    </div>
+</div> -->
 {% endblock %}
