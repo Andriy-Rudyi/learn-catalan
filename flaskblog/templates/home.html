@@ -1,36 +1,52 @@
 {% extends "layout.html" %}
 
+{% block main_class %}col-xl-10 mx-auto{% endblock %}
+
 {% block content %}
-<div class="d-flex justify-content-center text-center" style="width: 100%;">
-    <div>
-        <div class="jumbotron">
-            <h1 class="display-4">Ласкаво просимо до Learn Catalan!</h1>
-            <p class="lead">Найкращий ресурс для вивчення каталонської мови.</p>
-            <hr class="my-4">
-            <p>Досліджуйте наші ресурси та розпочніть свою подорож у вивченні каталонської мови.</p>
-            <a class="btn btn-outline-info btn-lg" href="{{ url_for('grammar.index') }}" role="button">Розпочати навчання</a>
-            <a class="btn btn-outline-info btn-lg" href="{{ url_for('vocabulary.dictionary') }}" role="button">Словник</a>
-        </div>
-        <div class="mt-4">
-            <h2>Що вас чекає?</h2>
-            <p>
-              Уже доступні <a href="{{ url_for('grammar.index') }}">курс граматики</a>,
-              <a href="{{ url_for('main.conjugator') }}">дієвідміна каталонських дієслів</a>
-              та <a href="{{ url_for('vocabulary.dictionary') }}">каталонсько-український словник</a>,
-              у якому можна зібрати власний словниковий запас.
-            </p>
-        </div>
-    </div>
+<section class="hero">
+  <h1>Вивчайте каталонську українською</h1>
+  <p class="lead mx-auto" style="max-width: 38rem;">
+    Граматичний курс у стилі Murphy, каталонсько-український словник і перевірена
+    дієвідміна дієслів — усе в одному місці.
+  </p>
+  <div class="d-flex flex-wrap justify-content-center gap-2 mt-4">
+    <a class="btn btn-outline-info btn-lg px-4" href="{{ url_for('grammar.index') }}" role="button">Розпочати навчання</a>
+    <a class="btn btn-outline-secondary btn-lg px-4" href="{{ url_for('vocabulary.dictionary') }}" role="button">Відкрити словник</a>
+  </div>
+</section>
+
+<div class="row g-3 mb-4">
+  <div class="col-md-4">
+    <a class="feature-card" href="{{ url_for('grammar.index') }}">
+      <div class="feature-icon" aria-hidden="true">📘</div>
+      <h3>Граматика</h3>
+      <p>Короткі пояснення, приклади й вправи з відповідями — від A1 до C1.</p>
+      {% if unit_count %}<span class="feature-count">{{ unit_count }} юнітів</span>{% endif %}
+    </a>
+  </div>
+  <div class="col-md-4">
+    <a class="feature-card" href="{{ url_for('vocabulary.dictionary') }}">
+      <div class="feature-icon" aria-hidden="true">📖</div>
+      <h3>Словник</h3>
+      <p>Слова з перекладом, прикладами та рівнем. Збирайте власний словник і позначайте вивчене.</p>
+      {% if word_count %}<span class="feature-count">{{ word_count }} слів</span>{% endif %}
+    </a>
+  </div>
+  <div class="col-md-4">
+    <a class="feature-card" href="{{ url_for('main.conjugator') }}">
+      <div class="feature-icon" aria-hidden="true">🔤</div>
+      <h3>Дієвідміна</h3>
+      <p>Усі часи та способи каталонських дієслів із перекладом українською.</p>
+      <span class="feature-count">понад 8 000 дієслів</span>
+    </a>
+  </div>
 </div>
-<!-- <div class="col-md-4">
-    <div class="content-section">
-      <h3>Дізнайтеся про новини та оновлення</h3>
-      <p class='text-muted'>
-        <ul class="list-group">
-          <li class="list-group-item list-group-item-light"><a href="{{ url_for('main.announcements') }}">Оголошення</a></li>
-          <li class="list-group-item list-group-item-light"><a href="{{ url_for('main.updates') }}">Оновлення</a></li>
-        </ul>
-      </p>
-    </div>
-</div> -->
+
+{% if not current_user.is_authenticated %}
+<div class="content-section text-center py-3">
+  <p class="mb-2">Зареєструйтеся, щоб зберігати слова у «Мій словник» і стежити за прогресом.</p>
+  <a class="btn btn-sm btn-outline-info" href="{{ url_for('users.register') }}">Створити акаунт</a>
+  <a class="btn btn-sm btn-link" href="{{ url_for('users.login') }}">Увійти</a>
+</div>
+{% endif %}
 {% endblock %}

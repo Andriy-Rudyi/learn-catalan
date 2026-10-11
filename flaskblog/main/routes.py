@@ -10,7 +10,8 @@ from flaskblog.conjugation.labels import (
     person_labels,
     tense_label,
 )
-from flaskblog.models import Announcement, Post, Update, UserWord, Word
+from flaskblog.models import (Announcement, GrammarUnit, Post, Update, UserWord,
+                              Word)
 from flaskblog.vocabulary.constants import part_of_speech_label
 from flaskblog.vocabulary.forms import ActionForm
 
@@ -25,7 +26,12 @@ SUGGESTED_VERBS = ('ser', 'tenir', 'fer', 'anar', 'parlar', 'saber', 'viure', 'v
 @main.route("/")
 @main.route("/home")
 def home():
-    return render_template('home.html', ProjectName=PROJECT_NAME)
+    return render_template(
+        'home.html',
+        ProjectName=PROJECT_NAME,
+        unit_count=GrammarUnit.query.count(),
+        word_count=Word.query.count(),
+    )
 
 
 @main.route("/lessons")

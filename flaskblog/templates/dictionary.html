@@ -50,7 +50,7 @@
               </div>
               {% if current_user.is_authenticated %}
                 {% if word.id in saved_word_ids %}
-                  <span class="badge bg-light text-muted align-self-center">у словнику</span>
+                  <span class="badge bg-body-secondary text-body-secondary align-self-center">у словнику</span>
                 {% else %}
                   <form method="POST" action="{{ url_for('vocabulary.save_word', slug=word.slug) }}">
                     {{ action_form.hidden_tag() }}
@@ -83,7 +83,7 @@
       {% endfor %}
     </div>
   {% else %}
-    <div class="alert alert-light border">
+    <div class="alert alert-secondary">
       {% if total %}
         За цим запитом слів не знайдено.
       {% else %}

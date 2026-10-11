@@ -31,22 +31,23 @@
   <ul class="nav nav-pills mb-3">
     <li class="nav-item">
       <a class="nav-link {% if not status %}active{% endif %}" href="{{ url_for('vocabulary.my_dictionary') }}">
-        Усі <span class="badge bg-light text-dark">{{ counts.all }}</span>
+        Усі <span class="badge bg-body-secondary text-body-secondary">{{ counts.all }}</span>
       </a>
     </li>
     <li class="nav-item">
       <a class="nav-link {% if status == 'learning' %}active{% endif %}" href="{{ url_for('vocabulary.my_dictionary', status='learning') }}">
-        Вчу <span class="badge bg-light text-dark">{{ counts.learning }}</span>
+        Вчу <span class="badge bg-body-secondary text-body-secondary">{{ counts.learning }}</span>
       </a>
     </li>
     <li class="nav-item">
       <a class="nav-link {% if status == 'known' %}active{% endif %}" href="{{ url_for('vocabulary.my_dictionary', status='known') }}">
-        Знаю <span class="badge bg-light text-dark">{{ counts.known }}</span>
+        Знаю <span class="badge bg-body-secondary text-body-secondary">{{ counts.known }}</span>
       </a>
     </li>
   </ul>
 
   {% if items %}
+    <div class="table-responsive">
     <table class="table align-middle">
       <thead>
         <tr>
@@ -58,7 +59,7 @@
       </thead>
       <tbody>
         {% for item in items %}
-          <tr class="{% if item.is_known %}table-light{% endif %}">
+          <tr class="{% if item.is_known %}row-known{% endif %}">
             <td>
               {% if item.word %}
                 <a href="{{ url_for('vocabulary.word', slug=item.word.slug) }}">{{ item.display_term }}</a>
@@ -94,12 +95,13 @@
         {% endfor %}
       </tbody>
     </table>
+    </div>
 
     <p class="small text-muted">
       <a href="{{ url_for('vocabulary.export_my_dictionary') }}">Завантажити мій словник у CSV</a>
     </p>
   {% else %}
-    <div class="alert alert-light border">
+    <div class="alert alert-secondary">
       {% if status %}
         У цій категорії поки нічого немає.
       {% else %}

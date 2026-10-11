@@ -40,6 +40,25 @@ class RouteTests(AppTestCase):
             for absent in ('Уроки', 'Оголошення', 'Оновлення', 'FAQ'):
                 self.assertNotIn(absent, navbar, url)
 
+    def test_menu_order_is_grammar_dictionary_conjugator(self):
+        navbar = self._navbar('/')
+        positions = [navbar.index(name) for name in ('Граматика', 'Словник', 'Дієвідміна')]
+        self.assertEqual(sorted(positions), positions)
+
+    def test_current_section_is_highlighted(self):
+        navbar = self._navbar('/grammar')
+        grammar_link = navbar[:navbar.index('Граматика')]
+        self.assertIn('active', grammar_link[grammar_link.rindex('<a'):])
+        conjugator = self._navbar('/conjugator')
+        self.assertNotIn('active', conjugator[:conjugator.index('Словник')].split('<a')[-1])
+
+    def test_theme_toggle_and_mobile_viewport(self):
+        body = self.client.get('/').data.decode()
+        self.assertIn('id="themeToggle"', body)
+        self.assertIn('data-bs-theme', body)
+        self.assertIn('name="viewport"', body)
+        self.assertIn('bootstrap.bundle.min.js', body)
+
     def test_home_page_starts_with_the_grammar_course(self):
         self.assertIn('/grammar', self.client.get('/').data.decode())
 

@@ -14,7 +14,7 @@
       </div>
       {% if current_user.is_authenticated %}
         {% if word.id in saved_word_ids %}
-          <span class="badge bg-light text-muted">у вашому словнику</span>
+          <span class="badge bg-body-secondary text-body-secondary">у вашому словнику</span>
         {% else %}
           <form method="POST" action="{{ url_for('vocabulary.save_word', slug=word.slug) }}">
             {{ action_form.hidden_tag() }}

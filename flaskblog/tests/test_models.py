@@ -1,5 +1,6 @@
 # flaskblog/tests/test_models.py
 
+import os
 import unittest
 
 from flaskblog import db
@@ -44,3 +45,27 @@ class ModelTests(AppTestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class DatabaseUrlTests(unittest.TestCase):
+
+    def _url(self, **env):
+        from unittest import mock
+        from flaskblog.config import database_url
+        keys = ('DATABASE_PUBLIC_URL', 'DATABASE_URL')
+        clean = {k: v for k, v in env.items() if k in keys}
+        with mock.patch.dict('os.environ', clean, clear=False):
+            for key in keys:
+                if key not in clean:
+                    os.environ.pop(key, None)
+            return database_url()
+
+    def test_public_url_wins(self):
+        self.assertEqual('sqlite:///a.db', self._url(DATABASE_PUBLIC_URL='sqlite:///a.db',
+                                                     DATABASE_URL='sqlite:///b.db'))
+
+    def test_falls_back_to_database_url(self):
+        self.assertEqual('sqlite:///b.db', self._url(DATABASE_URL='sqlite:///b.db'))
+
+    def test_old_postgres_scheme_is_fixed(self):
+        self.assertEqual('postgresql://u:p@h/db', self._url(DATABASE_URL='postgres://u:p@h/db'))

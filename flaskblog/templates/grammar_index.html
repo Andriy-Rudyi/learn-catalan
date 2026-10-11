@@ -15,7 +15,7 @@
         {% endif %}
       </div>
       {% if unit.level %}
-        <span class="badge bg-light text-muted">{{ unit.level }}</span>
+        <span class="badge bg-body-secondary text-body-secondary">{{ unit.level }}</span>
       {% endif %}
     </div>
   </a>
@@ -57,7 +57,7 @@
       </div>
     {% endif %}
   {% else %}
-    <div class="alert alert-light border">
+    <div class="alert alert-secondary">
       Курс ще не завантажено.
       {% if is_admin() %}
         Виконайте <code>flask grammar seed</code>.
