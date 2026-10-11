@@ -77,6 +77,45 @@ class ImportTests(AppTestCase):
         self.assertEqual('яблуко', rows[0]['translation'])
 
 
+class SeedQualityTests(unittest.TestCase):
+    """Cheap guards on the bundled dictionary."""
+
+    def setUp(self):
+        import csv
+
+        with open(service.SEED_FILE, encoding='utf-8') as handle:
+            self.rows = list(csv.DictReader(handle))
+
+    def test_terms_are_unique(self):
+        terms = [row['term'] for row in self.rows]
+        self.assertEqual(len(terms), len(set(terms)))
+
+    def test_ukrainian_text_has_no_russian_only_letters(self):
+        import re
+
+        russian = re.compile('[ыэъё]', re.IGNORECASE)
+        offenders = [
+            (row['term'], field, row[field])
+            for row in self.rows
+            for field in ('translation', 'example_uk', 'notes')
+            if russian.search(row[field])
+        ]
+        self.assertEqual([], offenders)
+
+    def test_choices_are_valid(self):
+        from flaskblog.vocabulary.constants import (GENDER_LABELS, LEVEL_LABELS,
+                                                    PART_OF_SPEECH_LABELS,
+                                                    TOPIC_LABELS)
+
+        for row in self.rows:
+            with self.subTest(term=row['term']):
+                self.assertIn(row['part_of_speech'] or 'noun', PART_OF_SPEECH_LABELS)
+                self.assertIn(row['topic'] or 'basics', TOPIC_LABELS)
+                self.assertIn(row['level'] or 'A1', LEVEL_LABELS)
+                if row['gender']:
+                    self.assertIn(row['gender'], GENDER_LABELS)
+
+
 class SearchTests(AppTestCase):
     def setUp(self):
         super(SearchTests, self).setUp()
