@@ -236,3 +236,72 @@ class UserWordView(ModelView):
 
     def is_accessible(self):
         return is_admin()
+
+
+class GrammarUnit(db.Model):
+    """One unit of the grammar course.
+
+    Modelled on the layout of Raymond Murphy's grammar books: a short
+    explanation with examples, then exercises whose answers the learner
+    can check. Examples and exercises are kept as JSON, the way Post
+    keeps its video links.
+    """
+
+    id = db.Column(db.Integer, primary_key=True)
+    number = db.Column(db.Integer, unique=True, nullable=False, index=True)
+    slug = db.Column(db.String(120), unique=True, nullable=False)
+    title = db.Column(db.String(150), nullable=False)
+    section = db.Column(db.String(80), nullable=False, index=True)
+    level = db.Column(db.String(5), nullable=True, index=True)
+    summary = db.Column(db.String(300), nullable=True)
+    explanation = db.Column(db.Text, nullable=False)
+    examples = db.Column(db.Text, nullable=True)
+    exercises = db.Column(db.Text, nullable=True)
+    date_added = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+
+    def __init__(self, *args, **kwargs):
+        super(GrammarUnit, self).__init__(*args, **kwargs)
+        if not self.slug and self.title:
+            self.slug = slugify(self.title)
+
+    # -- examples: [{"ca": ..., "uk": ..., "note": ...}] ----------------
+    def get_examples(self):
+        return json.loads(self.examples) if self.examples else []
+
+    def set_examples(self, examples):
+        self.examples = json.dumps(examples, ensure_ascii=False)
+
+    # -- exercises: [{"instruction": ..., "items": [{"q": ..., "a": ...}]}]
+    def get_exercises(self):
+        return json.loads(self.exercises) if self.exercises else []
+
+    def set_exercises(self, exercises):
+        self.exercises = json.dumps(exercises, ensure_ascii=False)
+
+    @property
+    def exercise_count(self):
+        return sum(len(block.get('items', [])) for block in self.get_exercises())
+
+    def __repr__(self):
+        return f"GrammarUnit({self.number}, '{self.title}')"
+
+    def __str__(self):
+        return f"{self.number}. {self.title}"
+
+
+class GrammarUnitView(ModelView):
+    form_columns = [
+        'number', 'title', 'section', 'level', 'summary', 'explanation',
+        'examples', 'exercises',
+    ]
+    column_list = ['number', 'title', 'section', 'level']
+    column_searchable_list = ['title', 'section']
+    column_filters = ['section', 'level']
+    column_default_sort = 'number'
+
+    def is_accessible(self):
+        return is_admin()
+
+    def on_model_change(self, form, model, is_created):
+        if not model.slug and model.title:
+            model.slug = slugify(model.title)

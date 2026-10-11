@@ -302,3 +302,67 @@ a.article-title:hover {
   padding: 0.5rem 0 0.5rem 0.85rem;
   margin: 0.5rem 0 1rem;
 }
+
+/* Grammar course */
+.grammar .grammar-section {
+  margin-bottom: 1.75rem;
+}
+
+.grammar .grammar-section h3 {
+  font-size: 1.15rem;
+  color: #444;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.3rem;
+}
+
+.grammar .unit-number,
+.grammar-unit .unit-number-big {
+  display: inline-block;
+  color: #8aa9bd;
+  font-weight: 600;
+}
+
+.grammar .unit-number {
+  min-width: 2rem;
+}
+
+.grammar-unit .unit-number-big {
+  font-size: 1.6rem;
+}
+
+.grammar-unit .explanation ul {
+  margin-bottom: 0.6rem;
+}
+
+.grammar-unit .explanation p {
+  margin-bottom: 0.6rem;
+}
+
+.grammar-unit .grammar-heading {
+  margin-top: 1.75rem;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #666;
+}
+
+.grammar-unit .examples-table .ca-cell {
+  width: 50%;
+}
+
+.grammar-unit .exercise-block {
+  margin-bottom: 1.1rem;
+}
+
+.grammar-unit .exercise-instruction {
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+}
+
+.grammar-unit .exercise-items li {
+  margin-bottom: 0.2rem;
+}
+
+.grammar-unit .exercise-answer {
+  color: #2a7f62;
+}

@@ -17,9 +17,10 @@ def init_admin(app):
     # Imported inside the function to avoid circular imports
     from flaskblog import db
     from flaskblog.models import (Announcement, AnnouncementView, Comment,
-                                  CommentView, Post, PostView, Update,
-                                  UpdateView, User, UserView, UserWord,
-                                  UserWordView, Word, WordView)
+                                  CommentView, GrammarUnit, GrammarUnitView,
+                                  Post, PostView, Update, UpdateView, User,
+                                  UserView, UserWord, UserWordView, Word,
+                                  WordView)
 
     admin = Admin(
         name='My Admin Panel',
@@ -32,6 +33,7 @@ def init_admin(app):
     admin.add_view(CommentView(Comment, db.session))
     admin.add_view(UpdateView(Update, db.session))
     admin.add_view(AnnouncementView(Announcement, db.session))
+    admin.add_view(GrammarUnitView(GrammarUnit, db.session))
     admin.add_view(WordView(Word, db.session))
     admin.add_view(UserWordView(UserWord, db.session))
     admin.init_app(app)

@@ -1,0 +1,964 @@
+[
+ {
+  "number": 1,
+  "title": "ser та estar",
+  "section": "Дієслово: основи",
+  "level": "A1",
+  "summary": "Два каталонські дієслова «бути»: коли яке.",
+  "explanation": "\n<p>У каталонській два дієслова зі значенням «бути»: <strong>ser</strong> і <strong>estar</strong>.</p>\n<p><strong>ser</strong> — те, чим людина або річ <em>є</em>: ім’я, походження, професія, характер,\nматеріал, ціна, час, а також <em>де щось розташоване</em>:</p>\n<ul>\n  <li>Jo <strong>sóc</strong> d’Ucraïna. — Я з України.</li>\n  <li>El bany <strong>és</strong> al fons. — Ванна в кінці (коридору).</li>\n</ul>\n<p><strong>estar</strong> — <em>стан</em> (фізичний чи емоційний) і <em>перебування</em> десь протягом часу:</p>\n<ul>\n  <li><strong>Estic</strong> cansat. — Я втомлений.</li>\n  <li>Aquest mes <strong>estem</strong> a Girona. — Цього місяця ми в Жироні.</li>\n</ul>\n<p>Увага: на відміну від іспанської, у каталонській про <em>місце розташування</em>\nзазвичай кажуть <strong>ser</strong>: <em>On <strong>és</strong> l’estació?</em> — Де вокзал?\n<strong>estar</strong> тут означає «пробути якийсь час»: <em>Hi <strong>estarem</strong> dues setmanes.</em></p>\n<p>Форми:</p>\n<ul>\n  <li><strong>ser</strong>: sóc, ets, és, som, sou, són</li>\n  <li><strong>estar</strong>: estic, estàs, està, estem, esteu, estan</li>\n</ul>\n",
+  "examples": [
+   {
+    "ca": "Sóc estudiant de català.",
+    "uk": "Я студент каталонської."
+   },
+   {
+    "ca": "La Maria és molt simpàtica.",
+    "uk": "Марія дуже приємна."
+   },
+   {
+    "ca": "Són les tres.",
+    "uk": "Третя година."
+   },
+   {
+    "ca": "Estic malalt.",
+    "uk": "Я хворий."
+   },
+   {
+    "ca": "Com estàs? — Molt bé, gràcies.",
+    "uk": "Як справи? — Дуже добре, дякую."
+   },
+   {
+    "ca": "El mercat és a la plaça.",
+    "uk": "Ринок на площі."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Поставте ser або estar у потрібній формі.",
+    "items": [
+     {
+      "q": "Jo ___ d’Ucraïna.",
+      "a": "sóc"
+     },
+     {
+      "q": "Tu ___ molt cansat avui.",
+      "a": "estàs"
+     },
+     {
+      "q": "Nosaltres ___ estudiants.",
+      "a": "som"
+     },
+     {
+      "q": "La farmàcia ___ al carrer Major.",
+      "a": "és"
+     },
+     {
+      "q": "Els nens ___ contents.",
+      "a": "estan"
+     },
+     {
+      "q": "Vosaltres ___ de Barcelona?",
+      "a": "sou"
+     },
+     {
+      "q": "___ les deu del matí.",
+      "a": "Són"
+     },
+     {
+      "q": "Ella ___ embarassada.",
+      "a": "està"
+     }
+    ]
+   },
+   {
+    "instruction": "Перекладіть каталонською.",
+    "items": [
+     {
+      "q": "Я лікар.",
+      "a": "Sóc metge."
+     },
+     {
+      "q": "Ми вдома.",
+      "a": "Som a casa."
+     },
+     {
+      "q": "Вона втомлена.",
+      "a": "Està cansada."
+     },
+     {
+      "q": "Це дорого (= це дорогий).",
+      "a": "És car."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 2,
+  "title": "Теперішній час правильних дієслів",
+  "section": "Дієслово: основи",
+  "level": "A1",
+  "summary": "Три дієвідміни: -ar, -er/-re, -ir — і дві моделі для -ir.",
+  "explanation": "\n<p>Каталонські дієслова діляться на три дієвідміни за закінченням інфінітива.</p>\n<p><strong>1. -ar</strong> (parl<em>ar</em> — говорити): parlo, parles, parla, parlem, parleu, parlen</p>\n<p><strong>2. -er / -re</strong> (perd<em>re</em> — губити): perdo, perds, perd, perdem, perdeu, perden</p>\n<p><strong>3. -ir</strong> має дві моделі:</p>\n<ul>\n  <li><em>чиста</em> (як dormir): dormo, dorms, dorm, dormim, dormiu, dormen</li>\n  <li><em>із вставкою -eix-</em> (як servir): serveixo, serveixes, serveix, servim, serviu, serveixen</li>\n</ul>\n<p>Більшість дієслів на -ir ідуть за моделлю з <strong>-eix-</strong>: <em>llegir → llegeixo</em>,\n<em>decidir → decideixo</em>, <em>afegir → afegeixo</em>. Невелика група — «чисті»:\n<em>dormir, sentir, obrir, omplir, fugir, collir, sortir, tossir</em>.</p>\n<p>Зверни увагу: у 1-й особі однини закінчення <strong>-o</strong> (parlo), а в 3-й особі однини\nзакінчення немає взагалі (parla, perd, dorm).</p>\n",
+  "examples": [
+   {
+    "ca": "Parlo una mica de català.",
+    "uk": "Я трохи говорю каталонською."
+   },
+   {
+    "ca": "Què menges?",
+    "uk": "Що ти їси?"
+   },
+   {
+    "ca": "Vivim a Tarragona.",
+    "uk": "Ми живемо в Тарагоні."
+   },
+   {
+    "ca": "Llegeixo el diari cada matí.",
+    "uk": "Я читаю газету щоранку."
+   },
+   {
+    "ca": "Els nens dormen.",
+    "uk": "Діти спять."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Поставте дієслово в потрібній формі теперішнього часу.",
+    "items": [
+     {
+      "q": "Jo (treballar) ___ en una oficina.",
+      "a": "treballo"
+     },
+     {
+      "q": "Tu (parlar) ___ anglès?",
+      "a": "parles"
+     },
+     {
+      "q": "Ell (menjar) ___ molt.",
+      "a": "menja"
+     },
+     {
+      "q": "Nosaltres (perdre) ___ el tren.",
+      "a": "perdem"
+     },
+     {
+      "q": "Vosaltres (llegir) ___ molts llibres.",
+      "a": "llegiu"
+     },
+     {
+      "q": "Ells (dormir) ___ fins a les deu.",
+      "a": "dormen"
+     },
+     {
+      "q": "Jo (llegir) ___ una novel·la.",
+      "a": "llegeixo"
+     },
+     {
+      "q": "Ella (decidir) ___ sempre molt de pressa.",
+      "a": "decideix"
+     },
+     {
+      "q": "Nosaltres (obrir) ___ la botiga a les nou.",
+      "a": "obrim"
+     },
+     {
+      "q": "Tu (servir) ___ el cafè?",
+      "a": "serveixes"
+     }
+    ]
+   },
+   {
+    "instruction": "Визначте, чи дієслово «чисте» (як dormir), чи з -eix- (як servir).",
+    "items": [
+     {
+      "q": "sentir",
+      "a": "чисте: sento, sents, sent…"
+     },
+     {
+      "q": "afegir",
+      "a": "з -eix-: afegeixo, afegeixes…"
+     },
+     {
+      "q": "sortir",
+      "a": "чисте: surto, surts, surt… (із зміною o → u)"
+     },
+     {
+      "q": "traduir",
+      "a": "з -eix-: tradueixo, tradueixes…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 3,
+  "title": "hi ha: «є» та «немає»",
+  "section": "Дієслово: основи",
+  "level": "A1",
+  "summary": "Конструкція існування та чим вона відрізняється від ser.",
+  "explanation": "\n<p><strong>hi ha</strong> означає «є», «існує», «наявне». Форма <em>не змінюється</em>\nза числом:</p>\n<ul>\n  <li><strong>Hi ha</strong> un llibre damunt la taula. — На столі є книжка.</li>\n  <li><strong>Hi ha</strong> molts llibres a casa. — Удома багато книжок.</li>\n</ul>\n<p>Заперечення — <strong>no hi ha</strong>, питання — просто з питальною інтонацією:</p>\n<ul>\n  <li><strong>No hi ha</strong> llet. — Молока немає.</li>\n  <li><strong>Hi ha</strong> una farmàcia a prop? — Поблизу є аптека?</li>\n</ul>\n<p>В інших часах: <strong>hi havia</strong> (було), <strong>hi va haver</strong> (трапилося),\n<strong>hi haurà</strong> (буде), <strong>hi ha hagut</strong> (було, сталося).</p>\n<p><strong>hi ha</strong> чи <strong>ser</strong>? <em>hi ha</em> повідомляє, що щось\n<em>існує</em> (зазвичай із неозначеним артиклем або без артикля), а <em>ser</em> каже,\n<em>де</em> конкретна відома річ:</p>\n<ul>\n  <li><strong>Hi ha</strong> un gat al jardí. — У саду (якийсь) кіт.</li>\n  <li>El gat <strong>és</strong> al jardí. — (Наш) кіт у саду.</li>\n</ul>\n",
+  "examples": [
+   {
+    "ca": "Hi ha molta gent a la plaça.",
+    "uk": "На площі багато людей."
+   },
+   {
+    "ca": "No hi ha cap problema.",
+    "uk": "Жодної проблеми немає."
+   },
+   {
+    "ca": "Hi havia neu a la muntanya.",
+    "uk": "У горах був сніг."
+   },
+   {
+    "ca": "Demà hi haurà una festa.",
+    "uk": "Завтра буде свято."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Поставте hi ha або форму ser.",
+    "items": [
+     {
+      "q": "___ un supermercat al costat de casa.",
+      "a": "Hi ha"
+     },
+     {
+      "q": "El supermercat ___ al costat de casa.",
+      "a": "és"
+     },
+     {
+      "q": "A la nevera no ___ res.",
+      "a": "hi ha"
+     },
+     {
+      "q": "Les claus ___ damunt la taula.",
+      "a": "són"
+     },
+     {
+      "q": "___ dues cadires a l’habitació.",
+      "a": "Hi ha"
+     }
+    ]
+   },
+   {
+    "instruction": "Перекладіть каталонською.",
+    "items": [
+     {
+      "q": "Тут немає хліба.",
+      "a": "Aquí no hi ha pa."
+     },
+     {
+      "q": "Чи є поблизу аптека?",
+      "a": "Hi ha una farmàcia a prop?"
+     },
+     {
+      "q": "Учора було багато людей.",
+      "a": "Ahir hi havia molta gent."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 4,
+  "title": "Означений артикль: el, la, els, les",
+  "section": "Іменник, артикль, прикметник",
+  "level": "A1",
+  "summary": "Форми артикля, l’ перед голосним і зрощення з прийменниками.",
+  "explanation": "\n<p>Означений артикль показує, що річ відома зі ситуації.</p>\n<ul>\n  <li>чоловічий: <strong>el</strong> llibre → <strong>els</strong> llibres</li>\n  <li>жіночий: <strong>la</strong> casa → <strong>les</strong> cases</li>\n</ul>\n<p>Перед голосним або <em>h</em> в однині <strong>el</strong> і <strong>la</strong>\nскорочуються до <strong>l’</strong>: <em>l’home, l’escola, l’hotel, l’amiga</em>.</p>\n<p>Виняток: перед жіночими словами на ненаголошені <em>i-</em> чи <em>u-</em>\nскорочення немає: <em>la Irene, la universitat</em>.</p>\n<p>Артикль зростається з прийменниками <em>a</em>, <em>de</em>, <em>per</em>:</p>\n<ul>\n  <li>a + el = <strong>al</strong>; a + els = <strong>als</strong></li>\n  <li>de + el = <strong>del</strong>; de + els = <strong>dels</strong></li>\n  <li>per + el = <strong>pel</strong>; per + els = <strong>pels</strong></li>\n</ul>\n<p>З <em>la</em> і <em>les</em> зрощення не буває: <em>a la casa, de les noies</em>.</p>\n<p>У розмовній каталонській перед іменами людей ставлять особовий артикль\n<strong>en</strong> / <strong>la</strong>: <em>en Joan, la Maria</em>.</p>\n",
+  "examples": [
+   {
+    "ca": "El llibre és de l’escola.",
+    "uk": "Книжка зі школи."
+   },
+   {
+    "ca": "Vaig al mercat.",
+    "uk": "Я йду на ринок."
+   },
+   {
+    "ca": "Parlem dels nens.",
+    "uk": "Ми говоримо про дітей."
+   },
+   {
+    "ca": "Passo pel carrer Major.",
+    "uk": "Я йду вулицею Майор."
+   },
+   {
+    "ca": "La Maria i en Joan són germans.",
+    "uk": "Марія і Жоан — брат і сестра."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Поставте el, la, l’, els або les.",
+    "items": [
+     {
+      "q": "___ home parla amb ___ dona.",
+      "a": "L’ / la"
+     },
+     {
+      "q": "___ escola és a prop.",
+      "a": "L’"
+     },
+     {
+      "q": "___ llibres són damunt ___ taula.",
+      "a": "Els / la"
+     },
+     {
+      "q": "___ universitat és molt gran.",
+      "a": "La"
+     },
+     {
+      "q": "___ amigues de ___ Maria.",
+      "a": "Les / la"
+     }
+    ]
+   },
+   {
+    "instruction": "Поєднайте прийменник з артиклем (a, de, per + el/els).",
+    "items": [
+     {
+      "q": "Vaig a + el cinema.",
+      "a": "Vaig al cinema."
+     },
+     {
+      "q": "Torno de + els Estats Units.",
+      "a": "Torno dels Estats Units."
+     },
+     {
+      "q": "Passem per + el parc.",
+      "a": "Passem pel parc."
+     },
+     {
+      "q": "Parlo de + la feina.",
+      "a": "Parlo de la feina. (зрощення немає)"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 5,
+  "title": "Неозначений артикль: un, una, uns, unes",
+  "section": "Іменник, артикль, прикметник",
+  "level": "A1",
+  "summary": "Коли ставити un/una, а коли артикль не потрібен.",
+  "explanation": "\n<p>Неозначений артикль уводить річ, про яку ще не йшлося:</p>\n<ul>\n  <li>чоловічий: <strong>un</strong> gos → <strong>uns</strong> gossos</li>\n  <li>жіночий: <strong>una</strong> casa → <strong>unes</strong> cases</li>\n</ul>\n<p>Множинні <strong>uns</strong> / <strong>unes</strong> означають «якісь», «кілька»:\n<em>unes amigues</em> — кілька подруг.</p>\n<p>Артикль <em>не ставлять</em>:</p>\n<ul>\n  <li>перед професією після ser: <em>Sóc professor.</em> — Я викладач;</li>\n  <li>перед незліченними речовинами: <em>Vull aigua.</em> — Я хочу води;</li>\n  <li>після заперечення часто вживають <em>cap</em>: <em>No tinc cap germà.</em></li>\n</ul>\n",
+  "examples": [
+   {
+    "ca": "Tinc un gos i una gata.",
+    "uk": "У мене пес і кішка."
+   },
+   {
+    "ca": "Sóc estudiant.",
+    "uk": "Я студент."
+   },
+   {
+    "ca": "Hi ha unes cadires al jardí.",
+    "uk": "У саду кілька стільців."
+   },
+   {
+    "ca": "No hi ha cap problema.",
+    "uk": "Жодної проблеми немає."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Поставте un, una, uns, unes — або поставте риску, якщо артикль не потрібен.",
+    "items": [
+     {
+      "q": "Tinc ___ germana.",
+      "a": "una"
+     },
+     {
+      "q": "La meva mare és ___ metgessa.",
+      "a": "— (без артикля)"
+     },
+     {
+      "q": "Vull ___ llet, si us plau.",
+      "a": "— (без артикля)"
+     },
+     {
+      "q": "Hi ha ___ nens al parc.",
+      "a": "uns"
+     },
+     {
+      "q": "És ___ hotel molt bo.",
+      "a": "un"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 6,
+  "title": "Рід іменників",
+  "section": "Іменник, артикль, прикметник",
+  "level": "A1",
+  "summary": "Як розпізнати чоловічий і жіночий рід та що робити з винятками.",
+  "explanation": "\n<p>Кожен іменник має рід. Найчастіше:</p>\n<ul>\n  <li>на <strong>-a</strong> — жіночий: <em>la casa, la taula, la poma</em>;</li>\n  <li>на приголосний або <strong>-e</strong>, <strong>-o</strong> — чоловічий:\n      <em>el carrer, el cotxe, el metro</em>;</li>\n  <li>на <strong>-ció</strong>, <strong>-sió</strong>, <strong>-tat</strong>,\n      <strong>-esa</strong>, <strong>-or</strong> (абстрактні) — жіночий:\n      <em>la estació, la ciutat, la bellesa</em>.</li>\n</ul>\n<p>Пари «чоловік / жінка» утворюються додаванням -a: <em>noi → noia</em>,\n<em>gat → gata</em>, <em>professor → professora</em>. Іноді форма інша:\n<em>home → dona</em>, <em>pare → mare</em>, <em>rei → reina</em>.</p>\n<p>Запам’ятайте винятки — чоловічі слова на -a:\n<em>el dia, el mapa, el problema, el tema, el sistema, el programa</em>.</p>\n<p>Слова на <strong>-ista</strong> однакові для обох родів:\n<em>el dentista / la dentista</em>.</p>\n",
+  "examples": [
+   {
+    "ca": "El dia és molt llarg.",
+    "uk": "День дуже довгий."
+   },
+   {
+    "ca": "La ciutat és bonica.",
+    "uk": "Місто гарне."
+   },
+   {
+    "ca": "El meu germà és periodista.",
+    "uk": "Мій брат журналіст."
+   },
+   {
+    "ca": "Tenim un problema.",
+    "uk": "У нас проблема."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Поставте el або la.",
+    "items": [
+     {
+      "q": "___ problema",
+      "a": "el"
+     },
+     {
+      "q": "___ ciutat",
+      "a": "la"
+     },
+     {
+      "q": "___ mapa",
+      "a": "el"
+     },
+     {
+      "q": "___ estació",
+      "a": "la"
+     },
+     {
+      "q": "___ cotxe",
+      "a": "el"
+     },
+     {
+      "q": "___ llibertat",
+      "a": "la"
+     },
+     {
+      "q": "___ dia",
+      "a": "el"
+     },
+     {
+      "q": "___ taula",
+      "a": "la"
+     }
+    ]
+   },
+   {
+    "instruction": "Утворіть форму жіночого роду.",
+    "items": [
+     {
+      "q": "el noi",
+      "a": "la noia"
+     },
+     {
+      "q": "el professor",
+      "a": "la professora"
+     },
+     {
+      "q": "el gat",
+      "a": "la gata"
+     },
+     {
+      "q": "el pare",
+      "a": "la mare"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 7,
+  "title": "Множина іменників",
+  "section": "Іменник, артикль, прикметник",
+  "level": "A1",
+  "summary": "Правила утворення множини та правописні зміни.",
+  "explanation": "\n<p>Загальне правило — додати <strong>-s</strong>: <em>llibre → llibres</em>,\n<em>carrer → carrers</em>.</p>\n<p>Слова на <strong>-a</strong> дають <strong>-es</strong>, і при цьому\nможуть змінювати написання, щоб зберегти звук:</p>\n<ul>\n  <li><em>casa → cases</em></li>\n  <li>g → gu: <em>amiga → amigues</em></li>\n  <li>c → qu: <em>època → èpoques</em></li>\n  <li>ç → c: <em>plaça → places</em></li>\n  <li>j → g: <em>pluja → pluges</em></li>\n</ul>\n<p>Слова на наголошений голосний додають <strong>-ns</strong>:\n<em>mà → mans</em>, <em>pa → pans</em>, <em>veí → veïns</em>.</p>\n<p>Чоловічі слова на <strong>-s, -ç, -x, -ix, -tx</strong> додають <strong>-os</strong>:\n<em>gas → gasos</em>, <em>braç → braços</em>, <em>peix → peixos</em>.\nДеякі при цьому подвоюють s: <em>gos → gossos</em>, <em>nas → nassos</em>.</p>\n",
+  "examples": [
+   {
+    "ca": "Tinc dues mans.",
+    "uk": "У мене дві руки."
+   },
+   {
+    "ca": "Compro dos pans.",
+    "uk": "Я купую два хліби."
+   },
+   {
+    "ca": "Els gossos dormen.",
+    "uk": "Собаки спять."
+   },
+   {
+    "ca": "Les places són plenes.",
+    "uk": "Площі повні."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Поставте у множині.",
+    "items": [
+     {
+      "q": "el llibre",
+      "a": "els llibres"
+     },
+     {
+      "q": "la casa",
+      "a": "les cases"
+     },
+     {
+      "q": "la plaça",
+      "a": "les places"
+     },
+     {
+      "q": "la mà",
+      "a": "les mans"
+     },
+     {
+      "q": "el gos",
+      "a": "els gossos"
+     },
+     {
+      "q": "el peix",
+      "a": "els peixos"
+     },
+     {
+      "q": "l’amiga",
+      "a": "les amigues"
+     },
+     {
+      "q": "el braç",
+      "a": "els braços"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 8,
+  "title": "Прикметник: рід, число та місце",
+  "section": "Іменник, артикль, прикметник",
+  "level": "A1",
+  "summary": "Прикметник узгоджується з іменником і зазвичай стоїть після нього.",
+  "explanation": "\n<p>Прикметник узгоджується з іменником у роді й числі та зазвичай стоїть\n<strong>після</strong> нього:</p>\n<ul>\n  <li>un cotxe <strong>nou</strong> — нова машина (чол.)</li>\n  <li>una casa <strong>nova</strong> — новий дім (жін.)</li>\n  <li>uns cotxes <strong>nous</strong>, unes cases <strong>noves</strong></li>\n</ul>\n<p>Багато прикметників мають жіночий рід на -a: <em>petit → petita</em>,\n<em>bo → bona</em>, <em>car → cara</em>. Інші однакові для обох родів:\n<em>gran, fàcil, difícil, feliç, intel·ligent</em>.</p>\n<p>Кілька прикметників перед іменником змінюють відтінок значення:\n<em>un gran home</em> (велика людина) і <em>un home gran</em> (стара людина).</p>\n",
+  "examples": [
+   {
+    "ca": "És una ciutat molt bonica.",
+    "uk": "Це дуже гарне місто."
+   },
+   {
+    "ca": "Tinc uns amics catalans.",
+    "uk": "У мене є друзі-каталонці."
+   },
+   {
+    "ca": "La lliçó és fàcil.",
+    "uk": "Урок легкий."
+   },
+   {
+    "ca": "Són unes noies simpàtiques.",
+    "uk": "Це приємні дівчата."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Узгодьте прикметник з іменником.",
+    "items": [
+     {
+      "q": "una casa (petit) ___",
+      "a": "petita"
+     },
+     {
+      "q": "uns llibres (nou) ___",
+      "a": "nous"
+     },
+     {
+      "q": "unes taules (gran) ___",
+      "a": "grans"
+     },
+     {
+      "q": "un cafè (calent) ___",
+      "a": "calent"
+     },
+     {
+      "q": "una sopa (bo) ___",
+      "a": "bona"
+     },
+     {
+      "q": "les lliçons (difícil) ___",
+      "a": "difícils"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 9,
+  "title": "Присвійні: el meu, la meva…",
+  "section": "Займенники та означники",
+  "level": "A1",
+  "summary": "Присвійні означники вживаються з артиклем.",
+  "explanation": "\n<p>У каталонській присвійний означник майже завжди йде <strong>з артиклем</strong>:</p>\n<ul>\n  <li>мій: <strong>el meu</strong> / <strong>la meva</strong> / els meus / les meves</li>\n  <li>твій: <strong>el teu</strong> / <strong>la teva</strong> / els teus / les teves</li>\n  <li>його, її: <strong>el seu</strong> / <strong>la seva</strong> / els seus / les seves</li>\n  <li>наш: <strong>el nostre</strong> / <strong>la nostra</strong> / els nostres / les nostres</li>\n  <li>ваш: <strong>el vostre</strong> / <strong>la vostra</strong> / els vostres / les vostres</li>\n  <li>їхній: <strong>el seu</strong> / <strong>la seva</strong> / els seus / les seves</li>\n</ul>\n<p>Форма узгоджується з <em>річчю</em>, а не з власником:\n<em>la meva germana</em> (моя сестра) — хоч говорить і чоловік.</p>\n<p>Після дієслова ser артикль часто випадає:\n<em>Aquest llibre és <strong>meu</strong>.</em> — Ця книжка моя.</p>\n",
+  "examples": [
+   {
+    "ca": "El meu pare treballa a Lleida.",
+    "uk": "Мій батько працює в Леїді."
+   },
+   {
+    "ca": "La seva filla té cinc anys.",
+    "uk": "Їхній дочці п’ять років."
+   },
+   {
+    "ca": "Els nostres amics arriben demà.",
+    "uk": "Наші друзі приїжджають завтра."
+   },
+   {
+    "ca": "Aquesta clau és teva?",
+    "uk": "Цей ключ твій?"
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Поставте присвійний означник із артиклем.",
+    "items": [
+     {
+      "q": "(мій) ___ germà viu a Vic.",
+      "a": "El meu"
+     },
+     {
+      "q": "(моя) ___ germana estudia.",
+      "a": "La meva"
+     },
+     {
+      "q": "(наші) ___ llibres són aquí.",
+      "a": "Els nostres"
+     },
+     {
+      "q": "(їхня) ___ casa és gran.",
+      "a": "La seva"
+     },
+     {
+      "q": "(твої) ___ claus són damunt la taula.",
+      "a": "Les teves"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 10,
+  "title": "Вказівні: aquest та aquell",
+  "section": "Займенники та означники",
+  "level": "A1",
+  "summary": "«Цей» і «той», а також нейтральні això та allò.",
+  "explanation": "\n<p>Каталонська розрізняє близьке й далеке:</p>\n<ul>\n  <li><strong>aquest</strong> / aquesta / aquests / aquestes — цей (біля мене);</li>\n  <li><strong>aquell</strong> / aquella / aquells / aquelles — той (далеко).</li>\n</ul>\n<p>Коли предмет не названий, уживають нейтральні форми:\n<strong>això</strong> (це) і <strong>allò</strong> (те):</p>\n<ul>\n  <li>Què és <strong>això</strong>? — Що це?</li>\n  <li><strong>Allò</strong> no m’agrada. — Те мені не подобається.</li>\n</ul>\n<p>У балеарській і частині валенсійської є ще <em>aquest — aqueix — aquell</em>\n(три ступені), але стандартна каталонська в Каталонії користується двома.</p>\n",
+  "examples": [
+   {
+    "ca": "Aquest llibre és molt bo.",
+    "uk": "Ця книжка дуже добра."
+   },
+   {
+    "ca": "Aquella casa és la meva.",
+    "uk": "Той дім — мій."
+   },
+   {
+    "ca": "Què vol dir això?",
+    "uk": "Що це означає?"
+   },
+   {
+    "ca": "Aquestes taronges són dolces.",
+    "uk": "Ці апельсини солодкі."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Поставте потрібну форму aquest або aquell.",
+    "items": [
+     {
+      "q": "___ cotxe (тут) és nou.",
+      "a": "Aquest"
+     },
+     {
+      "q": "___ muntanyes (далеко) són molt altes.",
+      "a": "Aquelles"
+     },
+     {
+      "q": "___ noia (тут) parla català.",
+      "a": "Aquesta"
+     },
+     {
+      "q": "___ dies (далеко, у минулому) van ser difícils.",
+      "a": "Aquells"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 11,
+  "title": "Питальні слова",
+  "section": "Будова речення",
+  "level": "A1",
+  "summary": "què, qui, quin, on, quan, com, quant, per què.",
+  "explanation": "\n<p>Основні питальні слова:</p>\n<ul>\n  <li><strong>què</strong> — що: <em>Què fas?</em></li>\n  <li><strong>qui</strong> — хто: <em>Qui és?</em></li>\n  <li><strong>quin / quina / quins / quines</strong> — який (узгоджується):\n      <em>Quina hora és?</em></li>\n  <li><strong>on</strong> — де, куди: <em>On vas?</em></li>\n  <li><strong>quan</strong> — коли: <em>Quan arribes?</em></li>\n  <li><strong>com</strong> — як: <em>Com estàs?</em></li>\n  <li><strong>quant / quanta / quants / quantes</strong> — скільки:\n      <em>Quants anys tens?</em></li>\n  <li><strong>per què</strong> — чому (відповідь — <em>perquè</em>, разом):\n      <em>Per què no véns? — Perquè treballo.</em></li>\n</ul>\n<p>Порядок слів у питанні такий самий, як у розповідному реченні;\nдопоміжних дієслів, як в англійській, не додають.</p>\n",
+  "examples": [
+   {
+    "ca": "Com et dius? — Em dic Andriy.",
+    "uk": "Як тебе звати? — Мене звати Андрій."
+   },
+   {
+    "ca": "D’on ets?",
+    "uk": "Звідки ти?"
+   },
+   {
+    "ca": "Quants germans tens?",
+    "uk": "Скільки в тебе братів і сестер?"
+   },
+   {
+    "ca": "Per què estudies català?",
+    "uk": "Чому ти вчиш каталонську?"
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Поставте потрібне питальне слово.",
+    "items": [
+     {
+      "q": "___ és aquell home?",
+      "a": "Qui"
+     },
+     {
+      "q": "___ fas aquest cap de setmana?",
+      "a": "Què"
+     },
+     {
+      "q": "___ hora és?",
+      "a": "Quina"
+     },
+     {
+      "q": "___ anys tens?",
+      "a": "Quants"
+     },
+     {
+      "q": "___ vius?",
+      "a": "On"
+     },
+     {
+      "q": "___ no vols venir?",
+      "a": "Per què"
+     }
+    ]
+   },
+   {
+    "instruction": "Поставте per què або perquè.",
+    "items": [
+     {
+      "q": "___ no menges? — ___ no tinc gana.",
+      "a": "Per què / Perquè"
+     },
+     {
+      "q": "Estudio català ___ visc a Catalunya.",
+      "a": "perquè"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 12,
+  "title": "Заперечення: no, mai, res, ningú, cap",
+  "section": "Будова речення",
+  "level": "A1",
+  "summary": "Подвійне заперечення в каталонській — норма.",
+  "explanation": "\n<p><strong>no</strong> ставлять перед дієсловом: <em>No parlo rus.</em></p>\n<p>Заперечні слова <strong>mai</strong> (ніколи), <strong>res</strong> (ніщо),\n<strong>ningú</strong> (ніхто), <strong>cap</strong> (жоден),\n<strong>gens</strong> (нітрохи) вживаються <em>разом</em> із no — подвійне\nзаперечення тут правильне:</p>\n<ul>\n  <li><strong>No</strong> hi ha <strong>ningú</strong>. — Немає нікого.</li>\n  <li><strong>No</strong> menjo <strong>mai</strong> carn. — Я ніколи не їм м’яса.</li>\n  <li><strong>No</strong> tinc <strong>cap</strong> problema. — У мене жодних проблем.</li>\n</ul>\n<p>Якщо заперечне слово стоїть <em>перед</em> дієсловом, no зникає:\n<em><strong>Ningú</strong> ho sap.</em> — Ніхто цього не знає.</p>\n<p>У книжному стилі зустрічається підсилювальне <strong>pas</strong>:\n<em>No ho sé pas.</em></p>\n",
+  "examples": [
+   {
+    "ca": "No tinc gens de son.",
+    "uk": "Мені зовсім не хочеться спати."
+   },
+   {
+    "ca": "No he vist ningú.",
+    "uk": "Я нікого не бачив."
+   },
+   {
+    "ca": "Mai no diu la veritat.",
+    "uk": "Він ніколи не каже правди."
+   },
+   {
+    "ca": "No hi ha cap taula lliure.",
+    "uk": "Немає жодного вільного столика."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Зробіть речення заперечним.",
+    "items": [
+     {
+      "q": "Tinc temps.",
+      "a": "No tinc temps."
+     },
+     {
+      "q": "Hi ha algú a casa.",
+      "a": "No hi ha ningú a casa."
+     },
+     {
+      "q": "Menjo carn.",
+      "a": "No menjo carn."
+     },
+     {
+      "q": "Vull alguna cosa.",
+      "a": "No vull res."
+     },
+     {
+      "q": "Tinc algun germà.",
+      "a": "No tinc cap germà."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 13,
+  "title": "estar + gerundi: дія саме зараз",
+  "section": "Дієслово: основи",
+  "level": "A2",
+  "summary": "Як утворити й коли вживати тривалу форму.",
+  "explanation": "\n<p>Щоб підкреслити, що дія триває <em>саме в цей момент</em>, уживають\n<strong>estar + gerundi</strong>:</p>\n<ul>\n  <li><strong>Estic parlant</strong> amb la meva mare. — Я (саме) розмовляю з мамою.</li>\n</ul>\n<p>Герундій утворюється так:</p>\n<ul>\n  <li>-ar → <strong>-ant</strong>: parlar → parl<strong>ant</strong></li>\n  <li>-er/-re → <strong>-ent</strong>: perdre → perd<strong>ent</strong></li>\n  <li>-ir → <strong>-int</strong>: dormir → dorm<strong>int</strong></li>\n</ul>\n<p>Кілька герундіїв нерегулярні: <em>fer → fent</em>, <em>dir → dient</em>,\n<em>veure → veient</em>, <em>escriure → escrivint</em>, <em>viure → vivint</em>,\n<em>beure → bevent</em>.</p>\n<p>Увага: каталонська вживає цю форму <em>рідше</em>, ніж англійська. Для\nзвичних дій досить простого теперішнього: <em>Treballo en una oficina</em>\n(не «estic treballant»), а для майбутнього вона не вживається взагалі.</p>\n",
+  "examples": [
+   {
+    "ca": "Què estàs fent? — Estic llegint.",
+    "uk": "Що ти робиш? — Читаю."
+   },
+   {
+    "ca": "Els nens estan dormint.",
+    "uk": "Діти спять."
+   },
+   {
+    "ca": "Estem esperant l’autobús.",
+    "uk": "Ми чекаємо автобус."
+   },
+   {
+    "ca": "Estic escrivint un correu.",
+    "uk": "Я пишу листа."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Поставте estar + gerundi.",
+    "items": [
+     {
+      "q": "Jo (parlar) ___ per telèfon.",
+      "a": "estic parlant"
+     },
+     {
+      "q": "Ella (escriure) ___ una carta.",
+      "a": "està escrivint"
+     },
+     {
+      "q": "Nosaltres (menjar) ___.",
+      "a": "estem menjant"
+     },
+     {
+      "q": "Ells (dormir) ___.",
+      "a": "estan dormint"
+     },
+     {
+      "q": "Tu (fer) ___ els deures?",
+      "a": "estàs fent"
+     }
+    ]
+   },
+   {
+    "instruction": "Простий теперішній чи estar + gerundi?",
+    "items": [
+     {
+      "q": "Cada dia ___ (treballar) de nou a cinc.",
+      "a": "treballo — звична дія"
+     },
+     {
+      "q": "Ara no puc parlar, ___ (conduir).",
+      "a": "estic conduint — дія зараз"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 14,
+  "title": "vaig menjar чи vaig a menjar?",
+  "section": "Дієслово: основи",
+  "level": "A2",
+  "summary": "Складне минуле з anar — і чому прийменник a все змінює.",
+  "explanation": "\n<p>Найуживаніший минулий час каталонської утворюється з теперішніх форм\n<em>anar</em> + інфінітив. Це <strong>passat perifràstic</strong>:</p>\n<ul>\n  <li><strong>vaig</strong> menjar — я поїв</li>\n  <li><strong>vas</strong> menjar, <strong>va</strong> menjar,\n      <strong>vam</strong> menjar, <strong>vau</strong> menjar,\n      <strong>van</strong> menjar</li>\n</ul>\n<p>Хоч дієслово <em>anar</em> означає «іти», значення тут суто минуле:\n<em>Ahir vam anar al cinema</em> — Учора ми ходили в кіно.</p>\n<p>А от якщо додати прийменник <strong>a</strong>, з’являється значення\n<em>наміру</em> (найближче майбутнє):</p>\n<ul>\n  <li><strong>Vaig a menjar.</strong> — Я зараз піду поїм.</li>\n  <li><strong>Vaig menjar.</strong> — Я поїв.</li>\n</ul>\n<p>Є ще книжний простий минулий (<em>perfet simple</em>): <em>menjà, parlà</em>.\nУ мовленні його майже не чути — він живий переважно у літературі\nй на Балеарах.</p>\n",
+  "examples": [
+   {
+    "ca": "Ahir vaig treballar fins tard.",
+    "uk": "Учора я працював до пізна."
+   },
+   {
+    "ca": "Vam arribar a les deu.",
+    "uk": "Ми приїхали о десятій."
+   },
+   {
+    "ca": "Què vas fer el cap de setmana?",
+    "uk": "Що ти робив на вихідних?"
+   },
+   {
+    "ca": "Ara vaig a dormir.",
+    "uk": "Зараз я йду спати."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Поставте дієслово в passat perifràstic.",
+    "items": [
+     {
+      "q": "Ahir jo (parlar) ___ amb el metge.",
+      "a": "vaig parlar"
+     },
+     {
+      "q": "Ells (venir) ___ a casa.",
+      "a": "van venir"
+     },
+     {
+      "q": "Nosaltres (veure) ___ una pel·lícula.",
+      "a": "vam veure"
+     },
+     {
+      "q": "Tu (escriure) ___ el correu?",
+      "a": "vas escriure"
+     },
+     {
+      "q": "Vosaltres (menjar) ___ al restaurant.",
+      "a": "vau menjar"
+     }
+    ]
+   },
+   {
+    "instruction": "Минуле чи намір? Перекладіть українською.",
+    "items": [
+     {
+      "q": "Vaig comprar pa.",
+      "a": "Я купив хліба. (минуле)"
+     },
+     {
+      "q": "Vaig a comprar pa.",
+      "a": "Я йду купити хліба. (намір)"
+     },
+     {
+      "q": "Van estudiar molt.",
+      "a": "Вони багато вчилися. (минуле)"
+     }
+    ]
+   }
+  ]
+ }
+]

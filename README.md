@@ -14,6 +14,8 @@ A Flask-based blog platform for learning and teaching the Catalan language.
   (see [Conjugator](#conjugator))
 - **Catalan–Ukrainian dictionary** with search, filters, CSV import/export and
   a personal word list for every user (see [Dictionary](#dictionary))
+- **Grammar course** of numbered units, each with an explanation, examples and
+  exercises with answers (see [Grammar course](#grammar-course))
 - Database-driven content management
 - Chronological and category-based post navigation
 - User-friendly web interface
@@ -84,6 +86,11 @@ learn-catalan/
 │   │   ├── reference_ca.py# Reference forms used as the test oracle
 │   │   ├── audit.py       # Compares what we serve against the reference
 │   │   └── data/ca-corrections.xml
+│   ├── grammar/           # Grammar course (see below)
+│   │   ├── routes.py      # Unit index and unit pages
+│   │   ├── service.py     # Loading and seeding units
+│   │   ├── cli.py         # flask grammar ...
+│   │   └── data/*.json    # The units themselves
 │   ├── vocabulary/        # Dictionary (see below)
 │   │   ├── routes.py      # Dictionary and personal word list
 │   │   ├── service.py     # Search, CSV import/export
@@ -167,8 +174,29 @@ level, example_ca, example_uk, notes`. Only `term` and `translation` are
 required. Importing is idempotent: a term already in the dictionary is skipped
 unless `--update` is given.
 
-The starter file `flaskblog/vocabulary/data/seed_words.csv` holds 275 words
-across 18 topics, mostly A1–A2.
+The starter file `flaskblog/vocabulary/data/seed_words.csv` holds 569 words
+across 18 topics, mostly A1–B1, including 340 verbs. The conjugator looks a
+verb up here to show its translation, so dictionary entries double as the
+conjugator's glossary.
+
+## Grammar course
+
+`/grammar` is a grammar course laid out like Raymond Murphy's grammar books:
+each numbered unit holds a short explanation with examples and exercises whose
+answers can be revealed. The course is written in Ukrainian about Catalan
+grammar; only the format is borrowed.
+
+Units live in `flaskblog/grammar/data/*.json` — one file per batch, each unit
+holding `number`, `title`, `section`, `level`, `summary`, `explanation` (HTML),
+`examples` and `exercises`. Loading is idempotent, so editing a file and
+re-running the seed updates the units in place:
+
+```bash
+flask grammar seed     # load or refresh the units
+flask grammar stats    # units, exercises and sections
+```
+
+The editor can also change a unit in the admin panel.
 
 ## Testing
 
@@ -179,7 +207,8 @@ python -m unittest discover -s flaskblog/tests -t .
 The suite uses an in-memory SQLite database through `TestConfig`, so it never
 touches the real one. It covers the conjugator (reference forms, validation,
 corrections, routes), the dictionary (models, import/export, search, pages,
-permissions) and the existing models, forms and routes.
+permissions), the grammar course (data consistency, seeding, pages) and the
+existing models, forms and routes.
 
 ## Usage
 

@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="grammar">
+  <h1>Граматика</h1>
+  <p class="text-muted">
+    Курс каталонської граматики: {{ total }} юнітів. Кожен юніт — коротке
+    пояснення з прикладами і вправи з відповідями.
+  </p>
+
+  {% if sections %}
+    {% for section, units in sections.items() %}
+      <div class="grammar-section">
+        <h3>{{ section }}</h3>
+        <div class="list-group">
+          {% for unit in units %}
+            <a class="list-group-item list-group-item-action"
+               href="{{ url_for('grammar.unit', slug=unit.slug) }}">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <span class="unit-number">{{ unit.number }}</span>
+                  <strong>{{ unit.title }}</strong>
+                  {% if unit.summary %}
+                    <div class="small text-muted">{{ unit.summary }}</div>
+                  {% endif %}
+                </div>
+                {% if unit.level %}
+                  <span class="badge bg-light text-muted">{{ unit.level }}</span>
+                {% endif %}
+              </div>
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <div class="alert alert-light border">
+      Курс ще не завантажено.
+      {% if is_admin() %}
+        Виконайте <code>flask grammar seed</code>.
+      {% endif %}
+    </div>
+  {% endif %}
+</div>
+{% endblock content %}

@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="grammar-unit">
+  <p class="small"><a href="{{ url_for('grammar.index') }}">← До списку юнітів</a></p>
+
+  <div class="d-flex flex-wrap align-items-baseline gap-2">
+    <span class="unit-number-big">{{ unit.number }}</span>
+    <h1 class="mb-0">{{ unit.title }}</h1>
+    {% if unit.level %}<span class="badge bg-light text-muted">{{ unit.level }}</span>{% endif %}
+  </div>
+  <p class="text-muted small">{{ unit.section }}{% if unit.summary %} · {{ unit.summary }}{% endif %}</p>
+
+  <div class="content-section explanation">
+    {{ unit.explanation | safe }}
+  </div>
+
+  {% set examples = unit.get_examples() %}
+  {% if examples %}
+    <h4 class="grammar-heading">Приклади</h4>
+    <table class="table table-sm examples-table">
+      <tbody>
+        {% for example in examples %}
+          <tr>
+            <td class="ca-cell">{{ example.ca }}</td>
+            <td class="text-muted">{{ example.uk }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% endif %}
+
+  {% set exercises = unit.get_exercises() %}
+  {% if exercises %}
+    <h4 class="grammar-heading">Вправи</h4>
+    {% for block in exercises %}
+      <div class="exercise-block">
+        <p class="exercise-instruction">{{ loop.index }}. {{ block.instruction }}</p>
+        <ol class="exercise-items">
+          {% for item in block['items'] %}
+            <li>
+              <span class="exercise-question">{{ item.q }}</span>
+              <span class="exercise-answer{% if not show_answers %} d-none{% endif %}">
+                → {{ item.a }}
+              </span>
+            </li>
+          {% endfor %}
+        </ol>
+      </div>
+    {% endfor %}
+
+    <p>
+      <button class="btn btn-sm btn-outline-info" type="button" id="toggle-answers"
+              data-shown="{{ 'yes' if show_answers else 'no' }}">
+        {% if show_answers %}Приховати відповіді{% else %}Показати відповіді{% endif %}
+      </button>
+      <noscript>
+        <a class="btn btn-sm btn-outline-info"
+           href="{{ url_for(request.endpoint, **dict(request.view_args, answers='1')) }}">
+          Показати відповіді
+        </a>
+      </noscript>
+    </p>
+  {% endif %}
+
+  <nav class="d-flex justify-content-between mt-4">
+    {% if previous %}
+      <a class="btn btn-outline-link" href="{{ url_for('grammar.unit', slug=previous.slug) }}">
+        ← {{ previous.number }}. {{ previous.title }}
+      </a>
+    {% else %}<span></span>{% endif %}
+    {% if following %}
+      <a class="btn btn-outline-link text-end" href="{{ url_for('grammar.unit', slug=following.slug) }}">
+        {{ following.number }}. {{ following.title }} →
+      </a>
+    {% endif %}
+  </nav>
+</div>
+
+<script>
+  // Answers are in the page but hidden, the way a book keeps its answer key
+  // at the back.
+  (function () {
+    var button = document.getElementById('toggle-answers');
+    if (!button) { return; }
+    button.addEventListener('click', function () {
+      var shown = button.getAttribute('data-shown') === 'yes';
+      document.querySelectorAll('.exercise-answer').forEach(function (answer) {
+        answer.classList.toggle('d-none', shown);
+      });
+      button.setAttribute('data-shown', shown ? 'no' : 'yes');
+      button.textContent = shown ? 'Показати відповіді' : 'Приховати відповіді';
+    });
+  })();
+</script>
+{% endblock content %}
