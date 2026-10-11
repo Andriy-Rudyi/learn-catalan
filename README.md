@@ -18,7 +18,8 @@ A Flask-based blog platform for learning and teaching the Catalan language.
   exercises with answers (see [Grammar course](#grammar-course))
 - Database-driven content management
 - Chronological and category-based post navigation
-- User-friendly web interface
+- Responsive interface that works on phones, with a light/dark theme switch
+  (follows the system setting until the user picks one)
 - Production-ready deployment configuration
 - Database migrations for schema management
 
@@ -252,7 +253,9 @@ SHOW_FAQ=False               # set to True to bring back the FAQ page
 TEST_DATABASE_URI=           # optional, tests default to in-memory SQLite
 ```
 
-The application reads the database URL from `DATABASE_PUBLIC_URL`
+The application reads the database URL from `DATABASE_PUBLIC_URL`, falling
+back to `DATABASE_URL` (the name Render, Heroku and Fly use). An old-style
+`postgres://` URL is converted to `postgresql://` automatically
 (see `flaskblog/config.py`).
 
 ## Database
@@ -267,24 +270,53 @@ flask db upgrade
 
 ## Deployment
 
-### Heroku
+The app needs Python 3.11 (pinned in `.python-version`), a PostgreSQL
+database and these environment variables: `SECRET_KEY`,
+`DATABASE_PUBLIC_URL` or `DATABASE_URL`, `DEBUG_MODE=False`, and optionally
+`EMAIL_USER` / `EMAIL_PASS` for password reset mails.
+
+After every deploy run the migrations and the idempotent seeds:
+
+```bash
+flask db upgrade
+flask vocabulary seed --update
+flask grammar seed
+```
+
+The `Procfile` starts the site with `gunicorn run:app` and declares the same
+steps as a `release` command (Heroku runs it automatically).
+
+### Railway (recommended)
+
+1. New Project → Deploy from GitHub repo → choose this repository, branch `dev`.
+2. Add a PostgreSQL service; Railway exposes `DATABASE_PUBLIC_URL`
+   (reference it from the web service's variables).
+3. Set `SECRET_KEY`, `FLASK_APP=run.py`, `DEBUG_MODE=False`.
+4. Settings → Deploy → *Pre-deploy command*:
+   `flask db upgrade && flask vocabulary seed --update && flask grammar seed`.
+5. Settings → Networking → *Generate domain* (or attach your own domain).
+
+### Render
+
+1. New → PostgreSQL (copy the *Internal Database URL*).
+2. New → Web Service from the repository; build command
+   `pip install -r requirements.txt`, start command `gunicorn run:app`.
+3. Environment: `DATABASE_URL`, `SECRET_KEY`, `FLASK_APP=run.py`,
+   `DEBUG_MODE=False`, `PYTHON_VERSION=3.11.9`.
+4. Pre-deploy command (paid plans) or a one-off shell:
+   `flask db upgrade && flask vocabulary seed --update && flask grammar seed`.
+
+### Heroku / Fly.io
 
 ```bash
 heroku create your-app-name
-git push heroku dev:main
-heroku run flask db upgrade
+heroku addons:create heroku-postgresql
+heroku config:set SECRET_KEY=... FLASK_APP=run.py DEBUG_MODE=False
+git push heroku dev:main          # the release step runs migrations and seeds
 ```
 
-### Docker
-
-Create a `Dockerfile` for containerized deployment. Ensure the Flask app is properly configured for the container environment.
-
-### Other Platforms
-
-1. Ensure Python and pip are installed
-2. Install dependencies: `pip install -r requirements.txt`
-3. Run migrations: `flask db upgrade`
-4. Start with Gunicorn or similar WSGI server
+Fly.io works the same way with `fly launch` (it detects the Procfile) and
+`fly postgres create`.
 
 ## Development Workflow
 
