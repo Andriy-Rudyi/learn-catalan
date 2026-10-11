@@ -198,5 +198,81 @@ class ConjugatorRouteTests(AppTestCase):
         self.assertEqual([], self.client.get('/api/verbs').json['verbs'])
 
 
+class ConjugatorTranslationTests(AppTestCase):
+    """The conjugator shows the dictionary translation of the verb."""
+
+    def _add_word(self, term='mirar', translation='дивитися', **kwargs):
+        from flaskblog import db
+        from flaskblog.models import Word
+        from flaskblog.vocabulary import service
+
+        word = Word(term=term, translation=translation, part_of_speech='verb',
+                    **kwargs)
+        word.slug = service.unique_slug(term)
+        db.session.add(word)
+        db.session.commit()
+        return word
+
+    def test_translation_is_shown(self):
+        self._add_word(level='A1', topic='basics', example_ca='Miro la tele.',
+                       example_uk='Я дивлюся телевізор.')
+        body = self.client.get('/conjugator?verb=mirar').data.decode()
+        self.assertIn('дивитися', body)
+        self.assertIn('Miro la tele.', body)
+        self.assertIn('/dictionary/mirar', body)
+
+    def test_translation_is_found_regardless_of_case(self):
+        self._add_word(term='Mirar')
+        self.assertIn('дивитися', self.client.get('/conjugator?verb=MIRAR').data.decode())
+
+    def test_hint_when_the_word_is_not_in_the_dictionary(self):
+        body = self.client.get('/conjugator?verb=mirar').data.decode()
+        self.assertIn('ще немає у словнику', body)
+
+    def test_save_button_for_a_logged_in_user(self):
+        self._add_word()
+        self.login_as(self.create_user())
+        body = self.client.get('/conjugator?verb=mirar').data.decode()
+        self.assertIn('Додати до мого словника', body)
+
+    def test_saved_words_are_marked(self):
+        from flaskblog import db
+        from flaskblog.models import UserWord
+
+        word = self._add_word()
+        user = self.create_user()
+        db.session.add(UserWord(user_id=user.id, word_id=word.id))
+        db.session.commit()
+        self.login_as(user)
+        self.assertIn(
+            'у вашому словнику',
+            self.client.get('/conjugator?verb=mirar').data.decode(),
+        )
+
+    def test_pronominal_query_finds_the_base_verb_translation(self):
+        self._add_word(term='rentar', translation='мити, прати')
+        body = self.client.get('/conjugator?verb=rentar-se').data.decode()
+        self.assertIn('мити, прати', body)
+
+
+class SeedVerbTests(unittest.TestCase):
+    """Every verb in the bundled dictionary must be conjugable."""
+
+    def test_seed_verbs_conjugate(self):
+        import csv
+
+        from flaskblog.vocabulary.service import SEED_FILE
+
+        service = get_service()
+        with open(SEED_FILE, encoding='utf-8') as handle:
+            verbs = [
+                row['term'] for row in csv.DictReader(handle)
+                if row['part_of_speech'] == 'verb'
+            ]
+        self.assertGreater(len(verbs), 300)
+        unknown = [verb for verb in verbs if not service.is_known_verb(verb)]
+        self.assertEqual([], unknown)
+
+
 if __name__ == '__main__':
     unittest.main()

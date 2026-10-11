@@ -1,5 +1,7 @@
 from flask import Blueprint, jsonify, render_template, request
+from flask_login import current_user
 
+from flaskblog import db
 from flaskblog.conjugation import get_service
 from flaskblog.conjugation.labels import (
     error_message,
@@ -7,7 +9,9 @@ from flaskblog.conjugation.labels import (
     person_labels,
     tense_label,
 )
-from flaskblog.models import Announcement, Post, Update
+from flaskblog.models import Announcement, Post, Update, UserWord, Word
+from flaskblog.vocabulary.constants import part_of_speech_label
+from flaskblog.vocabulary.forms import ActionForm
 
 main = Blueprint('main', __name__)
 
@@ -49,6 +53,23 @@ def updates():
     return render_template('updates.html', updates=updates)
 
 
+def _dictionary_entry(infinitive):
+    """The dictionary entry for a verb, so its translation can be shown."""
+    if not infinitive:
+        return None
+    return Word.query.filter(db.func.lower(Word.term) == infinitive.lower()).first()
+
+
+def _is_saved(word):
+    """Whether the current user already has *word* in their own dictionary."""
+    if word is None or not current_user.is_authenticated:
+        return False
+    return (
+        UserWord.query.filter_by(user_id=current_user.id, word_id=word.id).first()
+        is not None
+    )
+
+
 @main.route('/conjugator', methods=['GET', 'POST'])
 def conjugator():
     """Conjugate a Catalan verb.
@@ -60,16 +81,22 @@ def conjugator():
     result = get_service().conjugate(query) if query else None
     message = error_message(result.error) if result and not result.ok else None
 
+    word = _dictionary_entry(result.infinitive) if result and result.ok else None
+
     return render_template(
         'conjugator.html',
         title='Дієвідміна',
         query=query,
         result=result,
         error_message=message,
+        word=word,
+        word_is_saved=_is_saved(word),
+        action_form=ActionForm(),
         suggested_verbs=SUGGESTED_VERBS,
         ordered_moods=ordered_moods,
         tense_label=tense_label,
         person_labels=person_labels,
+        part_of_speech_label=part_of_speech_label,
     )
 
 

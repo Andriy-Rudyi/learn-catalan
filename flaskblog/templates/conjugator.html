@@ -53,6 +53,43 @@
       {% endif %}
     </div>
 
+    {% if word %}
+      <div class="verb-translation">
+        <p class="h5 mb-1">{{ word.translation }}</p>
+        <p class="small text-muted mb-2">
+          {% if word.part_of_speech %}{{ part_of_speech_label(word.part_of_speech) }}{% endif %}
+          {%- if word.level %} · {{ word.level }}{% endif %}
+          {%- if word.topic %} · {{ topic_label(word.topic) }}{% endif %}
+        </p>
+        {% if word.example_ca %}
+          <p class="mb-1"><em>{{ word.example_ca }}</em></p>
+          {% if word.example_uk %}<p class="small text-muted mb-1">{{ word.example_uk }}</p>{% endif %}
+        {% endif %}
+        <div class="d-flex flex-wrap align-items-center gap-2 mt-2">
+          <a class="btn btn-sm btn-outline-secondary" href="{{ url_for('vocabulary.word', slug=word.slug) }}">
+            У словнику
+          </a>
+          {% if current_user.is_authenticated %}
+            {% if word_is_saved %}
+              <span class="badge bg-light text-muted">у вашому словнику</span>
+            {% else %}
+              <form method="POST" action="{{ url_for('vocabulary.save_word', slug=word.slug) }}">
+                {{ action_form.hidden_tag() }}
+                <button class="btn btn-sm btn-outline-info" type="submit">Додати до мого словника</button>
+              </form>
+            {% endif %}
+          {% endif %}
+        </div>
+      </div>
+    {% else %}
+      <p class="small text-muted">
+        Перекладу цього дієслова ще немає у словнику.
+        {% if is_admin() %}
+          <a href="{{ url_for('vocabulary.new_word') }}">Додати його</a>.
+        {% endif %}
+      </p>
+    {% endif %}
+
     <p class="small text-muted">
       Зразок дієвідміни: <code>{{ result.template }}</code>
       {%- if result.stem %}, основа: <code>{{ result.stem }}</code>{% endif %}

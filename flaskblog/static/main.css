@@ -295,3 +295,10 @@ a.article-title:hover {
   font-size: 0.85rem;
   color: #777;
 }
+
+/* Translation block on the conjugator page */
+.conjugator .verb-translation {
+  border-left: 3px solid #d7e6f0;
+  padding: 0.5rem 0 0.5rem 0.85rem;
+  margin: 0.5rem 0 1rem;
+}
