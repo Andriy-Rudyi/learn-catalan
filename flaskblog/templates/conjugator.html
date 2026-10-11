@@ -1,23 +1,23 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="conjugator">
-  <h1>Дієвідміна</h1>
+  <h1>{{ _('Дієвідміна') }}</h1>
   <p class="text-muted">
-    Введіть каталонське дієслово в інфінітиві — наприклад <em>parlar</em>, <em>ser</em> або <em>tenir</em>.
+    {{ _('Введіть каталонське дієслово в інфінітиві — наприклад <em>parlar</em>, <em>ser</em> або <em>tenir</em>.') | safe }}
   </p>
 
   <form method="POST" action="{{ url_for('main.conjugator') }}" autocomplete="off">
     <div class="input-group mb-2">
       <input class="form-control" type="text" id="verb" name="verb" list="verb-suggestions"
-             placeholder="Введіть дієслово" aria-label="Введіть дієслово"
+             placeholder="{{ _('Введіть дієслово') }}" aria-label="{{ _('Введіть дієслово') }}"
              value="{{ query }}" maxlength="40" required autofocus>
-      <button class="btn btn-outline-info" type="submit">Відміняти</button>
+      <button class="btn btn-outline-info" type="submit">{{ _('Відміняти') }}</button>
     </div>
     <datalist id="verb-suggestions"></datalist>
   </form>
 
   <p class="small text-muted mb-4">
-    Приклади:
+    {{ _('Приклади:') }}
     {% for verb in suggested_verbs %}
       <a class="verb-example" href="{{ url_for('main.conjugator', verb=verb) }}">{{ verb }}</a>{% if not loop.last %}, {% endif %}
     {% endfor %}
@@ -29,7 +29,7 @@
       {% if result.suggestions %}
         <hr>
         <p class="mb-0">
-          Можливо, ви мали на увазі:
+          {{ _('Можливо, ви мали на увазі:') }}
           {% for verb in result.suggestions %}
             <a class="verb-example" href="{{ url_for('main.conjugator', verb=verb) }}">{{ verb }}</a>{% if not loop.last %}, {% endif %}
           {% endfor %}
@@ -43,21 +43,21 @@
     <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
       <h2 class="mb-0">{{ result.display_infinitive }}</h2>
       <button class="btn-speak" type="button" data-say="{{ result.display_infinitive }}"
-              aria-label="Прослухати: {{ result.display_infinitive }}" title="Прослухати">🔊</button>
+              aria-label="{{ _('Прослухати') }}: {{ result.display_infinitive }}" title="{{ _('Прослухати') }}">🔊</button>
       {% if result.verified %}
-        <span class="badge bg-success" title="Форми цього дієслова звірені з довідниками та перевіряються тестами">
-          перевірено
+        <span class="badge bg-success" title="{{ _('Форми цього дієслова звірені з довідниками та перевіряються тестами') }}">
+          {{ _('перевірено') }}
         </span>
       {% else %}
-        <span class="badge bg-secondary" title="Форми взято зі словника дієслів verbecc і не звірені вручну">
-          зі словника verbecc
+        <span class="badge bg-secondary" title="{{ _('Форми взято зі словника дієслів verbecc і не звірені вручну') }}">
+          {{ _('зі словника verbecc') }}
         </span>
       {% endif %}
     </div>
 
     {% if word %}
       <div class="verb-translation">
-        <p class="h5 mb-1">{{ word.translation }}</p>
+        <p class="h5 mb-1">{{ word.t_translation() }}</p>
         <p class="small text-muted mb-2">
           {% if word.part_of_speech %}{{ part_of_speech_label(word.part_of_speech) }}{% endif %}
           {%- if word.level %} · {{ word.level }}{% endif %}
@@ -65,19 +65,19 @@
         </p>
         {% if word.example_ca %}
           <p class="mb-1"><em>{{ word.example_ca }}</em></p>
-          {% if word.example_uk %}<p class="small text-muted mb-1">{{ word.example_uk }}</p>{% endif %}
+          {% if word.t_example() %}<p class="small text-muted mb-1">{{ word.t_example() }}</p>{% endif %}
         {% endif %}
         <div class="d-flex flex-wrap align-items-center gap-2 mt-2">
           <a class="btn btn-sm btn-outline-secondary" href="{{ url_for('vocabulary.word', slug=word.slug) }}">
-            У словнику
+            {{ _('У словнику') }}
           </a>
           {% if current_user.is_authenticated %}
             {% if word_is_saved %}
-              <span class="badge bg-body-secondary text-body-secondary">у вашому словнику</span>
+              <span class="badge bg-body-secondary text-body-secondary">{{ _('у вашому словнику') }}</span>
             {% else %}
               <form method="POST" action="{{ url_for('vocabulary.save_word', slug=word.slug) }}">
                 {{ action_form.hidden_tag() }}
-                <button class="btn btn-sm btn-outline-info" type="submit">Додати до мого словника</button>
+                <button class="btn btn-sm btn-outline-info" type="submit">{{ _('Додати до мого словника') }}</button>
               </form>
             {% endif %}
           {% endif %}
@@ -85,24 +85,22 @@
       </div>
     {% else %}
       <p class="small text-muted">
-        Перекладу цього дієслова ще немає у словнику.
+        {{ _('Перекладу цього дієслова ще немає у словнику.') }}
         {% if is_admin() %}
-          <a href="{{ url_for('vocabulary.new_word') }}">Додати його</a>.
+          <a href="{{ url_for('vocabulary.new_word') }}">{{ _('Додати його') }}</a>.
         {% endif %}
       </p>
     {% endif %}
 
     <p class="small text-muted">
-      Зразок дієвідміни: <code>{{ result.template }}</code>
-      {%- if result.stem %}, основа: <code>{{ result.stem }}</code>{% endif %}
-      {%- if result.source == 'corrected' %} · дані виправлені вручну{% endif %}
+      {{ _('Зразок дієвідміни:') }} <code>{{ result.template }}</code>
+      {%- if result.stem %}, {{ _('основа:') }} <code>{{ result.stem }}</code>{% endif %}
+      {%- if result.source == 'corrected' %} · {{ _('дані виправлені вручну') }}{% endif %}
     </p>
 
     {% if result.is_pronominal %}
       <div class="alert alert-info py-2">
-        Нижче — дієвідміна дієслова <strong>{{ result.infinitive }}</strong>.
-        Займенник <code>{{ result.pronominal_suffix }}</code> додається до форми окремо:
-        <em>jo em rento</em>, <em>ell es renta</em>.
+        {{ _('Нижче — дієвідміна дієслова <strong>{infinitive}</strong>. Займенник <code>{suffix}</code> додається до форми окремо: <em>jo em rento</em>, <em>ell es renta</em>.', infinitive=result.infinitive|e, suffix=result.pronominal_suffix|e) | safe }}
       </div>
     {% endif %}
 
@@ -141,8 +139,7 @@
     {% endfor %}
 
     <p class="small text-muted">
-      Складені часи (<em>he parlat</em>, <em>vaig parlar</em>) утворені з дієприкметника
-      та допоміжного дієслова.
+      {{ _('Складені часи (<em>he parlat</em>, <em>vaig parlar</em>) утворені з дієприкметника та допоміжного дієслова.') | safe }}
     </p>
   {% endif %}
 </div>

@@ -2,7 +2,7 @@
 {% block content %}
     <div class="content-section container">
             <div class="media row row-cols-2">
-            <img class="rounded-circle account-img col p-0 m-2" src="{{ image_file }}">
+            <img class="rounded-circle account-img col p-0 m-2" src="{{ image_file }}" alt="">
             <div class="media-body col m-2">
                 <h2 class="account-heading">{{ current_user.username }}</h2>
                 <p class="text-secondary">{{ current_user.email }}</p>
@@ -11,7 +11,7 @@
             <form action="" method="POST" novalidate enctype="multipart/form-data">
                 {{ form.hidden_tag() }}
                 <fieldset class="form-group row mb-3">
-                    <legend class="border-bottom mb-4">Інформація про обліковий запис</legend>
+                    <legend class="border-bottom mb-4">{{ _('Інформація про обліковий запис') }}</legend>
                     <div class="form-group">
                         {{ form.username.label(class="form-control-label") }}
     

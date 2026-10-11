@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="{{ current_lang }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,8 +39,12 @@
           <div class="container">
             <a class="navbar-brand fw-semibold" href="{{ url_for('main.home') }}">Learn Catalan</a>
             <div class="d-flex align-items-center order-lg-last">
+              <a class="btn lang-toggle me-2" href="{{ url_with_lang(other_lang) }}"
+                 hreflang="{{ other_lang }}" lang="{{ other_lang }}"
+                 title="{{ language_names[other_lang] }}"
+                 aria-label="{{ language_names[other_lang] }}">{{ language_short[other_lang] }}</a>
               <button class="btn theme-toggle" type="button" id="themeToggle"
-                      aria-label="Перемкнути тему" title="Перемкнути світлу / темну тему">
+                      aria-label="{{ _('Перемкнути тему') }}" title="{{ _('Перемкнути світлу / темну тему') }}">
                 <svg class="icon-moon" width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
                   <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"/>
                 </svg>
@@ -48,7 +52,7 @@
                   <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>
                 </svg>
               </button>
-              <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Меню">
+              <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="{{ _('Меню') }}">
                 <span class="navbar-toggler-icon"></span>
               </button>
             </div>
@@ -56,13 +60,13 @@
               <div class="navbar-nav me-auto">
                 <a class="nav-item nav-link{% if section == 'grammar' %} active{% endif %}"
                    {% if section == 'grammar' %}aria-current="page"{% endif %}
-                   href="{{ url_for('grammar.index') }}">Граматика</a>
+                   href="{{ url_for('grammar.index') }}">{{ _('Граматика') }}</a>
                 <a class="nav-item nav-link{% if section == 'vocabulary' and endpoint != 'vocabulary.my_dictionary' %} active{% endif %}"
-                   href="{{ url_for('vocabulary.dictionary') }}">Словник</a>
+                   href="{{ url_for('vocabulary.dictionary') }}">{{ _('Словник') }}</a>
                 <a class="nav-item nav-link{% if endpoint == 'main.conjugator' %} active{% endif %}"
-                   href="{{ url_for('main.conjugator') }}">Дієвідміна</a>
+                   href="{{ url_for('main.conjugator') }}">{{ _('Дієвідміна') }}</a>
                 <a class="nav-item nav-link{% if section == 'phonetics' %} active{% endif %}"
-                   href="{{ url_for('phonetics.index') }}">Фонетика</a>
+                   href="{{ url_for('phonetics.index') }}">{{ _('Фонетика') }}</a>
                 {% if config.SHOW_FAQ %}
                 <a class="nav-item nav-link{% if endpoint == 'main.faq' %} active{% endif %}"
                    href="{{ url_for('main.faq') }}">FAQ</a>
@@ -72,18 +76,18 @@
               <div class="navbar-nav">
                 {% if current_user.is_authenticated %}
                   {% if is_admin() %}
-                  <a class="nav-item nav-link" href="{{ url_for('posts.new_post') }}">Новий урок</a>
+                  <a class="nav-item nav-link" href="{{ url_for('posts.new_post') }}">{{ _('Новий урок') }}</a>
                   {% endif %}
                   <a class="nav-item nav-link{% if endpoint == 'vocabulary.my_dictionary' %} active{% endif %}"
-                     href="{{ url_for('vocabulary.my_dictionary') }}">Мій словник</a>
+                     href="{{ url_for('vocabulary.my_dictionary') }}">{{ _('Мій словник') }}</a>
                   <a class="nav-item nav-link{% if endpoint == 'users.account' %} active{% endif %}"
-                     href="{{ url_for('users.account') }}">Моя сторінка</a>
-                  <a class="nav-item nav-link" href="{{ url_for('users.logout') }}">Вийти</a>
+                     href="{{ url_for('users.account') }}">{{ _('Моя сторінка') }}</a>
+                  <a class="nav-item nav-link" href="{{ url_for('users.logout') }}">{{ _('Вийти') }}</a>
                 {% else %}
                   <a class="nav-item nav-link{% if endpoint == 'users.login' %} active{% endif %}"
-                     href="{{ url_for('users.login') }}">Увійти</a>
+                     href="{{ url_for('users.login') }}">{{ _('Увійти') }}</a>
                   <a class="nav-item nav-link{% if endpoint == 'users.register' %} active{% endif %}"
-                     href="{{ url_for('users.register') }}">Зареєструватися</a>
+                     href="{{ url_for('users.register') }}">{{ _('Зареєструватися') }}</a>
                 {% endif %}
               </div>
             </div>
@@ -98,7 +102,7 @@
                     {% for category, message in messages %}
                         <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
                             {{ message }}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Закрити"></button>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="{{ _('Закрити') }}"></button>
                         </div>
                     {% endfor %}
                 {% endif %}
@@ -138,6 +142,7 @@
           }
         })();
       </script>
+      <script>window.SPEAK_HINT = {{ speak_hint | tojson }};</script>
       <script src="{{ url_for('static', filename='speak.js') }}"></script>
       {% block scripts %}{% endblock %}
 </body>

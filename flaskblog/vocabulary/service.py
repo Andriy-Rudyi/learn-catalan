@@ -9,6 +9,7 @@ from sqlalchemy import or_
 
 from flaskblog import db
 from flaskblog.models import Word
+from flaskblog.i18n import gettext
 from flaskblog.vocabulary.constants import CSV_COLUMNS
 
 DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
@@ -59,6 +60,7 @@ def search(query_text=None, topic=None, level=None, part_of_speech=None):
             or_(
                 Word.term.ilike(pattern),
                 Word.translation.ilike(pattern),
+                Word.translation_en.ilike(pattern),
                 Word.example_ca.ilike(pattern),
             )
         )
@@ -99,7 +101,7 @@ def import_rows(rows, author=None, update_existing=False):
         translation = values.get('translation', '')
         if not term or not translation:
             report.errors.append(
-                'рядок {}: потрібні колонки term і translation'.format(number)
+                gettext('рядок {number}: потрібні колонки term і translation', number=number)
             )
             continue
 
@@ -126,6 +128,9 @@ def import_rows(rows, author=None, update_existing=False):
             example_ca=values.get('example_ca') or None,
             example_uk=values.get('example_uk') or None,
             notes=values.get('notes') or None,
+            translation_en=values.get('translation_en') or None,
+            example_en=values.get('example_en') or None,
+            notes_en=values.get('notes_en') or None,
             user_id=getattr(author, 'id', None),
         )
         db.session.add(word)

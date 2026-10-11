@@ -3,6 +3,7 @@
 from flask import Blueprint, abort, render_template, request
 
 from flaskblog.grammar import service
+from flaskblog.i18n import gettext as _
 from flaskblog.models import GrammarUnit
 
 grammar = Blueprint('grammar', __name__)
@@ -22,7 +23,7 @@ def index():
     units = GrammarUnit.query.order_by(GrammarUnit.number).all()
     return render_template(
         'grammar_index.html',
-        title='Граматика',
+        title=_('Граматика'),
         sort=sort,
         units=units,
         sections=service.sections() if sort == SORT_BY_TOPIC else None,
@@ -36,7 +37,7 @@ def unit(slug):
     previous, following = service.neighbours(unit)
     return render_template(
         'grammar_unit.html',
-        title='{}. {}'.format(unit.number, unit.title),
+        title='{}. {}'.format(unit.number, unit.l_title),
         unit=unit,
         previous=previous,
         following=following,
@@ -53,7 +54,7 @@ def unit_by_number(number):
     previous, following = service.neighbours(unit)
     return render_template(
         'grammar_unit.html',
-        title='{}. {}'.format(unit.number, unit.title),
+        title='{}. {}'.format(unit.number, unit.l_title),
         unit=unit,
         previous=previous,
         following=following,

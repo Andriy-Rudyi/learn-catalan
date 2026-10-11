@@ -153,7 +153,7 @@
   "section": "Займенники та означники",
   "level": "B1",
   "summary": "«Цього», «з цього», «про це» — кількість і частина.",
-  "explanation": "\n<p><strong>en</strong> замінює:</p>\n<ul>\n  <li>іменник без артикля або з числом / кількістю:\n      <em>Tens pa? — Sí, <strong>en</strong> tinc.</em>\n      <em>Quantes germanes tens? — <strong>En</strong> tinc dues.</em></li>\n  <li>доповнення з прийменником <em>de</em>:\n      <em>Parles <u>de la feina</u>? — Sí, <strong>en</strong> parlo.</em>\n      <em>Vens <u>de Girona</u>? — Sí, <strong>en</strong> vinc.</em></li>\n</ul>\n<p>Перед голосним — <strong>n’</strong>: <em><strong>N’</strong>he comprat tres.</em>\nПісля інфінітива — <strong>-ne</strong> (або <strong>’n</strong> після голосного):\n<em>Vull comprar<strong>-ne</strong>. Vull menjar<strong>-ne</strong>.</em></p>\n<p>Важливо: якщо в реченні є кількість, займенник en <em>обов’язковий</em> —\nне можна сказати просто «Tinc dues».</p>\n",
+  "explanation": "\n<p><strong>en</strong> замінює:</p>\n<ul>\n  <li>іменник без артикля або з числом / кількістю:\n      <em>Tens pa? — Sí, <strong>en</strong> tinc.</em>\n      <em>Quantes germanes tens? — <strong>En</strong> tinc dues.</em></li>\n  <li>доповнення з прийменником <em>de</em>:\n      <em>Parles <u>de la feina</u>? — Sí, <strong>en</strong> parlo.</em>\n      <em>Vens <u>de Girona</u>? — Sí, <strong>en</strong> vinc.</em></li>\n</ul>\n<p>Перед голосним — <strong>n’</strong>: <em><strong>N’</strong>he comprat tres.</em>\nПісля інфінітива чи наказового способу — <strong>-ne</strong> після приголосного\nі <strong>’n</strong> після голосного:\n<em>Vull comprar<strong>-ne</strong>. Vull menjar<strong>-ne</strong>.</em>\nАле: <em>Vull beure<strong>’n</strong>. Compra<strong>’n</strong> dos!</em></p>\n<p>Важливо: якщо в реченні є кількість, займенник en <em>обов’язковий</em> —\nне можна сказати просто «Tinc dues».</p>\n",
   "examples": [
    {
     "ca": "Vols cafè? — No, gràcies, ja n’he pres.",
@@ -291,7 +291,7 @@
     "uk": "Побачимося завтра."
    },
    {
-    "ca": "S’ha oblidat les claus.",
+    "ca": "S’ha descuidat les claus.",
     "uk": "Він забув ключі."
    }
   ],
@@ -755,7 +755,7 @@
   "section": "Прийменники",
   "level": "A2",
   "summary": "Де, куди, звідки.",
-  "explanation": "\n<p>У каталонській <strong>a</strong> вживається і для <em>місця</em>, і для\n<em>напрямку</em> з назвами міст, країн і відомих місць:</p>\n<ul>\n  <li>Visc <strong>a</strong> Barcelona. — Я живу в Барселоні.</li>\n  <li>Vaig <strong>a</strong> Barcelona. — Я їду до Барселони.</li>\n  <li>Sóc <strong>a</strong> casa / <strong>a</strong> la feina / <strong>a</strong> l’escola.</li>\n</ul>\n<p><strong>en</strong> ставлять перед неозначеним артиклем, вказівними і\nкількісними словами:</p>\n<ul>\n  <li>Viu <strong>en</strong> un poble petit. — Він живе в маленькому селі.</li>\n  <li><strong>En</strong> aquest carrer hi ha molts bars.</li>\n</ul>\n<p><strong>de</strong> позначає походження і рух «звідки»:</p>\n<ul>\n  <li>Sóc <strong>d’</strong>Ucraïna. Vinc <strong>de</strong> la feina.</li>\n</ul>\n<p>Пам’ятайте про зрощення: <em>a + el = al</em>, <em>de + el = del</em> (юніт 4).</p>\n",
+  "explanation": "\n<p>У каталонській <strong>a</strong> вживається і для <em>місця</em>, і для\n<em>напрямку</em> з назвами міст, країн і відомих місць:</p>\n<ul>\n  <li>Visc <strong>a</strong> Barcelona. — Я живу в Барселоні.</li>\n  <li>Vaig <strong>a</strong> Barcelona. — Я їду до Барселони.</li>\n  <li>Soc <strong>a</strong> casa / <strong>a</strong> la feina / <strong>a</strong> l’escola.</li>\n</ul>\n<p><strong>en</strong> ставлять перед неозначеним артиклем, вказівними і\nкількісними словами:</p>\n<ul>\n  <li>Viu <strong>en</strong> un poble petit. — Він живе в маленькому селі.</li>\n  <li><strong>En</strong> aquest carrer hi ha molts bars.</li>\n</ul>\n<p><strong>de</strong> позначає походження і рух «звідки»:</p>\n<ul>\n  <li>Soc <strong>d’</strong>Ucraïna. Vinc <strong>de</strong> la feina.</li>\n</ul>\n<p>Пам’ятайте про зрощення: <em>a + el = al</em>, <em>de + el = del</em> (юніт 4).</p>\n",
   "examples": [
    {
     "ca": "Treballo a l’hospital.",

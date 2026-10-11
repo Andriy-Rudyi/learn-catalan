@@ -9,7 +9,13 @@ import json
 import os
 from collections import OrderedDict
 
-DATA_FILE = os.path.join(os.path.dirname(__file__), 'data', 'lessons.json')
+from flaskblog.i18n import get_locale
+
+DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
+DATA_FILE = os.path.join(DATA_DIR, 'lessons.json')
+# The same lessons adapted for learners of other languages: lessons_<lang>.json,
+# with the explanations of sounds and words under the key <lang> instead of "uk".
+LANGUAGE_FILES = {'en': os.path.join(DATA_DIR, 'lessons_en.json')}
 
 # Order of the sections on the index page.
 SECTION_ORDER = (
@@ -23,8 +29,15 @@ SECTION_ORDER = (
 _cache = {}
 
 
-def load_lessons(path=DATA_FILE):
+def lessons_file(lang=None):
+    """The lessons file for a language, Ukrainian when there is no adaptation."""
+    path = LANGUAGE_FILES.get(lang or get_locale())
+    return path if path and os.path.exists(path) else DATA_FILE
+
+
+def load_lessons(path=None):
     """All lessons sorted by number (cached per file path)."""
+    path = path or lessons_file()
     if path not in _cache:
         with open(path, encoding='utf-8') as handle:
             lessons = json.load(handle)

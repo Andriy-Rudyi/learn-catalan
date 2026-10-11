@@ -23,6 +23,12 @@ A Flask-based blog platform for learning and teaching the Catalan language.
   so no database step is needed.
 - Database-driven content management
 - Chronological and category-based post navigation
+- **Two interface languages — Ukrainian and English** (UA/EN switch in the
+  menu; first visit follows the browser language). English learners get an
+  adapted course, not a word-for-word translation: grammar units and
+  pronunciation lessons are rewritten around English (false friends, “do”,
+  aspirated p/t/k…), and every dictionary entry has an English translation.
+  See [Languages](#languages)
 - Responsive interface that works on phones, with a light/dark theme switch
   (follows the system setting until the user picks one)
 - Production-ready deployment configuration
@@ -203,6 +209,24 @@ flask grammar stats    # units, exercises and sections
 ```
 
 The editor can also change a unit in the admin panel.
+
+## Languages
+
+Interface strings are written in Ukrainian and wrapped in `_()` (templates and
+Python); English text lives in `flaskblog/i18n/en.py`, keyed by the Ukrainian
+original. The language comes from `?lang=uk|en` (stored in a cookie), then the
+cookie, then the browser's `Accept-Language`.
+
+Course content has separate English versions:
+
+| Content | Ukrainian | English |
+| --- | --- | --- |
+| Grammar units | `flaskblog/grammar/data/units_*.json` | `flaskblog/grammar/data/en/units_*.json` (loaded by `flask grammar seed` into `GrammarUnit.translations`) |
+| Phonetics | `flaskblog/phonetics/data/lessons.json` | `flaskblog/phonetics/data/lessons_en.json` |
+| Dictionary | `translation`, `example_uk`, `notes` | `translation_en`, `example_en`, `notes_en` columns of `seed_words.csv` |
+
+`flaskblog/tests/test_i18n.py` renders the English pages and fails if any of
+them still shows Cyrillic, so a missing translation is caught by the tests.
 
 ## Testing
 

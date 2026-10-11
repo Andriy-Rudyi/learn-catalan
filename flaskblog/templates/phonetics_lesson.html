@@ -1,29 +1,29 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="grammar-unit phonetics">
-  <p class="small"><a href="{{ url_for('phonetics.index') }}">← До списку уроків</a></p>
+  <p class="small"><a href="{{ url_for('phonetics.index') }}">← {{ _('До списку уроків') }}</a></p>
 
   <div class="d-flex flex-wrap align-items-baseline gap-2">
     <span class="unit-number-big">{{ lesson.number }}</span>
     <h1 class="mb-0">{{ lesson.title }}</h1>
     <span class="badge bg-body-secondary text-body-secondary">{{ lesson.level }}</span>
   </div>
-  <p class="text-muted small">{{ lesson.section }}{% if lesson.summary %} · {{ lesson.summary }}{% endif %}</p>
+  <p class="text-muted small">{{ _(lesson.section) }}{% if lesson.summary %} · {{ lesson.summary }}{% endif %}</p>
 
   <div class="content-section explanation">
     {{ lesson.explanation | safe }}
   </div>
 
   {% if lesson.sounds %}
-    <h4 class="grammar-heading">Звуки</h4>
+    <h4 class="grammar-heading">{{ _('Звуки') }}</h4>
     <div class="table-responsive">
       <table class="table table-sm align-middle sounds-table">
         <thead>
           <tr>
-            <th scope="col">Літери</th>
-            <th scope="col">Звук</th>
-            <th scope="col">Приклад</th>
-            <th scope="col">Вимова</th>
+            <th scope="col">{{ _('Літери') }}</th>
+            <th scope="col">{{ _('Звук') }}</th>
+            <th scope="col">{{ _('Приклад') }}</th>
+            <th scope="col">{{ _('Вимова') }}</th>
           </tr>
         </thead>
         <tbody>
@@ -34,7 +34,7 @@
               <td class="sound-example">
                 <div class="d-flex align-items-center gap-2">
                   <button class="btn-speak btn-speak-sm" type="button" data-say="{{ sound.example }}"
-                          aria-label="Прослухати: {{ sound.example }}">🔊</button>
+                          aria-label="{{ _('Прослухати') }}: {{ sound.example }}">🔊</button>
                   <span>
                     {{ sound.example }}
                     {% if sound.example_ipa %}<br><span class="ipa small">[{{ sound.example_ipa }}]</span>{% endif %}
@@ -42,7 +42,7 @@
                 </div>
               </td>
               <td class="small sound-how">
-                {{ sound.uk }}
+                {{ sound[current_lang] or sound.uk }}
                 {% if sound.note %}<div class="text-muted">{{ sound.note }}</div>{% endif %}
               </td>
             </tr>
@@ -53,28 +53,28 @@
   {% endif %}
 
   {% if lesson.words %}
-    <h4 class="grammar-heading">Слова для тренування</h4>
+    <h4 class="grammar-heading">{{ _('Слова для тренування') }}</h4>
     <div class="row g-2 mb-3">
       {% for word in lesson.words %}
         <div class="col-sm-6">
           <div class="practice-word">
             <button class="btn-speak" type="button" data-say="{{ word.ca }}"
-                    aria-label="Прослухати: {{ word.ca }}">🔊</button>
+                    aria-label="{{ _('Прослухати') }}: {{ word.ca }}">🔊</button>
             <div>
               <div><span class="ca">{{ word.ca }}</span> <span class="ipa small">[{{ word.ipa }}]</span></div>
-              <div class="uk">{{ word.uk }}</div>
+              <div class="uk">{{ word[current_lang] or word.uk }}</div>
             </div>
           </div>
         </div>
       {% endfor %}
     </div>
     <p class="small text-muted">
-      Озвучення використовує каталонський голос вашого браузера або телефона.
+      {{ _('Озвучення використовує каталонський голос вашого браузера або телефона.') }}
     </p>
   {% endif %}
 
   {% if lesson.exercises %}
-    <h4 class="grammar-heading">Вправи</h4>
+    <h4 class="grammar-heading">{{ _('Вправи') }}</h4>
     {% for block in lesson.exercises %}
       <div class="exercise-block">
         <p class="exercise-instruction">{{ loop.index }}. {{ block.instruction }}</p>
@@ -94,12 +94,12 @@
     <p>
       <button class="btn btn-sm btn-outline-info" type="button" id="toggle-answers"
               data-shown="{{ 'yes' if show_answers else 'no' }}">
-        {% if show_answers %}Приховати відповіді{% else %}Показати відповіді{% endif %}
+        {% if show_answers %}{{ _('Приховати відповіді') }}{% else %}{{ _('Показати відповіді') }}{% endif %}
       </button>
       <noscript>
         <a class="btn btn-sm btn-outline-info"
            href="{{ url_for('phonetics.lesson', slug=lesson.slug, answers='1') }}">
-          Показати відповіді
+          {{ _('Показати відповіді') }}
         </a>
       </noscript>
     </p>
@@ -129,7 +129,7 @@
         answer.classList.toggle('d-none', shown);
       });
       button.setAttribute('data-shown', shown ? 'no' : 'yes');
-      button.textContent = shown ? 'Показати відповіді' : 'Приховати відповіді';
+      button.textContent = shown ? {{ _('Показати відповіді') | tojson }} : {{ _('Приховати відповіді') | tojson }};
     });
   })();
 </script>

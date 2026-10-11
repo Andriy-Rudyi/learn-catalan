@@ -4,7 +4,7 @@
         <form action="" method="POST" novalidate>
             {{ form.hidden_tag() }}
             <fieldset class="form-group row mb-3">
-                <legend class="border-bottom mb-4">Зареєструватися</legend>
+                <legend class="border-bottom mb-4">{{ _('Зареєструватися') }}</legend>
                 <div class="form-group">
                     {{ form.username.label(class="form-control-label") }}
 
@@ -68,7 +68,7 @@
     </div>
     <div class="border-top pt-3">
         <small class="text-muted">
-            Вже є обліковий запис? <a href="{{ url_for('users.login') }}" class="ml-2">Увійти</a>
+            {{ _('Вже є обліковий запис?') }} <a href="{{ url_for('users.login') }}" class="ml-2">{{ _('Увійти') }}</a>
         </small>
     </div>
 {% endblock content %}

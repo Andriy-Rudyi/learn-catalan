@@ -3,6 +3,8 @@ import secrets
 from PIL import Image, ExifTags
 from flask import url_for, current_app
 from flask_mail import Message
+
+from flaskblog.i18n import gettext as _
 from flaskblog import mail
 
 
@@ -40,12 +42,12 @@ def save_picture(form_picture):
 
 def send_reset_email(user):
     token = user.get_reset_token()
-    msg = Message('LearnCatalan - Reset Password', 
-                  sender='admin@learn-catalan.com', 
+    msg = Message(_('LearnCatalan — зміна пароля'),
+                  sender='admin@learn-catalan.com',
                   recipients=[user.email])
-    msg.body = f'''To reset your password, visit the following link:
-{url_for('users.reset_token', token=token, _external=True)}
-
-If you did not make this request then simply ignore this message and no changes will be made.
-'''
+    msg.body = _(
+        'Щоб змінити пароль, перейдіть за посиланням:\n{link}\n\n'
+        'Якщо ви не надсилали цього запиту, просто проігноруйте лист — нічого не зміниться.\n',
+        link=url_for('users.reset_token', token=token, _external=True),
+    )
     mail.send(msg)

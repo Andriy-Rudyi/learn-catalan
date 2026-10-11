@@ -5,6 +5,7 @@ from flask import (Blueprint, Response, abort, flash, redirect, render_template,
 from flask_login import current_user, login_required
 
 from flaskblog import db
+from flaskblog.i18n import gettext as _
 from flaskblog.conjugation import get_service as get_conjugation_service
 from flaskblog.models import UserWord, Word
 from flaskblog.permissions import is_admin
@@ -71,7 +72,7 @@ def dictionary():
 
     return render_template(
         'dictionary.html',
-        title='Словник',
+        title=_('Словник'),
         form=form,
         words=words,
         total=Word.query.count(),
@@ -116,10 +117,10 @@ def new_word():
         word.slug = service.unique_slug(word.term)
         db.session.add(word)
         db.session.commit()
-        flash('Слово додано до словника.', 'success')
+        flash(_('Слово додано до словника.'), 'success')
         return redirect(url_for('vocabulary.word', slug=word.slug))
     return render_template(
-        'word_form.html', title='Нове слово', form=form, legend='Нове слово'
+        'word_form.html', title=_('Нове слово'), form=form, legend=_('Нове слово')
     )
 
 
@@ -141,13 +142,13 @@ def edit_word(slug):
         word.example_uk = form.example_uk.data or None
         word.notes = form.notes.data or None
         db.session.commit()
-        flash('Слово оновлено.', 'success')
+        flash(_('Слово оновлено.'), 'success')
         return redirect(url_for('vocabulary.word', slug=word.slug))
     return render_template(
         'word_form.html',
-        title='Редагувати слово',
+        title=_('Редагувати слово'),
         form=form,
-        legend='Редагувати слово',
+        legend=_('Редагувати слово'),
         word=word,
     )
 
@@ -159,7 +160,7 @@ def delete_word(slug):
     word = Word.query.filter_by(slug=slug).first_or_404()
     db.session.delete(word)
     db.session.commit()
-    flash('Слово видалено.', 'success')
+    flash(_('Слово видалено.'), 'success')
     return redirect(url_for('vocabulary.dictionary'))
 
 
@@ -182,7 +183,7 @@ def import_words():
 
     return render_template(
         'word_import.html',
-        title='Імпорт словника',
+        title=_('Імпорт словника'),
         form=form,
         seed_form=ActionForm(),
         total=Word.query.count(),
@@ -203,9 +204,8 @@ def import_seed_words():
 
 def _flash_report(report):
     flash(
-        'Імпорт завершено: додано {}, оновлено {}, пропущено {}.'.format(
-            report.created, report.updated, report.skipped
-        ),
+        _('Імпорт завершено: додано {created}, оновлено {updated}, пропущено {skipped}.',
+          created=report.created, updated=report.updated, skipped=report.skipped),
         'success',
     )
     for error in report.errors[:10]:
@@ -246,7 +246,7 @@ def my_dictionary():
 
     return render_template(
         'my_dictionary.html',
-        title='Мій словник',
+        title=_('Мій словник'),
         items=items,
         counts=counts,
         status=status,
@@ -271,9 +271,9 @@ def save_word(slug):
     if existing is None:
         db.session.add(UserWord(user_id=current_user.id, word_id=word.id))
         db.session.commit()
-        flash('«{}» додано до вашого словника.'.format(word.term), 'success')
+        flash(_('«{term}» додано до вашого словника.', term=word.term), 'success')
     else:
-        flash('«{}» вже є у вашому словнику.'.format(word.term), 'info')
+        flash(_('«{term}» вже є у вашому словнику.', term=word.term), 'info')
 
     return redirect(request.referrer or url_for('vocabulary.word', slug=slug))
 
@@ -302,9 +302,9 @@ def add_my_word():
                 )
             )
             db.session.commit()
-            flash('«{}» додано до вашого словника.'.format(term), 'success')
+            flash(_('«{term}» додано до вашого словника.', term=term), 'success')
         else:
-            flash('«{}» вже є у вашому словнику.'.format(term), 'info')
+            flash(_('«{term}» вже є у вашому словнику.', term=term), 'info')
     else:
         for errors in form.errors.values():
             for error in errors:
@@ -328,7 +328,7 @@ def remove_my_word(item_id):
         abort(400)
     db.session.delete(item)
     db.session.commit()
-    flash('Слово вилучено з вашого словника.', 'success')
+    flash(_('Слово вилучено з вашого словника.'), 'success')
     return redirect(url_for('vocabulary.my_dictionary'))
 
 
@@ -355,7 +355,7 @@ def edit_my_note(item_id):
     if form.validate_on_submit():
         item.note = form.note.data or None
         db.session.commit()
-        flash('Нотатку збережено.', 'success')
+        flash(_('Нотатку збережено.'), 'success')
     return redirect(url_for('vocabulary.my_dictionary'))
 
 

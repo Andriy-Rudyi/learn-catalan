@@ -2,23 +2,23 @@
 {% block content %}
 <div class="dictionary">
   <div class="d-flex flex-wrap justify-content-between align-items-center mb-2">
-    <h1 class="mb-0">Словник</h1>
+    <h1 class="mb-0">{{ _('Словник') }}</h1>
     <div class="d-flex gap-2">
       {% if current_user.is_authenticated %}
-        <a class="btn btn-sm btn-outline-info" href="{{ url_for('vocabulary.my_dictionary') }}">Мій словник</a>
+        <a class="btn btn-sm btn-outline-info" href="{{ url_for('vocabulary.my_dictionary') }}">{{ _('Мій словник') }}</a>
       {% endif %}
       {% if is_admin() %}
-        <a class="btn btn-sm btn-outline-info" href="{{ url_for('vocabulary.new_word') }}">Додати слово</a>
-        <a class="btn btn-sm btn-outline-secondary" href="{{ url_for('vocabulary.import_words') }}">Імпорт</a>
+        <a class="btn btn-sm btn-outline-info" href="{{ url_for('vocabulary.new_word') }}">{{ _('Додати слово') }}</a>
+        <a class="btn btn-sm btn-outline-secondary" href="{{ url_for('vocabulary.import_words') }}">{{ _('Імпорт') }}</a>
       {% endif %}
     </div>
   </div>
-  <p class="text-muted">Каталонсько-український словник: {{ total }} слів.</p>
+  <p class="text-muted">{{ _('Каталонсько-український словник') }}: {{ plural(total, ('слово', 'слова', 'слів'), ('word', 'words')) }}.</p>
 
   <form class="row g-2 align-items-end mb-4" method="GET" action="{{ url_for('vocabulary.dictionary') }}">
     <div class="col-md-4">
       {{ form.q.label(class="form-label small text-muted") }}
-      {{ form.q(class="form-control", placeholder="слово каталонською або українською") }}
+      {{ form.q(class="form-control", placeholder=_('слово каталонською або українською')) }}
     </div>
     <div class="col-md-3">
       {{ form.topic.label(class="form-label small text-muted") }}
@@ -33,7 +33,7 @@
       {{ form.part_of_speech(class="form-select") }}
     </div>
     <div class="col-md-1">
-      <button class="btn btn-outline-info w-100" type="submit">Знайти</button>
+      <button class="btn btn-outline-info w-100" type="submit">{{ _('Знайти') }}</button>
     </div>
   </form>
 
@@ -46,15 +46,15 @@
               <div>
                 <a class="word-term" href="{{ url_for('vocabulary.word', slug=word.slug) }}">{{ word.term }}</a>
                 {% if word.gender %}<span class="text-muted small">({{ gender_label(word.gender) }})</span>{% endif %}
-                <div class="word-translation">{{ word.translation }}</div>
+                <div class="word-translation">{{ word.t_translation() }}</div>
               </div>
               {% if current_user.is_authenticated %}
                 {% if word.id in saved_word_ids %}
-                  <span class="badge bg-body-secondary text-body-secondary align-self-center">у словнику</span>
+                  <span class="badge bg-body-secondary text-body-secondary align-self-center">{{ _('у словнику') }}</span>
                 {% else %}
                   <form method="POST" action="{{ url_for('vocabulary.save_word', slug=word.slug) }}">
                     {{ action_form.hidden_tag() }}
-                    <button class="btn btn-sm btn-outline-info" type="submit" title="Додати до мого словника">+</button>
+                    <button class="btn btn-sm btn-outline-info" type="submit" title="{{ _('Додати до мого словника') }}" aria-label="{{ _('Додати до мого словника') }}">+</button>
                   </form>
                 {% endif %}
               {% endif %}
@@ -85,11 +85,11 @@
   {% else %}
     <div class="alert alert-secondary">
       {% if total %}
-        За цим запитом слів не знайдено.
+        {{ _('За цим запитом слів не знайдено.') }}
       {% else %}
-        Словник ще порожній.
+        {{ _('Словник ще порожній.') }}
         {% if is_admin() %}
-          Можна <a href="{{ url_for('vocabulary.import_words') }}">завантажити стартовий набір</a>.
+          <a href="{{ url_for('vocabulary.import_words') }}">{{ _('Завантажити стартовий набір') }}</a>.
         {% endif %}
       {% endif %}
     </div>
@@ -97,7 +97,7 @@
 
   {% if words.items %}
     <p class="small text-muted">
-      <a href="{{ url_for('vocabulary.export_dictionary') }}">Завантажити словник у CSV</a>
+      <a href="{{ url_for('vocabulary.export_dictionary') }}">{{ _('Завантажити словник у CSV') }}</a>
     </p>
   {% endif %}
 </div>

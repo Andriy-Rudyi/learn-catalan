@@ -3,72 +3,73 @@ from flask_wtf.file import FileField, FileAllowed
 from wtforms import StringField, PasswordField, SubmitField, BooleanField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from flask_login import current_user
+from flaskblog.i18n import gettext as _, lazy_gettext as _l
 from flaskblog.models import User
 
 
 class RegistrationForm(FlaskForm):
-    username = StringField('Username',
+    username = StringField(_l('Ім’я користувача'),
                             validators=[DataRequired(), Length(min=2, max=20)])
-    email = StringField('Email', 
+    email = StringField(_l('Email'), 
                         validators=[DataRequired(), Email()])
-    password = PasswordField('Password', validators=[DataRequired()])
-    confirm_password = PasswordField('Confirm Password', 
+    password = PasswordField(_l('Пароль'), validators=[DataRequired()])
+    confirm_password = PasswordField(_l('Підтвердіть пароль'), 
                                      validators=[DataRequired(), EqualTo('password')])
-    submit = SubmitField('Sign Up')
+    submit = SubmitField(_l('Зареєструватися'))
 
     def validate_username(self, username):
         user = User.query.filter_by(username=username.data).first()
         if user:
-            raise ValidationError('That username is taken. Please choose a different one.')
+            raise ValidationError(_('Це ім’я вже зайняте. Оберіть інше.'))
     
     def validate_email(self, email):
         user = User.query.filter_by(email=email.data).first()
         if user:
-            raise ValidationError('That email is taken. Please choose a different one.')
+            raise ValidationError(_('Цей email уже зареєстровано. Оберіть інший.'))
     
 
 class LoginForm(FlaskForm):
-    email = StringField('Email', 
+    email = StringField(_l('Email'), 
                         validators=[DataRequired(), Email()])
-    password = PasswordField('Password', validators=[DataRequired()])
-    remember = BooleanField('Remember Me')
-    submit = SubmitField('Login')
+    password = PasswordField(_l('Пароль'), validators=[DataRequired()])
+    remember = BooleanField(_l('Запам’ятати мене'))
+    submit = SubmitField(_l('Увійти'))
 
 
 class UpdateAccountForm(FlaskForm):
-    username = StringField('Username',
+    username = StringField(_l('Ім’я користувача'),
                             validators=[DataRequired(), Length(min=2, max=20)])
-    email = StringField('Email', 
+    email = StringField(_l('Email'), 
                         validators=[DataRequired(), Email()])
-    picture = FileField('Update Profile Picture', validators=[FileAllowed(['jpg', 'png'])])
-    submit = SubmitField('Update')
+    picture = FileField(_l('Оновити фото профілю'), validators=[FileAllowed(['jpg', 'png'])])
+    submit = SubmitField(_l('Оновити'))
 
     def validate_username(self, username):
         if username.data != current_user.username:
             user = User.query.filter_by(username=username.data).first()
             if user:
-                raise ValidationError('That username is taken. Please choose a different one.')
+                raise ValidationError(_('Це ім’я вже зайняте. Оберіть інше.'))
     
     def validate_email(self, email):
         if email.data != current_user.email:
             email = User.query.filter_by(email=email.data).first()
             if email:
-                raise ValidationError('That email is taken. Please choose a different one.')
+                raise ValidationError(_('Цей email уже зареєстровано. Оберіть інший.'))
             
 
 class RequestResetForm(FlaskForm):
-    email = StringField('Email', 
+    email = StringField(_l('Email'), 
                         validators=[DataRequired(), Email()])
-    submit = SubmitField('Request Password Reset')
+    submit = SubmitField(_l('Скинути пароль'))
 
     def validate_email(self, email):
         email = User.query.filter_by(email=email.data).first()
         if email is None:
-            raise ValidationError('There is no account with that email. You must register first.')
+            raise ValidationError(_('Акаунта з таким email немає. Спершу зареєструйтеся.'))
         
 
 class ResetPasswordForm(FlaskForm):
-    password = PasswordField('Password', validators=[DataRequired()])
-    confirm_password = PasswordField('Confirm Password', 
+    password = PasswordField(_l('Пароль'), validators=[DataRequired()])
+    confirm_password = PasswordField(_l('Підтвердіть пароль'), 
                                      validators=[DataRequired(), EqualTo('password')])
-    submit = SubmitField('Reset Password')
+    submit = SubmitField(_l('Змінити пароль'))

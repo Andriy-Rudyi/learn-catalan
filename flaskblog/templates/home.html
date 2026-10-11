@@ -4,49 +4,56 @@
 
 {% block content %}
 <section class="hero">
-  <h1>Вивчайте каталонську українською</h1>
+  <h1>{{ _('Вивчайте каталонську українською') }}</h1>
   <p class="lead mx-auto" style="max-width: 38rem;">
-    Граматичний курс у стилі Murphy, каталонсько-український словник і перевірена
-    дієвідміна дієслів — усе в одному місці.
+    {{ _('Граматичний курс у стилі Murphy, каталонсько-український словник і перевірена дієвідміна дієслів — усе в одному місці.') }}
   </p>
   <div class="d-flex flex-wrap justify-content-center gap-2 mt-4">
-    <a class="btn btn-outline-info btn-lg px-4" href="{{ url_for('grammar.index') }}" role="button">Розпочати навчання</a>
-    <a class="btn btn-outline-secondary btn-lg px-4" href="{{ url_for('vocabulary.dictionary') }}" role="button">Відкрити словник</a>
+    <a class="btn btn-outline-info btn-lg px-4" href="{{ url_for('grammar.index') }}" role="button">{{ _('Розпочати навчання') }}</a>
+    <a class="btn btn-outline-secondary btn-lg px-4" href="{{ url_for('phonetics.index') }}" role="button">{{ _('Почати з вимови') }}</a>
   </div>
 </section>
 
 <div class="row g-3 mb-4">
-  <div class="col-md-4">
+  <div class="col-md-6 col-lg-3">
     <a class="feature-card" href="{{ url_for('grammar.index') }}">
       <div class="feature-icon" aria-hidden="true">📘</div>
-      <h3>Граматика</h3>
-      <p>Короткі пояснення, приклади й вправи з відповідями — від A1 до C1.</p>
-      {% if unit_count %}<span class="feature-count">{{ unit_count }} юнітів</span>{% endif %}
+      <h3>{{ _('Граматика') }}</h3>
+      <p>{{ _('Короткі пояснення, приклади й вправи з відповідями — від A1 до C1.') }}</p>
+      {% if unit_count %}<span class="feature-count">{{ plural(unit_count, ('юніт', 'юніти', 'юнітів'), ('unit', 'units')) }}</span>{% endif %}
     </a>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-6 col-lg-3">
     <a class="feature-card" href="{{ url_for('vocabulary.dictionary') }}">
       <div class="feature-icon" aria-hidden="true">📖</div>
-      <h3>Словник</h3>
-      <p>Слова з перекладом, прикладами та рівнем. Збирайте власний словник і позначайте вивчене.</p>
-      {% if word_count %}<span class="feature-count">{{ word_count }} слів</span>{% endif %}
+      <h3>{{ _('Словник') }}</h3>
+      <p>{{ _('Слова з перекладом, прикладами та рівнем. Збирайте власний словник і позначайте вивчене.') }}</p>
+      {% if word_count %}<span class="feature-count">{{ plural(word_count, ('слово', 'слова', 'слів'), ('word', 'words')) }}</span>{% endif %}
     </a>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-6 col-lg-3">
     <a class="feature-card" href="{{ url_for('main.conjugator') }}">
       <div class="feature-icon" aria-hidden="true">🔤</div>
-      <h3>Дієвідміна</h3>
-      <p>Усі часи та способи каталонських дієслів із перекладом українською.</p>
-      <span class="feature-count">понад 8 000 дієслів</span>
+      <h3>{{ _('Дієвідміна') }}</h3>
+      <p>{{ _('Усі часи та способи каталонських дієслів із перекладом.') }}</p>
+      <span class="feature-count">{{ _('понад 8 000 дієслів') }}</span>
+    </a>
+  </div>
+  <div class="col-md-6 col-lg-3">
+    <a class="feature-card" href="{{ url_for('phonetics.index') }}">
+      <div class="feature-icon" aria-hidden="true">🔊</div>
+      <h3>{{ _('Фонетика') }}</h3>
+      <p>{{ _('Звуки, наголос і вимова з транскрипцією та озвученими прикладами.') }}</p>
+      {% if lesson_count %}<span class="feature-count">{{ plural(lesson_count, ('урок', 'уроки', 'уроків'), ('lesson', 'lessons')) }}</span>{% endif %}
     </a>
   </div>
 </div>
 
 {% if not current_user.is_authenticated %}
 <div class="content-section text-center py-3">
-  <p class="mb-2">Зареєструйтеся, щоб зберігати слова у «Мій словник» і стежити за прогресом.</p>
-  <a class="btn btn-sm btn-outline-info" href="{{ url_for('users.register') }}">Створити акаунт</a>
-  <a class="btn btn-sm btn-link" href="{{ url_for('users.login') }}">Увійти</a>
+  <p class="mb-2">{{ _('Зареєструйтеся, щоб зберігати слова у «Мій словник» і стежити за прогресом.') }}</p>
+  <a class="btn btn-sm btn-outline-info" href="{{ url_for('users.register') }}">{{ _('Створити акаунт') }}</a>
+  <a class="btn btn-sm btn-link" href="{{ url_for('users.login') }}">{{ _('Увійти') }}</a>
 </div>
 {% endif %}
 {% endblock %}

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="dictionary">
-  <p class="small"><a href="{{ url_for('vocabulary.dictionary') }}">← До словника</a></p>
+  <p class="small"><a href="{{ url_for('vocabulary.dictionary') }}">← {{ _('До словника') }}</a></p>
 
   <div class="content-section">
     <div class="d-flex flex-wrap justify-content-between align-items-start">
@@ -9,20 +9,20 @@
         <div class="d-flex align-items-center gap-2 mb-1">
           <h1 class="mb-0">{{ word.term }}</h1>
           <button class="btn-speak" type="button" data-say="{{ word.term }}"
-                  aria-label="Прослухати: {{ word.term }}" title="Прослухати">🔊</button>
+                  aria-label="{{ _('Прослухати') }}: {{ word.term }}" title="{{ _('Прослухати') }}">🔊</button>
         </div>
         {% if word.pronunciation %}
           <p class="text-muted mb-1">[{{ word.pronunciation }}]</p>
         {% endif %}
-        <p class="h5 text-secondary">{{ word.translation }}</p>
+        <p class="h5 text-secondary">{{ word.t_translation() }}</p>
       </div>
       {% if current_user.is_authenticated %}
         {% if word.id in saved_word_ids %}
-          <span class="badge bg-body-secondary text-body-secondary">у вашому словнику</span>
+          <span class="badge bg-body-secondary text-body-secondary">{{ _('у вашому словнику') }}</span>
         {% else %}
           <form method="POST" action="{{ url_for('vocabulary.save_word', slug=word.slug) }}">
             {{ action_form.hidden_tag() }}
-            <button class="btn btn-sm btn-outline-info" type="submit">Додати до мого словника</button>
+            <button class="btn btn-sm btn-outline-info" type="submit">{{ _('Додати до мого словника') }}</button>
           </form>
         {% endif %}
       {% endif %}
@@ -35,24 +35,28 @@
       {% if word.level %}<span>{{ level_label(word.level) }}</span>{% endif %}
     </div>
 
-    {% if word.example_ca or word.example_uk %}
+    {% if word.example_ca %}
       <hr>
-      <h5>Приклад</h5>
-      {% if word.example_ca %}<p class="mb-1"><em>{{ word.example_ca }}</em></p>{% endif %}
-      {% if word.example_uk %}<p class="text-muted">{{ word.example_uk }}</p>{% endif %}
+      <h5>{{ _('Приклад') }}</h5>
+      <div class="d-flex align-items-start gap-2 mb-1">
+        <button class="btn-speak btn-speak-sm" type="button" data-say="{{ word.example_ca }}"
+                aria-label="{{ _('Прослухати') }}">🔊</button>
+        <p class="mb-0"><em>{{ word.example_ca }}</em></p>
+      </div>
+      {% if word.t_example() %}<p class="text-muted">{{ word.t_example() }}</p>{% endif %}
     {% endif %}
 
-    {% if word.notes %}
+    {% if word.t_notes() %}
       <hr>
-      <h5>Примітки</h5>
-      <p class="mb-0">{{ word.notes }}</p>
+      <h5>{{ _('Примітки') }}</h5>
+      <p class="mb-0">{{ word.t_notes() }}</p>
     {% endif %}
 
     {% if conjugable %}
       <hr>
       <p class="mb-0">
         <a class="btn btn-sm btn-outline-info" href="{{ url_for('main.conjugator', verb=word.term) }}">
-          Дієвідміна дієслова «{{ word.term }}»
+          {{ _('Дієвідміна дієслова «{term}»', term=word.term) }}
         </a>
       </p>
     {% endif %}
@@ -60,11 +64,11 @@
     {% if is_admin() %}
       <hr>
       <div class="d-flex gap-2">
-        <a class="btn btn-sm btn-outline-secondary" href="{{ url_for('vocabulary.edit_word', slug=word.slug) }}">Редагувати</a>
+        <a class="btn btn-sm btn-outline-secondary" href="{{ url_for('vocabulary.edit_word', slug=word.slug) }}">{{ _('Редагувати') }}</a>
         <form method="POST" action="{{ url_for('vocabulary.delete_word', slug=word.slug) }}"
-              onsubmit="return confirm('Видалити «{{ word.term }}» зі словника?');">
+              onsubmit="return confirm({{ _('Видалити «{term}» зі словника?', term=word.term) | tojson | forceescape }});">
           {{ action_form.hidden_tag() }}
-          <button class="btn btn-sm btn-outline-danger" type="submit">Видалити</button>
+          <button class="btn btn-sm btn-outline-danger" type="submit">{{ _('Видалити') }}</button>
         </form>
       </div>
     {% endif %}

@@ -1,7 +1,8 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="content-section">
-    <h1>Something went wrong  (500)</h1>
-    <p>We're expiriencing some trouble on our end. Please try again in the near future</p>
+    <h1>{{ _('Щось пішло не так (500)') }}</h1>
+    <p>{{ _('На сервері сталася помилка. Спробуйте трохи пізніше.') }}</p>
+    <a class="btn btn-sm btn-outline-info" href="{{ url_for('main.home') }}">{{ _('На головну') }}</a>
 </div>
 {% endblock content %}

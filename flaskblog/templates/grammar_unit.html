@@ -1,22 +1,22 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="grammar-unit">
-  <p class="small"><a href="{{ url_for('grammar.index') }}">← До списку юнітів</a></p>
+  <p class="small"><a href="{{ url_for('grammar.index') }}">← {{ _('До списку юнітів') }}</a></p>
 
   <div class="d-flex flex-wrap align-items-baseline gap-2">
     <span class="unit-number-big">{{ unit.number }}</span>
-    <h1 class="mb-0">{{ unit.title }}</h1>
+    <h1 class="mb-0">{{ unit.l_title }}</h1>
     {% if unit.level %}<span class="badge bg-body-secondary text-body-secondary">{{ unit.level }}</span>{% endif %}
   </div>
-  <p class="text-muted small">{{ unit.section }}{% if unit.summary %} · {{ unit.summary }}{% endif %}</p>
+  <p class="text-muted small">{{ unit.l_section }}{% if unit.l_summary %} · {{ unit.l_summary }}{% endif %}</p>
 
   <div class="content-section explanation">
-    {{ unit.explanation | safe }}
+    {{ unit.l_explanation | safe }}
   </div>
 
-  {% set examples = unit.get_examples() %}
+  {% set examples = unit.l_examples() %}
   {% if examples %}
-    <h4 class="grammar-heading">Приклади</h4>
+    <h4 class="grammar-heading">{{ _('Приклади') }}</h4>
     <table class="table table-sm examples-table">
       <tbody>
         {% for example in examples %}
@@ -24,20 +24,20 @@
             <td class="ca-cell">
               <div class="d-flex align-items-start gap-2">
                 <button class="btn-speak btn-speak-sm" type="button" data-say="{{ example.ca }}"
-                        aria-label="Прослухати">🔊</button>
+                        aria-label="{{ _('Прослухати') }}">🔊</button>
                 <span>{{ example.ca }}</span>
               </div>
             </td>
-            <td class="text-muted">{{ example.uk }}</td>
+            <td class="text-muted">{{ example.tr }}</td>
           </tr>
         {% endfor %}
       </tbody>
     </table>
   {% endif %}
 
-  {% set exercises = unit.get_exercises() %}
+  {% set exercises = unit.l_exercises() %}
   {% if exercises %}
-    <h4 class="grammar-heading">Вправи</h4>
+    <h4 class="grammar-heading">{{ _('Вправи') }}</h4>
     {% for block in exercises %}
       <div class="exercise-block">
         <p class="exercise-instruction">{{ loop.index }}. {{ block.instruction }}</p>
@@ -57,12 +57,12 @@
     <p>
       <button class="btn btn-sm btn-outline-info" type="button" id="toggle-answers"
               data-shown="{{ 'yes' if show_answers else 'no' }}">
-        {% if show_answers %}Приховати відповіді{% else %}Показати відповіді{% endif %}
+        {% if show_answers %}{{ _('Приховати відповіді') }}{% else %}{{ _('Показати відповіді') }}{% endif %}
       </button>
       <noscript>
         <a class="btn btn-sm btn-outline-info"
            href="{{ url_for(request.endpoint, **dict(request.view_args, answers='1')) }}">
-          Показати відповіді
+          {{ _('Показати відповіді') }}
         </a>
       </noscript>
     </p>
@@ -71,12 +71,12 @@
   <nav class="d-flex justify-content-between mt-4">
     {% if previous %}
       <a class="btn btn-outline-link" href="{{ url_for('grammar.unit', slug=previous.slug) }}">
-        ← {{ previous.number }}. {{ previous.title }}
+        ← {{ previous.number }}. {{ previous.l_title }}
       </a>
     {% else %}<span></span>{% endif %}
     {% if following %}
       <a class="btn btn-outline-link text-end" href="{{ url_for('grammar.unit', slug=following.slug) }}">
-        {{ following.number }}. {{ following.title }} →
+        {{ following.number }}. {{ following.l_title }} →
       </a>
     {% endif %}
   </nav>
@@ -94,7 +94,7 @@
         answer.classList.toggle('d-none', shown);
       });
       button.setAttribute('data-shown', shown ? 'no' : 'yes');
-      button.textContent = shown ? 'Показати відповіді' : 'Приховати відповіді';
+      button.textContent = shown ? {{ _('Показати відповіді') | tojson }} : {{ _('Приховати відповіді') | tojson }};
     });
   })();
 </script>

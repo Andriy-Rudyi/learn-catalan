@@ -4,6 +4,8 @@ Kept as plain tuples rather than database tables: they change rarely and
 this way a new topic needs no migration.
 """
 
+from flaskblog.i18n import gettext
+
 PARTS_OF_SPEECH = (
     ('noun', 'іменник'),
     ('verb', 'дієслово'),
@@ -72,20 +74,29 @@ CSV_COLUMNS = (
     'example_ca',
     'example_uk',
     'notes',
+    'translation_en',
+    'example_en',
+    'notes_en',
 )
 
 
+def _label(labels, value):
+    if value in labels:
+        return gettext(labels[value])
+    return value or ''
+
+
 def part_of_speech_label(value):
-    return PART_OF_SPEECH_LABELS.get(value, value or '')
+    return _label(PART_OF_SPEECH_LABELS, value)
 
 
 def topic_label(value):
-    return TOPIC_LABELS.get(value, value or '')
+    return _label(TOPIC_LABELS, value)
 
 
 def level_label(value):
-    return LEVEL_LABELS.get(value, value or '')
+    return _label(LEVEL_LABELS, value)
 
 
 def gender_label(value):
-    return GENDER_LABELS.get(value, value or '')
+    return _label(GENDER_LABELS, value)

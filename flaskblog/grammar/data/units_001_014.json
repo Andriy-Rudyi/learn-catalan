@@ -5,10 +5,10 @@
   "section": "Дієслово: основи",
   "level": "A1",
   "summary": "Два каталонські дієслова «бути»: коли яке.",
-  "explanation": "\n<p>У каталонській два дієслова зі значенням «бути»: <strong>ser</strong> і <strong>estar</strong>.</p>\n<p><strong>ser</strong> — те, чим людина або річ <em>є</em>: ім’я, походження, професія, характер,\nматеріал, ціна, час, а також <em>де щось розташоване</em>:</p>\n<ul>\n  <li>Jo <strong>sóc</strong> d’Ucraïna. — Я з України.</li>\n  <li>El bany <strong>és</strong> al fons. — Ванна в кінці (коридору).</li>\n</ul>\n<p><strong>estar</strong> — <em>стан</em> (фізичний чи емоційний) і <em>перебування</em> десь протягом часу:</p>\n<ul>\n  <li><strong>Estic</strong> cansat. — Я втомлений.</li>\n  <li>Aquest mes <strong>estem</strong> a Girona. — Цього місяця ми в Жироні.</li>\n</ul>\n<p>Увага: на відміну від іспанської, у каталонській про <em>місце розташування</em>\nзазвичай кажуть <strong>ser</strong>: <em>On <strong>és</strong> l’estació?</em> — Де вокзал?\n<strong>estar</strong> тут означає «пробути якийсь час»: <em>Hi <strong>estarem</strong> dues setmanes.</em></p>\n<p>Форми:</p>\n<ul>\n  <li><strong>ser</strong>: sóc, ets, és, som, sou, són</li>\n  <li><strong>estar</strong>: estic, estàs, està, estem, esteu, estan</li>\n</ul>\n<p class=\"small\">За правописом 2016 року першу особу пишуть без наголосу — <em>soc</em>;\nформа <em>sóc</em> трапляється в старіших текстах і словниках. Наголос у\n<em>és</em> і <em>són</em> лишився (юніт 53).</p>\n",
+  "explanation": "\n<p>У каталонській два дієслова зі значенням «бути»: <strong>ser</strong> і <strong>estar</strong>.</p>\n<p><strong>ser</strong> — те, чим людина або річ <em>є</em>: ім’я, походження, професія, характер,\nматеріал, ціна, час, а також <em>де щось розташоване</em>:</p>\n<ul>\n  <li>Jo <strong>soc</strong> d’Ucraïna. — Я з України.</li>\n  <li>El bany <strong>és</strong> al fons. — Ванна в кінці (коридору).</li>\n</ul>\n<p><strong>estar</strong> — <em>стан</em> (фізичний чи емоційний) і <em>перебування</em> десь протягом часу:</p>\n<ul>\n  <li><strong>Estic</strong> cansat. — Я втомлений.</li>\n  <li>Aquest mes <strong>estem</strong> a Girona. — Цього місяця ми в Жироні.</li>\n</ul>\n<p>Увага: на відміну від іспанської, у каталонській про <em>місце розташування</em>\nзазвичай кажуть <strong>ser</strong>: <em>On <strong>és</strong> l’estació?</em> — Де вокзал?\n<strong>estar</strong> тут означає «пробути якийсь час»: <em>Hi <strong>estarem</strong> dues setmanes.</em></p>\n<p>Форми:</p>\n<ul>\n  <li><strong>ser</strong>: soc, ets, és, som, sou, són</li>\n  <li><strong>estar</strong>: estic, estàs, està, estem, esteu, estan</li>\n</ul>\n<p class=\"small\">За правописом 2016 року першу особу пишуть без наголосу — <em>soc</em>;\nформа <em>sóc</em> трапляється в старіших текстах і словниках. Наголос у\n<em>és</em> і <em>són</em> лишився (юніт 53).</p>\n",
   "examples": [
    {
-    "ca": "Sóc estudiant de català.",
+    "ca": "Soc estudiant de català.",
     "uk": "Я студент каталонської."
    },
    {
@@ -38,7 +38,7 @@
     "items": [
      {
       "q": "Jo ___ d’Ucraïna.",
-      "a": "sóc"
+      "a": "soc"
      },
      {
       "q": "Tu ___ molt cansat avui.",
@@ -75,7 +75,7 @@
     "items": [
      {
       "q": "Я лікар.",
-      "a": "Sóc metge."
+      "a": "Soc metge."
      },
      {
       "q": "Ми вдома.",
@@ -345,14 +345,14 @@
   "section": "Іменник, артикль, прикметник",
   "level": "A1",
   "summary": "Коли ставити un/una, а коли артикль не потрібен.",
-  "explanation": "\n<p>Неозначений артикль уводить річ, про яку ще не йшлося:</p>\n<ul>\n  <li>чоловічий: <strong>un</strong> gos → <strong>uns</strong> gossos</li>\n  <li>жіночий: <strong>una</strong> casa → <strong>unes</strong> cases</li>\n</ul>\n<p>Множинні <strong>uns</strong> / <strong>unes</strong> означають «якісь», «кілька»:\n<em>unes amigues</em> — кілька подруг.</p>\n<p>Артикль <em>не ставлять</em>:</p>\n<ul>\n  <li>перед професією після ser: <em>Sóc professor.</em> — Я викладач;</li>\n  <li>перед незліченними речовинами: <em>Vull aigua.</em> — Я хочу води;</li>\n  <li>після заперечення часто вживають <em>cap</em>: <em>No tinc cap germà.</em></li>\n</ul>\n",
+  "explanation": "\n<p>Неозначений артикль уводить річ, про яку ще не йшлося:</p>\n<ul>\n  <li>чоловічий: <strong>un</strong> gos → <strong>uns</strong> gossos</li>\n  <li>жіночий: <strong>una</strong> casa → <strong>unes</strong> cases</li>\n</ul>\n<p>Множинні <strong>uns</strong> / <strong>unes</strong> означають «якісь», «кілька»:\n<em>unes amigues</em> — кілька подруг.</p>\n<p>Артикль <em>не ставлять</em>:</p>\n<ul>\n  <li>перед професією після ser: <em>Soc professor.</em> — Я викладач;</li>\n  <li>перед незліченними речовинами: <em>Vull aigua.</em> — Я хочу води;</li>\n  <li>після заперечення часто вживають <em>cap</em>: <em>No tinc cap germà.</em></li>\n</ul>\n",
   "examples": [
    {
     "ca": "Tinc un gos i una gata.",
     "uk": "У мене пес і кішка."
    },
    {
-    "ca": "Sóc estudiant.",
+    "ca": "Soc estudiant.",
     "uk": "Я студент."
    },
    {
@@ -398,7 +398,7 @@
   "section": "Іменник, артикль, прикметник",
   "level": "A1",
   "summary": "Як розпізнати чоловічий і жіночий рід та що робити з винятками.",
-  "explanation": "\n<p>Кожен іменник має рід. Найчастіше:</p>\n<ul>\n  <li>на <strong>-a</strong> — жіночий: <em>la casa, la taula, la poma</em>;</li>\n  <li>на приголосний або <strong>-e</strong>, <strong>-o</strong> — чоловічий:\n      <em>el carrer, el cotxe, el metro</em>;</li>\n  <li>на <strong>-ció</strong>, <strong>-sió</strong>, <strong>-tat</strong>,\n      <strong>-esa</strong>, <strong>-or</strong> (абстрактні) — жіночий:\n      <em>la estació, la ciutat, la bellesa</em>.</li>\n</ul>\n<p>Пари «чоловік / жінка» утворюються додаванням -a: <em>noi → noia</em>,\n<em>gat → gata</em>, <em>professor → professora</em>. Іноді форма інша:\n<em>home → dona</em>, <em>pare → mare</em>, <em>rei → reina</em>.</p>\n<p>Запам’ятайте винятки — чоловічі слова на -a:\n<em>el dia, el mapa, el problema, el tema, el sistema, el programa</em>.</p>\n<p>Слова на <strong>-ista</strong> однакові для обох родів:\n<em>el dentista / la dentista</em>.</p>\n",
+  "explanation": "\n<p>Кожен іменник має рід. Найчастіше:</p>\n<ul>\n  <li>на <strong>-a</strong> — жіночий: <em>la casa, la taula, la poma</em>;</li>\n  <li>на приголосний або <strong>-e</strong>, <strong>-o</strong> — чоловічий:\n      <em>el carrer, el cotxe, el metro</em>;</li>\n  <li>на <strong>-ció</strong>, <strong>-sió</strong>, <strong>-tat</strong>,\n      <strong>-esa</strong> — жіночий:\n      <em>l’estació, la ciutat, la bellesa</em>;</li>\n  <li>абстрактні іменники на <strong>-or</strong>, утворені від прикметників, — теж жіночі:\n      <em>la calor, la foscor, la blancor</em>. Інші слова на -or часто чоловічі:\n      <em>el color, l’amor, el valor</em>.</li>\n</ul>\n<p>Пари «чоловік / жінка» утворюються додаванням -a: <em>noi → noia</em>,\n<em>gat → gata</em>, <em>professor → professora</em>. Іноді форма інша:\n<em>home → dona</em>, <em>pare → mare</em>, <em>rei → reina</em>.</p>\n<p>Запам’ятайте винятки — чоловічі слова на -a:\n<em>el dia, el mapa, el problema, el tema, el sistema, el programa</em>.</p>\n<p>Слова на <strong>-ista</strong> однакові для обох родів:\n<em>el dentista / la dentista</em>.</p>\n",
   "examples": [
    {
     "ca": "El dia és molt llarg.",
@@ -419,7 +419,7 @@
   ],
   "exercises": [
    {
-    "instruction": "Поставте el або la.",
+    "instruction": "Поставте el, la або l’.",
     "items": [
      {
       "q": "___ problema",
@@ -435,7 +435,7 @@
      },
      {
       "q": "___ estació",
-      "a": "la"
+      "a": "l’ (жіночий рід)"
      },
      {
       "q": "___ cotxe",
@@ -484,7 +484,7 @@
   "section": "Іменник, артикль, прикметник",
   "level": "A1",
   "summary": "Правила утворення множини та правописні зміни.",
-  "explanation": "\n<p>Загальне правило — додати <strong>-s</strong>: <em>llibre → llibres</em>,\n<em>carrer → carrers</em>.</p>\n<p>Слова на <strong>-a</strong> дають <strong>-es</strong>, і при цьому\nможуть змінювати написання, щоб зберегти звук:</p>\n<ul>\n  <li><em>casa → cases</em></li>\n  <li>g → gu: <em>amiga → amigues</em></li>\n  <li>c → qu: <em>època → èpoques</em></li>\n  <li>ç → c: <em>plaça → places</em></li>\n  <li>j → g: <em>pluja → pluges</em></li>\n</ul>\n<p>Слова на наголошений голосний додають <strong>-ns</strong>:\n<em>mà → mans</em>, <em>pa → pans</em>, <em>veí → veïns</em>.</p>\n<p>Чоловічі слова на <strong>-s, -ç, -x, -ix, -tx</strong> додають <strong>-os</strong>:\n<em>gas → gasos</em>, <em>braç → braços</em>, <em>peix → peixos</em>.\nДеякі при цьому подвоюють s: <em>gos → gossos</em>, <em>nas → nassos</em>.</p>\n",
+  "explanation": "\n<p>Загальне правило — додати <strong>-s</strong>: <em>llibre → llibres</em>,\n<em>carrer → carrers</em>.</p>\n<p>Слова на <strong>-a</strong> дають <strong>-es</strong>, і при цьому\nможуть змінювати написання, щоб зберегти звук:</p>\n<ul>\n  <li><em>casa → cases</em></li>\n  <li>g → gu: <em>amiga → amigues</em></li>\n  <li>c → qu: <em>època → èpoques</em></li>\n  <li>ç → c: <em>plaça → places</em></li>\n  <li>j → g: <em>pluja → pluges</em></li>\n</ul>\n<p>Багато слів на наголошений <strong>-à, -é, -í, -ó, -ú</strong> додають <strong>-ns</strong>:\n<em>mà → mans</em>, <em>pa → pans</em>, <em>camí → camins</em>, <em>cançó → cançons</em>,\n<em>veí → veïns</em>. Але не всі: <em>cafè → cafès</em>, <em>sofà → sofàs</em> —\nтакі слова просто додають <strong>-s</strong>, тож множину варто перевіряти за словником.</p>\n<p>Чоловічі слова на <strong>-s, -ç, -x, -ix, -tx</strong> додають <strong>-os</strong>:\n<em>gas → gasos</em>, <em>braç → braços</em>, <em>peix → peixos</em>.\nДеякі при цьому подвоюють s: <em>gos → gossos</em>, <em>nas → nassos</em>.</p>\n",
   "examples": [
    {
     "ca": "Tinc dues mans.",
@@ -778,7 +778,7 @@
   "section": "Будова речення",
   "level": "A1",
   "summary": "Подвійне заперечення в каталонській — норма.",
-  "explanation": "\n<p><strong>no</strong> ставлять перед дієсловом: <em>No parlo rus.</em></p>\n<p>Заперечні слова <strong>mai</strong> (ніколи), <strong>res</strong> (ніщо),\n<strong>ningú</strong> (ніхто), <strong>cap</strong> (жоден),\n<strong>gens</strong> (нітрохи) вживаються <em>разом</em> із no — подвійне\nзаперечення тут правильне:</p>\n<ul>\n  <li><strong>No</strong> hi ha <strong>ningú</strong>. — Немає нікого.</li>\n  <li><strong>No</strong> menjo <strong>mai</strong> carn. — Я ніколи не їм м’яса.</li>\n  <li><strong>No</strong> tinc <strong>cap</strong> problema. — У мене жодних проблем.</li>\n</ul>\n<p>Якщо заперечне слово стоїть <em>перед</em> дієсловом, no зникає:\n<em><strong>Ningú</strong> ho sap.</em> — Ніхто цього не знає.</p>\n<p>У книжному стилі зустрічається підсилювальне <strong>pas</strong>:\n<em>No ho sé pas.</em></p>\n",
+  "explanation": "\n<p><strong>no</strong> ставлять перед дієсловом: <em>No parlo rus.</em></p>\n<p>Заперечні слова <strong>mai</strong> (ніколи), <strong>res</strong> (ніщо),\n<strong>ningú</strong> (ніхто), <strong>cap</strong> (жоден),\n<strong>gens</strong> (нітрохи) вживаються <em>разом</em> із no — подвійне\nзаперечення тут правильне:</p>\n<ul>\n  <li><strong>No</strong> hi ha <strong>ningú</strong>. — Немає нікого.</li>\n  <li><strong>No</strong> menjo <strong>mai</strong> carn. — Я ніколи не їм м’яса.</li>\n  <li><strong>No</strong> tinc <strong>cap</strong> problema. — У мене жодних проблем.</li>\n</ul>\n<p>Якщо заперечне слово стоїть <em>перед</em> дієсловом, no можна вжити або пропустити —\nобидва варіанти правильні: <em><strong>Ningú</strong> no ho sap</em> / <em><strong>Ningú</strong> ho sap.</em>\n— Ніхто цього не знає. Так само <em>Mai no diu…</em> / <em>Mai diu…</em></p>\n<p>У книжному стилі зустрічається підсилювальне <strong>pas</strong>:\n<em>No ho sé pas.</em></p>\n",
   "examples": [
    {
     "ca": "No tinc gens de son.",
