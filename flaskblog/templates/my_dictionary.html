@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="dictionary">
+  <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
+    <h1 class="mb-0">Мій словник</h1>
+    <a class="btn btn-sm btn-outline-info" href="{{ url_for('vocabulary.dictionary') }}">Загальний словник</a>
+  </div>
+
+  <div class="content-section mb-4">
+    <h5>Додати своє слово</h5>
+    <form class="row g-2 align-items-end" method="POST" action="{{ url_for('vocabulary.add_my_word') }}" novalidate>
+      {{ form.hidden_tag() }}
+      <div class="col-md-4">
+        {{ form.term.label(class="form-label small text-muted") }}
+        {{ form.term(class="form-control", placeholder="parlar") }}
+      </div>
+      <div class="col-md-4">
+        {{ form.translation.label(class="form-label small text-muted") }}
+        {{ form.translation(class="form-control", placeholder="говорити") }}
+      </div>
+      <div class="col-md-3">
+        {{ form.note.label(class="form-label small text-muted") }}
+        {{ form.note(class="form-control", placeholder="необов’язково") }}
+      </div>
+      <div class="col-md-1">
+        <button class="btn btn-outline-info w-100" type="submit">+</button>
+      </div>
+    </form>
+  </div>
+
+  <ul class="nav nav-pills mb-3">
+    <li class="nav-item">
+      <a class="nav-link {% if not status %}active{% endif %}" href="{{ url_for('vocabulary.my_dictionary') }}">
+        Усі <span class="badge bg-light text-dark">{{ counts.all }}</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link {% if status == 'learning' %}active{% endif %}" href="{{ url_for('vocabulary.my_dictionary', status='learning') }}">
+        Вчу <span class="badge bg-light text-dark">{{ counts.learning }}</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link {% if status == 'known' %}active{% endif %}" href="{{ url_for('vocabulary.my_dictionary', status='known') }}">
+        Знаю <span class="badge bg-light text-dark">{{ counts.known }}</span>
+      </a>
+    </li>
+  </ul>
+
+  {% if items %}
+    <table class="table align-middle">
+      <thead>
+        <tr>
+          <th scope="col">Каталонською</th>
+          <th scope="col">Українською</th>
+          <th scope="col">Нотатка</th>
+          <th scope="col" class="text-end">Дії</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in items %}
+          <tr class="{% if item.is_known %}table-light{% endif %}">
+            <td>
+              {% if item.word %}
+                <a href="{{ url_for('vocabulary.word', slug=item.word.slug) }}">{{ item.display_term }}</a>
+              {% else %}
+                {{ item.display_term }}
+              {% endif %}
+            </td>
+            <td>{{ item.display_translation }}</td>
+            <td>
+              <form class="d-flex gap-1" method="POST" action="{{ url_for('vocabulary.edit_my_note', item_id=item.id) }}">
+                {{ note_form.hidden_tag() }}
+                <input class="form-control form-control-sm" type="text" name="note"
+                       value="{{ item.note or '' }}" maxlength="255" placeholder="—">
+                <button class="btn btn-sm btn-outline-secondary" type="submit" title="Зберегти нотатку">✓</button>
+              </form>
+            </td>
+            <td class="text-end">
+              <div class="d-inline-flex gap-1">
+                <form method="POST" action="{{ url_for('vocabulary.toggle_my_word', item_id=item.id) }}">
+                  {{ action_form.hidden_tag() }}
+                  <button class="btn btn-sm {% if item.is_known %}btn-outline-secondary{% else %}btn-outline-success{% endif %}"
+                          type="submit" title="Позначити як {% if item.is_known %}«вчу»{% else %}«знаю»{% endif %}">
+                    {% if item.is_known %}вчу{% else %}знаю{% endif %}
+                  </button>
+                </form>
+                <form method="POST" action="{{ url_for('vocabulary.remove_my_word', item_id=item.id) }}">
+                  {{ action_form.hidden_tag() }}
+                  <button class="btn btn-sm btn-outline-danger" type="submit" title="Вилучити">×</button>
+                </form>
+              </div>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <p class="small text-muted">
+      <a href="{{ url_for('vocabulary.export_my_dictionary') }}">Завантажити мій словник у CSV</a>
+    </p>
+  {% else %}
+    <div class="alert alert-light border">
+      {% if status %}
+        У цій категорії поки нічого немає.
+      {% else %}
+        Ваш словник порожній. Додайте слово вище або оберіть його
+        <a href="{{ url_for('vocabulary.dictionary') }}">у загальному словнику</a>.
+      {% endif %}
+    </div>
+  {% endif %}
+</div>
+{% endblock content %}

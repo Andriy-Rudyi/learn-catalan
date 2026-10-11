@@ -22,5 +22,15 @@ class Config:
     MAIL_USERNAME = os.environ.get('EMAIL_USER') 
     MAIL_PASSWORD = os.environ.get('EMAIL_PASS')
 
-# class TestConfig(Config):
-#     TESTING = True
+class TestConfig(Config):
+    """Configuration for the test suite.
+
+    Uses an in-memory database so tests never touch the real one, and
+    turns off CSRF and outgoing mail.
+    """
+
+    TESTING = True
+    SECRET_KEY = 'test-secret-key'
+    SQLALCHEMY_DATABASE_URI = os.getenv('TEST_DATABASE_URI', 'sqlite:///:memory:')
+    WTF_CSRF_ENABLED = False
+    MAIL_SUPPRESS_SEND = True

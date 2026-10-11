@@ -30,6 +30,7 @@
               <div class="navbar-nav mr-auto start-0 ">
                 <a class="nav-item nav-link" href="{{ url_for('main.lessons') }}">Уроки</a>
                 <a class="nav-item nav-link" href="{{ url_for('main.conjugator') }}">Дієвідміна</a>
+                <a class="nav-item nav-link" href="{{ url_for('vocabulary.dictionary') }}">Словник</a>
                 <a class="nav-item nav-link" href="{{ url_for('main.faq') }}">FAQ</a>
                 <a class="nav-item nav-link" href="{{ url_for('main.announcements') }}">Оголошення</a>
                 <a class="nav-item nav-link" href="{{ url_for('main.updates') }}">Оновлення</a>
@@ -40,6 +41,7 @@
                   {% if current_user.username == 'Andriy' %}
                   <a class="nav-item nav-link" href="{{ url_for('posts.new_post') }}">Новий урок</a>
                   {% endif %}
+                  <a class="nav-item nav-link" href="{{ url_for('vocabulary.my_dictionary') }}">Мій словник</a>
                   <a class="nav-item nav-link" href="{{ url_for('users.account') }}">Моя сторінка</a>
                 <a class="nav-item nav-link" href="{{ url_for('users.logout') }}">Вийти</a>
                 {% else %}

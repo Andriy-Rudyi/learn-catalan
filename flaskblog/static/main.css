@@ -207,3 +207,91 @@ a.article-title:hover {
   font-size: 0.9em;
   color: #888;
 }
+/* Conjugator */
+.conjugator .mood-section {
+  margin-top: 1.75rem;
+}
+
+.conjugator .mood-section h3 {
+  font-size: 1.25rem;
+  border-bottom: 1px solid #e3e3e3;
+  padding-bottom: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.conjugator .tense-card {
+  margin-bottom: 1.25rem;
+}
+
+.conjugator .tense-card h4 {
+  font-size: 0.95rem;
+  color: #444;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.4rem;
+}
+
+.conjugator .conjugation-table {
+  margin-bottom: 0;
+}
+
+.conjugator .conjugation-table td,
+.conjugator .conjugation-table th {
+  padding: 0.25rem 0.5rem;
+  border-color: #efefef;
+}
+
+.conjugator .person-cell {
+  width: 7.5rem;
+  font-weight: 400;
+  color: #888;
+  font-size: 0.85rem;
+}
+
+.verb-example {
+  text-decoration: none;
+}
+
+.verb-example:hover {
+  text-decoration: underline;
+}
+
+/* Dictionary */
+.dictionary .word-card {
+  border: 1px solid #eee;
+  border-radius: 0.35rem;
+  padding: 0.75rem 0.9rem;
+  margin-bottom: 0.85rem;
+  background: #fff;
+}
+
+.dictionary .word-term {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #333;
+}
+
+.dictionary .word-term:hover {
+  color: #007bff;
+}
+
+.dictionary .word-translation {
+  color: #555;
+}
+
+.dictionary .word-meta {
+  margin-top: 0.35rem;
+  font-size: 0.78rem;
+  color: #888;
+}
+
+.dictionary .word-meta span:not(:last-child)::after {
+  content: " · ";
+}
+
+.dictionary .word-example {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: #777;
+}
