@@ -22,6 +22,9 @@ class Config:
     # Production db
     SECRET_KEY = os.getenv('SECRET_KEY')
     SQLALCHEMY_DATABASE_URI = database_url()
+    # Free hosted databases (Neon, Render) close idle connections; check each
+    # pooled connection before use instead of failing the next request.
+    SQLALCHEMY_ENGINE_OPTIONS = {'pool_pre_ping': True, 'pool_recycle': 280}
 
     #DB_URL = 'postgresql+psycopg2://{user}:{pw}@{url}/{db}'.format(user=POSTGRES_USER, pw=POSTGRES_PW, url=POSTGRES_URL, db=POSTGRES_DB)
     #SQLALCHEMY_DATABASE_URI = DB_URL
