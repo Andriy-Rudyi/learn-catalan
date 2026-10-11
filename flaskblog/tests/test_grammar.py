@@ -54,6 +54,25 @@ class CourseDataTests(unittest.TestCase):
                         self.assertTrue(item.get('q'))
                         self.assertTrue(item.get('a'))
 
+    def test_text_has_no_russian_only_letters(self):
+        import json
+        import re
+
+        russian = re.compile('[ыэъё]', re.IGNORECASE)
+        for unit in self.units:
+            with self.subTest(unit=unit['number']):
+                self.assertIsNone(russian.search(json.dumps(unit, ensure_ascii=False)))
+
+    def test_no_drafting_leftovers(self):
+        """Half-finished thoughts such as "x → y?.." must not reach learners."""
+        import json
+
+        for unit in self.units:
+            text = json.dumps(unit, ensure_ascii=False)
+            with self.subTest(unit=unit['number']):
+                self.assertNotIn('?..', text)
+                self.assertNotIn('? — частіше', text)
+
     def test_missing_required_field_is_rejected(self):
         import json
         import os
