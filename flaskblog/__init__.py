@@ -44,6 +44,7 @@ def create_app(config_class=Config):
     from flaskblog.main.routes import main
     from flaskblog.errors.handler import errors
     from flaskblog.grammar.routes import grammar
+    from flaskblog.phonetics.routes import phonetics
     from flaskblog.vocabulary.routes import vocabulary
     app.register_blueprint(users)
     app.register_blueprint(posts)
@@ -52,6 +53,7 @@ def create_app(config_class=Config):
     app.register_blueprint(admin_bp)
     app.register_blueprint(vocabulary)
     app.register_blueprint(grammar)
+    app.register_blueprint(phonetics)
 
     from flaskblog.conjugation.cli import conjugation_cli
     from flaskblog.grammar.cli import grammar_cli

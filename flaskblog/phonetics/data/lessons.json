@@ -1,0 +1,2861 @@
+[
+  {
+    "number": 1,
+    "slug": "alfabet",
+    "title": "Алфавіт і назви літер",
+    "section": "Основи",
+    "level": "A1",
+    "summary": "Назви літер каталанського алфавіту, німа h і позначення транскрипції в цьому курсі.",
+    "explanation": "<p>Каталанський алфавіт має 26 літер — ті самі, що й латинський. До них додаються <strong>ç</strong> (<em>ce trencada</em>, «ламане це»), <strong>l·l</strong> (<em>ela geminada</em>, «подвоєне ела») та літери зі знаками: à, è, é, í, ï, ò, ó, ú, ü. Літери k і w трапляються майже лише в запозиченнях і власних назвах, а y — у сполученні <strong>ny</strong> і в запозиченнях.</p><p>Назви літер жіночого роду (<em>la a</em>, <em>la be</em>, <em>la hac</em>):</p><ul><li>a, be (<em>be alta</em>), ce, de, e, efa, ge, hac, i, jota, ca, ela, ema;</li><li>ena, o, pe, cu, erra, essa, te, u, ve (<em>ve baixa</em>), doble ve, ics (<em>xeix</em>), i grega, zeta.</li></ul><p>У розмові також кажуть <em>efe</em>, <em>ele</em>, <em>eme</em>, <em>ene</em>, <em>erre</em>, <em>esse</em>. Уточнення «be alta» («високе бе») і «ve baixa» («низьке ве») потрібні тому, що в центральній вимові b і v звучать однаково. Для x є дві назви: <em>ics</em> і народна <em>xeix</em>.</p><p>Літера <strong>h</strong> (<em>hac</em>) у власне каталанських словах не вимовляється: <em>hola</em> [ˈɔlə], <em>home</em> [ˈɔmə], <em>ahir</em> [əˈi]. Не читайте її як українське «г».</p><p>Про транскрипцію. Курс навчає <strong>центральної (барселонської)</strong> вимови. У квадратних дужках подано спрощену (широку) транскрипцію МФА: вона показує редукцію ненаголошених голосних до [ə] і [u], відкриті й закриті [ɛ e ɔ o], звуки [ʎ ɲ ʃ ʒ tʃ dʒ ɾ r z], оглушення в кінці слова та німі літери. Не позначаємо послаблені [β ð ɣ] між голосними (пишемо [b d ɡ]) і «темний» відтінок l (пишемо [l]). Знак ˈ стоїть перед наголошеним складом — також в односкладових повнозначних словах: <em>pa</em> [ˈpa].</p>",
+    "sounds": [
+      {
+        "spelling": "h",
+        "ipa": "∅",
+        "example": "hola",
+        "example_ipa": "ˈɔlə",
+        "uk": "не вимовляється",
+        "note": "назва: hac [ˈak]"
+      },
+      {
+        "spelling": "j",
+        "ipa": "ʒ",
+        "example": "jo",
+        "example_ipa": "ˈʒɔ",
+        "uk": "як «ж» у «жаба»",
+        "note": "назва: jota [ˈʒɔtə]"
+      },
+      {
+        "spelling": "g",
+        "ipa": "ɡ, ʒ",
+        "example": "gat",
+        "example_ipa": "ˈɡat",
+        "uk": "як «ґ» у «ґанок»; перед e, i — як «ж»",
+        "note": "назва: ge [ˈʒe]"
+      },
+      {
+        "spelling": "c",
+        "ipa": "k, s",
+        "example": "casa",
+        "example_ipa": "ˈkazə",
+        "uk": "як «к»; перед e, i — як «с»",
+        "note": "назва: ce [ˈse]"
+      },
+      {
+        "spelling": "q",
+        "ipa": "k",
+        "example": "qui",
+        "example_ipa": "ˈki",
+        "uk": "як «к»",
+        "note": "назва: cu [ˈku]; пишеться разом з u: qu"
+      },
+      {
+        "spelling": "r",
+        "ipa": "ɾ, r",
+        "example": "rosa",
+        "example_ipa": "ˈrɔzə",
+        "uk": "як «р» (див. урок 10)",
+        "note": "назва: erra [ˈɛrə]"
+      },
+      {
+        "spelling": "s",
+        "ipa": "s, z",
+        "example": "sol",
+        "example_ipa": "ˈsɔl",
+        "uk": "як «с»; між голосними — як «з»",
+        "note": "назва: essa [ˈɛsə]"
+      },
+      {
+        "spelling": "v",
+        "ipa": "b",
+        "example": "vi",
+        "example_ipa": "ˈbi",
+        "uk": "як «б»; губно-зубного «в» немає",
+        "note": "назва: ve baixa [ˈbe ˈbaʃə]"
+      },
+      {
+        "spelling": "w",
+        "ipa": "w, b",
+        "example": "web",
+        "example_ipa": "ˈwɛp",
+        "uk": "як коротке «у» або «б»",
+        "note": "назва: doble ve [ˈdoblə ˈbe]; лише в запозиченнях"
+      },
+      {
+        "spelling": "x",
+        "ipa": "ʃ, ks",
+        "example": "xocolata",
+        "example_ipa": "ʃukuˈlatə",
+        "uk": "як «ш»; у частині слів — як «кс»",
+        "note": "назва: ics [ˈiks] або xeix [ˈʃɛʃ]"
+      },
+      {
+        "spelling": "y",
+        "ipa": "ɲ (у ny)",
+        "example": "any",
+        "example_ipa": "ˈaɲ",
+        "uk": "у ny — як «нь»",
+        "note": "назва: i grega [ˈi ˈɡɾɛɡə]; окремо — лише в запозиченнях і назвах"
+      },
+      {
+        "spelling": "z",
+        "ipa": "z",
+        "example": "zero",
+        "example_ipa": "ˈzɛɾu",
+        "uk": "як «з»",
+        "note": "назва: zeta [ˈzɛtə]"
+      }
+    ],
+    "words": [
+      {
+        "ca": "lletra",
+        "ipa": "ˈʎɛtɾə",
+        "uk": "літера"
+      },
+      {
+        "ca": "alfabet",
+        "ipa": "əlfəˈbɛt",
+        "uk": "алфавіт"
+      },
+      {
+        "ca": "hola",
+        "ipa": "ˈɔlə",
+        "uk": "привіт"
+      },
+      {
+        "ca": "home",
+        "ipa": "ˈɔmə",
+        "uk": "чоловік; людина"
+      },
+      {
+        "ca": "hora",
+        "ipa": "ˈɔɾə",
+        "uk": "година"
+      },
+      {
+        "ca": "ahir",
+        "ipa": "əˈi",
+        "uk": "учора"
+      },
+      {
+        "ca": "hac",
+        "ipa": "ˈak",
+        "uk": "літера h"
+      },
+      {
+        "ca": "jota",
+        "ipa": "ˈʒɔtə",
+        "uk": "літера j"
+      },
+      {
+        "ca": "erra",
+        "ipa": "ˈɛrə",
+        "uk": "літера r"
+      },
+      {
+        "ca": "essa",
+        "ipa": "ˈɛsə",
+        "uk": "літера s"
+      },
+      {
+        "ca": "ve baixa",
+        "ipa": "ˈbe ˈbaʃə",
+        "uk": "літера v"
+      },
+      {
+        "ca": "doble ve",
+        "ipa": "ˈdoblə ˈbe",
+        "uk": "літера w"
+      },
+      {
+        "ca": "i grega",
+        "ipa": "ˈi ˈɡɾɛɡə",
+        "uk": "літера y"
+      },
+      {
+        "ca": "zeta",
+        "ipa": "ˈzɛtə",
+        "uk": "літера z"
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Як називається літера?",
+        "items": [
+          {
+            "q": "h",
+            "a": "hac [ˈak]"
+          },
+          {
+            "q": "j",
+            "a": "jota [ˈʒɔtə]"
+          },
+          {
+            "q": "v",
+            "a": "ve baixa [ˈbe ˈbaʃə] (або просто ve)"
+          },
+          {
+            "q": "w",
+            "a": "doble ve [ˈdoblə ˈbe]"
+          },
+          {
+            "q": "x",
+            "a": "ics [ˈiks] або xeix [ˈʃɛʃ]"
+          },
+          {
+            "q": "y",
+            "a": "i grega [ˈi ˈɡɾɛɡə]"
+          },
+          {
+            "q": "z",
+            "a": "zeta [ˈzɛtə]"
+          }
+        ]
+      },
+      {
+        "instruction": "Назвіть слово по літерах каталанською.",
+        "items": [
+          {
+            "q": "hola",
+            "a": "hac, o, ela, a"
+          },
+          {
+            "q": "casa",
+            "a": "ce, a, essa, a"
+          },
+          {
+            "q": "jove",
+            "a": "jota, o, ve baixa, e"
+          },
+          {
+            "q": "zero",
+            "a": "zeta, e, erra, o"
+          },
+          {
+            "q": "xec",
+            "a": "ics (xeix), e, ce"
+          },
+          {
+            "q": "any",
+            "a": "a, ena, i grega"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 2,
+    "slug": "redukcia-holosnykh",
+    "title": "Сильні та ненаголошені голосні: редукція",
+    "section": "Голосні",
+    "level": "A1",
+    "summary": "Чому без наголосу a та e звучать як [ə], а o — як [u].",
+    "explanation": "<p>Головне правило центральної каталанської вимови: <strong>якість голосного залежить від наголосу</strong>. Під наголосом розрізняють сім голосних: [a], [ɛ], [e], [i], [ɔ], [o], [u]. Без наголосу їх лишається лише три: [ə], [i], [u].</p><ul><li><strong>a</strong> та <strong>e</strong> без наголосу звучать як [ə]: <em>casa</em> [ˈkazə], <em>pare</em> [ˈpaɾə], <em>petit</em> [pəˈtit];</li><li><strong>o</strong> без наголосу звучить як [u]: <em>posar</em> [puˈza], <em>tomàquet</em> [tuˈmakət];</li><li><strong>i</strong> та <strong>u</strong> не змінюються: <em>dimarts</em> [diˈmaɾs], <em>música</em> [ˈmuzikə].</li></ul><p>Звук [ə] («шва») — короткий, ненапружений, невиразний голосний, середній між «а» та «е». В українській мові такого звука немає, тож його треба тренувати окремо: розслабте губи та язик і вимовте голосний коротко, без зусилля.</p><p>Через редукцію одне й те саме слово звучить по-різному в різних формах: <em>porta</em> [ˈpɔɾtə] «двері», але <em>portar</em> [puɾˈta] «нести»; <em>casa</em> [ˈkazə], але <em>caseta</em> [kəˈzɛtə] «будиночок». Тому спершу визначайте наголос (урок 4), а вже потім вимовляйте голосні.</p><p>Порада для українців: в українській ненаголошені голосні змінюються мало (зближуються хіба що «е» та «и»), тому з’являється спокуса читати каталанські слова «як написано». Не робіть цього: <em>Barcelona</em> звучить [bəɾsəˈlonə], без чітких «а» та «е» в ненаголошених складах. У валенсійській вимові редукції немає — про це в уроці 13.</p>",
+    "sounds": [
+      {
+        "spelling": "a (наголошене)",
+        "ipa": "a",
+        "example": "casa",
+        "example_ipa": "ˈkazə",
+        "uk": "як «а» у «мама»",
+        "note": ""
+      },
+      {
+        "spelling": "a (ненаголошене)",
+        "ipa": "ə",
+        "example": "parlar",
+        "example_ipa": "pəɾˈla",
+        "uk": "немає в українській: короткий невиразний звук між «а» та «е»",
+        "note": ""
+      },
+      {
+        "spelling": "e (ненаголошене)",
+        "ipa": "ə",
+        "example": "mare",
+        "example_ipa": "ˈmaɾə",
+        "uk": "той самий звук [ə]",
+        "note": ""
+      },
+      {
+        "spelling": "o (ненаголошене)",
+        "ipa": "u",
+        "example": "posar",
+        "example_ipa": "puˈza",
+        "uk": "як «у»",
+        "note": ""
+      },
+      {
+        "spelling": "i",
+        "ipa": "i",
+        "example": "dimarts",
+        "example_ipa": "diˈmaɾs",
+        "uk": "як «і»",
+        "note": "не редукується"
+      },
+      {
+        "spelling": "u",
+        "ipa": "u",
+        "example": "música",
+        "example_ipa": "ˈmuzikə",
+        "uk": "як «у»",
+        "note": "не редукується"
+      },
+      {
+        "spelling": "e (наголошене)",
+        "ipa": "ɛ, e",
+        "example": "festa",
+        "example_ipa": "ˈfɛstə",
+        "uk": "відкрите — як «е»; закрите — вужче",
+        "note": "докладніше в уроці 3"
+      },
+      {
+        "spelling": "o (наголошене)",
+        "ipa": "ɔ, o",
+        "example": "porta",
+        "example_ipa": "ˈpɔɾtə",
+        "uk": "відкрите — як «о»; закрите — вужче",
+        "note": "докладніше в уроці 3"
+      }
+    ],
+    "words": [
+      {
+        "ca": "casa",
+        "ipa": "ˈkazə",
+        "uk": "дім"
+      },
+      {
+        "ca": "mare",
+        "ipa": "ˈmaɾə",
+        "uk": "мати"
+      },
+      {
+        "ca": "pare",
+        "ipa": "ˈpaɾə",
+        "uk": "батько"
+      },
+      {
+        "ca": "parlar",
+        "ipa": "pəɾˈla",
+        "uk": "говорити"
+      },
+      {
+        "ca": "posar",
+        "ipa": "puˈza",
+        "uk": "класти, ставити"
+      },
+      {
+        "ca": "porta",
+        "ipa": "ˈpɔɾtə",
+        "uk": "двері"
+      },
+      {
+        "ca": "portar",
+        "ipa": "puɾˈta",
+        "uk": "нести, приносити"
+      },
+      {
+        "ca": "tomàquet",
+        "ipa": "tuˈmakət",
+        "uk": "помідор"
+      },
+      {
+        "ca": "petit",
+        "ipa": "pəˈtit",
+        "uk": "малий"
+      },
+      {
+        "ca": "Barcelona",
+        "ipa": "bəɾsəˈlonə",
+        "uk": "Барселона"
+      },
+      {
+        "ca": "Montserrat",
+        "ipa": "munsəˈrat",
+        "uk": "Монсеррат"
+      },
+      {
+        "ca": "català",
+        "ipa": "kətəˈla",
+        "uk": "каталанська мова; каталанський"
+      },
+      {
+        "ca": "escola",
+        "ipa": "əsˈkɔlə",
+        "uk": "школа"
+      },
+      {
+        "ca": "dormir",
+        "ipa": "duɾˈmi",
+        "uk": "спати"
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Як звучить указана ненаголошена голосна?",
+        "items": [
+          {
+            "q": "casa — остання a",
+            "a": "[ə]: [ˈkazə]"
+          },
+          {
+            "q": "posar — o",
+            "a": "[u]: [puˈza]"
+          },
+          {
+            "q": "petit — e",
+            "a": "[ə]: [pəˈtit]"
+          },
+          {
+            "q": "tomàquet — o",
+            "a": "[u]: [tuˈmakət]"
+          },
+          {
+            "q": "dimarts — i",
+            "a": "[i]: i не редукується, [diˈmaɾs]"
+          },
+          {
+            "q": "escola — початкова e",
+            "a": "[ə]: [əsˈkɔlə]"
+          },
+          {
+            "q": "Montserrat — o",
+            "a": "[u]: [munsəˈrat]"
+          }
+        ]
+      },
+      {
+        "instruction": "Наголос переходить на інший склад. Як змінюється вимова?",
+        "items": [
+          {
+            "q": "porta → portar",
+            "a": "[ˈpɔɾtə] → [puɾˈta]: o втрачає наголос і звучить як [u]"
+          },
+          {
+            "q": "casa → caseta",
+            "a": "[ˈkazə] → [kəˈzɛtə]: перша a стає [ə]"
+          },
+          {
+            "q": "roda → rodar",
+            "a": "[ˈrɔdə] → [ruˈda]: o стає [u]"
+          },
+          {
+            "q": "festa → festiu",
+            "a": "[ˈfɛstə] → [fəsˈtiw]: e стає [ə]"
+          },
+          {
+            "q": "mar → mariner",
+            "a": "[ˈmaɾ] → [məɾiˈne]: a стає [ə]"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 3,
+    "slug": "vidkryti-zakryti-e-o",
+    "title": "Відкриті й закриті e та o: è/é, ò/ó",
+    "section": "Голосні",
+    "level": "A2",
+    "summary": "Наголошені e та o бувають відкритими й закритими, і це може розрізняти слова.",
+    "explanation": "<p>Під наголосом каталанські <strong>e</strong> та <strong>o</strong> мають по два варіанти:</p><ul><li>відкрите [ɛ] — рот розкритий ширше: <em>cafè</em> [kəˈfɛ], <em>festa</em> [ˈfɛstə];</li><li>закрите [e] — рот розкритий менше, звук ближчий до [i]: <em>també</em> [təmˈbe], <em>pera</em> [ˈpeɾə] «груша»;</li><li>відкрите [ɔ]: <em>això</em> [əˈʃɔ], <em>roba</em> [ˈrɔbə] «одяг»;</li><li>закрите [o] — губи округлені сильніше, звук ближчий до [u]: <em>cançó</em> [kənˈso], <em>boca</em> [ˈbokə].</li></ul><p>Якщо на наголошеному e чи o стоїть знак, він і показує якість: <strong>гравіс</strong> (è, ò) — відкритий звук, <strong>акут</strong> (é, ó) — закритий. Проте знак пишуть лише тоді, коли цього вимагають правила наголосу (урок 4). В інших словах якість треба запам’ятовувати разом зі словом або перевіряти в словнику: <em>festa</em> [ˈfɛstə], але <em>pera</em> [ˈpeɾə] «груша»; <em>roba</em> [ˈrɔbə], але <em>boca</em> [ˈbokə].</p><p>Кілька пар досі розрізняються <strong>діакритичним знаком</strong> і вимовою: <em>bé</em> [ˈbe] «добре» — <em>be</em> [ˈbɛ] «ягня»; <em>són</em> [ˈson] «(вони) є» — <em>son</em> [ˈsɔn] «сон»; <em>déu</em> [ˈdew] «бог» — <em>deu</em> [ˈdɛw] «десять».</p><p>Реформа правопису 2016 року скасувала більшість діакритичних знаків. Тепер <em>dona</em> — це і [ˈdɔnə] «жінка», і [ˈdonə] «дає»; <em>os</em> — і [ˈɔs] «кістка», і [ˈos] «ведмідь»; <em>net</em> — і [ˈnɛt] «чистий», і [ˈnet] «онук». Написання однакове, вимова різна, а значення підказує контекст.</p><p>Українські «е» та «о» найближчі до відкритих [ɛ] та [ɔ]. Закриті [e] та [o] треба тренувати: вимовляйте їх із вужче розкритим ротом, ніби на півдорозі до [i] та [u]. Без наголосу цієї різниці немає: там e та o редукуються (урок 2).</p>",
+    "sounds": [
+      {
+        "spelling": "è",
+        "ipa": "ɛ",
+        "example": "cafè",
+        "example_ipa": "kəˈfɛ",
+        "uk": "як українське «е» у «день»",
+        "note": "завжди відкрите"
+      },
+      {
+        "spelling": "é",
+        "ipa": "e",
+        "example": "també",
+        "example_ipa": "təmˈbe",
+        "uk": "немає точного відповідника: вужче за «е», ближче до «і»",
+        "note": "завжди закрите"
+      },
+      {
+        "spelling": "ò",
+        "ipa": "ɔ",
+        "example": "això",
+        "example_ipa": "əˈʃɔ",
+        "uk": "як українське «о» у «сон»",
+        "note": "завжди відкрите"
+      },
+      {
+        "spelling": "ó",
+        "ipa": "o",
+        "example": "cançó",
+        "example_ipa": "kənˈso",
+        "uk": "немає точного відповідника: вужче за «о», ближче до «у»",
+        "note": "завжди закрите"
+      },
+      {
+        "spelling": "e (без знака)",
+        "ipa": "ɛ, e",
+        "example": "festa",
+        "example_ipa": "ˈfɛstə",
+        "uk": "відкрите або закрите — залежить від слова",
+        "note": "але pera [ˈpeɾə] — закрите"
+      },
+      {
+        "spelling": "o (без знака)",
+        "ipa": "ɔ, o",
+        "example": "roba",
+        "example_ipa": "ˈrɔbə",
+        "uk": "відкрите або закрите — залежить від слова",
+        "note": "boca [ˈbokə] — закрите"
+      }
+    ],
+    "words": [
+      {
+        "ca": "cafè",
+        "ipa": "kəˈfɛ",
+        "uk": "кава; кав’ярня"
+      },
+      {
+        "ca": "també",
+        "ipa": "təmˈbe",
+        "uk": "також"
+      },
+      {
+        "ca": "això",
+        "ipa": "əˈʃɔ",
+        "uk": "це"
+      },
+      {
+        "ca": "cançó",
+        "ipa": "kənˈso",
+        "uk": "пісня"
+      },
+      {
+        "ca": "bé",
+        "ipa": "ˈbe",
+        "uk": "добре"
+      },
+      {
+        "ca": "be",
+        "ipa": "ˈbɛ",
+        "uk": "ягня"
+      },
+      {
+        "ca": "són",
+        "ipa": "ˈson",
+        "uk": "(вони) є"
+      },
+      {
+        "ca": "son",
+        "ipa": "ˈsɔn",
+        "uk": "сон"
+      },
+      {
+        "ca": "dona",
+        "ipa": "ˈdɔnə",
+        "uk": "жінка"
+      },
+      {
+        "ca": "dona",
+        "ipa": "ˈdonə",
+        "uk": "(він, вона) дає"
+      },
+      {
+        "ca": "os",
+        "ipa": "ˈɔs",
+        "uk": "кістка"
+      },
+      {
+        "ca": "os",
+        "ipa": "ˈos",
+        "uk": "ведмідь"
+      },
+      {
+        "ca": "net",
+        "ipa": "ˈnɛt",
+        "uk": "чистий"
+      },
+      {
+        "ca": "net",
+        "ipa": "ˈnet",
+        "uk": "онук"
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Відкрите чи закрите? Орієнтуйтеся на знак.",
+        "items": [
+          {
+            "q": "cafè",
+            "a": "відкрите [ɛ]: [kəˈfɛ]"
+          },
+          {
+            "q": "cançó",
+            "a": "закрите [o]: [kənˈso]"
+          },
+          {
+            "q": "també",
+            "a": "закрите [e]: [təmˈbe]"
+          },
+          {
+            "q": "això",
+            "a": "відкрите [ɔ]: [əˈʃɔ]"
+          },
+          {
+            "q": "anglès",
+            "a": "відкрите [ɛ]: [əŋˈɡlɛs]"
+          },
+          {
+            "q": "només",
+            "a": "закрите [e]: [nuˈmes]"
+          },
+          {
+            "q": "òpera",
+            "a": "відкрите [ɔ]: [ˈɔpəɾə]"
+          }
+        ]
+      },
+      {
+        "instruction": "Що означає слово з такою вимовою?",
+        "items": [
+          {
+            "q": "net [ˈnɛt]",
+            "a": "«чистий»"
+          },
+          {
+            "q": "net [ˈnet]",
+            "a": "«онук»"
+          },
+          {
+            "q": "os [ˈɔs]",
+            "a": "«кістка»"
+          },
+          {
+            "q": "os [ˈos]",
+            "a": "«ведмідь»"
+          },
+          {
+            "q": "dona [ˈdɔnə]",
+            "a": "«жінка»"
+          },
+          {
+            "q": "be [ˈbɛ]",
+            "a": "«ягня»"
+          },
+          {
+            "q": "deu [ˈdɛw]",
+            "a": "«десять» (а також «мусить; винен»)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 4,
+    "slug": "naholos",
+    "title": "Наголос і знак наголосу",
+    "section": "Наголос і склад",
+    "level": "A1",
+    "summary": "Як визначити наголошений склад і коли над голосною пишуть знак наголосу.",
+    "explanation": "<p>За місцем наголосу каталанські слова бувають трьох типів:</p><ul><li><strong>aguda</strong> — наголос на останньому складі: <em>cantar</em>, <em>ciutat</em>, <em>català</em>;</li><li><strong>plana</strong> — на передостанньому: <em>casa</em>, <em>examen</em>, <em>fàcil</em>;</li><li><strong>esdrúixola</strong> — на третьому від кінця: <em>música</em>, <em>pàgina</em>, <em>telèfon</em>.</li></ul><p>Як читати слово без знака: якщо воно закінчується на <strong>голосну, голосну + s, -en або -in</strong>, наголос падає на передостанній склад (<em>casa</em>, <em>cases</em>, <em>parlen</em>); якщо на будь-який інший приголосний — на останній (<em>cantar</em>, <em>ciutat</em>, <em>amic</em>). Слова на спадний дифтонг (-ai, -ei, -au, -eu, -iu, -ou) поводяться як слова на приголосний: <em>remei</em> [rəˈmej] «ліки», <em>avui</em> [əˈbuj].</p><p>Знак наголосу пишуть тоді, коли слово <strong>порушує</strong> це правило:</p><ul><li>aguda, що закінчується на голосну, голосну + s, -en, -in: <em>català</em>, <em>cafè</em>, <em>anglès</em>, <em>entén</em>, <em>Berlín</em>;</li><li>plana, що закінчується на щось інше: <em>fàcil</em>, <em>difícil</em>, <em>exàmens</em> (але <em>examen</em> без знака);</li><li>esdrúixola — завжди: <em>música</em>, <em>pàgina</em>, <em>telèfon</em>.</li></ul><p>Вигляд знака залежить від голосної: над <strong>a</strong> завжди гравіс (<em>à</em>), над <strong>i</strong> та <strong>u</strong> завжди акут (<em>í</em>, <em>ú</em>), над <strong>e</strong> та <strong>o</strong> — гравіс для відкритого звука (è, ò) і акут для закритого (é, ó). Кінцеві сполучення i, u + голосна після приголосного (-ia, -ie, -io, -ua) у правописі рахуються як два склади, тому <em>família</em>, <em>història</em>, <em>Àsia</em> — esdrúixoles і пишуться зі знаком (після qu, gu це правило не діє: <em>aigua</em>).</p><p>Односкладові слова знака не мають (<em>sol</em>, <em>pa</em>, <em>mes</em>), крім короткого переліку діакритичних: <em>bé, déu, és, mà, més, món, pèl, què, sé, sí, sòl, són, té, ús, vós</em>, а також форм <em>véns</em>, <em>vénen</em> дієслова <em>venir</em>.</p>",
+    "sounds": [
+      {
+        "spelling": "à",
+        "ipa": "a",
+        "example": "català",
+        "example_ipa": "kətəˈla",
+        "uk": "наголошене «а»",
+        "note": "над a — завжди гравіс"
+      },
+      {
+        "spelling": "è",
+        "ipa": "ɛ",
+        "example": "cafè",
+        "example_ipa": "kəˈfɛ",
+        "uk": "наголошене відкрите «е»",
+        "note": ""
+      },
+      {
+        "spelling": "é",
+        "ipa": "e",
+        "example": "també",
+        "example_ipa": "təmˈbe",
+        "uk": "наголошене закрите [e]",
+        "note": ""
+      },
+      {
+        "spelling": "í",
+        "ipa": "i",
+        "example": "així",
+        "example_ipa": "əˈʃi",
+        "uk": "наголошене «і»",
+        "note": "над i — завжди акут"
+      },
+      {
+        "spelling": "ò",
+        "ipa": "ɔ",
+        "example": "això",
+        "example_ipa": "əˈʃɔ",
+        "uk": "наголошене відкрите «о»",
+        "note": ""
+      },
+      {
+        "spelling": "ó",
+        "ipa": "o",
+        "example": "cançó",
+        "example_ipa": "kənˈso",
+        "uk": "наголошене закрите [o]",
+        "note": ""
+      },
+      {
+        "spelling": "ú",
+        "ipa": "u",
+        "example": "ningú",
+        "example_ipa": "niŋˈɡu",
+        "uk": "наголошене «у»",
+        "note": "над u — завжди акут"
+      }
+    ],
+    "words": [
+      {
+        "ca": "cantar",
+        "ipa": "kənˈta",
+        "uk": "співати"
+      },
+      {
+        "ca": "casa",
+        "ipa": "ˈkazə",
+        "uk": "дім"
+      },
+      {
+        "ca": "ciutat",
+        "ipa": "siwˈtat",
+        "uk": "місто"
+      },
+      {
+        "ca": "català",
+        "ipa": "kətəˈla",
+        "uk": "каталанська мова; каталанський"
+      },
+      {
+        "ca": "cafè",
+        "ipa": "kəˈfɛ",
+        "uk": "кава; кав’ярня"
+      },
+      {
+        "ca": "també",
+        "ipa": "təmˈbe",
+        "uk": "також"
+      },
+      {
+        "ca": "així",
+        "ipa": "əˈʃi",
+        "uk": "так, таким чином"
+      },
+      {
+        "ca": "fàcil",
+        "ipa": "ˈfasil",
+        "uk": "легкий, простий"
+      },
+      {
+        "ca": "difícil",
+        "ipa": "diˈfisil",
+        "uk": "складний"
+      },
+      {
+        "ca": "examen",
+        "ipa": "əɡˈzamən",
+        "uk": "іспит"
+      },
+      {
+        "ca": "exàmens",
+        "ipa": "əɡˈzaməns",
+        "uk": "іспити"
+      },
+      {
+        "ca": "música",
+        "ipa": "ˈmuzikə",
+        "uk": "музика"
+      },
+      {
+        "ca": "pàgina",
+        "ipa": "ˈpaʒinə",
+        "uk": "сторінка"
+      },
+      {
+        "ca": "família",
+        "ipa": "fəˈmiliə",
+        "uk": "сім’я, родина"
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Де наголос? Поясніть чому.",
+        "items": [
+          {
+            "q": "cantar",
+            "a": "can-TAR: слово закінчується на -r, тому наголос на останньому складі"
+          },
+          {
+            "q": "casa",
+            "a": "CA-sa: закінчується на голосну, тому наголос на передостанньому складі"
+          },
+          {
+            "q": "fàcil",
+            "a": "FÀ-cil: знак показує наголос на передостанньому складі"
+          },
+          {
+            "q": "música",
+            "a": "MÚ-si-ca: наголос на третьому від кінця складі, тому є знак"
+          },
+          {
+            "q": "ciutat",
+            "a": "ciu-TAT: закінчується на -t, наголос на останньому складі"
+          },
+          {
+            "q": "examen",
+            "a": "e-XA-men: закінчується на -en, наголос на передостанньому складі"
+          },
+          {
+            "q": "cafè",
+            "a": "ca-FÈ: знак показує наголос на останньому складі"
+          }
+        ]
+      },
+      {
+        "instruction": "Чи потрібен знак наголосу? Запишіть слово правильно.",
+        "items": [
+          {
+            "q": "cami (наголос на останньому складі)",
+            "a": "camí: aguda на голосну"
+          },
+          {
+            "q": "facil (наголос на першому складі)",
+            "a": "fàcil: plana на -l"
+          },
+          {
+            "q": "parlar (наголос на останньому складі)",
+            "a": "parlar, без знака: aguda на -r"
+          },
+          {
+            "q": "examen (наголос на -xa-)",
+            "a": "examen, без знака: plana на -en"
+          },
+          {
+            "q": "examens (наголос на -xa-)",
+            "a": "exàmens: plana на -ens"
+          },
+          {
+            "q": "pagina (наголос на першому складі)",
+            "a": "pàgina: esdrúixola завжди зі знаком"
+          },
+          {
+            "q": "frances (наголос на останньому складі, відкрите e)",
+            "a": "francès: aguda на голосну + s, відкрите e — гравіс"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 5,
+    "slug": "dyftonhy-diarezys",
+    "title": "Дифтонги, тріфтонги й діарезис: ï, ü",
+    "section": "Наголос і склад",
+    "level": "A2",
+    "summary": "Як голосні об’єднуються в один склад і навіщо над i та u ставлять дві крапки.",
+    "explanation": "<p><strong>Спадні дифтонги</strong> — голосна + нескладове i [j] або u [w] в одному складі: <em>mai</em> [ˈmaj], <em>rei</em> [ˈrej], <em>noi</em> [ˈnɔj], <em>avui</em> [əˈbuj], <em>pau</em> [ˈpaw], <em>peu</em> [ˈpɛw], <em>riu</em> [ˈriw], <em>nou</em> [ˈnɔw], <em>duu</em> [ˈduw]. Вимовляйте їх як одне ціле: [aj] — як «ай» у «чай», [aw] — як «ав» у «правда» (українське «в» тут теж звучить як коротке «у»).</p><p><strong>Висхідні дифтонги</strong> бувають лише після <em>q</em> і <em>g</em>: <em>quatre</em> [ˈkwatɾə], <em>quan</em> [ˈkwan], <em>aigua</em> [ˈajɡwə]; перед e та i — з діарезисом: <em>pingüí</em> [piŋˈɡwi], <em>aigües</em> [ˈajɡwəs], <em>qüestió</em> [kwəstiˈo]. Поєднання з трьох елементів (<strong>тріфтонги</strong>) теж виникають після qu, gu: <em>guaita</em> [ˈɡwajtə] «дивись», <em>Paraguai</em> [pəɾəˈɡwaj]. В інших випадках i, u + голосна після приголосного — це два окремі склади: <em>dia</em> [ˈdiə] (di-a), <em>història</em> [isˈtɔɾiə].</p><p>Між двома голосними i та u стають приголосними [j] і [w]: <em>noia</em> [ˈnɔjə], <em>joia</em> [ˈʒɔjə], <em>cauen</em> [ˈkawən].</p><p><strong>Діарезис</strong> (<em>dièresi</em>) має дві функції:</p><ul><li>над <strong>ü</strong> після g, q перед e, i показує, що u вимовляється: <em>pingüí</em>, <em>llengües</em>, <em>freqüent</em>;</li><li>над <strong>ï</strong> або <strong>ü</strong> показує, що голосна утворює окремий склад, а не дифтонг: <em>veïna</em> [bəˈinə] (ve-ï-na), <em>raïm</em> [rəˈim], <em>països</em> [pəˈizus], <em>Raül</em> [rəˈul].</li></ul><p>Діарезис не пишуть, якщо на цій голосній уже стоїть знак наголосу (<em>país</em>, але <em>països</em>), а також в інфінітиві, герундії, майбутньому часі й умовному способі дієслів типу <em>traduir</em>, <em>agrair</em> (<em>traduint</em>, <em>traduiré</em>) і в словах із суфіксами -isme, -ista (<em>egoisme</em>), хоча голосні там теж вимовляються окремо.</p>",
+    "sounds": [
+      {
+        "spelling": "ai",
+        "ipa": "aj",
+        "example": "mai",
+        "example_ipa": "ˈmaj",
+        "uk": "як «ай» у «чай»",
+        "note": ""
+      },
+      {
+        "spelling": "ei",
+        "ipa": "ej",
+        "example": "rei",
+        "example_ipa": "ˈrej",
+        "uk": "як «ей», але з закритим [e]",
+        "note": ""
+      },
+      {
+        "spelling": "oi",
+        "ipa": "ɔj",
+        "example": "noi",
+        "example_ipa": "ˈnɔj",
+        "uk": "як «ой» у «бойовий»",
+        "note": ""
+      },
+      {
+        "spelling": "ui",
+        "ipa": "uj",
+        "example": "avui",
+        "example_ipa": "əˈbuj",
+        "uk": "як «уй» у «буйний»",
+        "note": ""
+      },
+      {
+        "spelling": "au",
+        "ipa": "aw",
+        "example": "pau",
+        "example_ipa": "ˈpaw",
+        "uk": "як «ав» у «правда»",
+        "note": ""
+      },
+      {
+        "spelling": "eu",
+        "ipa": "ɛw, ew",
+        "example": "peu",
+        "example_ipa": "ˈpɛw",
+        "uk": "як «ев» у «Левко»",
+        "note": "у meu [ˈmew] — закрите e"
+      },
+      {
+        "spelling": "iu",
+        "ipa": "iw",
+        "example": "riu",
+        "example_ipa": "ˈriw",
+        "uk": "як «ів» у «рів»",
+        "note": ""
+      },
+      {
+        "spelling": "ou",
+        "ipa": "ɔw, ow",
+        "example": "nou",
+        "example_ipa": "ˈnɔw",
+        "uk": "як «ов» у «вовк»",
+        "note": ""
+      },
+      {
+        "spelling": "qua, gua",
+        "ipa": "kw, ɡw",
+        "example": "quatre",
+        "example_ipa": "ˈkwatɾə",
+        "uk": "як «кв», «ґв», але друге — губне [w], а не зубне «в»",
+        "note": ""
+      },
+      {
+        "spelling": "qüe, qüi, güe, güi",
+        "ipa": "kw, ɡw",
+        "example": "pingüí",
+        "example_ipa": "piŋˈɡwi",
+        "uk": "u вимовляється як коротке [w]",
+        "note": ""
+      },
+      {
+        "spelling": "ï",
+        "ipa": "i",
+        "example": "veïna",
+        "example_ipa": "bəˈinə",
+        "uk": "окремий склад «і»",
+        "note": "розриває дифтонг"
+      },
+      {
+        "spelling": "ü (між голосними)",
+        "ipa": "u",
+        "example": "Raül",
+        "example_ipa": "rəˈul",
+        "uk": "окремий склад «у»",
+        "note": "розриває дифтонг"
+      }
+    ],
+    "words": [
+      {
+        "ca": "mai",
+        "ipa": "ˈmaj",
+        "uk": "ніколи"
+      },
+      {
+        "ca": "rei",
+        "ipa": "ˈrej",
+        "uk": "король"
+      },
+      {
+        "ca": "noi",
+        "ipa": "ˈnɔj",
+        "uk": "хлопець"
+      },
+      {
+        "ca": "avui",
+        "ipa": "əˈbuj",
+        "uk": "сьогодні"
+      },
+      {
+        "ca": "pau",
+        "ipa": "ˈpaw",
+        "uk": "мир"
+      },
+      {
+        "ca": "peu",
+        "ipa": "ˈpɛw",
+        "uk": "стопа, нога"
+      },
+      {
+        "ca": "riu",
+        "ipa": "ˈriw",
+        "uk": "річка"
+      },
+      {
+        "ca": "nou",
+        "ipa": "ˈnɔw",
+        "uk": "новий; дев’ять"
+      },
+      {
+        "ca": "quatre",
+        "ipa": "ˈkwatɾə",
+        "uk": "чотири"
+      },
+      {
+        "ca": "aigua",
+        "ipa": "ˈajɡwə",
+        "uk": "вода"
+      },
+      {
+        "ca": "aigües",
+        "ipa": "ˈajɡwəs",
+        "uk": "води"
+      },
+      {
+        "ca": "pingüí",
+        "ipa": "piŋˈɡwi",
+        "uk": "пінгвін"
+      },
+      {
+        "ca": "veïna",
+        "ipa": "bəˈinə",
+        "uk": "сусідка"
+      },
+      {
+        "ca": "raïm",
+        "ipa": "rəˈim",
+        "uk": "виноград"
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Скільки складів у слові?",
+        "items": [
+          {
+            "q": "mai",
+            "a": "1: дифтонг [aj]"
+          },
+          {
+            "q": "raïm",
+            "a": "2: ra-ïm"
+          },
+          {
+            "q": "veïna",
+            "a": "3: ve-ï-na"
+          },
+          {
+            "q": "dia",
+            "a": "2: di-a"
+          },
+          {
+            "q": "països",
+            "a": "3: pa-ï-sos"
+          },
+          {
+            "q": "aigua",
+            "a": "2: ai-gua"
+          },
+          {
+            "q": "noia",
+            "a": "2: [ˈnɔjə], i між голосними звучить як [j]"
+          }
+        ]
+      },
+      {
+        "instruction": "Чи вимовляється u?",
+        "items": [
+          {
+            "q": "guerra",
+            "a": "ні: [ˈɡɛrə]"
+          },
+          {
+            "q": "pingüí",
+            "a": "так: [piŋˈɡwi], на це вказує ü"
+          },
+          {
+            "q": "quatre",
+            "a": "так: [ˈkwatɾə], перед a u звучить завжди"
+          },
+          {
+            "q": "qui",
+            "a": "ні: [ˈki]"
+          },
+          {
+            "q": "aigües",
+            "a": "так: [ˈajɡwəs]"
+          },
+          {
+            "q": "guitarra",
+            "a": "ні: [ɡiˈtarə]"
+          },
+          {
+            "q": "llengua",
+            "a": "так: [ˈʎeŋɡwə]"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 6,
+    "slug": "c-g-qu-gu",
+    "title": "c, g, qu, gu",
+    "section": "Приголосні",
+    "level": "A1",
+    "summary": "Коли c і g звучать як [k] і [ɡ], коли — як [s] і [ʒ], і навіщо потрібні qu, gu та gü.",
+    "explanation": "<p>Літери <strong>c</strong> і <strong>g</strong> читаються по-різному залежно від наступної літери:</p><ul><li>перед a, o, u і перед приголосним: c = [k], g = [ɡ] — <em>casa</em> [ˈkazə], <em>clau</em> [ˈklaw], <em>gat</em> [ˈɡat], <em>gran</em> [ˈɡɾan];</li><li>перед e, i: c = [s], g = [ʒ] — <em>cel</em> [ˈsɛl], <em>ciutat</em> [siwˈtat], <em>gent</em> [ˈʒen], <em>gelat</em> [ʒəˈlat];</li><li>у кінці слова c = [k]: <em>amic</em> [əˈmik]. Про кінцеве g — уроки 8 і 11.</li></ul><p>Щоб отримати [k] і [ɡ] перед e та i, пишуть <strong>qu</strong> і <strong>gu</strong>; u тут не вимовляється: <em>que</em> [kə], <em>qui</em> [ˈki], <em>guerra</em> [ˈɡɛrə], <em>guitarra</em> [ɡiˈtarə].</p><p>Перед a та o сполучення qu, gu читаються з [w]: <em>quatre</em> [ˈkwatɾə], <em>quan</em> [ˈkwan], <em>guant</em> [ˈɡwan]. Якщо [kw] чи [ɡw] потрібні перед e або i, над u ставлять діарезис: <em>qüestió</em> [kwəstiˈo], <em>pingüí</em> [piŋˈɡwi], <em>aigües</em> [ˈajɡwəs].</p><p>Ці правила пояснюють зміни написання у формах слова: <em>amiga</em> → <em>amigues</em>, <em>boca</em> → <em>boques</em>, <em>aigua</em> → <em>aigües</em>, <em>plaça</em> → <em>places</em> (про ç — урок 7). Звук при цьому зберігається, змінюється лише написання.</p><p>Каталанське [ɡ] — вибуховий звук, як українське <strong>«ґ»</strong> у «ґанок», а не «г» у «гора». Між голосними він у живому мовленні послаблюється, але все одно не стає схожим на українське «г».</p>",
+    "sounds": [
+      {
+        "spelling": "c + a, o, u",
+        "ipa": "k",
+        "example": "casa",
+        "example_ipa": "ˈkazə",
+        "uk": "як «к»",
+        "note": ""
+      },
+      {
+        "spelling": "c + e, i",
+        "ipa": "s",
+        "example": "cel",
+        "example_ipa": "ˈsɛl",
+        "uk": "як «с»",
+        "note": ""
+      },
+      {
+        "spelling": "-c (у кінці слова)",
+        "ipa": "k",
+        "example": "amic",
+        "example_ipa": "əˈmik",
+        "uk": "як «к»",
+        "note": ""
+      },
+      {
+        "spelling": "qu + e, i",
+        "ipa": "k",
+        "example": "qui",
+        "example_ipa": "ˈki",
+        "uk": "як «к»; u не вимовляється",
+        "note": ""
+      },
+      {
+        "spelling": "qu + a, o",
+        "ipa": "kw",
+        "example": "quatre",
+        "example_ipa": "ˈkwatɾə",
+        "uk": "як «кв», але з губним [w]",
+        "note": ""
+      },
+      {
+        "spelling": "qü + e, i",
+        "ipa": "kw",
+        "example": "qüestió",
+        "example_ipa": "kwəstiˈo",
+        "uk": "як «кв», але з губним [w]",
+        "note": ""
+      },
+      {
+        "spelling": "g + a, o, u",
+        "ipa": "ɡ",
+        "example": "gat",
+        "example_ipa": "ˈɡat",
+        "uk": "як «ґ» у «ґанок»",
+        "note": ""
+      },
+      {
+        "spelling": "g + e, i",
+        "ipa": "ʒ",
+        "example": "gent",
+        "example_ipa": "ˈʒen",
+        "uk": "як «ж»",
+        "note": ""
+      },
+      {
+        "spelling": "gu + e, i",
+        "ipa": "ɡ",
+        "example": "guerra",
+        "example_ipa": "ˈɡɛrə",
+        "uk": "як «ґ»; u не вимовляється",
+        "note": ""
+      },
+      {
+        "spelling": "gu + a, o",
+        "ipa": "ɡw",
+        "example": "guant",
+        "example_ipa": "ˈɡwan",
+        "uk": "як «ґв», але з губним [w]",
+        "note": ""
+      },
+      {
+        "spelling": "gü + e, i",
+        "ipa": "ɡw",
+        "example": "pingüí",
+        "example_ipa": "piŋˈɡwi",
+        "uk": "як «ґв», але з губним [w]",
+        "note": ""
+      }
+    ],
+    "words": [
+      {
+        "ca": "casa",
+        "ipa": "ˈkazə",
+        "uk": "дім"
+      },
+      {
+        "ca": "cel",
+        "ipa": "ˈsɛl",
+        "uk": "небо"
+      },
+      {
+        "ca": "ciutat",
+        "ipa": "siwˈtat",
+        "uk": "місто"
+      },
+      {
+        "ca": "cent",
+        "ipa": "ˈsen",
+        "uk": "сто"
+      },
+      {
+        "ca": "que",
+        "ipa": "kə",
+        "uk": "що (сполучник)"
+      },
+      {
+        "ca": "qui",
+        "ipa": "ˈki",
+        "uk": "хто"
+      },
+      {
+        "ca": "quatre",
+        "ipa": "ˈkwatɾə",
+        "uk": "чотири"
+      },
+      {
+        "ca": "gat",
+        "ipa": "ˈɡat",
+        "uk": "кіт"
+      },
+      {
+        "ca": "gent",
+        "ipa": "ˈʒen",
+        "uk": "люди"
+      },
+      {
+        "ca": "gelat",
+        "ipa": "ʒəˈlat",
+        "uk": "морозиво"
+      },
+      {
+        "ca": "guerra",
+        "ipa": "ˈɡɛrə",
+        "uk": "війна"
+      },
+      {
+        "ca": "guitarra",
+        "ipa": "ɡiˈtarə",
+        "uk": "гітара"
+      },
+      {
+        "ca": "guant",
+        "ipa": "ˈɡwan",
+        "uk": "рукавичка"
+      },
+      {
+        "ca": "pingüí",
+        "ipa": "piŋˈɡwi",
+        "uk": "пінгвін"
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Який звук: [k], [s], [ɡ] чи [ʒ]?",
+        "items": [
+          {
+            "q": "cinema — c",
+            "a": "[s]: [ˈsinəmə]"
+          },
+          {
+            "q": "cosa — c",
+            "a": "[k]: [ˈkɔzə]"
+          },
+          {
+            "q": "gelat — g",
+            "a": "[ʒ]: [ʒəˈlat]"
+          },
+          {
+            "q": "gust — g",
+            "a": "[ɡ]: [ˈɡust]"
+          },
+          {
+            "q": "cuina — c",
+            "a": "[k]: [ˈkujnə]"
+          },
+          {
+            "q": "girar — g",
+            "a": "[ʒ]: [ʒiˈɾa]"
+          },
+          {
+            "q": "Girona — g",
+            "a": "[ʒ]: [ʒiˈɾonə]"
+          }
+        ]
+      },
+      {
+        "instruction": "Утворіть множину так, щоб звук не змінився.",
+        "items": [
+          {
+            "q": "amiga",
+            "a": "amigues [əˈmiɡəs]: gu зберігає [ɡ] перед e"
+          },
+          {
+            "q": "boca",
+            "a": "boques [ˈbokəs]: qu зберігає [k] перед e"
+          },
+          {
+            "q": "llengua",
+            "a": "llengües [ˈʎeŋɡwəs]: ü зберігає [ɡw]"
+          },
+          {
+            "q": "aigua",
+            "a": "aigües [ˈajɡwəs]"
+          },
+          {
+            "q": "taca",
+            "a": "taques [ˈtakəs]"
+          },
+          {
+            "q": "vaca",
+            "a": "vaques [ˈbakəs]"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 7,
+    "slug": "s-ss-z-c-trencada",
+    "title": "s, ss, z, ç: дзвінкі й глухі свистячі",
+    "section": "Приголосні",
+    "level": "A1",
+    "summary": "Глухий [s] і дзвінкий [z]: коли пишемо s, ss, z, ç і tz.",
+    "explanation": "<p>Каталанська розрізняє глухий [s] і дзвінкий [z], і від цього залежить значення слова: <em>casa</em> [ˈkazə] «дім» — <em>caça</em> [ˈkasə] «полювання», <em>rosa</em> [ˈrɔzə] «троянда» — <em>rossa</em> [ˈrosə] «білява».</p><ul><li><strong>s</strong> на початку слова й після приголосного = [s]: <em>sol</em> [ˈsɔl], <em>pensar</em> [pənˈsa];</li><li><strong>s</strong> між голосними = [z]: <em>casa</em>, <em>cosa</em> [ˈkɔzə], <em>música</em> [ˈmuzikə];</li><li><strong>ss</strong> (лише між голосними) = [s]: <em>massa</em> [ˈmasə], <em>passar</em> [pəˈsa];</li><li><strong>z</strong> = [z]: <em>zero</em> [ˈzɛɾu], <em>onze</em> [ˈonzə];</li><li><strong>ç</strong> = [s]; пишеться перед a, o, u та в кінці слова: <em>plaça</em> [ˈplasə], <em>cançó</em> [kənˈso], <em>feliç</em> [fəˈlis];</li><li><strong>c</strong> перед e, i = [s]: <em>cel</em> [ˈsɛl], <em>ciutat</em> [siwˈtat].</li></ul><p>Перед дзвінким приголосним (b, d, g, l, m, n тощо) s теж стає дзвінким: <em>esmorzar</em> [əzmuɾˈza], <em>església</em> [əzˈɡleziə]. Як поводиться кінцеве s на межі слів, розповідає урок 12.</p><p>Сполучення <strong>tz</strong> звучить як [dz] — як українське «дз» у «дзвін»: <em>dotze</em> [ˈdodzə] «дванадцять», <em>tretze</em> [ˈtɾɛdzə] «тринадцять», <em>setze</em> [ˈsɛdzə] «шістнадцять».</p><p>Типова помилка українців — читати кожне s як «с». Запам’ятайте: одна s між голосними майже завжди звучить [z], а для [s] у цій позиції пишуть ss, ç або c (перед e, i).</p>",
+    "sounds": [
+      {
+        "spelling": "s- (на початку слова)",
+        "ipa": "s",
+        "example": "sol",
+        "example_ipa": "ˈsɔl",
+        "uk": "як «с»",
+        "note": ""
+      },
+      {
+        "spelling": "s (після приголосного)",
+        "ipa": "s",
+        "example": "pensar",
+        "example_ipa": "pənˈsa",
+        "uk": "як «с»",
+        "note": ""
+      },
+      {
+        "spelling": "s (між голосними)",
+        "ipa": "z",
+        "example": "casa",
+        "example_ipa": "ˈkazə",
+        "uk": "як «з» у «зима»",
+        "note": ""
+      },
+      {
+        "spelling": "ss",
+        "ipa": "s",
+        "example": "massa",
+        "example_ipa": "ˈmasə",
+        "uk": "як «с»",
+        "note": "лише між голосними"
+      },
+      {
+        "spelling": "s + дзвінкий приголосний",
+        "ipa": "z",
+        "example": "esmorzar",
+        "example_ipa": "əzmuɾˈza",
+        "uk": "як «з»",
+        "note": ""
+      },
+      {
+        "spelling": "z",
+        "ipa": "z",
+        "example": "zero",
+        "example_ipa": "ˈzɛɾu",
+        "uk": "як «з»",
+        "note": ""
+      },
+      {
+        "spelling": "tz",
+        "ipa": "dz",
+        "example": "dotze",
+        "example_ipa": "ˈdodzə",
+        "uk": "як «дз» у «дзвін»",
+        "note": ""
+      },
+      {
+        "spelling": "ç",
+        "ipa": "s",
+        "example": "plaça",
+        "example_ipa": "ˈplasə",
+        "uk": "як «с»",
+        "note": "ніколи не пишеться перед e, i"
+      },
+      {
+        "spelling": "c + e, i",
+        "ipa": "s",
+        "example": "cel",
+        "example_ipa": "ˈsɛl",
+        "uk": "як «с»",
+        "note": ""
+      }
+    ],
+    "words": [
+      {
+        "ca": "casa",
+        "ipa": "ˈkazə",
+        "uk": "дім"
+      },
+      {
+        "ca": "caça",
+        "ipa": "ˈkasə",
+        "uk": "полювання"
+      },
+      {
+        "ca": "rosa",
+        "ipa": "ˈrɔzə",
+        "uk": "троянда"
+      },
+      {
+        "ca": "rossa",
+        "ipa": "ˈrosə",
+        "uk": "білява"
+      },
+      {
+        "ca": "massa",
+        "ipa": "ˈmasə",
+        "uk": "занадто; маса"
+      },
+      {
+        "ca": "passar",
+        "ipa": "pəˈsa",
+        "uk": "проходити; минати"
+      },
+      {
+        "ca": "zero",
+        "ipa": "ˈzɛɾu",
+        "uk": "нуль"
+      },
+      {
+        "ca": "onze",
+        "ipa": "ˈonzə",
+        "uk": "одинадцять"
+      },
+      {
+        "ca": "dotze",
+        "ipa": "ˈdodzə",
+        "uk": "дванадцять"
+      },
+      {
+        "ca": "plaça",
+        "ipa": "ˈplasə",
+        "uk": "площа"
+      },
+      {
+        "ca": "feliç",
+        "ipa": "fəˈlis",
+        "uk": "щасливий"
+      },
+      {
+        "ca": "esmorzar",
+        "ipa": "əzmuɾˈza",
+        "uk": "снідати; сніданок"
+      },
+      {
+        "ca": "pensar",
+        "ipa": "pənˈsa",
+        "uk": "думати"
+      },
+      {
+        "ca": "sol",
+        "ipa": "ˈsɔl",
+        "uk": "сонце"
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "[s] чи [z]?",
+        "items": [
+          {
+            "q": "casa — s",
+            "a": "[z]: s між голосними"
+          },
+          {
+            "q": "massa — ss",
+            "a": "[s]: подвоєне ss"
+          },
+          {
+            "q": "sol — s",
+            "a": "[s]: на початку слова"
+          },
+          {
+            "q": "plaça — ç",
+            "a": "[s]"
+          },
+          {
+            "q": "zero — z",
+            "a": "[z]"
+          },
+          {
+            "q": "pensar — s",
+            "a": "[s]: після приголосного"
+          },
+          {
+            "q": "esmorzar — перша s",
+            "a": "[z]: перед дзвінким m"
+          }
+        ]
+      },
+      {
+        "instruction": "Яку літеру пропущено: s, ss, ç чи tz?",
+        "items": [
+          {
+            "q": "ro_a (білява)",
+            "a": "rossa [ˈrosə]"
+          },
+          {
+            "q": "ca_a (дім)",
+            "a": "casa [ˈkazə]"
+          },
+          {
+            "q": "ca_a (полювання)",
+            "a": "caça [ˈkasə]"
+          },
+          {
+            "q": "pla_a (площа)",
+            "a": "plaça [ˈplasə]"
+          },
+          {
+            "q": "pa_ar (проходити)",
+            "a": "passar [pəˈsa]"
+          },
+          {
+            "q": "do_e (дванадцять)",
+            "a": "dotze [ˈdodzə]"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 8,
+    "slug": "shypliachi",
+    "title": "Шиплячі: x, ix, tx, ig, j, g",
+    "section": "Приголосні",
+    "level": "A2",
+    "summary": "Звуки [ʃ], [tʃ], [ʒ], [dʒ] і два інші прочитання літери x.",
+    "explanation": "<p>Каталанська має чотири шиплячі звуки, і всі вони близькі до українських: [ʃ] — «ш», [ʒ] — «ж», [tʃ] — «ч», [dʒ] — «дж». Каталанські звуки трохи м’якші, але заміна українськими цілком зрозуміла. Основна складність — у написанні.</p><ul><li><strong>[ʃ]</strong>: x на початку слова й після приголосного — <em>xocolata</em> [ʃukuˈlatə], <em>panxa</em> [ˈpanʃə]; <strong>ix</strong> після голосної — <em>caixa</em> [ˈkaʃə], <em>peix</em> [ˈpeʃ]. У центральній вимові i в ix не читається, вона лише позначає звук [ʃ].</li><li><strong>[tʃ]</strong>: tx — <em>cotxe</em> [ˈkɔtʃə], <em>despatx</em> [dəsˈpatʃ]; ig у кінці слова після голосної — <em>maig</em> [ˈmatʃ], <em>puig</em> [ˈputʃ], <em>vaig</em> [ˈbatʃ].</li><li><strong>[ʒ]</strong>: j (перед будь-якою голосною) і g перед e, i — <em>jo</em> [ˈʒɔ], <em>dijous</em> [diˈʒɔws], <em>gent</em> [ˈʒen].</li><li><strong>[dʒ]</strong>: tj (перед a, o, u) і tg (перед e, i) — <em>platja</em> [ˈpladʒə], <em>metge</em> [ˈmedʒə], <em>rellotge</em> [rəˈʎɔdʒə].</li></ul><p>Кінцеве -ig у жіночому роді та похідних словах переходить у tj, tg: <em>lleig</em> [ˈʎetʃ] «негарний» — <em>lletja</em> [ˈʎedʒə] «негарна», <em>mig</em> [ˈmitʃ] — <em>mitja</em> [ˈmidʒə] «половинний — половинна».</p><p>Літера <strong>x</strong> між голосними (без i перед нею) і перед приголосним зазвичай читається [ks]: <em>taxi</em> [ˈtaksi], <em>màxim</em> [ˈmaksim], <em>explicar</em> [əkspliˈka]. Префікс <strong>ex-</strong> перед голосною або h звучить [ɡz]: <em>examen</em> [əɡˈzamən], <em>exemple</em> [əɡˈzemplə], <em>exacte</em> [əɡˈzaktə].</p><p>У валенсійській вимові i в ix звучить, а j і g перед e, i вимовляються як [dʒ] (урок 13).</p>",
+    "sounds": [
+      {
+        "spelling": "x (на початку, після приголосного)",
+        "ipa": "ʃ",
+        "example": "xocolata",
+        "example_ipa": "ʃukuˈlatə",
+        "uk": "як «ш» у «шапка»",
+        "note": ""
+      },
+      {
+        "spelling": "ix (після голосної)",
+        "ipa": "ʃ",
+        "example": "caixa",
+        "example_ipa": "ˈkaʃə",
+        "uk": "як «ш»",
+        "note": "i не вимовляється"
+      },
+      {
+        "spelling": "tx",
+        "ipa": "tʃ",
+        "example": "cotxe",
+        "example_ipa": "ˈkɔtʃə",
+        "uk": "як «ч» у «час»",
+        "note": ""
+      },
+      {
+        "spelling": "-ig (у кінці слова)",
+        "ipa": "tʃ",
+        "example": "maig",
+        "example_ipa": "ˈmatʃ",
+        "uk": "як «ч»",
+        "note": "i не вимовляється"
+      },
+      {
+        "spelling": "j",
+        "ipa": "ʒ",
+        "example": "jo",
+        "example_ipa": "ˈʒɔ",
+        "uk": "як «ж» у «жаба»",
+        "note": ""
+      },
+      {
+        "spelling": "g + e, i",
+        "ipa": "ʒ",
+        "example": "gent",
+        "example_ipa": "ˈʒen",
+        "uk": "як «ж»",
+        "note": ""
+      },
+      {
+        "spelling": "tj",
+        "ipa": "dʒ",
+        "example": "platja",
+        "example_ipa": "ˈpladʒə",
+        "uk": "як «дж» у «джерело»",
+        "note": "перед a, o, u"
+      },
+      {
+        "spelling": "tg",
+        "ipa": "dʒ",
+        "example": "metge",
+        "example_ipa": "ˈmedʒə",
+        "uk": "як «дж»",
+        "note": "перед e, i"
+      },
+      {
+        "spelling": "x (у частині слів)",
+        "ipa": "ks",
+        "example": "taxi",
+        "example_ipa": "ˈtaksi",
+        "uk": "як «кс»",
+        "note": ""
+      },
+      {
+        "spelling": "ex- + голосна",
+        "ipa": "ɡz",
+        "example": "examen",
+        "example_ipa": "əɡˈzamən",
+        "uk": "як «ґз»",
+        "note": ""
+      }
+    ],
+    "words": [
+      {
+        "ca": "xocolata",
+        "ipa": "ʃukuˈlatə",
+        "uk": "шоколад"
+      },
+      {
+        "ca": "caixa",
+        "ipa": "ˈkaʃə",
+        "uk": "коробка; каса"
+      },
+      {
+        "ca": "peix",
+        "ipa": "ˈpeʃ",
+        "uk": "риба"
+      },
+      {
+        "ca": "cotxe",
+        "ipa": "ˈkɔtʃə",
+        "uk": "автомобіль"
+      },
+      {
+        "ca": "maig",
+        "ipa": "ˈmatʃ",
+        "uk": "травень"
+      },
+      {
+        "ca": "puig",
+        "ipa": "ˈputʃ",
+        "uk": "пагорб, гора"
+      },
+      {
+        "ca": "vaig",
+        "ipa": "ˈbatʃ",
+        "uk": "(я) іду"
+      },
+      {
+        "ca": "jo",
+        "ipa": "ˈʒɔ",
+        "uk": "я"
+      },
+      {
+        "ca": "dijous",
+        "ipa": "diˈʒɔws",
+        "uk": "четвер"
+      },
+      {
+        "ca": "platja",
+        "ipa": "ˈpladʒə",
+        "uk": "пляж"
+      },
+      {
+        "ca": "metge",
+        "ipa": "ˈmedʒə",
+        "uk": "лікар"
+      },
+      {
+        "ca": "rellotge",
+        "ipa": "rəˈʎɔdʒə",
+        "uk": "годинник"
+      },
+      {
+        "ca": "taxi",
+        "ipa": "ˈtaksi",
+        "uk": "таксі"
+      },
+      {
+        "ca": "examen",
+        "ipa": "əɡˈzamən",
+        "uk": "іспит"
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Який звук: [ʃ], [tʃ], [ʒ] чи [dʒ]?",
+        "items": [
+          {
+            "q": "caixa — ix",
+            "a": "[ʃ]: [ˈkaʃə]"
+          },
+          {
+            "q": "cotxe — tx",
+            "a": "[tʃ]: [ˈkɔtʃə]"
+          },
+          {
+            "q": "platja — tj",
+            "a": "[dʒ]: [ˈpladʒə]"
+          },
+          {
+            "q": "maig — ig",
+            "a": "[tʃ]: [ˈmatʃ]"
+          },
+          {
+            "q": "jardí — j",
+            "a": "[ʒ]: [ʒəɾˈdi]"
+          },
+          {
+            "q": "metge — tg",
+            "a": "[dʒ]: [ˈmedʒə]"
+          },
+          {
+            "q": "xocolata — x",
+            "a": "[ʃ]: [ʃukuˈlatə]"
+          }
+        ]
+      },
+      {
+        "instruction": "Як вимовляється слово?",
+        "items": [
+          {
+            "q": "baix",
+            "a": "[ˈbaʃ]"
+          },
+          {
+            "q": "mig",
+            "a": "[ˈmitʃ]"
+          },
+          {
+            "q": "mitja",
+            "a": "[ˈmidʒə]"
+          },
+          {
+            "q": "exemple",
+            "a": "[əɡˈzemplə]"
+          },
+          {
+            "q": "taxi",
+            "a": "[ˈtaksi]"
+          },
+          {
+            "q": "viatge",
+            "a": "[biˈadʒə]"
+          },
+          {
+            "q": "marxar",
+            "a": "[məɾˈʃa]"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 9,
+    "slug": "l-ll-ela-geminada-ny",
+    "title": "l, ll, l·l, ny",
+    "section": "Приголосні",
+    "level": "A2",
+    "summary": "Тверде l, палатальне ll [ʎ], подвоєне l·l і ny [ɲ].",
+    "explanation": "<p><strong>l</strong> у центральній каталанській «темне» [ɫ]: задня частина язика піднімається, і звук нагадує тверде українське «л» у «лампа». Воно лишається твердим і перед i, e: <em>límit</em> [ˈlimit], <em>mel</em> [ˈmɛl], <em>sol</em> [ˈsɔl]. Не пом’якшуйте його, як українське «л» перед «і». У транскрипціях курсу цей звук позначаємо просто [l].</p><p><strong>ll</strong> — окремий звук [ʎ]: середня частина язика притискається до твердого піднебіння. Він буває на початку, в середині й у кінці слова: <em>lluna</em> [ˈʎunə], <em>gallina</em> [ɡəˈʎinə], <em>cavall</em> [kəˈbaʎ]. Найближче в українській — «ль» у «люди», але це не той самий звук; і в жодному разі не «л» + «й». Різниця між l і ll змістова: <em>pala</em> [ˈpalə] «лопата» — <em>palla</em> [ˈpaʎə] «солома», <em>vela</em> [ˈbɛlə] «вітрило» — <em>vella</em> [ˈbɛʎə] «стара».</p><p><strong>l·l</strong> (<em>ela geminada</em>) — подвоєне [lː]: у ретельній вимові звучить як два «л» на межі складів: <em>col·legi</em> [kulˈlɛʒi], <em>il·lusió</em> [illuziˈo], <em>intel·ligent</em> [intəlliˈʒen]. У швидкому мовленні чимало мовців вимовляють одне [l]. Крапку пишуть посередині рядка: варіанти <em>col.legi</em> чи <em>colegi</em> — помилкові.</p><p><strong>ny</strong> = [ɲ], дуже близько до українського «нь» у «день», «няня»: <em>any</em> [ˈaɲ], <em>Catalunya</em> [kətəˈluɲə], <em>muntanya</em> [munˈtaɲə]. Пишеться саме ny, а не ñ, як в іспанській.</p>",
+    "sounds": [
+      {
+        "spelling": "l",
+        "ipa": "ɫ",
+        "example": "sol",
+        "example_ipa": "ˈsɔl",
+        "uk": "тверде «л», як у «лампа»; не пом’якшується перед i, e",
+        "note": "у транскрипціях курсу — [l]"
+      },
+      {
+        "spelling": "ll (на початку слова)",
+        "ipa": "ʎ",
+        "example": "lluna",
+        "example_ipa": "ˈʎunə",
+        "uk": "немає в українській; найближче — «ль» у «люди»",
+        "note": ""
+      },
+      {
+        "spelling": "ll (між голосними)",
+        "ipa": "ʎ",
+        "example": "gallina",
+        "example_ipa": "ɡəˈʎinə",
+        "uk": "немає в українській; не «л» + «й»",
+        "note": ""
+      },
+      {
+        "spelling": "-ll (у кінці слова)",
+        "ipa": "ʎ",
+        "example": "cavall",
+        "example_ipa": "kəˈbaʎ",
+        "uk": "немає в українській; схоже на «ль» у «біль»",
+        "note": ""
+      },
+      {
+        "spelling": "l·l",
+        "ipa": "lː",
+        "example": "col·legi",
+        "example_ipa": "kulˈlɛʒi",
+        "uk": "довге «лл»",
+        "note": "у швидкому мовленні часто [l]"
+      },
+      {
+        "spelling": "ny",
+        "ipa": "ɲ",
+        "example": "any",
+        "example_ipa": "ˈaɲ",
+        "uk": "як «нь» у «день»",
+        "note": ""
+      }
+    ],
+    "words": [
+      {
+        "ca": "lluna",
+        "ipa": "ˈʎunə",
+        "uk": "місяць (на небі)"
+      },
+      {
+        "ca": "llibre",
+        "ipa": "ˈʎibɾə",
+        "uk": "книжка"
+      },
+      {
+        "ca": "cavall",
+        "ipa": "kəˈbaʎ",
+        "uk": "кінь"
+      },
+      {
+        "ca": "ull",
+        "ipa": "ˈuʎ",
+        "uk": "око"
+      },
+      {
+        "ca": "pala",
+        "ipa": "ˈpalə",
+        "uk": "лопата"
+      },
+      {
+        "ca": "palla",
+        "ipa": "ˈpaʎə",
+        "uk": "солома"
+      },
+      {
+        "ca": "vela",
+        "ipa": "ˈbɛlə",
+        "uk": "вітрило"
+      },
+      {
+        "ca": "vella",
+        "ipa": "ˈbɛʎə",
+        "uk": "стара"
+      },
+      {
+        "ca": "col·legi",
+        "ipa": "kulˈlɛʒi",
+        "uk": "школа (початкова); колегія"
+      },
+      {
+        "ca": "il·lusió",
+        "ipa": "illuziˈo",
+        "uk": "радісне очікування; ілюзія"
+      },
+      {
+        "ca": "intel·ligent",
+        "ipa": "intəlliˈʒen",
+        "uk": "розумний"
+      },
+      {
+        "ca": "any",
+        "ipa": "ˈaɲ",
+        "uk": "рік"
+      },
+      {
+        "ca": "Catalunya",
+        "ipa": "kətəˈluɲə",
+        "uk": "Каталонія"
+      },
+      {
+        "ca": "muntanya",
+        "ipa": "munˈtaɲə",
+        "uk": "гора"
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Який звук: [l], [ʎ], [lː] чи [ɲ]?",
+        "items": [
+          {
+            "q": "palla — ll",
+            "a": "[ʎ]: [ˈpaʎə]"
+          },
+          {
+            "q": "pala — l",
+            "a": "[l]: [ˈpalə]"
+          },
+          {
+            "q": "col·legi — l·l",
+            "a": "[lː] (у швидкому мовленні [l]): [kulˈlɛʒi]"
+          },
+          {
+            "q": "any — ny",
+            "a": "[ɲ]: [ˈaɲ]"
+          },
+          {
+            "q": "ull — ll",
+            "a": "[ʎ]: [ˈuʎ]"
+          },
+          {
+            "q": "senyor — ny",
+            "a": "[ɲ]: [səˈɲo]"
+          },
+          {
+            "q": "vela — l",
+            "a": "[l]: [ˈbɛlə]"
+          }
+        ]
+      },
+      {
+        "instruction": "Оберіть правильне написання.",
+        "items": [
+          {
+            "q": "Cataluña чи Catalunya?",
+            "a": "Catalunya"
+          },
+          {
+            "q": "colegi, col.legi чи col·legi?",
+            "a": "col·legi"
+          },
+          {
+            "q": "luna чи lluna (місяць)?",
+            "a": "lluna"
+          },
+          {
+            "q": "ilusió чи il·lusió?",
+            "a": "il·lusió"
+          },
+          {
+            "q": "caval чи cavall (кінь)?",
+            "a": "cavall"
+          },
+          {
+            "q": "muntaña чи muntanya?",
+            "a": "muntanya"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 10,
+    "slug": "r-rr",
+    "title": "r і rr",
+    "section": "Приголосні",
+    "level": "A2",
+    "summary": "Одноударне [ɾ], розкотисте [r] і кінцеве -r, яке часто не вимовляється.",
+    "explanation": "<p>Каталанська розрізняє два звуки «р»:</p><ul><li><strong>[ɾ]</strong> — один швидкий удар кінчика язика: між голосними (<em>cara</em> [ˈkaɾə]) і після приголосного в тому самому складі (<em>tres</em> [ˈtɾɛs], <em>gran</em> [ˈɡɾan], <em>llibre</em> [ˈʎibɾə]);</li><li><strong>[r]</strong> — розкотистий звук із кількома ударами: на початку слова (<em>rosa</em> [ˈrɔzə], <em>riu</em> [ˈriw]), після n, l, s (<em>Enric</em> [ənˈrik], <em>Israel</em> [izrəˈɛl]) і на місці <strong>rr</strong> між голосними (<em>terra</em> [ˈtɛrə], <em>carrer</em> [kəˈre]).</li></ul><p>Різниця змістова: <em>para</em> [ˈpaɾə] «зупиняє» — <em>parra</em> [ˈparə] «виноградна лоза». У кінці складу перед приголосним (<em>porta</em> [ˈpɔɾtə]) і в кінці слова r може звучати і коротко, і розкотисто — значення це не змінює. У транскрипціях курсу в цих позиціях пишемо [ɾ].</p><p>У центральній вимові <strong>кінцеве -r часто не вимовляється</strong>:</p><ul><li>в інфінітивах: <em>cantar</em> [kənˈta], <em>dormir</em> [duɾˈmi];</li><li>у більшості слів на -er, -or: <em>fuster</em> [fusˈte] «столяр», <em>carrer</em> [kəˈre], <em>primer</em> [pɾiˈme], <em>senyor</em> [səˈɲo];</li><li>у деяких інших словах: <em>ahir</em> [əˈi] «учора».</li></ul><p>Проте в багатьох словах -r звучить: <em>mar</em> [ˈmaɾ], <em>cor</em> [ˈkɔɾ], <em>amor</em> [əˈmoɾ], <em>or</em> [ˈɔɾ] «золото». Єдиного правила немає, тож вимову перевіряйте в словнику. Коли до інфінітива через дефіс приєднується займенник, r повертається: <em>cantar-la</em> [kənˈtaɾlə], <em>menjar-ho</em> [mənˈʒaɾu].</p>",
+    "sounds": [
+      {
+        "spelling": "r (між голосними)",
+        "ipa": "ɾ",
+        "example": "cara",
+        "example_ipa": "ˈkaɾə",
+        "uk": "як «р» з одним ударом у швидкому «кора»",
+        "note": ""
+      },
+      {
+        "spelling": "r (після приголосного: tr, br, gr тощо)",
+        "ipa": "ɾ",
+        "example": "tres",
+        "example_ipa": "ˈtɾɛs",
+        "uk": "одноударне «р»",
+        "note": ""
+      },
+      {
+        "spelling": "r- (на початку слова)",
+        "ipa": "r",
+        "example": "rosa",
+        "example_ipa": "ˈrɔzə",
+        "uk": "розкотисте «р», сильніше за звичайне українське",
+        "note": ""
+      },
+      {
+        "spelling": "r (після n, l, s)",
+        "ipa": "r",
+        "example": "Enric",
+        "example_ipa": "ənˈrik",
+        "uk": "розкотисте «р»",
+        "note": ""
+      },
+      {
+        "spelling": "rr",
+        "ipa": "r",
+        "example": "terra",
+        "example_ipa": "ˈtɛrə",
+        "uk": "розкотисте «р»",
+        "note": "лише між голосними"
+      },
+      {
+        "spelling": "-r (інфінітиви, -er, -or)",
+        "ipa": "∅",
+        "example": "cantar",
+        "example_ipa": "kənˈta",
+        "uk": "не вимовляється",
+        "note": "повертається перед займенником: cantar-la"
+      },
+      {
+        "spelling": "-r (у частині слів)",
+        "ipa": "ɾ",
+        "example": "mar",
+        "example_ipa": "ˈmaɾ",
+        "uk": "вимовляється",
+        "note": "перевіряйте в словнику"
+      }
+    ],
+    "words": [
+      {
+        "ca": "cara",
+        "ipa": "ˈkaɾə",
+        "uk": "обличчя"
+      },
+      {
+        "ca": "rosa",
+        "ipa": "ˈrɔzə",
+        "uk": "троянда"
+      },
+      {
+        "ca": "terra",
+        "ipa": "ˈtɛrə",
+        "uk": "земля"
+      },
+      {
+        "ca": "carrer",
+        "ipa": "kəˈre",
+        "uk": "вулиця"
+      },
+      {
+        "ca": "Enric",
+        "ipa": "ənˈrik",
+        "uk": "Енрік (ім’я)"
+      },
+      {
+        "ca": "tres",
+        "ipa": "ˈtɾɛs",
+        "uk": "три"
+      },
+      {
+        "ca": "cantar",
+        "ipa": "kənˈta",
+        "uk": "співати"
+      },
+      {
+        "ca": "fuster",
+        "ipa": "fusˈte",
+        "uk": "столяр"
+      },
+      {
+        "ca": "senyor",
+        "ipa": "səˈɲo",
+        "uk": "пан"
+      },
+      {
+        "ca": "primer",
+        "ipa": "pɾiˈme",
+        "uk": "перший"
+      },
+      {
+        "ca": "mar",
+        "ipa": "ˈmaɾ",
+        "uk": "море"
+      },
+      {
+        "ca": "cor",
+        "ipa": "ˈkɔɾ",
+        "uk": "серце"
+      },
+      {
+        "ca": "amor",
+        "ipa": "əˈmoɾ",
+        "uk": "кохання, любов"
+      },
+      {
+        "ca": "carro",
+        "ipa": "ˈkaru",
+        "uk": "віз"
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "[ɾ], [r] чи не вимовляється?",
+        "items": [
+          {
+            "q": "cara — r",
+            "a": "[ɾ]: одна r між голосними"
+          },
+          {
+            "q": "rosa — r",
+            "a": "[r]: на початку слова"
+          },
+          {
+            "q": "terra — rr",
+            "a": "[r]"
+          },
+          {
+            "q": "tres — r",
+            "a": "[ɾ]: після t у тому самому складі"
+          },
+          {
+            "q": "Enric — r",
+            "a": "[r]: після n"
+          },
+          {
+            "q": "cantar — кінцева r",
+            "a": "не вимовляється: [kənˈta]"
+          },
+          {
+            "q": "honra — r",
+            "a": "[r]: після n, [ˈɔnrə]"
+          }
+        ]
+      },
+      {
+        "instruction": "Чи вимовляється кінцеве -r?",
+        "items": [
+          {
+            "q": "parlar",
+            "a": "ні: [pəɾˈla]"
+          },
+          {
+            "q": "cor",
+            "a": "так: [ˈkɔɾ]"
+          },
+          {
+            "q": "fuster",
+            "a": "ні: [fusˈte]"
+          },
+          {
+            "q": "amor",
+            "a": "так: [əˈmoɾ]"
+          },
+          {
+            "q": "ahir",
+            "a": "ні: [əˈi]"
+          },
+          {
+            "q": "mar",
+            "a": "так: [ˈmaɾ]"
+          },
+          {
+            "q": "parlar-ne",
+            "a": "так, перед займенником: [pəɾˈlaɾnə]"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 11,
+    "slug": "b-v-ohlushennia-nimi-litery",
+    "title": "b і v, оглушення в кінці слова, німі літери",
+    "section": "Приголосні",
+    "level": "B1",
+    "summary": "b і v звучать однаково, дзвінкі в кінці слова оглушуються, а деякі літери не вимовляються.",
+    "explanation": "<p>У центральній вимові <strong>b</strong> і <strong>v</strong> не розрізняються: обидві звучать як [b] (на початку фрази та після m, n) або як м’якше губно-губне [β] між голосними. Губно-зубного «в», як в українській, тут немає: <em>vi</em> [ˈbi] «вино», <em>València</em> [bəˈlɛnsiə], <em>beure</em> [ˈbɛwɾə] «пити». Тому в назвах літер уточнюють: «be alta», «ve baixa». У транскрипціях курсу пишемо [b]; так само d і g між голосними насправді послаблюються до [ð] і [ɣ], а ми пишемо [d] і [ɡ].</p><p><strong>Оглушення в кінці слова.</strong> Дзвінкі приголосні в кінці слова стають глухими: b → [p], d → [t], g → [k]: <em>verd</em> [ˈbɛɾt], <em>fred</em> [ˈfɾɛt], <em>llarg</em> [ˈʎaɾk], <em>club</em> [ˈklup]. Коли після приголосного з’являється голосна, дзвінкість повертається: <em>verda</em> [ˈbɛɾdə], <em>freda</em> [ˈfɾɛdə]. Іноді це видно й на письмі: <em>groc</em> [ˈɡɾɔk] — <em>groga</em> [ˈɡɾɔɡə], <em>gris</em> [ˈɡɾis] — <em>grisa</em> [ˈɡɾizə]. В українській дзвінкі в кінці слова не оглушуються (<em>дуб</em>, <em>сад</em>), тож це варто потренувати.</p><p><strong>Німі літери.</strong></p><ul><li><strong>h</strong> у власне каталанських словах не вимовляється: <em>home</em> [ˈɔmə], <em>ahir</em> [əˈi];</li><li>t у кінцевих <strong>-nt</strong> і <strong>-lt</strong>: <em>cent</em> [ˈsen], <em>gent</em> [ˈʒen], <em>molt</em> [ˈmol]; у жіночому роді t звучить: <em>molta</em> [ˈmoltə];</li><li>p у кінцевому <strong>-mp</strong>: <em>camp</em> [ˈkam], <em>llamp</em> [ˈʎam] «блискавка»;</li><li>c у кінцевому <strong>-nc</strong>, де n звучить як [ŋ]: <em>blanc</em> [ˈblaŋ], <em>banc</em> [ˈbaŋ]; але <em>blanca</em> [ˈblaŋkə];</li><li>t у групах <strong>-rts</strong>, <strong>-nts</strong>: <em>dimarts</em> [diˈmaɾs], <em>cents</em> [ˈsens]; в однині <em>fort</em> [ˈfɔɾt] t зазвичай звучить;</li><li>кінцеве -r у багатьох словах (урок 10).</li></ul><p>У балеарській і частині валенсійських говірок v вимовляється як губно-зубне [v] (урок 13).</p>",
+    "sounds": [
+      {
+        "spelling": "b",
+        "ipa": "b",
+        "example": "bo",
+        "example_ipa": "ˈbɔ",
+        "uk": "як «б»",
+        "note": ""
+      },
+      {
+        "spelling": "v",
+        "ipa": "b",
+        "example": "vi",
+        "example_ipa": "ˈbi",
+        "uk": "як «б»; губно-зубного «в» немає",
+        "note": ""
+      },
+      {
+        "spelling": "-d (у кінці слова)",
+        "ipa": "t",
+        "example": "verd",
+        "example_ipa": "ˈbɛɾt",
+        "uk": "як «т»",
+        "note": ""
+      },
+      {
+        "spelling": "-g (у кінці слова)",
+        "ipa": "k",
+        "example": "llarg",
+        "example_ipa": "ˈʎaɾk",
+        "uk": "як «к»",
+        "note": ""
+      },
+      {
+        "spelling": "-b (у кінці слова)",
+        "ipa": "p",
+        "example": "club",
+        "example_ipa": "ˈklup",
+        "uk": "як «п»",
+        "note": ""
+      },
+      {
+        "spelling": "h",
+        "ipa": "∅",
+        "example": "home",
+        "example_ipa": "ˈɔmə",
+        "uk": "не вимовляється",
+        "note": ""
+      },
+      {
+        "spelling": "-nt",
+        "ipa": "n",
+        "example": "cent",
+        "example_ipa": "ˈsen",
+        "uk": "t не вимовляється",
+        "note": ""
+      },
+      {
+        "spelling": "-lt",
+        "ipa": "l",
+        "example": "molt",
+        "example_ipa": "ˈmol",
+        "uk": "t не вимовляється",
+        "note": ""
+      },
+      {
+        "spelling": "-mp",
+        "ipa": "m",
+        "example": "camp",
+        "example_ipa": "ˈkam",
+        "uk": "p не вимовляється",
+        "note": ""
+      },
+      {
+        "spelling": "-nc",
+        "ipa": "ŋ",
+        "example": "blanc",
+        "example_ipa": "ˈblaŋ",
+        "uk": "носове «н» як у «банк», але без «к»",
+        "note": ""
+      },
+      {
+        "spelling": "-rts",
+        "ipa": "ɾs",
+        "example": "dimarts",
+        "example_ipa": "diˈmaɾs",
+        "uk": "t не вимовляється",
+        "note": ""
+      }
+    ],
+    "words": [
+      {
+        "ca": "vi",
+        "ipa": "ˈbi",
+        "uk": "вино"
+      },
+      {
+        "ca": "València",
+        "ipa": "bəˈlɛnsiə",
+        "uk": "Валенсія"
+      },
+      {
+        "ca": "verd",
+        "ipa": "ˈbɛɾt",
+        "uk": "зелений"
+      },
+      {
+        "ca": "verda",
+        "ipa": "ˈbɛɾdə",
+        "uk": "зелена"
+      },
+      {
+        "ca": "fred",
+        "ipa": "ˈfɾɛt",
+        "uk": "холодний; холод"
+      },
+      {
+        "ca": "groc",
+        "ipa": "ˈɡɾɔk",
+        "uk": "жовтий"
+      },
+      {
+        "ca": "groga",
+        "ipa": "ˈɡɾɔɡə",
+        "uk": "жовта"
+      },
+      {
+        "ca": "molt",
+        "ipa": "ˈmol",
+        "uk": "дуже; багато"
+      },
+      {
+        "ca": "cent",
+        "ipa": "ˈsen",
+        "uk": "сто"
+      },
+      {
+        "ca": "camp",
+        "ipa": "ˈkam",
+        "uk": "поле"
+      },
+      {
+        "ca": "llamp",
+        "ipa": "ˈʎam",
+        "uk": "блискавка"
+      },
+      {
+        "ca": "blanc",
+        "ipa": "ˈblaŋ",
+        "uk": "білий"
+      },
+      {
+        "ca": "blanca",
+        "ipa": "ˈblaŋkə",
+        "uk": "біла"
+      },
+      {
+        "ca": "dimarts",
+        "ipa": "diˈmaɾs",
+        "uk": "вівторок"
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Як вимовляється слово? Зверніть увагу на кінцевий приголосний.",
+        "items": [
+          {
+            "q": "verd",
+            "a": "[ˈbɛɾt]: d у кінці слова звучить як [t]"
+          },
+          {
+            "q": "fred",
+            "a": "[ˈfɾɛt]"
+          },
+          {
+            "q": "llarg",
+            "a": "[ˈʎaɾk]: g у кінці слова звучить як [k]"
+          },
+          {
+            "q": "groc — groga",
+            "a": "[ˈɡɾɔk] — [ˈɡɾɔɡə]: перед голосною звук дзвінкий"
+          },
+          {
+            "q": "gris — grisa",
+            "a": "[ˈɡɾis] — [ˈɡɾizə]"
+          },
+          {
+            "q": "sord — sorda",
+            "a": "[ˈsoɾt] — [ˈsoɾdə]"
+          }
+        ]
+      },
+      {
+        "instruction": "Яка літера не вимовляється?",
+        "items": [
+          {
+            "q": "cent",
+            "a": "t: [ˈsen]"
+          },
+          {
+            "q": "camp",
+            "a": "p: [ˈkam]"
+          },
+          {
+            "q": "blanc",
+            "a": "c: [ˈblaŋ]"
+          },
+          {
+            "q": "molt",
+            "a": "t: [ˈmol]"
+          },
+          {
+            "q": "home",
+            "a": "h: [ˈɔmə]"
+          },
+          {
+            "q": "dimarts",
+            "a": "t: [diˈmaɾs]"
+          },
+          {
+            "q": "cantar",
+            "a": "кінцева r: [kənˈta]"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 12,
+    "slug": "mezha-sliv",
+    "title": "Вимова на межі слів",
+    "section": "Вимова у мовленні",
+    "level": "B1",
+    "summary": "Як слова зливаються в потоці мовлення: озвончення, уподібнення та злиття голосних.",
+    "explanation": "<p>У живому мовленні між словами немає пауз: кінцевий звук одного слова пристосовується до початку наступного. Ось основні явища.</p><p><strong>Озвончення (<em>sonorització</em>).</strong> Кінцеві свистячі й шиплячі перед голосною наступного слова стають дзвінкими: s, ç → [z], x → [ʒ]: <em>els amics</em> [əlz əˈmiks], <em>dues hores</em> [ˈduəz ˈɔɾəs], <em>feliç aniversari</em> [fəˈliz ənibəɾˈsaɾi], <em>peix a la planxa</em> [ˈpeʒ ə lə ˈplanʃə]. Особливо часто це чути в множині: <em>els</em>, <em>les</em> перед голосною звучать із [z].</p><p><strong>Уподібнення за дзвінкістю.</strong> Перед дзвінким приголосним глухий кінцевий приголосний теж стає дзвінким: <em>els dies</em> [əlz ˈdiəs], <em>set dies</em> [ˈsɛd ˈdiəs], <em>cap dona</em> [ˈkab ˈdɔnə] «жодна жінка». Перед глухим він лишається глухим: <em>els pares</em> [əls ˈpaɾəs].</p><p><strong>Уподібнення n.</strong> Перед p, b, m кінцеве n звучить як [m], перед c, g — як [ŋ]: <em>un poc</em> [um ˈpɔk], <em>un gat</em> [uŋ ˈɡat]. Те саме відбувається й усередині слова: <em>canvi</em> [ˈkambi] «зміна».</p><p><strong>Зіткнення голосних.</strong> На письмі артиклі <em>el</em>, <em>la</em> і прийменник <em>de</em> перед голосною або h скорочуються й пишуться з апострофом: <em>l’escola</em> [ləsˈkɔlə], <em>l’home</em> [ˈlɔmə], <em>d’aigua</em>. Артикль <em>la</em> не скорочується перед ненаголошеними i, u (hi, hu): <em>la universitat</em>, <em>la història</em>, а також у виразі <em>la una</em> «перша година». У швидкому мовленні голосні зливаються й без апострофа: ненаголошене [ə] перед іншою голосною зазвичай випадає — <em>quina hora és?</em> [ˈkin ˈɔɾə ˈes], <em>una amiga</em> [ˈunə ˈmiɡə] (два [ə] зливаються в один).</p>",
+    "sounds": [
+      {
+        "spelling": "-s + голосна",
+        "ipa": "z",
+        "example": "els amics",
+        "example_ipa": "əlz əˈmiks",
+        "uk": "як «з»",
+        "note": ""
+      },
+      {
+        "spelling": "-s + дзвінкий приголосний",
+        "ipa": "z",
+        "example": "els dies",
+        "example_ipa": "əlz ˈdiəs",
+        "uk": "як «з»",
+        "note": ""
+      },
+      {
+        "spelling": "-ç + голосна",
+        "ipa": "z",
+        "example": "feliç aniversari",
+        "example_ipa": "fəˈliz ənibəɾˈsaɾi",
+        "uk": "як «з»",
+        "note": ""
+      },
+      {
+        "spelling": "-x, -ix + голосна",
+        "ipa": "ʒ",
+        "example": "peix a la planxa",
+        "example_ipa": "ˈpeʒ ə lə ˈplanʃə",
+        "uk": "як «ж»",
+        "note": ""
+      },
+      {
+        "spelling": "-t, -p, -c + дзвінкий приголосний",
+        "ipa": "d, b, ɡ",
+        "example": "set dies",
+        "example_ipa": "ˈsɛd ˈdiəs",
+        "uk": "як «д», «б», «ґ»",
+        "note": ""
+      },
+      {
+        "spelling": "n + p, b, m",
+        "ipa": "m",
+        "example": "un poc",
+        "example_ipa": "um ˈpɔk",
+        "uk": "як «м»",
+        "note": ""
+      },
+      {
+        "spelling": "n + c, g",
+        "ipa": "ŋ",
+        "example": "un gat",
+        "example_ipa": "uŋ ˈɡat",
+        "uk": "носове «н», як у «банк»",
+        "note": ""
+      },
+      {
+        "spelling": "a, e (ненаголошені) + голосна",
+        "ipa": "∅",
+        "example": "quina hora",
+        "example_ipa": "ˈkin ˈɔɾə",
+        "uk": "[ə] випадає",
+        "note": "у швидкому мовленні"
+      },
+      {
+        "spelling": "l’, d’",
+        "ipa": "l, d",
+        "example": "l’escola",
+        "example_ipa": "ləsˈkɔlə",
+        "uk": "вимовляється разом із наступним словом",
+        "note": "скорочення на письмі"
+      }
+    ],
+    "words": [
+      {
+        "ca": "els amics",
+        "ipa": "əlz əˈmiks",
+        "uk": "друзі"
+      },
+      {
+        "ca": "dues hores",
+        "ipa": "ˈduəz ˈɔɾəs",
+        "uk": "дві години"
+      },
+      {
+        "ca": "tres anys",
+        "ipa": "ˈtɾɛz ˈaɲs",
+        "uk": "три роки"
+      },
+      {
+        "ca": "dos homes",
+        "ipa": "ˈdoz ˈɔməs",
+        "uk": "двоє чоловіків"
+      },
+      {
+        "ca": "peix a la planxa",
+        "ipa": "ˈpeʒ ə lə ˈplanʃə",
+        "uk": "риба на грилі"
+      },
+      {
+        "ca": "feliç aniversari",
+        "ipa": "fəˈliz ənibəɾˈsaɾi",
+        "uk": "з днем народження"
+      },
+      {
+        "ca": "els dies",
+        "ipa": "əlz ˈdiəs",
+        "uk": "дні"
+      },
+      {
+        "ca": "set dies",
+        "ipa": "ˈsɛd ˈdiəs",
+        "uk": "сім днів"
+      },
+      {
+        "ca": "un poc",
+        "ipa": "um ˈpɔk",
+        "uk": "трохи"
+      },
+      {
+        "ca": "un gat",
+        "ipa": "uŋ ˈɡat",
+        "uk": "кіт"
+      },
+      {
+        "ca": "l’escola",
+        "ipa": "ləsˈkɔlə",
+        "uk": "школа"
+      },
+      {
+        "ca": "un got d’aigua",
+        "ipa": "uŋ ˈɡɔd ˈdajɡwə",
+        "uk": "склянка води"
+      },
+      {
+        "ca": "Quina hora és?",
+        "ipa": "ˈkin ˈɔɾə ˈes",
+        "uk": "Котра година?"
+      },
+      {
+        "ca": "la universitat",
+        "ipa": "lə unibəɾsiˈtat",
+        "uk": "університет"
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Як звучить указаний звук на межі слів?",
+        "items": [
+          {
+            "q": "els amics — s",
+            "a": "[z]: перед голосною"
+          },
+          {
+            "q": "els pares — s",
+            "a": "[s]: перед глухим p"
+          },
+          {
+            "q": "tres dies — s",
+            "a": "[z]: перед дзвінким d, [ˈtɾɛz ˈdiəs]"
+          },
+          {
+            "q": "un poc — n",
+            "a": "[m]: перед p"
+          },
+          {
+            "q": "un gat — n",
+            "a": "[ŋ]: перед g"
+          },
+          {
+            "q": "peix a la planxa — x у peix",
+            "a": "[ʒ]: перед голосною"
+          },
+          {
+            "q": "set dies — t",
+            "a": "[d]: перед дзвінким d"
+          }
+        ]
+      },
+      {
+        "instruction": "Як це пишеться? Поставте апостроф там, де потрібно.",
+        "items": [
+          {
+            "q": "la escola",
+            "a": "l’escola"
+          },
+          {
+            "q": "de aigua",
+            "a": "d’aigua"
+          },
+          {
+            "q": "el home",
+            "a": "l’home"
+          },
+          {
+            "q": "la amiga",
+            "a": "l’amiga"
+          },
+          {
+            "q": "la universitat",
+            "a": "la universitat: перед ненаголошеною u артикль la не скорочується"
+          },
+          {
+            "q": "de Andorra",
+            "a": "d’Andorra"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 13,
+    "slug": "rehionalna-vymova",
+    "title": "Регіональна вимова: центральна, валенсійська, балеарська",
+    "section": "Вимова у мовленні",
+    "level": "B1",
+    "summary": "Чим відрізняються центральна, валенсійська та балеарська вимова.",
+    "explanation": "<p>Каталанська має кілька великих груп говірок. Цей курс навчає <strong>центральної</strong> вимови (Барселона, Жирона, більша частина Каталонії), але ви неодмінно почуєте й інші. Усі вони однаково правильні, а відмінності стосуються передусім вимови, а не письма.</p><p><strong>Валенсійська</strong> (Валенсійська країна, де мову офіційно називають <em>valencià</em>):</p><ul><li>ненаголошені a, e, o не редукуються: <em>pare</em> [ˈpaɾe], <em>posar</em> [poˈzaɾ], <em>Barcelona</em> [baɾseˈlona];</li><li>кінцеве -r в інфінітивах здебільшого вимовляється: <em>cantar</em> [kanˈtaɾ];</li><li>j та g перед e, i звучать як [dʒ]: <em>joc</em> [ˈdʒɔk];</li><li>i в ix вимовляється: <em>caixa</em> [ˈkajʃa];</li><li>у частині слів наголошене e закрите там, де в центральній вимові воно відкрите, тому норма допускає й інше написання: <em>anglés</em>, <em>conéixer</em> (центр. <em>anglès</em>, <em>conèixer</em>).</li></ul><p><strong>Балеарська</strong> (Мальорка, Менорка, Ібіца):</p><ul><li>як і в центральній, ненаголошені a та e звучать як [ə], але [ə] буває й під наголосом: <em>sec</em> [ˈsək] (центр. [ˈsɛk]);</li><li>у більшості говірок v вимовляється як губно-зубне [v], окремо від b: <em>vi</em> [ˈvi];</li><li>уживається так званий «солоний» артикль (<em>article salat</em>): <em>es</em>, <em>sa</em>, <em>ses</em> замість <em>el</em>, <em>la</em>, <em>les</em>: <em>es carrer</em>, <em>sa casa</em>, <em>ses cases</em>;</li><li>у першій особі однини теперішнього часу немає закінчення: <em>jo cant</em> (центр. <em>jo canto</em>).</li></ul><p>Північно-західні говірки (Льєйда, Андорра) за низкою ознак ближчі до валенсійських: зокрема, ненаголошені a та e в них не зливаються в [ə].</p><p>Порада: спершу засвойте одну систему (у цьому курсі — центральну), а інші вчіться розпізнавати на слух. Носії різних говірок добре розуміють одне одного.</p>",
+    "sounds": [
+      {
+        "spelling": "a, e (ненаголошені)",
+        "ipa": "ə ~ a, e",
+        "example": "pare",
+        "example_ipa": "ˈpaɾə ~ ˈpaɾe",
+        "uk": "центральна: [ə]; валенсійська: чіткі «а», «е»",
+        "note": "порядок: центральна, валенсійська"
+      },
+      {
+        "spelling": "o (ненаголошене)",
+        "ipa": "u ~ o",
+        "example": "posar",
+        "example_ipa": "puˈza ~ poˈzaɾ",
+        "uk": "центральна: «у»; валенсійська: «о»",
+        "note": "порядок: центральна, валенсійська"
+      },
+      {
+        "spelling": "-r в інфінітиві",
+        "ipa": "∅ ~ ɾ",
+        "example": "cantar",
+        "example_ipa": "kənˈta ~ kanˈtaɾ",
+        "uk": "центральна: не вимовляється; валенсійська: вимовляється",
+        "note": "порядок: центральна, валенсійська"
+      },
+      {
+        "spelling": "j, g + e, i",
+        "ipa": "ʒ ~ dʒ",
+        "example": "joc",
+        "example_ipa": "ˈʒɔk ~ ˈdʒɔk",
+        "uk": "центральна: «ж»; валенсійська: «дж»",
+        "note": "порядок: центральна, валенсійська"
+      },
+      {
+        "spelling": "ix",
+        "ipa": "ʃ ~ jʃ",
+        "example": "caixa",
+        "example_ipa": "ˈkaʃə ~ ˈkajʃa",
+        "uk": "центральна: «ш»; валенсійська: «йш»",
+        "note": "порядок: центральна, валенсійська"
+      },
+      {
+        "spelling": "v",
+        "ipa": "b ~ v",
+        "example": "vi",
+        "example_ipa": "ˈbi ~ ˈvi",
+        "uk": "центральна: «б»; балеарська: «в»",
+        "note": "порядок: центральна, балеарська"
+      },
+      {
+        "spelling": "наголошене e (у частині слів)",
+        "ipa": "ɛ ~ e ~ ə",
+        "example": "sec",
+        "example_ipa": "ˈsɛk ~ ˈsek ~ ˈsək",
+        "uk": "відкрите, закрите або [ə]",
+        "note": "порядок: центральна, валенсійська, балеарська"
+      },
+      {
+        "spelling": "la → sa",
+        "ipa": "lə ~ sə",
+        "example": "la casa ~ sa casa",
+        "example_ipa": "lə ˈkazə ~ sə ˈkazə",
+        "uk": "різні артиклі",
+        "note": "порядок: центральна, балеарська"
+      },
+      {
+        "spelling": "el → es",
+        "ipa": "əl ~ əs",
+        "example": "el carrer ~ es carrer",
+        "example_ipa": "əl kəˈre ~ əs kəˈre",
+        "uk": "різні артиклі",
+        "note": "порядок: центральна, балеарська"
+      }
+    ],
+    "words": [
+      {
+        "ca": "pare",
+        "ipa": "ˈpaɾə",
+        "uk": "батько; валенсійською [ˈpaɾe]"
+      },
+      {
+        "ca": "posar",
+        "ipa": "puˈza",
+        "uk": "класти, ставити; валенсійською [poˈzaɾ]"
+      },
+      {
+        "ca": "cantar",
+        "ipa": "kənˈta",
+        "uk": "співати; валенсійською [kanˈtaɾ]"
+      },
+      {
+        "ca": "joc",
+        "ipa": "ˈʒɔk",
+        "uk": "гра; валенсійською [ˈdʒɔk]"
+      },
+      {
+        "ca": "caixa",
+        "ipa": "ˈkaʃə",
+        "uk": "коробка; каса; валенсійською [ˈkajʃa]"
+      },
+      {
+        "ca": "sec",
+        "ipa": "ˈsɛk",
+        "uk": "сухий; балеарською [ˈsək]"
+      },
+      {
+        "ca": "vi",
+        "ipa": "ˈbi",
+        "uk": "вино; балеарською [ˈvi]"
+      },
+      {
+        "ca": "la casa",
+        "ipa": "lə ˈkazə",
+        "uk": "дім; балеарською sa casa"
+      },
+      {
+        "ca": "el carrer",
+        "ipa": "əl kəˈre",
+        "uk": "вулиця; балеарською es carrer"
+      },
+      {
+        "ca": "jo canto",
+        "ipa": "ˈʒɔ ˈkantu",
+        "uk": "я співаю; балеарською jo cant"
+      },
+      {
+        "ca": "conèixer",
+        "ipa": "kuˈnɛʃə",
+        "uk": "знати, бути знайомим; валенсійською conéixer"
+      },
+      {
+        "ca": "Barcelona",
+        "ipa": "bəɾsəˈlonə",
+        "uk": "Барселона; валенсійською [baɾseˈlona]"
+      },
+      {
+        "ca": "València",
+        "ipa": "bəˈlɛnsiə",
+        "uk": "Валенсія"
+      },
+      {
+        "ca": "Mallorca",
+        "ipa": "məˈʎɔɾkə",
+        "uk": "Мальорка"
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Ознакою якої вимови це є?",
+        "items": [
+          {
+            "q": "ненаголошене e звучить як [e]: pare [ˈpaɾe]",
+            "a": "валенсійської"
+          },
+          {
+            "q": "наголошене [ə]: sec [ˈsək]",
+            "a": "балеарської"
+          },
+          {
+            "q": "артикль sa: sa platja",
+            "a": "балеарської"
+          },
+          {
+            "q": "[dʒ] на місці j: joc [ˈdʒɔk]",
+            "a": "валенсійської"
+          },
+          {
+            "q": "i в ix вимовляється: caixa [ˈkajʃa]",
+            "a": "валенсійської"
+          },
+          {
+            "q": "форма jo cant «я співаю»",
+            "a": "балеарської"
+          }
+        ]
+      },
+      {
+        "instruction": "Як це звучить у центральній вимові (стандарт курсу)?",
+        "items": [
+          {
+            "q": "pare",
+            "a": "[ˈpaɾə]"
+          },
+          {
+            "q": "cantar",
+            "a": "[kənˈta]"
+          },
+          {
+            "q": "joc",
+            "a": "[ˈʒɔk]"
+          },
+          {
+            "q": "caixa",
+            "a": "[ˈkaʃə]"
+          },
+          {
+            "q": "sec",
+            "a": "[ˈsɛk]"
+          },
+          {
+            "q": "vi",
+            "a": "[ˈbi]"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -61,6 +61,8 @@
                    href="{{ url_for('vocabulary.dictionary') }}">Словник</a>
                 <a class="nav-item nav-link{% if endpoint == 'main.conjugator' %} active{% endif %}"
                    href="{{ url_for('main.conjugator') }}">Дієвідміна</a>
+                <a class="nav-item nav-link{% if section == 'phonetics' %} active{% endif %}"
+                   href="{{ url_for('phonetics.index') }}">Фонетика</a>
                 {% if config.SHOW_FAQ %}
                 <a class="nav-item nav-link{% if endpoint == 'main.faq' %} active{% endif %}"
                    href="{{ url_for('main.faq') }}">FAQ</a>
@@ -136,6 +138,7 @@
           }
         })();
       </script>
+      <script src="{{ url_for('static', filename='speak.js') }}"></script>
       {% block scripts %}{% endblock %}
 </body>
 </html>

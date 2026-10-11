@@ -42,6 +42,8 @@
     <hr>
     <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
       <h2 class="mb-0">{{ result.display_infinitive }}</h2>
+      <button class="btn-speak" type="button" data-say="{{ result.display_infinitive }}"
+              aria-label="Прослухати: {{ result.display_infinitive }}" title="Прослухати">🔊</button>
       {% if result.verified %}
         <span class="badge bg-success" title="Форми цього дієслова звірені з довідниками та перевіряються тестами">
           перевірено

@@ -16,6 +16,11 @@ A Flask-based blog platform for learning and teaching the Catalan language.
   a personal word list for every user (see [Dictionary](#dictionary))
 - **Grammar course** of numbered units, each with an explanation, examples and
   exercises with answers (see [Grammar course](#grammar-course))
+- **Phonetics** lessons (`/phonetics`): sounds with IPA, Ukrainian
+  approximations, practice words and exercises; 🔊 buttons read Catalan aloud
+  with the device's own Catalan voice (also on dictionary, conjugator and
+  grammar pages). Lessons live in `flaskblog/phonetics/data/lessons.json`,
+  so no database step is needed.
 - Database-driven content management
 - Chronological and category-based post navigation
 - Responsive interface that works on phones, with a light/dark theme switch

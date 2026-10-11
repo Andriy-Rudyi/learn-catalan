@@ -502,3 +502,111 @@ a.article-title:hover {
     width: 5.5rem;
   }
 }
+
+/* ---------- Listen buttons ---------- */
+.btn-speak {
+  border: 1px solid var(--border-soft);
+  background: var(--surface);
+  color: var(--brand-strong);
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.btn-speak:hover,
+.btn-speak.speaking {
+  border-color: var(--brand);
+  background: var(--brand);
+  color: var(--brand-contrast);
+}
+
+.btn-speak-sm {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.speak-hint {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  max-width: 40rem;
+  margin: 0 auto;
+  z-index: 1080;
+  font-size: .9rem;
+}
+
+/* ---------- Phonetics ---------- */
+.ipa {
+  font-family: "Charis SIL", "Doulos SIL", "Gentium Plus", "Noto Sans", "Segoe UI", "DejaVu Sans", sans-serif;
+  color: var(--accent-text);
+  white-space: nowrap;
+}
+
+.phonetics .sounds-table .spelling {
+  font-weight: 700;
+  font-size: 1.1rem;
+  white-space: nowrap;
+}
+
+.phonetics .practice-word {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .5rem .75rem;
+  border: 1px solid var(--border-soft);
+  border-radius: .5rem;
+  background: var(--surface);
+  height: 100%;
+}
+
+.phonetics .practice-word .ca {
+  font-weight: 600;
+}
+
+.phonetics .practice-word .uk {
+  color: var(--muted-text);
+  font-size: .85rem;
+}
+
+/* On phones every sound becomes a small card instead of a table row. */
+@media (max-width: 575.98px) {
+  .phonetics .sounds-table thead {
+    display: none;
+  }
+  .phonetics .sounds-table,
+  .phonetics .sounds-table tbody {
+    display: block;
+    width: 100%;
+  }
+  .phonetics .sounds-table tr {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: baseline;
+    gap: .3rem .75rem;
+    padding: .65rem 0;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .phonetics .sounds-table td {
+    display: block;
+    border: 0;
+    padding: 0;
+  }
+  .phonetics .sounds-table .spelling {
+    white-space: normal;
+  }
+  .phonetics .sounds-table .sound-example,
+  .phonetics .sounds-table .sound-how {
+    grid-column: 1 / -1;
+  }
+  .phonetics .ipa {
+    white-space: normal;
+  }
+}

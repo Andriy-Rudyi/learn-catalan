@@ -21,7 +21,13 @@
       <tbody>
         {% for example in examples %}
           <tr>
-            <td class="ca-cell">{{ example.ca }}</td>
+            <td class="ca-cell">
+              <div class="d-flex align-items-start gap-2">
+                <button class="btn-speak btn-speak-sm" type="button" data-say="{{ example.ca }}"
+                        aria-label="Прослухати">🔊</button>
+                <span>{{ example.ca }}</span>
+              </div>
+            </td>
             <td class="text-muted">{{ example.uk }}</td>
           </tr>
         {% endfor %}

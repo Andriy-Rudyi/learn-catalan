@@ -1,0 +1,136 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="grammar-unit phonetics">
+  <p class="small"><a href="{{ url_for('phonetics.index') }}">← До списку уроків</a></p>
+
+  <div class="d-flex flex-wrap align-items-baseline gap-2">
+    <span class="unit-number-big">{{ lesson.number }}</span>
+    <h1 class="mb-0">{{ lesson.title }}</h1>
+    <span class="badge bg-body-secondary text-body-secondary">{{ lesson.level }}</span>
+  </div>
+  <p class="text-muted small">{{ lesson.section }}{% if lesson.summary %} · {{ lesson.summary }}{% endif %}</p>
+
+  <div class="content-section explanation">
+    {{ lesson.explanation | safe }}
+  </div>
+
+  {% if lesson.sounds %}
+    <h4 class="grammar-heading">Звуки</h4>
+    <div class="table-responsive">
+      <table class="table table-sm align-middle sounds-table">
+        <thead>
+          <tr>
+            <th scope="col">Літери</th>
+            <th scope="col">Звук</th>
+            <th scope="col">Приклад</th>
+            <th scope="col">Вимова</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for sound in lesson.sounds %}
+            <tr>
+              <td class="spelling">{{ sound.spelling }}</td>
+              <td class="sound-ipa"><span class="ipa">[{{ sound.ipa }}]</span></td>
+              <td class="sound-example">
+                <div class="d-flex align-items-center gap-2">
+                  <button class="btn-speak btn-speak-sm" type="button" data-say="{{ sound.example }}"
+                          aria-label="Прослухати: {{ sound.example }}">🔊</button>
+                  <span>
+                    {{ sound.example }}
+                    {% if sound.example_ipa %}<br><span class="ipa small">[{{ sound.example_ipa }}]</span>{% endif %}
+                  </span>
+                </div>
+              </td>
+              <td class="small sound-how">
+                {{ sound.uk }}
+                {% if sound.note %}<div class="text-muted">{{ sound.note }}</div>{% endif %}
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% endif %}
+
+  {% if lesson.words %}
+    <h4 class="grammar-heading">Слова для тренування</h4>
+    <div class="row g-2 mb-3">
+      {% for word in lesson.words %}
+        <div class="col-sm-6">
+          <div class="practice-word">
+            <button class="btn-speak" type="button" data-say="{{ word.ca }}"
+                    aria-label="Прослухати: {{ word.ca }}">🔊</button>
+            <div>
+              <div><span class="ca">{{ word.ca }}</span> <span class="ipa small">[{{ word.ipa }}]</span></div>
+              <div class="uk">{{ word.uk }}</div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <p class="small text-muted">
+      Озвучення використовує каталонський голос вашого браузера або телефона.
+    </p>
+  {% endif %}
+
+  {% if lesson.exercises %}
+    <h4 class="grammar-heading">Вправи</h4>
+    {% for block in lesson.exercises %}
+      <div class="exercise-block">
+        <p class="exercise-instruction">{{ loop.index }}. {{ block.instruction }}</p>
+        <ol class="exercise-items">
+          {% for item in block['items'] %}
+            <li>
+              <span class="exercise-question">{{ item.q }}</span>
+              <span class="exercise-answer{% if not show_answers %} d-none{% endif %}">
+                → {{ item.a }}
+              </span>
+            </li>
+          {% endfor %}
+        </ol>
+      </div>
+    {% endfor %}
+
+    <p>
+      <button class="btn btn-sm btn-outline-info" type="button" id="toggle-answers"
+              data-shown="{{ 'yes' if show_answers else 'no' }}">
+        {% if show_answers %}Приховати відповіді{% else %}Показати відповіді{% endif %}
+      </button>
+      <noscript>
+        <a class="btn btn-sm btn-outline-info"
+           href="{{ url_for('phonetics.lesson', slug=lesson.slug, answers='1') }}">
+          Показати відповіді
+        </a>
+      </noscript>
+    </p>
+  {% endif %}
+
+  <nav class="d-flex justify-content-between gap-2 mt-4">
+    {% if previous %}
+      <a class="btn btn-outline-link" href="{{ url_for('phonetics.lesson', slug=previous.slug) }}">
+        ← {{ previous.number }}. {{ previous.title }}
+      </a>
+    {% else %}<span></span>{% endif %}
+    {% if following %}
+      <a class="btn btn-outline-link text-end" href="{{ url_for('phonetics.lesson', slug=following.slug) }}">
+        {{ following.number }}. {{ following.title }} →
+      </a>
+    {% endif %}
+  </nav>
+</div>
+
+<script>
+  (function () {
+    var button = document.getElementById('toggle-answers');
+    if (!button) { return; }
+    button.addEventListener('click', function () {
+      var shown = button.getAttribute('data-shown') === 'yes';
+      document.querySelectorAll('.exercise-answer').forEach(function (answer) {
+        answer.classList.toggle('d-none', shown);
+      });
+      button.setAttribute('data-shown', shown ? 'no' : 'yes');
+      button.textContent = shown ? 'Показати відповіді' : 'Приховати відповіді';
+    });
+  })();
+</script>
+{% endblock content %}
