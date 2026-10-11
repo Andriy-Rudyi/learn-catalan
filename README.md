@@ -174,8 +174,8 @@ level, example_ca, example_uk, notes`. Only `term` and `translation` are
 required. Importing is idempotent: a term already in the dictionary is skipped
 unless `--update` is given.
 
-The starter file `flaskblog/vocabulary/data/seed_words.csv` holds 2,707 words
-across 21 topics (including Catalan cuisine and traditions), mostly A1–B1, including 1,806 verbs, 651 nouns and 141 adjectives. Verbs were chosen by how often their infinitive occurs in a Catalan subtitle corpus (OpenSubtitles 2018 frequency list), so the conjugator has a translation for nearly every verb people actually look up. The conjugator looks a
+The starter file `flaskblog/vocabulary/data/seed_words.csv` holds 3,228 words
+across 21 topics (including Catalan cuisine and traditions), mostly A1–B1, including 2,210 verbs and C1 vocabulary such as discourse connectors and idioms. Verbs were chosen by how often their infinitive occurs in a Catalan subtitle corpus (OpenSubtitles 2018 frequency list), so the conjugator has a translation for nearly every verb people actually look up. The conjugator looks a
 verb up here to show its translation, so dictionary entries double as the
 conjugator's glossary.
 
