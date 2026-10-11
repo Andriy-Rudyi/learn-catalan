@@ -174,8 +174,8 @@ level, example_ca, example_uk, notes`. Only `term` and `translation` are
 required. Importing is idempotent: a term already in the dictionary is skipped
 unless `--update` is given.
 
-The starter file `flaskblog/vocabulary/data/seed_words.csv` holds 569 words
-across 18 topics, mostly A1–B1, including 340 verbs. The conjugator looks a
+The starter file `flaskblog/vocabulary/data/seed_words.csv` holds 963 words
+across 18 topics, mostly A1–B1, including 340 verbs, 446 nouns and 73 adjectives. The conjugator looks a
 verb up here to show its translation, so dictionary entries double as the
 conjugator's glossary.
 
