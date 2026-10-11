@@ -1,0 +1,31 @@
+# Render Blueprint: New → Blueprint → pick this repository.
+# The database is an external free PostgreSQL (e.g. Neon); paste its
+# connection string into DATABASE_URL when Render asks for it.
+services:
+  - type: web
+    name: learn-catalan
+    runtime: python
+    plan: free
+    region: frankfurt
+    branch: dev
+    # Migrations and the idempotent seeds run on every deploy, not on every
+    # wake-up of the free instance.
+    buildCommand: >-
+      pip install -r requirements.txt &&
+      flask db upgrade &&
+      flask vocabulary seed --update &&
+      flask grammar seed
+    # The free instance has a slow CPU; give the first request time to load.
+    startCommand: gunicorn run:app --bind 0.0.0.0:$PORT --timeout 120
+    healthCheckPath: /
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: FLASK_APP
+        value: run.py
+      - key: DEBUG_MODE
+        value: "False"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        sync: false

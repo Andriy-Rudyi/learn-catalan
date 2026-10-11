@@ -315,7 +315,24 @@ flask grammar seed
 The `Procfile` starts the site with `gunicorn run:app` and declares the same
 steps as a `release` command (Heroku runs it automatically).
 
-### Railway (recommended)
+### Free: Render + Neon
+
+Both have free plans with no time limit. The site sleeps after 15 minutes
+without visitors and takes about a minute to wake up.
+
+1. **Database** — sign up at [neon.tech](https://neon.tech), create a project
+   (region: Frankfurt) and copy the connection string
+   (`postgresql://…neon.tech/neondb?sslmode=require…`).
+2. **Site** — sign up at [render.com](https://render.com) with GitHub, then
+   *New → Blueprint* → choose this repository. Render reads `render.yaml`
+   and asks only for `DATABASE_URL`: paste the Neon string.
+3. Wait for the first build: it installs the packages, runs the migrations and
+   loads the dictionary and the course. The site appears at
+   `https://learn-catalan.onrender.com` (or similar).
+
+Every merge into `dev` redeploys automatically.
+
+### Railway
 
 1. New Project → Deploy from GitHub repo → choose this repository, branch `dev`.
 2. Add a PostgreSQL service; Railway exposes `DATABASE_PUBLIC_URL`
