@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="dictionary">
+  <div class="d-flex flex-wrap justify-content-between align-items-center mb-2">
+    <h1 class="mb-0">Словник</h1>
+    <div class="d-flex gap-2">
+      {% if current_user.is_authenticated %}
+        <a class="btn btn-sm btn-outline-info" href="{{ url_for('vocabulary.my_dictionary') }}">Мій словник</a>
+      {% endif %}
+      {% if is_admin() %}
+        <a class="btn btn-sm btn-outline-info" href="{{ url_for('vocabulary.new_word') }}">Додати слово</a>
+        <a class="btn btn-sm btn-outline-secondary" href="{{ url_for('vocabulary.import_words') }}">Імпорт</a>
+      {% endif %}
+    </div>
+  </div>
+  <p class="text-muted">Каталонсько-український словник: {{ total }} слів.</p>
+
+  <form class="row g-2 align-items-end mb-4" method="GET" action="{{ url_for('vocabulary.dictionary') }}">
+    <div class="col-md-4">
+      {{ form.q.label(class="form-label small text-muted") }}
+      {{ form.q(class="form-control", placeholder="слово каталонською або українською") }}
+    </div>
+    <div class="col-md-3">
+      {{ form.topic.label(class="form-label small text-muted") }}
+      {{ form.topic(class="form-select") }}
+    </div>
+    <div class="col-md-2">
+      {{ form.level.label(class="form-label small text-muted") }}
+      {{ form.level(class="form-select") }}
+    </div>
+    <div class="col-md-2">
+      {{ form.part_of_speech.label(class="form-label small text-muted") }}
+      {{ form.part_of_speech(class="form-select") }}
+    </div>
+    <div class="col-md-1">
+      <button class="btn btn-outline-info w-100" type="submit">Знайти</button>
+    </div>
+  </form>
+
+  {% if words.items %}
+    <div class="row">
+      {% for word in words.items %}
+        <div class="col-md-6">
+          <div class="word-card">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <a class="word-term" href="{{ url_for('vocabulary.word', slug=word.slug) }}">{{ word.term }}</a>
+                {% if word.gender %}<span class="text-muted small">({{ gender_label(word.gender) }})</span>{% endif %}
+                <div class="word-translation">{{ word.translation }}</div>
+              </div>
+              {% if current_user.is_authenticated %}
+                {% if word.id in saved_word_ids %}
+                  <span class="badge bg-body-secondary text-body-secondary align-self-center">у словнику</span>
+                {% else %}
+                  <form method="POST" action="{{ url_for('vocabulary.save_word', slug=word.slug) }}">
+                    {{ action_form.hidden_tag() }}
+                    <button class="btn btn-sm btn-outline-info" type="submit" title="Додати до мого словника">+</button>
+                  </form>
+                {% endif %}
+              {% endif %}
+            </div>
+            <div class="word-meta">
+              {% if word.part_of_speech %}<span>{{ part_of_speech_label(word.part_of_speech) }}</span>{% endif %}
+              {% if word.topic %}<span>{{ topic_label(word.topic) }}</span>{% endif %}
+              {% if word.level %}<span>{{ word.level }}</span>{% endif %}
+            </div>
+            {% if word.example_ca %}
+              <p class="word-example mb-0"><em>{{ word.example_ca }}</em></p>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="pagination d-flex justify-content-center mt-4">
+      {% for page_num in words.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+        {% if page_num %}
+          <a class="btn mb-4 {% if words.page == page_num %}btn-outline-info{% else %}btn-outline-link{% endif %}"
+             href="{{ url_for('vocabulary.dictionary', page=page_num, q=form.q.data or None, topic=form.topic.data or None, level=form.level.data or None, part_of_speech=form.part_of_speech.data or None) }}">{{ page_num }}</a>
+        {% else %}
+          <span class="btn mb-4 disabled">…</span>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="alert alert-secondary">
+      {% if total %}
+        За цим запитом слів не знайдено.
+      {% else %}
+        Словник ще порожній.
+        {% if is_admin() %}
+          Можна <a href="{{ url_for('vocabulary.import_words') }}">завантажити стартовий набір</a>.
+        {% endif %}
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {% if words.items %}
+    <p class="small text-muted">
+      <a href="{{ url_for('vocabulary.export_dictionary') }}">Завантажити словник у CSV</a>
+    </p>
+  {% endif %}
+</div>
+{% endblock content %}

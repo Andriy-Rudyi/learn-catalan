@@ -6,7 +6,6 @@ from flask_mail import Mail
 from flask_ckeditor import CKEditor
 from flaskblog.config import Config
 from flask_migrate import Migrate
-from flask_admin import Admin
 
 
 
@@ -22,11 +21,9 @@ mail = Mail()
 ckeditor = CKEditor()
 migrate = Migrate()
 
-admin = Admin()
-
 def create_app(config_class=Config):
     app = Flask(__name__)
-    app.config.from_object(Config)
+    app.config.from_object(config_class)
 
     db.init_app(app)
     #app._context().push()
@@ -46,10 +43,23 @@ def create_app(config_class=Config):
     from flaskblog.posts.routes import posts
     from flaskblog.main.routes import main
     from flaskblog.errors.handler import errors
+    from flaskblog.grammar.routes import grammar
+    from flaskblog.phonetics.routes import phonetics
+    from flaskblog.vocabulary.routes import vocabulary
     app.register_blueprint(users)
     app.register_blueprint(posts)
     app.register_blueprint(main)
     app.register_blueprint(errors)
     app.register_blueprint(admin_bp)
+    app.register_blueprint(vocabulary)
+    app.register_blueprint(grammar)
+    app.register_blueprint(phonetics)
+
+    from flaskblog.conjugation.cli import conjugation_cli
+    from flaskblog.grammar.cli import grammar_cli
+    from flaskblog.vocabulary.cli import vocabulary_cli
+    app.cli.add_command(conjugation_cli)
+    app.cli.add_command(grammar_cli)
+    app.cli.add_command(vocabulary_cli)
 
     return app

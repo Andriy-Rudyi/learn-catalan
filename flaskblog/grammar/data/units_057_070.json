@@ -1,0 +1,1270 @@
+[
+ {
+  "number": 57,
+  "title": "Інкоативні дієслова: serveixo, llegeixo vs dormo, sento",
+  "section": "Дієслово: основи",
+  "level": "A2",
+  "summary": "Де саме з’являється -eix-, а де його немає.",
+  "explanation": "\n<p>Більшість дієслів на <strong>-ir</strong> — <em>інкоативні</em>: у частині форм вони\nотримують вставку <strong>-eix-</strong> (<em>servir → serveixo</em>). Невелика група —\n«чисті» дієслова без вставки (<em>dormir → dormo</em>).</p>\n<p>Вставка з’являється лише там, де наголос інакше падав би на корінь:</p>\n<ul>\n  <li>теперішній: serv<strong>eix</strong>o, serv<strong>eix</strong>es, serv<strong>eix</strong>,\n      servim, serviu, serv<strong>eix</strong>en</li>\n  <li>subjuntiu: serv<strong>eix</strong>i, serv<strong>eix</strong>is, serv<strong>eix</strong>i,\n      servim, serviu, serv<strong>eix</strong>in</li>\n  <li>наказовий: serv<strong>eix</strong>! — але serviu!</li>\n</ul>\n<p>В інших часах вставки немає: <em>servia, serviré, serviria, he servit, servint</em>.</p>\n<p><strong>«Чисті» дієслова</strong> треба запам’ятати: <em>dormir, sentir, mentir, obrir,\nomplir, morir, bullir, fugir, sortir, collir, cosir, tossir</em>. Деякі з них змінюють\nголосний кореня: <em>sortir → surto, collir → cullo, cosir → cuso, tossir → tusso</em>.\nПісля групи приголосних у 3-й особі з’являється <em>-e</em>: <em>obre, omple</em>.</p>\n<p>У валенсійському варіанті вставка інша (<em>servix, servisc</em>), на Балеарах —\n<em>-esc-</em> (<em>servesc</em>); у курсі ми тримаємося центральної норми.</p>\n",
+  "examples": [
+   {
+    "ca": "Prefereixo el te al cafè.",
+    "uk": "Я більше люблю чай, ніж каву."
+   },
+   {
+    "ca": "Sempre dorms tan poc?",
+    "uk": "Ти завжди так мало спиш?"
+   },
+   {
+    "ca": "Surto de casa a les vuit.",
+    "uk": "Я виходжу з дому о восьмій."
+   },
+   {
+    "ca": "Us agraeixo molt l’ajuda.",
+    "uk": "Щиро дякую вам за допомогу."
+   },
+   {
+    "ca": "No cal que ho decideixis ara.",
+    "uk": "Не треба вирішувати це зараз."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Поставте дієслово в теперішньому часі.",
+    "items": [
+     {
+      "q": "Jo (preferir) ___ quedar-me a casa.",
+      "a": "prefereixo"
+     },
+     {
+      "q": "Nosaltres (llegir) ___ en veu alta.",
+      "a": "llegim"
+     },
+     {
+      "q": "Ella (sentir) ___ música al pis de dalt.",
+      "a": "sent"
+     },
+     {
+      "q": "Ells (construir) ___ una casa nova.",
+      "a": "construeixen"
+     },
+     {
+      "q": "Tu (sortir) ___ aquesta nit?",
+      "a": "surts"
+     },
+     {
+      "q": "Vosaltres (patir) ___ massa.",
+      "a": "patiu"
+     },
+     {
+      "q": "El nen (tossir) ___ tota la nit.",
+      "a": "tus"
+     }
+    ]
+   },
+   {
+    "instruction": "Subjuntiu або наказовий спосіб: з -eix- чи без?",
+    "items": [
+     {
+      "q": "Vull que (tu, llegir) ___ aquest llibre.",
+      "a": "llegeixis"
+     },
+     {
+      "q": "(vosaltres, servir) ___ la sopa!",
+      "a": "Serviu"
+     },
+     {
+      "q": "(tu, obrir) ___ la finestra!",
+      "a": "Obre"
+     },
+     {
+      "q": "Espero que (ells, decidir) ___ aviat.",
+      "a": "decideixin"
+     },
+     {
+      "q": "Cal que (nosaltres, corregir) ___ els errors.",
+      "a": "corregim"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 58,
+  "title": "Неправильний теперішній: faig, dic, vinc, tinc",
+  "section": "Дієслово: основи",
+  "level": "A2",
+  "summary": "Fer, dir, venir, tenir, poder, voler, saber, veure — форми, які треба знати напам’ять.",
+  "explanation": "\n<p>Найчастіші дієслова мають неправильний теперішній час. Здебільшого\n«ламається» <strong>1-ша особа однини</strong>, а форми <em>nosaltres</em> і\n<em>vosaltres</em> залишаються правильними.</p>\n<ul>\n  <li><strong>fer</strong>: <strong>faig</strong>, fas, fa, fem, feu, fan</li>\n  <li><strong>dir</strong>: <strong>dic</strong>, dius, diu, diem, dieu, diuen</li>\n  <li><strong>venir</strong>: <strong>vinc</strong>, vens, ve, venim, veniu, venen</li>\n  <li><strong>tenir</strong>: <strong>tinc</strong>, tens, <strong>té</strong>, tenim, teniu, tenen</li>\n  <li><strong>poder</strong>: <strong>puc</strong>, pots, pot, podem, podeu, poden</li>\n  <li><strong>voler</strong>: <strong>vull</strong>, vols, vol, volem, voleu, volen</li>\n  <li><strong>saber</strong>: <strong>sé</strong>, saps, sap, sabem, sabeu, saben</li>\n  <li><strong>veure</strong>: <strong>veig</strong>, veus, veu, veiem, veieu, veuen</li>\n</ul>\n<p>Типова 1-ша особа на <strong>-c / -g</strong>: так само <em>beure → bec, creure → crec,\nviure → visc, conèixer → conec, deure → dec, riure → ric</em>.</p>\n<p>Наголос на письмі розрізняє <em>té</em> (має) і <em>te</em> (тебе; чай),\n<em>sé</em> (знаю) і <em>se</em> (себе). Форми <em>ser, estar</em> та <em>anar</em> див.\nу юнітах 1 і 14.</p>\n",
+  "examples": [
+   {
+    "ca": "Què fas aquest cap de setmana?",
+    "uk": "Що робиш цими вихідними?"
+   },
+   {
+    "ca": "No sé on viu.",
+    "uk": "Не знаю, де він живе."
+   },
+   {
+    "ca": "Tinc vint-i-cinc anys.",
+    "uk": "Мені двадцять п’ять років."
+   },
+   {
+    "ca": "Vinc de la feina i estic molt cansat.",
+    "uk": "Я йду з роботи й дуже втомився."
+   },
+   {
+    "ca": "Puc obrir la finestra?",
+    "uk": "Можна відчинити вікно?"
+   },
+   {
+    "ca": "Des de casa veig el mar.",
+    "uk": "З дому мені видно море."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Поставте дієслово в теперішньому часі.",
+    "items": [
+     {
+      "q": "Jo (fer) ___ els deures.",
+      "a": "faig"
+     },
+     {
+      "q": "Jo no (saber) ___ la resposta.",
+      "a": "sé"
+     },
+     {
+      "q": "Ells (dir) ___ que plourà.",
+      "a": "diuen"
+     },
+     {
+      "q": "Jo (venir) ___ amb tu.",
+      "a": "vinc"
+     },
+     {
+      "q": "Nosaltres (veure) ___ la tele.",
+      "a": "veiem"
+     },
+     {
+      "q": "Jo no (poder) ___ ajudar-te.",
+      "a": "puc"
+     },
+     {
+      "q": "Tu (voler) ___ un cafè?",
+      "a": "vols"
+     }
+    ]
+   },
+   {
+    "instruction": "Перекладіть.",
+    "items": [
+     {
+      "q": "У тебе є машина?",
+      "a": "Tens cotxe?"
+     },
+     {
+      "q": "Що він каже?",
+      "a": "Què diu?"
+     },
+     {
+      "q": "Я хочу додому.",
+      "a": "Vull anar a casa. / Me’n vull anar a casa."
+     },
+     {
+      "q": "Ми не бачимо різниці.",
+      "a": "No veiem la diferència."
+     },
+     {
+      "q": "Вони приїжджають завтра.",
+      "a": "Venen demà."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 59,
+  "title": "Passat perifràstic: vaig parlar — утворення",
+  "section": "Минулі часи",
+  "level": "A2",
+  "summary": "Anar + інфінітив: усі форми, займенники — і книжне parlà.",
+  "explanation": "\n<p><strong>Passat perifràstic</strong> утворюється з допоміжного дієслова та інфінітива.\nДопоміжні форми збігаються з теперішнім часом <em>anar</em>, крім 1-ї і 2-ї особи множини:</p>\n<ul>\n  <li>jo <strong>vaig</strong> parlar</li>\n  <li>tu <strong>vas</strong> (<em>vares</em>) parlar</li>\n  <li>ell, ella, vostè <strong>va</strong> parlar</li>\n  <li>nosaltres <strong>vam</strong> (<em>vàrem</em>) parlar</li>\n  <li>vosaltres <strong>vau</strong> (<em>vàreu</em>) parlar</li>\n  <li>ells, elles, vostès <strong>van</strong> (<em>varen</em>) parlar</li>\n</ul>\n<p>Форми в дужках теж нормативні, але звучать довше й рідше; у центральному\nмовленні панують короткі. Зверніть увагу: <em>vam, vau</em> — не «anem, aneu».</p>\n<p><strong>Займенники</strong> стоять перед <em>vaig</em> або після інфінітива через\nдефіс: <em><strong>Em</strong> vaig llevar</em> = <em>Vaig llevar-<strong>me</strong></em>;\n<em><strong>Li</strong> vam dir</em> = <em>Vam dir-<strong>li</strong></em>. Заперечення\n<em>no</em> — перед усією групою: <em>No ho vaig saber.</em></p>\n<p><strong>Простий минулий</strong> (<em>passat simple</em>) у мовленні рідкісний, але в\nкнижках і пресі трапляється часто — його досить упізнавати:\n<em>parlí, parlares, <strong>parlà</strong>, parlàrem, parlàreu, <strong>parlaren</strong></em>.\nНайпоширеніші неправильні форми: <em>fou</em> (va ser), <em>digué</em> (va dir),\n<em>tingué</em> (va tenir), <em>visqué</em> (va viure).</p>\n",
+  "examples": [
+   {
+    "ca": "Ahir vaig parlar amb la Marta.",
+    "uk": "Учора я розмовляв із Мартою."
+   },
+   {
+    "ca": "On vas néixer?",
+    "uk": "Де ти народився?"
+   },
+   {
+    "ca": "Em vaig llevar a les set.",
+    "uk": "Я встав о сьомій."
+   },
+   {
+    "ca": "No li vau dir res?",
+    "uk": "Ви йому нічого не сказали?"
+   },
+   {
+    "ca": "La guerra acabà el 1939.",
+    "uk": "Війна скінчилася 1939 року. (= va acabar)"
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Поставте дієслово в passat perifràstic.",
+    "items": [
+     {
+      "q": "Jo (comprar) ___ pa.",
+      "a": "vaig comprar"
+     },
+     {
+      "q": "Tu (veure) ___ la pel·lícula?",
+      "a": "vas veure / vares veure"
+     },
+     {
+      "q": "Nosaltres (sopar) ___ a les nou.",
+      "a": "vam sopar / vàrem sopar"
+     },
+     {
+      "q": "Vosaltres (venir) ___ amb tren?",
+      "a": "vau venir / vàreu venir"
+     },
+     {
+      "q": "Ells (anar) ___ a Girona.",
+      "a": "van anar / varen anar"
+     },
+     {
+      "q": "Ella (dutxar-se) ___ ràpidament.",
+      "a": "es va dutxar / va dutxar-se"
+     }
+    ]
+   },
+   {
+    "instruction": "Замініть простий минулий перифрастичним.",
+    "items": [
+     {
+      "q": "Parlà amb el director.",
+      "a": "Va parlar amb el director."
+     },
+     {
+      "q": "Arribaren a la nit.",
+      "a": "Van arribar a la nit."
+     },
+     {
+      "q": "Fou un gran poeta.",
+      "a": "Va ser un gran poeta."
+     },
+     {
+      "q": "Digué que no.",
+      "a": "Va dir que no."
+     },
+     {
+      "q": "Visqué molts anys a París.",
+      "a": "Va viure molts anys a París."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 60,
+  "title": "Неправильні дієприкметники й герундії",
+  "section": "Минулі часи",
+  "level": "B1",
+  "summary": "Fet, dit, vist, pres, escrit — і fent, dient, essent.",
+  "explanation": "\n<p>Правильні дієприкметники закінчуються на <em>-at, -ut, -it</em>\n(<em>parlat, perdut, dormit</em>). Неправильні варто вивчити групами:</p>\n<ul>\n  <li><strong>-t / -s</strong>: fer → <strong>fet</strong>, dir → <strong>dit</strong>,\n      escriure → <strong>escrit</strong>, treure → <strong>tret</strong>,\n      dur → <strong>dut</strong>, veure → <strong>vist</strong>,\n      prendre → <strong>pres</strong> (comprendre → comprès)</li>\n  <li><strong>-ert / -ort</strong>: obrir → <strong>obert</strong>, cobrir → cobert,\n      oferir → ofert, morir → <strong>mort</strong></li>\n  <li><strong>-gut</strong>: creure → <strong>cregut</strong>, tenir → <strong>tingut</strong>,\n      venir → vingut, poder → pogut, voler → volgut, beure → begut,\n      conèixer → conegut, viure → <strong>viscut</strong>, néixer → nascut</li>\n  <li>ser → <strong>estat</strong> або <strong>sigut</strong>; estar → estat</li>\n</ul>\n<p>Жіночий рід і множина утворюються регулярно: <em>feta, fets, dita, presa, escrita,\noberta, morta, creguda</em>.</p>\n<p><strong>Gerundi</strong> переважно правильний (<em>parlant, perdent, dormint</em>), але\nдеякі дієслова, особливо на <em>-ure</em>, мають особливі форми:\nfer → <strong>fent</strong>, dir → <strong>dient</strong>, veure → <strong>veient</strong>,\ncreure → creient, riure → rient, beure → <strong>bevent</strong>,\nescriure → <strong>escrivint</strong>, viure → vivint, ser → <strong>essent</strong> або\n<strong>sent</strong>.</p>\n",
+  "examples": [
+   {
+    "ca": "Què has fet avui?",
+    "uk": "Що ти сьогодні робив?"
+   },
+   {
+    "ca": "Has llegit la carta que t’he escrit?",
+    "uk": "Ти прочитав листа, якого я тобі написав?"
+   },
+   {
+    "ca": "Ningú no s’ho ha cregut.",
+    "uk": "Ніхто в це не повірив."
+   },
+   {
+    "ca": "Hem tingut molta sort.",
+    "uk": "Нам дуже пощастило."
+   },
+   {
+    "ca": "Va entrar dient bon dia a tothom.",
+    "uk": "Він увійшов, вітаючись з усіма."
+   },
+   {
+    "ca": "Essent tan jove, ja dirigeix l’empresa.",
+    "uk": "Такий молодий, а вже керує фірмою."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Поставте дієслово в perfet (he + дієприкметник).",
+    "items": [
+     {
+      "q": "Jo (fer) ___ el sopar.",
+      "a": "he fet"
+     },
+     {
+      "q": "Ella (escriure) ___ una carta.",
+      "a": "ha escrit"
+     },
+     {
+      "q": "Qui (obrir) ___ la finestra?",
+      "a": "ha obert"
+     },
+     {
+      "q": "Nosaltres no (veure) ___ res.",
+      "a": "hem vist"
+     },
+     {
+      "q": "Ells (prendre) ___ un taxi.",
+      "a": "han pres"
+     },
+     {
+      "q": "Vosaltres (tenir) ___ problemes?",
+      "a": "heu tingut"
+     },
+     {
+      "q": "Aquest any (ser) ___ molt difícil.",
+      "a": "ha estat / ha sigut"
+     }
+    ]
+   },
+   {
+    "instruction": "Утворіть gerundi.",
+    "items": [
+     {
+      "q": "dir",
+      "a": "dient"
+     },
+     {
+      "q": "veure",
+      "a": "veient"
+     },
+     {
+      "q": "escriure",
+      "a": "escrivint"
+     },
+     {
+      "q": "ser",
+      "a": "essent / sent"
+     },
+     {
+      "q": "beure",
+      "a": "bevent"
+     },
+     {
+      "q": "fer",
+      "a": "fent"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 61,
+  "title": "saber чи conèixer; saber чи poder",
+  "section": "Дієслово: основи",
+  "level": "A2",
+  "summary": "Знати факт чи бути знайомим; уміти чи мати змогу.",
+  "explanation": "\n<p>Українське «знати» має в каталонській два відповідники:</p>\n<ul>\n  <li><strong>saber</strong> — знати факт, відповідь, інформацію:\n      <em>Saps on és l’estació? No sé què vol.</em> Часто з <em>que, on, quan, si</em>.</li>\n  <li><strong>conèixer</strong> — бути знайомим з людиною, місцем, річчю:\n      <em>Conec la Maria. Coneixes Lleida?</em>\n      Форми: conec, coneixes, coneix, coneixem, coneixeu, coneixen.</li>\n</ul>\n<p>У минулому <em>vaig conèixer</em> зазвичай означає «познайомився»:\n<em>La vaig conèixer a Girona.</em></p>\n<p>Українському «вміти» і «могти» відповідають:</p>\n<ul>\n  <li><strong>saber</strong> + інфінітив — уміти (навичка, якої навчилися):\n      <em>Sé nedar.</em></li>\n  <li><strong>poder</strong> + інфінітив — мати змогу, дозвіл, фізичну можливість:\n      <em>Avui no puc nedar: fa massa fred.</em></li>\n</ul>\n<p>Корисні звороти: <em>saber greu</em> — шкодувати (<em>Em sap greu.</em> — Мені шкода),\n<em>saber a</em> — мати смак (<em>Sap a llimona.</em>).</p>\n",
+  "examples": [
+   {
+    "ca": "Saps on és l’estació?",
+    "uk": "Ти знаєш, де вокзал?"
+   },
+   {
+    "ca": "Coneixes el meu germà?",
+    "uk": "Ти знайомий з моїм братом?"
+   },
+   {
+    "ca": "Vaig conèixer la Laia a la universitat.",
+    "uk": "Я познайомився з Лаєю в університеті."
+   },
+   {
+    "ca": "Sé conduir, però avui no puc: he begut vi.",
+    "uk": "Я вмію водити, але сьогодні не можу: я пив вино."
+   },
+   {
+    "ca": "Em sap greu, no ho sabia.",
+    "uk": "Перепрошую, я не знав."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "saber чи conèixer? Поставте в теперішньому часі.",
+    "items": [
+     {
+      "q": "No ___ (jo) com es diu.",
+      "a": "sé"
+     },
+     {
+      "q": "___ (tu) Girona?",
+      "a": "Coneixes"
+     },
+     {
+      "q": "Ella ___ parlar xinès.",
+      "a": "sap"
+     },
+     {
+      "q": "No ___ (nosaltres) ningú en aquesta ciutat.",
+      "a": "coneixem"
+     },
+     {
+      "q": "___ (vosaltres) a quina hora comença?",
+      "a": "Sabeu"
+     },
+     {
+      "q": "No ___ (jo) aquest restaurant. És nou?",
+      "a": "conec"
+     }
+    ]
+   },
+   {
+    "instruction": "saber чи poder? Поставте в теперішньому часі.",
+    "items": [
+     {
+      "q": "Demà no ___ (jo) venir: treballo.",
+      "a": "puc"
+     },
+     {
+      "q": "El meu fill ja ___ llegir.",
+      "a": "sap"
+     },
+     {
+      "q": "___ (tu) tancar la porta, si us plau?",
+      "a": "Pots"
+     },
+     {
+      "q": "No ___ (jo) cuinar: no m’ho han ensenyat mai.",
+      "a": "sé"
+     },
+     {
+      "q": "Aquí no ___ (vostès) fumar.",
+      "a": "poden"
+     },
+     {
+      "q": "___ (tu) tocar la guitarra?",
+      "a": "Saps"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 62,
+  "title": "Погода: fa calor, plou, neva",
+  "section": "Числа й час",
+  "level": "A1",
+  "summary": "Quin temps fa? — fa sol, plou, hi ha boira.",
+  "explanation": "\n<p>Питання: <strong>Quin temps fa?</strong> — Яка погода?</p>\n<p>Більшість погодних виразів будують із <strong>fer</strong> (3-тя особа однини):</p>\n<ul>\n  <li><strong>fa</strong> bon temps / mal temps — гарна / погана погода</li>\n  <li><strong>fa</strong> calor / fred / fresca — спекотно / холодно / прохолодно</li>\n  <li><strong>fa</strong> sol / vent — сонячно / вітряно</li>\n</ul>\n<p>Опади — окремі дієслова: <strong>plou</strong> (ploure), <strong>neva</strong> (nevar),\n<strong>calamarseja</strong> (іде град). Для явищ — <strong>hi ha</strong>:\n<em>hi ha boira</em> (туман), <em>hi ha tempesta</em> (гроза). Стан неба — <strong>estar</strong>:\n<em>està ennuvolat</em> (хмарно).</p>\n<p>Увага: <em>calor</em> у каталонській — <strong>жіночого роду</strong>:\n<em>fa <strong>molta</strong> calor</em>. Але <em>fa <strong>molt de</strong> fred</em>.</p>\n<p>Температура: <em>Fa vint graus. Estem a dos graus sota zero.</em></p>\n<p>Не плутайте з відчуттями людини: <strong>tinc</strong> fred / calor — мені холодно /\nжарко.</p>\n",
+  "examples": [
+   {
+    "ca": "Quin temps fa avui? — Fa sol i una mica de vent.",
+    "uk": "Яка сьогодні погода? — Сонячно й трохи вітряно."
+   },
+   {
+    "ca": "Al juliol fa molta calor.",
+    "uk": "У липні дуже спекотно."
+   },
+   {
+    "ca": "Plou molt: agafa el paraigua.",
+    "uk": "Іде сильний дощ — візьми парасольку."
+   },
+   {
+    "ca": "Al matí hi ha boira a la carretera.",
+    "uk": "Зранку на дорозі туман."
+   },
+   {
+    "ca": "Demà nevarà al Pirineu.",
+    "uk": "Завтра в Піренеях падатиме сніг."
+   },
+   {
+    "ca": "Tinc fred: tanca la finestra.",
+    "uk": "Мені холодно, зачини вікно."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Як це сказати каталонською?",
+    "items": [
+     {
+      "q": "Сонячно.",
+      "a": "Fa sol."
+     },
+     {
+      "q": "Іде дощ.",
+      "a": "Plou."
+     },
+     {
+      "q": "Холодно.",
+      "a": "Fa fred."
+     },
+     {
+      "q": "Туман.",
+      "a": "Hi ha boira."
+     },
+     {
+      "q": "Іде сніг.",
+      "a": "Neva."
+     },
+     {
+      "q": "Вітряно.",
+      "a": "Fa vent."
+     },
+     {
+      "q": "Дуже спекотно.",
+      "a": "Fa molta calor."
+     }
+    ]
+   },
+   {
+    "instruction": "fa, hi ha, està чи tens?",
+    "items": [
+     {
+      "q": "Avui ___ tempesta.",
+      "a": "hi ha"
+     },
+     {
+      "q": "___ calor? Obro la finestra.",
+      "a": "Tens"
+     },
+     {
+      "q": "Aquesta setmana ___ bon temps.",
+      "a": "fa"
+     },
+     {
+      "q": "El cel ___ ennuvolat.",
+      "a": "està"
+     },
+     {
+      "q": "A la muntanya ___ molt de fred.",
+      "a": "fa"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 63,
+  "title": "Тривалість: fa… que, des de, durant, d’aquí a",
+  "section": "Числа й час",
+  "level": "B1",
+  "summary": "Тому, відколи, протягом, через, за — як це сказати каталонською.",
+  "explanation": "\n<ul>\n  <li><strong>fa</strong> + період — «тому»: <em>Vaig arribar <strong>fa</strong> una setmana.</em></li>\n  <li><strong>fa</strong> + період + <strong>que</strong> + теперішній — дія триває досі:\n      <em><strong>Fa</strong> tres anys <strong>que</strong> visc aquí.</em> — Я живу тут уже три роки.\n      Те саме: <em>Visc aquí <strong>des de fa</strong> tres anys.</em></li>\n  <li><strong>des de</strong> + момент — «з, від»: <em>des de dilluns, des del 2020</em>.</li>\n  <li><strong>des que</strong> + дієслово — «відколи»: <em>Des que treballo aquí, dormo poc.</em></li>\n  <li><strong>durant</strong> + період — «протягом»: <em>Hi vaig viure durant cinc anys.</em>\n      Часто <em>durant</em> просто пропускають: <em>Hi vaig viure cinc anys.</em></li>\n  <li><strong>d’aquí a</strong> + період — «через» (у майбутньому):\n      <em>Torno <strong>d’aquí a</strong> deu minuts.</em></li>\n  <li><strong>en</strong> + період — «за» (скільки часу забрала дія):\n      <em>Ho vaig fer <strong>en</strong> dues hores.</em></li>\n</ul>\n<p>Українське «через» не перекладайте як <em>en</em>: «через годину» —\n<em>d’aquí a una hora</em>, а в минулому — <em>una hora després</em>.</p>\n<p>Питання: <em>Quant de temps fa que…?</em> — Скільки часу вже…?\n<em>Des de quan…?</em> — Відколи…?</p>\n",
+  "examples": [
+   {
+    "ca": "Fa tres anys que estudio català.",
+    "uk": "Я вивчаю каталанську вже три роки."
+   },
+   {
+    "ca": "Treballo aquí des del 2022.",
+    "uk": "Я працюю тут з 2022 року."
+   },
+   {
+    "ca": "Des que viu sola, cuina més.",
+    "uk": "Відколи вона живе сама, вона більше готує."
+   },
+   {
+    "ca": "Torno d’aquí a deu minuts.",
+    "uk": "Повернуся через десять хвилин."
+   },
+   {
+    "ca": "Va llegir el llibre en dos dies.",
+    "uk": "Він прочитав книжку за два дні."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Виберіть: fa, des de, des que, durant, d’aquí a, en.",
+    "items": [
+     {
+      "q": "___ cinc anys que no fumo.",
+      "a": "Fa"
+     },
+     {
+      "q": "Viu a Lleida ___ l’any passat.",
+      "a": "des de"
+     },
+     {
+      "q": "La pel·lícula comença ___ mitja hora.",
+      "a": "d’aquí a"
+     },
+     {
+      "q": "Vam esperar ___ tota la tarda.",
+      "a": "durant"
+     },
+     {
+      "q": "Vaig pintar l’habitació ___ un sol dia.",
+      "a": "en"
+     },
+     {
+      "q": "No l’he vist ___ va canviar de feina.",
+      "a": "des que"
+     },
+     {
+      "q": "Vaig conèixer el Pau ___ deu anys.",
+      "a": "fa"
+     }
+    ]
+   },
+   {
+    "instruction": "Перекладіть.",
+    "items": [
+     {
+      "q": "Я живу тут уже два роки.",
+      "a": "Fa dos anys que visc aquí. / Visc aquí des de fa dos anys."
+     },
+     {
+      "q": "Побачимося через тиждень.",
+      "a": "Ens veiem d’aquí a una setmana."
+     },
+     {
+      "q": "Ми давно не бачилися.",
+      "a": "Fa molt (de temps) que no ens veiem."
+     },
+     {
+      "q": "Він написав роман за три місяці.",
+      "a": "Va escriure la novel·la en tres mesos."
+     },
+     {
+      "q": "Відколи ти тут працюєш?",
+      "a": "Des de quan treballes aquí?"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 64,
+  "title": "Неозначені: algun, cap, tot, cada, qualsevol, altre",
+  "section": "Займенники та означники",
+  "level": "B1",
+  "summary": "Якийсь, жоден, увесь, кожен, будь-який, інший.",
+  "explanation": "\n<ul>\n  <li><strong>algun, alguna, alguns, algunes</strong> — якийсь, деякі:\n      <em>Tens <strong>algun</strong> llibre en català?</em> Займенник: <em>algú</em> — хтось.</li>\n  <li><strong>cap</strong> (незмінне) — з <em>no</em> означає «жоден» (юніт 12), а в\n      питаннях і умовах — «якийсь»: <em>Tens <strong>cap</strong> pregunta?</em></li>\n  <li><strong>tot, tota, tots, totes</strong> + артикль — увесь, усі:\n      <em>tot el dia, tota la nit, tots els dies</em>. <em>Tothom</em> — усі, кожен\n      (дієслово в однині): <em>Tothom ho sap.</em> <em>Tot</em> — усе: <em>Ho sé tot.</em></li>\n  <li><strong>cada</strong> (незмінне) — кожен: <em>cada dia, cada dos dies</em>.\n      Займенник: <em>cadascú</em> (кожен), <em>cadascun / cadascuna</em> (кожен з них).</li>\n  <li><strong>qualsevol</strong> (мн. <em>qualssevol</em>) — будь-який:\n      <em>en <strong>qualsevol</strong> moment</em>. Після іменника — «звичайнісінький»:\n      <em>un dia qualsevol</em>.</li>\n  <li><strong>altre, altra, altres</strong> — інший; <em>un altre</em> — ще один:\n      <em>Vols <strong>un altre</strong> cafè?</em> <em>L’altre dia</em> — нещодавно.</li>\n</ul>\n<p>У значенні «ще один» неозначений артикль обов’язковий: <em>un altre llibre</em>,\n<em>una altra vegada</em>.</p>\n",
+  "examples": [
+   {
+    "ca": "Tens alguna pregunta? — No, cap.",
+    "uk": "У тебе є якісь запитання? — Ні, жодного."
+   },
+   {
+    "ca": "He treballat tot el dia.",
+    "uk": "Я працював цілий день."
+   },
+   {
+    "ca": "L’autobús passa cada vint minuts.",
+    "uk": "Автобус ходить кожні двадцять хвилин."
+   },
+   {
+    "ca": "Pots venir qualsevol dia.",
+    "uk": "Можеш прийти будь-якого дня."
+   },
+   {
+    "ca": "Vols un altre cafè?",
+    "uk": "Хочеш ще одну каву?"
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Заповніть пропуск.",
+    "items": [
+     {
+      "q": "No hi ha ___ problema.",
+      "a": "cap"
+     },
+     {
+      "q": "Hi ha ___ farmàcia per aquí?",
+      "a": "alguna / cap"
+     },
+     {
+      "q": "Ja ho he fet ___.",
+      "a": "tot"
+     },
+     {
+      "q": "Truca’m ___ dia, quan vulguis.",
+      "a": "qualsevol"
+     },
+     {
+      "q": "Vaig a la piscina ___ dimarts.",
+      "a": "cada"
+     },
+     {
+      "q": "Se m’ha acabat la tinta. Tens un ___ bolígraf?",
+      "a": "altre"
+     },
+     {
+      "q": "___ els meus amics són de Girona.",
+      "a": "Tots"
+     }
+    ]
+   },
+   {
+    "instruction": "Перекладіть.",
+    "items": [
+     {
+      "q": "Усі прийшли.",
+      "a": "Tothom ha vingut. / Ha vingut tothom. / Han vingut tots."
+     },
+     {
+      "q": "Будь-хто може це зробити.",
+      "a": "Qualsevol pot fer-ho. / Qualsevol ho pot fer."
+     },
+     {
+      "q": "У мене немає жодної ідеї.",
+      "a": "No tinc cap idea."
+     },
+     {
+      "q": "Цілий тиждень ішов дощ.",
+      "a": "Ha plogut tota la setmana. / Va ploure tota la setmana."
+     },
+     {
+      "q": "Кожен має свою думку.",
+      "a": "Cadascú té la seva opinió."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 65,
+  "title": "Кількість: molt, poc, massa, bastant, gaire, força",
+  "section": "Займенники та означники",
+  "level": "A2",
+  "summary": "Багато, мало, забагато, досить — що узгоджується, а що ні.",
+  "explanation": "\n<p>Перед іменником <strong>molt</strong> і <strong>poc</strong> узгоджуються в роді й числі:\n<em>molt temps, molta gent, molts amics, moltes coses; poc soroll, poca paciència,\npocs diners, poques ganes</em>.</p>\n<p>Перед прикметником, прислівником і після дієслова вони незмінні:\n<em>molt bo, molt bé, treballa molt, menja poc</em>.</p>\n<ul>\n  <li><strong>massa</strong> (незмінне) — забагато, надто: <em>massa gent, massa cotxes,\n      és massa car</em>.</li>\n  <li><strong>bastant / bastants</strong> — досить, чимало (змінюється лише за числом):\n      <em>bastant temps, bastants llibres, és bastant bo</em>.</li>\n  <li><strong>força</strong> (незмінне) — чимало, досить: <em>força gent, força cansat</em>.</li>\n  <li><strong>gaire / gaires</strong> — «не дуже, небагато»; уживається лише в\n      запереченні й питанні: <em>No tinc <strong>gaire</strong> temps. No hi ha\n      <strong>gaires</strong> places. És gaire lluny?</em></li>\n</ul>\n<p>Не плутайте <strong>poc</strong> (мало, недостатньо) з <strong>una mica de</strong>\n(трохи): <em>Tinc poc temps</em> — у мене мало часу; <em>Tinc una mica de temps</em> —\nу мене є трохи часу.</p>\n",
+  "examples": [
+   {
+    "ca": "Hi havia molta gent a la platja.",
+    "uk": "На пляжі було багато людей."
+   },
+   {
+    "ca": "Tinc poca paciència.",
+    "uk": "У мене мало терпіння."
+   },
+   {
+    "ca": "Aquest cotxe és massa car.",
+    "uk": "Ця машина надто дорога."
+   },
+   {
+    "ca": "No tinc gaire gana.",
+    "uk": "Я не дуже голодний."
+   },
+   {
+    "ca": "Parla força bé l’anglès.",
+    "uk": "Він досить добре говорить англійською."
+   },
+   {
+    "ca": "Tenim bastants cadires per a tothom?",
+    "uk": "У нас вистачить стільців на всіх?"
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Поставте слово в потрібній формі.",
+    "items": [
+     {
+      "q": "Tinc ___ (molt) feina.",
+      "a": "molta"
+     },
+     {
+      "q": "Hi ha ___ (poc) turistes.",
+      "a": "pocs"
+     },
+     {
+      "q": "Té ___ (molt) amigues.",
+      "a": "moltes"
+     },
+     {
+      "q": "Hi ha ___ (massa) cotxes.",
+      "a": "massa"
+     },
+     {
+      "q": "Hem comprat ___ (bastant) llibres.",
+      "a": "bastants"
+     },
+     {
+      "q": "Avui fa ___ (poc) calor.",
+      "a": "poca"
+     }
+    ]
+   },
+   {
+    "instruction": "Перекладіть, уживаючи gaire або força.",
+    "items": [
+     {
+      "q": "У мене небагато часу.",
+      "a": "No tinc gaire temps."
+     },
+     {
+      "q": "Тут досить багато людей.",
+      "a": "Aquí hi ha força gent."
+     },
+     {
+      "q": "Ресторан далеко?",
+      "a": "És gaire lluny, el restaurant?"
+     },
+     {
+      "q": "Він не дуже високий.",
+      "a": "No és gaire alt."
+     },
+     {
+      "q": "Я досить утомлений.",
+      "a": "Estic força cansat."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 66,
+  "title": "Прислівники на -ment",
+  "section": "Будова речення",
+  "level": "A2",
+  "summary": "Clar → clarament; два прислівники підряд: clara i ràpidament.",
+  "explanation": "\n<p>Прислівник способу дії утворюють від <strong>жіночого роду</strong> прикметника +\n<strong>-ment</strong>:</p>\n<ul>\n  <li>clar → clara → <strong>clarament</strong>; lent → <strong>lentament</strong></li>\n  <li>fàcil → <strong>fàcilment</strong>; feliç → <strong>feliçment</strong>\n      (прикметник має одну форму для обох родів)</li>\n  <li>seriós → seriosa → <strong>seriosament</strong>;\n      tranquil → tranquil·la → <strong>tranquil·lament</strong></li>\n</ul>\n<p>Наголос прикметника на письмі зберігається: <em>ràpidament, últimament,\ncòmodament</em>.</p>\n<p>Якщо <strong>два прислівники</strong> стоять підряд, <em>-ment</em> можна додати лише\nдо останнього, а перший залишається в жіночому роді:\n<em>Ho va explicar <strong>clara i ràpidament</strong>.</em> Обидві повні форми теж\nправильні: <em>clarament i ràpidament</em>.</p>\n<p>Винятки: «добре» — <strong>bé</strong>, «погано» — <strong>malament</strong>:\n<em>Ho has fet malament.</em> Часто замість <em>-ment</em> кажуть <em>de manera</em> +\nприкметник або вживають прикметник як прислівник: <em>parla clar, camina ràpid</em>.</p>\n",
+  "examples": [
+   {
+    "ca": "Parla clarament, si us plau.",
+    "uk": "Говори чітко, будь ласка."
+   },
+   {
+    "ca": "Normalment esmorzo a casa.",
+    "uk": "Зазвичай я снідаю вдома."
+   },
+   {
+    "ca": "Ha resolt el problema fàcilment.",
+    "uk": "Він легко розв’язав задачу."
+   },
+   {
+    "ca": "Ho va explicar clara i ràpidament.",
+    "uk": "Він пояснив це чітко й швидко."
+   },
+   {
+    "ca": "Últimament dormo malament.",
+    "uk": "Останнім часом я погано сплю."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Утворіть прислівник.",
+    "items": [
+     {
+      "q": "ràpid",
+      "a": "ràpidament"
+     },
+     {
+      "q": "lent",
+      "a": "lentament"
+     },
+     {
+      "q": "fàcil",
+      "a": "fàcilment"
+     },
+     {
+      "q": "seriós",
+      "a": "seriosament"
+     },
+     {
+      "q": "feliç",
+      "a": "feliçment"
+     },
+     {
+      "q": "tranquil",
+      "a": "tranquil·lament"
+     },
+     {
+      "q": "bo",
+      "a": "bé"
+     }
+    ]
+   },
+   {
+    "instruction": "Поєднайте два прислівники за зразком «clara i ràpidament».",
+    "items": [
+     {
+      "q": "tranquil + educat",
+      "a": "tranquil·la i educadament"
+     },
+     {
+      "q": "directe + sincer",
+      "a": "directa i sincerament"
+     },
+     {
+      "q": "simple + clar",
+      "a": "simple i clarament"
+     },
+     {
+      "q": "ràpid + eficaç",
+      "a": "ràpida i eficaçment"
+     },
+     {
+      "q": "amable + pacient",
+      "a": "amable i pacientment"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 67,
+  "title": "però, sinó, sinó que, doncs",
+  "section": "Будова речення",
+  "level": "B1",
+  "summary": "Але, а, а натомість, тож — і пастка si no.",
+  "explanation": "\n<ul>\n  <li><strong>però</strong> — «але», протиставлення: <em>És car, <strong>però</strong> val la pena.</em>\n      Може стояти й усередині речення, як «утім»: <em>La idea, <strong>però</strong>, no em convenç.</em></li>\n  <li><strong>sinó</strong> — «а» після заперечення, коли ми виправляємо одне слово чи групу:\n      <em>No és italià, <strong>sinó</strong> francès.</em></li>\n  <li><strong>sinó que</strong> — те саме, але далі йде дієслово в особовій формі:\n      <em>No va venir, <strong>sinó que</strong> va trucar.</em></li>\n  <li><strong>no només… sinó (que) també</strong> — не лише…, а й:\n      <em>No només parla àrab, sinó també francès.</em></li>\n</ul>\n<p>Не плутайте <strong>sinó</strong> (одне слово) і <strong>si no</strong> («якщо не»):\n<em>Si no plou, sortirem.</em></p>\n<p><strong>doncs</strong> означає наслідок — «тож, то, отже»:\n<em>Tens fred? <strong>Doncs</strong> tanca la finestra.</em> Причину <em>doncs</em> не\nвиражає: «No vinc, doncs estic cansat» — помилка (калька з іспанського\n<em>pues</em>); правильно <em>perquè</em> або <em>ja que</em>.</p>\n",
+  "examples": [
+   {
+    "ca": "M’agrada, però és massa car.",
+    "uk": "Мені подобається, але це надто дорого."
+   },
+   {
+    "ca": "No vull te, sinó cafè.",
+    "uk": "Я хочу не чаю, а кави."
+   },
+   {
+    "ca": "No es va enfadar, sinó que va riure.",
+    "uk": "Він не розсердився, а засміявся."
+   },
+   {
+    "ca": "No només canta, sinó que també balla.",
+    "uk": "Вона не лише співає, а й танцює."
+   },
+   {
+    "ca": "Estàs cansat? Doncs fes una migdiada.",
+    "uk": "Утомився? То поспи трохи."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "però, sinó чи sinó que?",
+    "items": [
+     {
+      "q": "No és metge, ___ infermer.",
+      "a": "sinó"
+     },
+     {
+      "q": "És petit, ___ molt còmode.",
+      "a": "però"
+     },
+     {
+      "q": "No ho va dir ell, ___ ella.",
+      "a": "sinó"
+     },
+     {
+      "q": "No vam anar a la platja, ___ ens vam quedar a casa.",
+      "a": "sinó que"
+     },
+     {
+      "q": "Volia venir, ___ no va poder.",
+      "a": "però"
+     },
+     {
+      "q": "No estudia, ___ treballa.",
+      "a": "sinó que"
+     },
+     {
+      "q": "No m’agrada el futbol, ___ el bàsquet sí.",
+      "a": "però"
+     }
+    ]
+   },
+   {
+    "instruction": "Правильно чи ні? Якщо ні — виправте.",
+    "items": [
+     {
+      "q": "No surto, doncs plou.",
+      "a": "Ні: No surto perquè plou. / No surto, ja que plou."
+     },
+     {
+      "q": "Tens gana? Doncs menja alguna cosa.",
+      "a": "Так"
+     },
+     {
+      "q": "Truca’m sinó pots venir.",
+      "a": "Ні: Truca’m si no pots venir."
+     },
+     {
+      "q": "No vull aigua, sinó suc.",
+      "a": "Так"
+     },
+     {
+      "q": "No ho sé, però ho preguntaré.",
+      "a": "Так"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 68,
+  "title": "Причина й наслідок: perquè, com que, així que",
+  "section": "Будова речення",
+  "level": "B1",
+  "summary": "Бо, оскільки, раз уже, тож, отже.",
+  "explanation": "\n<p><strong>Причина</strong>:</p>\n<ul>\n  <li><strong>perquè</strong> + індикатив — «бо, тому що», зазвичай після головного\n      речення: <em>No vinc <strong>perquè</strong> estic malalt.</em>\n      (Питальне «чому?» пишеться окремо: <em><strong>Per què</strong> no vens?</em>)</li>\n  <li><strong>com que</strong> — «оскільки», стоїть лише <em>на початку</em> речення:\n      <em><strong>Com que</strong> plovia, ens vam quedar a casa.</em></li>\n  <li><strong>ja que, atès que, vist que</strong> — «оскільки, раз уже» (причина, відома\n      співрозмовникові), будь-де в реченні.</li>\n  <li>Перед іменником — <strong>a causa de</strong>, <strong>per culpa de</strong>\n      (щось погане), <strong>gràcies a</strong> (щось добре). Зворот «degut a» у ролі\n      прийменника краще не вживати.</li>\n</ul>\n<p><strong>Наслідок</strong>:</p>\n<ul>\n  <li><strong>així que</strong> — «тож» (розмовне): <em>Era tard, <strong>així que</strong> vam agafar un taxi.</em></li>\n  <li><strong>per tant, per això, doncs</strong> — «отже, тому»:\n      <em>No ha estudiat; <strong>per tant</strong>, no aprovarà.</em></li>\n  <li><strong>de manera que</strong> + індикатив — «так що».</li>\n</ul>\n<p>Пам’ятайте: <em>perquè</em> + subjuntiu означає мету (юніт 35), а не причину.</p>\n",
+  "examples": [
+   {
+    "ca": "No he vingut perquè estava malalt.",
+    "uk": "Я не прийшов, бо був хворий."
+   },
+   {
+    "ca": "Com que no tenia diners, no vaig comprar res.",
+    "uk": "Оскільки грошей у мене не було, я нічого не купив."
+   },
+   {
+    "ca": "Ja que ets aquí, ajuda’m una mica.",
+    "uk": "Раз уже ти тут, допоможи мені трохи."
+   },
+   {
+    "ca": "Era molt tard, així que vam agafar un taxi.",
+    "uk": "Було дуже пізно, тож ми взяли таксі."
+   },
+   {
+    "ca": "El tren va arribar tard a causa de la neu.",
+    "uk": "Поїзд запізнився через сніг."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Виберіть: perquè, per què, com que, així que, per tant.",
+    "items": [
+     {
+      "q": "___ feia sol, vam anar a la platja.",
+      "a": "Com que / Ja que"
+     },
+     {
+      "q": "No et truco ___ no tinc bateria.",
+      "a": "perquè"
+     },
+     {
+      "q": "Estava cansada, ___ se’n va anar a dormir.",
+      "a": "així que / per tant"
+     },
+     {
+      "q": "___ no m’has avisat?",
+      "a": "Per què"
+     },
+     {
+      "q": "No queden entrades; ___, haurem de tornar demà.",
+      "a": "per tant"
+     },
+     {
+      "q": "Hem perdut el tren ___ el taxi ha arribat tard.",
+      "a": "perquè"
+     }
+    ]
+   },
+   {
+    "instruction": "Перепишіть із com que.",
+    "items": [
+     {
+      "q": "No vam sortir perquè plovia.",
+      "a": "Com que plovia, no vam sortir."
+     },
+     {
+      "q": "Vaig agafar el cotxe perquè era tard.",
+      "a": "Com que era tard, vaig agafar el cotxe."
+     },
+     {
+      "q": "No compra res perquè no té diners.",
+      "a": "Com que no té diners, no compra res."
+     },
+     {
+      "q": "No t’ho explico perquè ja ho saps.",
+      "a": "Com que ja ho saps, no t’ho explico."
+     },
+     {
+      "q": "Em quedo a casa perquè estic malalt.",
+      "a": "Com que estic malalt, em quedo a casa."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 69,
+  "title": "Поступка: encara que, tot i que, malgrat que",
+  "section": "Subjuntiu",
+  "level": "B2",
+  "summary": "Хоча — індикатив; навіть якщо — subjuntiu; tot i + інфінітив.",
+  "explanation": "\n<p>Після <strong>encara que, tot i que, malgrat que</strong> вибір способу змінює зміст:</p>\n<ul>\n  <li><strong>індикатив</strong> — реальний факт, «хоча»:\n      <em>Encara que <strong>plou</strong>, sortirem.</em> — Хоча йде дощ, ми вийдемо.</li>\n  <li><strong>subjuntiu</strong> — можливість або неважливий для мовця факт,\n      «навіть якщо»: <em>Encara que <strong>plogui</strong>, sortirem.</em> — Навіть якщо\n      піде дощ…</li>\n  <li><strong>imperfet de subjuntiu</strong> — уявна ситуація:\n      <em>Encara que <strong>fos</strong> ric, no ho compraria.</em></li>\n</ul>\n<p><em>Tot i que</em> найчастіше вживають з індикативом — для реальних фактів.</p>\n<p>Стисліші конструкції:</p>\n<ul>\n  <li><strong>tot i</strong> + інфінітив — коли підмет той самий:\n      <em><strong>Tot i estar</strong> cansat, va continuar.</em> — Хоч і був утомлений, він не зупинився.</li>\n  <li><strong>malgrat</strong> / <strong>tot i</strong> + іменник — «попри»:\n      <em>malgrat la pluja, tot i el cansament</em>; <em>malgrat tot</em> — попри все.</li>\n  <li><strong>per més que / per molt que</strong> + subjuntiu — «хоч як»:\n      <em>Per més que ho intenti, no me’n surto.</em></li>\n</ul>\n",
+  "examples": [
+   {
+    "ca": "Encara que plou, anirem d’excursió.",
+    "uk": "Хоча йде дощ, ми підемо в похід."
+   },
+   {
+    "ca": "Encara que plogui, anirem d’excursió.",
+    "uk": "Навіть якщо піде дощ, ми підемо в похід."
+   },
+   {
+    "ca": "Tot i que estava cansada, va acabar la feina.",
+    "uk": "Хоч і була втомлена, вона закінчила роботу."
+   },
+   {
+    "ca": "Malgrat la pluja, el concert es va fer.",
+    "uk": "Попри дощ, концерт відбувся."
+   },
+   {
+    "ca": "Tot i tenir febre, va anar a treballar.",
+    "uk": "Попри температуру, він пішов на роботу."
+   },
+   {
+    "ca": "Per molt que insisteixis, no canviaré d’opinió.",
+    "uk": "Хоч як ти наполягатимеш, я не передумаю."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Індикатив чи subjuntiu? Поставте дієслово в потрібній формі.",
+    "items": [
+     {
+      "q": "Encara que ara (fer) ___ fred, no porto abric.",
+      "a": "fa"
+     },
+     {
+      "q": "Demà sortirem encara que (ploure) ___.",
+      "a": "plogui"
+     },
+     {
+      "q": "Tot i que (ser) ___ tard, vam continuar parlant.",
+      "a": "era"
+     },
+     {
+      "q": "No t’ho diré encara que m’ho (tu, demanar) ___ mil vegades.",
+      "a": "demanis"
+     },
+     {
+      "q": "Malgrat que (tenir) ___ molts diners, viu de manera senzilla.",
+      "a": "té"
+     },
+     {
+      "q": "Encara que (jo, guanyar) ___ la loteria, no deixaria la feina.",
+      "a": "guanyés"
+     }
+    ]
+   },
+   {
+    "instruction": "Перепишіть із tot i + інфінітив.",
+    "items": [
+     {
+      "q": "Tot i que era petit, ho entenia tot.",
+      "a": "Tot i ser petit, ho entenia tot."
+     },
+     {
+      "q": "Tot i que va estudiar molt, no va aprovar.",
+      "a": "Tot i estudiar molt, no va aprovar. / Tot i haver estudiat molt, no va aprovar."
+     },
+     {
+      "q": "Tot i que viu a prop, sempre arriba tard.",
+      "a": "Tot i viure a prop, sempre arriba tard."
+     },
+     {
+      "q": "Tot i que té febre, vol sortir.",
+      "a": "Tot i tenir febre, vol sortir."
+     },
+     {
+      "q": "Tot i que coneixia el camí, es va perdre.",
+      "a": "Tot i conèixer el camí, es va perdre."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 70,
+  "title": "«Стати»: fer-se, tornar-se, posar-se, quedar-se",
+  "section": "Дієслово: основи",
+  "level": "B2",
+  "summary": "Почервоніти, збожеволіти, розбагатіти, осліпнути — і книжне esdevenir.",
+  "explanation": "\n<p>Українське «стати» (а також багато дієслів на зразок «почервоніти»,\n«постаріти») каталонською передають кількома дієсловами:</p>\n<ul>\n  <li><strong>posar-se</strong> + прикметник — швидка, часто тимчасова зміна стану чи настрою:\n      <em>posar-se vermell, nerviós, trist, malalt</em>.</li>\n  <li><strong>tornar-se</strong> + прикметник — глибока, помітна зміна характеру:\n      <em>S’ha tornat molt egoista. Es va tornar boig.</em></li>\n  <li><strong>fer-se</strong> + прикметник / іменник — поступовий процес, вік, зусилля:\n      <em>fer-se gran, fer-se ric, fer-se famós, fer-se vegetarià</em>; безособово:\n      <em>es fa tard, es fa fosc</em>.</li>\n  <li><strong>quedar-se</strong> + прикметник / sense + іменник — результат події,\n      часто раптовий або небажаний: <em>quedar-se cec, quedar-se sol,\n      quedar-se sense feina, quedar-se parat</em> (остовпіти від подиву).</li>\n  <li><strong>esdevenir</strong> — нейтральне «стати», переважно в книжному стилі:\n      <em>La ciutat va esdevenir la capital del comtat.</em></li>\n</ul>\n<p>Також: <strong>convertir-se en</strong> + іменник — перетворитися на;\n<strong>arribar a ser</strong> — зрештою стати, досягти: <em>Va arribar a ser ministra.</em></p>\n",
+  "examples": [
+   {
+    "ca": "Quan el va veure, es va posar vermella.",
+    "uk": "Побачивши його, вона почервоніла."
+   },
+   {
+    "ca": "Des que és famós, s’ha tornat insuportable.",
+    "uk": "Відколи він прославився, він став нестерпним."
+   },
+   {
+    "ca": "A l’hivern es fa fosc molt d’hora.",
+    "uk": "Узимку дуже рано темніє."
+   },
+   {
+    "ca": "Es va quedar sense paraules.",
+    "uk": "Він не знайшов слів."
+   },
+   {
+    "ca": "Amb els anys, el poble va esdevenir una ciutat turística.",
+    "uk": "З роками село перетворилося на туристичне місто."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Виберіть дієслово й поставте його в потрібній формі.",
+    "items": [
+     {
+      "q": "Quan parla en públic, ___ nerviós.",
+      "a": "es posa"
+     },
+     {
+      "q": "Després de l’accident ___ cec.",
+      "a": "es va quedar"
+     },
+     {
+      "q": "Va treballar molt i ___ ric.",
+      "a": "es va fer"
+     },
+     {
+      "q": "Amb l’edat ___ molt desconfiat.",
+      "a": "s’ha tornat / es va tornar"
+     },
+     {
+      "q": "Si menges tot això, ___ malalt.",
+      "a": "et posaràs"
+     },
+     {
+      "q": "Ja ___ tard; me’n vaig.",
+      "a": "es fa"
+     },
+     {
+      "q": "Aquell petit taller ___ una gran empresa.",
+      "a": "va esdevenir / es va convertir en"
+     }
+    ]
+   },
+   {
+    "instruction": "Перекладіть.",
+    "items": [
+     {
+      "q": "Він почервонів.",
+      "a": "Es va posar vermell."
+     },
+     {
+      "q": "Вона залишилася без роботи.",
+      "a": "Es va quedar sense feina."
+     },
+     {
+      "q": "Діти так швидко ростуть!",
+      "a": "Els nens es fan grans tan de pressa!"
+     },
+     {
+      "q": "Він збожеволів.",
+      "a": "Es va tornar boig."
+     },
+     {
+      "q": "Вона стала вегетаріанкою.",
+      "a": "S’ha fet vegetariana. / Es va fer vegetariana."
+     }
+    ]
+   }
+  ]
+ }
+]

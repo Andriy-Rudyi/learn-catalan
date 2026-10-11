@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+  <form method="POST" action="" novalidate>
+    {{ form.hidden_tag() }}
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4">{{ legend }}</legend>
+      <div class="row">
+        {% for field in [form.term, form.translation, form.part_of_speech, form.gender,
+                         form.topic, form.level, form.pronunciation, form.example_ca,
+                         form.example_uk] %}
+          <div class="col-md-6 mb-3">
+            {{ field.label(class="form-control-label small text-muted") }}
+            {% if field.type == 'SelectField' %}
+              {{ field(class="form-select" + (" is-invalid" if field.errors else "")) }}
+            {% else %}
+              {{ field(class="form-control" + (" is-invalid" if field.errors else "")) }}
+            {% endif %}
+            {% for error in field.errors %}
+              <div class="invalid-feedback d-block">{{ error }}</div>
+            {% endfor %}
+          </div>
+        {% endfor %}
+        <div class="col-12 mb-3">
+          {{ form.notes.label(class="form-control-label small text-muted") }}
+          {{ form.notes(class="form-control", rows=3) }}
+        </div>
+      </div>
+    </fieldset>
+    <div class="form-group d-flex gap-2">
+      {{ form.submit(class="btn btn-outline-info") }}
+      {% if word %}
+        <a class="btn btn-outline-secondary" href="{{ url_for('vocabulary.word', slug=word.slug) }}">Скасувати</a>
+      {% else %}
+        <a class="btn btn-outline-secondary" href="{{ url_for('vocabulary.dictionary') }}">Скасувати</a>
+      {% endif %}
+    </div>
+  </form>
+</div>
+{% endblock content %}

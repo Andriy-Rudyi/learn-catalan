@@ -6,4 +6,4 @@ app = create_app()
 DEBUG_MODE = os.getenv('DEBUG_MODE') == 'True'
 
 if __name__ == '__main__':
-    app.run(DEBUG_MODE)
+    app.run(debug=DEBUG_MODE)

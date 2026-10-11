@@ -1,0 +1,788 @@
+[
+ {
+  "number": 43,
+  "title": "Imperfet de subjuntiu: parlés, fos, fes",
+  "section": "Subjuntiu",
+  "level": "B2",
+  "summary": "Минулий subjuntiu — форми.",
+  "explanation": "\n<p><strong>Imperfet de subjuntiu</strong> потрібен у підрядних реченнях, коли головне\nдієслово в минулому або в умовному способі, та в нереальних умовах.</p>\n<ul>\n  <li>-ar: parl<strong>és</strong>, parl<strong>essis</strong>, parl<strong>és</strong>,\n      parl<strong>éssim</strong>, parl<strong>éssiu</strong>, parl<strong>essin</strong></li>\n  <li>-er/-re: perd<strong>és</strong>, perd<strong>essis</strong>… </li>\n  <li>-ir: dorm<strong>ís</strong>, dorm<strong>issis</strong>, dorm<strong>ís</strong>,\n      dorm<strong>íssim</strong>, dorm<strong>íssiu</strong>, dorm<strong>issin</strong></li>\n</ul>\n<p>Основа нерегулярних дієслів — та сама, що в passat simple / subjuntiu present:</p>\n<ul>\n  <li>ser → <strong>fos</strong>, fossis, fos, fóssim, fóssiu, fossin</li>\n  <li>fer → <strong>fes</strong>, fessis, fes, féssim, féssiu, fessin</li>\n  <li>tenir → <strong>tingués</strong>, venir → <strong>vingués</strong>, poder → <strong>pogués</strong>,\n      voler → <strong>volgués</strong>, haver → <strong>hagués</strong>, dir → <strong>digués</strong>,\n      estar → <strong>estigués</strong>, anar → <strong>anés</strong>, saber → <strong>sabés</strong>,\n      viure → <strong>visqués</strong>, veure → <strong>veiés</strong></li>\n</ul>\n<p>У валенсійському узусі поширені форми на <em>-ara / -era</em> (<em>parlara, fóra</em>),\nу Каталонії — на <em>-és / -ís</em>.</p>\n",
+  "examples": [
+   {
+    "ca": "Volia que vinguessis.",
+    "uk": "Я хотів, щоб ти прийшов."
+   },
+   {
+    "ca": "Si tingués temps, ho faria.",
+    "uk": "Якби в мене був час, я б це зробив."
+   },
+   {
+    "ca": "M’agradaria que fos veritat.",
+    "uk": "Хотілося б, щоб це була правда."
+   },
+   {
+    "ca": "Li vaig dir que no fes soroll.",
+    "uk": "Я сказав йому не шуміти."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Поставте дієслово в imperfet de subjuntiu.",
+    "items": [
+     {
+      "q": "que jo (parlar) ___",
+      "a": "parlés"
+     },
+     {
+      "q": "que tu (ser) ___",
+      "a": "fossis"
+     },
+     {
+      "q": "que ell (fer) ___",
+      "a": "fes"
+     },
+     {
+      "q": "que nosaltres (tenir) ___",
+      "a": "tinguéssim"
+     },
+     {
+      "q": "que vosaltres (venir) ___",
+      "a": "vinguéssiu"
+     },
+     {
+      "q": "que ells (poder) ___",
+      "a": "poguessin"
+     },
+     {
+      "q": "que jo (dormir) ___",
+      "a": "dormís"
+     },
+     {
+      "q": "que tu (dir) ___",
+      "a": "diguessis"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 44,
+  "title": "Умовні речення: si plou… / si plogués…",
+  "section": "Умовні речення",
+  "level": "B2",
+  "summary": "Реальна і малоймовірна умова.",
+  "explanation": "\n<p><strong>Реальна умова</strong> (можливо, станеться): <strong>si + present</strong>, а в головному\nреченні — present, futur або наказ:</p>\n<ul>\n  <li><strong>Si plou</strong>, no <strong>sortirem</strong>. — Якщо піде дощ, ми не вийдемо.</li>\n  <li><strong>Si tens</strong> gana, <strong>menja</strong>. — Якщо голодний, їж.</li>\n</ul>\n<p>Увага: після <em>si</em> не буває майбутнього часу: <em>Si <strong>vens</strong>…</em>,\nа не «si vindràs».</p>\n<p><strong>Малоймовірна або уявна умова</strong> в теперішньому:\n<strong>si + imperfet de subjuntiu</strong> → <strong>condicional</strong>:</p>\n<ul>\n  <li><strong>Si tingués</strong> diners, <strong>viatjaria</strong> més. — Якби мав гроші, подорожував би.</li>\n  <li><strong>Si fos</strong> tu, no ho <strong>faria</strong>. — На твоєму місці я б цього не робив.</li>\n</ul>\n",
+  "examples": [
+   {
+    "ca": "Si arribes aviat, truca’m.",
+    "uk": "Якщо приїдеш рано, подзвони мені."
+   },
+   {
+    "ca": "Si fa bo, anirem a la platja.",
+    "uk": "Якщо буде гарна погода, підемо на пляж."
+   },
+   {
+    "ca": "Si parlés català, treballaria a Barcelona.",
+    "uk": "Якби я говорив каталонською, працював би в Барселоні."
+   },
+   {
+    "ca": "Què faries si guanyessis la loteria?",
+    "uk": "Що б ти робив, якби виграв у лотерею?"
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Реальна умова: поставте дієслова.",
+    "items": [
+     {
+      "q": "Si (ploure) ___, (quedar-se, nosaltres) ___ a casa.",
+      "a": "plou / ens quedarem"
+     },
+     {
+      "q": "Si (tenir, tu) ___ temps, (venir) ___!",
+      "a": "tens / vine"
+     }
+    ]
+   },
+   {
+    "instruction": "Уявна умова: si + imperfet de subjuntiu → condicional.",
+    "items": [
+     {
+      "q": "Si (ser, jo) ___ ric, (comprar) ___ una casa.",
+      "a": "fos / compraria"
+     },
+     {
+      "q": "Si (saber, ell) ___ la resposta, te la (dir) ___.",
+      "a": "sabés / diria"
+     },
+     {
+      "q": "Si (viure, nosaltres) ___ a la costa, (anar) ___ a la platja cada dia.",
+      "a": "visquéssim / aniríem"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 45,
+  "title": "Нереальне минуле: si ho hagués sabut…",
+  "section": "Умовні речення",
+  "level": "C1",
+  "summary": "Умова, яка вже не може здійснитися.",
+  "explanation": "\n<p>Про минуле, якого не змінити: <strong>si + plusquamperfet de subjuntiu</strong>\n(<em>hagués + дієприкметник</em>) → <strong>condicional perfet</strong>\n(<em>hauria + дієприкметник</em>):</p>\n<ul>\n  <li><strong>Si ho hagués sabut</strong>, t’ho <strong>hauria dit</strong>.\n      — Якби я знав, я б тобі сказав.</li>\n  <li><strong>Si haguessis vingut</strong>, t’<strong>hauries divertit</strong>.</li>\n</ul>\n<p>Форми: <em>hagués, haguessis, hagués, haguéssim, haguéssiu, haguessin</em> +\nдієприкметник; <em>hauria, hauries, hauria, hauríem, hauríeu, haurien</em> + дієприкметник.</p>\n<p><strong>Змішана умова</strong> — минула причина з теперішнім наслідком:\n<em>Si <strong>hagués estudiat</strong> medicina, ara <strong>seria</strong> metge.</em></p>\n<p>У розмовній мові замість condicional perfet часто вживають plusquamperfet de\nsubjuntiu в обох частинах: <em>Si ho hagués sabut, t’ho hagués dit.</em></p>\n",
+  "examples": [
+   {
+    "ca": "Si haguéssim sortit abans, no hauríem perdut el tren.",
+    "uk": "Якби ми вийшли раніше, не спізнилися б на поїзд."
+   },
+   {
+    "ca": "Si m’haguessis trucat, t’hauria ajudat.",
+    "uk": "Якби ти мені подзвонив, я б тобі допоміг."
+   },
+   {
+    "ca": "Si no hagués plogut, ara el camp estaria sec.",
+    "uk": "Якби не було дощу, зараз поле було б сухе."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Поставте дієслова в нереальне минуле.",
+    "items": [
+     {
+      "q": "Si (estudiar, tu) ___ més, (aprovar) ___.",
+      "a": "haguessis estudiat / hauries aprovat"
+     },
+     {
+      "q": "Si (saber, jo) ___ que venies, (fer) ___ un pastís.",
+      "a": "hagués sabut / hauria fet"
+     },
+     {
+      "q": "Si (arribar, ells) ___ a temps, (veure) ___ el concert.",
+      "a": "haguessin arribat / haurien vist"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 46,
+  "title": "Узгодження часів у subjuntiu",
+  "section": "Subjuntiu",
+  "level": "C1",
+  "summary": "Vull que vinguis — volia que vinguessis.",
+  "explanation": "\n<p>Час subjuntiu в підрядному реченні залежить від часу головного дієслова:</p>\n<ul>\n  <li>головне в <strong>теперішньому / майбутньому</strong> → <strong>subjuntiu present</strong>:\n      <em>Vull que <strong>vinguis</strong>. Li diré que <strong>truqui</strong>.</em></li>\n  <li>головне в <strong>минулому / умовному</strong> → <strong>imperfet de subjuntiu</strong>:\n      <em>Volia que <strong>vinguessis</strong>. M’agradaria que <strong>truqués</strong>.</em></li>\n</ul>\n<p>Порівняйте:</p>\n<ul>\n  <li>Em demana que l’<strong>ajudi</strong>. → Em va demanar que l’<strong>ajudés</strong>.</li>\n  <li>Espero que <strong>estiguis</strong> bé. → Esperava que <strong>estiguessis</strong> bé.</li>\n</ul>\n<p>Якщо дія підрядного речення вже завершена, вживають\n<strong>perfet de subjuntiu</strong> (<em>hagi fet</em>) або\n<strong>plusquamperfet de subjuntiu</strong> (<em>hagués fet</em>):\n<em>M’alegro que <strong>hagis vingut</strong>. M’alegrava que <strong>haguessis vingut</strong>.</em></p>\n",
+  "examples": [
+   {
+    "ca": "El metge em va dir que descansés.",
+    "uk": "Лікар сказав мені відпочити."
+   },
+   {
+    "ca": "Seria millor que no hi anéssim.",
+    "uk": "Було б краще, якби ми туди не йшли."
+   },
+   {
+    "ca": "No crec que ho hagi entès.",
+    "uk": "Не думаю, що він це зрозумів."
+   },
+   {
+    "ca": "Dubtava que ho haguessin fet sols.",
+    "uk": "Я сумнівався, що вони зробили це самі."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Перекладіть у минуле.",
+    "items": [
+     {
+      "q": "Vull que vinguis.",
+      "a": "Volia que vinguessis."
+     },
+     {
+      "q": "Ens demana que callem.",
+      "a": "Ens va demanar que calléssim."
+     },
+     {
+      "q": "És important que ho sàpiguen.",
+      "a": "Era important que ho sabessin."
+     },
+     {
+      "q": "No crec que tingui raó.",
+      "a": "No creia que tingués raó."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 47,
+  "title": "Futur perfet і condicional perfet",
+  "section": "Майбутнє, умовний, наказовий",
+  "level": "B2",
+  "summary": "Hauré acabat, hauria vingut — і здогадки про минуле.",
+  "explanation": "\n<p><strong>Futur perfet</strong> = <em>hauré, hauràs, haurà, haurem, haureu, hauran</em> +\nдієприкметник. Дія завершиться до певного моменту в майбутньому:</p>\n<ul>\n  <li>A les vuit ja <strong>hauré acabat</strong>. — О восьмій я вже закінчу.</li>\n</ul>\n<p>Він також виражає <strong>здогадку про минуле</strong>:\n<em>No contesta; <strong>haurà sortit</strong>.</em> — Не відповідає; мабуть, вийшов.</p>\n<p><strong>Condicional perfet</strong> = <em>hauria, hauries…</em> + дієприкметник —\nте, що могло б статися, але не сталося:</p>\n<ul>\n  <li><strong>Hauria vingut</strong>, però estava malalt. — Я б прийшов, але був хворий.</li>\n  <li><strong>Hauríeu d’haver</strong>-ho dit abans. — Вам слід було сказати це раніше.</li>\n</ul>\n",
+  "examples": [
+   {
+    "ca": "Quan arribis, ja haurem sopat.",
+    "uk": "Коли ти приїдеш, ми вже повечеряємо."
+   },
+   {
+    "ca": "On haurà posat les claus?",
+    "uk": "Куди ж він поклав ключі?"
+   },
+   {
+    "ca": "M’hauria agradat conèixer-la.",
+    "uk": "Мені б хотілося з нею познайомитися."
+   },
+   {
+    "ca": "No ho hauria dit mai.",
+    "uk": "Я б ніколи цього не сказав."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Futur perfet чи condicional perfet?",
+    "items": [
+     {
+      "q": "El mes que ve ja (acabar, jo) ___ la carrera.",
+      "a": "hauré acabat"
+     },
+     {
+      "q": "Amb més temps, ho (fer, nosaltres) ___ millor.",
+      "a": "hauríem fet"
+     },
+     {
+      "q": "No és a casa; (anar) ___ a la feina.",
+      "a": "haurà anat"
+     },
+     {
+      "q": "(Haver de, tu) ___ trucar-me!",
+      "a": "Hauries d’haver"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 48,
+  "title": "Прийменник зникає перед que",
+  "section": "Прийменники",
+  "level": "C1",
+  "summary": "Penso en tu — penso que… — penso anar-hi.",
+  "explanation": "\n<p>Багато дієслів вимагають прийменника: <em>pensar <strong>en</strong>, adonar-se\n<strong>de</strong>, acostumar-se <strong>a</strong>, estar d’acord <strong>amb</strong>,\ninsistir <strong>en</strong></em>.</p>\n<p><strong>Перед сполучником que</strong> ненаголошені прийменники\n<strong>a, en, amb, de</strong> <em>зникають</em>:</p>\n<ul>\n  <li>M’adono <strong>de</strong> l’error. → M’adono <strong>que</strong> m’he equivocat.</li>\n  <li>Estic d’acord <strong>amb</strong> la idea. → Estic d’acord <strong>que</strong> cal canviar.</li>\n  <li>Insisteix <strong>en</strong> el preu. → Insisteix <strong>que</strong> paguem.</li>\n</ul>\n<p><strong>Перед інфінітивом</strong> <em>en</em> і <em>amb</em> переходять у\n<strong>a</strong> або зникають, а <em>a</em> і <em>de</em> залишаються:</p>\n<ul>\n  <li>Insisteix <strong>a</strong> pagar. Es va comprometre <strong>a</strong> venir.</li>\n  <li>M’alegro <strong>de</strong> veure’t. M’he acostumat <strong>a</strong> llevar-me d’hora.</li>\n</ul>\n<p>Це одна з найпомітніших рис нормативної каталонської — у мовленні її часто\nпорушують, а в письмі перевіряють.</p>\n",
+  "examples": [
+   {
+    "ca": "M’alegro que hagis vingut.",
+    "uk": "Я радий, що ти прийшов."
+   },
+   {
+    "ca": "No et preocupis que no passarà res.",
+    "uk": "Не хвилюйся, нічого не станеться."
+   },
+   {
+    "ca": "Penso anar-hi demà.",
+    "uk": "Я збираюся піти туди завтра."
+   },
+   {
+    "ca": "Confio que tot anirà bé.",
+    "uk": "Я вірю, що все буде добре."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Поставте прийменник або залиште пропуск порожнім (—).",
+    "items": [
+     {
+      "q": "M’adono ___ que és tard.",
+      "a": "— (M’adono que…)"
+     },
+     {
+      "q": "Pensa ___ la seva família.",
+      "a": "en"
+     },
+     {
+      "q": "Insisteixen ___ acompanyar-nos.",
+      "a": "a"
+     },
+     {
+      "q": "Estic d’acord ___ que ho fem així.",
+      "a": "— (Estic d’acord que…)"
+     },
+     {
+      "q": "M’alegro ___ conèixer-te.",
+      "a": "de"
+     },
+     {
+      "q": "Està acostumat ___ que l’ajudin.",
+      "a": "— (Està acostumat que…)"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 49,
+  "title": "Перифрази: acabar de, tornar a, deixar de…",
+  "section": "Дієслово: основи",
+  "level": "B1",
+  "summary": "Дієслово + прийменник + інфінітив із новим значенням.",
+  "explanation": "\n<ul>\n  <li><strong>acabar de</strong> + інф. — щойно: <em>Acabo d’arribar.</em> — Я щойно приїхав.</li>\n  <li><strong>tornar a</strong> + інф. — знову: <em>Torna a ploure.</em> — Знову йде дощ.</li>\n  <li><strong>deixar de</strong> + інф. — перестати: <em>He deixat de fumar.</em></li>\n  <li><strong>començar a / posar-se a</strong> + інф. — почати (раптово):\n      <em>Es va posar a plorar.</em></li>\n  <li><strong>estar a punt de</strong> + інф. — збиратися от-от:\n      <em>El tren està a punt de sortir.</em></li>\n  <li><strong>soler</strong> + інф. — зазвичай: <em>Solem sopar a les nou.</em></li>\n  <li><strong>anar</strong> + gerundi — поступово: <em>La situació va millorant.</em></li>\n  <li><strong>continuar / seguir</strong> + gerundi — далі, все ще:\n      <em>Continua treballant aquí.</em></li>\n</ul>\n<p>Не плутайте <em>acabar de</em> («щойно») і <em>acabar</em> + іменник («закінчити»):\n<em>Acabo la feina</em> — Я закінчую роботу.</p>\n",
+  "examples": [
+   {
+    "ca": "Acabem de dinar.",
+    "uk": "Ми щойно пообідали."
+   },
+   {
+    "ca": "No tornis a fer-ho!",
+    "uk": "Не роби так більше!"
+   },
+   {
+    "ca": "Estava a punt de trucar-te.",
+    "uk": "Я якраз збирався тобі подзвонити."
+   },
+   {
+    "ca": "Sol arribar tard.",
+    "uk": "Він зазвичай спізнюється."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Перекладіть за допомогою перифрази.",
+    "items": [
+     {
+      "q": "Я щойно прокинувся.",
+      "a": "Acabo de despertar-me."
+     },
+     {
+      "q": "Він знову забув ключі.",
+      "a": "Ha tornat a oblidar les claus."
+     },
+     {
+      "q": "Ми перестали ходити в спортзал.",
+      "a": "Hem deixat d’anar al gimnàs."
+     },
+     {
+      "q": "Концерт ось-ось почнеться.",
+      "a": "El concert està a punt de començar."
+     },
+     {
+      "q": "Вона зазвичай снідає вдома.",
+      "a": "Sol esmorzar a casa."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 50,
+  "title": "Звороти з gerundi та en + інфінітив",
+  "section": "Будова речення",
+  "level": "C1",
+  "summary": "Стислі способи сказати «коли», «тому що», «після того як».",
+  "explanation": "\n<p><strong>Gerundi</strong> на початку речення виражає одночасну дію, спосіб або причину:</p>\n<ul>\n  <li><strong>Caminant</strong> per la platja, vaig trobar una ampolla. — Гуляючи пляжем…</li>\n  <li><strong>Sent</strong> tan tard, millor que no hi anem. — Оскільки вже так пізно…</li>\n</ul>\n<p>Увага: каталонський gerundi не описує дію, що відбулася <em>після</em> основної.\n«Va sortir, tancant la porta» — помилка; правильно: <em>Va sortir i va tancar la porta.</em></p>\n<p><strong>En + інфінітив</strong> = «коли», «щойно»:\n<em><strong>En arribar</strong> a casa, em vaig dutxar.</em> — Прийшовши додому, я прийняв душ.</p>\n<p><strong>Дієприкметниковий зворот</strong> — завершена дія перед основною:\n<em><strong>Acabat</strong> el sopar, vam sortir.</em> <em><strong>Un cop</strong> fets els deures, pots jugar.</em></p>\n",
+  "examples": [
+   {
+    "ca": "En sortir de la feina, vaig anar al mercat.",
+    "uk": "Вийшовши з роботи, я пішов на ринок."
+   },
+   {
+    "ca": "Llegint, s’aprèn molt.",
+    "uk": "Читаючи, багато чого навчишся."
+   },
+   {
+    "ca": "Un cop acabada la reunió, ens en vam anar.",
+    "uk": "Щойно нарада скінчилася, ми пішли."
+   },
+   {
+    "ca": "Tenint en compte la situació, ho deixarem per demà.",
+    "uk": "Зважаючи на ситуацію, відкладемо це на завтра."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Перепишіть із en + інфінітив.",
+    "items": [
+     {
+      "q": "Quan va arribar, va trucar a la seva mare.",
+      "a": "En arribar, va trucar a la seva mare."
+     },
+     {
+      "q": "Quan vam veure el preu, vam marxar.",
+      "a": "En veure el preu, vam marxar."
+     }
+    ]
+   },
+   {
+    "instruction": "Правильно чи ні?",
+    "items": [
+     {
+      "q": "Va entrar a casa, encenent el llum.",
+      "a": "Ні: Va entrar a casa i va encendre el llum."
+     },
+     {
+      "q": "Treballant molt, va aconseguir l’objectiu.",
+      "a": "Так"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 51,
+  "title": "Зменшувальні та збільшувальні суфікси",
+  "section": "Словотвір",
+  "level": "B2",
+  "summary": "-et, -ó, -às, -ot: розмір і ставлення мовця.",
+  "explanation": "\n<p><strong>Зменшувальні</strong> суфікси часто додають відтінок ніжності:</p>\n<ul>\n  <li><strong>-et / -eta</strong> — найуживаніший: noi → noi<strong>et</strong>,\n      casa → cas<strong>eta</strong>, gat → gat<strong>et</strong>, poc → poqu<strong>et</strong></li>\n  <li><strong>-ó / -ona</strong> — переважно з прикметниками:\n      petit → petit<strong>ó</strong>, petit<strong>ona</strong></li>\n</ul>\n<p><strong>Збільшувальні</strong> — часто з відтінком захоплення чи зневаги:</p>\n<ul>\n  <li><strong>-às / -assa</strong>: cotxe → cotx<strong>às</strong>, casa → cas<strong>assa</strong>\n      — величезна машина, велетенський дім</li>\n  <li><strong>-ot / -ota</strong>: gran → grand<strong>ot</strong>, noi → noi<strong>ot</strong></li>\n</ul>\n<p>Суфікс узгоджується з родом, а написання основи змінюється, щоб зберегти вимову:\n<em>poc → poquet</em>, <em>boca → boqueta</em>.</p>\n<p>Багато колишніх зменшувальних стали окремими словами з власним значенням:\n<em>llibret</em> (брошура, лібрето), <em>carretó</em> (тачка).</p>\n",
+  "examples": [
+   {
+    "ca": "Quin gatet més maco!",
+    "uk": "Яке гарне кошеня!"
+   },
+   {
+    "ca": "Viuen en una caseta a la muntanya.",
+    "uk": "Вони живуть у будиночку в горах."
+   },
+   {
+    "ca": "S’ha comprat un cotxàs.",
+    "uk": "Він купив собі здоровенну машину."
+   },
+   {
+    "ca": "Espera un moment, un minutet.",
+    "uk": "Зачекай хвилинку."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Утворіть зменшувальну форму на -et / -eta.",
+    "items": [
+     {
+      "q": "casa",
+      "a": "caseta"
+     },
+     {
+      "q": "gat",
+      "a": "gatet"
+     },
+     {
+      "q": "poc",
+      "a": "poquet"
+     },
+     {
+      "q": "boca",
+      "a": "boqueta"
+     },
+     {
+      "q": "llibre",
+      "a": "llibret"
+     }
+    ]
+   },
+   {
+    "instruction": "Утворіть збільшувальну форму на -às / -assa.",
+    "items": [
+     {
+      "q": "cotxe",
+      "a": "cotxàs"
+     },
+     {
+      "q": "casa",
+      "a": "casassa"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 52,
+  "title": "Словотвір: -ció, -ment, -itat, -dor, -ble",
+  "section": "Словотвір",
+  "level": "C1",
+  "summary": "Як зі знайомого дієслова чи прикметника зробити нове слово.",
+  "explanation": "\n<p>Іменники від дієслів:</p>\n<ul>\n  <li><strong>-ció / -sió</strong> (жін.): organitzar → organitza<strong>ció</strong>,\n      decidir → deci<strong>sió</strong></li>\n  <li><strong>-ment</strong> (чол.): desenvolupar → desenvolupa<strong>ment</strong>,\n      pagar → paga<strong>ment</strong>, néixer → naixe<strong>ment</strong>,\n      créixer → creixe<strong>ment</strong></li>\n  <li><strong>-dor / -dora</strong> — той, хто робить, або пристрій:\n      treballar → treballa<strong>dor</strong>, rentar → renta<strong>dora</strong></li>\n</ul>\n<p>Іменники від прикметників — <strong>-itat / -etat / -tat</strong> (жін.):\n<em>possible → possibil<strong>itat</strong>, lliure → llibert<strong>at</strong>,\nbo → bon<strong>esa</strong></em> (також <strong>-esa</strong>).</p>\n<p>Прикметники від дієслів — <strong>-ble</strong> («який можна…»):\n<em>menjar → menja<strong>ble</strong>, creure → cre<strong>ïble</strong>,\nllegir → llegi<strong>ble</strong></em>; з префіксом <strong>in- / im-</strong> — заперечення:\n<em>impossible, increïble, il·legible</em>.</p>\n<p>Прикметники від іменників — <strong>-ós / -osa</strong>: <em>perill → perill<strong>ós</strong>,\norgull → orgull<strong>ós</strong></em>.</p>\n",
+  "examples": [
+   {
+    "ca": "La decisió és definitiva.",
+    "uk": "Рішення остаточне."
+   },
+   {
+    "ca": "És increïble!",
+    "uk": "Неймовірно!"
+   },
+   {
+    "ca": "El creixement de la ciutat és ràpid.",
+    "uk": "Місто швидко зростає."
+   },
+   {
+    "ca": "Aquesta lletra és il·legible.",
+    "uk": "Цей почерк неможливо прочитати."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Утворіть іменник.",
+    "items": [
+     {
+      "q": "organitzar",
+      "a": "organització"
+     },
+     {
+      "q": "desenvolupar",
+      "a": "desenvolupament"
+     },
+     {
+      "q": "possible",
+      "a": "possibilitat"
+     },
+     {
+      "q": "treballar (особа)",
+      "a": "treballador"
+     }
+    ]
+   },
+   {
+    "instruction": "Утворіть прикметник.",
+    "items": [
+     {
+      "q": "perill",
+      "a": "perillós"
+     },
+     {
+      "q": "creure (+ in-)",
+      "a": "increïble"
+     },
+     {
+      "q": "menjar",
+      "a": "menjable"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 53,
+  "title": "Наголос на письмі: à, è, é, ò, ó",
+  "section": "Орфографія",
+  "level": "B2",
+  "summary": "Коли ставити наголос і який — відкритий чи закритий.",
+  "explanation": "\n<p><strong>Де ставити</strong> залежить від того, на який склад падає наголос:</p>\n<ul>\n  <li>наголос на <strong>останньому</strong> складі — ставимо, якщо слово закінчується\n      на голосний, голосний + <em>s</em>, або на <em>-en, -in</em>:\n      <em>cafè, també, francès, català, entén, Berlín</em></li>\n  <li>наголос на <strong>передостанньому</strong> — ставимо, якщо слово\n      <em>не</em> закінчується так: <em>fàcil, difícil, àrab, telèfon</em></li>\n  <li>наголос на <strong>третьому з кінця</strong> — ставимо <em>завжди</em>:\n      <em>música, pàgina, Mònica</em></li>\n</ul>\n<p><strong>Який знак</strong>:</p>\n<ul>\n  <li><strong>a</strong> — завжди відкритий: <em>à</em></li>\n  <li><strong>e, o</strong> — відкритий <em>è, ò</em> або закритий <em>é, ó</em> за вимовою:\n      <em>cafè</em> / <em>també</em>, <em>això</em> / <em>cançó</em></li>\n  <li><strong>i, u</strong> — завжди закритий: <em>í, ú</em></li>\n</ul>\n<p>Після реформи 2016 року лишилося лише 15 діакритичних наголосів (наприклад\n<em>és / es, són / son, mà / ma, més / mes, sí / si</em>).</p>\n",
+  "examples": [
+   {
+    "ca": "El francès és fàcil? — Més que l’àrab!",
+    "uk": "Французька легка? — Легша за арабську!"
+   },
+   {
+    "ca": "Ella també escolta música.",
+    "uk": "Вона теж слухає музику."
+   },
+   {
+    "ca": "Sí, si vols.",
+    "uk": "Так, якщо хочеш."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Поставте наголос, якщо потрібно.",
+    "items": [
+     {
+      "q": "cafe",
+      "a": "cafè"
+     },
+     {
+      "q": "facil",
+      "a": "fàcil"
+     },
+     {
+      "q": "musica",
+      "a": "música"
+     },
+     {
+      "q": "examen",
+      "a": "examen (без наголосу)"
+     },
+     {
+      "q": "examens",
+      "a": "exàmens"
+     },
+     {
+      "q": "canço",
+      "a": "cançó"
+     },
+     {
+      "q": "germa",
+      "a": "germà"
+     },
+     {
+      "q": "cotxe",
+      "a": "cotxe (без наголосу)"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 54,
+  "title": "Апостроф і злиття: l’, d’, al, del",
+  "section": "Орфографія",
+  "level": "B1",
+  "summary": "Коли скорочувати артикль і прийменник.",
+  "explanation": "\n<p><strong>el, la, de</strong> скорочуються перед голосним або <em>h</em>:\n<em>l’home, l’escola, d’Andorra, d’aquí</em>.</p>\n<p><strong>la не скорочується</strong> перед ненаголошеними <em>i, u, hi, hu</em>:\n<em>la universitat, la història, la humanitat</em> (але <em>l’illa</em>,\n<em>l’única</em> — там наголос на <em>i/u</em>).</p>\n<p>Не скорочуються й назви літер та слова на кшталт <em>la una</em> (година),\n<em>la ira</em>.</p>\n<p><strong>Злиття</strong>: <em>a + el = al, de + el = del, per + el = pel</em> і\nмножина <em>als, dels, pels</em>. Перед голосним злиття не буває, бо артикль\nскорочується: <em>de l’home, a l’escola</em>.</p>\n<p>Займенники теж скорочуються: <em>m’agrada, t’estimo, l’he vist, n’hi ha</em>.</p>\n",
+  "examples": [
+   {
+    "ca": "Vaig a l’hospital.",
+    "uk": "Я йду до лікарні."
+   },
+   {
+    "ca": "Estudio a la universitat.",
+    "uk": "Я вчуся в університеті."
+   },
+   {
+    "ca": "El cotxe de l’Anna és vermell.",
+    "uk": "Машина Анни червона."
+   },
+   {
+    "ca": "És la una.",
+    "uk": "Перша година."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Поставте el, la, l’ або del, de l’, al, a l’.",
+    "items": [
+     {
+      "q": "___ història de Catalunya",
+      "a": "la"
+     },
+     {
+      "q": "___ illa de Mallorca",
+      "a": "l’"
+     },
+     {
+      "q": "Vinc ___ escola.",
+      "a": "de l’"
+     },
+     {
+      "q": "Vaig ___ mercat.",
+      "a": "al"
+     },
+     {
+      "q": "___ hora de sopar",
+      "a": "l’"
+     },
+     {
+      "q": "Parlem ___ professor.",
+      "a": "del"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 55,
+  "title": "Котра година? Каталонські «чверті»",
+  "section": "Числа й час",
+  "level": "A2",
+  "summary": "Un quart de nou, dos quarts de deu — і сучасний варіант.",
+  "explanation": "\n<p>Ціла година: <em>És <strong>la una</strong>. Són <strong>les dues</strong>, <strong>les tres</strong>…</em></p>\n<p>Традиційна каталонська система рахує <strong>чверті наступної години</strong>:</p>\n<ul>\n  <li>8:15 — <strong>un quart de nou</strong> (чверть дев’ятої)</li>\n  <li>8:30 — <strong>dos quarts de nou</strong> (дві чверті дев’ятої)</li>\n  <li>8:45 — <strong>tres quarts de nou</strong></li>\n  <li>8:20 — un quart <strong>i cinc</strong> de nou; 8:55 — les nou <strong>menys cinc</strong></li>\n  <li>8:07 приблизно — <strong>mig quart</strong> de nou</li>\n</ul>\n<p>Поруч існує простіша система «від поточної години», яку теж усі розуміють:\n<em>les vuit i quart, les vuit i mitja, les nou menys quart</em>.</p>\n<p>Питання: <em>Quina hora és?</em> — Котра година? <em>A quina hora…?</em> — О котрій…?\nВідповідь: <em><strong>A les</strong> nou. <strong>A un quart de</strong> deu.</em></p>\n",
+  "examples": [
+   {
+    "ca": "Quina hora és? — Són dos quarts de cinc.",
+    "uk": "Котра година? — Пів на п’яту."
+   },
+   {
+    "ca": "El tren surt a tres quarts de vuit.",
+    "uk": "Поїзд відходить о 7:45."
+   },
+   {
+    "ca": "Ens veiem a la una.",
+    "uk": "Побачимося о першій."
+   },
+   {
+    "ca": "Són les deu menys cinc.",
+    "uk": "За п’ять десята."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Запишіть час традиційною каталонською.",
+    "items": [
+     {
+      "q": "9:15",
+      "a": "un quart de deu"
+     },
+     {
+      "q": "9:30",
+      "a": "dos quarts de deu"
+     },
+     {
+      "q": "9:45",
+      "a": "tres quarts de deu"
+     },
+     {
+      "q": "12:30",
+      "a": "dos quarts d’una"
+     },
+     {
+      "q": "10:55",
+      "a": "les onze menys cinc"
+     },
+     {
+      "q": "1:00",
+      "a": "la una"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 56,
+  "title": "Порядкові числівники і дати",
+  "section": "Числа й час",
+  "level": "A2",
+  "summary": "Primer, segon, tercer… і як назвати дату.",
+  "explanation": "\n<p>Порядкові: <strong>primer, segon, tercer, quart</strong>, далі суфікс\n<strong>-è</strong>: <em>cinquè, sisè, setè, vuitè, novè, desè</em>.\nЖіночий рід: <em>primera, segona, tercera, quarta, cinquena…</em>\nСкорочено: <em>1r, 2n, 3r, 4t, 5è</em> / <em>1a, 2a…</em></p>\n<p><strong>Дати</strong>: <em>el</em> + число + <em>de</em> + місяць (зі скороченням перед голосним):</p>\n<ul>\n  <li><strong>el 23 d’abril</strong>, <strong>l’11 de setembre</strong>, <strong>el 5 de juny</strong></li>\n  <li>перше число: <strong>l’u de maig</strong> або <strong>el primer de maig</strong></li>\n</ul>\n<p>Питання й відповідь: <em>Quin dia és avui? — Avui <strong>som a</strong> 5 de juny</em>\n(або <em>És el 5 de juny</em>).</p>\n<p>Роки: <em>el 2026</em> — «el dos mil vint-i-sis»; <em>als anys noranta</em> — у дев’яностих.</p>\n",
+  "examples": [
+   {
+    "ca": "Visc al tercer pis.",
+    "uk": "Я живу на третьому поверсі (за українським рахунком — на четвертому)."
+   },
+   {
+    "ca": "Sant Jordi és el 23 d’abril.",
+    "uk": "День святого Георгія — 23 квітня."
+   },
+   {
+    "ca": "Va néixer el 1990.",
+    "uk": "Він народився 1990 року."
+   },
+   {
+    "ca": "És la primera vegada que vinc.",
+    "uk": "Я тут уперше."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Напишіть словами.",
+    "items": [
+     {
+      "q": "5è",
+      "a": "cinquè"
+     },
+     {
+      "q": "3a",
+      "a": "tercera"
+     },
+     {
+      "q": "9è",
+      "a": "novè"
+     },
+     {
+      "q": "1 de maig",
+      "a": "l’u de maig / el primer de maig"
+     },
+     {
+      "q": "11 de setembre",
+      "a": "l’onze de setembre"
+     }
+    ]
+   }
+  ]
+ }
+]

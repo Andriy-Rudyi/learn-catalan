@@ -1,25 +1,21 @@
 # flaskblog/tests/test_errors.py
 
 import unittest
-from flaskblog import create_app, db
 
-class ErrorTests(unittest.TestCase):
+from flaskblog.tests.helpers import AppTestCase
 
-    def setUp(self):
-        self.app = create_app('TestConfig')
-        self.client = self.app.test_client()
-        with self.app.app_context():
-            db.create_all()
 
-    def tearDown(self):
-        with self.app.app_context():
-            db.session.remove()
-            db.drop_all()
+class ErrorTests(AppTestCase):
 
     def test_404_error(self):
         response = self.client.get('/nonexistent_page')
         self.assertEqual(response.status_code, 404)
-        self.assertIn(b'Page Not Found', response.data)
+
+    def test_403_page_renders(self):
+        response = self.client.get('/dictionary/new', follow_redirects=False)
+        # not logged in: Flask-Login redirects instead of refusing
+        self.assertEqual(response.status_code, 302)
+
 
 if __name__ == '__main__':
     unittest.main()

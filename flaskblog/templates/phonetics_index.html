@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="grammar phonetics">
+  <h1>Фонетика</h1>
+  <p class="text-muted">
+    Як звучить каталанська: {{ total }} уроків про звуки, наголос і вимову у
+    мовленні. У кожному уроці — таблиця звуків із транскрипцією,
+    слова для тренування з кнопкою <span aria-hidden="true">🔊</span> і вправи.
+    За основу взято центральну (барселонську) вимову.
+  </p>
+
+  {% for section, lessons in sections %}
+    <div class="grammar-section">
+      <h3>{{ section }} <span class="small text-muted">· {{ lessons|length }}</span></h3>
+      <div class="list-group">
+        {% for lesson in lessons %}
+          <a class="list-group-item list-group-item-action"
+             href="{{ url_for('phonetics.lesson', slug=lesson.slug) }}">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <span class="unit-number">{{ lesson.number }}</span>
+                <strong>{{ lesson.title }}</strong>
+                {% if lesson.summary %}
+                  <div class="small text-muted">{{ lesson.summary }}</div>
+                {% endif %}
+              </div>
+              <span class="badge bg-body-secondary text-body-secondary">{{ lesson.level }}</span>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock content %}

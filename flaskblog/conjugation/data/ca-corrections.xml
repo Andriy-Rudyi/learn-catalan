@@ -1,0 +1,865 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Corrections to verbecc 1.9.7's Catalan data.
+
+  Endings follow verbecc's own notation: they are appended to the verb
+  stem, each leading hyphen deletes one letter from the stem first ("mou"
+  plus "-gut" gives "mogut"), and a lone hyphen means the form does not
+  exist.  Templates marked modify-stem="strip-accents" receive a stem
+  whose diacritics are already removed, so an accent wanted in the output
+  has to sit in the ending: "sab" plus two hyphens and "àpiga" gives
+  "sàpiga".
+
+  Patches to existing templates come first: a template fix repairs every
+  verb that uses it.  New templates follow, inheriting a base template
+  and listing only what differs.  Verb re-assignments come last.
+-->
+<corrections lang="ca">
+
+  <!-- ==== futures and conditionals of the -er/-re groups ============
+       The e/i-less endings produced "perdé" for "perdré", "temà" for
+       "temeràs", "nria" for "naixeria". -->
+
+  <template name="perd:re">
+    <Indicatiu>
+      <futur>
+        <p><i>ré</i></p><p><i>ràs</i></p><p><i>rà</i></p>
+        <p><i>rem</i></p><p><i>reu</i></p><p><i>ran</i></p>
+      </futur>
+    </Indicatiu>
+  </template>
+
+  <template name="tém:er">
+    <Indicatiu>
+      <futur>
+        <p><i>eré</i></p><p><i>eràs</i></p><p><i>erà</i></p>
+        <p><i>erem</i></p><p><i>ereu</i></p><p><i>eran</i></p>
+      </futur>
+    </Indicatiu>
+    <Condicional>
+      <present>
+        <p><i>eria</i></p><p><i>eries</i></p><p><i>eria</i></p>
+        <p><i>eríem</i></p><p><i>eríeu</i></p><p><i>erien</i></p>
+      </present>
+    </Condicional>
+  </template>
+
+  <template name="créix:er">
+    <Indicatiu>
+      <futur>
+        <p><i>eré</i></p><p><i>eràs</i></p><p><i>erà</i></p>
+        <p><i>erem</i></p><p><i>ereu</i></p><p><i>eran</i></p>
+      </futur>
+    </Indicatiu>
+    <Condicional>
+      <present>
+        <p><i>eria</i></p><p><i>eries</i></p><p><i>eria</i></p>
+        <p><i>eríem</i></p><p><i>eríeu</i></p><p><i>erien</i></p>
+      </present>
+    </Condicional>
+    <!-- créixer -> crescut, merèixer -> merescut (was "creixut") -->
+    <Particip>
+      <particip>
+        <p><i>--scut</i></p><p><i>--scuda</i></p>
+        <p><i>--scuts</i></p><p><i>--scudes</i></p>
+      </particip>
+    </Particip>
+  </template>
+
+  <template name="conèix:er">
+    <Condicional>
+      <present>
+        <p><i>eria</i></p><p><i>eries</i></p><p><i>eria</i></p>
+        <p><i>eríem</i></p><p><i>eríeu</i></p><p><i>erien</i></p>
+      </present>
+    </Condicional>
+    <!-- conèixer -> conegut, aparèixer -> aparegut (was "coneixut") -->
+    <Particip>
+      <particip>
+        <p><i>--gut</i></p><p><i>--guda</i></p>
+        <p><i>--guts</i></p><p><i>--gudes</i></p>
+      </particip>
+    </Particip>
+  </template>
+
+  <template name="pertàny:er">
+    <Indicatiu>
+      <futur>
+        <p><i>eré</i></p><p><i>eràs</i></p><p><i>erà</i></p>
+        <p><i>erem</i></p><p><i>ereu</i></p><p><i>eran</i></p>
+      </futur>
+    </Indicatiu>
+    <Condicional>
+      <present>
+        <p><i>eria</i></p><p><i>eries</i></p><p><i>eria</i></p>
+        <p><i>eríem</i></p><p><i>eríeu</i></p><p><i>erien</i></p>
+      </present>
+    </Condicional>
+    <!-- pertànyer -> pertangut (was "pertanyut") -->
+    <Particip>
+      <particip>
+        <p><i>-gut</i></p><p><i>-guda</i></p>
+        <p><i>-guts</i></p><p><i>-gudes</i></p>
+      </particip>
+    </Particip>
+  </template>
+
+  <template name="n:àixer">
+    <Indicatiu>
+      <futur>
+        <p><i>aixeré</i></p><p><i>aixeràs</i></p><p><i>aixerà</i></p>
+        <p><i>aixerem</i></p><p><i>aixereu</i></p><p><i>aixeran</i></p>
+      </futur>
+    </Indicatiu>
+    <Condicional>
+      <present>
+        <p><i>aixeria</i></p><p><i>aixeries</i></p><p><i>aixeria</i></p>
+        <p><i>aixeríem</i></p><p><i>aixeríeu</i></p><p><i>aixerien</i></p>
+      </present>
+    </Condicional>
+  </template>
+
+  <template name="cern:dre">
+    <Indicatiu>
+      <futur>
+        <p><i>dré</i></p><p><i>dràs</i></p><p><i>drà</i></p>
+        <p><i>drem</i></p><p><i>dreu</i></p><p><i>dran</i></p>
+      </futur>
+    </Indicatiu>
+    <Condicional>
+      <present>
+        <p><i>dria</i></p><p><i>dries</i></p><p><i>dria</i></p>
+        <p><i>dríem</i></p><p><i>dríeu</i></p><p><i>drien</i></p>
+      </present>
+    </Condicional>
+    <!-- imperative was "cerp" -->
+    <Imperatiu>
+      <imperatiu-present>
+        <p><i></i></p><p><i>i</i></p><p><i>em</i></p><p><i>eu</i></p><p><i>in</i></p>
+      </imperatiu-present>
+    </Imperatiu>
+  </template>
+
+  <template name="confon:dre">
+    <Condicional>
+      <present>
+        <p><i>dria</i></p><p><i>dries</i></p><p><i>dria</i></p>
+        <p><i>dríem</i></p><p><i>dríeu</i></p><p><i>drien</i></p>
+      </present>
+    </Condicional>
+    <!-- confondre -> confós (was "confoós") -->
+    <Particip>
+      <particip>
+        <p><i>--ós</i></p><p><i>--osa</i></p>
+        <p><i>--osos</i></p><p><i>--oses</i></p>
+      </particip>
+    </Particip>
+  </template>
+
+  <template name="compla:ure">
+    <Condicional>
+      <present>
+        <p><i>uria</i></p><p><i>uries</i></p><p><i>uria</i></p>
+        <p><i>uríem</i></p><p><i>uríeu</i></p><p><i>urien</i></p>
+      </present>
+    </Condicional>
+  </template>
+
+  <template name="tr:aure">
+    <Indicatiu>
+      <futur>
+        <p><i>auré</i></p><p><i>auràs</i></p><p><i>aurà</i></p>
+        <p><i>aurem</i></p><p><i>aureu</i></p><p><i>auran</i></p>
+      </futur>
+    </Indicatiu>
+    <Condicional>
+      <present>
+        <p><i>auria</i></p><p><i>auries</i></p><p><i>auria</i></p>
+        <p><i>auríem</i></p><p><i>auríeu</i></p><p><i>aurien</i></p>
+      </present>
+    </Condicional>
+    <Gerundi>
+      <gerundi><p><i>aent</i></p></gerundi>
+    </Gerundi>
+    <!-- traure -> tret (was "trut") -->
+    <Particip>
+      <particip>
+        <p><i>et</i></p><p><i>eta</i></p><p><i>ets</i></p><p><i>etes</i></p>
+      </particip>
+    </Particip>
+  </template>
+
+  <!-- ==== participles built from the wrong stem ====================== -->
+
+  <template name="mou:re">
+    <!-- moure -> mogut, beure -> begut, deure -> degut (was "mouut") -->
+    <Particip>
+      <particip>
+        <p><i>-gut</i></p><p><i>-guda</i></p>
+        <p><i>-guts</i></p><p><i>-gudes</i></p>
+      </particip>
+    </Particip>
+  </template>
+
+  <template name="d:ur">
+    <!-- dur -> dut (was "ddut") -->
+    <Particip>
+      <particip>
+        <p><i>ut</i></p><p><i>uda</i></p><p><i>uts</i></p><p><i>udes</i></p>
+      </particip>
+    </Particip>
+  </template>
+
+  <template name="aten:dre">
+    <!-- atendre -> atès, entendre -> entès (was "atenès") -->
+    <Particip>
+      <particip>
+        <p><i>--ès</i></p><p><i>--esa</i></p>
+        <p><i>--esos</i></p><p><i>--eses</i></p>
+      </particip>
+    </Particip>
+  </template>
+
+  <template name="compon:dre">
+    <!-- compondre -> compost, respondre -> respost (was "componès") -->
+    <Particip>
+      <particip>
+        <p><i>-st</i></p><p><i>-sta</i></p><p><i>-sts</i></p><p><i>-stes</i></p>
+      </particip>
+    </Particip>
+  </template>
+
+  <template name="expen:dre">
+    <!-- expendre -> expès (was "expenès") -->
+    <Particip>
+      <particip>
+        <p><i>--ès</i></p><p><i>--esa</i></p>
+        <p><i>--esos</i></p><p><i>--eses</i></p>
+      </particip>
+    </Particip>
+  </template>
+
+  <!-- ==== wrong subjunctives, imperatives and preterites ============= -->
+
+  <template name="cal:dre">
+    <!-- caldre is impersonal; the subjunctive read "calbi" -->
+    <Subjuntiu>
+      <present>
+        <p><i>-</i></p><p><i>-</i></p><p><i>gui</i></p>
+        <p><i>-</i></p><p><i>-</i></p><p><i>guin</i></p>
+      </present>
+    </Subjuntiu>
+  </template>
+
+  <template name="desclou:re">
+    <!-- was "desclogés" -->
+    <Subjuntiu>
+      <imperfet>
+        <p><i>-gués</i></p><p><i>-guessis</i></p><p><i>-gués</i></p>
+        <p><i>-guéssim</i></p><p><i>-guéssiu</i></p><p><i>-guessin</i></p>
+      </imperfet>
+    </Subjuntiu>
+  </template>
+
+  <template name="v:iure">
+    <!-- was "visgui"/"visgués"/"vient" -->
+    <Subjuntiu>
+      <present>
+        <p><i>isqui</i></p><p><i>isquis</i></p><p><i>isqui</i></p>
+        <p><i>isquem</i></p><p><i>isqueu</i></p><p><i>isquin</i></p>
+      </present>
+      <imperfet>
+        <p><i>isqués</i></p><p><i>isquessis</i></p><p><i>isqués</i></p>
+        <p><i>isquéssim</i></p><p><i>isquéssiu</i></p><p><i>isquessin</i></p>
+      </imperfet>
+    </Subjuntiu>
+    <Gerundi>
+      <gerundi><p><i>ivint</i></p></gerundi>
+    </Gerundi>
+  </template>
+
+  <template name="tren:car">
+    <!-- first person read "trenqi" -->
+    <Subjuntiu>
+      <present>
+        <p><i>qui</i></p><p><i>quis</i></p><p><i>qui</i></p>
+        <p><i>quem</i></p><p><i>queu</i></p><p><i>quin</i></p>
+      </present>
+    </Subjuntiu>
+  </template>
+
+  <template name="d:ir">
+    <!-- second person plural read "digue" -->
+    <Subjuntiu>
+      <present>
+        <p><i>igui</i></p><p><i>iguis</i></p><p><i>igui</i></p>
+        <p><i>iguem</i></p><p><i>igueu</i></p><p><i>iguin</i></p>
+      </present>
+    </Subjuntiu>
+  </template>
+
+  <template name="r:iure">
+    <!-- second person plural read "rigue" -->
+    <Subjuntiu>
+      <present>
+        <p><i>igui</i></p><p><i>iguis</i></p><p><i>igui</i></p>
+        <p><i>iguem</i></p><p><i>igueu</i></p><p><i>iguin</i></p>
+      </present>
+    </Subjuntiu>
+  </template>
+
+  <template name="preg:ar">
+    <!-- third person singular read "pregi" -->
+    <Imperatiu>
+      <imperatiu-present>
+        <p><i>a</i></p><p><i>ui</i></p><p><i>uem</i></p>
+        <p><i>ueu</i></p><p><i>uin</i></p>
+      </imperatiu-present>
+    </Imperatiu>
+  </template>
+
+  <template name="toss:ir">
+    <!-- imperative read "tuss" -->
+    <Imperatiu>
+      <imperatiu-present>
+        <p><i>---us</i></p><p><i>--ussi</i></p><p><i>im</i></p>
+        <p><i>iu</i></p><p><i>--ussin</i></p>
+      </imperatiu-present>
+    </Imperatiu>
+  </template>
+
+  <template name="est:ar">
+    <!-- the gerund was the Spanish "estando" and the imperative "está" -->
+    <Gerundi>
+      <gerundi><p><i>ant</i></p></gerundi>
+    </Gerundi>
+    <Imperatiu>
+      <imperatiu-present>
+        <p><i>igues</i></p><p><i>igui</i></p><p><i>iguem</i></p>
+        <p><i>igueu</i></p><p><i>iguin</i></p>
+      </imperatiu-present>
+    </Imperatiu>
+  </template>
+
+  <template name="h:aver">
+    <!-- "havem/haveu" for "hem/heu"; haver has no imperative -->
+    <Indicatiu>
+      <present>
+        <p><i>e</i></p><p><i>as</i></p><p><i>a</i></p>
+        <p><i>em</i></p><p><i>eu</i></p><p><i>an</i></p>
+      </present>
+    </Indicatiu>
+    <Imperatiu>
+      <imperatiu-present>
+        <p><i>-</i></p><p><i>-</i></p><p><i>-</i></p><p><i>-</i></p><p><i>-</i></p>
+      </imperatiu-present>
+    </Imperatiu>
+  </template>
+
+  <!-- The second person of the preterite dropped a syllable:
+       "comples" for "complires", "serves" for "servires". -->
+  <template name="compl:ir">
+    <Indicatiu>
+      <passat-simple>
+        <p><i>í</i></p><p><i>ires</i></p><p><i>í</i></p>
+        <p><i>írem</i></p><p><i>íreu</i></p><p><i>iren</i></p>
+      </passat-simple>
+    </Indicatiu>
+  </template>
+
+  <template name="serv:ir">
+    <Indicatiu>
+      <passat-simple>
+        <p><i>í</i></p><p><i>ires</i></p><p><i>í</i></p>
+        <p><i>írem</i></p><p><i>íreu</i></p><p><i>iren</i></p>
+      </passat-simple>
+    </Indicatiu>
+  </template>
+
+  <template name="imprim:ir">
+    <Indicatiu>
+      <passat-simple>
+        <p><i>í</i></p><p><i>ires</i></p><p><i>í</i></p>
+        <p><i>írem</i></p><p><i>íreu</i></p><p><i>iren</i></p>
+      </passat-simple>
+    </Indicatiu>
+  </template>
+
+  <!-- fer keeps the unstressed forms (fas, fa); every prefixed verb of
+       this template is stressed on the last syllable (desfàs, refà). -->
+  <template name="desf:er">
+    <Indicatiu>
+      <present>
+        <p><i>aig</i></p><p><i>às</i></p><p><i>à</i></p>
+        <p><i>em</i></p><p><i>eu</i></p><p><i>an</i></p>
+      </present>
+    </Indicatiu>
+  </template>
+
+  <!-- ==== new templates ============================================= -->
+
+  <template name="f:er" new="true" base="desf:er">
+    <Indicatiu>
+      <present>
+        <p><i>aig</i></p><p><i>as</i></p><p><i>a</i></p>
+        <p><i>em</i></p><p><i>eu</i></p><p><i>an</i></p>
+      </present>
+    </Indicatiu>
+  </template>
+
+  <!-- saber: filed under "perd:re", so it read "sabo, sabs, sab" -->
+  <template name="sab:er" new="true" base="perd:re">
+    <Indicatiu>
+      <present>
+        <p><i>--é</i></p><p><i>-ps</i></p><p><i>-p</i></p>
+        <p><i>em</i></p><p><i>eu</i></p><p><i>en</i></p>
+      </present>
+    </Indicatiu>
+    <Subjuntiu>
+      <present>
+        <p><i>--àpiga</i></p><p><i>--àpigues</i></p><p><i>--àpiga</i></p>
+        <p><i>--apiguem</i></p><p><i>--apigueu</i></p><p><i>--àpiguen</i></p>
+      </present>
+    </Subjuntiu>
+    <Imperatiu>
+      <imperatiu-present>
+        <p><i>--àpigues</i></p><p><i>--àpiga</i></p><p><i>--apiguem</i></p>
+        <p><i>--apigueu</i></p><p><i>--àpiguen</i></p>
+      </imperatiu-present>
+    </Imperatiu>
+  </template>
+
+  <!-- voler: also filed under "perd:re" ("volo", "volut", "volé") -->
+  <template name="vol:er" new="true" base="perd:re">
+    <Indicatiu>
+      <present>
+        <p><i>--ull</i></p><p><i>s</i></p><p><i></i></p>
+        <p><i>em</i></p><p><i>eu</i></p><p><i>en</i></p>
+      </present>
+      <passat-simple>
+        <p><i>guí</i></p><p><i>gueres</i></p><p><i>gué</i></p>
+        <p><i>guérem</i></p><p><i>guéreu</i></p><p><i>gueren</i></p>
+      </passat-simple>
+      <futur>
+        <p><i>dré</i></p><p><i>dràs</i></p><p><i>drà</i></p>
+        <p><i>drem</i></p><p><i>dreu</i></p><p><i>dran</i></p>
+      </futur>
+    </Indicatiu>
+    <Subjuntiu>
+      <present>
+        <p><i>--ulgui</i></p><p><i>--ulguis</i></p><p><i>--ulgui</i></p>
+        <p><i>--ulguem</i></p><p><i>--ulgueu</i></p><p><i>--ulguin</i></p>
+      </present>
+      <imperfet>
+        <p><i>gués</i></p><p><i>guessis</i></p><p><i>gués</i></p>
+        <p><i>guéssim</i></p><p><i>guéssiu</i></p><p><i>guessin</i></p>
+      </imperfet>
+    </Subjuntiu>
+    <Imperatiu>
+      <imperatiu-present>
+        <p><i>--ulgues</i></p><p><i>--ulgui</i></p><p><i>--ulguem</i></p>
+        <p><i>--ulgueu</i></p><p><i>--ulguin</i></p>
+      </imperatiu-present>
+    </Imperatiu>
+    <Condicional>
+      <present>
+        <p><i>dria</i></p><p><i>dries</i></p><p><i>dria</i></p>
+        <p><i>dríem</i></p><p><i>dríeu</i></p><p><i>drien</i></p>
+      </present>
+    </Condicional>
+    <Particip>
+      <particip>
+        <p><i>gut</i></p><p><i>guda</i></p><p><i>guts</i></p><p><i>gudes</i></p>
+      </particip>
+    </Particip>
+  </template>
+
+  <!-- treure and its family shared "malv:eure" with veure, which gave
+       "treig" for "trec" and "trist" for "tret" -->
+  <template name="tr:eure" new="true" base="malv:eure">
+    <Indicatiu>
+      <present>
+        <p><i>ec</i></p><p><i>eus</i></p><p><i>eu</i></p>
+        <p><i>aiem</i></p><p><i>aieu</i></p><p><i>euen</i></p>
+      </present>
+      <imperfet>
+        <p><i>eia</i></p><p><i>eies</i></p><p><i>eia</i></p>
+        <p><i>èiem</i></p><p><i>èieu</i></p><p><i>eien</i></p>
+      </imperfet>
+      <passat-simple>
+        <p><i>aguí</i></p><p><i>agueres</i></p><p><i>agué</i></p>
+        <p><i>aguérem</i></p><p><i>aguéreu</i></p><p><i>agueren</i></p>
+      </passat-simple>
+      <futur>
+        <p><i>euré</i></p><p><i>euràs</i></p><p><i>eurà</i></p>
+        <p><i>eurem</i></p><p><i>eureu</i></p><p><i>euran</i></p>
+      </futur>
+    </Indicatiu>
+    <Subjuntiu>
+      <present>
+        <p><i>egui</i></p><p><i>eguis</i></p><p><i>egui</i></p>
+        <p><i>aguem</i></p><p><i>agueu</i></p><p><i>eguin</i></p>
+      </present>
+      <imperfet>
+        <p><i>agués</i></p><p><i>aguessis</i></p><p><i>agués</i></p>
+        <p><i>aguéssim</i></p><p><i>aguéssiu</i></p><p><i>aguessin</i></p>
+      </imperfet>
+    </Subjuntiu>
+    <Imperatiu>
+      <imperatiu-present>
+        <p><i>eu</i></p><p><i>egui</i></p><p><i>aguem</i></p>
+        <p><i>agueu</i></p><p><i>eguin</i></p>
+      </imperatiu-present>
+    </Imperatiu>
+    <Condicional>
+      <present>
+        <p><i>euria</i></p><p><i>euries</i></p><p><i>euria</i></p>
+        <p><i>euríem</i></p><p><i>euríeu</i></p><p><i>eurien</i></p>
+      </present>
+    </Condicional>
+    <Gerundi>
+      <gerundi><p><i>aient</i></p></gerundi>
+    </Gerundi>
+    <Particip>
+      <particip>
+        <p><i>et</i></p><p><i>eta</i></p><p><i>ets</i></p><p><i>etes</i></p>
+      </particip>
+    </Particip>
+  </template>
+
+  <!-- escriure and its family shared "r:iure" with riure, which gave
+       "escriem" for "escrivim" and "escrigut" for "escrit" -->
+  <template name="escr:iure" new="true" base="r:iure">
+    <Indicatiu>
+      <present>
+        <p><i>ic</i></p><p><i>ius</i></p><p><i>iu</i></p>
+        <p><i>ivim</i></p><p><i>iviu</i></p><p><i>iuen</i></p>
+      </present>
+      <imperfet>
+        <p><i>ivia</i></p><p><i>ivies</i></p><p><i>ivia</i></p>
+        <p><i>ivíem</i></p><p><i>ivíeu</i></p><p><i>ivien</i></p>
+      </imperfet>
+    </Indicatiu>
+    <Gerundi>
+      <gerundi><p><i>ivint</i></p></gerundi>
+    </Gerundi>
+    <Particip>
+      <particip>
+        <p><i>it</i></p><p><i>ita</i></p><p><i>its</i></p><p><i>ites</i></p>
+      </particip>
+    </Particip>
+  </template>
+
+  <!-- néixer takes ei in the stressed forms; nàixer (Valencian) keeps ai -->
+  <template name="néix:er" new="true" base="n:àixer">
+    <Indicatiu>
+      <present>
+        <p><i>eixo</i></p><p><i>eixes</i></p><p><i>eix</i></p>
+        <p><i>aixem</i></p><p><i>aixeu</i></p><p><i>eixen</i></p>
+      </present>
+    </Indicatiu>
+    <Subjuntiu>
+      <present>
+        <p><i>eixi</i></p><p><i>eixis</i></p><p><i>eixi</i></p>
+        <p><i>aixem</i></p><p><i>aixeu</i></p><p><i>eixin</i></p>
+      </present>
+    </Subjuntiu>
+    <Imperatiu>
+      <imperatiu-present>
+        <p><i>eix</i></p><p><i>eixi</i></p><p><i>aixem</i></p>
+        <p><i>aixeu</i></p><p><i>eixin</i></p>
+      </imperatiu-present>
+    </Imperatiu>
+  </template>
+
+  <!-- vendre is unstressed in the third person (ven), unlike revendre
+       (revèn) which keeps "malven:dre" -->
+  <template name="ven:dre" new="true" base="malven:dre">
+    <Indicatiu>
+      <present>
+        <p><i>c</i></p><p><i>s</i></p><p><i></i></p>
+        <p><i>em</i></p><p><i>eu</i></p><p><i>en</i></p>
+      </present>
+    </Indicatiu>
+    <Imperatiu>
+      <imperatiu-present>
+        <p><i></i></p><p><i>gui</i></p><p><i>guem</i></p>
+        <p><i>gueu</i></p><p><i>guin</i></p>
+      </imperatiu-present>
+    </Imperatiu>
+  </template>
+
+  <!-- the -metre verbs: admetre -> admès, not "admetut" -->
+  <template name="met:re" new="true" base="perd:re">
+    <Particip>
+      <particip>
+        <p><i>--ès</i></p><p><i>--esa</i></p>
+        <p><i>--esos</i></p><p><i>--eses</i></p>
+      </particip>
+    </Particip>
+  </template>
+
+  <!-- -prendre, -pendre and -fendre: comprendre -> comprès,
+       aprendre -> après, and the stressed third person comprèn -->
+  <template name="compren:dre" new="true" base="col:dre">
+    <Indicatiu>
+      <present>
+        <p><i>c</i></p><p><i>s</i></p><p><i>--èn</i></p>
+        <p><i>em</i></p><p><i>eu</i></p><p><i>en</i></p>
+      </present>
+    </Indicatiu>
+    <Particip>
+      <particip>
+        <p><i>--ès</i></p><p><i>--esa</i></p>
+        <p><i>--esos</i></p><p><i>--eses</i></p>
+      </particip>
+    </Particip>
+  </template>
+
+  <!-- prendre itself: pres, and an unstressed "pren" -->
+  <template name="pren:dre" new="true" base="col:dre">
+    <Particip>
+      <particip>
+        <p><i>-s</i></p><p><i>-sa</i></p><p><i>-sos</i></p><p><i>-ses</i></p>
+      </particip>
+    </Particip>
+  </template>
+
+  <!-- defendre -> defès, suspendre -> suspès -->
+  <template name="defen:dre" new="true" base="col:dre">
+    <Indicatiu>
+      <present>
+        <p><i>c</i></p><p><i>s</i></p><p><i>--èn</i></p>
+        <p><i>em</i></p><p><i>eu</i></p><p><i>en</i></p>
+      </present>
+    </Indicatiu>
+    <Particip>
+      <particip>
+        <p><i>--ès</i></p><p><i>--esa</i></p>
+        <p><i>--esos</i></p><p><i>--eses</i></p>
+      </particip>
+    </Particip>
+  </template>
+
+  <!-- fendre -> fes (monosyllabic, no accent) -->
+  <template name="fen:dre" new="true" base="col:dre">
+    <Particip>
+      <particip>
+        <p><i>--es</i></p><p><i>--esa</i></p>
+        <p><i>--esos</i></p><p><i>--eses</i></p>
+      </particip>
+    </Particip>
+  </template>
+
+  <!-- fondre -> fos, where confondre -> confós -->
+  <template name="fon:dre" new="true" base="confon:dre">
+    <Particip>
+      <particip>
+        <p><i>--os</i></p><p><i>--osa</i></p>
+        <p><i>--osos</i></p><p><i>--oses</i></p>
+      </particip>
+    </Particip>
+  </template>
+
+  <!-- romandre -> romàs, where respondre -> respost -->
+  <template name="roman:dre" new="true" base="compon:dre">
+    <Indicatiu>
+      <present>
+        <p><i>c</i></p><p><i>s</i></p><p><i></i></p>
+        <p><i>em</i></p><p><i>eu</i></p><p><i>en</i></p>
+      </present>
+    </Indicatiu>
+    <Particip>
+      <particip>
+        <p><i>--às</i></p><p><i>--asa</i></p>
+        <p><i>--asos</i></p><p><i>--ases</i></p>
+      </particip>
+    </Particip>
+  </template>
+
+  <!-- cloure -> clos, where descloure -> desclòs -->
+  <template name="clou:re" new="true" base="desclou:re">
+    <Particip>
+      <particip>
+        <p><i>-s</i></p><p><i>-sa</i></p><p><i>-sos</i></p><p><i>-ses</i></p>
+      </particip>
+    </Particip>
+  </template>
+
+  <!-- oferir -> ofert, where complir -> complert -->
+  <template name="ofer:ir" new="true" base="compl:ir">
+    <Particip>
+      <particip>
+        <p><i>-rt</i></p><p><i>-rta</i></p><p><i>-rts</i></p><p><i>-rtes</i></p>
+      </particip>
+    </Particip>
+  </template>
+
+  <!-- cosir -> cus, where descosir -> descús -->
+  <template name="cos:ir" new="true" base="descos:ir">
+    <Indicatiu>
+      <present>
+        <p><i>--uso</i></p><p><i>--uses</i></p><p><i>--us</i></p>
+        <p><i>im</i></p><p><i>iu</i></p><p><i>--usen</i></p>
+      </present>
+    </Indicatiu>
+    <Imperatiu>
+      <imperatiu-present>
+        <p><i>--us</i></p><p><i>--usi</i></p><p><i>im</i></p>
+        <p><i>iu</i></p><p><i>--usin</i></p>
+      </imperatiu-present>
+    </Imperatiu>
+  </template>
+
+  <!-- the -ènyer verbs were filed under "perd:re": empènyer gave
+       "empendo" and "empenyut" instead of "empenyo" and "empès" -->
+  <template name="pèny:er" new="true" base="tém:er">
+    <Indicatiu>
+      <present>
+        <p><i>o</i></p><p><i>s</i></p><p><i></i></p>
+        <p><i>em</i></p><p><i>eu</i></p><p><i>en</i></p>
+      </present>
+    </Indicatiu>
+    <Particip>
+      <particip>
+        <p><i>---ès</i></p><p><i>---esa</i></p>
+        <p><i>---esos</i></p><p><i>---eses</i></p>
+      </particip>
+    </Particip>
+  </template>
+
+  <!-- estrènyer -> estret, constrènyer -> constret -->
+  <template name="trèny:er" new="true" base="tém:er">
+    <Indicatiu>
+      <present>
+        <p><i>o</i></p><p><i>s</i></p><p><i></i></p>
+        <p><i>em</i></p><p><i>eu</i></p><p><i>en</i></p>
+      </present>
+    </Indicatiu>
+    <Particip>
+      <particip>
+        <p><i>---et</i></p><p><i>---eta</i></p>
+        <p><i>---ets</i></p><p><i>---etes</i></p>
+      </particip>
+    </Particip>
+  </template>
+
+  <!-- ==== verbs pointing at the wrong template ====================== -->
+
+  <verb infinitive="ésser" template="és:ser" stem="" note="was conjugated as a regular -ar verb: ésso, éssat"/>
+  <verb infinitive="saber" template="sab:er" note="was sabo, sabs, sab"/>
+  <verb infinitive="voler" template="vol:er" note="was volo, volut"/>
+  <verb infinitive="viure" template="v:iure" stem="v" note="was viuo, viuut"/>
+  <verb infinitive="fer" template="f:er" stem="f"/>
+  <verb infinitive="desfer" template="desf:er" stem="desf" note="was desfo, desfut"/>
+  <verb infinitive="tindre" template="obt:enir" stem="t" note="was tiinc, tiingut"/>
+  <verb infinitive="vindre" template="prev:enir" stem="v"/>
+  <verb infinitive="vendre" template="ven:dre" stem="ven" note="third person was vèn"/>
+  <verb infinitive="cosir" template="cos:ir" stem="cos" note="third person was cús"/>
+  <verb infinitive="cloure" template="clou:re" stem="clou" note="participle was clòs"/>
+  <verb infinitive="oferir" template="ofer:ir" stem="ofer" note="participle was oferert"/>
+  <verb infinitive="fondre" template="fon:dre" stem="fon" note="participle was foós"/>
+  <verb infinitive="fendre" template="fen:dre" stem="fen"/>
+  <verb infinitive="romandre" template="roman:dre" stem="roman"/>
+  <verb infinitive="malveure" template="malv:eure" stem="malv"/>
+  <verb infinitive="caler" template="cal:dre" stem="cal" note="third person was ca"/>
+  <verb infinitive="adir-se" template="d:ir" stem="a" note="the hyphen was treated as part of the stem"/>
+
+  <!-- néixer and péixer keep ei where nàixer keeps ai -->
+  <verb infinitive="néixer" template="néix:er" stem="n"/>
+  <verb infinitive="renéixer" template="néix:er" stem="ren"/>
+  <verb infinitive="sobrenéixer" template="néix:er" stem="sobren"/>
+  <verb infinitive="péixer" template="néix:er" stem="p"/>
+
+  <!-- the treure family -->
+  <verb infinitive="treure" template="tr:eure" stem="tr"/>
+  <verb infinitive="abstreure" template="tr:eure" stem="abstr"/>
+  <verb infinitive="atreure" template="tr:eure" stem="atr"/>
+  <verb infinitive="bestreure" template="tr:eure" stem="bestr"/>
+  <verb infinitive="contreure" template="tr:eure" stem="contr"/>
+  <verb infinitive="detreure" template="tr:eure" stem="detr"/>
+  <verb infinitive="distreure" template="tr:eure" stem="distr"/>
+  <verb infinitive="extreure" template="tr:eure" stem="extr"/>
+  <verb infinitive="retreure" template="tr:eure" stem="retr"/>
+  <verb infinitive="retrotreure" template="tr:eure" stem="retrotr"/>
+  <verb infinitive="sostreure" template="tr:eure" stem="sostr"/>
+
+  <!-- the escriure family -->
+  <verb infinitive="escriure" template="escr:iure" stem="escr"/>
+  <verb infinitive="adscriure" template="escr:iure" stem="adscr"/>
+  <verb infinitive="circumscriure" template="escr:iure" stem="circumscr"/>
+  <verb infinitive="descriure" template="escr:iure" stem="descr"/>
+  <verb infinitive="inscriure" template="escr:iure" stem="inscr"/>
+  <verb infinitive="prescriure" template="escr:iure" stem="prescr"/>
+  <verb infinitive="proscriure" template="escr:iure" stem="proscr"/>
+  <verb infinitive="reescriure" template="escr:iure" stem="reescr"/>
+  <verb infinitive="sobreescriure" template="escr:iure" stem="sobreescr"/>
+  <verb infinitive="sotaescriure" template="escr:iure" stem="sotaescr"/>
+  <verb infinitive="subscriure" template="escr:iure" stem="subscr"/>
+  <verb infinitive="transcriure" template="escr:iure" stem="transcr"/>
+
+  <!-- the -metre verbs -->
+  <verb infinitive="metre" template="met:re" stem="met"/>
+  <verb infinitive="admetre" template="met:re" stem="admet"/>
+  <verb infinitive="arremetre" template="met:re" stem="arremet"/>
+  <verb infinitive="cometre" template="met:re" stem="comet"/>
+  <verb infinitive="comprometre" template="met:re" stem="compromet"/>
+  <verb infinitive="demetre" template="met:re" stem="demet"/>
+  <verb infinitive="descomprometre" template="met:re" stem="descompromet"/>
+  <verb infinitive="emetre" template="met:re" stem="emet"/>
+  <verb infinitive="entremetre" template="met:re" stem="entremet"/>
+  <verb infinitive="escometre" template="met:re" stem="escomet"/>
+  <verb infinitive="malmetre" template="met:re" stem="malmet"/>
+  <verb infinitive="manumetre" template="met:re" stem="manumet"/>
+  <verb infinitive="ometre" template="met:re" stem="omet"/>
+  <verb infinitive="permetre" template="met:re" stem="permet"/>
+  <verb infinitive="prometre" template="met:re" stem="promet"/>
+  <verb infinitive="readmetre" template="met:re" stem="readmet"/>
+  <verb infinitive="remetre" template="met:re" stem="remet"/>
+  <verb infinitive="retransmetre" template="met:re" stem="retransmet"/>
+  <verb infinitive="sotmetre" template="met:re" stem="sotmet"/>
+  <verb infinitive="trametre" template="met:re" stem="tramet"/>
+  <verb infinitive="transmetre" template="met:re" stem="transmet"/>
+
+  <!-- the -prendre / -pendre / -fendre verbs -->
+  <verb infinitive="prendre" template="pren:dre" stem="pren"/>
+  <verb infinitive="aprendre" template="compren:dre" stem="apren"/>
+  <verb infinitive="comprendre" template="compren:dre" stem="compren"/>
+  <verb infinitive="desaprendre" template="compren:dre" stem="desapren"/>
+  <verb infinitive="emprendre" template="compren:dre" stem="empren"/>
+  <verb infinitive="reprendre" template="compren:dre" stem="repren"/>
+  <verb infinitive="sorprendre" template="compren:dre" stem="sorpren"/>
+  <verb infinitive="desprendre" template="compren:dre" stem="despren"/>
+  <verb infinitive="corprendre" template="compren:dre" stem="corpren"/>
+  <verb infinitive="malprendre" template="compren:dre" stem="malpren"/>
+  <verb infinitive="mamprendre" template="compren:dre" stem="mampren"/>
+  <verb infinitive="salprendre" template="compren:dre" stem="salpren"/>
+  <verb infinitive="sobreprendre" template="compren:dre" stem="sobrepren"/>
+  <verb infinitive="ullprendre" template="compren:dre" stem="ullpren"/>
+  <verb infinitive="aprehendre" template="compren:dre" stem="aprehen"/>
+  <verb infinitive="defendre" template="defen:dre" stem="defen"/>
+  <verb infinitive="ofendre" template="defen:dre" stem="ofen"/>
+  <verb infinitive="dependre" template="defen:dre" stem="depen"/>
+  <verb infinitive="despendre" template="defen:dre" stem="despen"/>
+  <verb infinitive="suspendre" template="defen:dre" stem="suspen"/>
+  <verb infinitive="descompondre" template="compon:dre" stem="descompon"/>
+
+  <!-- the -ènyer verbs -->
+  <verb infinitive="empènyer" template="pèny:er" stem="empeny"/>
+  <verb infinitive="espènyer" template="pèny:er" stem="espeny"/>
+  <verb infinitive="atènyer" template="pèny:er" stem="ateny"/>
+  <verb infinitive="estrènyer" template="trèny:er" stem="estreny"/>
+  <verb infinitive="constrènyer" template="trèny:er" stem="constreny"/>
+  <verb infinitive="destrènyer" template="trèny:er" stem="destreny"/>
+  <verb infinitive="restrènyer" template="trèny:er" stem="restreny"/>
+
+  <!-- the -tòrcer verbs conjugate like vèncer, not like començar -->
+  <verb infinitive="tòrcer" template="vènc:er" stem="tòrc"/>
+  <verb infinitive="colltòrcer" template="vènc:er" stem="colltòrc"/>
+  <verb infinitive="contòrcer" template="vènc:er" stem="contòrc"/>
+  <verb infinitive="destòrcer" template="vènc:er" stem="destòrc"/>
+  <verb infinitive="distòrcer" template="vènc:er" stem="distòrc"/>
+  <verb infinitive="estòrcer" template="vènc:er" stem="estòrc"/>
+  <verb infinitive="retòrcer" template="vènc:er" stem="retòrc"/>
+
+</corrections>

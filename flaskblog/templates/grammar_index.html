@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% macro unit_row(unit, show_section) %}
+  <a class="list-group-item list-group-item-action"
+     href="{{ url_for('grammar.unit', slug=unit.slug) }}">
+    <div class="d-flex justify-content-between align-items-start">
+      <div>
+        <span class="unit-number">{{ unit.number }}</span>
+        <strong>{{ unit.title }}</strong>
+        {% if unit.summary %}
+          <div class="small text-muted">{{ unit.summary }}</div>
+        {% endif %}
+        {% if show_section %}
+          <div class="small unit-section">{{ unit.section }}</div>
+        {% endif %}
+      </div>
+      {% if unit.level %}
+        <span class="badge bg-body-secondary text-body-secondary">{{ unit.level }}</span>
+      {% endif %}
+    </div>
+  </a>
+{% endmacro %}
+
+{% block content %}
+<div class="grammar">
+  <h1>Граматика</h1>
+  <p class="text-muted">
+    Курс каталонської граматики: {{ total }} юнітів. Кожен юніт — коротке
+    пояснення з прикладами і вправи з відповідями.
+  </p>
+
+  {% if units %}
+    <div class="d-flex align-items-center gap-2 mb-3">
+      <span class="small text-muted">Сортувати:</span>
+      <div class="btn-group btn-group-sm" role="group" aria-label="Сортування юнітів">
+        <a class="btn {% if sort == 'number' %}btn-info text-white{% else %}btn-outline-info{% endif %}"
+           href="{{ url_for('grammar.index', sort='number') }}"
+           {% if sort == 'number' %}aria-current="true"{% endif %}>за номером</a>
+        <a class="btn {% if sort == 'topic' %}btn-info text-white{% else %}btn-outline-info{% endif %}"
+           href="{{ url_for('grammar.index', sort='topic') }}"
+           {% if sort == 'topic' %}aria-current="true"{% endif %}>за темою</a>
+      </div>
+    </div>
+
+    {% if sort == 'topic' %}
+      {% for section, section_units in sections.items() %}
+        <div class="grammar-section">
+          <h3>{{ section }} <span class="small text-muted">· {{ section_units|length }}</span></h3>
+          <div class="list-group">
+            {% for unit in section_units %}{{ unit_row(unit, false) }}{% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <div class="list-group">
+        {% for unit in units %}{{ unit_row(unit, true) }}{% endfor %}
+      </div>
+    {% endif %}
+  {% else %}
+    <div class="alert alert-secondary">
+      Курс ще не завантажено.
+      {% if is_admin() %}
+        Виконайте <code>flask grammar seed</code>.
+      {% endif %}
+    </div>
+  {% endif %}
+</div>
+{% endblock content %}
