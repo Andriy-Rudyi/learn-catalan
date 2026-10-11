@@ -1,0 +1,760 @@
+[
+  {
+    "number": 43,
+    "title": "Imperfect subjunctive: parlés, fos, fes",
+    "summary": "The past subjunctive: its forms.",
+    "explanation": "\n<p>The <strong>imperfect subjunctive</strong> (<em>imperfet de subjuntiu</em>) is needed in subordinate clauses\nwhen the main verb is in a past tense or the conditional, and in hypothetical “if” clauses.\nEnglish has almost lost its subjunctive (the last trace is <em>if I <strong>were</strong></em>), so where\nEnglish uses an infinitive (<em>I wanted <strong>you to come</strong></em>) or a plain past\n(<em>if I <strong>had</strong> time</em>), Catalan needs a full verb form:\n<em>Volia que <strong>vinguessis</strong>. Si <strong>tingués</strong> temps…</em></p>\n<ul>\n  <li>-ar: parl<strong>és</strong>, parl<strong>essis</strong>, parl<strong>és</strong>,\n      parl<strong>éssim</strong>, parl<strong>éssiu</strong>, parl<strong>essin</strong></li>\n  <li>-er/-re: perd<strong>és</strong>, perd<strong>essis</strong>, perd<strong>és</strong>,\n      perd<strong>éssim</strong>, perd<strong>éssiu</strong>, perd<strong>essin</strong></li>\n  <li>-ir: dorm<strong>ís</strong>, dorm<strong>issis</strong>, dorm<strong>ís</strong>,\n      dorm<strong>íssim</strong>, dorm<strong>íssiu</strong>, dorm<strong>issin</strong></li>\n</ul>\n<p>Watch the accents: only the <em>jo</em>, <em>ell/ella</em>, <em>nosaltres</em> and <em>vosaltres</em>\nforms carry one (<em>parlés, parléssim</em>); <em>parlessis</em> and <em>parlessin</em> have none.</p>\n<p>Irregular verbs generally use the stem of the simple past (<em>passat simple</em>):</p>\n<ul>\n  <li>ser → <strong>fos</strong>, fossis, fos, fóssim, fóssiu, fossin</li>\n  <li>fer → <strong>fes</strong>, fessis, fes, féssim, féssiu, fessin</li>\n  <li>tenir → <strong>tingués</strong>, venir → <strong>vingués</strong>, poder → <strong>pogués</strong>,\n      voler → <strong>volgués</strong>, haver → <strong>hagués</strong>, dir → <strong>digués</strong>,\n      estar → <strong>estigués</strong>, anar → <strong>anés</strong>, saber → <strong>sabés</strong>,\n      viure → <strong>visqués</strong>, veure → <strong>veiés</strong></li>\n</ul>\n<p><em>Fos</em> and <em>fes</em> are one syllable, so they take no accent. In Valencian usage, forms in\n<em>-ara / -era</em> are common (<em>parlara, perdera, fóra</em>); in Catalonia the <em>-és / -ís</em>\nforms are the usual ones. Both are standard.</p>\n",
+    "examples": [
+      {
+        "ca": "Volia que vinguessis.",
+        "en": "I wanted you to come."
+      },
+      {
+        "ca": "Si tingués temps, ho faria.",
+        "en": "If I had time, I’d do it."
+      },
+      {
+        "ca": "M’agradaria que fos veritat.",
+        "en": "I wish it were true."
+      },
+      {
+        "ca": "Li vaig dir que no fes soroll.",
+        "en": "I told him not to make any noise."
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Put the verb into the imperfect subjunctive.",
+        "items": [
+          {
+            "q": "que jo (parlar) ___",
+            "a": "parlés"
+          },
+          {
+            "q": "que tu (ser) ___",
+            "a": "fossis"
+          },
+          {
+            "q": "que ell (fer) ___",
+            "a": "fes"
+          },
+          {
+            "q": "que nosaltres (tenir) ___",
+            "a": "tinguéssim"
+          },
+          {
+            "q": "que vosaltres (venir) ___",
+            "a": "vinguéssiu"
+          },
+          {
+            "q": "que ells (poder) ___",
+            "a": "poguessin"
+          },
+          {
+            "q": "que jo (dormir) ___",
+            "a": "dormís"
+          },
+          {
+            "q": "que tu (dir) ___",
+            "a": "diguessis"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 44,
+    "title": "Conditional sentences: si plou… / si plogués…",
+    "summary": "Real and unlikely conditions.",
+    "explanation": "\n<p>A <strong>real condition</strong> (it may well happen): <strong>si + present</strong>, and in the main\nclause the present, the future or an imperative, just as in English:</p>\n<ul>\n  <li><strong>Si plou</strong>, no <strong>sortirem</strong>. — If it rains, we won’t go out.</li>\n  <li><strong>Si tens</strong> gana, <strong>menja</strong>. — If you’re hungry, eat.</li>\n</ul>\n<p>As in English (<em>if you come</em>, not “if you will come”), there is no future after <em>si</em>:\n<em>Si <strong>vens</strong>…</em>, not “si vindràs”.</p>\n<p>An <strong>unlikely or imaginary condition</strong> about the present:\n<strong>si + imperfect subjunctive</strong> → <strong>conditional</strong>:</p>\n<ul>\n  <li><strong>Si tingués</strong> diners, <strong>viatjaria</strong> més. — If I had money, I’d travel more.</li>\n  <li><strong>Si fos</strong> tu, no ho <strong>faria</strong>. — If I were you, I wouldn’t do it.</li>\n</ul>\n<p>Two traps for English speakers. First, never put the conditional after <em>si</em>: “si tindria” is as\nwrong as “if I would have money”. Second, don’t copy the English past tense: <em>si tenia diners</em>\n(imperfect indicative) talks about a real past situation (“whenever I had money back then”), not an\nimaginary one. For “if I had”, say <em>si tingués</em>.</p>\n",
+    "examples": [
+      {
+        "ca": "Si arribes aviat, truca’m.",
+        "en": "If you get here early, call me."
+      },
+      {
+        "ca": "Si fa bo, anirem a la platja.",
+        "en": "If the weather’s nice, we’ll go to the beach."
+      },
+      {
+        "ca": "Si parlés català, treballaria a Barcelona.",
+        "en": "If I spoke Catalan, I’d work in Barcelona."
+      },
+      {
+        "ca": "Què faries si guanyessis la loteria?",
+        "en": "What would you do if you won the lottery?"
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Real condition: fill in the verbs.",
+        "items": [
+          {
+            "q": "Si (ploure) ___, (quedar-se, nosaltres) ___ a casa.",
+            "a": "plou / ens quedarem"
+          },
+          {
+            "q": "Si (tenir, tu) ___ temps, (venir) ___!",
+            "a": "tens / vine"
+          }
+        ]
+      },
+      {
+        "instruction": "Imaginary condition: si + imperfect subjunctive → conditional.",
+        "items": [
+          {
+            "q": "Si (ser, jo) ___ ric, (comprar) ___ una casa.",
+            "a": "fos / compraria"
+          },
+          {
+            "q": "Si (saber, ell) ___ la resposta, te la (dir) ___.",
+            "a": "sabés / diria"
+          },
+          {
+            "q": "Si (viure, nosaltres) ___ a la costa, (anar) ___ a la platja cada dia.",
+            "a": "visquéssim / aniríem"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 45,
+    "title": "The unreal past: si ho hagués sabut…",
+    "summary": "Conditions that can no longer come true.",
+    "explanation": "\n<p>For a past that can’t be changed (English <em>if I had known, I would have…</em>), Catalan uses\n<strong>si + pluperfect subjunctive</strong> (<em>hagués + past participle</em>) →\n<strong>conditional perfect</strong> (<em>hauria + past participle</em>):</p>\n<ul>\n  <li><strong>Si ho hagués sabut</strong>, t’ho <strong>hauria dit</strong>.\n      — If I’d known, I’d have told you.</li>\n  <li><strong>Si haguessis vingut</strong>, t’<strong>hauries divertit</strong>.\n      — If you’d come, you’d have had a good time.</li>\n</ul>\n<p>Forms: <em>hagués, haguessis, hagués, haguéssim, haguéssiu, haguessin</em> + past participle;\n<em>hauria, hauries, hauria, hauríem, hauríeu, haurien</em> + past participle.</p>\n<p>Careful with the English contraction <em>I’d</em>: it can stand for <em>I had</em> (→ <em>hagués</em>) or\n<em>I would</em> (→ <em>hauria</em>). Unpack it before translating, and never put <em>hauria</em> after\n<em>si</em>.</p>\n<p>A <strong>mixed condition</strong> has a past cause and a present result, as in English\n<em>If I had studied medicine, I’d be a doctor now</em>:\n<em>Si <strong>hagués estudiat</strong> medicina, ara <strong>seria</strong> metge.</em></p>\n<p>In everyday speech the pluperfect subjunctive is often used in both halves instead of the\nconditional perfect: <em>Si ho hagués sabut, t’ho hagués dit.</em></p>\n",
+    "examples": [
+      {
+        "ca": "Si haguéssim sortit abans, no hauríem perdut el tren.",
+        "en": "If we’d left earlier, we wouldn’t have missed the train."
+      },
+      {
+        "ca": "Si m’haguessis trucat, t’hauria ajudat.",
+        "en": "If you’d called me, I’d have helped you."
+      },
+      {
+        "ca": "Si no hagués plogut, ara el camp estaria sec.",
+        "en": "If it hadn’t rained, the field would be dry now."
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Put the verbs into the unreal past.",
+        "items": [
+          {
+            "q": "Si (estudiar, tu) ___ més, (aprovar) ___.",
+            "a": "haguessis estudiat / hauries aprovat"
+          },
+          {
+            "q": "Si (saber, jo) ___ que venies, (fer) ___ un pastís.",
+            "a": "hagués sabut / hauria fet"
+          },
+          {
+            "q": "Si (arribar, ells) ___ a temps, (veure) ___ el concert.",
+            "a": "haguessin arribat / haurien vist"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 46,
+    "title": "Sequence of tenses with the subjunctive",
+    "summary": "Vull que vinguis — volia que vinguessis.",
+    "explanation": "\n<p>English often avoids a subordinate clause altogether: <em>I want <strong>you to come</strong></em>,\n<em>he asked me <strong>to help</strong> him</em>. Catalan can’t do that when the two subjects are\ndifferent: it needs <strong>que + subjunctive</strong>, and the tense of that subjunctive depends on the\ntense of the main verb:</p>\n<ul>\n  <li>main verb in the <strong>present / future</strong> → <strong>present subjunctive</strong>:\n      <em>Vull que <strong>vinguis</strong>. Li diré que <strong>truqui</strong>.</em></li>\n  <li>main verb in a <strong>past tense / the conditional</strong> → <strong>imperfect subjunctive</strong>:\n      <em>Volia que <strong>vinguessis</strong>. M’agradaria que <strong>truqués</strong>.</em></li>\n</ul>\n<p>Compare:</p>\n<ul>\n  <li>Em demana que l’<strong>ajudi</strong>. → Em va demanar que l’<strong>ajudés</strong>.\n      — He asks me to help him. → He asked me to help him.</li>\n  <li>Espero que <strong>estiguis</strong> bé. → Esperava que <strong>estiguessis</strong> bé.\n      — I hope you’re well. → I hoped you were well.</li>\n</ul>\n<p>Notice that the English infinitive (<em>to help</em>) doesn’t change at all, so English gives you no\nclue: look at the Catalan main verb and match the tense.</p>\n<p>If the action of the subordinate clause is already complete, use the\n<strong>perfect subjunctive</strong> (<em>hagi fet</em>) or the\n<strong>pluperfect subjunctive</strong> (<em>hagués fet</em>):\n<em>M’alegro que <strong>hagis vingut</strong>. M’alegrava que <strong>haguessis vingut</strong>.</em>\n— I’m glad you’ve come. I was glad you had come.</p>\n",
+    "examples": [
+      {
+        "ca": "El metge em va dir que descansés.",
+        "en": "The doctor told me to rest."
+      },
+      {
+        "ca": "Seria millor que no hi anéssim.",
+        "en": "It would be better if we didn’t go."
+      },
+      {
+        "ca": "No crec que ho hagi entès.",
+        "en": "I don’t think he’s understood."
+      },
+      {
+        "ca": "Dubtava que ho haguessin fet sols.",
+        "en": "I doubted they had done it on their own."
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Put the sentence into the past.",
+        "items": [
+          {
+            "q": "Vull que vinguis.",
+            "a": "Volia que vinguessis."
+          },
+          {
+            "q": "Ens demana que callem.",
+            "a": "Ens va demanar que calléssim."
+          },
+          {
+            "q": "És important que ho sàpiguen.",
+            "a": "Era important que ho sabessin."
+          },
+          {
+            "q": "No crec que tingui raó.",
+            "a": "No creia que tingués raó."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 47,
+    "title": "Future perfect and conditional perfect",
+    "summary": "Hauré acabat, hauria vingut — and guesses about the past.",
+    "explanation": "\n<p>The <strong>future perfect</strong> = <em>hauré, hauràs, haurà, haurem, haureu, hauran</em> +\npast participle. Like English <em>will have done</em>, it describes an action completed before a point\nin the future:</p>\n<ul>\n  <li>A les vuit ja <strong>hauré acabat</strong>. — I’ll have finished by eight.</li>\n</ul>\n<p>It also expresses a <strong>guess about the past</strong>, where English says <em>must have</em> or\n<em>probably</em>: <em>No contesta; <strong>haurà sortit</strong>.</em> — He isn’t answering; he must\nhave gone out. (Also very common: <em>deu haver sortit</em>.)</p>\n<p>The <strong>conditional perfect</strong> = <em>hauria, hauries, hauria, hauríem, hauríeu, haurien</em> +\npast participle, English <em>would have done</em>: something that could have happened but didn’t:</p>\n<ul>\n  <li><strong>Hauria vingut</strong>, però estava malalt. — I would have come, but I was ill.</li>\n  <li><strong>Hauríeu d’haver</strong>-ho dit abans. — You should have said so earlier.</li>\n</ul>\n<p>English <em>should have / ought to have done</em> is <strong>hauria d’haver</strong> + past participle\n(literally “would have to have done”). The pronoun goes either after <em>haver</em> or in front of the\nwhole group: <em>Hauríeu d’haver-ho dit</em> = <em>Ho hauríeu d’haver dit</em>.</p>\n",
+    "examples": [
+      {
+        "ca": "Quan arribis, ja haurem sopat.",
+        "en": "By the time you get here, we’ll have had dinner."
+      },
+      {
+        "ca": "On haurà posat les claus?",
+        "en": "Where can he have put the keys?"
+      },
+      {
+        "ca": "M’hauria agradat conèixer-la.",
+        "en": "I would have liked to meet her."
+      },
+      {
+        "ca": "No ho hauria dit mai.",
+        "en": "I would never have said that."
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Future perfect or conditional perfect?",
+        "items": [
+          {
+            "q": "El mes que ve ja (acabar, jo) ___ la carrera.",
+            "a": "hauré acabat"
+          },
+          {
+            "q": "Amb més temps, ho (fer, nosaltres) ___ millor.",
+            "a": "hauríem fet"
+          },
+          {
+            "q": "No és a casa; (anar) ___ a la feina.",
+            "a": "haurà anat"
+          },
+          {
+            "q": "(haver de, tu + trucar-me) ___! (“You should have called me!”)",
+            "a": "Hauries d’haver-me trucat! / M’hauries d’haver trucat!"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 48,
+    "title": "Prepositions that disappear before que",
+    "summary": "Penso en tu — penso que… — penso anar-hi.",
+    "explanation": "\n<p>Many verbs and expressions take a fixed preposition, often not the one English uses:\n<em>pensar <strong>en</strong></em> (think <em>about</em>), <em>adonar-se <strong>de</strong></em>\n(realise), <em>acostumar-se <strong>a</strong></em> (get used <em>to</em>),\n<em>estar d’acord <strong>amb</strong></em> (agree <em>with</em>),\n<em>insistir <strong>en</strong></em> (insist <em>on</em>).</p>\n<p><strong>Before the conjunction que</strong> the unstressed prepositions\n<strong>a, en, amb, de</strong> <em>drop</em>:</p>\n<ul>\n  <li>M’adono <strong>de</strong> l’error. → M’adono <strong>que</strong> m’he equivocat.\n      — I realise my mistake. → I realise I’ve made a mistake.</li>\n  <li>Estic d’acord <strong>amb</strong> la idea. → Estic d’acord <strong>que</strong> cal canviar.\n      — I agree with the idea. → I agree that we need to change.</li>\n  <li>Insisteix <strong>en</strong> el preu. → Insisteix <strong>que</strong> paguem.\n      — He insists on the price. → He insists that we pay.</li>\n</ul>\n<p>English does much the same (<em>aware <strong>of</strong> the problem</em> → <em>aware\n<strong>that</strong> there’s a problem</em>), so the rule feels natural. The difference: English can\nalso leave out <em>that</em> (<em>I’m sure she’ll come</em>), but Catalan <strong>never drops que</strong>:\n<em>Estic segur que vindrà.</em></p>\n<p><strong>Before an infinitive</strong>, <em>en</em> and <em>amb</em> change to <strong>a</strong> or\ndrop, while <em>a</em> and <em>de</em> stay. Where English has a preposition + <em>-ing</em>\n(<em>insist on paying</em>), Catalan has a preposition + infinitive:</p>\n<ul>\n  <li>Insisteix <strong>a</strong> pagar. — He insists on paying.\n      Es va comprometre <strong>a</strong> venir. — She committed to coming.</li>\n  <li>M’alegro <strong>de</strong> veure’t. — I’m glad to see you.\n      M’he acostumat <strong>a</strong> llevar-me d’hora. — I’ve got used to getting up early.</li>\n</ul>\n<p>Note also <em>pensar en</em> “think about”, but <em>pensar</em> + infinitive, with no preposition,\n“plan to”: <em>Penso anar-hi demà.</em></p>\n<p>This is one of the most noticeable features of standard Catalan: it’s often ignored in speech, but\nit’s checked in writing.</p>\n",
+    "examples": [
+      {
+        "ca": "M’alegro que hagis vingut.",
+        "en": "I’m glad you came."
+      },
+      {
+        "ca": "Estic segur que vindrà.",
+        "en": "I’m sure she’ll come."
+      },
+      {
+        "ca": "Penso anar-hi demà.",
+        "en": "I’m planning to go there tomorrow."
+      },
+      {
+        "ca": "Confio que tot anirà bé.",
+        "en": "I trust everything will be fine."
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Fill in the preposition, or leave the gap empty (—).",
+        "items": [
+          {
+            "q": "M’adono ___ que és tard.",
+            "a": "— (M’adono que…)"
+          },
+          {
+            "q": "Pensa ___ la seva família.",
+            "a": "en"
+          },
+          {
+            "q": "Insisteixen ___ acompanyar-nos.",
+            "a": "a"
+          },
+          {
+            "q": "Estic d’acord ___ que ho fem així.",
+            "a": "— (Estic d’acord que…)"
+          },
+          {
+            "q": "M’alegro ___ conèixer-te.",
+            "a": "de"
+          },
+          {
+            "q": "Està acostumat ___ que l’ajudin.",
+            "a": "— (Està acostumat que…)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 49,
+    "title": "Verbal periphrases: acabar de, tornar a, deixar de…",
+    "summary": "Verb + preposition + infinitive with a new meaning.",
+    "explanation": "\n<ul>\n  <li><strong>acabar de</strong> + inf. — have just: <em>Acabo d’arribar.</em> — I’ve just arrived.</li>\n  <li><strong>tornar a</strong> + inf. — again: <em>Torna a ploure.</em> — It’s raining again.</li>\n  <li><strong>deixar de</strong> + inf. — stop doing: <em>He deixat de fumar.</em> — I’ve stopped smoking.</li>\n  <li><strong>començar a / posar-se a</strong> + inf. — start (<em>posar-se a</em>: suddenly):\n      <em>Es va posar a plorar.</em> — She burst into tears.</li>\n  <li><strong>estar a punt de</strong> + inf. — be about to:\n      <em>El tren està a punt de sortir.</em> — The train is about to leave.</li>\n  <li><strong>soler</strong> + inf. — usually: <em>Solem sopar a les nou.</em> — We usually have dinner\n      at nine. In the past it means “used to”: <em>Solia anar-hi a peu.</em> — I used to walk there.</li>\n  <li><strong>anar</strong> + gerund — gradually: <em>La situació va millorant.</em> — Things are\n      gradually getting better.</li>\n  <li><strong>continuar / seguir</strong> + gerund — keep doing, still:\n      <em>Continua treballant aquí.</em> — He still works here.</li>\n</ul>\n<p>Tense trap: <em>acabar de</em> is in the present where English uses the present perfect\n(<em>Acabo d’arribar</em> — I’ve just arrived), and in the imperfect for English “had just”\n(<em>Acabava d’arribar</em> — I had just arrived). Don’t translate this “just” as <em>només</em>, which\nmeans “only”.</p>\n<p>Don’t confuse <em>acabar de</em> (“have just”) with <em>acabar</em> + noun (“finish”):\n<em>Acabo la feina</em> — I’m finishing work.</p>\n",
+    "examples": [
+      {
+        "ca": "Acabem de dinar.",
+        "en": "We’ve just had lunch."
+      },
+      {
+        "ca": "No tornis a fer-ho!",
+        "en": "Don’t do that again!"
+      },
+      {
+        "ca": "Estava a punt de trucar-te.",
+        "en": "I was just about to call you."
+      },
+      {
+        "ca": "Sol arribar tard.",
+        "en": "He’s usually late."
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Translate into Catalan using a periphrasis.",
+        "items": [
+          {
+            "q": "I’ve just woken up.",
+            "a": "Acabo de despertar-me."
+          },
+          {
+            "q": "He’s forgotten his keys again.",
+            "a": "Ha tornat a oblidar les claus."
+          },
+          {
+            "q": "We’ve stopped going to the gym.",
+            "a": "Hem deixat d’anar al gimnàs."
+          },
+          {
+            "q": "The concert is about to start.",
+            "a": "El concert està a punt de començar."
+          },
+          {
+            "q": "She usually has breakfast at home.",
+            "a": "Sol esmorzar a casa."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 50,
+    "title": "Gerund clauses and en + infinitive",
+    "summary": "Compact ways of saying “when”, “because” and “after”.",
+    "explanation": "\n<p>A <strong>gerund</strong> at the start of a sentence expresses a simultaneous action, manner or\ncause, much like an English <em>-ing</em> clause:</p>\n<ul>\n  <li><strong>Caminant</strong> per la platja, vaig trobar una ampolla. — Walking along the beach, I found a bottle.</li>\n  <li><strong>Sent</strong> tan tard, millor que no hi anem. — It being so late, we’d better not go.</li>\n</ul>\n<p>But the Catalan gerund can’t describe an action that comes <em>after</em> the main one, although\nEnglish allows it (<em>The storm hit the coast, causing a lot of damage</em>).\n“Va sortir, tancant la porta” is wrong; say <em>Va sortir i va tancar la porta.</em></p>\n<p>Also, an English <em>-ing</em> form used as a noun is an <strong>infinitive</strong> in Catalan:\n<em>Reading is fun</em> — <em><strong>Llegir</strong> és divertit</em>, not “Llegint és divertit”.</p>\n<p><strong>En + infinitive</strong> means “when, as soon as”. It’s the exact equivalent of formal\nEnglish <em>on + -ing</em>: <em><strong>En arribar</strong> a casa, em vaig dutxar.</em> — On arriving\nhome, I had a shower.</p>\n<p>A <strong>participle clause</strong> expresses an action completed before the main one:\n<em><strong>Acabat</strong> el sopar, vam sortir.</em> — Dinner over, we went out.\n<em><strong>Un cop</strong> fets els deures, pots jugar.</em> — Once your homework is done, you can\nplay. The participle agrees with its noun: <em>acabat el sopar, acabada la reunió, fets els deures</em>.</p>\n",
+    "examples": [
+      {
+        "ca": "En sortir de la feina, vaig anar al mercat.",
+        "en": "On leaving work, I went to the market."
+      },
+      {
+        "ca": "Llegint, s’aprèn molt.",
+        "en": "You learn a lot by reading."
+      },
+      {
+        "ca": "Un cop acabada la reunió, ens en vam anar.",
+        "en": "Once the meeting was over, we left."
+      },
+      {
+        "ca": "Tenint en compte la situació, ho deixarem per demà.",
+        "en": "Given the situation, we’ll leave it until tomorrow."
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Rewrite using en + infinitive.",
+        "items": [
+          {
+            "q": "Quan va arribar, va trucar a la seva mare.",
+            "a": "En arribar, va trucar a la seva mare."
+          },
+          {
+            "q": "Quan vam veure el preu, vam marxar.",
+            "a": "En veure el preu, vam marxar."
+          }
+        ]
+      },
+      {
+        "instruction": "Correct or not? If not, correct it.",
+        "items": [
+          {
+            "q": "Va entrar a casa, encenent el llum.",
+            "a": "Not correct: Va entrar a casa i va encendre el llum."
+          },
+          {
+            "q": "Treballant molt, va aconseguir l’objectiu.",
+            "a": "Correct"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 51,
+    "title": "Diminutive and augmentative suffixes",
+    "summary": "-et, -ó, -às, -ot: size and the speaker’s attitude.",
+    "explanation": "\n<p>English has only a handful of diminutive endings (<em>doggie, booklet, kitchenette</em>) and usually\njust says <em>little</em> or <em>tiny</em>. Catalan uses suffixes all the time, and they often express\naffection rather than actual size.</p>\n<p><strong>Diminutive</strong> suffixes:</p>\n<ul>\n  <li><strong>-et / -eta</strong>, the most common: noi → noi<strong>et</strong>,\n      casa → cas<strong>eta</strong>, gat → gat<strong>et</strong>, poc → poqu<strong>et</strong></li>\n  <li><strong>-ó / -ona</strong>, mostly with adjectives:\n      petit → petit<strong>ó</strong>, petit<strong>ona</strong></li>\n</ul>\n<p><strong>Augmentative</strong> suffixes, often admiring or scornful:</p>\n<ul>\n  <li><strong>-às / -assa</strong>: cotxe → cotx<strong>às</strong> (a massive car),\n      casa → cas<strong>assa</strong> (a huge house)</li>\n  <li><strong>-ot / -ota</strong>: gran → grand<strong>ot</strong> (big and hulking),\n      noi → noi<strong>ot</strong> (a big lad)</li>\n</ul>\n<p>The suffix agrees in gender, the final vowel of the base drops (<em>casa → caseta</em>), and the\nspelling of the stem changes to keep the pronunciation: <em>poc → poquet</em>,\n<em>boca → boqueta</em>, because <em>c</em> before <em>e</em> would sound like <em>s</em>. The accent on\n<em>-às</em> and <em>-ó</em> disappears when an ending is added: <em>cotxassos, petitona</em>.</p>\n<p>Many former diminutives have become separate words with their own meaning:\n<em>llibret</em> (booklet, libretto, itself an Italian diminutive), <em>carretó</em> (wheelbarrow).</p>\n",
+    "examples": [
+      {
+        "ca": "Quin gatet més maco!",
+        "en": "What a cute little cat!"
+      },
+      {
+        "ca": "Viuen en una caseta a la muntanya.",
+        "en": "They live in a little house in the mountains."
+      },
+      {
+        "ca": "S’ha comprat un cotxàs.",
+        "en": "He’s bought himself a massive car."
+      },
+      {
+        "ca": "Espera un moment, un minutet.",
+        "en": "Hang on, just a minute."
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Form the diminutive in -et / -eta.",
+        "items": [
+          {
+            "q": "casa",
+            "a": "caseta"
+          },
+          {
+            "q": "gat",
+            "a": "gatet"
+          },
+          {
+            "q": "poc",
+            "a": "poquet"
+          },
+          {
+            "q": "boca",
+            "a": "boqueta"
+          },
+          {
+            "q": "llibre",
+            "a": "llibret"
+          }
+        ]
+      },
+      {
+        "instruction": "Form the augmentative in -às / -assa.",
+        "items": [
+          {
+            "q": "cotxe",
+            "a": "cotxàs"
+          },
+          {
+            "q": "casa",
+            "a": "casassa"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 52,
+    "title": "Word formation: -ció, -ment, -itat, -dor, -ble",
+    "summary": "How to make new words from verbs and adjectives you already know.",
+    "explanation": "\n<p>Good news: most of these suffixes have English cousins, so many words are easy to guess. The traps\nare gender and spelling.</p>\n<p>Nouns from verbs:</p>\n<ul>\n  <li><strong>-ció / -sió</strong> (fem.), English <em>-tion / -sion</em>:\n      organitzar → organitza<strong>ció</strong>, decidir → deci<strong>sió</strong>.\n      The accent disappears in the plural: <em>organitzacions, decisions</em>.</li>\n  <li><strong>-ment</strong> (masc.), used far more widely than English <em>-ment</em>:\n      desenvolupar → desenvolupa<strong>ment</strong> (development),\n      pagar → paga<strong>ment</strong> (payment), néixer → naixe<strong>ment</strong> (birth),\n      créixer → creixe<strong>ment</strong> (growth)</li>\n  <li><strong>-dor / -dora</strong>, English <em>-er</em>, a person or a machine:\n      treballar → treballa<strong>dor</strong> (worker), rentar → renta<strong>dora</strong> (washing machine)</li>\n</ul>\n<p>Don’t confuse the noun suffix <em>-ment</em> with the adverb ending <em>-ment</em>, the Catalan\nequivalent of English <em>-ly</em>, which is added to the feminine adjective:\n<em>ràpida → ràpidament</em> (quickly).</p>\n<p>Nouns from adjectives: <strong>-itat / -etat / -tat</strong> (fem.), English <em>-ity</em>:\n<em>possible → possibil<strong>itat</strong>, lliure → llibert<strong>at</strong></em>; also\n<strong>-esa</strong> (fem.), often English <em>-ness</em>: <em>bo → bon<strong>esa</strong></em>\n(goodness), <em>trist → trist<strong>esa</strong></em> (sadness).</p>\n<p>Adjectives from verbs: <strong>-ble</strong> (“that can be …”), English <em>-able / -ible</em>:\n<em>menjar → menja<strong>ble</strong>, creure → cre<strong>ïble</strong>,\nllegir → llegi<strong>ble</strong></em>. The prefix <strong>in- / im- / il-</strong> makes them\nnegative: <em>impossible, increïble, il·legible</em>. Note the diaeresis in <em>creïble</em> and the\n<em>l·l</em> in <em>il·legible</em>, where English <em>illegible</em> has a plain double l.</p>\n<p>Adjectives from nouns: <strong>-ós / -osa</strong>, English <em>-ous</em>:\n<em>perill → perill<strong>ós</strong></em> (dangerous), <em>orgull → orgull<strong>ós</strong></em> (proud).</p>\n",
+    "examples": [
+      {
+        "ca": "La decisió és definitiva.",
+        "en": "The decision is final."
+      },
+      {
+        "ca": "És increïble!",
+        "en": "It’s incredible!"
+      },
+      {
+        "ca": "El creixement de la ciutat és ràpid.",
+        "en": "The city is growing fast."
+      },
+      {
+        "ca": "Aquesta lletra és il·legible.",
+        "en": "This handwriting is illegible."
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Form a noun.",
+        "items": [
+          {
+            "q": "organitzar",
+            "a": "organització"
+          },
+          {
+            "q": "desenvolupar",
+            "a": "desenvolupament"
+          },
+          {
+            "q": "possible",
+            "a": "possibilitat"
+          },
+          {
+            "q": "treballar (a person)",
+            "a": "treballador"
+          }
+        ]
+      },
+      {
+        "instruction": "Form an adjective.",
+        "items": [
+          {
+            "q": "perill",
+            "a": "perillós"
+          },
+          {
+            "q": "creure (+ in-)",
+            "a": "increïble"
+          },
+          {
+            "q": "menjar",
+            "a": "menjable"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 53,
+    "title": "Written accents: à, è, é, ò, ó",
+    "summary": "When to write an accent, and which one: open or closed.",
+    "explanation": "\n<p>English has no written accents, so it’s tempting to treat Catalan ones as decoration. They aren’t:\nan accent marks the <strong>stressed syllable</strong> whenever the general rule wouldn’t predict it,\nand on <em>e</em> and <em>o</em> it also shows the <strong>vowel sound</strong>. Leaving one out is a\nspelling mistake and can even change the word: <em>pública</em> (public) vs <em>publica</em>\n(publishes).</p>\n<p><strong>Where</strong> depends on which syllable is stressed:</p>\n<ul>\n  <li>stress on the <strong>last</strong> syllable: write an accent if the word ends in a vowel, a\n      vowel + <em>s</em>, or <em>-en, -in</em>: <em>cafè, també, francès, català, entén, Berlín</em>\n      (but not <em>-ens, -ins</em>: <em>entens, camins</em>)</li>\n  <li>stress on the <strong>second-to-last</strong> syllable: write an accent only if the word does\n      <em>not</em> end that way: <em>fàcil, difícil, àrab, telèfon, exàmens</em></li>\n  <li>stress on the <strong>third-to-last</strong> syllable: <em>always</em> write it:\n      <em>música, pàgina, Mònica</em></li>\n</ul>\n<p><strong>Which mark</strong>:</p>\n<ul>\n  <li><strong>a</strong>: always grave, <em>à</em></li>\n  <li><strong>e, o</strong>: grave <em>è, ò</em> for an open vowel (<em>è</em> roughly as in <em>bed</em>,\n      <em>ò</em> like a short version of the vowel in British <em>law</em>), acute <em>é, ó</em> for a\n      closed one (as in <em>say</em> and <em>go</em>, but without the glide): <em>cafè</em> / <em>també</em>,\n      <em>això</em> / <em>cançó</em></li>\n  <li><strong>i, u</strong>: always acute, <em>í, ú</em></li>\n</ul>\n<p>If you know some Spanish, beware: Spanish only uses the acute, but Catalan writes <em>à</em>\n(<em>català</em>, never “catalá”) and distinguishes <em>è</em> from <em>é</em>.</p>\n<p>Since the 2016 spelling reform only 15 <strong>diacritic accents</strong> remain, which simply tell\napart two words that are otherwise spelt the same: <em>és / es, són / son, mà / ma, més / mes,\nsí / si</em>, etc. Words such as <em>soc</em> (I am), <em>os</em> (bone) and <em>net</em> (grandson)\nno longer take one.</p>\n",
+    "examples": [
+      {
+        "ca": "El francès és fàcil? — Més que l’àrab!",
+        "en": "Is French easy? — Easier than Arabic!"
+      },
+      {
+        "ca": "Ella també escolta música.",
+        "en": "She listens to music too."
+      },
+      {
+        "ca": "Sí, si vols.",
+        "en": "Yes, if you like."
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Add an accent where needed.",
+        "items": [
+          {
+            "q": "cafe",
+            "a": "cafè"
+          },
+          {
+            "q": "facil",
+            "a": "fàcil"
+          },
+          {
+            "q": "musica",
+            "a": "música"
+          },
+          {
+            "q": "examen",
+            "a": "examen (no accent)"
+          },
+          {
+            "q": "examens",
+            "a": "exàmens"
+          },
+          {
+            "q": "canço",
+            "a": "cançó"
+          },
+          {
+            "q": "germa",
+            "a": "germà"
+          },
+          {
+            "q": "cotxe",
+            "a": "cotxe (no accent)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 54,
+    "title": "Apostrophe and contractions: l’, d’, al, del",
+    "summary": "When to shorten the article and the preposition.",
+    "explanation": "\n<p>In English the apostrophe marks contractions and possession (<em>don’t, Anna’s</em>). In Catalan it\nmarks <strong>elision</strong>: a short word loses its vowel before another vowel. Unlike English\ncontractions, this is <strong>compulsory</strong>, even in the most formal writing.</p>\n<p><strong>el, la, de</strong> are shortened before a vowel or <em>h</em> (which is always silent in\nCatalan): <em>l’home, l’escola, d’Andorra, d’aquí</em>.</p>\n<p><strong>la is not shortened</strong> before unstressed <em>i, u, hi, hu</em>:\n<em>la universitat, la història, la humanitat, la idea</em> (but <em>l’illa</em>, <em>l’única</em>,\n<em>l’ira</em> (anger), where the <em>i/u</em> is stressed). <em>El</em> has no such exception: <em>l’hivern, l’univers</em>.</p>\n<p><em>La</em> is not shortened either before the names of letters (<em>la a, la essa</em>) or in a few\nfixed cases such as <em>la una</em> (one o’clock).</p>\n<p><strong>Contractions</strong>: <em>a + el = al, de + el = del, per + el = pel</em>, and in the\nplural <em>als, dels, pels</em>. They only happen with masculine <em>el / els</em>, never with\n<em>la</em>: <em>a la, de la</em>. Before a vowel there is no contraction, because the article is\nelided instead: <em>de l’home, a l’escola</em>.</p>\n<p>Another difference from English: Catalan (especially in Catalonia) puts an article before first\nnames, so <em>Anna’s car</em> is <em>el cotxe <strong>de l’</strong>Anna</em>.</p>\n<p>Pronouns are elided too: <em>m’agrada, t’estimo, l’he vist, n’hi ha</em>.</p>\n",
+    "examples": [
+      {
+        "ca": "Vaig a l’hospital.",
+        "en": "I’m going to the hospital."
+      },
+      {
+        "ca": "Estudio a la universitat.",
+        "en": "I study at university."
+      },
+      {
+        "ca": "El cotxe de l’Anna és vermell.",
+        "en": "Anna’s car is red."
+      },
+      {
+        "ca": "És la una.",
+        "en": "It’s one o’clock."
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Fill in el, la, l’ or del, de l’, al, a l’.",
+        "items": [
+          {
+            "q": "___ història de Catalunya",
+            "a": "la"
+          },
+          {
+            "q": "___ illa de Mallorca",
+            "a": "l’"
+          },
+          {
+            "q": "Vinc ___ escola.",
+            "a": "de l’"
+          },
+          {
+            "q": "Vaig ___ mercat.",
+            "a": "al"
+          },
+          {
+            "q": "___ hora de sopar",
+            "a": "l’"
+          },
+          {
+            "q": "Parlem ___ professor.",
+            "a": "del"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 55,
+    "title": "What time is it? Catalan “quarters”",
+    "summary": "Un quart de nou, dos quarts de deu — and the modern alternative.",
+    "explanation": "\n<p>On the hour: <em>És <strong>la una</strong>. Són <strong>les dues</strong>, <strong>les tres</strong>…</em>\nThe word <em>hora / hores</em> is understood, hence the feminine article.</p>\n<p>English counts from the hour that has passed (<em>a quarter past eight</em>). The traditional\nCatalan system counts <strong>quarters of the coming hour</strong>:</p>\n<ul>\n  <li>8:15 — <strong>un quart de nou</strong> (one quarter of the way to nine)</li>\n  <li>8:30 — <strong>dos quarts de nou</strong> (two quarters of the way to nine)</li>\n  <li>8:45 — <strong>tres quarts de nou</strong></li>\n  <li>8:20 — un quart <strong>i cinc</strong> de nou; 8:55 — les nou <strong>menys cinc</strong> (five to nine)</li>\n  <li>around 8:07 — <strong>mig quart</strong> de nou</li>\n</ul>\n<p>The big trap: <em>dos quarts de nou</em> is <strong>8:30</strong>, not 9:30. If you’re used to\nBritish <em>half nine</em> (= 9:30), be extra careful: Catalan works the other way round, like German\n<em>halb neun</em>. The verb agrees: <em>És un quart de nou</em>, but <em>Són dos quarts de nou</em>.</p>\n<p>Alongside it there is a simpler system counting from the current hour, as in English, which\neveryone understands: <em>les vuit i quart, les vuit i mitja, les nou menys quart</em>.</p>\n<p>Questions: <em>Quina hora és?</em> — What time is it? <em>A quina hora…?</em> — What time…?\nAnswers: <em><strong>A les</strong> nou. <strong>A un quart de</strong> deu.</em> Before <em>una</em>\nand <em>onze</em>, <em>de</em> becomes <em>d’</em>: <em>dos quarts d’una</em> (12:30),\n<em>tres quarts d’onze</em> (10:45).</p>\n",
+    "examples": [
+      {
+        "ca": "Quina hora és? — Són dos quarts de cinc.",
+        "en": "What time is it? — It’s half past four."
+      },
+      {
+        "ca": "El tren surt a tres quarts de vuit.",
+        "en": "The train leaves at 7:45."
+      },
+      {
+        "ca": "Ens veiem a la una.",
+        "en": "See you at one."
+      },
+      {
+        "ca": "Són les deu menys cinc.",
+        "en": "It’s five to ten."
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Write the time using the traditional Catalan system.",
+        "items": [
+          {
+            "q": "9:15",
+            "a": "un quart de deu"
+          },
+          {
+            "q": "9:30",
+            "a": "dos quarts de deu"
+          },
+          {
+            "q": "9:45",
+            "a": "tres quarts de deu"
+          },
+          {
+            "q": "12:30",
+            "a": "dos quarts d’una"
+          },
+          {
+            "q": "10:55",
+            "a": "les onze menys cinc"
+          },
+          {
+            "q": "1:00",
+            "a": "la una"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 56,
+    "title": "Ordinal numbers and dates",
+    "summary": "Primer, segon, tercer… and how to say the date.",
+    "explanation": "\n<p>Ordinals: <strong>primer, segon, tercer, quart</strong>, then the suffix <strong>-è</strong>:\n<em>cinquè, sisè, setè, vuitè, novè, desè</em>. Feminine: <em>primera, segona, tercera, quarta,\ncinquena…</em> Abbreviated, like English <em>1st, 2nd</em>: <em>1r, 2n, 3r, 4t, 5è</em>;\nfeminine <em>1a, 2a, 3a…</em></p>\n<p><strong>Dates</strong>: English uses ordinals (<em>the 23rd of April</em>, <em>April 23rd</em>), but\nCatalan uses ordinary <strong>cardinal</strong> numbers: <em>el</em> + number + <em>de</em> + month,\nwith elision before a vowel:</p>\n<ul>\n  <li><strong>el 23 d’abril</strong> (el vint-i-tres d’abril), <strong>l’11 de setembre</strong>,\n      <strong>el 5 de juny</strong></li>\n  <li>the 1st: <strong>l’u de maig</strong> or <strong>el primer de maig</strong>, the only day that\n      can take an ordinal</li>\n</ul>\n<p>Months and days of the week are written with a <strong>small letter</strong>:\n<em>dilluns, 5 de juny</em>, not “Dilluns” or “Juny”.</p>\n<p>Asking and answering: <em>Quin dia és avui? — Avui <strong>som a</strong> 5 de juny</em>\n(or <em>És el 5 de juny</em>).</p>\n<p>Years are read as one whole number, not in pairs as in English (<em>nineteen ninety</em>):\n<em>el 1990</em> = “el mil nou-cents noranta”, <em>el 2026</em> = “el dos mil vint-i-sis”. Use the\narticle where English says “in”: <em>Va néixer el 1990.</em> Decades: <em>als anys noranta</em> —\nin the nineties.</p>\n<p>Floors are counted from above the ground floor (<em>planta baixa</em>), as in British English,\nso <em>el tercer pis</em> is what Americans would call the fourth floor.</p>\n",
+    "examples": [
+      {
+        "ca": "Visc al tercer pis.",
+        "en": "I live on the third floor."
+      },
+      {
+        "ca": "Sant Jordi és el 23 d’abril.",
+        "en": "St George’s Day is on the 23rd of April."
+      },
+      {
+        "ca": "Va néixer el 1990.",
+        "en": "He was born in 1990."
+      },
+      {
+        "ca": "És la primera vegada que vinc.",
+        "en": "It’s the first time I’ve been here."
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Write in words.",
+        "items": [
+          {
+            "q": "5è",
+            "a": "cinquè"
+          },
+          {
+            "q": "3a",
+            "a": "tercera"
+          },
+          {
+            "q": "9è",
+            "a": "novè"
+          },
+          {
+            "q": "1 de maig",
+            "a": "l’u de maig / el primer de maig"
+          },
+          {
+            "q": "11 de setembre",
+            "a": "l’onze de setembre"
+          }
+        ]
+      }
+    ]
+  }
+]

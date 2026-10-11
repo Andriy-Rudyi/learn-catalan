@@ -1,26 +1,26 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="content-section">
-  <h1>Імпорт словника</h1>
-  <p class="text-muted">У словнику зараз {{ total }} слів.</p>
+  <h1>{{ _('Імпорт словника') }}</h1>
+  <p class="text-muted">{{ _('У словнику зараз:') }} {{ plural(total, ('слово', 'слова', 'слів'), ('word', 'words')) }}.</p>
 
-  <h5 class="mt-4">Стартовий набір</h5>
+  <h5 class="mt-4">{{ _('Стартовий набір') }}</h5>
   <p class="small text-muted mb-2">
-    Базова лексика, що постачається з проєктом. Слова, які вже є у словнику, не дублюються.
+    {{ _('Базова лексика, що постачається з проєктом. Слова, які вже є у словнику, не дублюються.') }}
   </p>
   <form method="POST" action="{{ url_for('vocabulary.import_seed_words') }}">
     {{ seed_form.hidden_tag() }}
-    <button class="btn btn-outline-info" type="submit">Завантажити стартовий набір</button>
+    <button class="btn btn-outline-info" type="submit">{{ _('Завантажити стартовий набір') }}</button>
   </form>
 
   <hr class="my-4">
 
-  <h5>Свій файл CSV</h5>
+  <h5>{{ _('Свій файл CSV') }}</h5>
   <p class="small text-muted">
-    Колонки: <code>term, translation, part_of_speech, gender, pronunciation, topic,
-    level, example_ca, example_uk, notes</code>.
-    Обов’язкові — лише <code>term</code> і <code>translation</code>.
-    Зразок можна отримати, <a href="{{ url_for('vocabulary.export_dictionary') }}">експортувавши словник</a>.
+    {{ _('Колонки:') }} <code>term, translation, part_of_speech, gender, pronunciation, topic,
+    level, example_ca, example_uk, notes, translation_en, example_en, notes_en</code>.
+    {{ _('Обов’язкові — лише <code>term</code> і <code>translation</code>.') | safe }}
+    {{ _('Зразок можна отримати, експортувавши словник:') }} <a href="{{ url_for('vocabulary.export_dictionary') }}">CSV</a>.
   </p>
   <form method="POST" action="" enctype="multipart/form-data" novalidate>
     {{ form.hidden_tag() }}
@@ -34,7 +34,7 @@
     <div class="form-check mb-3">
       <input class="form-check-input" type="checkbox" name="update_existing" id="update_existing">
       <label class="form-check-label small" for="update_existing">
-        Оновлювати слова, які вже є у словнику
+        {{ _('Оновлювати слова, які вже є у словнику') }}
       </label>
     </div>
     {{ form.submit(class="btn btn-outline-info") }}

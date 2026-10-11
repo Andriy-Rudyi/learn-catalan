@@ -1,5 +1,6 @@
 from flask import Blueprint, abort, render_template, request
 
+from flaskblog.i18n import gettext as _
 from flaskblog.phonetics import service
 
 phonetics = Blueprint('phonetics', __name__)
@@ -10,7 +11,7 @@ def index():
     lessons = service.load_lessons()
     return render_template(
         'phonetics_index.html',
-        title='Фонетика',
+        title=_('Фонетика'),
         sections=service.sections(),
         total=len(lessons),
     )

@@ -1,0 +1,838 @@
+[
+ {
+  "number": 15,
+  "title": "Direct object pronouns: el, la, els, les",
+  "summary": "Pronouns that replace the person or thing the action is done to.",
+  "explanation": "\n<p>To avoid repeating a noun, Catalan replaces it with a <strong>weak (clitic) pronoun</strong>. Unlike English, where the pronoun comes after the verb (<em>I see it</em>), the Catalan pronoun goes <em>before</em> a conjugated verb:</p>\n<ul>\n  <li>Veus <em>el gos</em>? — Sí, <strong>el</strong> veig. — Yes, I can see it (literally “I it see”).</li>\n  <li>Coneixes <em>la Maria</em>? — Sí, <strong>la</strong> conec. — Yes, I know her.</li>\n  <li>Compres <em>els llibres</em>? — Sí, <strong>els</strong> compro. — Yes, I’m buying them.</li>\n  <li>Llegeixes <em>les cartes</em>? — Sí, <strong>les</strong> llegeixo. — Yes, I’m reading them.</li>\n</ul>\n<p>The full set: <strong>em</strong> (me), <strong>et</strong> (you), <strong>el</strong> / <strong>la</strong> (him / her / it), <strong>ens</strong> (us), <strong>us</strong> (you, plural), <strong>els</strong> / <strong>les</strong> (them). English <em>it</em> has no single equivalent: a thing is <strong>el</strong> or <strong>la</strong> according to the gender of the noun it replaces (<em>el pa</em> → <em>el compro</em>; <em>la clau</em> → <em>la busco</em>). And beware the false friend: Catalan <strong>us</strong> means “you (plural)”; English “us” is <strong>ens</strong>.</p>\n<p>Before a vowel or <em>h</em>, the singular forms are shortened to <strong>m’</strong>, <strong>t’</strong>, <strong>l’</strong>: <em>M’escoltes? L’he vist.</em> The plural forms are never shortened: <em>els escolto</em>.</p>\n<p>Several verbs that need a preposition in English take a plain direct object in Catalan: <em>esperar</em> (wait <em>for</em>), <em>escoltar</em> (listen <em>to</em>), <em>mirar</em> (look <em>at</em>), <em>buscar</em> (look <em>for</em>). So <em>I’m waiting for her</em> is simply <em><strong>L’</strong>espero</em>.</p>\n<p>For a whole idea, or for “it / that” not referring to a specific noun, use the neuter <strong>ho</strong>: <em>No <strong>ho</strong> sé.</em> — I don’t know.</p>\n<p>With an infinitive, the pronoun can go before the helping verb or be attached to the end of the infinitive with a hyphen: <em><strong>La</strong> vull veure</em> = <em>Vull veure<strong>-la</strong></em> — I want to see her. After the infinitive, <em>el</em> and <em>els</em> become <strong>-lo</strong> and <strong>-los</strong>: <em>Vull comprar<strong>-lo</strong></em>.</p>\n",
+  "examples": [
+   {
+    "ca": "On és la clau? — No la trobo.",
+    "en": "Where’s the key? — I can’t find it."
+   },
+   {
+    "ca": "T’estimo.",
+    "en": "I love you."
+   },
+   {
+    "ca": "Us esperem a la plaça.",
+    "en": "We’ll be waiting for you in the square."
+   },
+   {
+    "ca": "Ho entens?",
+    "en": "Do you understand?"
+   },
+   {
+    "ca": "Vull comprar-lo.",
+    "en": "I want to buy it."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Replace the direct object with a pronoun.",
+    "items": [
+     {
+      "q": "Compro el pa.",
+      "a": "El compro."
+     },
+     {
+      "q": "Mirem la pel·lícula.",
+      "a": "La mirem."
+     },
+     {
+      "q": "Escrius els correus?",
+      "a": "Els escrius?"
+     },
+     {
+      "q": "Rento les tasses.",
+      "a": "Les rento."
+     },
+     {
+      "q": "Has vist el museu?",
+      "a": "L’has vist?"
+     },
+     {
+      "q": "No sé això.",
+      "a": "No ho sé."
+     }
+    ]
+   },
+   {
+    "instruction": "Rewrite the sentence with the pronoun attached to the infinitive.",
+    "items": [
+     {
+      "q": "La vull veure.",
+      "a": "Vull veure-la."
+     },
+     {
+      "q": "Els he de comprar.",
+      "a": "He de comprar-los."
+     },
+     {
+      "q": "Ho puc fer.",
+      "a": "Puc fer-ho."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 16,
+  "title": "Indirect object pronouns: li, els",
+  "summary": "To whom? — li (to him / her) and els (to them).",
+  "explanation": "\n<p>The indirect object answers the question <em>to whom?</em> In English it usually comes with <em>to</em> (<em>I gave the book to Marta</em>) or sits straight after the verb (<em>I gave Marta the book</em>). The Catalan pronouns:</p>\n<ul>\n  <li><strong>em</strong> — (to) me, <strong>et</strong> — (to) you,\n      <strong>li</strong> — (to) him / her, and also (to) you when you address someone as <em>vostè</em>,</li>\n  <li><strong>ens</strong> — (to) us, <strong>us</strong> — (to) you (plural), <strong>els</strong> — (to) them.</li>\n</ul>\n<p>Examples:</p>\n<ul>\n  <li>Dono el llibre <em>a la Marta</em>. → <strong>Li</strong> dono el llibre. — I give her the book.</li>\n  <li>Escric <em>als meus pares</em>. → <strong>Els</strong> escric. — I write to them.</li>\n</ul>\n<p>Note that <strong>li</strong> is the same for masculine and feminine, while <strong>els</strong> is both a direct object (“them”) and an indirect one (“to them”). English uses <em>him / her</em> in both roles, but Catalan keeps them apart: <em><strong>la</strong> veig</em> (I see her) but <em><strong>li</strong> parlo</em> (I talk to her).</p>\n<p>Don’t let English decide for you: some verbs that take a plain object in English take <em>a</em> in Catalan. <em>Trucar a algú</em> and <em>telefonar a algú</em> (to call / phone someone) give <em><strong>li</strong> truco</em>, whereas <em>ajudar algú</em> (to help someone) gives <em><strong>l’</strong>ajudo</em>.</p>\n<p>The noun and the pronoun are often used together for emphasis, which English never does: <em><strong>Li</strong> dic <strong>a la Maria</strong>.</em> — I’m telling Maria (literally “I tell her to Maria”).</p>\n",
+  "examples": [
+   {
+    "ca": "Li he enviat un missatge.",
+    "en": "I’ve sent him (or her) a message."
+   },
+   {
+    "ca": "Què et passa?",
+    "en": "What’s the matter (with you)?"
+   },
+   {
+    "ca": "Els explico la lliçó.",
+    "en": "I explain the lesson to them."
+   },
+   {
+    "ca": "Ens agrada molt.",
+    "en": "We like it a lot (literally “it pleases us a lot”)."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Replace the indirect object with a pronoun.",
+    "items": [
+     {
+      "q": "Telefono a la meva mare.",
+      "a": "Li telefono."
+     },
+     {
+      "q": "Porto un regal als nens.",
+      "a": "Els porto un regal."
+     },
+     {
+      "q": "Expliquem el problema al professor.",
+      "a": "Li expliquem el problema."
+     },
+     {
+      "q": "Demanes ajuda als veïns?",
+      "a": "Els demanes ajuda?"
+     }
+    ]
+   },
+   {
+    "instruction": "Direct or indirect? Fill in el, la (l’) or li.",
+    "items": [
+     {
+      "q": "Veig la Júlia. → ___ veig.",
+      "a": "La"
+     },
+     {
+      "q": "Parlo a la Júlia. → ___ parlo.",
+      "a": "Li"
+     },
+     {
+      "q": "Ajudo el meu germà. → ___ ajudo.",
+      "a": "L’"
+     },
+     {
+      "q": "Escric al meu germà. → ___ escric.",
+      "a": "Li"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 17,
+  "title": "The pronoun en",
+  "summary": "“Some”, “of them”, “about it”: quantities, parts and phrases with de.",
+  "explanation": "\n<p>English has nothing quite like <strong>en</strong> (if you know French, it works much like French <em>en</em>). It replaces:</p>\n<ul>\n  <li>a noun with no article, or with a number or quantity word — where English says <em>some</em>, <em>any</em>, <em>of them</em> or nothing at all:\n      <em>Tens pa? — Sí, <strong>en</strong> tinc.</em> (Have you got any bread? — Yes, I have.)\n      <em>Quantes germanes tens? — <strong>En</strong> tinc dues.</em> (How many sisters have you got? — Two.)</li>\n  <li>a complement introduced by <em>de</em>:\n      <em>Parles de la feina? — Sí, <strong>en</strong> parlo.</em> (Do you talk about work? — Yes, I talk about it.)\n      <em>Vens de Girona? — Sí, <strong>en</strong> vinc.</em> (Are you coming from Girona? — Yes, I am.)</li>\n</ul>\n<p>Before a vowel or <em>h</em> it becomes <strong>n’</strong>: <em><strong>N’</strong>he comprat tres.</em> After an infinitive it is <strong>-ne</strong>, or <strong>’n</strong> if the infinitive ends in a vowel: <em>Vull comprar<strong>-ne</strong>. Vull beure<strong>’n</strong>.</em></p>\n<p>Important: when there is a number or quantity and the noun itself is left out, <strong>en</strong> is <em>compulsory</em>. English is happy with “I’ve got two”, but in Catalan plain <em>Tinc dues</em> is wrong: say <em><strong>En</strong> tinc dues</em>.</p>\n",
+  "examples": [
+   {
+    "ca": "Vols cafè? — No, gràcies, ja n’he pres.",
+    "en": "Would you like some coffee? — No, thanks, I’ve already had some."
+   },
+   {
+    "ca": "Quants anys tens? — En tinc trenta.",
+    "en": "How old are you? — I’m thirty (literally “I have thirty of them”)."
+   },
+   {
+    "ca": "No en sé res.",
+    "en": "I don’t know anything about it."
+   },
+   {
+    "ca": "N’hi ha molts.",
+    "en": "There are lots of them."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Answer using en and the hint in brackets.",
+    "items": [
+     {
+      "q": "Tens germans? (two)",
+      "a": "Sí, en tinc dos."
+     },
+     {
+      "q": "Has comprat pomes? (a kilo)",
+      "a": "Sí, n’he comprat un quilo."
+     },
+     {
+      "q": "Parleu de política? (no)",
+      "a": "No, no en parlem."
+     },
+     {
+      "q": "Quants llibres llegeixes cada any? (ten)",
+      "a": "En llegeixo deu."
+     },
+     {
+      "q": "Vols més sopa? (no)",
+      "a": "No, no en vull més."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 18,
+  "title": "The pronoun hi",
+  "summary": "“There” — and how hi turns up in hi ha.",
+  "explanation": "\n<p><strong>hi</strong> replaces a place (introduced by <em>a, en, dins, sota</em>…). It is roughly English <em>there</em>:</p>\n<ul>\n  <li>Vas a Girona? — Sí, <strong>hi</strong> vaig demà. — Yes, I’m going (there) tomorrow.</li>\n  <li>Has estat a Mallorca? — No, no <strong>hi</strong> he estat mai. — No, I’ve never been (there).</li>\n</ul>\n<p>The big difference: English usually leaves <em>there</em> out, but Catalan needs the pronoun. <em>Sí, vaig demà</em> on its own sounds incomplete.</p>\n<p><strong>hi</strong> also replaces a complement with <em>a</em> or <em>en</em> after verbs such as <em>pensar en</em> (think about), <em>creure en</em> (believe in), <em>jugar a</em> (play):</p>\n<ul>\n  <li>Penses en el viatge? — Sí, <strong>hi</strong> penso molt. — Yes, I think about it a lot.</li>\n</ul>\n<p>The English preposition is no guide here: <em>think about it</em> is <em><strong>hi</strong> penso</em> (because the verb is <em>pensar en</em>), but <em>talk about it</em> is <em><strong>en</strong> parlo</em> (because the verb is <em>parlar de</em>, Unit 17). Always check which preposition the Catalan verb takes.</p>\n<p><strong>hi</strong> never changes form: before a vowel it is still <em>hi</em> (<em>hi anem</em>), and after an infinitive it is <strong>-hi</strong>: <em>Vull anar<strong>-hi</strong>.</em></p>\n<p>The <strong>hi</strong> in <strong>hi ha</strong> (Unit 3) is the same pronoun, “frozen” into the expression — it no longer refers to a place, just as the <em>there</em> in English <em>there is</em> doesn’t.</p>\n",
+  "examples": [
+   {
+    "ca": "Viu a Reus? — Sí, hi viu des de fa anys.",
+    "en": "Does he live in Reus? — Yes, he’s lived there for years."
+   },
+   {
+    "ca": "No hi entenc res.",
+    "en": "I can’t make head or tail of it."
+   },
+   {
+    "ca": "Hi anirem amb cotxe.",
+    "en": "We’ll go there by car."
+   },
+   {
+    "ca": "Vols venir-hi?",
+    "en": "Would you like to come (along)?"
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Replace the place or the complement with hi.",
+    "items": [
+     {
+      "q": "Anem al cinema.",
+      "a": "Hi anem."
+     },
+     {
+      "q": "Treballo a l’hospital.",
+      "a": "Hi treballo."
+     },
+     {
+      "q": "No pensis en això.",
+      "a": "No hi pensis."
+     },
+     {
+      "q": "Vull tornar a Barcelona.",
+      "a": "Vull tornar-hi."
+     },
+     {
+      "q": "Hem estat al museu.",
+      "a": "Hi hem estat."
+     }
+    ]
+   },
+   {
+    "instruction": "en or hi? Fill in the gap.",
+    "items": [
+     {
+      "q": "Vens de Lleida? — Sí, ___ vinc.",
+      "a": "en"
+     },
+     {
+      "q": "Vas a Lleida? — Sí, ___ vaig.",
+      "a": "hi"
+     },
+     {
+      "q": "Tens temps? — No, no ___ tinc.",
+      "a": "en"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 19,
+  "title": "Reflexive verbs: rentar-se",
+  "summary": "Verbs with the pronoun -se: em rento, et rentes…",
+  "explanation": "\n<p>In the dictionary, reflexive (pronominal) verbs end in <strong>-se</strong>: <em>rentar-se</em> (to wash), <em>llevar-se</em> (to get up), <em>dir-se</em> (to be called), <em>dutxar-se</em> (to have a shower).</p>\n<p>English rarely uses <em>myself, yourself</em>… with everyday actions — <em>I get up, I have a shower, I get dressed</em> — but Catalan needs the pronoun every time. Without it the meaning changes: <em>Rento el cotxe</em> is “I wash the car”, <em><strong>Em</strong> rento</em> is “I have a wash”.</p>\n<p>The pronoun changes with the person and goes before the conjugated verb:</p>\n<ul>\n  <li><strong>em</strong> rento, <strong>et</strong> rentes, <strong>es</strong> renta,</li>\n  <li><strong>ens</strong> rentem, <strong>us</strong> renteu, <strong>es</strong> renten.</li>\n</ul>\n<p>Before a vowel or <em>h</em>: <strong>m’</strong>, <strong>t’</strong>, <strong>s’</strong>: <em>m’aixeco, t’aixeques, s’aixeca</em>, but <em>ens aixequem, us aixequeu, s’aixequen</em>.</p>\n<p>The plural forms can also mean “each other”: <em>Ens veiem demà</em> — see you tomorrow (literally “we’ll see each other”). And with parts of the body or personal belongings Catalan uses the article, not a possessive: <em>Em rento <strong>les</strong> mans</em> — I wash <em>my</em> hands.</p>\n<p>With an infinitive the pronoun is attached with a hyphen and still agrees with the person: <em>Vull dutxar<strong>-me</strong></em> = <em><strong>Em</strong> vull dutxar.</em> — I want to have a shower.</p>\n",
+  "examples": [
+   {
+    "ca": "Com et dius? — Em dic Emma.",
+    "en": "What’s your name? — My name’s Emma (literally “I call myself Emma”)."
+   },
+   {
+    "ca": "Em llevo a les set.",
+    "en": "I get up at seven."
+   },
+   {
+    "ca": "Ens veiem demà.",
+    "en": "See you tomorrow."
+   },
+   {
+    "ca": "S’ha descuidat les claus.",
+    "en": "He’s left his keys behind."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Put the verb in the correct form with the right pronoun.",
+    "items": [
+     {
+      "q": "Jo (dutxar-se) ___ cada matí.",
+      "a": "em dutxo"
+     },
+     {
+      "q": "Ella (dir-se) ___ Laia.",
+      "a": "es diu"
+     },
+     {
+      "q": "Nosaltres (llevar-se) ___ tard.",
+      "a": "ens llevem"
+     },
+     {
+      "q": "Vosaltres (vestir-se) ___ de pressa.",
+      "a": "us vestiu"
+     },
+     {
+      "q": "Tu (aixecar-se) ___ aviat?",
+      "a": "t’aixeques"
+     },
+     {
+      "q": "Ells (quedar-se) ___ a casa.",
+      "a": "es queden"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 20,
+  "title": "agradar: m’agrada, m’agraden",
+  "summary": "The verb agrees with what is liked, not with the person who likes it.",
+  "explanation": "\n<p>In English the person who likes is the subject: <em><strong>I</strong> like coffee</em>. Catalan <strong>agradar</strong> works the other way round, like English <em>please</em> or <em>appeal to</em>: the thing that is liked is the subject and the verb agrees with it, while the person is an indirect object pronoun (Unit 16):</p>\n<ul>\n  <li><strong>M’agrada</strong> el cafè. — I like coffee (literally “coffee pleases me”).</li>\n  <li><strong>M’agraden</strong> els gats. — I like cats (literally “cats please me”).</li>\n  <li><strong>M’agrada</strong> llegir. — I like reading.</li>\n</ul>\n<p>So the verb is singular or plural according to the thing, never the person: <em>Ens agrada el cafè</em> (we like coffee), <em>Li agraden els gats</em> (she likes cats). Notice too that Catalan uses the article (<em>el cafè</em>, <em>els gats</em>) for things in general, where English has none. And <em>m’agrades</em> means “I like you” — often in the sense “I fancy you”.</p>\n<p>Pronouns: <strong>m’</strong>, <strong>t’</strong>, <strong>li</strong>, <strong>ens</strong>, <strong>us</strong>, <strong>els</strong>: <em>Li agrada, ens agrada, els agraden</em>.</p>\n<p>For emphasis or contrast, add <em>a mi, a tu, a ell…</em>: <em><strong>A mi</strong> m’agrada el futbol, i <strong>a tu</strong>?</em> — I like football. What about you?</p>\n<p>Short answers: <em>A mi també</em> (me too / so do I), <em>A mi tampoc</em> (me neither / nor do I), <em>A mi sí</em> / <em>A mi no</em> (I do / I don’t).</p>\n<p><em>Interessar</em>, <em>encantar</em> and <em>fer mal</em> work the same way: <em>Em fa mal el cap</em> — I’ve got a headache (literally “my head hurts me”).</p>\n",
+  "examples": [
+   {
+    "ca": "No m’agrada gens aquest temps.",
+    "en": "I don’t like this weather at all."
+   },
+   {
+    "ca": "T’agraden les pel·lícules de por?",
+    "en": "Do you like horror films?"
+   },
+   {
+    "ca": "Ens encanta Barcelona.",
+    "en": "We love Barcelona."
+   },
+   {
+    "ca": "Em fan mal els peus.",
+    "en": "My feet hurt."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "agrada or agraden?",
+    "items": [
+     {
+      "q": "M’___ la música clàssica.",
+      "a": "agrada"
+     },
+     {
+      "q": "Li ___ els esports.",
+      "a": "agraden"
+     },
+     {
+      "q": "Ens ___ viatjar.",
+      "a": "agrada"
+     },
+     {
+      "q": "Us ___ aquestes sabates?",
+      "a": "agraden"
+     }
+    ]
+   },
+   {
+    "instruction": "Reply with “me too” or “me neither”.",
+    "items": [
+     {
+      "q": "M’agrada el mar. — (me too) ___",
+      "a": "A mi també."
+     },
+     {
+      "q": "No m’agrada el fred. — (me neither) ___",
+      "a": "A mi tampoc."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 21,
+  "title": "Imperfet: parlava, feia, era",
+  "summary": "The imperfect: habits and background description in the past.",
+  "explanation": "\n<p>The <strong>imperfet</strong> describes <em>habits</em> and <em>background</em> in the past — what used to happen or what was going on. English has no single equivalent: depending on the context it comes out as <em>used to</em>, <em>would</em>, <em>was / were + -ing</em> or the simple past:</p>\n<ul>\n  <li>Quan era petit, <strong>jugava</strong> al carrer. — When I was little, I used to play in the street.</li>\n  <li><strong>Feia</strong> sol i <strong>estàvem</strong> contents. — It was sunny and we were happy.</li>\n  <li>Mentre jo <strong>cuinava</strong>, ell <strong>llegia</strong> el diari. — While I was cooking, he was reading the paper.</li>\n</ul>\n<p>Don’t let English <em>would</em> lead you to the conditional: <em>Every summer we would go to the beach</em> is a past habit, so it’s <em>Cada estiu <strong>anàvem</strong> a la platja</em>, not <em>aniríem</em>.</p>\n<p>Forms:</p>\n<ul>\n  <li>-ar: parl<strong>ava</strong>, parl<strong>aves</strong>, parl<strong>ava</strong>,\n      parl<strong>àvem</strong>, parl<strong>àveu</strong>, parl<strong>aven</strong></li>\n  <li>-er/-re and -ir: perd<strong>ia</strong>, perd<strong>ies</strong>, perd<strong>ia</strong>,\n      perd<strong>íem</strong>, perd<strong>íeu</strong>, perd<strong>ien</strong>\n      (dorm<strong>ia</strong>, serv<strong>ia</strong>…; verbs with <em>-eix-</em> drop it: llegeixo → lleg<strong>ia</strong>)</li>\n</ul>\n<p>Irregular: <strong>ser</strong> → era, eres, era, érem, éreu, eren;\n<strong>fer</strong> → feia; <strong>dir</strong> → deia; <strong>veure</strong> → veia;\n<strong>creure</strong> → creia; <strong>riure</strong> → reia;\n<strong>treure</strong> → treia; <strong>viure</strong> → vivia;\n<strong>escriure</strong> → escrivia.</p>\n",
+  "examples": [
+   {
+    "ca": "Abans vivíem a Londres.",
+    "en": "We used to live in London."
+   },
+   {
+    "ca": "Cada estiu anàvem a la platja.",
+    "en": "Every summer we would go to the beach."
+   },
+   {
+    "ca": "Què feies quan t’he trucat?",
+    "en": "What were you doing when I called you?"
+   },
+   {
+    "ca": "Era un dia fred.",
+    "en": "It was a cold day."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Put the verb in the imperfet.",
+    "items": [
+     {
+      "q": "De petit, jo (menjar) ___ molta fruita.",
+      "a": "menjava"
+     },
+     {
+      "q": "La meva àvia (viure) ___ al poble.",
+      "a": "vivia"
+     },
+     {
+      "q": "Nosaltres (ser) ___ molt amics.",
+      "a": "érem"
+     },
+     {
+      "q": "Abans tu (fer) ___ esport cada dia.",
+      "a": "feies"
+     },
+     {
+      "q": "Ells (dormir) ___ fins tard.",
+      "a": "dormien"
+     },
+     {
+      "q": "Vosaltres (parlar) ___ anglès a casa?",
+      "a": "parlàveu"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 22,
+  "title": "Perfet: he parlat",
+  "summary": "The present perfect: the past linked to a time period that isn’t over yet.",
+  "explanation": "\n<p>The <strong>perfet</strong> is built like the English present perfect: the present of <em>haver</em> + past participle (<em>I have spoken</em> → <em>he parlat</em>):</p>\n<ul>\n  <li><strong>he</strong> parlat, <strong>has</strong> parlat, <strong>ha</strong> parlat,\n      <strong>hem</strong> parlat, <strong>heu</strong> parlat, <strong>han</strong> parlat</li>\n</ul>\n<p>It is used when the time period in which something happened <em>is not over yet</em>: <em>avui, aquest matí, aquesta setmana, aquest any</em>, and for experience (<em>mai, alguna vegada, ja, encara no</em>):</p>\n<ul>\n  <li>Avui <strong>he treballat</strong> molt. — I’ve worked a lot today.</li>\n  <li><strong>Has estat</strong> mai a Andorra? — Have you ever been to Andorra?</li>\n</ul>\n<p>The overlap with English is large but not complete. Catalan uses the perfet even for a finished event, as long as it happened in the current period, where English prefers the simple past: <em>Aquest matí <strong>he anat</strong> al mercat</em> — I went to the market this morning. And for something that started in the past and is still going on, English uses the present perfect but Catalan uses the present: <em><strong>Visc</strong> aquí des de fa dos anys</em> — I’ve lived here for two years.</p>\n<p>Words like <em>ja</em>, <em>mai</em> and <em>encara no</em> normally go before the whole verb, not between the two parts as in English: <em><strong>Ja</strong> he dinat</em> — I’ve already had lunch.</p>\n<p>Participles: -ar → <strong>-at</strong> (parlat), -er/-re → <strong>-ut</strong>\n(perdut), -ir → <strong>-it</strong> (dormit). The most common irregular ones:\n<em>fet, dit, vist, escrit, obert, pres, après, estat, tingut, pogut, volgut,\nsabut, vingut, viscut, begut, conegut, nascut, mort</em>.</p>\n",
+  "examples": [
+   {
+    "ca": "Aquest matí he anat al mercat.",
+    "en": "I went to the market this morning."
+   },
+   {
+    "ca": "Ja has dinat?",
+    "en": "Have you had lunch yet?"
+   },
+   {
+    "ca": "Encara no he acabat.",
+    "en": "I haven’t finished yet."
+   },
+   {
+    "ca": "Mai no he vist la neu.",
+    "en": "I’ve never seen snow."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Put the verb in the perfet.",
+    "items": [
+     {
+      "q": "Avui jo (fer) ___ els deures.",
+      "a": "he fet"
+     },
+     {
+      "q": "Aquesta setmana nosaltres (veure) ___ dues pel·lícules.",
+      "a": "hem vist"
+     },
+     {
+      "q": "Tu (escriure) ___ el correu?",
+      "a": "has escrit"
+     },
+     {
+      "q": "Ells encara no (arribar) ___.",
+      "a": "han arribat"
+     },
+     {
+      "q": "Ella mai no (viure) ___ sola.",
+      "a": "ha viscut"
+     },
+     {
+      "q": "Vosaltres (obrir) ___ la finestra?",
+      "a": "heu obert"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 23,
+  "title": "he menjat or vaig menjar?",
+  "summary": "Perfet for “today”, perifràstic for “yesterday”.",
+  "explanation": "\n<p>English also has two past forms (<em>I have eaten</em> / <em>I ate</em>), but Catalan chooses between the <strong>perfet</strong> (<em>he menjat</em>) and the <strong>passat perifràstic</strong> (<em>vaig menjar</em>) by a different rule: what matters is the <em>time period</em>. If you could add <em>today</em> or <em>this…</em>, use the perfet; if you could add <em>yesterday</em> or <em>last…</em>, use the perifràstic:</p>\n<ul>\n  <li>the period is <em>still going on</em> (avui, aquesta setmana, aquest any) → <strong>perfet</strong>:\n      <em>Avui <strong>he menjat</strong> paella.</em> — I had paella today.</li>\n  <li>the period is <em>over</em> (ahir, la setmana passada, l’any passat, el 2020) →\n      <strong>passat perifràstic</strong>:\n      <em>Ahir <strong>vaig menjar</strong> paella.</em> — I had paella yesterday.</li>\n</ul>\n<p>Compare:</p>\n<ul>\n  <li>Aquest any <strong>he viatjat</strong> molt. — L’any passat <strong>vaig viatjar</strong> poc. (I’ve travelled a lot this year. — I didn’t travel much last year.)</li>\n  <li>Aquest matí <strong>m’he llevat</strong> d’hora. — Ahir <strong>em vaig llevar</strong> tard. (I got up early this morning. — I got up late yesterday.)</li>\n</ul>\n<p>Don’t be fooled by the form: <em>vaig menjar</em> is built with <em>anar</em> (“to go”), but it is a <em>past</em> tense — “I ate”. It has nothing to do with English <em>I’m going to eat</em>.</p>\n<p>When no time is mentioned and you are talking about experience, use the perfet:\n<em>Has estat mai a París?</em> — Have you ever been to Paris? When you tell a story made of clear, completed events in the past, use the perifràstic.</p>\n",
+  "examples": [
+   {
+    "ca": "Avui he parlat amb la Núria.",
+    "en": "I spoke to Núria today."
+   },
+   {
+    "ca": "Dilluns vaig parlar amb la Núria.",
+    "en": "I spoke to Núria on Monday."
+   },
+   {
+    "ca": "Aquest mes he llegit tres llibres.",
+    "en": "I’ve read three books this month."
+   },
+   {
+    "ca": "El 2019 vam anar a Mallorca.",
+    "en": "We went to Mallorca in 2019."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Choose the perfet or the passat perifràstic.",
+    "items": [
+     {
+      "q": "Ahir (anar) ___ al metge.",
+      "a": "vaig anar"
+     },
+     {
+      "q": "Avui (anar) ___ al metge.",
+      "a": "he anat"
+     },
+     {
+      "q": "Aquesta setmana (treballar) ___ molt. (nosaltres)",
+      "a": "hem treballat"
+     },
+     {
+      "q": "La setmana passada (treballar) ___ molt. (nosaltres)",
+      "a": "vam treballar"
+     },
+     {
+      "q": "Fa dos anys (conèixer) ___ el meu marit.",
+      "a": "vaig conèixer"
+     },
+     {
+      "q": "Mai (menjar) ___ cargols. (jo)",
+      "a": "he menjat"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 24,
+  "title": "Futur: parlaré",
+  "summary": "The future tense and its irregular stems.",
+  "explanation": "\n<p>English builds the future with a helper (<em>will</em>, <em>going to</em>); Catalan uses a single word. The future is formed from the <strong>infinitive</strong> plus the endings <strong>-é, -às, -à, -em, -eu, -an</strong>:</p>\n<ul>\n  <li>parlar → parlar<strong>é</strong>, parlar<strong>às</strong>, parlar<strong>à</strong>,\n      parlar<strong>em</strong>, parlar<strong>eu</strong>, parlar<strong>an</strong></li>\n  <li>dormir → dormir<strong>é</strong>, dormir<strong>às</strong>…</li>\n  <li>verbs ending in -re drop the final -e: perdre → perdr<strong>é</strong></li>\n</ul>\n<p>Irregular stems (same endings):</p>\n<ul>\n  <li>fer → <strong>far</strong>é, dir → <strong>dir</strong>é, anar → <strong>anir</strong>é,\n      ser → <strong>ser</strong>é, haver → <strong>haur</strong>é</li>\n  <li>tenir → <strong>tindr</strong>é, venir → <strong>vindr</strong>é,\n      voler → <strong>voldr</strong>é, poder → <strong>podr</strong>é,\n      saber → <strong>sabr</strong>é, valer → <strong>valdr</strong>é</li>\n</ul>\n<p>Two traps for English speakers:</p>\n<ul>\n  <li>Don’t copy <em>going to</em> with <em>anar</em>: <em>vaig parlar</em> means “I spoke” (Unit 23), and <em>vaig a parlar</em> for the future is avoided in careful Catalan. Use the future or the present.</li>\n  <li>For the near future Catalans often just use the present, much as English does with <em>I’m working tomorrow</em>: <em>Demà treballo.</em></li>\n</ul>\n",
+  "examples": [
+   {
+    "ca": "L’any que ve estudiaré a Barcelona.",
+    "en": "I’ll be studying in Barcelona next year."
+   },
+   {
+    "ca": "Demà farà sol.",
+    "en": "It’ll be sunny tomorrow."
+   },
+   {
+    "ca": "Vindràs a la festa?",
+    "en": "Will you come to the party?"
+   },
+   {
+    "ca": "No ho sabrem mai.",
+    "en": "We’ll never know."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Put the verb in the future tense.",
+    "items": [
+     {
+      "q": "Demà jo (treballar) ___ fins tard.",
+      "a": "treballaré"
+     },
+     {
+      "q": "Ells (venir) ___ dissabte.",
+      "a": "vindran"
+     },
+     {
+      "q": "Tu (fer) ___ el sopar?",
+      "a": "faràs"
+     },
+     {
+      "q": "Nosaltres (tenir) ___ temps.",
+      "a": "tindrem"
+     },
+     {
+      "q": "Ella (poder) ___ ajudar-te.",
+      "a": "podrà"
+     },
+     {
+      "q": "Vosaltres (anar) ___ a la platja?",
+      "a": "anireu"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 25,
+  "title": "Condicional: parlaria, voldria",
+  "summary": "Polite requests, wishes and advice: the Catalan for “would”.",
+  "explanation": "\n<p>The conditional corresponds to English <em>would</em> (and often <em>could</em> or <em>should</em>). It is formed from the same stem as the future, with the endings <strong>-ia, -ies, -ia, -íem, -íeu, -ien</strong> — again one word, no helper:</p>\n<ul>\n  <li>parlar → parlar<strong>ia</strong>, parlar<strong>ies</strong>, parlar<strong>ia</strong>,\n      parlar<strong>íem</strong>, parlar<strong>íeu</strong>, parlar<strong>ien</strong></li>\n  <li>irregular: <em>faria, diria, aniria, seria, hauria, tindria, vindria,\n      voldria, podria, sabria</em></li>\n</ul>\n<p>Main uses:</p>\n<ul>\n  <li><strong>politeness</strong>: <em>Voldria un cafè.</em> — I’d like a coffee.\n      <em>Podries ajudar-me?</em> — Could you help me?</li>\n  <li><strong>wishes</strong>: <em>M’agradaria viatjar més.</em> — I’d like to travel more.</li>\n  <li><strong>advice</strong>: <em>Jo, en el teu lloc, hi aniria.</em> — If I were you, I’d go.</li>\n  <li><strong>conditions</strong> (with <em>si</em> + imperfet de subjuntiu, B2):\n      <em>Si tingués temps, ho faria.</em> — If I had time, I’d do it.</li>\n</ul>\n<p>Two traps: English <em>would</em> for past habits is the imperfet, not the conditional (<em>As a child I would read a lot</em> → <em>De petit <strong>llegia</strong> molt</em>, Unit 21). And the conditional never goes in the <em>si</em> clause itself — just as standard English says <em>if I had time</em>, not <em>if I would have time</em>: <em>si tingués temps</em>, never <em>si tindria temps</em>.</p>\n",
+  "examples": [
+   {
+    "ca": "Voldria reservar una taula.",
+    "en": "I’d like to book a table."
+   },
+   {
+    "ca": "Què faries tu?",
+    "en": "What would you do?"
+   },
+   {
+    "ca": "Seria millor esperar.",
+    "en": "It would be better to wait."
+   },
+   {
+    "ca": "Ens agradaria visitar-vos.",
+    "en": "We’d like to visit you."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Make the request more polite (use the conditional).",
+    "items": [
+     {
+      "q": "Vull una aigua.",
+      "a": "Voldria una aigua."
+     },
+     {
+      "q": "Pots obrir la finestra?",
+      "a": "Podries obrir la finestra?"
+     },
+     {
+      "q": "Em deixes el llapis?",
+      "a": "Em deixaries el llapis?"
+     }
+    ]
+   },
+   {
+    "instruction": "Put the verb in the conditional.",
+    "items": [
+     {
+      "q": "Jo, en el teu lloc, (anar) ___ al metge.",
+      "a": "aniria"
+     },
+     {
+      "q": "Ens (agradar) ___ viure a la costa.",
+      "a": "agradaria"
+     },
+     {
+      "q": "Tu (fer) ___ això per mi?",
+      "a": "faries"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 26,
+  "title": "The imperative: parla! no parlis!",
+  "summary": "Positive and negative commands.",
+  "explanation": "\n<p>In English the imperative is just the bare verb, and the negative simply adds <em>don’t</em>: <em>Speak! — Don’t speak!</em> In Catalan the positive and negative forms are <em>different</em>, and both depend on who you are talking to.</p>\n<p><strong>Positive commands</strong>:</p>\n<ul>\n  <li><em>tu</em>: same as the 3rd person singular of the present — <strong>parla!</strong>, <strong>menja!</strong>,\n      <strong>perd!</strong>, <strong>dorm!</strong>, <strong>llegeix!</strong></li>\n  <li><em>vosaltres</em>: same as the 2nd person plural of the present — <strong>parleu!</strong>,\n      <strong>perdeu!</strong>, <strong>dormiu!</strong></li>\n  <li>polite <em>vostè / vostès</em>: subjunctive forms — <strong>parli!</strong>,\n      <strong>parlin!</strong></li>\n</ul>\n<p><strong>Negative commands</strong> are always <em>no</em> + subjunctive:\n<strong>no parlis!</strong>, <strong>no parleu!</strong>, <strong>no mengis!</strong> There is no word for <em>don’t</em>: <em>no</em> plus a different verb form does the job.</p>\n<p>Irregular (for <em>tu</em>): <em>ser → sigues, anar → ves, fer → fes, dir → digues,\nvenir → vine, tenir → tingues, estar → estigues, saber → sàpigues</em>.</p>\n<p>Weak pronouns follow a positive command, joined with a hyphen or an apostrophe — as in English <em>tell me!</em>: <em>Digues<strong>-me</strong>!</em>, <em>Dona<strong>’m</strong> el llibre!</em> But in a negative command they go before the verb: <em>No <strong>em</strong> diguis res!</em> — Don’t tell me anything!</p>\n",
+  "examples": [
+   {
+    "ca": "Obre la finestra, si us plau.",
+    "en": "Open the window, please."
+   },
+   {
+    "ca": "Vine aquí!",
+    "en": "Come here!"
+   },
+   {
+    "ca": "No toquis això!",
+    "en": "Don’t touch that!"
+   },
+   {
+    "ca": "Seguiu recte i gireu a la dreta.",
+    "en": "Go straight on and turn right."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Give the command for tu.",
+    "items": [
+     {
+      "q": "(escoltar) ___ bé!",
+      "a": "Escolta"
+     },
+     {
+      "q": "(fer) ___ els deures!",
+      "a": "Fes"
+     },
+     {
+      "q": "(venir) ___ amb mi!",
+      "a": "Vine"
+     },
+     {
+      "q": "(dir) ___ la veritat!",
+      "a": "Digues"
+     }
+    ]
+   },
+   {
+    "instruction": "Make the command negative.",
+    "items": [
+     {
+      "q": "Parla!",
+      "a": "No parlis!"
+     },
+     {
+      "q": "Mengeu!",
+      "a": "No mengeu!"
+     },
+     {
+      "q": "Obre la porta!",
+      "a": "No obris la porta!"
+     },
+     {
+      "q": "Fes-ho!",
+      "a": "No ho facis!"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 27,
+  "title": "a, en, de with place names",
+  "summary": "Where, where to and where from.",
+  "explanation": "\n<p>English distinguishes <em>in</em>, <em>at</em> and <em>to</em>; with the names of towns and countries and with familiar places Catalan uses <strong>a</strong> for all three — both for <em>location</em> and for <em>direction</em>:</p>\n<ul>\n  <li>Visc <strong>a</strong> Barcelona. — I live in Barcelona.</li>\n  <li>Vaig <strong>a</strong> Barcelona. — I’m going to Barcelona.</li>\n  <li>Soc <strong>a</strong> casa / <strong>a</strong> la feina / <strong>a</strong> l’escola. — I’m at home / at work / at school.</li>\n</ul>\n<p>So English <em>in</em> is not automatically <em>en</em>: <em>I live in London</em> is <em>Visc <strong>a</strong> Londres</em>, not <em>en Londres</em> (that’s Spanish).</p>\n<p><strong>en</strong> is used before the indefinite article, demonstratives and quantity words:</p>\n<ul>\n  <li>Viu <strong>en</strong> un poble petit. — He lives in a small village.</li>\n  <li><strong>En</strong> aquest carrer hi ha molts bars. — There are lots of bars in this street.</li>\n</ul>\n<p><strong>de</strong> marks origin and movement “from”:</p>\n<ul>\n  <li>Soc <strong>d’</strong>Anglaterra. — I’m from England. Vinc <strong>de</strong> la feina. — I’m coming from work.</li>\n</ul>\n<p>Remember the contractions: <em>a + el = al</em>, <em>de + el = del</em> (Unit 4). Catalan also keeps the article where English often drops it: <em>a la feina</em> (at work), <em>de l’escola</em> (from school).</p>\n",
+  "examples": [
+   {
+    "ca": "Treballo a l’hospital.",
+    "en": "I work at the hospital."
+   },
+   {
+    "ca": "Anem al cinema?",
+    "en": "Shall we go to the cinema?"
+   },
+   {
+    "ca": "Viuen en un pis molt gran.",
+    "en": "They live in a very big flat."
+   },
+   {
+    "ca": "Torno de Girona demà.",
+    "en": "I’m coming back from Girona tomorrow."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Fill in a, al, en or de / d’ (adding the article where needed).",
+    "items": [
+     {
+      "q": "Visc ___ Tarragona.",
+      "a": "a"
+     },
+     {
+      "q": "Anem ___ mercat.",
+      "a": "al"
+     },
+     {
+      "q": "Treballa ___ una empresa petita.",
+      "a": "en"
+     },
+     {
+      "q": "Som ___ Londres.",
+      "a": "de"
+     },
+     {
+      "q": "Vinc ___ escola.",
+      "a": "de l’"
+     },
+     {
+      "q": "Sou ___ casa?",
+      "a": "a"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "number": 28,
+  "title": "per and per a",
+  "summary": "Cause and means versus purpose and recipient.",
+  "explanation": "\n<p>English <em>for</em> covers both: <em>thanks for everything</em> (a cause → <strong>per</strong>) and <em>a present for you</em> (a recipient → <strong>per a</strong>). Catalan splits them, and <strong>per</strong> also does the work of English <em>by</em>, <em>through</em>, <em>because of</em> and <em>(in order) to</em>.</p>\n<p><strong>per</strong> expresses:</p>\n<ul>\n  <li><em>cause</em>: Gràcies <strong>per</strong> tot. — Thanks for everything. No surto <strong>per</strong> la pluja. — I’m not going out because of the rain.</li>\n  <li><em>means</em>: Parlem <strong>per</strong> telèfon. — We talk on the phone.</li>\n  <li><em>route, “through”</em>: Passo <strong>per</strong> la plaça. — I go through the square.</li>\n  <li><em>exchange, price</em>: L’he comprat <strong>per</strong> deu euros. — I bought it for ten euros.</li>\n  <li><em>purpose, with an infinitive</em>: Estudio català <strong>per</strong> treballar a Barcelona. — I’m learning Catalan (in order) to work in Barcelona.</li>\n</ul>\n<p><strong>per a</strong> + a noun or pronoun expresses the <em>recipient</em> or the <em>intended use</em>:</p>\n<ul>\n  <li>Aquest regal és <strong>per a</strong> tu. — This present is for you.</li>\n  <li>Un llibre <strong>per a</strong> nens. — A book for children.</li>\n</ul>\n<p>The simple rule since the IEC’s 2016 grammar: before an infinitive you can always use <strong>per</strong>; before a noun meaning “for someone / something” use <strong>per a</strong>. A quick test: if English <em>for</em> could be replaced by <em>because of</em>, <em>in exchange for</em> or <em>through</em>, it’s <strong>per</strong>.</p>\n",
+  "examples": [
+   {
+    "ca": "Moltes gràcies per la invitació.",
+    "en": "Thank you very much for the invitation."
+   },
+   {
+    "ca": "He vingut per veure’t.",
+    "en": "I’ve come to see you."
+   },
+   {
+    "ca": "Hi ha una carta per a vostè.",
+    "en": "There’s a letter for you."
+   },
+   {
+    "ca": "Hem passat per Girona.",
+    "en": "We went through Girona."
+   }
+  ],
+  "exercises": [
+   {
+    "instruction": "Fill in per or per a.",
+    "items": [
+     {
+      "q": "Gràcies ___ la teva ajuda.",
+      "a": "per"
+     },
+     {
+      "q": "Aquestes flors són ___ la teva mare.",
+      "a": "per a"
+     },
+     {
+      "q": "Treballo ___ guanyar diners.",
+      "a": "per"
+     },
+     {
+      "q": "M’ho ha enviat ___ correu.",
+      "a": "per"
+     },
+     {
+      "q": "És un exercici ___ principiants.",
+      "a": "per a"
+     },
+     {
+      "q": "Passarem ___ Lleida.",
+      "a": "per"
+     }
+    ]
+   }
+  ]
+ }
+]

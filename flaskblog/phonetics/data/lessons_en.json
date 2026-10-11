@@ -1,0 +1,2861 @@
+[
+  {
+    "number": 1,
+    "slug": "alfabet",
+    "title": "The alphabet and letter names",
+    "section": "Основи",
+    "level": "A1",
+    "summary": "The names of the letters of the Catalan alphabet, silent h, and the transcription used in this course.",
+    "explanation": "<p>The Catalan alphabet has 26 letters, the same as the English one. On top of these there are <strong>ç</strong> (<em>ce trencada</em>, “broken c”), <strong>l·l</strong> (<em>ela geminada</em>, “double l”) and letters with accents: à, è, é, í, ï, ò, ó, ú, ü. The letters k and w appear almost only in loanwords and proper names, and y only in the combination <strong>ny</strong> and in loanwords.</p><p>Letter names are feminine (<em>la a</em>, <em>la be</em>, <em>la hac</em>):</p><ul><li>a, be (<em>be alta</em>), ce, de, e, efa, ge, hac, i, jota, ca, ela, ema;</li><li>ena, o, pe, cu, erra, essa, te, u, ve (<em>ve baixa</em>), doble ve, ics (<em>xeix</em>), i grega, zeta.</li></ul><p>In conversation you will also hear <em>efe</em>, <em>ele</em>, <em>eme</em>, <em>ene</em>, <em>erre</em>, <em>esse</em>. The labels “be alta” (“tall b”) and “ve baixa” (“low v”) exist because in Central Catalan b and v sound exactly the same. The letter x has two names: <em>ics</em> and the popular <em>xeix</em>.</p><p>The letter <strong>h</strong> (<em>hac</em>) is silent in native Catalan words: <em>hola</em> [ˈɔlə], <em>home</em> [ˈɔmə], <em>ahir</em> [əˈi]. Do not breathe it out as in English “hat”: <em>hola</em> starts straight on the vowel, as “honest” does.</p><p>Several letters do not stand for what an English reader expects: <strong>j</strong> is the sound in the middle of “measure” [ʒ], not the “j” of “jam”; <strong>v</strong> is pronounced [b]; <strong>x</strong> is usually “sh” [ʃ]; and <strong>p</strong>, <strong>t</strong>, <strong>c</strong> are never followed by the puff of air that English adds in “pin”, “tin”, “kin”: say them as in “spin”, “sting”, “skin”. Each of these points has its own lesson.</p><p>About the transcription. This course teaches <strong>Central (Barcelona)</strong> pronunciation. Square brackets give a simplified (broad) IPA transcription: it shows the reduction of unstressed vowels to [ə] and [u], open and closed [ɛ e ɔ o], the sounds [ʎ ɲ ʃ ʒ tʃ dʒ ɾ r z], final devoicing and silent letters. It does not mark the softened [β ð ɣ] between vowels (we write [b d ɡ]) or the “dark” quality of l (we write [l]). The mark ˈ stands before the stressed syllable, including in one-syllable content words: <em>pa</em> [ˈpa] “bread”.</p>",
+    "sounds": [
+      {
+        "spelling": "h",
+        "ipa": "∅",
+        "example": "hola",
+        "example_ipa": "ˈɔlə",
+        "en": "silent",
+        "note": "name: hac [ˈak]"
+      },
+      {
+        "spelling": "j",
+        "ipa": "ʒ",
+        "example": "jo",
+        "example_ipa": "ˈʒɔ",
+        "en": "like the “s” in “measure”, never the “j” in “jam”",
+        "note": "name: jota [ˈʒɔtə]"
+      },
+      {
+        "spelling": "g",
+        "ipa": "ɡ, ʒ",
+        "example": "gat",
+        "example_ipa": "ˈɡat",
+        "en": "like the “g” in “go”; before e, i like the “s” in “measure”",
+        "note": "name: ge [ˈʒe]"
+      },
+      {
+        "spelling": "c",
+        "ipa": "k, s",
+        "example": "casa",
+        "example_ipa": "ˈkazə",
+        "en": "like “k”, with no puff of air; before e, i like “s”",
+        "note": "name: ce [ˈse]"
+      },
+      {
+        "spelling": "q",
+        "ipa": "k",
+        "example": "qui",
+        "example_ipa": "ˈki",
+        "en": "like “k”, with no puff of air",
+        "note": "name: cu [ˈku]; always written together with u: qu"
+      },
+      {
+        "spelling": "r",
+        "ipa": "ɾ, r",
+        "example": "rosa",
+        "example_ipa": "ˈrɔzə",
+        "en": "a tap or a trill, never the English “r” (see Lesson 10)",
+        "note": "name: erra [ˈɛrə]"
+      },
+      {
+        "spelling": "s",
+        "ipa": "s, z",
+        "example": "sol",
+        "example_ipa": "ˈsɔl",
+        "en": "like the “s” in “sun”; between vowels like the “z” in “zoo”",
+        "note": "name: essa [ˈɛsə]"
+      },
+      {
+        "spelling": "v",
+        "ipa": "b",
+        "example": "vi",
+        "example_ipa": "ˈbi",
+        "en": "like “b”; there is no English-style “v”",
+        "note": "name: ve baixa [ˈbe ˈbaʃə]"
+      },
+      {
+        "spelling": "w",
+        "ipa": "w, b",
+        "example": "web",
+        "example_ipa": "ˈwɛp",
+        "en": "like English “w”, or [b]",
+        "note": "name: doble ve [ˈdoblə ˈbe]; only in loanwords"
+      },
+      {
+        "spelling": "x",
+        "ipa": "ʃ, ks",
+        "example": "xocolata",
+        "example_ipa": "ʃukuˈlatə",
+        "en": "like the “sh” in “shop”; in some words like the “x” in “taxi”",
+        "note": "name: ics [ˈiks] or xeix [ˈʃɛʃ]"
+      },
+      {
+        "spelling": "y",
+        "ipa": "ɲ (in ny)",
+        "example": "any",
+        "example_ipa": "ˈaɲ",
+        "en": "in ny: like the “ny” in “canyon”, but as one sound",
+        "note": "name: i grega [ˈi ˈɡɾɛɡə]; on its own only in loanwords and names"
+      },
+      {
+        "spelling": "z",
+        "ipa": "z",
+        "example": "zero",
+        "example_ipa": "ˈzɛɾu",
+        "en": "like the “z” in “zoo”",
+        "note": "name: zeta [ˈzɛtə]"
+      }
+    ],
+    "words": [
+      {
+        "ca": "lletra",
+        "ipa": "ˈʎɛtɾə",
+        "en": "letter (of the alphabet)"
+      },
+      {
+        "ca": "alfabet",
+        "ipa": "əlfəˈbɛt",
+        "en": "alphabet"
+      },
+      {
+        "ca": "hola",
+        "ipa": "ˈɔlə",
+        "en": "hello"
+      },
+      {
+        "ca": "home",
+        "ipa": "ˈɔmə",
+        "en": "man; person"
+      },
+      {
+        "ca": "hora",
+        "ipa": "ˈɔɾə",
+        "en": "hour; time"
+      },
+      {
+        "ca": "ahir",
+        "ipa": "əˈi",
+        "en": "yesterday"
+      },
+      {
+        "ca": "hac",
+        "ipa": "ˈak",
+        "en": "the letter h"
+      },
+      {
+        "ca": "jota",
+        "ipa": "ˈʒɔtə",
+        "en": "the letter j"
+      },
+      {
+        "ca": "erra",
+        "ipa": "ˈɛrə",
+        "en": "the letter r"
+      },
+      {
+        "ca": "essa",
+        "ipa": "ˈɛsə",
+        "en": "the letter s"
+      },
+      {
+        "ca": "ve baixa",
+        "ipa": "ˈbe ˈbaʃə",
+        "en": "the letter v"
+      },
+      {
+        "ca": "doble ve",
+        "ipa": "ˈdoblə ˈbe",
+        "en": "the letter w"
+      },
+      {
+        "ca": "i grega",
+        "ipa": "ˈi ˈɡɾɛɡə",
+        "en": "the letter y"
+      },
+      {
+        "ca": "zeta",
+        "ipa": "ˈzɛtə",
+        "en": "the letter z"
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "What is the letter called?",
+        "items": [
+          {
+            "q": "h",
+            "a": "hac [ˈak]"
+          },
+          {
+            "q": "j",
+            "a": "jota [ˈʒɔtə]"
+          },
+          {
+            "q": "v",
+            "a": "ve baixa [ˈbe ˈbaʃə] (or just ve)"
+          },
+          {
+            "q": "w",
+            "a": "doble ve [ˈdoblə ˈbe]"
+          },
+          {
+            "q": "x",
+            "a": "ics [ˈiks] or xeix [ˈʃɛʃ]"
+          },
+          {
+            "q": "y",
+            "a": "i grega [ˈi ˈɡɾɛɡə]"
+          },
+          {
+            "q": "z",
+            "a": "zeta [ˈzɛtə]"
+          }
+        ]
+      },
+      {
+        "instruction": "Spell the word aloud in Catalan.",
+        "items": [
+          {
+            "q": "hola",
+            "a": "hac, o, ela, a"
+          },
+          {
+            "q": "casa",
+            "a": "ce, a, essa, a"
+          },
+          {
+            "q": "jove",
+            "a": "jota, o, ve baixa, e"
+          },
+          {
+            "q": "zero",
+            "a": "zeta, e, erra, o"
+          },
+          {
+            "q": "xec",
+            "a": "ics (xeix), e, ce"
+          },
+          {
+            "q": "any",
+            "a": "a, ena, i grega"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 2,
+    "slug": "redukcia-holosnykh",
+    "title": "Strong and weak vowels: vowel reduction",
+    "section": "Голосні",
+    "level": "A1",
+    "summary": "Why unstressed a and e sound like [ə], and unstressed o like [u].",
+    "explanation": "<p>The key rule of Central Catalan pronunciation: <strong>vowel quality depends on stress</strong>. Stressed syllables distinguish seven vowels: [a], [ɛ], [e], [i], [ɔ], [o], [u]. Unstressed syllables have only three: [ə], [i], [u].</p><ul><li>unstressed <strong>a</strong> and <strong>e</strong> are pronounced [ə]: <em>casa</em> [ˈkazə], <em>pare</em> [ˈpaɾə], <em>petit</em> [pəˈtit];</li><li>unstressed <strong>o</strong> is pronounced [u]: <em>posar</em> [puˈza], <em>tomàquet</em> [tuˈmakət];</li><li><strong>i</strong> and <strong>u</strong> do not change: <em>dimarts</em> [diˈmaɾs], <em>música</em> [ˈmuzikə].</li></ul><p>The sound [ə] (“schwa”) is a short, relaxed, indistinct vowel, somewhere between “a” and “e”. Good news: English has it too. It is the first vowel of “about” and the last one of “sofa”, so you already know how to make it.</p><p>Because of reduction, the same word sounds different in different forms: <em>porta</em> [ˈpɔɾtə] “door”, but <em>portar</em> [puɾˈta] “to carry”; <em>casa</em> [ˈkazə], but <em>caseta</em> [kəˈzɛtə] “little house”. So first work out where the stress falls (Lesson 4), and only then pronounce the vowels.</p><p>Tip for English speakers: your habit of weakening unstressed vowels helps, but Catalan follows stricter rules. Only a and e become [ə]. Unstressed <strong>o</strong> becomes [u], like a short “oo”, not a schwa: <em>Montserrat</em> is [munsəˈrat]. Unstressed <strong>i</strong> and <strong>u</strong> stay clear [i] and [u], where English would blur them (compare the “u” in “support”): <em>dimarts</em> [diˈmaɾs], <em>música</em> [ˈmuzikə]. Stressed vowels, on the other hand, are always full and steady: never let them glide into “ay” or “oh”. <em>Barcelona</em> is [bəɾsəˈlonə]: two schwas, then a pure stressed [o]. Valencian pronunciation has no reduction; see Lesson 13.</p>",
+    "sounds": [
+      {
+        "spelling": "a (stressed)",
+        "ipa": "a",
+        "example": "casa",
+        "example_ipa": "ˈkazə",
+        "en": "between the “a” in “cat” and the “a” in “father”, but short",
+        "note": ""
+      },
+      {
+        "spelling": "a (unstressed)",
+        "ipa": "ə",
+        "example": "parlar",
+        "example_ipa": "pəɾˈla",
+        "en": "like the “a” in “about” or “sofa”",
+        "note": ""
+      },
+      {
+        "spelling": "e (unstressed)",
+        "ipa": "ə",
+        "example": "mare",
+        "example_ipa": "ˈmaɾə",
+        "en": "the same sound [ə]",
+        "note": ""
+      },
+      {
+        "spelling": "o (unstressed)",
+        "ipa": "u",
+        "example": "posar",
+        "example_ipa": "puˈza",
+        "en": "like the “oo” in “food”, but short",
+        "note": ""
+      },
+      {
+        "spelling": "i",
+        "ipa": "i",
+        "example": "dimarts",
+        "example_ipa": "diˈmaɾs",
+        "en": "like the “ee” in “see”, but short and steady",
+        "note": "never reduced"
+      },
+      {
+        "spelling": "u",
+        "ipa": "u",
+        "example": "música",
+        "example_ipa": "ˈmuzikə",
+        "en": "like the “oo” in “food”, but short",
+        "note": "never reduced"
+      },
+      {
+        "spelling": "e (stressed)",
+        "ipa": "ɛ, e",
+        "example": "festa",
+        "example_ipa": "ˈfɛstə",
+        "en": "open: like the “e” in “bed”; closed: narrower, never “ay”",
+        "note": "more in Lesson 3"
+      },
+      {
+        "spelling": "o (stressed)",
+        "ipa": "ɔ, o",
+        "example": "porta",
+        "example_ipa": "ˈpɔɾtə",
+        "en": "open: like the “o” in British “hot”; closed: narrower, never “oh”",
+        "note": "more in Lesson 3"
+      }
+    ],
+    "words": [
+      {
+        "ca": "casa",
+        "ipa": "ˈkazə",
+        "en": "house; home"
+      },
+      {
+        "ca": "mare",
+        "ipa": "ˈmaɾə",
+        "en": "mother"
+      },
+      {
+        "ca": "pare",
+        "ipa": "ˈpaɾə",
+        "en": "father"
+      },
+      {
+        "ca": "parlar",
+        "ipa": "pəɾˈla",
+        "en": "to speak, to talk"
+      },
+      {
+        "ca": "posar",
+        "ipa": "puˈza",
+        "en": "to put, to place"
+      },
+      {
+        "ca": "porta",
+        "ipa": "ˈpɔɾtə",
+        "en": "door"
+      },
+      {
+        "ca": "portar",
+        "ipa": "puɾˈta",
+        "en": "to carry, to bring"
+      },
+      {
+        "ca": "tomàquet",
+        "ipa": "tuˈmakət",
+        "en": "tomato"
+      },
+      {
+        "ca": "petit",
+        "ipa": "pəˈtit",
+        "en": "small, little"
+      },
+      {
+        "ca": "Barcelona",
+        "ipa": "bəɾsəˈlonə",
+        "en": "Barcelona"
+      },
+      {
+        "ca": "Montserrat",
+        "ipa": "munsəˈrat",
+        "en": "Montserrat"
+      },
+      {
+        "ca": "català",
+        "ipa": "kətəˈla",
+        "en": "Catalan (language); Catalan"
+      },
+      {
+        "ca": "escola",
+        "ipa": "əsˈkɔlə",
+        "en": "school"
+      },
+      {
+        "ca": "dormir",
+        "ipa": "duɾˈmi",
+        "en": "to sleep"
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "How is the marked unstressed vowel pronounced?",
+        "items": [
+          {
+            "q": "casa — final a",
+            "a": "[ə]: [ˈkazə]"
+          },
+          {
+            "q": "posar — o",
+            "a": "[u]: [puˈza]"
+          },
+          {
+            "q": "petit — e",
+            "a": "[ə]: [pəˈtit]"
+          },
+          {
+            "q": "tomàquet — o",
+            "a": "[u]: [tuˈmakət]"
+          },
+          {
+            "q": "dimarts — i",
+            "a": "[i]: i is not reduced, [diˈmaɾs]"
+          },
+          {
+            "q": "escola — initial e",
+            "a": "[ə]: [əsˈkɔlə]"
+          },
+          {
+            "q": "Montserrat — o",
+            "a": "[u]: [munsəˈrat]"
+          }
+        ]
+      },
+      {
+        "instruction": "The stress moves to another syllable. How does the pronunciation change?",
+        "items": [
+          {
+            "q": "porta → portar",
+            "a": "[ˈpɔɾtə] → [puɾˈta]: o loses the stress and becomes [u]"
+          },
+          {
+            "q": "casa → caseta",
+            "a": "[ˈkazə] → [kəˈzɛtə]: the first a becomes [ə]"
+          },
+          {
+            "q": "roda → rodar",
+            "a": "[ˈrɔdə] → [ruˈda]: o becomes [u]"
+          },
+          {
+            "q": "festa → festiu",
+            "a": "[ˈfɛstə] → [fəsˈtiw]: e becomes [ə]"
+          },
+          {
+            "q": "mar → mariner",
+            "a": "[ˈmaɾ] → [məɾiˈne]: a becomes [ə]"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 3,
+    "slug": "vidkryti-zakryti-e-o",
+    "title": "Open and closed e and o: è/é, ò/ó",
+    "section": "Голосні",
+    "level": "A2",
+    "summary": "Stressed e and o can be open or closed, and the difference can distinguish words.",
+    "explanation": "<p>Under stress, Catalan <strong>e</strong> and <strong>o</strong> each have two variants:</p><ul><li>open [ɛ], with the mouth wider open: <em>cafè</em> [kəˈfɛ], <em>festa</em> [ˈfɛstə];</li><li>closed [e], with the mouth less open, nearer to [i]: <em>també</em> [təmˈbe], <em>pera</em> [ˈpeɾə] “pear”;</li><li>open [ɔ]: <em>això</em> [əˈʃɔ], <em>roba</em> [ˈrɔbə] “clothes”;</li><li>closed [o], with the lips more rounded, nearer to [u]: <em>cançó</em> [kənˈso], <em>boca</em> [ˈbokə] “mouth”.</li></ul><p>If a stressed e or o carries an accent, the accent shows its quality: the <strong>grave</strong> (è, ò) marks an open vowel, the <strong>acute</strong> (é, ó) a closed one. But an accent is written only when the stress rules require it (Lesson 4). In all other words you have to learn the quality together with the word or check it in a dictionary: <em>festa</em> [ˈfɛstə], but <em>pera</em> [ˈpeɾə] “pear”; <em>roba</em> [ˈrɔbə], but <em>boca</em> [ˈbokə].</p><p>A few pairs are still told apart by a <strong>diacritic accent</strong> as well as by pronunciation: <em>bé</em> [ˈbe] “well” — <em>be</em> [ˈbɛ] “lamb”; <em>són</em> [ˈson] “(they) are” — <em>son</em> [ˈsɔn] “sleep”; <em>déu</em> [ˈdew] “god” — <em>deu</em> [ˈdɛw] “ten”.</p><p>The 2016 spelling reform abolished most diacritic accents. Now <em>dona</em> is both [ˈdɔnə] “woman” and [ˈdonə] “(he/she) gives”; <em>os</em> is both [ˈɔs] “bone” and [ˈos] “bear”; <em>net</em> is both [ˈnɛt] “clean” and [ˈnet] “grandson”. The spelling is the same, the pronunciation differs, and context tells you the meaning.</p><p>The open vowels are easy for English speakers: [ɛ] is the “e” of “bed”, and [ɔ] is close to the “o” of British “hot”, held a little longer. The closed vowels are the trap. English turns them into diphthongs: [e] slides into the “ay” of “say”, [o] into the “oh” of “go”. Catalan [e] and [o] are pure and steady: start as for “say” or “go” and hold the vowel without letting it slide towards “y” or “w” (Scottish “day” and “go” come close). <em>També</em> must not end like English “bay”, nor <em>cançó</em> like “so”. Without stress the difference disappears: there e and o are reduced (Lesson 2).</p>",
+    "sounds": [
+      {
+        "spelling": "è",
+        "ipa": "ɛ",
+        "example": "cafè",
+        "example_ipa": "kəˈfɛ",
+        "en": "like the “e” in “bed”",
+        "note": "always open"
+      },
+      {
+        "spelling": "é",
+        "ipa": "e",
+        "example": "també",
+        "example_ipa": "təmˈbe",
+        "en": "no exact English equivalent: like the “ay” in “say” without the final “y” glide",
+        "note": "always closed"
+      },
+      {
+        "spelling": "ò",
+        "ipa": "ɔ",
+        "example": "això",
+        "example_ipa": "əˈʃɔ",
+        "en": "like the “o” in British “hot”, held a little longer",
+        "note": "always open"
+      },
+      {
+        "spelling": "ó",
+        "ipa": "o",
+        "example": "cançó",
+        "example_ipa": "kənˈso",
+        "en": "no exact English equivalent: like the “o” in “go” without the final “w” glide",
+        "note": "always closed"
+      },
+      {
+        "spelling": "e (no accent)",
+        "ipa": "ɛ, e",
+        "example": "festa",
+        "example_ipa": "ˈfɛstə",
+        "en": "open or closed, depending on the word",
+        "note": "but pera [ˈpeɾə] is closed"
+      },
+      {
+        "spelling": "o (no accent)",
+        "ipa": "ɔ, o",
+        "example": "roba",
+        "example_ipa": "ˈrɔbə",
+        "en": "open or closed, depending on the word",
+        "note": "boca [ˈbokə] is closed"
+      }
+    ],
+    "words": [
+      {
+        "ca": "cafè",
+        "ipa": "kəˈfɛ",
+        "en": "coffee; café"
+      },
+      {
+        "ca": "també",
+        "ipa": "təmˈbe",
+        "en": "also, too"
+      },
+      {
+        "ca": "això",
+        "ipa": "əˈʃɔ",
+        "en": "this, that"
+      },
+      {
+        "ca": "cançó",
+        "ipa": "kənˈso",
+        "en": "song"
+      },
+      {
+        "ca": "bé",
+        "ipa": "ˈbe",
+        "en": "well"
+      },
+      {
+        "ca": "be",
+        "ipa": "ˈbɛ",
+        "en": "lamb"
+      },
+      {
+        "ca": "són",
+        "ipa": "ˈson",
+        "en": "(they) are"
+      },
+      {
+        "ca": "son",
+        "ipa": "ˈsɔn",
+        "en": "sleep"
+      },
+      {
+        "ca": "dona",
+        "ipa": "ˈdɔnə",
+        "en": "woman"
+      },
+      {
+        "ca": "dona",
+        "ipa": "ˈdonə",
+        "en": "(he/she) gives"
+      },
+      {
+        "ca": "os",
+        "ipa": "ˈɔs",
+        "en": "bone"
+      },
+      {
+        "ca": "os",
+        "ipa": "ˈos",
+        "en": "bear"
+      },
+      {
+        "ca": "net",
+        "ipa": "ˈnɛt",
+        "en": "clean"
+      },
+      {
+        "ca": "net",
+        "ipa": "ˈnet",
+        "en": "grandson"
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Open or closed? Let the accent guide you.",
+        "items": [
+          {
+            "q": "cafè",
+            "a": "open [ɛ]: [kəˈfɛ]"
+          },
+          {
+            "q": "cançó",
+            "a": "closed [o]: [kənˈso]"
+          },
+          {
+            "q": "també",
+            "a": "closed [e]: [təmˈbe]"
+          },
+          {
+            "q": "això",
+            "a": "open [ɔ]: [əˈʃɔ]"
+          },
+          {
+            "q": "anglès",
+            "a": "open [ɛ]: [əŋˈɡlɛs]"
+          },
+          {
+            "q": "només",
+            "a": "closed [e]: [nuˈmes]"
+          },
+          {
+            "q": "òpera",
+            "a": "open [ɔ]: [ˈɔpəɾə]"
+          }
+        ]
+      },
+      {
+        "instruction": "What does the word mean with this pronunciation?",
+        "items": [
+          {
+            "q": "net [ˈnɛt]",
+            "a": "“clean”"
+          },
+          {
+            "q": "net [ˈnet]",
+            "a": "“grandson”"
+          },
+          {
+            "q": "os [ˈɔs]",
+            "a": "“bone”"
+          },
+          {
+            "q": "os [ˈos]",
+            "a": "“bear”"
+          },
+          {
+            "q": "dona [ˈdɔnə]",
+            "a": "“woman”"
+          },
+          {
+            "q": "be [ˈbɛ]",
+            "a": "“lamb”"
+          },
+          {
+            "q": "deu [ˈdɛw]",
+            "a": "“ten” (also “must; owes”)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 4,
+    "slug": "naholos",
+    "title": "Stress and the written accent",
+    "section": "Наголос і склад",
+    "level": "A1",
+    "summary": "How to find the stressed syllable and when a vowel takes a written accent.",
+    "explanation": "<p>By the position of the stress, Catalan words fall into three types:</p><ul><li><strong>aguda</strong>, stressed on the last syllable: <em>cantar</em>, <em>ciutat</em>, <em>català</em>;</li><li><strong>plana</strong>, stressed on the second-to-last syllable: <em>casa</em>, <em>examen</em>, <em>fàcil</em>;</li><li><strong>esdrúixola</strong>, stressed on the third syllable from the end: <em>música</em>, <em>pàgina</em>, <em>telèfon</em>.</li></ul><p>How to read a word without an accent: if it ends in <strong>a vowel, a vowel + s, -en or -in</strong>, the stress falls on the second-to-last syllable (<em>casa</em>, <em>cases</em>, <em>parlen</em>); if it ends in any other consonant, it falls on the last syllable (<em>cantar</em>, <em>ciutat</em>, <em>amic</em>). Words ending in a falling diphthong (-ai, -ei, -au, -eu, -iu, -ou) behave like words ending in a consonant: <em>remei</em> [rəˈmej] “remedy”, <em>avui</em> [əˈbuj] “today”.</p><p>An accent is written when a word <strong>breaks</strong> this rule:</p><ul><li>an aguda ending in a vowel, a vowel + s, -en or -in: <em>català</em>, <em>cafè</em>, <em>anglès</em>, <em>entén</em>, <em>Berlín</em>;</li><li>a plana ending in anything else: <em>fàcil</em>, <em>difícil</em>, <em>exàmens</em> (but <em>examen</em> has no accent);</li><li>an esdrúixola, always: <em>música</em>, <em>pàgina</em>, <em>telèfon</em>.</li></ul><p>The shape of the accent depends on the vowel: <strong>a</strong> always takes a grave (<em>à</em>), <strong>i</strong> and <strong>u</strong> always take an acute (<em>í</em>, <em>ú</em>), and <strong>e</strong> and <strong>o</strong> take a grave for the open sound (è, ò) and an acute for the closed one (é, ó). Final sequences of i or u + vowel after a consonant (-ia, -ie, -io, -ua) count as two syllables for spelling purposes, so <em>família</em>, <em>història</em>, <em>Àsia</em> are esdrúixoles and take an accent (this does not apply after qu, gu: <em>aigua</em>).</p><p>One-syllable words take no accent (<em>sol</em>, <em>pa</em>, <em>mes</em>), except for a short list of diacritic accents: <em>bé, déu, és, mà, més, món, pèl, què, sé, sí, sòl, són, té, ús, vós</em>, plus the forms <em>véns</em> and <em>vénen</em> of the verb <em>venir</em>.</p><p>Getting the stress right matters even more in Catalan than in English, because it decides how every other vowel in the word is pronounced (Lesson 2). English speakers also tend to pull the stress towards the start of a word, as in English “CAT-a-lan”; Catalan <em>català</em> [kətəˈla] is stressed on the last syllable.</p>",
+    "sounds": [
+      {
+        "spelling": "à",
+        "ipa": "a",
+        "example": "català",
+        "example_ipa": "kətəˈla",
+        "en": "stressed “a”",
+        "note": "a always takes a grave accent"
+      },
+      {
+        "spelling": "è",
+        "ipa": "ɛ",
+        "example": "cafè",
+        "example_ipa": "kəˈfɛ",
+        "en": "stressed open “e”, as in “bed”",
+        "note": ""
+      },
+      {
+        "spelling": "é",
+        "ipa": "e",
+        "example": "també",
+        "example_ipa": "təmˈbe",
+        "en": "stressed closed [e]",
+        "note": ""
+      },
+      {
+        "spelling": "í",
+        "ipa": "i",
+        "example": "així",
+        "example_ipa": "əˈʃi",
+        "en": "stressed “ee”",
+        "note": "i always takes an acute accent"
+      },
+      {
+        "spelling": "ò",
+        "ipa": "ɔ",
+        "example": "això",
+        "example_ipa": "əˈʃɔ",
+        "en": "stressed open “o”",
+        "note": ""
+      },
+      {
+        "spelling": "ó",
+        "ipa": "o",
+        "example": "cançó",
+        "example_ipa": "kənˈso",
+        "en": "stressed closed [o]",
+        "note": ""
+      },
+      {
+        "spelling": "ú",
+        "ipa": "u",
+        "example": "ningú",
+        "example_ipa": "niŋˈɡu",
+        "en": "stressed “oo”",
+        "note": "u always takes an acute accent"
+      }
+    ],
+    "words": [
+      {
+        "ca": "cantar",
+        "ipa": "kənˈta",
+        "en": "to sing"
+      },
+      {
+        "ca": "casa",
+        "ipa": "ˈkazə",
+        "en": "house; home"
+      },
+      {
+        "ca": "ciutat",
+        "ipa": "siwˈtat",
+        "en": "city, town"
+      },
+      {
+        "ca": "català",
+        "ipa": "kətəˈla",
+        "en": "Catalan (language); Catalan"
+      },
+      {
+        "ca": "cafè",
+        "ipa": "kəˈfɛ",
+        "en": "coffee; café"
+      },
+      {
+        "ca": "també",
+        "ipa": "təmˈbe",
+        "en": "also, too"
+      },
+      {
+        "ca": "així",
+        "ipa": "əˈʃi",
+        "en": "like this, so"
+      },
+      {
+        "ca": "fàcil",
+        "ipa": "ˈfasil",
+        "en": "easy"
+      },
+      {
+        "ca": "difícil",
+        "ipa": "diˈfisil",
+        "en": "difficult"
+      },
+      {
+        "ca": "examen",
+        "ipa": "əɡˈzamən",
+        "en": "exam"
+      },
+      {
+        "ca": "exàmens",
+        "ipa": "əɡˈzaməns",
+        "en": "exams"
+      },
+      {
+        "ca": "música",
+        "ipa": "ˈmuzikə",
+        "en": "music"
+      },
+      {
+        "ca": "pàgina",
+        "ipa": "ˈpaʒinə",
+        "en": "page"
+      },
+      {
+        "ca": "família",
+        "ipa": "fəˈmiliə",
+        "en": "family"
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Where is the stress? Explain why.",
+        "items": [
+          {
+            "q": "cantar",
+            "a": "can-TAR: the word ends in -r, so the stress is on the last syllable"
+          },
+          {
+            "q": "casa",
+            "a": "CA-sa: it ends in a vowel, so the stress is on the second-to-last syllable"
+          },
+          {
+            "q": "fàcil",
+            "a": "FÀ-cil: the accent marks the stress on the second-to-last syllable"
+          },
+          {
+            "q": "música",
+            "a": "MÚ-si-ca: the stress is on the third syllable from the end, so there is an accent"
+          },
+          {
+            "q": "ciutat",
+            "a": "ciu-TAT: it ends in -t, so the stress is on the last syllable"
+          },
+          {
+            "q": "examen",
+            "a": "e-XA-men: it ends in -en, so the stress is on the second-to-last syllable"
+          },
+          {
+            "q": "cafè",
+            "a": "ca-FÈ: the accent marks the stress on the last syllable"
+          }
+        ]
+      },
+      {
+        "instruction": "Does it need an accent? Write the word correctly.",
+        "items": [
+          {
+            "q": "cami (stress on the last syllable)",
+            "a": "camí: an aguda ending in a vowel"
+          },
+          {
+            "q": "facil (stress on the first syllable)",
+            "a": "fàcil: a plana ending in -l"
+          },
+          {
+            "q": "parlar (stress on the last syllable)",
+            "a": "parlar, no accent: an aguda ending in -r"
+          },
+          {
+            "q": "examen (stress on -xa-)",
+            "a": "examen, no accent: a plana ending in -en"
+          },
+          {
+            "q": "examens (stress on -xa-)",
+            "a": "exàmens: a plana ending in -ens"
+          },
+          {
+            "q": "pagina (stress on the first syllable)",
+            "a": "pàgina: an esdrúixola always takes an accent"
+          },
+          {
+            "q": "frances (stress on the last syllable, open e)",
+            "a": "francès: an aguda ending in a vowel + s; open e takes a grave"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 5,
+    "slug": "dyftonhy-diarezys",
+    "title": "Diphthongs, triphthongs and the diaeresis: ï, ü",
+    "section": "Наголос і склад",
+    "level": "A2",
+    "summary": "How vowels combine into a single syllable, and why i and u sometimes carry two dots.",
+    "explanation": "<p><strong>Falling diphthongs</strong> are a vowel + a non-syllabic i [j] or u [w] in the same syllable: <em>mai</em> [ˈmaj], <em>rei</em> [ˈrej], <em>noi</em> [ˈnɔj], <em>avui</em> [əˈbuj], <em>pau</em> [ˈpaw], <em>peu</em> [ˈpɛw], <em>riu</em> [ˈriw], <em>nou</em> [ˈnɔw], <em>duu</em> [ˈduw]. Say each one as a single unit. Some match English closely: [aj] is the “y” of “my”, [ɔj] the “oy” of “boy”, [aw] the “ow” of “cow”. The ones ending in [w] after e, i, o have no English equivalent: keep the first vowel pure and simply round the lips into a short [w] at the end. Do not let <em>nou</em> [ˈnɔw] turn into English “know”, or <em>peu</em> [ˈpɛw] into “pew”.</p><p><strong>Rising diphthongs</strong> occur only after <em>q</em> and <em>g</em>: <em>quatre</em> [ˈkwatɾə], <em>quan</em> [ˈkwan], <em>aigua</em> [ˈajɡwə]; before e and i they need a diaeresis: <em>pingüí</em> [piŋˈɡwi], <em>aigües</em> [ˈajɡwəs], <em>qüestió</em> [kwəstiˈo]. Three-part combinations (<strong>triphthongs</strong>) also arise after qu, gu: <em>guaita</em> [ˈɡwajtə] “look!”, <em>Paraguai</em> [pəɾəˈɡwaj]. Elsewhere, i or u + vowel after a consonant make two separate syllables: <em>dia</em> [ˈdiə] (di-a), <em>història</em> [isˈtɔɾiə].</p><p>Between two vowels, i and u become the consonants [j] and [w]: <em>noia</em> [ˈnɔjə], <em>joia</em> [ˈʒɔjə], <em>cauen</em> [ˈkawən].</p><p>The <strong>diaeresis</strong> (<em>dièresi</em>) has two jobs:</p><ul><li>on <strong>ü</strong> after g, q before e, i, it shows that the u is pronounced: <em>pingüí</em>, <em>llengües</em>, <em>freqüent</em>;</li><li>on <strong>ï</strong> or <strong>ü</strong>, it shows that the vowel is a separate syllable rather than part of a diphthong (as in English “naïve”): <em>veïna</em> [bəˈinə] (ve-ï-na), <em>raïm</em> [rəˈim], <em>països</em> [pəˈizus], <em>Raül</em> [rəˈul].</li></ul><p>The diaeresis is not written when the vowel already carries an accent (<em>país</em>, but <em>països</em>), nor in the infinitive, gerund, future and conditional of verbs like <em>traduir</em>, <em>agrair</em> (<em>traduint</em>, <em>traduiré</em>), nor in words with the suffixes -isme, -ista (<em>egoisme</em>), even though the vowels are pronounced separately there too.</p>",
+    "sounds": [
+      {
+        "spelling": "ai",
+        "ipa": "aj",
+        "example": "mai",
+        "example_ipa": "ˈmaj",
+        "en": "like the “y” in “my”",
+        "note": ""
+      },
+      {
+        "spelling": "ei",
+        "ipa": "ej",
+        "example": "rei",
+        "example_ipa": "ˈrej",
+        "en": "close to the “ay” in “say”",
+        "note": ""
+      },
+      {
+        "spelling": "oi",
+        "ipa": "ɔj",
+        "example": "noi",
+        "example_ipa": "ˈnɔj",
+        "en": "like the “oy” in “boy”",
+        "note": ""
+      },
+      {
+        "spelling": "ui",
+        "ipa": "uj",
+        "example": "avui",
+        "example_ipa": "əˈbuj",
+        "en": "like “ooey” in “gooey”, squeezed into one syllable",
+        "note": ""
+      },
+      {
+        "spelling": "au",
+        "ipa": "aw",
+        "example": "pau",
+        "example_ipa": "ˈpaw",
+        "en": "like the “ow” in “cow”",
+        "note": ""
+      },
+      {
+        "spelling": "eu",
+        "ipa": "ɛw, ew",
+        "example": "peu",
+        "example_ipa": "ˈpɛw",
+        "en": "no English equivalent: the “e” of “bed” + a short [w]; not “pew”",
+        "note": "closed e in meu [ˈmew]"
+      },
+      {
+        "spelling": "iu",
+        "ipa": "iw",
+        "example": "riu",
+        "example_ipa": "ˈriw",
+        "en": "no English equivalent: “ee” + a short [w] in one syllable",
+        "note": ""
+      },
+      {
+        "spelling": "ou",
+        "ipa": "ɔw, ow",
+        "example": "nou",
+        "example_ipa": "ˈnɔw",
+        "en": "open “o” + a short [w]; not the “o” of “know”",
+        "note": ""
+      },
+      {
+        "spelling": "qua, gua",
+        "ipa": "kw, ɡw",
+        "example": "quatre",
+        "example_ipa": "ˈkwatɾə",
+        "en": "like the “qu” in “quarter” and the “gu” in “language”",
+        "note": ""
+      },
+      {
+        "spelling": "qüe, qüi, güe, güi",
+        "ipa": "kw, ɡw",
+        "example": "pingüí",
+        "example_ipa": "piŋˈɡwi",
+        "en": "the u is a short [w], as in “penguin”",
+        "note": ""
+      },
+      {
+        "spelling": "ï",
+        "ipa": "i",
+        "example": "veïna",
+        "example_ipa": "bəˈinə",
+        "en": "a separate syllable [i]",
+        "note": "breaks the diphthong"
+      },
+      {
+        "spelling": "ü (between vowels)",
+        "ipa": "u",
+        "example": "Raül",
+        "example_ipa": "rəˈul",
+        "en": "a separate syllable [u]",
+        "note": "breaks the diphthong"
+      }
+    ],
+    "words": [
+      {
+        "ca": "mai",
+        "ipa": "ˈmaj",
+        "en": "never"
+      },
+      {
+        "ca": "rei",
+        "ipa": "ˈrej",
+        "en": "king"
+      },
+      {
+        "ca": "noi",
+        "ipa": "ˈnɔj",
+        "en": "boy"
+      },
+      {
+        "ca": "avui",
+        "ipa": "əˈbuj",
+        "en": "today"
+      },
+      {
+        "ca": "pau",
+        "ipa": "ˈpaw",
+        "en": "peace"
+      },
+      {
+        "ca": "peu",
+        "ipa": "ˈpɛw",
+        "en": "foot"
+      },
+      {
+        "ca": "riu",
+        "ipa": "ˈriw",
+        "en": "river"
+      },
+      {
+        "ca": "nou",
+        "ipa": "ˈnɔw",
+        "en": "new; nine"
+      },
+      {
+        "ca": "quatre",
+        "ipa": "ˈkwatɾə",
+        "en": "four"
+      },
+      {
+        "ca": "aigua",
+        "ipa": "ˈajɡwə",
+        "en": "water"
+      },
+      {
+        "ca": "aigües",
+        "ipa": "ˈajɡwəs",
+        "en": "waters"
+      },
+      {
+        "ca": "pingüí",
+        "ipa": "piŋˈɡwi",
+        "en": "penguin"
+      },
+      {
+        "ca": "veïna",
+        "ipa": "bəˈinə",
+        "en": "neighbour (woman)"
+      },
+      {
+        "ca": "raïm",
+        "ipa": "rəˈim",
+        "en": "grapes"
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "How many syllables does the word have?",
+        "items": [
+          {
+            "q": "mai",
+            "a": "1: the diphthong [aj]"
+          },
+          {
+            "q": "raïm",
+            "a": "2: ra-ïm"
+          },
+          {
+            "q": "veïna",
+            "a": "3: ve-ï-na"
+          },
+          {
+            "q": "dia",
+            "a": "2: di-a"
+          },
+          {
+            "q": "països",
+            "a": "3: pa-ï-sos"
+          },
+          {
+            "q": "aigua",
+            "a": "2: ai-gua"
+          },
+          {
+            "q": "noia",
+            "a": "2: [ˈnɔjə]; i between vowels sounds as [j]"
+          }
+        ]
+      },
+      {
+        "instruction": "Is the u pronounced?",
+        "items": [
+          {
+            "q": "guerra",
+            "a": "no: [ˈɡɛrə]"
+          },
+          {
+            "q": "pingüí",
+            "a": "yes: [piŋˈɡwi], as the ü shows"
+          },
+          {
+            "q": "quatre",
+            "a": "yes: [ˈkwatɾə]; before a the u is always pronounced"
+          },
+          {
+            "q": "qui",
+            "a": "no: [ˈki]"
+          },
+          {
+            "q": "aigües",
+            "a": "yes: [ˈajɡwəs]"
+          },
+          {
+            "q": "guitarra",
+            "a": "no: [ɡiˈtarə]"
+          },
+          {
+            "q": "llengua",
+            "a": "yes: [ˈʎeŋɡwə]"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 6,
+    "slug": "c-g-qu-gu",
+    "title": "c, g, qu, gu",
+    "section": "Приголосні",
+    "level": "A1",
+    "summary": "When c and g sound [k] and [ɡ], when they sound [s] and [ʒ], and why Catalan needs qu, gu and gü.",
+    "explanation": "<p>The letters <strong>c</strong> and <strong>g</strong> are read differently depending on the letter that follows:</p><ul><li>before a, o, u and before a consonant, c = [k] and g = [ɡ]: <em>casa</em> [ˈkazə], <em>clau</em> [ˈklaw], <em>gat</em> [ˈɡat], <em>gran</em> [ˈɡɾan];</li><li>before e, i, c = [s] and g = [ʒ]: <em>cel</em> [ˈsɛl], <em>ciutat</em> [siwˈtat], <em>gent</em> [ˈʒen], <em>gelat</em> [ʒəˈlat];</li><li>at the end of a word, c = [k]: <em>amic</em> [əˈmik]. For final g, see Lessons 8 and 11.</li></ul><p>The pattern resembles English “cat” / “city” and “go” / “gem”, with one important difference: Catalan g before e, i is [ʒ], the sound in the middle of “measure” or at the end of “beige”, not the “j” of “gem”. <em>Gent</em> [ˈʒen] begins like the “s” of “measure”, and <em>Girona</em> is [ʒiˈɾonə], with no “d” sound at the start.</p><p>To get [k] and [ɡ] before e and i, Catalan writes <strong>qu</strong> and <strong>gu</strong>, and the u is silent: <em>que</em> [kə], <em>qui</em> [ˈki], <em>guerra</em> [ˈɡɛrə], <em>guitarra</em> [ɡiˈtarə]. English does the same in “guest” and “guitar”, but not in “queen”: Catalan <em>que</em> has no [w].</p><p>Before a and o, qu and gu are read with [w]: <em>quatre</em> [ˈkwatɾə], <em>quan</em> [ˈkwan], <em>guant</em> [ˈɡwan]. When [kw] or [ɡw] is needed before e or i, the u takes a diaeresis: <em>qüestió</em> [kwəstiˈo], <em>pingüí</em> [piŋˈɡwi], <em>aigües</em> [ˈajɡwəs].</p><p>These rules explain spelling changes between forms of a word: <em>amiga</em> → <em>amigues</em>, <em>boca</em> → <em>boques</em>, <em>aigua</em> → <em>aigües</em>, <em>plaça</em> → <em>places</em> (for ç, see Lesson 7). The sound stays the same; only the spelling changes.</p><p>Catalan [k], like [p] and [t], is <strong>unaspirated</strong>: no puff of air follows it, unlike English “cat” or “key”. Say it as in “skin” or “scar”. Hold your hand in front of your mouth and say <em>casa</em>, <em>qui</em>, <em>quatre</em>: you should feel no burst of breath. Catalan [ɡ] is the “g” of “go”; between vowels it softens in natural speech (the back of the tongue does not quite close), but it stays a g-type sound.</p>",
+    "sounds": [
+      {
+        "spelling": "c + a, o, u",
+        "ipa": "k",
+        "example": "casa",
+        "example_ipa": "ˈkazə",
+        "en": "like the “k” in “skin”, with no puff of air",
+        "note": ""
+      },
+      {
+        "spelling": "c + e, i",
+        "ipa": "s",
+        "example": "cel",
+        "example_ipa": "ˈsɛl",
+        "en": "like the “s” in “sun”",
+        "note": ""
+      },
+      {
+        "spelling": "-c (end of a word)",
+        "ipa": "k",
+        "example": "amic",
+        "example_ipa": "əˈmik",
+        "en": "like “k”, with no puff of air",
+        "note": ""
+      },
+      {
+        "spelling": "qu + e, i",
+        "ipa": "k",
+        "example": "qui",
+        "example_ipa": "ˈki",
+        "en": "like “k”; the u is silent",
+        "note": ""
+      },
+      {
+        "spelling": "qu + a, o",
+        "ipa": "kw",
+        "example": "quatre",
+        "example_ipa": "ˈkwatɾə",
+        "en": "like the “qu” in “quarter”",
+        "note": ""
+      },
+      {
+        "spelling": "qü + e, i",
+        "ipa": "kw",
+        "example": "qüestió",
+        "example_ipa": "kwəstiˈo",
+        "en": "like the “qu” in “quest”",
+        "note": ""
+      },
+      {
+        "spelling": "g + a, o, u",
+        "ipa": "ɡ",
+        "example": "gat",
+        "example_ipa": "ˈɡat",
+        "en": "like the “g” in “go”",
+        "note": ""
+      },
+      {
+        "spelling": "g + e, i",
+        "ipa": "ʒ",
+        "example": "gent",
+        "example_ipa": "ˈʒen",
+        "en": "like the “s” in “measure”, not the “g” in “gem”",
+        "note": ""
+      },
+      {
+        "spelling": "gu + e, i",
+        "ipa": "ɡ",
+        "example": "guerra",
+        "example_ipa": "ˈɡɛrə",
+        "en": "like the “gu” in “guest”; the u is silent",
+        "note": ""
+      },
+      {
+        "spelling": "gu + a, o",
+        "ipa": "ɡw",
+        "example": "guant",
+        "example_ipa": "ˈɡwan",
+        "en": "like the “gu” in “language”",
+        "note": ""
+      },
+      {
+        "spelling": "gü + e, i",
+        "ipa": "ɡw",
+        "example": "pingüí",
+        "example_ipa": "piŋˈɡwi",
+        "en": "like the “gu” in “penguin”",
+        "note": ""
+      }
+    ],
+    "words": [
+      {
+        "ca": "casa",
+        "ipa": "ˈkazə",
+        "en": "house; home"
+      },
+      {
+        "ca": "cel",
+        "ipa": "ˈsɛl",
+        "en": "sky"
+      },
+      {
+        "ca": "ciutat",
+        "ipa": "siwˈtat",
+        "en": "city, town"
+      },
+      {
+        "ca": "cent",
+        "ipa": "ˈsen",
+        "en": "a hundred"
+      },
+      {
+        "ca": "que",
+        "ipa": "kə",
+        "en": "that (conjunction)"
+      },
+      {
+        "ca": "qui",
+        "ipa": "ˈki",
+        "en": "who"
+      },
+      {
+        "ca": "quatre",
+        "ipa": "ˈkwatɾə",
+        "en": "four"
+      },
+      {
+        "ca": "gat",
+        "ipa": "ˈɡat",
+        "en": "cat"
+      },
+      {
+        "ca": "gent",
+        "ipa": "ˈʒen",
+        "en": "people"
+      },
+      {
+        "ca": "gelat",
+        "ipa": "ʒəˈlat",
+        "en": "ice cream"
+      },
+      {
+        "ca": "guerra",
+        "ipa": "ˈɡɛrə",
+        "en": "war"
+      },
+      {
+        "ca": "guitarra",
+        "ipa": "ɡiˈtarə",
+        "en": "guitar"
+      },
+      {
+        "ca": "guant",
+        "ipa": "ˈɡwan",
+        "en": "glove"
+      },
+      {
+        "ca": "pingüí",
+        "ipa": "piŋˈɡwi",
+        "en": "penguin"
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Which sound: [k], [s], [ɡ] or [ʒ]?",
+        "items": [
+          {
+            "q": "cinema — c",
+            "a": "[s]: [ˈsinəmə]"
+          },
+          {
+            "q": "cosa — c",
+            "a": "[k]: [ˈkɔzə]"
+          },
+          {
+            "q": "gelat — g",
+            "a": "[ʒ]: [ʒəˈlat]"
+          },
+          {
+            "q": "gust — g",
+            "a": "[ɡ]: [ˈɡust]"
+          },
+          {
+            "q": "cuina — c",
+            "a": "[k]: [ˈkujnə]"
+          },
+          {
+            "q": "girar — g",
+            "a": "[ʒ]: [ʒiˈɾa]"
+          },
+          {
+            "q": "Girona — g",
+            "a": "[ʒ]: [ʒiˈɾonə]"
+          }
+        ]
+      },
+      {
+        "instruction": "Make the plural so that the sound stays the same.",
+        "items": [
+          {
+            "q": "amiga",
+            "a": "amigues [əˈmiɡəs]: gu keeps [ɡ] before e"
+          },
+          {
+            "q": "boca",
+            "a": "boques [ˈbokəs]: qu keeps [k] before e"
+          },
+          {
+            "q": "llengua",
+            "a": "llengües [ˈʎeŋɡwəs]: ü keeps [ɡw]"
+          },
+          {
+            "q": "aigua",
+            "a": "aigües [ˈajɡwəs]"
+          },
+          {
+            "q": "taca",
+            "a": "taques [ˈtakəs]"
+          },
+          {
+            "q": "vaca",
+            "a": "vaques [ˈbakəs]"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 7,
+    "slug": "s-ss-z-c-trencada",
+    "title": "s, ss, z, ç: voiced and voiceless sibilants",
+    "section": "Приголосні",
+    "level": "A1",
+    "summary": "Voiceless [s] and voiced [z]: when Catalan writes s, ss, z, ç and tz.",
+    "explanation": "<p>Catalan distinguishes voiceless [s] from voiced [z], and the difference can change the meaning of a word: <em>casa</em> [ˈkazə] “house” — <em>caça</em> [ˈkasə] “hunting”, <em>rosa</em> [ˈrɔzə] “rose” — <em>rossa</em> [ˈrosə] “blonde”.</p><ul><li><strong>s</strong> at the start of a word and after a consonant = [s]: <em>sol</em> [ˈsɔl], <em>pensar</em> [pənˈsa];</li><li><strong>s</strong> between vowels = [z]: <em>casa</em>, <em>cosa</em> [ˈkɔzə], <em>música</em> [ˈmuzikə];</li><li><strong>ss</strong> (only between vowels) = [s]: <em>massa</em> [ˈmasə], <em>passar</em> [pəˈsa];</li><li><strong>z</strong> = [z]: <em>zero</em> [ˈzɛɾu], <em>onze</em> [ˈonzə];</li><li><strong>ç</strong> = [s]; it is written before a, o, u and at the end of a word: <em>plaça</em> [ˈplasə], <em>cançó</em> [kənˈso], <em>feliç</em> [fəˈlis];</li><li><strong>c</strong> before e, i = [s]: <em>cel</em> [ˈsɛl], <em>ciutat</em> [siwˈtat].</li></ul><p>Before a voiced consonant (b, d, g, l, m, n, etc.) s also becomes voiced: <em>esmorzar</em> [əzmuɾˈza], <em>església</em> [əzˈɡleziə]. Lesson 12 covers what happens to final s at word boundaries.</p><p>The combination <strong>tz</strong> is pronounced [dz], like the “ds” in “kids”: <em>dotze</em> [ˈdodzə] “twelve”, <em>tretze</em> [ˈtɾɛdzə] “thirteen”, <em>setze</em> [ˈsɛdzə] “sixteen”.</p><p>English spelling gives no reliable clue here (“rose” has [z], “dose” has [s]), but Catalan spelling does: a single s between vowels is almost always [z], and [s] in that position is written ss, ç or c (before e, i). Say <em>casa</em> with an English-style [s] and “house” turns into “hunting”.</p>",
+    "sounds": [
+      {
+        "spelling": "s- (start of a word)",
+        "ipa": "s",
+        "example": "sol",
+        "example_ipa": "ˈsɔl",
+        "en": "like the “s” in “sun”",
+        "note": ""
+      },
+      {
+        "spelling": "s (after a consonant)",
+        "ipa": "s",
+        "example": "pensar",
+        "example_ipa": "pənˈsa",
+        "en": "like the “s” in “sun”",
+        "note": ""
+      },
+      {
+        "spelling": "s (between vowels)",
+        "ipa": "z",
+        "example": "casa",
+        "example_ipa": "ˈkazə",
+        "en": "like the “z” in “zoo”",
+        "note": ""
+      },
+      {
+        "spelling": "ss",
+        "ipa": "s",
+        "example": "massa",
+        "example_ipa": "ˈmasə",
+        "en": "like the “s” in “sun”",
+        "note": "only between vowels"
+      },
+      {
+        "spelling": "s + voiced consonant",
+        "ipa": "z",
+        "example": "esmorzar",
+        "example_ipa": "əzmuɾˈza",
+        "en": "like “z”",
+        "note": ""
+      },
+      {
+        "spelling": "z",
+        "ipa": "z",
+        "example": "zero",
+        "example_ipa": "ˈzɛɾu",
+        "en": "like the “z” in “zoo”",
+        "note": ""
+      },
+      {
+        "spelling": "tz",
+        "ipa": "dz",
+        "example": "dotze",
+        "example_ipa": "ˈdodzə",
+        "en": "like the “ds” in “kids”",
+        "note": ""
+      },
+      {
+        "spelling": "ç",
+        "ipa": "s",
+        "example": "plaça",
+        "example_ipa": "ˈplasə",
+        "en": "like the “s” in “sun”",
+        "note": "never written before e, i"
+      },
+      {
+        "spelling": "c + e, i",
+        "ipa": "s",
+        "example": "cel",
+        "example_ipa": "ˈsɛl",
+        "en": "like the “s” in “sun”",
+        "note": ""
+      }
+    ],
+    "words": [
+      {
+        "ca": "casa",
+        "ipa": "ˈkazə",
+        "en": "house; home"
+      },
+      {
+        "ca": "caça",
+        "ipa": "ˈkasə",
+        "en": "hunting, hunt"
+      },
+      {
+        "ca": "rosa",
+        "ipa": "ˈrɔzə",
+        "en": "rose"
+      },
+      {
+        "ca": "rossa",
+        "ipa": "ˈrosə",
+        "en": "blonde (feminine)"
+      },
+      {
+        "ca": "massa",
+        "ipa": "ˈmasə",
+        "en": "too much; mass"
+      },
+      {
+        "ca": "passar",
+        "ipa": "pəˈsa",
+        "en": "to pass; to go by"
+      },
+      {
+        "ca": "zero",
+        "ipa": "ˈzɛɾu",
+        "en": "zero"
+      },
+      {
+        "ca": "onze",
+        "ipa": "ˈonzə",
+        "en": "eleven"
+      },
+      {
+        "ca": "dotze",
+        "ipa": "ˈdodzə",
+        "en": "twelve"
+      },
+      {
+        "ca": "plaça",
+        "ipa": "ˈplasə",
+        "en": "square (in a town)"
+      },
+      {
+        "ca": "feliç",
+        "ipa": "fəˈlis",
+        "en": "happy"
+      },
+      {
+        "ca": "esmorzar",
+        "ipa": "əzmuɾˈza",
+        "en": "to have breakfast; breakfast"
+      },
+      {
+        "ca": "pensar",
+        "ipa": "pənˈsa",
+        "en": "to think"
+      },
+      {
+        "ca": "sol",
+        "ipa": "ˈsɔl",
+        "en": "sun"
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "[s] or [z]?",
+        "items": [
+          {
+            "q": "casa — s",
+            "a": "[z]: s between vowels"
+          },
+          {
+            "q": "massa — ss",
+            "a": "[s]: double ss"
+          },
+          {
+            "q": "sol — s",
+            "a": "[s]: at the start of a word"
+          },
+          {
+            "q": "plaça — ç",
+            "a": "[s]"
+          },
+          {
+            "q": "zero — z",
+            "a": "[z]"
+          },
+          {
+            "q": "pensar — s",
+            "a": "[s]: after a consonant"
+          },
+          {
+            "q": "esmorzar — first s",
+            "a": "[z]: before voiced m"
+          }
+        ]
+      },
+      {
+        "instruction": "Which is missing: s, ss, ç or tz?",
+        "items": [
+          {
+            "q": "ro_a (blonde)",
+            "a": "rossa [ˈrosə]"
+          },
+          {
+            "q": "ca_a (house)",
+            "a": "casa [ˈkazə]"
+          },
+          {
+            "q": "ca_a (hunting)",
+            "a": "caça [ˈkasə]"
+          },
+          {
+            "q": "pla_a (square)",
+            "a": "plaça [ˈplasə]"
+          },
+          {
+            "q": "pa_ar (to pass)",
+            "a": "passar [pəˈsa]"
+          },
+          {
+            "q": "do_e (twelve)",
+            "a": "dotze [ˈdodzə]"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 8,
+    "slug": "shypliachi",
+    "title": "Hushing sounds: x, ix, tx, ig, j, g",
+    "section": "Приголосні",
+    "level": "A2",
+    "summary": "The sounds [ʃ], [tʃ], [ʒ], [dʒ], and two other ways of reading the letter x.",
+    "explanation": "<p>Catalan has four “hushing” sounds, and English has all four: [ʃ] as in “shop”, [ʒ] as in “measure”, [tʃ] as in “church”, [dʒ] as in “jam”. The Catalan versions are slightly more palatal (“softer”), but the English sounds work perfectly well. The real difficulty is the spelling, and above all the letter <strong>j</strong>, which English speakers instinctively read as [dʒ].</p><ul><li><strong>[ʃ]</strong> is written x at the start of a word and after a consonant (<em>xocolata</em> [ʃukuˈlatə], <em>panxa</em> [ˈpanʃə]) and <strong>ix</strong> after a vowel (<em>caixa</em> [ˈkaʃə], <em>peix</em> [ˈpeʃ]). In Central Catalan the i of ix is not pronounced; it only signals the sound [ʃ], so <em>caixa</em> has no “eye” sound in it.</li><li><strong>[tʃ]</strong> is written tx (<em>cotxe</em> [ˈkɔtʃə], <em>despatx</em> [dəsˈpatʃ]) and ig at the end of a word after a vowel (<em>maig</em> [ˈmatʃ], <em>puig</em> [ˈputʃ], <em>vaig</em> [ˈbatʃ]); again the i is silent.</li><li><strong>[ʒ]</strong> is written j (before any vowel) and g before e, i: <em>jo</em> [ˈʒɔ], <em>dijous</em> [diˈʒɔws], <em>gent</em> [ˈʒen]. This is the sound of “measure”, “vision”, “beige”: <em>jo</em> “I” does not sound like English “Joe”.</li><li><strong>[dʒ]</strong> is written tj (before a, o, u) and tg (before e, i): <em>platja</em> [ˈpladʒə], <em>metge</em> [ˈmedʒə], <em>rellotge</em> [rəˈʎɔdʒə].</li></ul><p>Final -ig becomes tj or tg in the feminine and in derived words: <em>lleig</em> [ˈʎetʃ] “ugly” (masculine) — <em>lletja</em> [ˈʎedʒə] (feminine), <em>mig</em> [ˈmitʃ] — <em>mitja</em> [ˈmidʒə] “half” (masculine — feminine).</p><p>Between vowels (with no i before it) and before a consonant, the letter <strong>x</strong> is usually read [ks], as in English: <em>taxi</em> [ˈtaksi], <em>màxim</em> [ˈmaksim], <em>explicar</em> [əkspliˈka]. The prefix <strong>ex-</strong> before a vowel or h is pronounced [ɡz], as in English “exam”: <em>examen</em> [əɡˈzamən], <em>exemple</em> [əɡˈzemplə], <em>exacte</em> [əɡˈzaktə].</p><p>In Valencian pronunciation the i of ix is pronounced, and j and g before e, i are pronounced [dʒ] (Lesson 13).</p>",
+    "sounds": [
+      {
+        "spelling": "x (at the start, after a consonant)",
+        "ipa": "ʃ",
+        "example": "xocolata",
+        "example_ipa": "ʃukuˈlatə",
+        "en": "like the “sh” in “shop”; never [z] as in “xylophone”",
+        "note": ""
+      },
+      {
+        "spelling": "ix (after a vowel)",
+        "ipa": "ʃ",
+        "example": "caixa",
+        "example_ipa": "ˈkaʃə",
+        "en": "like “sh”",
+        "note": "the i is silent"
+      },
+      {
+        "spelling": "tx",
+        "ipa": "tʃ",
+        "example": "cotxe",
+        "example_ipa": "ˈkɔtʃə",
+        "en": "like the “ch” in “church”",
+        "note": ""
+      },
+      {
+        "spelling": "-ig (end of a word)",
+        "ipa": "tʃ",
+        "example": "maig",
+        "example_ipa": "ˈmatʃ",
+        "en": "like the “ch” in “rich”",
+        "note": "the i is silent"
+      },
+      {
+        "spelling": "j",
+        "ipa": "ʒ",
+        "example": "jo",
+        "example_ipa": "ˈʒɔ",
+        "en": "like the “s” in “measure”, not the “j” in “jam”",
+        "note": ""
+      },
+      {
+        "spelling": "g + e, i",
+        "ipa": "ʒ",
+        "example": "gent",
+        "example_ipa": "ˈʒen",
+        "en": "like the “s” in “measure”",
+        "note": ""
+      },
+      {
+        "spelling": "tj",
+        "ipa": "dʒ",
+        "example": "platja",
+        "example_ipa": "ˈpladʒə",
+        "en": "like the “j” in “jam”",
+        "note": "before a, o, u"
+      },
+      {
+        "spelling": "tg",
+        "ipa": "dʒ",
+        "example": "metge",
+        "example_ipa": "ˈmedʒə",
+        "en": "like the “dg” in “badger”",
+        "note": "before e, i"
+      },
+      {
+        "spelling": "x (in some words)",
+        "ipa": "ks",
+        "example": "taxi",
+        "example_ipa": "ˈtaksi",
+        "en": "like the “x” in “taxi”",
+        "note": ""
+      },
+      {
+        "spelling": "ex- + vowel",
+        "ipa": "ɡz",
+        "example": "examen",
+        "example_ipa": "əɡˈzamən",
+        "en": "like the “x” in “exam”",
+        "note": ""
+      }
+    ],
+    "words": [
+      {
+        "ca": "xocolata",
+        "ipa": "ʃukuˈlatə",
+        "en": "chocolate"
+      },
+      {
+        "ca": "caixa",
+        "ipa": "ˈkaʃə",
+        "en": "box; till, checkout"
+      },
+      {
+        "ca": "peix",
+        "ipa": "ˈpeʃ",
+        "en": "fish"
+      },
+      {
+        "ca": "cotxe",
+        "ipa": "ˈkɔtʃə",
+        "en": "car"
+      },
+      {
+        "ca": "maig",
+        "ipa": "ˈmatʃ",
+        "en": "May"
+      },
+      {
+        "ca": "puig",
+        "ipa": "ˈputʃ",
+        "en": "hill"
+      },
+      {
+        "ca": "vaig",
+        "ipa": "ˈbatʃ",
+        "en": "(I) go"
+      },
+      {
+        "ca": "jo",
+        "ipa": "ˈʒɔ",
+        "en": "I"
+      },
+      {
+        "ca": "dijous",
+        "ipa": "diˈʒɔws",
+        "en": "Thursday"
+      },
+      {
+        "ca": "platja",
+        "ipa": "ˈpladʒə",
+        "en": "beach"
+      },
+      {
+        "ca": "metge",
+        "ipa": "ˈmedʒə",
+        "en": "doctor"
+      },
+      {
+        "ca": "rellotge",
+        "ipa": "rəˈʎɔdʒə",
+        "en": "clock; watch"
+      },
+      {
+        "ca": "taxi",
+        "ipa": "ˈtaksi",
+        "en": "taxi"
+      },
+      {
+        "ca": "examen",
+        "ipa": "əɡˈzamən",
+        "en": "exam"
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Which sound: [ʃ], [tʃ], [ʒ] or [dʒ]?",
+        "items": [
+          {
+            "q": "caixa — ix",
+            "a": "[ʃ]: [ˈkaʃə]"
+          },
+          {
+            "q": "cotxe — tx",
+            "a": "[tʃ]: [ˈkɔtʃə]"
+          },
+          {
+            "q": "platja — tj",
+            "a": "[dʒ]: [ˈpladʒə]"
+          },
+          {
+            "q": "maig — ig",
+            "a": "[tʃ]: [ˈmatʃ]"
+          },
+          {
+            "q": "jardí — j",
+            "a": "[ʒ]: [ʒəɾˈdi]"
+          },
+          {
+            "q": "metge — tg",
+            "a": "[dʒ]: [ˈmedʒə]"
+          },
+          {
+            "q": "xocolata — x",
+            "a": "[ʃ]: [ʃukuˈlatə]"
+          }
+        ]
+      },
+      {
+        "instruction": "How is the word pronounced?",
+        "items": [
+          {
+            "q": "baix",
+            "a": "[ˈbaʃ]"
+          },
+          {
+            "q": "mig",
+            "a": "[ˈmitʃ]"
+          },
+          {
+            "q": "mitja",
+            "a": "[ˈmidʒə]"
+          },
+          {
+            "q": "exemple",
+            "a": "[əɡˈzemplə]"
+          },
+          {
+            "q": "taxi",
+            "a": "[ˈtaksi]"
+          },
+          {
+            "q": "viatge",
+            "a": "[biˈadʒə]"
+          },
+          {
+            "q": "marxar",
+            "a": "[məɾˈʃa]"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 9,
+    "slug": "l-ll-ela-geminada-ny",
+    "title": "l, ll, l·l, ny",
+    "section": "Приголосні",
+    "level": "A2",
+    "summary": "Dark l, palatal ll [ʎ], double l·l and ny [ɲ].",
+    "explanation": "<p>In Central Catalan <strong>l</strong> is “dark” [ɫ]: the back of the tongue rises, much as for the English l in “full” or “milk”. So this sound is already familiar to English speakers. The difference is that Catalan uses it everywhere, also at the start of a word and before i and e, where many English accents have a “clear” l, as in “leaf”: <em>límit</em> [ˈlimit], <em>mel</em> [ˈmɛl], <em>sol</em> [ˈsɔl]. Two cautions: keep the tip of the tongue firmly against the gum ridge, so that a final l never turns into a vowel (as when some English speakers say “milk” as “miwk”), and do not let it drag the vowel before it into a diphthong: <em>sol</em> does not sound like English “soul”. In the course’s transcriptions this sound is written simply [l].</p><p><strong>ll</strong> is a separate sound, [ʎ]: the middle of the tongue presses against the hard palate. It occurs at the start, in the middle and at the end of a word: <em>lluna</em> [ˈʎunə], <em>gallina</em> [ɡəˈʎinə], <em>cavall</em> [kəˈbaʎ]. The nearest English sound is the “lli” in “million”, but Catalan [ʎ] is one single sound, not [l] + [j]: try saying the “lli” of “million” with the tip of your tongue resting behind your lower teeth. Do not read Catalan ll as an English l, as in “ball”: <em>cavall</em> ends in [ʎ]. The difference between l and ll changes meanings: <em>pala</em> [ˈpalə] “shovel” — <em>palla</em> [ˈpaʎə] “straw”, <em>vela</em> [ˈbɛlə] “sail” — <em>vella</em> [ˈbɛʎə] “old (feminine)”.</p><p><strong>l·l</strong> (<em>ela geminada</em>) is a double [lː]: in careful speech it sounds like two l’s across a syllable boundary, as in English “whole lot”: <em>col·legi</em> [kulˈlɛʒi], <em>il·lusió</em> [illuziˈo], <em>intel·ligent</em> [intəlliˈʒen]. In fast speech many speakers pronounce a single [l]. The dot is written at mid-height: spellings like <em>col.legi</em> or <em>colegi</em> are wrong.</p><p><strong>ny</strong> = [ɲ], close to the “ny” in “canyon” or Spanish ñ, but made as one sound, with the middle of the tongue against the palate: <em>any</em> [ˈaɲ], <em>Catalunya</em> [kətəˈluɲə], <em>muntanya</em> [munˈtaɲə]. It is spelled ny, not ñ as in Spanish. At the end of a word English speakers tend to say a plain [n]; keep the palatal quality: <em>any</em> “year” ends in [ɲ], with no vowel after it.</p>",
+    "sounds": [
+      {
+        "spelling": "l",
+        "ipa": "ɫ",
+        "example": "sol",
+        "example_ipa": "ˈsɔl",
+        "en": "dark l, as in “full”; dark also at the start of a word and before i, e",
+        "note": "written [l] in the course’s transcriptions"
+      },
+      {
+        "spelling": "ll (start of a word)",
+        "ipa": "ʎ",
+        "example": "lluna",
+        "example_ipa": "ˈʎunə",
+        "en": "no English equivalent; the nearest is the “lli” in “million”, said as one sound",
+        "note": ""
+      },
+      {
+        "spelling": "ll (between vowels)",
+        "ipa": "ʎ",
+        "example": "gallina",
+        "example_ipa": "ɡəˈʎinə",
+        "en": "like the “lli” in “million”, but one sound, not l + y",
+        "note": ""
+      },
+      {
+        "spelling": "-ll (end of a word)",
+        "ipa": "ʎ",
+        "example": "cavall",
+        "example_ipa": "kəˈbaʎ",
+        "en": "no English equivalent; not the l in “ball”",
+        "note": ""
+      },
+      {
+        "spelling": "l·l",
+        "ipa": "lː",
+        "example": "col·legi",
+        "example_ipa": "kulˈlɛʒi",
+        "en": "a long “l”, as in “whole lot”",
+        "note": "often [l] in fast speech"
+      },
+      {
+        "spelling": "ny",
+        "ipa": "ɲ",
+        "example": "any",
+        "example_ipa": "ˈaɲ",
+        "en": "like the “ny” in “canyon”, but as one sound",
+        "note": ""
+      }
+    ],
+    "words": [
+      {
+        "ca": "lluna",
+        "ipa": "ˈʎunə",
+        "en": "moon"
+      },
+      {
+        "ca": "llibre",
+        "ipa": "ˈʎibɾə",
+        "en": "book"
+      },
+      {
+        "ca": "cavall",
+        "ipa": "kəˈbaʎ",
+        "en": "horse"
+      },
+      {
+        "ca": "ull",
+        "ipa": "ˈuʎ",
+        "en": "eye"
+      },
+      {
+        "ca": "pala",
+        "ipa": "ˈpalə",
+        "en": "shovel"
+      },
+      {
+        "ca": "palla",
+        "ipa": "ˈpaʎə",
+        "en": "straw"
+      },
+      {
+        "ca": "vela",
+        "ipa": "ˈbɛlə",
+        "en": "sail"
+      },
+      {
+        "ca": "vella",
+        "ipa": "ˈbɛʎə",
+        "en": "old (feminine); old woman"
+      },
+      {
+        "ca": "col·legi",
+        "ipa": "kulˈlɛʒi",
+        "en": "school; professional association"
+      },
+      {
+        "ca": "il·lusió",
+        "ipa": "illuziˈo",
+        "en": "excitement, eager anticipation; illusion"
+      },
+      {
+        "ca": "intel·ligent",
+        "ipa": "intəlliˈʒen",
+        "en": "intelligent, clever"
+      },
+      {
+        "ca": "any",
+        "ipa": "ˈaɲ",
+        "en": "year"
+      },
+      {
+        "ca": "Catalunya",
+        "ipa": "kətəˈluɲə",
+        "en": "Catalonia"
+      },
+      {
+        "ca": "muntanya",
+        "ipa": "munˈtaɲə",
+        "en": "mountain"
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Which sound: [l], [ʎ], [lː] or [ɲ]?",
+        "items": [
+          {
+            "q": "palla — ll",
+            "a": "[ʎ]: [ˈpaʎə]"
+          },
+          {
+            "q": "pala — l",
+            "a": "[l]: [ˈpalə]"
+          },
+          {
+            "q": "col·legi — l·l",
+            "a": "[lː] (in fast speech [l]): [kulˈlɛʒi]"
+          },
+          {
+            "q": "any — ny",
+            "a": "[ɲ]: [ˈaɲ]"
+          },
+          {
+            "q": "ull — ll",
+            "a": "[ʎ]: [ˈuʎ]"
+          },
+          {
+            "q": "senyor — ny",
+            "a": "[ɲ]: [səˈɲo]"
+          },
+          {
+            "q": "vela — l",
+            "a": "[l]: [ˈbɛlə]"
+          }
+        ]
+      },
+      {
+        "instruction": "Choose the correct spelling.",
+        "items": [
+          {
+            "q": "Cataluña or Catalunya?",
+            "a": "Catalunya"
+          },
+          {
+            "q": "colegi, col.legi or col·legi?",
+            "a": "col·legi"
+          },
+          {
+            "q": "luna or lluna (moon)?",
+            "a": "lluna"
+          },
+          {
+            "q": "ilusió or il·lusió?",
+            "a": "il·lusió"
+          },
+          {
+            "q": "caval or cavall (horse)?",
+            "a": "cavall"
+          },
+          {
+            "q": "muntaña or muntanya?",
+            "a": "muntanya"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 10,
+    "slug": "r-rr",
+    "title": "r and rr",
+    "section": "Приголосні",
+    "level": "A2",
+    "summary": "The tapped [ɾ], the trilled [r], and final -r, which is often silent.",
+    "explanation": "<p>Catalan has two r sounds, and neither of them is the English “r”. For English r the tongue curls or bunches without touching anything; for Catalan r the tip of the tongue actually strikes the ridge behind the upper teeth.</p><ul><li><strong>[ɾ]</strong> is a single quick tap of the tongue tip, the sound American English uses for the “tt” in “better” or the “dd” in “ladder”. It occurs between vowels (<em>cara</em> [ˈkaɾə]) and after a consonant in the same syllable (<em>tres</em> [ˈtɾɛs], <em>gran</em> [ˈɡɾan], <em>llibre</em> [ˈʎibɾə]);</li><li><strong>[r]</strong> is a rolled r, a trill with several taps, as in Spanish <em>perro</em> or a Scottish rolled r. It occurs at the start of a word (<em>rosa</em> [ˈrɔzə], <em>riu</em> [ˈriw]), after n, l, s (<em>Enric</em> [ənˈrik], <em>Israel</em> [izrəˈɛl]) and for <strong>rr</strong> between vowels (<em>terra</em> [ˈtɛrə], <em>carrer</em> [kəˈre]).</li></ul><p>The difference changes meanings: <em>para</em> [ˈpaɾə] “(he/she) stops” — <em>parra</em> [ˈparə] “grapevine”. At the end of a syllable before a consonant (<em>porta</em> [ˈpɔɾtə]) and at the end of a word, r may be tapped or trilled; it makes no difference to the meaning. The course writes [ɾ] in these positions. Either way it is a real tongue-tip r: do not drop it as British English does in “port”, and do not replace it with an English r. If the trill does not come easily, start from a tap and repeat it fast, letting the tongue tip vibrate in the airflow.</p><p>In Central Catalan <strong>final -r is often silent</strong>:</p><ul><li>in infinitives: <em>cantar</em> [kənˈta], <em>dormir</em> [duɾˈmi];</li><li>in most words ending in -er, -or: <em>fuster</em> [fusˈte] “carpenter”, <em>carrer</em> [kəˈre], <em>primer</em> [pɾiˈme], <em>senyor</em> [səˈɲo];</li><li>in some other words: <em>ahir</em> [əˈi] “yesterday”.</li></ul><p>In many words, however, final -r is pronounced: <em>mar</em> [ˈmaɾ], <em>cor</em> [ˈkɔɾ], <em>amor</em> [əˈmoɾ], <em>or</em> [ˈɔɾ] “gold”. There is no single rule, so check the pronunciation in a dictionary. When a pronoun is attached to an infinitive with a hyphen, the r comes back: <em>cantar-la</em> [kənˈtaɾlə], <em>menjar-ho</em> [mənˈʒaɾu]. Speakers of British English may recognise the pattern from “far” and “far away”, where a silent r reappears before a vowel.</p>",
+    "sounds": [
+      {
+        "spelling": "r (between vowels)",
+        "ipa": "ɾ",
+        "example": "cara",
+        "example_ipa": "ˈkaɾə",
+        "en": "a single tap, like the American “tt” in “better”",
+        "note": ""
+      },
+      {
+        "spelling": "r (after a consonant: tr, br, gr, etc.)",
+        "ipa": "ɾ",
+        "example": "tres",
+        "example_ipa": "ˈtɾɛs",
+        "en": "a single tap; not the English r in “tree”",
+        "note": ""
+      },
+      {
+        "spelling": "r- (start of a word)",
+        "ipa": "r",
+        "example": "rosa",
+        "example_ipa": "ˈrɔzə",
+        "en": "a rolled r with several taps, as in Spanish “perro”; no English equivalent",
+        "note": ""
+      },
+      {
+        "spelling": "r (after n, l, s)",
+        "ipa": "r",
+        "example": "Enric",
+        "example_ipa": "ənˈrik",
+        "en": "a rolled r",
+        "note": ""
+      },
+      {
+        "spelling": "rr",
+        "ipa": "r",
+        "example": "terra",
+        "example_ipa": "ˈtɛrə",
+        "en": "a rolled r",
+        "note": "only between vowels"
+      },
+      {
+        "spelling": "-r (infinitives, -er, -or)",
+        "ipa": "∅",
+        "example": "cantar",
+        "example_ipa": "kənˈta",
+        "en": "silent",
+        "note": "comes back before a pronoun: cantar-la"
+      },
+      {
+        "spelling": "-r (in some words)",
+        "ipa": "ɾ",
+        "example": "mar",
+        "example_ipa": "ˈmaɾ",
+        "en": "pronounced, as a tap",
+        "note": "check in a dictionary"
+      }
+    ],
+    "words": [
+      {
+        "ca": "cara",
+        "ipa": "ˈkaɾə",
+        "en": "face"
+      },
+      {
+        "ca": "rosa",
+        "ipa": "ˈrɔzə",
+        "en": "rose"
+      },
+      {
+        "ca": "terra",
+        "ipa": "ˈtɛrə",
+        "en": "earth; land, ground"
+      },
+      {
+        "ca": "carrer",
+        "ipa": "kəˈre",
+        "en": "street"
+      },
+      {
+        "ca": "Enric",
+        "ipa": "ənˈrik",
+        "en": "Enric (a man’s name)"
+      },
+      {
+        "ca": "tres",
+        "ipa": "ˈtɾɛs",
+        "en": "three"
+      },
+      {
+        "ca": "cantar",
+        "ipa": "kənˈta",
+        "en": "to sing"
+      },
+      {
+        "ca": "fuster",
+        "ipa": "fusˈte",
+        "en": "carpenter"
+      },
+      {
+        "ca": "senyor",
+        "ipa": "səˈɲo",
+        "en": "gentleman; Mr; sir"
+      },
+      {
+        "ca": "primer",
+        "ipa": "pɾiˈme",
+        "en": "first"
+      },
+      {
+        "ca": "mar",
+        "ipa": "ˈmaɾ",
+        "en": "sea"
+      },
+      {
+        "ca": "cor",
+        "ipa": "ˈkɔɾ",
+        "en": "heart"
+      },
+      {
+        "ca": "amor",
+        "ipa": "əˈmoɾ",
+        "en": "love"
+      },
+      {
+        "ca": "carro",
+        "ipa": "ˈkaru",
+        "en": "cart"
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "[ɾ], [r] or silent?",
+        "items": [
+          {
+            "q": "cara — r",
+            "a": "[ɾ]: a single r between vowels"
+          },
+          {
+            "q": "rosa — r",
+            "a": "[r]: at the start of a word"
+          },
+          {
+            "q": "terra — rr",
+            "a": "[r]"
+          },
+          {
+            "q": "tres — r",
+            "a": "[ɾ]: after t in the same syllable"
+          },
+          {
+            "q": "Enric — r",
+            "a": "[r]: after n"
+          },
+          {
+            "q": "cantar — final r",
+            "a": "silent: [kənˈta]"
+          },
+          {
+            "q": "honra — r",
+            "a": "[r]: after n, [ˈɔnrə]"
+          }
+        ]
+      },
+      {
+        "instruction": "Is final -r pronounced?",
+        "items": [
+          {
+            "q": "parlar",
+            "a": "no: [pəɾˈla]"
+          },
+          {
+            "q": "cor",
+            "a": "yes: [ˈkɔɾ]"
+          },
+          {
+            "q": "fuster",
+            "a": "no: [fusˈte]"
+          },
+          {
+            "q": "amor",
+            "a": "yes: [əˈmoɾ]"
+          },
+          {
+            "q": "ahir",
+            "a": "no: [əˈi]"
+          },
+          {
+            "q": "mar",
+            "a": "yes: [ˈmaɾ]"
+          },
+          {
+            "q": "parlar-ne",
+            "a": "yes, before the pronoun: [pəɾˈlaɾnə]"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 11,
+    "slug": "b-v-ohlushennia-nimi-litery",
+    "title": "b and v, final devoicing, silent letters",
+    "section": "Приголосні",
+    "level": "B1",
+    "summary": "b and v sound the same, voiced consonants lose their voicing at the end of a word, and some letters are not pronounced.",
+    "explanation": "<p>In Central Catalan <strong>b</strong> and <strong>v</strong> are not distinguished: both are pronounced [b] (at the start of a phrase and after m, n) or as a softer [β] between vowels, with the lips almost but not quite closed. There is no lip-and-teeth “v” as in English: <em>vi</em> [ˈbi] “wine”, <em>València</em> [bəˈlɛnsiə], <em>beure</em> [ˈbɛwɾə] “to drink”. Resist the spelling: <em>vi</em> sounds like a short English “bee”, not “vee”. That is why the letter names add “be alta” and “ve baixa”. The course writes [b]; likewise, d and g between vowels actually soften to [ð] (a weak version of the “th” in “this”) and [ɣ], but we write [d] and [ɡ].</p><p>Two more differences from English affect the plosives. <strong>p, t, k</strong> are unaspirated, without the puff of air of English “pie”, “tie”, “kite”: say <em>pa</em>, <em>tu</em>, <em>casa</em> the way you say the p, t, k in “spy”, “sty”, “sky”. And <strong>t, d</strong> are dental: the tongue tip touches the back of the upper teeth, not the gum ridge behind them.</p><p><strong>Final devoicing.</strong> Voiced consonants become voiceless at the end of a word: b → [p], d → [t], g → [k]: <em>verd</em> [ˈbɛɾt], <em>fred</em> [ˈfɾɛt], <em>llarg</em> [ˈʎaɾk], <em>club</em> [ˈklup]. When a vowel follows, the voicing returns: <em>verda</em> [ˈbɛɾdə], <em>freda</em> [ˈfɾɛdə]. Sometimes this also shows in the spelling: <em>groc</em> [ˈɡɾɔk] — <em>groga</em> [ˈɡɾɔɡə], <em>gris</em> [ˈɡɾis] — <em>grisa</em> [ˈɡɾizə]. English does not devoice final consonants (“bed” and “bet” are different words), so this needs practice: <em>fred</em> “cold” ends in a clear [t], like English “fret”.</p><p><strong>Silent letters.</strong> English speakers are used to silent letters (“lamb”, “hour”), but Catalan has its own set:</p><ul><li><strong>h</strong> is silent in native Catalan words: <em>home</em> [ˈɔmə], <em>ahir</em> [əˈi];</li><li>t in final <strong>-nt</strong> and <strong>-lt</strong>: <em>cent</em> [ˈsen], <em>gent</em> [ˈʒen], <em>molt</em> [ˈmol]; in the feminine the t is pronounced: <em>molta</em> [ˈmoltə];</li><li>p in final <strong>-mp</strong>: <em>camp</em> [ˈkam], <em>llamp</em> [ˈʎam] “lightning” (compare the silent b in “lamb”);</li><li>c in final <strong>-nc</strong>, where n is pronounced [ŋ], the “ng” of “sing”: <em>blanc</em> [ˈblaŋ], <em>banc</em> [ˈbaŋ]; but <em>blanca</em> [ˈblaŋkə];</li><li>t in the clusters <strong>-rts</strong>, <strong>-nts</strong>: <em>dimarts</em> [diˈmaɾs], <em>cents</em> [ˈsens]; in the singular <em>fort</em> [ˈfɔɾt] the t is usually pronounced;</li><li>final -r in many words (Lesson 10).</li></ul><p>In Balearic and some Valencian varieties v is pronounced as a lip-and-teeth [v], as in English (Lesson 13).</p>",
+    "sounds": [
+      {
+        "spelling": "b",
+        "ipa": "b",
+        "example": "bo",
+        "example_ipa": "ˈbɔ",
+        "en": "like the “b” in “bed”",
+        "note": ""
+      },
+      {
+        "spelling": "v",
+        "ipa": "b",
+        "example": "vi",
+        "example_ipa": "ˈbi",
+        "en": "like “b”; there is no English-style “v”",
+        "note": ""
+      },
+      {
+        "spelling": "-d (end of a word)",
+        "ipa": "t",
+        "example": "verd",
+        "example_ipa": "ˈbɛɾt",
+        "en": "like “t”",
+        "note": ""
+      },
+      {
+        "spelling": "-g (end of a word)",
+        "ipa": "k",
+        "example": "llarg",
+        "example_ipa": "ˈʎaɾk",
+        "en": "like “k”",
+        "note": ""
+      },
+      {
+        "spelling": "-b (end of a word)",
+        "ipa": "p",
+        "example": "club",
+        "example_ipa": "ˈklup",
+        "en": "like “p”",
+        "note": ""
+      },
+      {
+        "spelling": "h",
+        "ipa": "∅",
+        "example": "home",
+        "example_ipa": "ˈɔmə",
+        "en": "silent",
+        "note": ""
+      },
+      {
+        "spelling": "-nt",
+        "ipa": "n",
+        "example": "cent",
+        "example_ipa": "ˈsen",
+        "en": "the t is silent",
+        "note": ""
+      },
+      {
+        "spelling": "-lt",
+        "ipa": "l",
+        "example": "molt",
+        "example_ipa": "ˈmol",
+        "en": "the t is silent",
+        "note": ""
+      },
+      {
+        "spelling": "-mp",
+        "ipa": "m",
+        "example": "camp",
+        "example_ipa": "ˈkam",
+        "en": "the p is silent, like the b in “lamb”",
+        "note": ""
+      },
+      {
+        "spelling": "-nc",
+        "ipa": "ŋ",
+        "example": "blanc",
+        "example_ipa": "ˈblaŋ",
+        "en": "like the “ng” in “sing”, with no “k”",
+        "note": ""
+      },
+      {
+        "spelling": "-rts",
+        "ipa": "ɾs",
+        "example": "dimarts",
+        "example_ipa": "diˈmaɾs",
+        "en": "the t is silent",
+        "note": ""
+      }
+    ],
+    "words": [
+      {
+        "ca": "vi",
+        "ipa": "ˈbi",
+        "en": "wine"
+      },
+      {
+        "ca": "València",
+        "ipa": "bəˈlɛnsiə",
+        "en": "Valencia"
+      },
+      {
+        "ca": "verd",
+        "ipa": "ˈbɛɾt",
+        "en": "green (masculine)"
+      },
+      {
+        "ca": "verda",
+        "ipa": "ˈbɛɾdə",
+        "en": "green (feminine)"
+      },
+      {
+        "ca": "fred",
+        "ipa": "ˈfɾɛt",
+        "en": "cold"
+      },
+      {
+        "ca": "groc",
+        "ipa": "ˈɡɾɔk",
+        "en": "yellow (masculine)"
+      },
+      {
+        "ca": "groga",
+        "ipa": "ˈɡɾɔɡə",
+        "en": "yellow (feminine)"
+      },
+      {
+        "ca": "molt",
+        "ipa": "ˈmol",
+        "en": "very; a lot"
+      },
+      {
+        "ca": "cent",
+        "ipa": "ˈsen",
+        "en": "a hundred"
+      },
+      {
+        "ca": "camp",
+        "ipa": "ˈkam",
+        "en": "field"
+      },
+      {
+        "ca": "llamp",
+        "ipa": "ˈʎam",
+        "en": "lightning"
+      },
+      {
+        "ca": "blanc",
+        "ipa": "ˈblaŋ",
+        "en": "white (masculine)"
+      },
+      {
+        "ca": "blanca",
+        "ipa": "ˈblaŋkə",
+        "en": "white (feminine)"
+      },
+      {
+        "ca": "dimarts",
+        "ipa": "diˈmaɾs",
+        "en": "Tuesday"
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "How is the word pronounced? Watch the final consonant.",
+        "items": [
+          {
+            "q": "verd",
+            "a": "[ˈbɛɾt]: d at the end of a word sounds [t]"
+          },
+          {
+            "q": "fred",
+            "a": "[ˈfɾɛt]"
+          },
+          {
+            "q": "llarg",
+            "a": "[ˈʎaɾk]: g at the end of a word sounds [k]"
+          },
+          {
+            "q": "groc — groga",
+            "a": "[ˈɡɾɔk] — [ˈɡɾɔɡə]: before a vowel the sound is voiced"
+          },
+          {
+            "q": "gris — grisa",
+            "a": "[ˈɡɾis] — [ˈɡɾizə]"
+          },
+          {
+            "q": "sord — sorda",
+            "a": "[ˈsoɾt] — [ˈsoɾdə]"
+          }
+        ]
+      },
+      {
+        "instruction": "Which letter is silent?",
+        "items": [
+          {
+            "q": "cent",
+            "a": "t: [ˈsen]"
+          },
+          {
+            "q": "camp",
+            "a": "p: [ˈkam]"
+          },
+          {
+            "q": "blanc",
+            "a": "c: [ˈblaŋ]"
+          },
+          {
+            "q": "molt",
+            "a": "t: [ˈmol]"
+          },
+          {
+            "q": "home",
+            "a": "h: [ˈɔmə]"
+          },
+          {
+            "q": "dimarts",
+            "a": "t: [diˈmaɾs]"
+          },
+          {
+            "q": "cantar",
+            "a": "the final r: [kənˈta]"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 12,
+    "slug": "mezha-sliv",
+    "title": "Pronunciation across word boundaries",
+    "section": "Вимова у мовленні",
+    "level": "B1",
+    "summary": "How words run together in connected speech: voicing, assimilation and merging vowels.",
+    "explanation": "<p>In natural speech there are no pauses between words: the last sound of one word adapts to the beginning of the next. English does this too (“ten pounds” often comes out as “tem pounds”), but Catalan has its own rules. Here are the main ones.</p><p><strong>Voicing (<em>sonorització</em>).</strong> Final hissing and hushing sounds become voiced before a vowel at the start of the next word: s, ç → [z], x → [ʒ]: <em>els amics</em> [əlz əˈmiks], <em>dues hores</em> [ˈduəz ˈɔɾəs], <em>feliç aniversari</em> [fəˈliz ənibəɾˈsaɾi], <em>peix a la planxa</em> [ˈpeʒ ə lə ˈplanʃə]. You hear this constantly in plurals: <em>els</em> and <em>les</em> before a vowel are pronounced with [z]. English keeps [s] in “this apple”, so this takes conscious practice.</p><p><strong>Voicing assimilation.</strong> Before a voiced consonant, a voiceless final consonant also becomes voiced: <em>els dies</em> [əlz ˈdiəs], <em>set dies</em> [ˈsɛd ˈdiəs], <em>cap dona</em> [ˈkab ˈdɔnə] “no woman”. Before a voiceless consonant it stays voiceless: <em>els pares</em> [əls ˈpaɾəs].</p><p><strong>Assimilation of n.</strong> Before p, b, m, final n is pronounced [m]; before c, g it is pronounced [ŋ], as in “sing”: <em>un poc</em> [um ˈpɔk], <em>un gat</em> [uŋ ˈɡat]. The same happens inside words: <em>canvi</em> [ˈkambi] “change”. English speakers do this in fast speech (“in case” sounds like “ing case”); in Catalan it happens in careful speech too.</p><p><strong>Vowels in contact.</strong> In writing, the articles <em>el</em>, <em>la</em> and the preposition <em>de</em> are shortened before a vowel or h and written with an apostrophe: <em>l’escola</em> [ləsˈkɔlə], <em>l’home</em> [ˈlɔmə], <em>d’aigua</em>. The article <em>la</em> is not shortened before unstressed i, u (hi, hu): <em>la universitat</em>, <em>la història</em>, nor in the expression <em>la una</em> “one o’clock”. In fast speech vowels merge even without an apostrophe: unstressed [ə] before another vowel usually drops, as in <em>quina hora és?</em> [ˈkin ˈɔɾə ˈes], <em>una amiga</em> [ˈunə ˈmiɡə] (the two [ə] merge into one).</p>",
+    "sounds": [
+      {
+        "spelling": "-s + vowel",
+        "ipa": "z",
+        "example": "els amics",
+        "example_ipa": "əlz əˈmiks",
+        "en": "like “z”",
+        "note": ""
+      },
+      {
+        "spelling": "-s + voiced consonant",
+        "ipa": "z",
+        "example": "els dies",
+        "example_ipa": "əlz ˈdiəs",
+        "en": "like “z”",
+        "note": ""
+      },
+      {
+        "spelling": "-ç + vowel",
+        "ipa": "z",
+        "example": "feliç aniversari",
+        "example_ipa": "fəˈliz ənibəɾˈsaɾi",
+        "en": "like “z”",
+        "note": ""
+      },
+      {
+        "spelling": "-x, -ix + vowel",
+        "ipa": "ʒ",
+        "example": "peix a la planxa",
+        "example_ipa": "ˈpeʒ ə lə ˈplanʃə",
+        "en": "like the “s” in “measure”",
+        "note": ""
+      },
+      {
+        "spelling": "-t, -p, -c + voiced consonant",
+        "ipa": "d, b, ɡ",
+        "example": "set dies",
+        "example_ipa": "ˈsɛd ˈdiəs",
+        "en": "like “d”, “b”, “g”",
+        "note": ""
+      },
+      {
+        "spelling": "n + p, b, m",
+        "ipa": "m",
+        "example": "un poc",
+        "example_ipa": "um ˈpɔk",
+        "en": "like “m”",
+        "note": ""
+      },
+      {
+        "spelling": "n + c, g",
+        "ipa": "ŋ",
+        "example": "un gat",
+        "example_ipa": "uŋ ˈɡat",
+        "en": "like the “n” in “ink” or “finger”",
+        "note": ""
+      },
+      {
+        "spelling": "a, e (unstressed) + vowel",
+        "ipa": "∅",
+        "example": "quina hora",
+        "example_ipa": "ˈkin ˈɔɾə",
+        "en": "[ə] drops out",
+        "note": "in fast speech"
+      },
+      {
+        "spelling": "l’, d’",
+        "ipa": "l, d",
+        "example": "l’escola",
+        "example_ipa": "ləsˈkɔlə",
+        "en": "pronounced together with the next word",
+        "note": "shortened in writing"
+      }
+    ],
+    "words": [
+      {
+        "ca": "els amics",
+        "ipa": "əlz əˈmiks",
+        "en": "(the) friends"
+      },
+      {
+        "ca": "dues hores",
+        "ipa": "ˈduəz ˈɔɾəs",
+        "en": "two hours"
+      },
+      {
+        "ca": "tres anys",
+        "ipa": "ˈtɾɛz ˈaɲs",
+        "en": "three years"
+      },
+      {
+        "ca": "dos homes",
+        "ipa": "ˈdoz ˈɔməs",
+        "en": "two men"
+      },
+      {
+        "ca": "peix a la planxa",
+        "ipa": "ˈpeʒ ə lə ˈplanʃə",
+        "en": "grilled fish"
+      },
+      {
+        "ca": "feliç aniversari",
+        "ipa": "fəˈliz ənibəɾˈsaɾi",
+        "en": "happy birthday"
+      },
+      {
+        "ca": "els dies",
+        "ipa": "əlz ˈdiəs",
+        "en": "(the) days"
+      },
+      {
+        "ca": "set dies",
+        "ipa": "ˈsɛd ˈdiəs",
+        "en": "seven days"
+      },
+      {
+        "ca": "un poc",
+        "ipa": "um ˈpɔk",
+        "en": "a little"
+      },
+      {
+        "ca": "un gat",
+        "ipa": "uŋ ˈɡat",
+        "en": "a cat"
+      },
+      {
+        "ca": "l’escola",
+        "ipa": "ləsˈkɔlə",
+        "en": "the school"
+      },
+      {
+        "ca": "un got d’aigua",
+        "ipa": "uŋ ˈɡɔd ˈdajɡwə",
+        "en": "a glass of water"
+      },
+      {
+        "ca": "Quina hora és?",
+        "ipa": "ˈkin ˈɔɾə ˈes",
+        "en": "What time is it?"
+      },
+      {
+        "ca": "la universitat",
+        "ipa": "lə unibəɾsiˈtat",
+        "en": "the university"
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "How is the marked sound pronounced at the word boundary?",
+        "items": [
+          {
+            "q": "els amics — s",
+            "a": "[z]: before a vowel"
+          },
+          {
+            "q": "els pares — s",
+            "a": "[s]: before voiceless p"
+          },
+          {
+            "q": "tres dies — s",
+            "a": "[z]: before voiced d, [ˈtɾɛz ˈdiəs]"
+          },
+          {
+            "q": "un poc — n",
+            "a": "[m]: before p"
+          },
+          {
+            "q": "un gat — n",
+            "a": "[ŋ]: before g"
+          },
+          {
+            "q": "peix a la planxa — x in peix",
+            "a": "[ʒ]: before a vowel"
+          },
+          {
+            "q": "set dies — t",
+            "a": "[d]: before voiced d"
+          }
+        ]
+      },
+      {
+        "instruction": "How is it written? Add an apostrophe where needed.",
+        "items": [
+          {
+            "q": "la escola",
+            "a": "l’escola"
+          },
+          {
+            "q": "de aigua",
+            "a": "d’aigua"
+          },
+          {
+            "q": "el home",
+            "a": "l’home"
+          },
+          {
+            "q": "la amiga",
+            "a": "l’amiga"
+          },
+          {
+            "q": "la universitat",
+            "a": "la universitat: la is not shortened before unstressed u"
+          },
+          {
+            "q": "de Andorra",
+            "a": "d’Andorra"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 13,
+    "slug": "rehionalna-vymova",
+    "title": "Regional pronunciation: Central, Valencian, Balearic",
+    "section": "Вимова у мовленні",
+    "level": "B1",
+    "summary": "How Central, Valencian and Balearic pronunciation differ.",
+    "explanation": "<p>Catalan has several large dialect groups. This course teaches <strong>Central</strong> pronunciation (Barcelona, Girona, most of Catalonia), but you are sure to hear the others too. All of them are equally correct, and the differences lie mainly in pronunciation rather than spelling.</p><p><strong>Valencian</strong> (the Valencian Community, where the language is officially called <em>valencià</em>):</p><ul><li>unstressed a, e, o are not reduced: <em>pare</em> [ˈpaɾe], <em>posar</em> [poˈzaɾ], <em>Barcelona</em> [baɾseˈlona];</li><li>final -r in infinitives is mostly pronounced: <em>cantar</em> [kanˈtaɾ];</li><li>j and g before e, i are pronounced [dʒ], as in English “jam”: <em>joc</em> [ˈdʒɔk];</li><li>the i of ix is pronounced: <em>caixa</em> [ˈkajʃa];</li><li>in some words stressed e is closed where Central Catalan has an open one, so the standard also allows a different spelling: <em>anglés</em>, <em>conéixer</em> (Central <em>anglès</em>, <em>conèixer</em>).</li></ul><p><strong>Balearic</strong> (Mallorca, Menorca, Ibiza):</p><ul><li>as in Central Catalan, unstressed a and e sound as [ə], but [ə] can also be stressed: <em>sec</em> [ˈsək] (Central [ˈsɛk]);</li><li>in most varieties v is pronounced as a lip-and-teeth [v], distinct from b: <em>vi</em> [ˈvi];</li><li>the so-called “salty” article (<em>article salat</em>) is used: <em>es</em>, <em>sa</em>, <em>ses</em> instead of <em>el</em>, <em>la</em>, <em>les</em>: <em>es carrer</em>, <em>sa casa</em>, <em>ses cases</em>;</li><li>the first person singular of the present tense has no ending: <em>jo cant</em> (Central <em>jo canto</em>).</li></ul><p>The north-western varieties (Lleida, Andorra) are closer to Valencian in several respects; in particular, unstressed a and e do not merge into [ə] there.</p><p>Tip: master one system first (in this course, the Central one) and learn to recognise the others by ear. Speakers of different varieties understand each other easily, much as speakers of British, American and Australian English do.</p>",
+    "sounds": [
+      {
+        "spelling": "a, e (unstressed)",
+        "ipa": "ə ~ a, e",
+        "example": "pare",
+        "example_ipa": "ˈpaɾə ~ ˈpaɾe",
+        "en": "Central: [ə], as in “about”; Valencian: clear a, e",
+        "note": "order: Central, Valencian"
+      },
+      {
+        "spelling": "o (unstressed)",
+        "ipa": "u ~ o",
+        "example": "posar",
+        "example_ipa": "puˈza ~ poˈzaɾ",
+        "en": "Central: [u], as in “food”; Valencian: [o]",
+        "note": "order: Central, Valencian"
+      },
+      {
+        "spelling": "-r in infinitives",
+        "ipa": "∅ ~ ɾ",
+        "example": "cantar",
+        "example_ipa": "kənˈta ~ kanˈtaɾ",
+        "en": "Central: silent; Valencian: pronounced",
+        "note": "order: Central, Valencian"
+      },
+      {
+        "spelling": "j, g + e, i",
+        "ipa": "ʒ ~ dʒ",
+        "example": "joc",
+        "example_ipa": "ˈʒɔk ~ ˈdʒɔk",
+        "en": "Central: the “s” in “measure”; Valencian: the “j” in “jam”",
+        "note": "order: Central, Valencian"
+      },
+      {
+        "spelling": "ix",
+        "ipa": "ʃ ~ jʃ",
+        "example": "caixa",
+        "example_ipa": "ˈkaʃə ~ ˈkajʃa",
+        "en": "Central: “sh”; Valencian: [j] + “sh”",
+        "note": "order: Central, Valencian"
+      },
+      {
+        "spelling": "v",
+        "ipa": "b ~ v",
+        "example": "vi",
+        "example_ipa": "ˈbi ~ ˈvi",
+        "en": "Central: like “b”; Balearic: like English “v”",
+        "note": "order: Central, Balearic"
+      },
+      {
+        "spelling": "stressed e (in some words)",
+        "ipa": "ɛ ~ e ~ ə",
+        "example": "sec",
+        "example_ipa": "ˈsɛk ~ ˈsek ~ ˈsək",
+        "en": "open, closed or [ə]",
+        "note": "order: Central, Valencian, Balearic"
+      },
+      {
+        "spelling": "la → sa",
+        "ipa": "lə ~ sə",
+        "example": "la casa ~ sa casa",
+        "example_ipa": "lə ˈkazə ~ sə ˈkazə",
+        "en": "different articles",
+        "note": "order: Central, Balearic"
+      },
+      {
+        "spelling": "el → es",
+        "ipa": "əl ~ əs",
+        "example": "el carrer ~ es carrer",
+        "example_ipa": "əl kəˈre ~ əs kəˈre",
+        "en": "different articles",
+        "note": "order: Central, Balearic"
+      }
+    ],
+    "words": [
+      {
+        "ca": "pare",
+        "ipa": "ˈpaɾə",
+        "en": "father; Valencian [ˈpaɾe]"
+      },
+      {
+        "ca": "posar",
+        "ipa": "puˈza",
+        "en": "to put, to place; Valencian [poˈzaɾ]"
+      },
+      {
+        "ca": "cantar",
+        "ipa": "kənˈta",
+        "en": "to sing; Valencian [kanˈtaɾ]"
+      },
+      {
+        "ca": "joc",
+        "ipa": "ˈʒɔk",
+        "en": "game; Valencian [ˈdʒɔk]"
+      },
+      {
+        "ca": "caixa",
+        "ipa": "ˈkaʃə",
+        "en": "box; till, checkout; Valencian [ˈkajʃa]"
+      },
+      {
+        "ca": "sec",
+        "ipa": "ˈsɛk",
+        "en": "dry; Balearic [ˈsək]"
+      },
+      {
+        "ca": "vi",
+        "ipa": "ˈbi",
+        "en": "wine; Balearic [ˈvi]"
+      },
+      {
+        "ca": "la casa",
+        "ipa": "lə ˈkazə",
+        "en": "the house; Balearic sa casa"
+      },
+      {
+        "ca": "el carrer",
+        "ipa": "əl kəˈre",
+        "en": "the street; Balearic es carrer"
+      },
+      {
+        "ca": "jo canto",
+        "ipa": "ˈʒɔ ˈkantu",
+        "en": "I sing; Balearic jo cant"
+      },
+      {
+        "ca": "conèixer",
+        "ipa": "kuˈnɛʃə",
+        "en": "to know (be acquainted with); Valencian conéixer"
+      },
+      {
+        "ca": "Barcelona",
+        "ipa": "bəɾsəˈlonə",
+        "en": "Barcelona; Valencian [baɾseˈlona]"
+      },
+      {
+        "ca": "València",
+        "ipa": "bəˈlɛnsiə",
+        "en": "Valencia"
+      },
+      {
+        "ca": "Mallorca",
+        "ipa": "məˈʎɔɾkə",
+        "en": "Mallorca (Majorca)"
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Which pronunciation is this a feature of?",
+        "items": [
+          {
+            "q": "unstressed e sounds [e]: pare [ˈpaɾe]",
+            "a": "Valencian"
+          },
+          {
+            "q": "stressed [ə]: sec [ˈsək]",
+            "a": "Balearic"
+          },
+          {
+            "q": "the article sa: sa platja",
+            "a": "Balearic"
+          },
+          {
+            "q": "[dʒ] for j: joc [ˈdʒɔk]",
+            "a": "Valencian"
+          },
+          {
+            "q": "the i of ix is pronounced: caixa [ˈkajʃa]",
+            "a": "Valencian"
+          },
+          {
+            "q": "the form jo cant “I sing”",
+            "a": "Balearic"
+          }
+        ]
+      },
+      {
+        "instruction": "How does it sound in Central pronunciation (the course standard)?",
+        "items": [
+          {
+            "q": "pare",
+            "a": "[ˈpaɾə]"
+          },
+          {
+            "q": "cantar",
+            "a": "[kənˈta]"
+          },
+          {
+            "q": "joc",
+            "a": "[ˈʒɔk]"
+          },
+          {
+            "q": "caixa",
+            "a": "[ˈkaʃə]"
+          },
+          {
+            "q": "sec",
+            "a": "[ˈsɛk]"
+          },
+          {
+            "q": "vi",
+            "a": "[ˈbi]"
+          }
+        ]
+      }
+    ]
+  }
+]

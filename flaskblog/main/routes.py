@@ -3,6 +3,7 @@ from flask import (Blueprint, abort, current_app, jsonify, render_template,
 from flask_login import current_user
 
 from flaskblog import db
+from flaskblog.i18n import gettext as _
 from flaskblog.conjugation import get_service
 from flaskblog.conjugation.labels import (
     error_message,
@@ -10,6 +11,7 @@ from flaskblog.conjugation.labels import (
     person_labels,
     tense_label,
 )
+from flaskblog.phonetics.service import load_lessons
 from flaskblog.models import (Announcement, GrammarUnit, Post, Update, UserWord,
                               Word)
 from flaskblog.vocabulary.constants import part_of_speech_label
@@ -31,6 +33,7 @@ def home():
         ProjectName=PROJECT_NAME,
         unit_count=GrammarUnit.query.count(),
         word_count=Word.query.count(),
+        lesson_count=len(load_lessons()),
     )
 
 
@@ -38,7 +41,7 @@ def home():
 def lessons():
     page = request.args.get('page', 1, type=int)
     posts = Post.query.order_by(Post.date_posted).paginate(page=page, per_page=6)
-    return render_template('lessons.html', title='Уроки', posts=posts)
+    return render_template('lessons.html', title=_('Уроки'), posts=posts)
 
 
 @main.route("/faq")
@@ -94,7 +97,7 @@ def conjugator():
 
     return render_template(
         'conjugator.html',
-        title='Дієвідміна',
+        title=_('Дієвідміна'),
         query=query,
         result=result,
         error_message=message,

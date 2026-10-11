@@ -1,7 +1,8 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="content-section">
-    <h1>You don't have permission to do that (403)</h1>
-    <p>Please check your account and try again</p>
+    <h1>{{ _('У вас немає доступу до цієї сторінки (403)') }}</h1>
+    <p>{{ _('Перевірте, чи ви увійшли до потрібного акаунта, і спробуйте ще раз.') }}</p>
+    <a class="btn btn-sm btn-outline-info" href="{{ url_for('main.home') }}">{{ _('На головну') }}</a>
 </div>
 {% endblock content %}

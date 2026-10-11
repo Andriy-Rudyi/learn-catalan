@@ -8,7 +8,7 @@
       <div class="row">
         {% for field in [form.term, form.translation, form.part_of_speech, form.gender,
                          form.topic, form.level, form.pronunciation, form.example_ca,
-                         form.example_uk] %}
+                         form.example_uk, form.translation_en, form.example_en] %}
           <div class="col-md-6 mb-3">
             {{ field.label(class="form-control-label small text-muted") }}
             {% if field.type == 'SelectField' %}
@@ -25,14 +25,18 @@
           {{ form.notes.label(class="form-control-label small text-muted") }}
           {{ form.notes(class="form-control", rows=3) }}
         </div>
+        <div class="col-12 mb-3">
+          {{ form.notes_en.label(class="form-control-label small text-muted") }}
+          {{ form.notes_en(class="form-control", rows=2) }}
+        </div>
       </div>
     </fieldset>
     <div class="form-group d-flex gap-2">
       {{ form.submit(class="btn btn-outline-info") }}
       {% if word %}
-        <a class="btn btn-outline-secondary" href="{{ url_for('vocabulary.word', slug=word.slug) }}">Скасувати</a>
+        <a class="btn btn-outline-secondary" href="{{ url_for('vocabulary.word', slug=word.slug) }}">{{ _('Скасувати') }}</a>
       {% else %}
-        <a class="btn btn-outline-secondary" href="{{ url_for('vocabulary.dictionary') }}">Скасувати</a>
+        <a class="btn btn-outline-secondary" href="{{ url_for('vocabulary.dictionary') }}">{{ _('Скасувати') }}</a>
       {% endif %}
     </div>
   </form>

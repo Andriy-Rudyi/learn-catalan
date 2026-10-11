@@ -2,6 +2,7 @@ from datetime import datetime
 from itsdangerous.url_safe import URLSafeTimedSerializer as Serializer
 from flask import current_app
 from flaskblog import db, login_manager
+from flaskblog.i18n import get_locale, gettext
 from flaskblog.permissions import is_admin
 from flask_login import UserMixin, current_user
 from flask_admin.contrib.sqla import ModelView
@@ -143,6 +144,10 @@ class Word(db.Model):
     example_ca = db.Column(db.String(255), nullable=True)
     example_uk = db.Column(db.String(255), nullable=True)
     notes = db.Column(db.Text, nullable=True)
+    # English counterparts of translation / example_uk / notes.
+    translation_en = db.Column(db.String(255), nullable=True)
+    example_en = db.Column(db.String(255), nullable=True)
+    notes_en = db.Column(db.Text, nullable=True)
     date_added = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=True)
 
@@ -159,6 +164,21 @@ class Word(db.Model):
     @property
     def is_verb(self):
         return self.part_of_speech == 'verb'
+
+    # -- text in the interface language; Ukrainian when English is missing
+    def _localized(self, ukrainian, english):
+        if get_locale() == 'en' and english:
+            return english
+        return ukrainian
+
+    def t_translation(self):
+        return self._localized(self.translation, self.translation_en)
+
+    def t_example(self):
+        return self._localized(self.example_uk, self.example_en)
+
+    def t_notes(self):
+        return self._localized(self.notes, self.notes_en)
 
     def __repr__(self):
         return f"Word('{self.term}', '{self.translation}')"
@@ -202,7 +222,7 @@ class UserWord(db.Model):
     def display_translation(self):
         if self.translation:
             return self.translation
-        return self.word.translation if self.word else ''
+        return self.word.t_translation() if self.word else ''
 
     @property
     def is_known(self):
@@ -216,9 +236,10 @@ class WordView(ModelView):
     form_columns = [
         'term', 'translation', 'part_of_speech', 'gender', 'pronunciation',
         'topic', 'level', 'example_ca', 'example_uk', 'notes',
+        'translation_en', 'example_en', 'notes_en',
     ]
-    column_list = ['term', 'translation', 'part_of_speech', 'topic', 'level']
-    column_searchable_list = ['term', 'translation']
+    column_list = ['term', 'translation', 'translation_en', 'part_of_speech', 'topic', 'level']
+    column_searchable_list = ['term', 'translation', 'translation_en']
     column_filters = ['part_of_speech', 'topic', 'level']
     column_default_sort = 'term'
 
@@ -257,6 +278,10 @@ class GrammarUnit(db.Model):
     explanation = db.Column(db.Text, nullable=False)
     examples = db.Column(db.Text, nullable=True)
     exercises = db.Column(db.Text, nullable=True)
+    # Versions for learners of other languages, as JSON:
+    # {"en": {"title", "summary", "explanation", "examples", "exercises"}}.
+    # Examples there are [{"ca": ..., "en": ...}].
+    translations = db.Column(db.Text, nullable=True)
     date_added = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
     def __init__(self, *args, **kwargs):
@@ -282,6 +307,55 @@ class GrammarUnit(db.Model):
     def exercise_count(self):
         return sum(len(block.get('items', [])) for block in self.get_exercises())
 
+    # -- other languages -------------------------------------------------
+    def get_translations(self):
+        return json.loads(self.translations) if self.translations else {}
+
+    def set_translation(self, lang, version):
+        translations = self.get_translations()
+        translations[lang] = version
+        self.translations = json.dumps(translations, ensure_ascii=False)
+
+    def _version(self):
+        """The adapted version for the interface language, if there is one."""
+        locale = get_locale()
+        if locale == 'uk':
+            return None
+        return self.get_translations().get(locale)
+
+    def _pick(self, field, default):
+        version = self._version()
+        if version and version.get(field):
+            return version[field]
+        return default
+
+    @property
+    def l_title(self):
+        return self._pick('title', self.title)
+
+    @property
+    def l_summary(self):
+        return self._pick('summary', self.summary)
+
+    @property
+    def l_explanation(self):
+        return self._pick('explanation', self.explanation)
+
+    @property
+    def l_section(self):
+        return gettext(self.section)
+
+    def l_examples(self):
+        """Examples as [{"ca", "tr"}] with the translation in the interface language."""
+        version = self._version()
+        if version and version.get('examples'):
+            lang = get_locale()
+            return [{'ca': e['ca'], 'tr': e.get(lang, '')} for e in version['examples']]
+        return [{'ca': e['ca'], 'tr': e.get('uk', '')} for e in self.get_examples()]
+
+    def l_exercises(self):
+        return self._pick('exercises', self.get_exercises())
+
     def __repr__(self):
         return f"GrammarUnit({self.number}, '{self.title}')"
 
@@ -292,7 +366,7 @@ class GrammarUnit(db.Model):
 class GrammarUnitView(ModelView):
     form_columns = [
         'number', 'title', 'section', 'level', 'summary', 'explanation',
-        'examples', 'exercises',
+        'examples', 'exercises', 'translations',
     ]
     column_list = ['number', 'title', 'section', 'level']
     column_searchable_list = ['title', 'section']

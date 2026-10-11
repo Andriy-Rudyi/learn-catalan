@@ -16,6 +16,7 @@ bcrypt = Bcrypt()
 login_manager = LoginManager()
 login_manager.login_view = 'users.login'
 login_manager.login_message_category = 'info'
+login_manager.login_message = 'Увійдіть, щоб відкрити цю сторінку.'
 
 mail = Mail()
 ckeditor = CKEditor()
@@ -32,6 +33,10 @@ def create_app(config_class=Config):
     mail.init_app(app)
     ckeditor.init_app(app)
     migrate.init_app(app, db)
+
+    from flaskblog import i18n
+    i18n.init_app(app)
+    login_manager.localize_callback = i18n.gettext
     
     from flaskblog.admin.routes import admin_bp, init_admin
     init_admin(app)

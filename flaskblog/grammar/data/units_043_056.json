@@ -5,7 +5,7 @@
   "section": "Subjuntiu",
   "level": "B2",
   "summary": "Минулий subjuntiu — форми.",
-  "explanation": "\n<p><strong>Imperfet de subjuntiu</strong> потрібен у підрядних реченнях, коли головне\nдієслово в минулому або в умовному способі, та в нереальних умовах.</p>\n<ul>\n  <li>-ar: parl<strong>és</strong>, parl<strong>essis</strong>, parl<strong>és</strong>,\n      parl<strong>éssim</strong>, parl<strong>éssiu</strong>, parl<strong>essin</strong></li>\n  <li>-er/-re: perd<strong>és</strong>, perd<strong>essis</strong>… </li>\n  <li>-ir: dorm<strong>ís</strong>, dorm<strong>issis</strong>, dorm<strong>ís</strong>,\n      dorm<strong>íssim</strong>, dorm<strong>íssiu</strong>, dorm<strong>issin</strong></li>\n</ul>\n<p>Основа нерегулярних дієслів — та сама, що в passat simple / subjuntiu present:</p>\n<ul>\n  <li>ser → <strong>fos</strong>, fossis, fos, fóssim, fóssiu, fossin</li>\n  <li>fer → <strong>fes</strong>, fessis, fes, féssim, féssiu, fessin</li>\n  <li>tenir → <strong>tingués</strong>, venir → <strong>vingués</strong>, poder → <strong>pogués</strong>,\n      voler → <strong>volgués</strong>, haver → <strong>hagués</strong>, dir → <strong>digués</strong>,\n      estar → <strong>estigués</strong>, anar → <strong>anés</strong>, saber → <strong>sabés</strong>,\n      viure → <strong>visqués</strong>, veure → <strong>veiés</strong></li>\n</ul>\n<p>У валенсійському узусі поширені форми на <em>-ara / -era</em> (<em>parlara, fóra</em>),\nу Каталонії — на <em>-és / -ís</em>.</p>\n",
+  "explanation": "\n<p><strong>Imperfet de subjuntiu</strong> потрібен у підрядних реченнях, коли головне\nдієслово в минулому або в умовному способі, та в нереальних умовах.</p>\n<ul>\n  <li>-ar: parl<strong>és</strong>, parl<strong>essis</strong>, parl<strong>és</strong>,\n      parl<strong>éssim</strong>, parl<strong>éssiu</strong>, parl<strong>essin</strong></li>\n  <li>-er/-re: perd<strong>és</strong>, perd<strong>essis</strong>… </li>\n  <li>-ir: dorm<strong>ís</strong>, dorm<strong>issis</strong>, dorm<strong>ís</strong>,\n      dorm<strong>íssim</strong>, dorm<strong>íssiu</strong>, dorm<strong>issin</strong></li>\n</ul>\n<p>Нерегулярні дієслова зазвичай беруть основу <em>passat simple</em> (а не subjuntiu present:\n<em>que vagi</em>, але <em>que anés</em>; <em>que sigui</em>, але <em>que fos</em>; <em>que sàpiga</em>, але <em>que sabés</em>):</p>\n<ul>\n  <li>ser → <strong>fos</strong>, fossis, fos, fóssim, fóssiu, fossin</li>\n  <li>fer → <strong>fes</strong>, fessis, fes, féssim, féssiu, fessin</li>\n  <li>tenir → <strong>tingués</strong>, venir → <strong>vingués</strong>, poder → <strong>pogués</strong>,\n      voler → <strong>volgués</strong>, haver → <strong>hagués</strong>, dir → <strong>digués</strong>,\n      estar → <strong>estigués</strong>, anar → <strong>anés</strong>, saber → <strong>sabés</strong>,\n      viure → <strong>visqués</strong>, veure → <strong>veiés</strong></li>\n</ul>\n<p>У валенсійському узусі поширені форми на <em>-ara / -era</em> (<em>parlara, fóra</em>),\nу Каталонії — на <em>-és / -ís</em>.</p>\n",
   "examples": [
    {
     "ca": "Volia que vinguessis.",
@@ -254,8 +254,8 @@
       "a": "haurà anat"
      },
      {
-      "q": "(Haver de, tu) ___ trucar-me!",
-      "a": "Hauries d’haver"
+      "q": "(haver de, tu + trucar-me) ___!",
+      "a": "Hauries d’haver-me trucat! / M’hauries d’haver trucat!"
      }
     ]
    }
@@ -624,7 +624,7 @@
   "section": "Орфографія",
   "level": "B1",
   "summary": "Коли скорочувати артикль і прийменник.",
-  "explanation": "\n<p><strong>el, la, de</strong> скорочуються перед голосним або <em>h</em>:\n<em>l’home, l’escola, d’Andorra, d’aquí</em>.</p>\n<p><strong>la не скорочується</strong> перед ненаголошеними <em>i, u, hi, hu</em>:\n<em>la universitat, la història, la humanitat</em> (але <em>l’illa</em>,\n<em>l’única</em> — там наголос на <em>i/u</em>).</p>\n<p>Не скорочуються й назви літер та слова на кшталт <em>la una</em> (година),\n<em>la ira</em>.</p>\n<p><strong>Злиття</strong>: <em>a + el = al, de + el = del, per + el = pel</em> і\nмножина <em>als, dels, pels</em>. Перед голосним злиття не буває, бо артикль\nскорочується: <em>de l’home, a l’escola</em>.</p>\n<p>Займенники теж скорочуються: <em>m’agrada, t’estimo, l’he vist, n’hi ha</em>.</p>\n",
+  "explanation": "\n<p><strong>el, la, de</strong> скорочуються перед голосним або <em>h</em>:\n<em>l’home, l’escola, d’Andorra, d’aquí</em>.</p>\n<p><strong>la не скорочується</strong> перед ненаголошеними <em>i, u, hi, hu</em>:\n<em>la universitat, la història, la humanitat, la idea</em> (але <em>l’illa</em>,\n<em>l’única</em>, <em>l’ira</em> — там наголос на <em>i/u</em>).</p>\n<p>Не скорочуються й назви літер та <em>la una</em> (година).</p>\n<p><strong>Злиття</strong>: <em>a + el = al, de + el = del, per + el = pel</em> і\nмножина <em>als, dels, pels</em>. Перед голосним злиття не буває, бо артикль\nскорочується: <em>de l’home, a l’escola</em>.</p>\n<p>Займенники теж скорочуються: <em>m’agrada, t’estimo, l’he vist, n’hi ha</em>.</p>\n",
   "examples": [
    {
     "ca": "Vaig a l’hospital.",

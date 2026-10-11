@@ -1,4 +1,9 @@
-"""Ukrainian labels for the Catalan moods, tenses and persons."""
+"""Labels for the Catalan moods, tenses and persons.
+
+Written in Ukrainian and translated for display through ``flaskblog.i18n``.
+"""
+
+from flaskblog.i18n import gettext
 
 MOOD_LABELS = {
     "indicatiu": "Дійсний спосіб (indicatiu)",
@@ -49,11 +54,11 @@ MOOD_ORDER = (
 
 
 def mood_label(name):
-    return MOOD_LABELS.get(name, name.replace("-", " ").capitalize())
+    return gettext(MOOD_LABELS.get(name, name.replace("-", " ").capitalize()))
 
 
 def tense_label(name):
-    return TENSE_LABELS.get(name, name.replace("-", " ").capitalize())
+    return gettext(TENSE_LABELS.get(name, name.replace("-", " ").capitalize()))
 
 
 def person_labels(mood, count):
@@ -66,9 +71,10 @@ def person_labels(mood, count):
         labels = ()
     else:
         labels = PERSON_LABELS
+    labels = [gettext(label) for label in labels]
     if len(labels) < count:
-        return list(labels) + [""] * (count - len(labels))
-    return list(labels[:count])
+        return labels + [""] * (count - len(labels))
+    return labels[:count]
 
 
 def ordered_moods(moods):
@@ -100,4 +106,4 @@ DEFAULT_ERROR_MESSAGE = "Не вдалося розпізнати дієслов
 
 
 def error_message(code):
-    return ERROR_MESSAGES.get(code, DEFAULT_ERROR_MESSAGE)
+    return gettext(ERROR_MESSAGES.get(code, DEFAULT_ERROR_MESSAGE))

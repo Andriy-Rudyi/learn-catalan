@@ -33,12 +33,8 @@
       hint.id = 'speak-hint';
       hint.className = 'alert alert-warning alert-dismissible fade show speak-hint';
       hint.setAttribute('role', 'status');
-      hint.innerHTML =
-        'На цьому пристрої немає каталонського голосу для озвучення. ' +
-        'Додайте його в налаштуваннях: <strong>Android</strong> — «Синтез мовлення» Google → мова «Català»; ' +
-        '<strong>iPhone</strong> — Універсальний доступ → Озвучений вміст → Голоси → Català; ' +
-        '<strong>Windows</strong> — Час і мова → Мовлення → додати каталонську, або відкрийте сайт у браузері Edge.' +
-        '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Закрити"></button>';
+      hint.innerHTML = (window.SPEAK_HINT || '') +
+        '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="×"></button>';
       document.body.appendChild(hint);
     }
   }

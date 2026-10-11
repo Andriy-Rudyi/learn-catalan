@@ -1,0 +1,1242 @@
+[
+  {
+    "number": 57,
+    "title": "Inceptive verbs: serveixo, llegeixo vs dormo, sento",
+    "summary": "Where the -eix- infix appears, and where it doesn’t.",
+    "explanation": "\n<p>Most Catalan verbs in <strong>-ir</strong> are <em>inceptive</em> (<em>incoatius</em>): in some\nforms they add the infix <strong>-eix-</strong> between the stem and the ending\n(<em>servir → serveixo</em>). A small group are “pure” verbs with no infix\n(<em>dormir → dormo</em>). English has nothing like this, so the job is to learn\n<em>where</em> the infix goes and <em>which</em> verbs never take it.</p>\n<p>The infix appears only where the stress would otherwise fall on the stem:</p>\n<ul>\n  <li>present: serv<strong>eix</strong>o, serv<strong>eix</strong>es, serv<strong>eix</strong>,\n      servim, serviu, serv<strong>eix</strong>en</li>\n  <li>present subjunctive: serv<strong>eix</strong>i, serv<strong>eix</strong>is, serv<strong>eix</strong>i,\n      servim, serviu, serv<strong>eix</strong>in</li>\n  <li>imperative: serv<strong>eix</strong>! — but serviu!</li>\n</ul>\n<p>The <em>nosaltres</em> and <em>vosaltres</em> forms are stressed on the ending, so they\nnever take it (<em>llegim, llegiu</em>), and neither do the other tenses:\n<em>servia, serviré, serviria, he servit, servint</em>. The infix is not a tense marker:\n<em>serveixo</em> is simply “I serve”.</p>\n<p>The <strong>pure verbs</strong> have to be memorised: <em>dormir, sentir, mentir, obrir,\nomplir, morir, bullir, fugir, sortir, collir, cosir, tossir</em>. Some of them change\nthe stem vowel: <em>sortir → surto, collir → cullo, cosir → cuso, tossir → tusso</em>.\nAfter a consonant cluster the 3rd person singular adds <em>-e</em>: <em>obre, omple</em>.</p>\n<p>Valencian uses a different infix (<em>servix, servisc</em>) and Balearic uses\n<em>-esc-</em> (<em>servesc</em>); this course follows the central standard.</p>\n",
+    "examples": [
+      {
+        "ca": "Prefereixo el te al cafè.",
+        "en": "I prefer tea to coffee."
+      },
+      {
+        "ca": "Sempre dorms tan poc?",
+        "en": "Do you always sleep so little?"
+      },
+      {
+        "ca": "Surto de casa a les vuit.",
+        "en": "I leave home at eight."
+      },
+      {
+        "ca": "Us agraeixo molt l’ajuda.",
+        "en": "I’m very grateful for your help."
+      },
+      {
+        "ca": "No cal que ho decideixis ara.",
+        "en": "You don’t have to decide now."
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Put the verb in the present tense.",
+        "items": [
+          {
+            "q": "Jo (preferir) ___ quedar-me a casa.",
+            "a": "prefereixo"
+          },
+          {
+            "q": "Nosaltres (llegir) ___ en veu alta.",
+            "a": "llegim"
+          },
+          {
+            "q": "Ella (sentir) ___ música al pis de dalt.",
+            "a": "sent"
+          },
+          {
+            "q": "Ells (construir) ___ una casa nova.",
+            "a": "construeixen"
+          },
+          {
+            "q": "Tu (sortir) ___ aquesta nit?",
+            "a": "surts"
+          },
+          {
+            "q": "Vosaltres (patir) ___ massa.",
+            "a": "patiu"
+          },
+          {
+            "q": "El nen (tossir) ___ tota la nit.",
+            "a": "tus"
+          }
+        ]
+      },
+      {
+        "instruction": "Subjunctive or imperative: with -eix- or without?",
+        "items": [
+          {
+            "q": "Vull que (tu, llegir) ___ aquest llibre.",
+            "a": "llegeixis"
+          },
+          {
+            "q": "(vosaltres, servir) ___ la sopa!",
+            "a": "Serviu"
+          },
+          {
+            "q": "(tu, obrir) ___ la finestra!",
+            "a": "Obre"
+          },
+          {
+            "q": "Espero que (ells, decidir) ___ aviat.",
+            "a": "decideixin"
+          },
+          {
+            "q": "Cal que (nosaltres, corregir) ___ els errors.",
+            "a": "corregim"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 58,
+    "title": "Irregular present: faig, dic, vinc, tinc",
+    "summary": "Fer, dir, venir, tenir, poder, voler, saber, veure — forms to learn by heart.",
+    "explanation": "\n<p>As in English, where the commonest verbs (<em>be, have, do</em>) are the irregular ones,\nthe most frequent Catalan verbs have an irregular present tense. Usually it’s the\n<strong>1st person singular</strong> that “breaks”, while the <em>nosaltres</em> and\n<em>vosaltres</em> forms stay regular.</p>\n<ul>\n  <li><strong>fer</strong>: <strong>faig</strong>, fas, fa, fem, feu, fan</li>\n  <li><strong>dir</strong>: <strong>dic</strong>, dius, diu, diem, dieu, diuen</li>\n  <li><strong>venir</strong>: <strong>vinc</strong>, vens, ve, venim, veniu, venen</li>\n  <li><strong>tenir</strong>: <strong>tinc</strong>, tens, <strong>té</strong>, tenim, teniu, tenen</li>\n  <li><strong>poder</strong>: <strong>puc</strong>, pots, pot, podem, podeu, poden</li>\n  <li><strong>voler</strong>: <strong>vull</strong>, vols, vol, volem, voleu, volen</li>\n  <li><strong>saber</strong>: <strong>sé</strong>, saps, sap, sabem, sabeu, saben</li>\n  <li><strong>veure</strong>: <strong>veig</strong>, veus, veu, veiem, veieu, veuen</li>\n</ul>\n<p>A typical 1st person ends in <strong>-c / -g</strong>: likewise <em>beure → bec, creure → crec,\nviure → visc, conèixer → conec, deure → dec, riure → ric</em>.</p>\n<p>The written accent tells apart <em>té</em> (has) and <em>te</em> (you; tea),\n<em>sé</em> (I know) and <em>se</em> (himself, herself, itself).</p>\n<p>Two habits to drop from English: age is expressed with <em>tenir</em>\n(<em>Tinc vint anys</em> — I’m twenty), and with verbs of perception Catalan\nusually leaves out “can”: <em>Veig el mar</em> — I can see the sea. For the forms of\n<em>ser, estar</em> and <em>anar</em>, see units 1 and 14.</p>\n",
+    "examples": [
+      {
+        "ca": "Què fas aquest cap de setmana?",
+        "en": "What are you doing this weekend?"
+      },
+      {
+        "ca": "No sé on viu.",
+        "en": "I don’t know where he lives."
+      },
+      {
+        "ca": "Tinc vint-i-cinc anys.",
+        "en": "I’m twenty-five."
+      },
+      {
+        "ca": "Vinc de la feina i estic molt cansat.",
+        "en": "I’m coming from work and I’m very tired."
+      },
+      {
+        "ca": "Puc obrir la finestra?",
+        "en": "Can I open the window?"
+      },
+      {
+        "ca": "Des de casa veig el mar.",
+        "en": "I can see the sea from my house."
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Put the verb in the present tense.",
+        "items": [
+          {
+            "q": "Jo (fer) ___ els deures.",
+            "a": "faig"
+          },
+          {
+            "q": "Jo no (saber) ___ la resposta.",
+            "a": "sé"
+          },
+          {
+            "q": "Ells (dir) ___ que plourà.",
+            "a": "diuen"
+          },
+          {
+            "q": "Jo (venir) ___ amb tu.",
+            "a": "vinc"
+          },
+          {
+            "q": "Nosaltres (veure) ___ la tele.",
+            "a": "veiem"
+          },
+          {
+            "q": "Jo no (poder) ___ ajudar-te.",
+            "a": "puc"
+          },
+          {
+            "q": "Tu (voler) ___ un cafè?",
+            "a": "vols"
+          }
+        ]
+      },
+      {
+        "instruction": "Translate into Catalan.",
+        "items": [
+          {
+            "q": "Do you have a car?",
+            "a": "Tens cotxe?"
+          },
+          {
+            "q": "What is he saying?",
+            "a": "Què diu?"
+          },
+          {
+            "q": "I want to go home.",
+            "a": "Vull anar a casa. / Me’n vull anar a casa."
+          },
+          {
+            "q": "We can’t see the difference.",
+            "a": "No veiem la diferència. (no “can” needed)"
+          },
+          {
+            "q": "They’re coming tomorrow.",
+            "a": "Venen demà."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 59,
+    "title": "Passat perifràstic: vaig parlar — formation",
+    "summary": "Anar + infinitive: all the forms, where the pronouns go — and the literary parlà.",
+    "explanation": "\n<p>The <strong>passat perifràstic</strong> is the everyday Catalan past tense for completed\nactions — the equivalent of the English simple past (<em>I spoke, she went</em>). It is\nformed with an auxiliary plus the infinitive. The auxiliary looks like the present of\n<em>anar</em> (“to go”), except in the 1st and 2nd persons plural:</p>\n<ul>\n  <li>jo <strong>vaig</strong> parlar</li>\n  <li>tu <strong>vas</strong> (<em>vares</em>) parlar</li>\n  <li>ell, ella, vostè <strong>va</strong> parlar</li>\n  <li>nosaltres <strong>vam</strong> (<em>vàrem</em>) parlar</li>\n  <li>vosaltres <strong>vau</strong> (<em>vàreu</em>) parlar</li>\n  <li>ells, elles, vostès <strong>van</strong> (<em>varen</em>) parlar</li>\n</ul>\n<p>The forms in brackets are also standard but longer and less common; in central\nCatalan speech the short ones dominate. Note: <em>vam, vau</em> — not <em>anem, aneu</em>.</p>\n<p><strong>The big trap for English speakers:</strong> <em>vaig parlar</em> looks like\n“I’m going to speak”, but it means <strong>“I spoke”</strong>. It is a past tense, full stop.\nDon’t add <em>a</em>: <em>Vaig comprar pa</em> — I bought bread, but <em>Vaig a comprar\npa</em> — I’m going (out) to buy bread. And there is no equivalent of English “did” in\nquestions and negatives: <em>Vas venir?</em> — Did you come? <em>No vaig venir.</em> —\nI didn’t come.</p>\n<p><strong>Pronouns</strong> go before <em>vaig</em> or are attached to the infinitive with a\nhyphen: <em><strong>Em</strong> vaig llevar</em> = <em>Vaig llevar-<strong>me</strong></em>;\n<em><strong>Li</strong> vam dir</em> = <em>Vam dir-<strong>li</strong></em>. The negative\n<em>no</em> goes before the whole group: <em>No ho vaig saber.</em></p>\n<p>The <strong>simple past</strong> (<em>passat simple</em>) is rare in speech but common in\nbooks and the press — you only need to recognise it:\n<em>parlí, parlares, <strong>parlà</strong>, parlàrem, parlàreu, <strong>parlaren</strong></em>.\nThe most frequent irregular forms: <em>fou</em> (= va ser), <em>digué</em> (= va dir),\n<em>tingué</em> (= va tenir), <em>visqué</em> (= va viure).</p>\n",
+    "examples": [
+      {
+        "ca": "Ahir vaig parlar amb la Marta.",
+        "en": "I spoke to Marta yesterday."
+      },
+      {
+        "ca": "On vas néixer?",
+        "en": "Where were you born?"
+      },
+      {
+        "ca": "Em vaig llevar a les set.",
+        "en": "I got up at seven."
+      },
+      {
+        "ca": "No li vau dir res?",
+        "en": "Didn’t you tell him anything?"
+      },
+      {
+        "ca": "La guerra acabà el 1939.",
+        "en": "The war ended in 1939. (= va acabar)"
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Put the verb in the passat perifràstic.",
+        "items": [
+          {
+            "q": "Jo (comprar) ___ pa.",
+            "a": "vaig comprar"
+          },
+          {
+            "q": "Tu (veure) ___ la pel·lícula?",
+            "a": "vas veure / vares veure"
+          },
+          {
+            "q": "Nosaltres (sopar) ___ a les nou.",
+            "a": "vam sopar / vàrem sopar"
+          },
+          {
+            "q": "Vosaltres (venir) ___ amb tren?",
+            "a": "vau venir / vàreu venir"
+          },
+          {
+            "q": "Ells (anar) ___ a Girona.",
+            "a": "van anar / varen anar"
+          },
+          {
+            "q": "Ella (dutxar-se) ___ ràpidament.",
+            "a": "es va dutxar / va dutxar-se"
+          }
+        ]
+      },
+      {
+        "instruction": "Replace the simple past with the passat perifràstic.",
+        "items": [
+          {
+            "q": "Parlà amb el director.",
+            "a": "Va parlar amb el director."
+          },
+          {
+            "q": "Arribaren a la nit.",
+            "a": "Van arribar a la nit."
+          },
+          {
+            "q": "Fou un gran poeta.",
+            "a": "Va ser un gran poeta."
+          },
+          {
+            "q": "Digué que no.",
+            "a": "Va dir que no."
+          },
+          {
+            "q": "Visqué molts anys a París.",
+            "a": "Va viure molts anys a París."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 60,
+    "title": "Irregular past participles and gerunds",
+    "summary": "Fet, dit, vist, pres, escrit — and fent, dient, essent.",
+    "explanation": "\n<p>Regular past participles end in <em>-at, -ut, -it</em> (<em>parlat, perdut, dormit</em>).\nThe irregular ones are best learnt in groups:</p>\n<ul>\n  <li><strong>-t / -s</strong>: fer → <strong>fet</strong>, dir → <strong>dit</strong>,\n      escriure → <strong>escrit</strong>, treure → <strong>tret</strong>,\n      dur → <strong>dut</strong>, veure → <strong>vist</strong>,\n      prendre → <strong>pres</strong> (comprendre → comprès)</li>\n  <li><strong>-ert / -ort</strong>: obrir → <strong>obert</strong>, cobrir → cobert,\n      oferir → ofert, morir → <strong>mort</strong></li>\n  <li><strong>-gut</strong>: creure → <strong>cregut</strong>, tenir → <strong>tingut</strong>,\n      venir → vingut, poder → pogut, voler → volgut, beure → begut,\n      conèixer → conegut, viure → <strong>viscut</strong>, néixer → nascut</li>\n  <li>ser → <strong>estat</strong> or <strong>sigut</strong>; estar → estat</li>\n</ul>\n<p>Many match common English irregulars: <em>fet</em> — done/made, <em>dit</em> — said,\n<em>vist</em> — seen, <em>pres</em> — taken, <em>escrit</em> — written. Unlike English\nparticiples, they agree when used as adjectives, and the feminine and plural are\nregular: <em>feta, fets, dita, presa, escrita, oberta, morta, creguda</em>\n(<em>una porta oberta</em> — an open door).</p>\n<p>The <strong>gerundi</strong> is mostly regular (<em>parlant, perdent, dormint</em>), but\nsome verbs, especially those in <em>-ure</em>, have special forms:\nfer → <strong>fent</strong>, dir → <strong>dient</strong>, veure → <strong>veient</strong>,\ncreure → creient, riure → rient, beure → <strong>bevent</strong>,\nescriure → <strong>escrivint</strong>, viure → vivint, ser → <strong>essent</strong> or\n<strong>sent</strong>.</p>\n<p>Don’t use it like English <em>-ing</em>: the Catalan gerund is never used as a noun,\nand after a preposition Catalan uses the infinitive: <em>Nedar és sa</em> — Swimming\nis healthy; <em>abans de sortir</em> — before leaving; <em>M’agrada llegir</em> — I like\nreading.</p>\n",
+    "examples": [
+      {
+        "ca": "Què has fet avui?",
+        "en": "What have you done today?"
+      },
+      {
+        "ca": "Has llegit la carta que t’he escrit?",
+        "en": "Have you read the letter I wrote you?"
+      },
+      {
+        "ca": "Ningú no s’ho ha cregut.",
+        "en": "Nobody believed it."
+      },
+      {
+        "ca": "Hem tingut molta sort.",
+        "en": "We’ve been very lucky."
+      },
+      {
+        "ca": "Va entrar dient bon dia a tothom.",
+        "en": "He came in saying good morning to everyone."
+      },
+      {
+        "ca": "Essent tan jove, ja dirigeix l’empresa.",
+        "en": "Young as he is, he already runs the company."
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Put the verb in the perfet (he + past participle).",
+        "items": [
+          {
+            "q": "Jo (fer) ___ el sopar.",
+            "a": "he fet"
+          },
+          {
+            "q": "Ella (escriure) ___ una carta.",
+            "a": "ha escrit"
+          },
+          {
+            "q": "Qui (obrir) ___ la finestra?",
+            "a": "ha obert"
+          },
+          {
+            "q": "Nosaltres no (veure) ___ res.",
+            "a": "hem vist"
+          },
+          {
+            "q": "Ells (prendre) ___ un taxi.",
+            "a": "han pres"
+          },
+          {
+            "q": "Vosaltres (tenir) ___ problemes?",
+            "a": "heu tingut"
+          },
+          {
+            "q": "Aquest any (ser) ___ molt difícil.",
+            "a": "ha estat / ha sigut"
+          }
+        ]
+      },
+      {
+        "instruction": "Give the gerund.",
+        "items": [
+          {
+            "q": "dir",
+            "a": "dient"
+          },
+          {
+            "q": "veure",
+            "a": "veient"
+          },
+          {
+            "q": "escriure",
+            "a": "escrivint"
+          },
+          {
+            "q": "ser",
+            "a": "essent / sent"
+          },
+          {
+            "q": "beure",
+            "a": "bevent"
+          },
+          {
+            "q": "fer",
+            "a": "fent"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 61,
+    "title": "saber or conèixer; saber or poder",
+    "summary": "Knowing a fact or knowing a person; knowing how or being able.",
+    "explanation": "\n<p>English <strong>know</strong> has two Catalan equivalents:</p>\n<ul>\n  <li><strong>saber</strong> — to know a fact, an answer, a piece of information:\n      <em>Saps on és l’estació? No sé què vol.</em> Often followed by\n      <em>que, on, quan, si</em>.</li>\n  <li><strong>conèixer</strong> — to know a person, place or thing, to be familiar with it:\n      <em>Conec la Maria. Coneixes Lleida?</em>\n      Forms: conec, coneixes, coneix, coneixem, coneixeu, coneixen.</li>\n</ul>\n<p>A quick test: “know <em>that / where / if</em>…” → <em>saber</em>; “know” + a person or\nplace → <em>conèixer</em>. In the past, <em>vaig conèixer</em> usually means “I met”\n(for the first time): <em>La vaig conèixer a Girona.</em> Meeting up with someone you\nalready know is <em>trobar-se amb</em> or <em>quedar amb</em>.</p>\n<p>English <strong>can</strong> also splits in two:</p>\n<ul>\n  <li><strong>saber</strong> + infinitive — can = know how to (a skill you have learnt):\n      <em>Sé nedar.</em> — I can swim. Just the infinitive, no <em>com</em> needed.</li>\n  <li><strong>poder</strong> + infinitive — can = be able to, be allowed to, have the chance:\n      <em>Avui no puc nedar: fa massa fred.</em></li>\n</ul>\n<p>So “Can you drive?” is <em>Saps conduir?</em> (do you know how?), but “Can you drive\nme home?” is <em>Em pots portar a casa?</em> (are you able and willing?).</p>\n<p>Useful expressions: <em>saber greu</em> — to be sorry (<em>Em sap greu.</em> — I’m sorry),\n<em>saber a</em> — to taste of (<em>Sap a llimona.</em> — It tastes of lemon).</p>\n",
+    "examples": [
+      {
+        "ca": "Saps on és l’estació?",
+        "en": "Do you know where the station is?"
+      },
+      {
+        "ca": "Coneixes el meu germà?",
+        "en": "Do you know my brother?"
+      },
+      {
+        "ca": "Vaig conèixer la Laia a la universitat.",
+        "en": "I met Laia at university."
+      },
+      {
+        "ca": "Sé conduir, però avui no puc: he begut vi.",
+        "en": "I can drive, but not today: I’ve had some wine."
+      },
+      {
+        "ca": "Em sap greu, no ho sabia.",
+        "en": "I’m sorry, I didn’t know."
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "saber or conèixer? Use the present tense.",
+        "items": [
+          {
+            "q": "No ___ (jo) com es diu.",
+            "a": "sé"
+          },
+          {
+            "q": "___ (tu) Girona?",
+            "a": "Coneixes"
+          },
+          {
+            "q": "Ella ___ parlar xinès.",
+            "a": "sap"
+          },
+          {
+            "q": "No ___ (nosaltres) ningú en aquesta ciutat.",
+            "a": "coneixem"
+          },
+          {
+            "q": "___ (vosaltres) a quina hora comença?",
+            "a": "Sabeu"
+          },
+          {
+            "q": "No ___ (jo) aquest restaurant. És nou?",
+            "a": "conec"
+          }
+        ]
+      },
+      {
+        "instruction": "saber or poder? Use the present tense.",
+        "items": [
+          {
+            "q": "Demà no ___ (jo) venir: treballo.",
+            "a": "puc"
+          },
+          {
+            "q": "El meu fill ja ___ llegir.",
+            "a": "sap"
+          },
+          {
+            "q": "___ (tu) tancar la porta, si us plau?",
+            "a": "Pots"
+          },
+          {
+            "q": "No ___ (jo) cuinar: no m’ho han ensenyat mai.",
+            "a": "sé"
+          },
+          {
+            "q": "Aquí no ___ (vostès) fumar.",
+            "a": "poden"
+          },
+          {
+            "q": "___ (tu) tocar la guitarra?",
+            "a": "Saps"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 62,
+    "title": "The weather: fa calor, plou, neva",
+    "summary": "Quin temps fa? — fa sol, plou, hi ha boira: weather without “it is”.",
+    "explanation": "\n<p>The question: <strong>Quin temps fa?</strong> — What’s the weather like?</p>\n<p>English builds weather expressions with “it is” (<em>it’s hot, it’s sunny, it’s\nraining</em>). Catalan has no “it” and doesn’t use <em>ser</em> here. Most expressions\nare built with <strong>fer</strong> (3rd person singular) + a noun:</p>\n<ul>\n  <li><strong>fa</strong> bon temps / mal temps — the weather is good / bad</li>\n  <li><strong>fa</strong> calor / fred / fresca — it’s hot / cold / cool</li>\n  <li><strong>fa</strong> sol / vent — it’s sunny / windy</li>\n</ul>\n<p>Rain and snow have their own verbs: <strong>plou</strong> (ploure) — it’s raining,\n<strong>neva</strong> (nevar) — it’s snowing, <strong>calamarseja</strong> — it’s hailing. The\nsimple present is the normal way to say what’s happening right now (<em>està plovent</em>\nis also possible). For other phenomena use <strong>hi ha</strong>: <em>hi ha boira</em>\n(it’s foggy), <em>hi ha tempesta</em> (there’s a storm). For the sky, use\n<strong>estar</strong>: <em>està ennuvolat</em> (it’s cloudy).</p>\n<p>Because <em>calor</em> and <em>fred</em> are nouns, “very hot” is literally “much heat”,\nso <em>molt</em> behaves as a quantifier. <em>Calor</em> is <strong>feminine</strong> in\nCatalan: <em>fa <strong>molta</strong> calor</em>; but <em>fa <strong>molt de</strong> fred</em>.</p>\n<p>Temperature (in Celsius): <em>Fa vint graus.</em> — It’s twenty degrees.\n<em>Estem a dos graus sota zero.</em> — It’s two below zero.</p>\n<p>Don’t mix up the weather and how a person feels. English uses “be” for both\n(<em>it’s cold / I’m cold</em>), but for people Catalan uses <strong>tenir</strong>:\n<em>tinc fred / calor</em> — I’m cold / hot.</p>\n",
+    "examples": [
+      {
+        "ca": "Quin temps fa avui? — Fa sol i una mica de vent.",
+        "en": "What’s the weather like today? — It’s sunny and a bit windy."
+      },
+      {
+        "ca": "Al juliol fa molta calor.",
+        "en": "It’s very hot in July."
+      },
+      {
+        "ca": "Plou molt: agafa el paraigua.",
+        "en": "It’s raining hard: take the umbrella."
+      },
+      {
+        "ca": "Al matí hi ha boira a la carretera.",
+        "en": "There’s fog on the road in the morning."
+      },
+      {
+        "ca": "Demà nevarà al Pirineu.",
+        "en": "It will snow in the Pyrenees tomorrow."
+      },
+      {
+        "ca": "Tinc fred: tanca la finestra.",
+        "en": "I’m cold — close the window."
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "How do you say it in Catalan?",
+        "items": [
+          {
+            "q": "It’s sunny.",
+            "a": "Fa sol."
+          },
+          {
+            "q": "It’s raining.",
+            "a": "Plou. / Està plovent."
+          },
+          {
+            "q": "It’s cold.",
+            "a": "Fa fred."
+          },
+          {
+            "q": "It’s foggy.",
+            "a": "Hi ha boira."
+          },
+          {
+            "q": "It’s snowing.",
+            "a": "Neva. / Està nevant."
+          },
+          {
+            "q": "It’s windy.",
+            "a": "Fa vent."
+          },
+          {
+            "q": "It’s very hot.",
+            "a": "Fa molta calor."
+          }
+        ]
+      },
+      {
+        "instruction": "fa, hi ha, està or tens?",
+        "items": [
+          {
+            "q": "Avui ___ tempesta.",
+            "a": "hi ha"
+          },
+          {
+            "q": "___ calor? Obro la finestra.",
+            "a": "Tens"
+          },
+          {
+            "q": "Aquesta setmana ___ bon temps.",
+            "a": "fa"
+          },
+          {
+            "q": "El cel ___ ennuvolat.",
+            "a": "està"
+          },
+          {
+            "q": "A la muntanya ___ molt de fred.",
+            "a": "fa"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 63,
+    "title": "Duration: fa… que, des de, durant, d’aquí a",
+    "summary": "Ago, for, since, in — how to say them in Catalan.",
+    "explanation": "\n<ul>\n  <li><strong>fa</strong> + period — “ago”. Note the order: <em>fa</em> comes <em>before</em>\n      the period: <em>Vaig arribar <strong>fa</strong> una setmana.</em> — I arrived a week ago.</li>\n  <li><strong>fa</strong> + period + <strong>que</strong> + present — an action that is still\n      going on: <em><strong>Fa</strong> tres anys <strong>que</strong> visc aquí.</em> — I’ve\n      lived here for three years. Same meaning:\n      <em>Visc aquí <strong>des de fa</strong> tres anys.</em></li>\n  <li><strong>des de</strong> + point in time — “since, from”: <em>des de dilluns, des del 2020</em>.</li>\n  <li><strong>des que</strong> + verb — “since” + clause: <em>Des que treballo aquí, dormo poc.</em></li>\n  <li><strong>durant</strong> + period — “for, during”, a period seen as a whole, typically one that is over:\n      <em>Hi vaig viure durant cinc anys.</em> As with English “for”, <em>durant</em> is often\n      simply left out: <em>Hi vaig viure cinc anys.</em></li>\n  <li><strong>d’aquí a</strong> + period — “in” (from now, in the future):\n      <em>Torno <strong>d’aquí a</strong> deu minuts.</em> — I’ll be back in ten minutes.</li>\n  <li><strong>en</strong> + period — “in” (how long something takes):\n      <em>Ho vaig fer <strong>en</strong> dues hores.</em> — I did it in two hours.</li>\n</ul>\n<p><strong>Watch the tense.</strong> Where English uses the present perfect for something\nstill going on (<em>I’ve lived here for three years</em>), Catalan uses the\n<strong>present</strong> with <em>fa… que</em> or <em>des de fa</em>. Don’t use <em>durant</em>\nfor a period that is still running.</p>\n<p><strong>Watch “in”.</strong> English “in” covers two ideas: “in ten minutes” (from now) is\n<em>d’aquí a deu minuts</em>, while “in two hours” (time taken) is <em>en dues hores</em>.\nDon’t say <em>torno en deu minuts</em>. In a past story, “an hour later” is\n<em>una hora després</em>.</p>\n<p>Questions: <em>Quant de temps fa que…?</em> — How long have you been…?\n<em>Des de quan…?</em> — Since when…?</p>\n",
+    "examples": [
+      {
+        "ca": "Fa tres anys que estudio català.",
+        "en": "I’ve been learning Catalan for three years."
+      },
+      {
+        "ca": "Treballo aquí des del 2022.",
+        "en": "I’ve worked here since 2022."
+      },
+      {
+        "ca": "Des que viu sola, cuina més.",
+        "en": "Since she started living alone, she cooks more."
+      },
+      {
+        "ca": "Torno d’aquí a deu minuts.",
+        "en": "I’ll be back in ten minutes."
+      },
+      {
+        "ca": "Va llegir el llibre en dos dies.",
+        "en": "He read the book in two days."
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Choose: fa, des de, des que, durant, d’aquí a, en.",
+        "items": [
+          {
+            "q": "___ cinc anys que no fumo.",
+            "a": "Fa"
+          },
+          {
+            "q": "Viu a Lleida ___ l’any passat.",
+            "a": "des de"
+          },
+          {
+            "q": "La pel·lícula comença ___ mitja hora.",
+            "a": "d’aquí a"
+          },
+          {
+            "q": "Vam esperar ___ tota la tarda.",
+            "a": "durant"
+          },
+          {
+            "q": "Vaig pintar l’habitació ___ un sol dia.",
+            "a": "en"
+          },
+          {
+            "q": "No l’he vist ___ va canviar de feina.",
+            "a": "des que"
+          },
+          {
+            "q": "Vaig conèixer el Pau ___ deu anys.",
+            "a": "fa"
+          }
+        ]
+      },
+      {
+        "instruction": "Translate into Catalan.",
+        "items": [
+          {
+            "q": "I’ve lived here for two years.",
+            "a": "Fa dos anys que visc aquí. / Visc aquí des de fa dos anys."
+          },
+          {
+            "q": "See you in a week.",
+            "a": "Ens veiem d’aquí a una setmana."
+          },
+          {
+            "q": "We haven’t seen each other for a long time.",
+            "a": "Fa molt (de temps) que no ens veiem."
+          },
+          {
+            "q": "He wrote the novel in three months.",
+            "a": "Va escriure la novel·la en tres mesos."
+          },
+          {
+            "q": "How long have you been working here?",
+            "a": "Quant de temps fa que treballes aquí?"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 64,
+    "title": "Indefinites: algun, cap, tot, cada, qualsevol, altre",
+    "summary": "Some, any, no, all, every, whichever, other.",
+    "explanation": "\n<ul>\n  <li><strong>algun, alguna, alguns, algunes</strong> — some, any (in questions):\n      <em>Tens <strong>algun</strong> llibre en català?</em> — Have you got any books in\n      Catalan? (Catalan often uses the singular here.) Pronoun: <em>algú</em> — somebody, anybody.</li>\n  <li><strong>cap</strong> (invariable) — with <em>no</em> it means “no, not any” (unit 12):\n      <em>No tinc cap idea</em> — I have no idea. Catalan needs both <em>no</em> and\n      <em>cap</em>: a double negative that English avoids. In questions and conditions\n      <em>cap</em> means “any”: <em>Tens <strong>cap</strong> pregunta?</em></li>\n  <li><strong>tot, tota, tots, totes</strong> + article — all, the whole:\n      <em>tot el dia, tota la nit, tots els dies</em>. Unlike English “all day”, the article\n      is required. <em>Tothom</em> — everybody (singular verb, as in English):\n      <em>Tothom ho sap.</em> <em>Tot</em> — everything: <em>Ho sé tot.</em></li>\n  <li><strong>cada</strong> (invariable) — every, each: <em>cada dia, cada dos dies</em>\n      (every other day). Pronouns: <em>cadascú</em> (everyone, each person),\n      <em>cadascun / cadascuna</em> (each one).</li>\n  <li><strong>qualsevol</strong> (pl. <em>qualssevol</em>) — any (at all), whichever:\n      <em>en <strong>qualsevol</strong> moment</em> — at any time. After a noun it means\n      “ordinary”: <em>un dia qualsevol</em> — just an ordinary day.</li>\n  <li><strong>altre, altra, altres</strong> — other; <em>un altre</em> — another:\n      <em>Vols <strong>un altre</strong> cafè?</em> <em>L’altre dia</em> — the other day.</li>\n</ul>\n<p>So English “any” has three translations: <em>algun</em> or <em>cap</em> in questions,\n<em>cap</em> after <em>no</em>, and <em>qualsevol</em> when it means “no matter which”\n(<em>Pots venir qualsevol dia</em>).</p>\n<p>English “another” is one word, but Catalan always needs the indefinite article:\n<em>un altre llibre</em>, <em>una altra vegada</em> — never <em>altre llibre</em> on its own.</p>\n",
+    "examples": [
+      {
+        "ca": "Tens alguna pregunta? — No, cap.",
+        "en": "Have you got any questions? — No, none."
+      },
+      {
+        "ca": "He treballat tot el dia.",
+        "en": "I’ve been working all day."
+      },
+      {
+        "ca": "L’autobús passa cada vint minuts.",
+        "en": "The bus comes every twenty minutes."
+      },
+      {
+        "ca": "Pots venir qualsevol dia.",
+        "en": "You can come any day."
+      },
+      {
+        "ca": "Vols un altre cafè?",
+        "en": "Would you like another coffee?"
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Fill in the gap.",
+        "items": [
+          {
+            "q": "No hi ha ___ problema.",
+            "a": "cap"
+          },
+          {
+            "q": "Hi ha ___ farmàcia per aquí?",
+            "a": "alguna / cap"
+          },
+          {
+            "q": "Ja ho he fet ___.",
+            "a": "tot"
+          },
+          {
+            "q": "Truca’m ___ dia, quan vulguis.",
+            "a": "qualsevol"
+          },
+          {
+            "q": "Vaig a la piscina ___ dimarts.",
+            "a": "cada"
+          },
+          {
+            "q": "Se m’ha acabat la tinta. Tens un ___ bolígraf?",
+            "a": "altre"
+          },
+          {
+            "q": "___ els meus amics són de Girona.",
+            "a": "Tots"
+          }
+        ]
+      },
+      {
+        "instruction": "Translate into Catalan.",
+        "items": [
+          {
+            "q": "Everyone has come.",
+            "a": "Tothom ha vingut. / Ha vingut tothom. / Han vingut tots."
+          },
+          {
+            "q": "Anyone can do it.",
+            "a": "Qualsevol pot fer-ho. / Qualsevol ho pot fer."
+          },
+          {
+            "q": "I have no idea.",
+            "a": "No tinc cap idea."
+          },
+          {
+            "q": "It rained all week.",
+            "a": "Va ploure tota la setmana. / Ha plogut tota la setmana."
+          },
+          {
+            "q": "Everyone has their own opinion.",
+            "a": "Cadascú té la seva opinió."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 65,
+    "title": "Quantity: molt, poc, massa, bastant, gaire, força",
+    "summary": "A lot, little, too much, quite — which words agree and which don’t.",
+    "explanation": "\n<p>English has different words for countable and uncountable nouns (<em>much / many,\nlittle / few</em>). Catalan doesn’t: before a noun, <strong>molt</strong> and <strong>poc</strong>\nsimply agree in gender and number: <em>molt temps, molta gent, molts amics, moltes coses;\npoc soroll, poca paciència, pocs diners, poques ganes</em>.</p>\n<p>Before an adjective or adverb, and after a verb, they don’t change; here <em>molt</em>\nmeans “very” or “a lot”: <em>molt bo, molt bé, treballa molt, menja poc</em>. A typical\nmistake is to make “very” agree: <em>una casa molt bonica</em>, not\n<em>molta bonica</em>.</p>\n<ul>\n  <li><strong>massa</strong> (invariable) — too much, too many, too: <em>massa gent,\n      massa cotxes, és massa car</em>.</li>\n  <li><strong>bastant / bastants</strong> — quite, quite a lot, enough (agrees in number only):\n      <em>bastant temps, bastants llibres, és bastant bo</em>.</li>\n  <li><strong>força</strong> (invariable) — quite a lot (of), pretty: <em>força gent,\n      força cansat</em>.</li>\n  <li><strong>gaire / gaires</strong> — “(not) much, (not) many, (not) very”; used only in\n      negatives and questions, much like English <em>much</em>, which also sounds odd in plain\n      statements:\n      <em>No tinc <strong>gaire</strong> temps.</em> — I don’t have much time.\n      <em>No hi ha <strong>gaires</strong> places.</em> — There aren’t many seats.\n      <em>És gaire lluny?</em> — Is it very far?</li>\n</ul>\n<p><strong>poc</strong> vs <strong>una mica de</strong> works exactly like English “little” vs\n“a little”: <em>Tinc poc temps</em> — I have little time (not enough);\n<em>Tinc una mica de temps</em> — I have a little time.</p>\n",
+    "examples": [
+      {
+        "ca": "Hi havia molta gent a la platja.",
+        "en": "There were a lot of people on the beach."
+      },
+      {
+        "ca": "Tinc poca paciència.",
+        "en": "I don’t have much patience."
+      },
+      {
+        "ca": "Aquest cotxe és massa car.",
+        "en": "This car is too expensive."
+      },
+      {
+        "ca": "No tinc gaire gana.",
+        "en": "I’m not very hungry."
+      },
+      {
+        "ca": "Parla força bé l’anglès.",
+        "en": "He speaks English pretty well."
+      },
+      {
+        "ca": "Tenim bastants cadires per a tothom?",
+        "en": "Do we have enough chairs for everyone?"
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Put the word in the correct form.",
+        "items": [
+          {
+            "q": "Tinc ___ (molt) feina.",
+            "a": "molta"
+          },
+          {
+            "q": "Hi ha ___ (poc) turistes.",
+            "a": "pocs"
+          },
+          {
+            "q": "Té ___ (molt) amigues.",
+            "a": "moltes"
+          },
+          {
+            "q": "Hi ha ___ (massa) cotxes.",
+            "a": "massa"
+          },
+          {
+            "q": "Hem comprat ___ (bastant) llibres.",
+            "a": "bastants"
+          },
+          {
+            "q": "Avui fa ___ (poc) calor.",
+            "a": "poca"
+          }
+        ]
+      },
+      {
+        "instruction": "Translate into Catalan, using gaire or força.",
+        "items": [
+          {
+            "q": "I don’t have much time.",
+            "a": "No tinc gaire temps."
+          },
+          {
+            "q": "There are quite a lot of people here.",
+            "a": "Aquí hi ha força gent."
+          },
+          {
+            "q": "Is the restaurant very far?",
+            "a": "És gaire lluny, el restaurant?"
+          },
+          {
+            "q": "He isn’t very tall.",
+            "a": "No és gaire alt."
+          },
+          {
+            "q": "I’m quite tired.",
+            "a": "Estic força cansat."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 66,
+    "title": "Adverbs in -ment",
+    "summary": "Clar → clarament; two adverbs in a row: clara i ràpidament.",
+    "explanation": "\n<p>Catalan <strong>-ment</strong> works like English <strong>-ly</strong>, with one difference:\nit is added to the <strong>feminine</strong> form of the adjective:</p>\n<ul>\n  <li>clar → clara → <strong>clarament</strong>; lent → <strong>lentament</strong></li>\n  <li>fàcil → <strong>fàcilment</strong>; feliç → <strong>feliçment</strong>\n      (the adjective has one form for both genders)</li>\n  <li>seriós → seriosa → <strong>seriosament</strong>;\n      tranquil → tranquil·la → <strong>tranquil·lament</strong></li>\n</ul>\n<p>The adjective keeps its written accent: <em>ràpidament, últimament, còmodament</em>.</p>\n<p>When <strong>two adverbs</strong> come together, <em>-ment</em> can go on the last one only,\nand the first one stays in the feminine: <em>Ho va explicar <strong>clara i\nràpidament</strong>.</em> English can’t do this (“clear and quickly”), so it looks odd at\nfirst. Both full forms are also correct: <em>clarament i ràpidament</em>.</p>\n<p>Exceptions: “well” is <strong>bé</strong> and “badly” is <strong>malament</strong> — compare\nEnglish <em>good → well</em>: <em>Ho has fet malament.</em> Catalan often uses\n<em>de manera</em> + adjective instead, or the adjective itself as an adverb, much like\nEnglish “fast”: <em>parla clar, camina ràpid</em>.</p>\n<p><strong>False friends:</strong> <em>actualment</em> means “currently”, not “actually”\n(= <em>de fet, en realitat</em>); <em>eventualment</em> means “possibly, if need be”, not\n“eventually” (= <em>finalment, al final</em>); <em>últimament</em> means “lately”, not\n“ultimately”.</p>\n",
+    "examples": [
+      {
+        "ca": "Parla clarament, si us plau.",
+        "en": "Speak clearly, please."
+      },
+      {
+        "ca": "Normalment esmorzo a casa.",
+        "en": "I usually have breakfast at home."
+      },
+      {
+        "ca": "Ha resolt el problema fàcilment.",
+        "en": "He solved the problem easily."
+      },
+      {
+        "ca": "Ho va explicar clara i ràpidament.",
+        "en": "He explained it clearly and quickly."
+      },
+      {
+        "ca": "Últimament dormo malament.",
+        "en": "I haven’t been sleeping well lately."
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Form the adverb.",
+        "items": [
+          {
+            "q": "ràpid",
+            "a": "ràpidament"
+          },
+          {
+            "q": "lent",
+            "a": "lentament"
+          },
+          {
+            "q": "fàcil",
+            "a": "fàcilment"
+          },
+          {
+            "q": "seriós",
+            "a": "seriosament"
+          },
+          {
+            "q": "feliç",
+            "a": "feliçment"
+          },
+          {
+            "q": "tranquil",
+            "a": "tranquil·lament"
+          },
+          {
+            "q": "bo",
+            "a": "bé"
+          }
+        ]
+      },
+      {
+        "instruction": "Combine the two adverbs following the model “clara i ràpidament”.",
+        "items": [
+          {
+            "q": "tranquil + educat",
+            "a": "tranquil·la i educadament"
+          },
+          {
+            "q": "directe + sincer",
+            "a": "directa i sincerament"
+          },
+          {
+            "q": "simple + clar",
+            "a": "simple i clarament"
+          },
+          {
+            "q": "ràpid + eficaç",
+            "a": "ràpida i eficaçment"
+          },
+          {
+            "q": "amable + pacient",
+            "a": "amable i pacientment"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 67,
+    "title": "però, sinó, sinó que, doncs",
+    "summary": "Two kinds of “but”, “not… but rather”, “so” — and the si no trap.",
+    "explanation": "\n<p>Where English has one word, <strong>but</strong>, Catalan has two:</p>\n<ul>\n  <li><strong>però</strong> — “but” expressing contrast:\n      <em>És car, <strong>però</strong> val la pena.</em> — It’s expensive, but it’s worth it.\n      It can also go inside the sentence, like “however”:\n      <em>La idea, <strong>però</strong>, no em convenç.</em></li>\n  <li><strong>sinó</strong> — “but (rather)” after a negative, when you correct a word or\n      phrase: <em>No és italià, <strong>sinó</strong> francès.</em> — He isn’t Italian but\n      French. Test: if you can say “not X but (instead) Y”, use <em>sinó</em>.</li>\n  <li><strong>sinó que</strong> — the same, but followed by a conjugated verb:\n      <em>No va venir, <strong>sinó que</strong> va trucar.</em> — He didn’t come; he phoned\n      instead.</li>\n  <li><strong>no només… sinó (que) també</strong> — not only… but also:\n      <em>No només parla àrab, sinó també francès.</em></li>\n</ul>\n<p>Don’t confuse <strong>sinó</strong> (one word) with <strong>si no</strong> (“if not”):\n<em>Si no plou, sortirem.</em> — If it doesn’t rain, we’ll go out. They sound alike,\nso the spelling is easy to get wrong.</p>\n<p><strong>doncs</strong> expresses a consequence — “so, then, in that case”:\n<em>Tens fred? <strong>Doncs</strong> tanca la finestra.</em> — Are you cold? Then close the\nwindow. At the start of a reply it is often just “well”: <em>Doncs no ho sé.</em> —\nWell, I don’t know. <em>Doncs</em> never gives a reason: “No vinc, doncs estic cansat”\nis wrong (a calque of Spanish <em>pues</em>); use <em>perquè</em> or <em>ja que</em>.</p>\n",
+    "examples": [
+      {
+        "ca": "M’agrada, però és massa car.",
+        "en": "I like it, but it’s too expensive."
+      },
+      {
+        "ca": "No vull te, sinó cafè.",
+        "en": "I don’t want tea, I want coffee."
+      },
+      {
+        "ca": "No es va enfadar, sinó que va riure.",
+        "en": "He didn’t get angry; he laughed instead."
+      },
+      {
+        "ca": "No només canta, sinó que també balla.",
+        "en": "She not only sings but also dances."
+      },
+      {
+        "ca": "Estàs cansat? Doncs fes una migdiada.",
+        "en": "Tired? Then have a nap."
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "però, sinó or sinó que?",
+        "items": [
+          {
+            "q": "No és metge, ___ infermer.",
+            "a": "sinó"
+          },
+          {
+            "q": "És petit, ___ molt còmode.",
+            "a": "però"
+          },
+          {
+            "q": "No ho va dir ell, ___ ella.",
+            "a": "sinó"
+          },
+          {
+            "q": "No vam anar a la platja, ___ ens vam quedar a casa.",
+            "a": "sinó que"
+          },
+          {
+            "q": "Volia venir, ___ no va poder.",
+            "a": "però"
+          },
+          {
+            "q": "No estudia, ___ treballa.",
+            "a": "sinó que"
+          },
+          {
+            "q": "No m’agrada el futbol, ___ el bàsquet sí.",
+            "a": "però"
+          }
+        ]
+      },
+      {
+        "instruction": "Correct or not? If not, correct it.",
+        "items": [
+          {
+            "q": "No surto, doncs plou.",
+            "a": "Incorrect: No surto perquè plou. / No surto, ja que plou."
+          },
+          {
+            "q": "Tens gana? Doncs menja alguna cosa.",
+            "a": "Correct"
+          },
+          {
+            "q": "Truca’m sinó pots venir.",
+            "a": "Incorrect: Truca’m si no pots venir."
+          },
+          {
+            "q": "No vull aigua, sinó suc.",
+            "a": "Correct"
+          },
+          {
+            "q": "No ho sé, però ho preguntaré.",
+            "a": "Correct"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 68,
+    "title": "Cause and consequence: perquè, com que, així que",
+    "summary": "Because, as, since, so, therefore.",
+    "explanation": "\n<p><strong>Cause</strong>:</p>\n<ul>\n  <li><strong>perquè</strong> + indicative — “because”, usually after the main clause:\n      <em>No vinc <strong>perquè</strong> estic malalt.</em> “Why?” is written as two words:\n      <em><strong>Per què</strong> no vens?</em> English has two different words; Catalan\n      only spells them differently.</li>\n  <li><strong>com que</strong> — “as, since”; it goes <em>only at the beginning</em> of the\n      sentence: <em><strong>Com que</strong> plovia, ens vam quedar a casa.</em> Where English\n      starts with “Because it was raining, …”, Catalan prefers <em>com que</em>.</li>\n  <li><strong>ja que, atès que, vist que</strong> — “since, given that, seeing that” (a cause\n      the listener already knows); they can go anywhere in the sentence.</li>\n  <li>Before a noun: <strong>a causa de</strong> — because of, <strong>per culpa de</strong>\n      (something bad), <strong>gràcies a</strong> — thanks to (something good). Just as\n      English needs “because <em>of</em>”, Catalan can’t use <em>perquè</em> before a noun.\n      Avoid <em>degut a</em> as a preposition (“due to”); say <em>a causa de</em>.</li>\n</ul>\n<p>English <strong>since</strong> can refer to time or to cause; Catalan keeps them apart:\ntime is <em>des que</em> (unit 63), cause is <em>ja que</em> or <em>com que</em>.</p>\n<p><strong>Consequence</strong>:</p>\n<ul>\n  <li><strong>així que</strong> — “so” (conversational): <em>Era tard, <strong>així que</strong>\n      vam agafar un taxi.</em></li>\n  <li><strong>per tant, per això, doncs</strong> — “therefore, that’s why, so”:\n      <em>No ha estudiat; <strong>per tant</strong>, no aprovarà.</em></li>\n  <li><strong>de manera que</strong> + indicative — “so” (with the result that).</li>\n</ul>\n<p>Remember: <em>perquè</em> + subjunctive expresses purpose — “so that” (unit 35), not cause.</p>\n",
+    "examples": [
+      {
+        "ca": "No he vingut perquè estava malalt.",
+        "en": "I didn’t come because I was ill."
+      },
+      {
+        "ca": "Com que no tenia diners, no vaig comprar res.",
+        "en": "As I had no money, I didn’t buy anything."
+      },
+      {
+        "ca": "Ja que ets aquí, ajuda’m una mica.",
+        "en": "Since you’re here, give me a hand."
+      },
+      {
+        "ca": "Era molt tard, així que vam agafar un taxi.",
+        "en": "It was very late, so we took a taxi."
+      },
+      {
+        "ca": "El tren va arribar tard a causa de la neu.",
+        "en": "The train was late because of the snow."
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Choose: perquè, per què, com que, així que, per tant.",
+        "items": [
+          {
+            "q": "___ feia sol, vam anar a la platja.",
+            "a": "Com que / Ja que"
+          },
+          {
+            "q": "No et truco ___ no tinc bateria.",
+            "a": "perquè"
+          },
+          {
+            "q": "Estava cansada, ___ se’n va anar a dormir.",
+            "a": "així que / per tant"
+          },
+          {
+            "q": "___ no m’has avisat?",
+            "a": "Per què"
+          },
+          {
+            "q": "No queden entrades; ___, haurem de tornar demà.",
+            "a": "per tant"
+          },
+          {
+            "q": "Hem perdut el tren ___ el taxi ha arribat tard.",
+            "a": "perquè"
+          }
+        ]
+      },
+      {
+        "instruction": "Rewrite the sentence with com que.",
+        "items": [
+          {
+            "q": "No vam sortir perquè plovia.",
+            "a": "Com que plovia, no vam sortir."
+          },
+          {
+            "q": "Vaig agafar el cotxe perquè era tard.",
+            "a": "Com que era tard, vaig agafar el cotxe."
+          },
+          {
+            "q": "No compra res perquè no té diners.",
+            "a": "Com que no té diners, no compra res."
+          },
+          {
+            "q": "No t’ho explico perquè ja ho saps.",
+            "a": "Com que ja ho saps, no t’ho explico."
+          },
+          {
+            "q": "Em quedo a casa perquè estic malalt.",
+            "a": "Com que estic malalt, em quedo a casa."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 69,
+    "title": "Concession: encara que, tot i que, malgrat que",
+    "summary": "Although — indicative; even if — subjunctive; tot i + infinitive.",
+    "explanation": "\n<p>English has different words for “although / even though” and “even if”. Catalan uses\nthe same conjunctions — <strong>encara que, tot i que, malgrat que</strong> — and lets the\n<strong>mood</strong> of the verb make the difference:</p>\n<ul>\n  <li><strong>indicative</strong> — a real fact, “although”:\n      <em>Encara que <strong>plou</strong>, sortirem.</em> — Although it’s raining, we’ll go out.</li>\n  <li><strong>subjunctive</strong> — a possibility, or a fact the speaker treats as\n      irrelevant, “even if”: <em>Encara que <strong>plogui</strong>, sortirem.</em> — Even if it\n      rains, we’ll go out.</li>\n  <li><strong>imperfect subjunctive</strong> — an imaginary situation, like English “even if\n      I were”: <em>Encara que <strong>fos</strong> ric, no ho compraria.</em> — Even if I were\n      rich, I wouldn’t buy it.</li>\n</ul>\n<p>Careful: <em>encara</em> on its own means “still, yet”; it’s <em>encara que</em> that\nmeans “although”. <em>Tot i que</em> is mostly used with the indicative, for real facts.</p>\n<p>Shorter constructions:</p>\n<ul>\n  <li><strong>tot i</strong> + infinitive — when the subject is the same. English uses\n      “despite” + <em>-ing</em>; Catalan uses the infinitive:\n      <em><strong>Tot i estar</strong> cansat, va continuar.</em> — Despite being tired, he\n      carried on.</li>\n  <li><strong>malgrat</strong> / <strong>tot i</strong> + noun — “despite, in spite of”:\n      <em>malgrat la pluja, tot i el cansament</em>; <em>malgrat tot</em> — in spite of\n      everything.</li>\n  <li><strong>per més que / per molt que</strong> + subjunctive — “however much, no matter\n      how much”: <em>Per més que ho intenti, no me’n surto.</em> — However hard I try,\n      I can’t manage it.</li>\n</ul>\n",
+    "examples": [
+      {
+        "ca": "Encara que plou, anirem d’excursió.",
+        "en": "Although it’s raining, we’ll go on our hike."
+      },
+      {
+        "ca": "Encara que plogui, anirem d’excursió.",
+        "en": "Even if it rains, we’ll go on our hike."
+      },
+      {
+        "ca": "Tot i que estava cansada, va acabar la feina.",
+        "en": "Although she was tired, she finished the job."
+      },
+      {
+        "ca": "Malgrat la pluja, el concert es va fer.",
+        "en": "Despite the rain, the concert went ahead."
+      },
+      {
+        "ca": "Tot i tenir febre, va anar a treballar.",
+        "en": "Despite having a temperature, he went to work."
+      },
+      {
+        "ca": "Per molt que insisteixis, no canviaré d’opinió.",
+        "en": "No matter how much you insist, I won’t change my mind."
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Indicative or subjunctive? Put the verb in the correct form.",
+        "items": [
+          {
+            "q": "Encara que ara (fer) ___ fred, no porto abric.",
+            "a": "fa"
+          },
+          {
+            "q": "Demà sortirem encara que (ploure) ___.",
+            "a": "plogui"
+          },
+          {
+            "q": "Tot i que (ser) ___ tard, vam continuar parlant.",
+            "a": "era"
+          },
+          {
+            "q": "No t’ho diré encara que m’ho (tu, demanar) ___ mil vegades.",
+            "a": "demanis"
+          },
+          {
+            "q": "Malgrat que (tenir) ___ molts diners, viu de manera senzilla.",
+            "a": "té"
+          },
+          {
+            "q": "Encara que (jo, guanyar) ___ la loteria, no deixaria la feina.",
+            "a": "guanyés"
+          }
+        ]
+      },
+      {
+        "instruction": "Rewrite the sentence with tot i + infinitive.",
+        "items": [
+          {
+            "q": "Tot i que era petit, ho entenia tot.",
+            "a": "Tot i ser petit, ho entenia tot."
+          },
+          {
+            "q": "Tot i que va estudiar molt, no va aprovar.",
+            "a": "Tot i estudiar molt, no va aprovar. / Tot i haver estudiat molt, no va aprovar."
+          },
+          {
+            "q": "Tot i que viu a prop, sempre arriba tard.",
+            "a": "Tot i viure a prop, sempre arriba tard."
+          },
+          {
+            "q": "Tot i que té febre, vol sortir.",
+            "a": "Tot i tenir febre, vol sortir."
+          },
+          {
+            "q": "Tot i que coneixia el camí, es va perdre.",
+            "a": "Tot i conèixer el camí, es va perdre."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 70,
+    "title": "“Become”: fer-se, tornar-se, posar-se, quedar-se",
+    "summary": "Get nervous, go mad, get rich, go blind — and the literary esdevenir.",
+    "explanation": "\n<p>English expresses change with <em>become, get, go, turn, grow</em>, and with verbs like\n“blush” or “age”. Catalan has no single verb for this; the choice depends on the\nkind of change:</p>\n<ul>\n  <li><strong>posar-se</strong> + adjective — a quick, often temporary change of state or mood\n      (“get, go”): <em>posar-se vermell</em> (go red), <em>posar-se nerviós, trist, malalt</em>\n      (get nervous, sad, ill).</li>\n  <li><strong>tornar-se</strong> + adjective — a deep, noticeable change of character\n      (“become, turn”): <em>S’ha tornat molt egoista.</em> — He’s become very selfish.\n      <em>Es va tornar boig.</em> — He went mad.</li>\n  <li><strong>fer-se</strong> + adjective / noun — a gradual process, age, effort (“grow, get,\n      become”): <em>fer-se gran</em> (grow up, get old), <em>fer-se ric, fer-se famós,\n      fer-se vegetarià</em>; impersonal: <em>es fa tard</em> (it’s getting late),\n      <em>es fa fosc</em> (it’s getting dark).</li>\n  <li><strong>quedar-se</strong> + adjective / <em>sense</em> + noun — the result of an event,\n      often sudden or unwanted (“go, end up, be left”): <em>quedar-se cec</em> (go blind),\n      <em>quedar-se sol</em> (end up alone), <em>quedar-se sense feina</em> (lose one’s job),\n      <em>quedar-se parat</em> (be stunned).</li>\n  <li><strong>esdevenir</strong> — a neutral “become”, mainly in written style:\n      <em>La ciutat va esdevenir la capital del comtat.</em></li>\n</ul>\n<p>Also: <strong>convertir-se en</strong> + noun — to turn into;\n<strong>arribar a ser</strong> — to end up as, go on to become:\n<em>Va arribar a ser ministra.</em> — She went on to become a minister.</p>\n<p>Many English “get” + adjective combinations are simply pronominal verbs in Catalan:\n<em>cansar-se</em> (get tired), <em>enfadar-se</em> (get angry), <em>casar-se</em> (get married),\n<em>perdre’s</em> (get lost). Never translate this “get” with <em>obtenir</em> or\n<em>aconseguir</em>.</p>\n",
+    "examples": [
+      {
+        "ca": "Quan el va veure, es va posar vermella.",
+        "en": "When she saw him, she went red."
+      },
+      {
+        "ca": "Des que és famós, s’ha tornat insuportable.",
+        "en": "Ever since he got famous, he’s become unbearable."
+      },
+      {
+        "ca": "A l’hivern es fa fosc molt d’hora.",
+        "en": "In winter it gets dark very early."
+      },
+      {
+        "ca": "Es va quedar sense paraules.",
+        "en": "He was left speechless."
+      },
+      {
+        "ca": "Amb els anys, el poble va esdevenir una ciutat turística.",
+        "en": "Over the years, the village became a tourist town."
+      }
+    ],
+    "exercises": [
+      {
+        "instruction": "Choose the right verb (posar-se, tornar-se, fer-se, quedar-se, esdevenir, convertir-se en) and put it in the correct form.",
+        "items": [
+          {
+            "q": "Quan parla en públic, ___ nerviós.",
+            "a": "es posa"
+          },
+          {
+            "q": "Després de l’accident ___ cec.",
+            "a": "es va quedar"
+          },
+          {
+            "q": "Va treballar molt i ___ ric.",
+            "a": "es va fer"
+          },
+          {
+            "q": "Amb l’edat ___ molt desconfiat.",
+            "a": "s’ha tornat / es va tornar"
+          },
+          {
+            "q": "Si menges tot això, ___ malalt.",
+            "a": "et posaràs"
+          },
+          {
+            "q": "Ja ___ tard; me’n vaig.",
+            "a": "es fa"
+          },
+          {
+            "q": "Aquell petit taller ___ una gran empresa.",
+            "a": "va esdevenir / es va convertir en"
+          }
+        ]
+      },
+      {
+        "instruction": "Translate into Catalan.",
+        "items": [
+          {
+            "q": "He went red.",
+            "a": "Es va posar vermell."
+          },
+          {
+            "q": "She lost her job.",
+            "a": "Es va quedar sense feina."
+          },
+          {
+            "q": "Children grow up so fast!",
+            "a": "Els nens es fan grans tan de pressa!"
+          },
+          {
+            "q": "He went mad.",
+            "a": "Es va tornar boig."
+          },
+          {
+            "q": "She’s become a vegetarian.",
+            "a": "S’ha fet vegetariana. / Es va fer vegetariana."
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -13,6 +13,11 @@ DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
 
 REQUIRED_FIELDS = ('number', 'title', 'section', 'explanation')
 
+# Adapted versions of the course for learners of other languages live in
+# data/<lang>/ with the same file names; see GrammarUnit.translations.
+TRANSLATION_LANGUAGES = ('en',)
+TRANSLATED_FIELDS = ('title', 'summary', 'explanation', 'examples', 'exercises')
+
 
 class SeedReport(object):
     def __init__(self):
@@ -55,6 +60,23 @@ def load_units(paths=None):
     return [units[number] for number in sorted(units)]
 
 
+def load_translations(lang):
+    """{number: version} for one language, read from data/<lang>/*.json."""
+    folder = os.path.join(DATA_DIR, lang)
+    versions = {}
+    if not os.path.isdir(folder):
+        return versions
+    for name in sorted(os.listdir(folder)):
+        if not name.endswith('.json'):
+            continue
+        with open(os.path.join(folder, name), encoding='utf-8') as handle:
+            for unit in json.load(handle):
+                versions[unit['number']] = {
+                    field: unit[field] for field in TRANSLATED_FIELDS if field in unit
+                }
+    return versions
+
+
 def unique_slug(title, number):
     """A slug for a unit, prefixed with its number so it stays stable."""
     return '{:03d}-{}'.format(number, slugify(title))
@@ -63,6 +85,7 @@ def unique_slug(title, number):
 def seed(units=None):
     """Create or refresh the course in the database. The caller commits."""
     report = SeedReport()
+    translations = {lang: load_translations(lang) for lang in TRANSLATION_LANGUAGES}
     for unit in units if units is not None else load_units():
         existing = GrammarUnit.query.filter_by(number=unit['number']).first()
         target = existing or GrammarUnit(number=unit['number'])
@@ -74,6 +97,10 @@ def seed(units=None):
         target.set_examples(unit.get('examples', []))
         target.set_exercises(unit.get('exercises', []))
         target.slug = unique_slug(unit['title'], unit['number'])
+        target.translations = None
+        for lang, versions in translations.items():
+            if unit['number'] in versions:
+                target.set_translation(lang, versions[unit['number']])
         if existing is None:
             db.session.add(target)
             report.created += 1
