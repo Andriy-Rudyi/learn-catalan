@@ -248,6 +248,7 @@ DATABASE_PUBLIC_URL=postgresql://user:password@localhost/learn_catalan
 EMAIL_USER=your-smtp-user
 EMAIL_PASS=your-smtp-password
 ADMIN_USERNAME=Andriy        # the account allowed to edit content
+SHOW_FAQ=False               # set to True to bring back the FAQ page
 TEST_DATABASE_URI=           # optional, tests default to in-memory SQLite
 ```
 

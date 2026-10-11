@@ -1,4 +1,5 @@
-from flask import Blueprint, jsonify, render_template, request
+from flask import (Blueprint, abort, current_app, jsonify, render_template,
+                   request)
 from flask_login import current_user
 
 from flaskblog import db
@@ -36,6 +37,8 @@ def lessons():
 
 @main.route("/faq")
 def faq():
+    if not current_app.config.get('SHOW_FAQ'):
+        abort(404)
     return render_template('faq.html', title='FAQ', ProjectName=PROJECT_NAME)
 
 

@@ -1,4 +1,4 @@
-{% extends "home_layout.html" %}
+{% extends "layout.html" %}
 
 {% block content %}
 <div class="d-flex justify-content-center text-center" style="width: 100%;">
@@ -8,16 +8,16 @@
             <p class="lead">Найкращий ресурс для вивчення каталонської мови.</p>
             <hr class="my-4">
             <p>Досліджуйте наші ресурси та розпочніть свою подорож у вивченні каталонської мови.</p>
-            <a class="btn btn-outline-info btn-lg" href="{{ url_for('main.lessons') }}" role="button">Розпочати навчання</a>
+            <a class="btn btn-outline-info btn-lg" href="{{ url_for('grammar.index') }}" role="button">Розпочати навчання</a>
             <a class="btn btn-outline-info btn-lg" href="{{ url_for('vocabulary.dictionary') }}" role="button">Словник</a>
         </div>
         <div class="mt-4">
             <h2>Що вас чекає?</h2>
             <p>
-              Уже доступні <a href="{{ url_for('main.conjugator') }}">дієвідміна каталонських дієслів</a>
+              Уже доступні <a href="{{ url_for('grammar.index') }}">курс граматики</a>,
+              <a href="{{ url_for('main.conjugator') }}">дієвідміна каталонських дієслів</a>
               та <a href="{{ url_for('vocabulary.dictionary') }}">каталонсько-український словник</a>,
-              у якому можна зібрати власний словниковий запас. Далі — відеоуроки для початківців.
-              Слідкуйте за оновленнями!
+              у якому можна зібрати власний словниковий запас.
             </p>
         </div>
     </div>

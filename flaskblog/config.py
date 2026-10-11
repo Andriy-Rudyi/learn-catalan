@@ -14,6 +14,9 @@ class Config:
     #SQLALCHEMY_DATABASE_URI = DB_URL
 
 
+    # FAQ is hidden for now; set SHOW_FAQ=True to bring the page back.
+    SHOW_FAQ = os.getenv('SHOW_FAQ') == 'True'
+
     MAIL_SERVER = 'smtp-mail.outlook.com'
     MAIL_PORT = 587
     MAIL_USE_TLS = True
@@ -34,3 +37,4 @@ class TestConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.getenv('TEST_DATABASE_URI', 'sqlite:///:memory:')
     WTF_CSRF_ENABLED = False
     MAIL_SUPPRESS_SEND = True
+    SHOW_FAQ = False
