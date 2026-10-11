@@ -102,6 +102,17 @@ class SeedQualityTests(unittest.TestCase):
         ]
         self.assertEqual([], offenders)
 
+    def test_no_word_mixes_latin_and_cyrillic_letters(self):
+        import re
+
+        mixed = re.compile(r'[а-яіїєґ][a-zà-ú]|[a-zà-ú][а-яіїєґ]', re.IGNORECASE)
+        offenders = [
+            (row['term'], row['translation'])
+            for row in self.rows
+            if mixed.search(row['translation'])
+        ]
+        self.assertEqual([], offenders)
+
     def test_choices_are_valid(self):
         from flaskblog.vocabulary.constants import (GENDER_LABELS, LEVEL_LABELS,
                                                     PART_OF_SPEECH_LABELS,
