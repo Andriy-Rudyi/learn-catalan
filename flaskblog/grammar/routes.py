@@ -7,14 +7,25 @@ from flaskblog.models import GrammarUnit
 
 grammar = Blueprint('grammar', __name__)
 
+SORT_BY_NUMBER = 'number'
+SORT_BY_TOPIC = 'topic'
+SORT_ORDERS = (SORT_BY_NUMBER, SORT_BY_TOPIC)
+
 
 @grammar.route('/grammar')
 def index():
+    """All units, either in course order or grouped by topic (?sort=topic)."""
+    sort = request.args.get('sort', SORT_BY_NUMBER)
+    if sort not in SORT_ORDERS:
+        sort = SORT_BY_NUMBER
+
     units = GrammarUnit.query.order_by(GrammarUnit.number).all()
     return render_template(
         'grammar_index.html',
         title='Граматика',
-        sections=service.sections(),
+        sort=sort,
+        units=units,
+        sections=service.sections() if sort == SORT_BY_TOPIC else None,
         total=len(units),
     )
 

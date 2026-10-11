@@ -148,6 +148,44 @@ class GrammarPageTests(AppTestCase):
         body = self.client.get('/grammar/unit/1?answers=1').data.decode()
         self.assertNotIn('exercise-answer d-none', body)
 
+    def _numbers_in_order(self, body):
+        import re
+        return [int(n) for n in re.findall(r'<span class="unit-number">(\d+)</span>', body)]
+
+    def test_index_is_in_course_order_by_default(self):
+        numbers = self._numbers_in_order(self.client.get('/grammar').data.decode())
+        self.assertEqual(sorted(numbers), numbers)
+        self.assertEqual(GrammarUnit.query.count(), len(numbers))
+
+    def test_index_by_number_shows_each_units_topic(self):
+        body = self.client.get('/grammar?sort=number').data.decode()
+        self.assertIn('unit-section', body)
+        self.assertIn(self.unit.section, body)
+
+    def test_index_by_topic_groups_units(self):
+        body = self.client.get('/grammar?sort=topic').data.decode()
+        for section in service.sections():
+            self.assertIn('<h3>{} '.format(section), body)
+        # every unit is listed exactly once
+        numbers = self._numbers_in_order(body)
+        self.assertEqual(GrammarUnit.query.count(), len(set(numbers)))
+        self.assertEqual(len(numbers), len(set(numbers)))
+
+    def test_topic_view_keeps_units_of_a_section_together(self):
+        body = self.client.get('/grammar?sort=topic').data.decode()
+        positions = {}
+        for index, number in enumerate(self._numbers_in_order(body)):
+            unit = GrammarUnit.query.filter_by(number=number).one()
+            positions.setdefault(unit.section, []).append(index)
+        for section, indexes in positions.items():
+            self.assertEqual(list(range(indexes[0], indexes[0] + len(indexes))),
+                             indexes, section)
+
+    def test_unknown_sort_falls_back_to_number(self):
+        body = self.client.get('/grammar?sort=nonsense').data.decode()
+        numbers = self._numbers_in_order(body)
+        self.assertEqual(sorted(numbers), numbers)
+
     def test_empty_course_shows_a_message(self):
         GrammarUnit.query.delete()
         db.session.commit()
