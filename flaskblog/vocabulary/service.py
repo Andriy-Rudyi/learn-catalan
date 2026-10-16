@@ -5,7 +5,7 @@ import io
 import os
 
 from slugify import slugify
-from sqlalchemy import or_
+from sqlalchemy import case, or_
 
 from flaskblog import db
 from flaskblog.models import Word
@@ -56,15 +56,26 @@ def search(query_text=None, topic=None, level=None, part_of_speech=None, variety
     """A Word query narrowed by the dictionary filters.
 
     *variety* is 'central' (hide regional and archaic words) or 'regional'
-    (only those).
+    (only those). With *query_text* the best matches come first: the word
+    itself, then words starting with it, then words containing it, then
+    matches in the translations and finally in the examples.
     """
     query = Word.query
+    rank = None
     if variety == 'central':
         query = query.filter(or_(Word.variety.is_(None), Word.variety == ''))
     elif variety == 'regional':
         query = query.filter(Word.variety.isnot(None), Word.variety != '')
     if query_text:
-        pattern = '%{}%'.format(query_text.strip())
+        text = query_text.strip().replace('%', '').replace('_', '')
+        pattern = '%{}%'.format(text)
+        rank = case(
+            (db.func.lower(Word.term) == text.lower(), 0),
+            (Word.term.ilike(text + '%'), 1),
+            (Word.term.ilike(pattern), 2),
+            (or_(Word.translation.ilike(pattern), Word.translation_en.ilike(pattern)), 3),
+            else_=4,
+        )
         query = query.filter(
             or_(
                 Word.term.ilike(pattern),
@@ -79,6 +90,8 @@ def search(query_text=None, topic=None, level=None, part_of_speech=None, variety
         query = query.filter(Word.level == level)
     if part_of_speech:
         query = query.filter(Word.part_of_speech == part_of_speech)
+    if rank is not None:
+        return query.order_by(rank, db.func.length(Word.term), Word.term)
     return query.order_by(Word.term)
 
 

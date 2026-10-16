@@ -95,7 +95,11 @@ def api_words():
         .limit(8)
         .all()
     )
-    return jsonify(words=[{'term': w.term, 'translation': w.t_translation()} for w in words])
+    return jsonify(words=[
+        {'term': w.term, 'translation': w.t_translation(),
+         'url': url_for('vocabulary.word', slug=w.slug)}
+        for w in words
+    ])
 
 
 @vocabulary.route('/dictionary/<string:slug>')

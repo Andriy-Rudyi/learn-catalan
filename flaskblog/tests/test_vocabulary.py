@@ -362,3 +362,35 @@ class PersonalDictionaryTests(AppTestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class SearchRankingTests(AppTestCase):
+
+    def setUp(self):
+        super().setUp()
+        for term, translation, example in (
+            ('a la quinta forca', 'дуже далеко', 'La seva casa és lluny.'),
+            ('casament', 'весілля', ''),
+            ('casa', 'дім', ''),
+            ('cases', 'будинки', ''),
+            ('llar', 'домівка, casa', ''),
+        ):
+            db.session.add(Word(term=term, translation=translation, slug=term.replace(' ', '-'),
+                                example_ca=example or None))
+        db.session.commit()
+
+    def test_exact_match_comes_first(self):
+        terms = [w.term for w in service.search(query_text='casa')]
+        self.assertEqual('casa', terms[0])
+        self.assertEqual(['casa', 'casament', 'llar', 'a la quinta forca'], terms)
+
+    def test_results_heading_and_filters(self):
+        body = self.client.get('/dictionary?q=casa').data.decode()
+        self.assertIn('Результати для «casa»', body)
+        self.assertIn('id="dictFilters"', body)
+
+    def test_suggestions_link_to_the_word(self):
+        data = self.client.get('/api/words?q=cas').get_json()
+        self.assertEqual('casa', data['words'][0]['term'])
+        self.assertEqual('/dictionary/casa', data['words'][0]['url'])
+        self.assertEqual([], self.client.get('/api/words?q=c').get_json()['words'])

@@ -946,12 +946,6 @@ a.article-title:hover {
   }
 }
 
-@media (max-width: 400px) {
-  /* On the narrowest phones the logo gives way to the search box. */
-  .lc-logo {
-    display: none;
-  }
-}
 
 .btn-info {
   --bs-btn-color: var(--brand-contrast);
@@ -963,4 +957,19 @@ a.article-title:hover {
   --bs-btn-active-color: var(--brand-contrast);
   --bs-btn-active-bg: #55779e;
   --bs-btn-active-border-color: #55779e;
+}
+
+.search-summary {
+  color: var(--muted-text);
+}
+
+.search-summary strong {
+  color: var(--bs-body-color);
+}
+
+@media (max-width: 575.98px) {
+  /* On phones the search box gets the room; the name is in the side menu. */
+  .lc-logo {
+    display: none;
+  }
 }

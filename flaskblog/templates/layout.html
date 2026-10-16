@@ -45,7 +45,8 @@
           <input class="lc-search-input" type="search" name="q" id="headerSearch"
                  value="{{ request.args.get('q', '') if endpoint == 'vocabulary.dictionary' else '' }}"
                  placeholder="{{ _('Пошук слова') }}" aria-label="{{ _('Пошук слова') }}"
-                 autocomplete="off" list="headerSearchSuggestions" maxlength="100">
+                 autocomplete="off" list="headerSearchSuggestions" maxlength="100"
+                 enterkeyhint="search">
           <datalist id="headerSearchSuggestions"></datalist>
         </form>
         <div class="lc-header-right">
@@ -172,7 +173,14 @@
           var list = document.getElementById('headerSearchSuggestions');
           if (!input || !list || !window.fetch) { return; }
           var timer = null;
-          input.addEventListener('input', function () {
+          var pages = {};  // term -> word page, for the current suggestions
+          input.addEventListener('input', function (event) {
+            // Picking a suggestion opens that word straight away.
+            if (pages[input.value] && event.inputType !== 'insertText' &&
+                event.inputType !== 'deleteContentBackward') {
+              window.location.href = pages[input.value];
+              return;
+            }
             var query = input.value.trim();
             window.clearTimeout(timer);
             if (query.length < 2) { list.innerHTML = ''; return; }
@@ -181,7 +189,9 @@
                 .then(function (response) { return response.ok ? response.json() : { words: [] }; })
                 .then(function (data) {
                   list.innerHTML = '';
+                  pages = {};
                   (data.words || []).forEach(function (word) {
+                    pages[word.term] = word.url;
                     var option = document.createElement('option');
                     option.value = word.term;
                     option.label = word.translation;
