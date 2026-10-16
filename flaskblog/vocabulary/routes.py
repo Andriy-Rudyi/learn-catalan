@@ -9,7 +9,7 @@ from flaskblog.i18n import gettext as _
 from flaskblog.conjugation import get_service as get_conjugation_service
 from flaskblog.models import UserWord, Word
 from flaskblog.permissions import is_admin
-from flaskblog.vocabulary import service
+from flaskblog.vocabulary import service, varieties
 from flaskblog.vocabulary.constants import (
     gender_label,
     level_label,
@@ -39,6 +39,7 @@ def inject_labels():
         'level_label': level_label,
         'part_of_speech_label': part_of_speech_label,
         'gender_label': gender_label,
+        'variety_label': varieties.variety_label,
     }
 
 
@@ -68,6 +69,7 @@ def dictionary():
         topic=form.topic.data,
         level=form.level.data,
         part_of_speech=form.part_of_speech.data,
+        variety=form.variety.data,
     ).paginate(page=page, per_page=WORDS_PER_PAGE)
 
     return render_template(

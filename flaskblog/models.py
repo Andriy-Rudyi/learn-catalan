@@ -148,6 +148,11 @@ class Word(db.Model):
     translation_en = db.Column(db.String(255), nullable=True)
     example_en = db.Column(db.String(255), nullable=True)
     notes_en = db.Column(db.Text, nullable=True)
+    # Not used in Central Catalan: comma-separated codes from
+    # flaskblog.vocabulary.varieties ("valencian,balearic"), and where the mark
+    # comes from ("review", "wiktionary-en", "wiktionary-ca", "manual").
+    variety = db.Column(db.String(80), nullable=True, index=True)
+    variety_source = db.Column(db.String(20), nullable=True)
     date_added = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=True)
 
@@ -170,6 +175,21 @@ class Word(db.Model):
         if get_locale() == 'en' and english:
             return english
         return ukrainian
+
+    @property
+    def variety_codes(self):
+        from flaskblog.vocabulary.varieties import parse_codes
+        return parse_codes(self.variety)
+
+    @property
+    def is_central(self):
+        return not self.variety_codes
+
+    @property
+    def central_alternative(self):
+        """What Central Catalan says instead, from data/varieties.json."""
+        from flaskblog.vocabulary import varieties
+        return (varieties.load().get(self.term) or {}).get('central')
 
     def t_translation(self):
         return self._localized(self.translation, self.translation_en)
@@ -236,11 +256,11 @@ class WordView(ModelView):
     form_columns = [
         'term', 'translation', 'part_of_speech', 'gender', 'pronunciation',
         'topic', 'level', 'example_ca', 'example_uk', 'notes',
-        'translation_en', 'example_en', 'notes_en',
+        'translation_en', 'example_en', 'notes_en', 'variety', 'variety_source',
     ]
     column_list = ['term', 'translation', 'translation_en', 'part_of_speech', 'topic', 'level']
     column_searchable_list = ['term', 'translation', 'translation_en']
-    column_filters = ['part_of_speech', 'topic', 'level']
+    column_filters = ['part_of_speech', 'topic', 'level', 'variety']
     column_default_sort = 'term'
 
     def is_accessible(self):

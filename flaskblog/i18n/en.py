@@ -367,4 +367,23 @@ MESSAGES = {
     ),
     'Щось пішло не так (500)': 'Something went wrong (500)',
     'На сервері сталася помилка. Спробуйте трохи пізніше.': 'The server ran into a problem. Please try again a little later.',
+
+    # -- regional varieties ------------------------------------------------
+    'валенсійське': 'Valencian',
+    'балеарське': 'Balearic',
+    'північно-західне (Льєйда)': 'North-Western (Lleida)',
+    'західне': 'Western',
+    'північнокаталанське (Руссільйон)': 'Northern Catalan (Roussillon)',
+    'альгерське': 'Algherese',
+    'діалектне': 'dialectal',
+    'застаріле': 'archaic',
+    'Не вживається в центральному каталанському': 'Not used in Central Catalan',
+    'Не центральне слово': 'Not Central Catalan',
+    'У центральному каталанському кажуть:': 'Central Catalan uses:',
+    'Позначку підтверджено у Вікісловнику.': 'Confirmed by Wiktionary.',
+    'Попередня позначка, ще не звірена зі словником.': 'Preliminary mark, not yet checked against a dictionary.',
+    'Діалект': 'Variety',
+    'Усі слова': 'All words',
+    'Лише центральні': 'Central Catalan only',
+    'Лише регіональні й застарілі': 'Regional / archaic',
 }

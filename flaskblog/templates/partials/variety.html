@@ -1,0 +1,27 @@
+{# Marks for words that are not used in Central Catalan. #}
+{% macro variety_badge(codes) -%}
+  {% if codes %}
+    <span class="badge variety-badge"
+          title="{{ _('Не вживається в центральному каталанському') }}">
+      {%- for code in codes %}{{ variety_label(code) }}{% if not loop.last %}, {% endif %}{% endfor -%}
+    </span>
+  {% endif %}
+{%- endmacro %}
+
+{% macro variety_notice(codes, central=None, source=None) -%}
+  {% if codes %}
+    <div class="alert alert-warning variety-notice py-2 mb-2" role="note">
+      <strong>{{ _('Не центральне слово') }}</strong>
+      ({% for code in codes %}{{ variety_label(code) }}{% if not loop.last %}, {% endif %}{% endfor %}).
+      {% if central %}
+        {{ _('У центральному каталанському кажуть:') }} <em>{{ central }}</em>.
+      {% endif %}
+      {% if source %}
+        <span class="small text-body-secondary d-block">
+          {% if source.startswith('wiktionary') %}{{ _('Позначку підтверджено у Вікісловнику.') }}
+          {% else %}{{ _('Попередня позначка, ще не звірена зі словником.') }}{% endif %}
+        </span>
+      {% endif %}
+    </div>
+  {% endif %}
+{%- endmacro %}
