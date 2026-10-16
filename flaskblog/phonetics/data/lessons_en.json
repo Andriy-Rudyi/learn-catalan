@@ -393,31 +393,31 @@
         "instruction": "How is the marked unstressed vowel pronounced?",
         "items": [
           {
-            "q": "casa — final a",
+            "q": "casa (final a)",
             "a": "[ə]: [ˈkazə]"
           },
           {
-            "q": "posar — o",
+            "q": "posar (o)",
             "a": "[u]: [puˈza]"
           },
           {
-            "q": "petit — e",
+            "q": "petit (e)",
             "a": "[ə]: [pəˈtit]"
           },
           {
-            "q": "tomàquet — o",
+            "q": "tomàquet (o)",
             "a": "[u]: [tuˈmakət]"
           },
           {
-            "q": "dimarts — i",
+            "q": "dimarts (i)",
             "a": "[i]: i is not reduced, [diˈmaɾs]"
           },
           {
-            "q": "escola — initial e",
+            "q": "escola (initial e)",
             "a": "[ə]: [əsˈkɔlə]"
           },
           {
-            "q": "Montserrat — o",
+            "q": "Montserrat (o)",
             "a": "[u]: [munsəˈrat]"
           }
         ]
@@ -456,7 +456,7 @@
     "section": "Голосні",
     "level": "A2",
     "summary": "Stressed e and o can be open or closed, and the difference can distinguish words.",
-    "explanation": "<p>Under stress, Catalan <strong>e</strong> and <strong>o</strong> each have two variants:</p><ul><li>open [ɛ], with the mouth wider open: <em>cafè</em> [kəˈfɛ], <em>festa</em> [ˈfɛstə];</li><li>closed [e], with the mouth less open, nearer to [i]: <em>també</em> [təmˈbe], <em>pera</em> [ˈpeɾə] “pear”;</li><li>open [ɔ]: <em>això</em> [əˈʃɔ], <em>roba</em> [ˈrɔbə] “clothes”;</li><li>closed [o], with the lips more rounded, nearer to [u]: <em>cançó</em> [kənˈso], <em>boca</em> [ˈbokə] “mouth”.</li></ul><p>If a stressed e or o carries an accent, the accent shows its quality: the <strong>grave</strong> (è, ò) marks an open vowel, the <strong>acute</strong> (é, ó) a closed one. But an accent is written only when the stress rules require it (Lesson 4). In all other words you have to learn the quality together with the word or check it in a dictionary: <em>festa</em> [ˈfɛstə], but <em>pera</em> [ˈpeɾə] “pear”; <em>roba</em> [ˈrɔbə], but <em>boca</em> [ˈbokə].</p><p>A few pairs are still told apart by a <strong>diacritic accent</strong> as well as by pronunciation: <em>bé</em> [ˈbe] “well” — <em>be</em> [ˈbɛ] “lamb”; <em>són</em> [ˈson] “(they) are” — <em>son</em> [ˈsɔn] “sleep”; <em>déu</em> [ˈdew] “god” — <em>deu</em> [ˈdɛw] “ten”.</p><p>The 2016 spelling reform abolished most diacritic accents. Now <em>dona</em> is both [ˈdɔnə] “woman” and [ˈdonə] “(he/she) gives”; <em>os</em> is both [ˈɔs] “bone” and [ˈos] “bear”; <em>net</em> is both [ˈnɛt] “clean” and [ˈnet] “grandson”. The spelling is the same, the pronunciation differs, and context tells you the meaning.</p><p>The open vowels are easy for English speakers: [ɛ] is the “e” of “bed”, and [ɔ] is close to the “o” of British “hot”, held a little longer. The closed vowels are the trap. English turns them into diphthongs: [e] slides into the “ay” of “say”, [o] into the “oh” of “go”. Catalan [e] and [o] are pure and steady: start as for “say” or “go” and hold the vowel without letting it slide towards “y” or “w” (Scottish “day” and “go” come close). <em>També</em> must not end like English “bay”, nor <em>cançó</em> like “so”. Without stress the difference disappears: there e and o are reduced (Lesson 2).</p>",
+    "explanation": "<p>Under stress, Catalan <strong>e</strong> and <strong>o</strong> each have two variants:</p><ul><li>open [ɛ], with the mouth wider open: <em>cafè</em> [kəˈfɛ], <em>festa</em> [ˈfɛstə];</li><li>closed [e], with the mouth less open, nearer to [i]: <em>també</em> [təmˈbe], <em>pera</em> [ˈpeɾə] “pear”;</li><li>open [ɔ]: <em>això</em> [əˈʃɔ], <em>roba</em> [ˈrɔbə] “clothes”;</li><li>closed [o], with the lips more rounded, nearer to [u]: <em>cançó</em> [kənˈso], <em>boca</em> [ˈbokə] “mouth”.</li></ul><p>If a stressed e or o carries an accent, the accent shows its quality: the <strong>grave</strong> (è, ò) marks an open vowel, the <strong>acute</strong> (é, ó) a closed one. But an accent is written only when the stress rules require it (Lesson 4). In all other words you have to learn the quality together with the word or check it in a dictionary: <em>festa</em> [ˈfɛstə], but <em>pera</em> [ˈpeɾə] “pear”; <em>roba</em> [ˈrɔbə], but <em>boca</em> [ˈbokə].</p><p>A few pairs are still told apart by a <strong>diacritic accent</strong> as well as by pronunciation: <em>bé</em> [ˈbe] “well” / <em>be</em> [ˈbɛ] “lamb”; <em>són</em> [ˈson] “(they) are” / <em>son</em> [ˈsɔn] “sleep”; <em>déu</em> [ˈdew] “god” / <em>deu</em> [ˈdɛw] “ten”.</p><p>The 2016 spelling reform abolished most diacritic accents. Now <em>dona</em> is both [ˈdɔnə] “woman” and [ˈdonə] “(he/she) gives”; <em>os</em> is both [ˈɔs] “bone” and [ˈos] “bear”; <em>net</em> is both [ˈnɛt] “clean” and [ˈnet] “grandson”. The spelling is the same, the pronunciation differs, and context tells you the meaning.</p><p>The open vowels are easy for English speakers: [ɛ] is the “e” of “bed”, and [ɔ] is close to the “o” of British “hot”, held a little longer. The closed vowels are the trap. English turns them into diphthongs: [e] slides into the “ay” of “say”, [o] into the “oh” of “go”. Catalan [e] and [o] are pure and steady: start as for “say” or “go” and hold the vowel without letting it slide towards “y” or “w” (Scottish “day” and “go” come close). <em>També</em> must not end like English “bay”, nor <em>cançó</em> like “so”. Without stress the difference disappears: there e and o are reduced (Lesson 2).</p>",
     "sounds": [
       {
         "spelling": "è",
@@ -1277,31 +1277,31 @@
         "instruction": "Which sound: [k], [s], [ɡ] or [ʒ]?",
         "items": [
           {
-            "q": "cinema — c",
+            "q": "cinema (c)",
             "a": "[s]: [ˈsinəmə]"
           },
           {
-            "q": "cosa — c",
+            "q": "cosa (c)",
             "a": "[k]: [ˈkɔzə]"
           },
           {
-            "q": "gelat — g",
+            "q": "gelat (g)",
             "a": "[ʒ]: [ʒəˈlat]"
           },
           {
-            "q": "gust — g",
+            "q": "gust (g)",
             "a": "[ɡ]: [ˈɡust]"
           },
           {
-            "q": "cuina — c",
+            "q": "cuina (c)",
             "a": "[k]: [ˈkujnə]"
           },
           {
-            "q": "girar — g",
+            "q": "girar (g)",
             "a": "[ʒ]: [ʒiˈɾa]"
           },
           {
-            "q": "Girona — g",
+            "q": "Girona (g)",
             "a": "[ʒ]: [ʒiˈɾonə]"
           }
         ]
@@ -1344,7 +1344,7 @@
     "section": "Приголосні",
     "level": "A1",
     "summary": "Voiceless [s] and voiced [z]: when Catalan writes s, ss, z, ç and tz.",
-    "explanation": "<p>Catalan distinguishes voiceless [s] from voiced [z], and the difference can change the meaning of a word: <em>casa</em> [ˈkazə] “house” — <em>caça</em> [ˈkasə] “hunting”, <em>rosa</em> [ˈrɔzə] “rose” — <em>rossa</em> [ˈrosə] “blonde”.</p><ul><li><strong>s</strong> at the start of a word and after a consonant = [s]: <em>sol</em> [ˈsɔl], <em>pensar</em> [pənˈsa];</li><li><strong>s</strong> between vowels = [z]: <em>casa</em>, <em>cosa</em> [ˈkɔzə], <em>música</em> [ˈmuzikə];</li><li><strong>ss</strong> (only between vowels) = [s]: <em>massa</em> [ˈmasə], <em>passar</em> [pəˈsa];</li><li><strong>z</strong> = [z]: <em>zero</em> [ˈzɛɾu], <em>onze</em> [ˈonzə];</li><li><strong>ç</strong> = [s]; it is written before a, o, u and at the end of a word: <em>plaça</em> [ˈplasə], <em>cançó</em> [kənˈso], <em>feliç</em> [fəˈlis];</li><li><strong>c</strong> before e, i = [s]: <em>cel</em> [ˈsɛl], <em>ciutat</em> [siwˈtat].</li></ul><p>Before a voiced consonant (b, d, g, l, m, n, etc.) s also becomes voiced: <em>esmorzar</em> [əzmuɾˈza], <em>església</em> [əzˈɡleziə]. Lesson 12 covers what happens to final s at word boundaries.</p><p>The combination <strong>tz</strong> is pronounced [dz], like the “ds” in “kids”: <em>dotze</em> [ˈdodzə] “twelve”, <em>tretze</em> [ˈtɾɛdzə] “thirteen”, <em>setze</em> [ˈsɛdzə] “sixteen”.</p><p>English spelling gives no reliable clue here (“rose” has [z], “dose” has [s]), but Catalan spelling does: a single s between vowels is almost always [z], and [s] in that position is written ss, ç or c (before e, i). Say <em>casa</em> with an English-style [s] and “house” turns into “hunting”.</p>",
+    "explanation": "<p>Catalan distinguishes voiceless [s] from voiced [z], and the difference can change the meaning of a word: <em>casa</em> [ˈkazə] “house” / <em>caça</em> [ˈkasə] “hunting”, <em>rosa</em> [ˈrɔzə] “rose” / <em>rossa</em> [ˈrosə] “blonde”.</p><ul><li><strong>s</strong> at the start of a word and after a consonant = [s]: <em>sol</em> [ˈsɔl], <em>pensar</em> [pənˈsa];</li><li><strong>s</strong> between vowels = [z]: <em>casa</em>, <em>cosa</em> [ˈkɔzə], <em>música</em> [ˈmuzikə];</li><li><strong>ss</strong> (only between vowels) = [s]: <em>massa</em> [ˈmasə], <em>passar</em> [pəˈsa];</li><li><strong>z</strong> = [z]: <em>zero</em> [ˈzɛɾu], <em>onze</em> [ˈonzə];</li><li><strong>ç</strong> = [s]; it is written before a, o, u and at the end of a word: <em>plaça</em> [ˈplasə], <em>cançó</em> [kənˈso], <em>feliç</em> [fəˈlis];</li><li><strong>c</strong> before e, i = [s]: <em>cel</em> [ˈsɛl], <em>ciutat</em> [siwˈtat].</li></ul><p>Before a voiced consonant (b, d, g, l, m, n, etc.) s also becomes voiced: <em>esmorzar</em> [əzmuɾˈza], <em>església</em> [əzˈɡleziə]. Lesson 12 covers what happens to final s at word boundaries.</p><p>The combination <strong>tz</strong> is pronounced [dz], like the “ds” in “kids”: <em>dotze</em> [ˈdodzə] “twelve”, <em>tretze</em> [ˈtɾɛdzə] “thirteen”, <em>setze</em> [ˈsɛdzə] “sixteen”.</p><p>English spelling gives no reliable clue here (“rose” has [z], “dose” has [s]), but Catalan spelling does: a single s between vowels is almost always [z], and [s] in that position is written ss, ç or c (before e, i). Say <em>casa</em> with an English-style [s] and “house” turns into “hunting”.</p>",
     "sounds": [
       {
         "spelling": "s- (start of a word)",
@@ -1496,31 +1496,31 @@
         "instruction": "[s] or [z]?",
         "items": [
           {
-            "q": "casa — s",
+            "q": "casa (s)",
             "a": "[z]: s between vowels"
           },
           {
-            "q": "massa — ss",
+            "q": "massa (ss)",
             "a": "[s]: double ss"
           },
           {
-            "q": "sol — s",
+            "q": "sol (s)",
             "a": "[s]: at the start of a word"
           },
           {
-            "q": "plaça — ç",
+            "q": "plaça (ç)",
             "a": "[s]"
           },
           {
-            "q": "zero — z",
+            "q": "zero (z)",
             "a": "[z]"
           },
           {
-            "q": "pensar — s",
+            "q": "pensar (s)",
             "a": "[s]: after a consonant"
           },
           {
-            "q": "esmorzar — first s",
+            "q": "esmorzar (first s)",
             "a": "[z]: before voiced m"
           }
         ]
@@ -1563,7 +1563,7 @@
     "section": "Приголосні",
     "level": "A2",
     "summary": "The sounds [ʃ], [tʃ], [ʒ], [dʒ], and two other ways of reading the letter x.",
-    "explanation": "<p>Catalan has four “hushing” sounds, and English has all four: [ʃ] as in “shop”, [ʒ] as in “measure”, [tʃ] as in “church”, [dʒ] as in “jam”. The Catalan versions are slightly more palatal (“softer”), but the English sounds work perfectly well. The real difficulty is the spelling, and above all the letter <strong>j</strong>, which English speakers instinctively read as [dʒ].</p><ul><li><strong>[ʃ]</strong> is written x at the start of a word and after a consonant (<em>xocolata</em> [ʃukuˈlatə], <em>panxa</em> [ˈpanʃə]) and <strong>ix</strong> after a vowel (<em>caixa</em> [ˈkaʃə], <em>peix</em> [ˈpeʃ]). In Central Catalan the i of ix is not pronounced; it only signals the sound [ʃ], so <em>caixa</em> has no “eye” sound in it.</li><li><strong>[tʃ]</strong> is written tx (<em>cotxe</em> [ˈkɔtʃə], <em>despatx</em> [dəsˈpatʃ]) and ig at the end of a word after a vowel (<em>maig</em> [ˈmatʃ], <em>puig</em> [ˈputʃ], <em>vaig</em> [ˈbatʃ]); again the i is silent.</li><li><strong>[ʒ]</strong> is written j (before any vowel) and g before e, i: <em>jo</em> [ˈʒɔ], <em>dijous</em> [diˈʒɔws], <em>gent</em> [ˈʒen]. This is the sound of “measure”, “vision”, “beige”: <em>jo</em> “I” does not sound like English “Joe”.</li><li><strong>[dʒ]</strong> is written tj (before a, o, u) and tg (before e, i): <em>platja</em> [ˈpladʒə], <em>metge</em> [ˈmedʒə], <em>rellotge</em> [rəˈʎɔdʒə].</li></ul><p>Final -ig becomes tj or tg in the feminine and in derived words: <em>lleig</em> [ˈʎetʃ] “ugly” (masculine) — <em>lletja</em> [ˈʎedʒə] (feminine), <em>mig</em> [ˈmitʃ] — <em>mitja</em> [ˈmidʒə] “half” (masculine — feminine).</p><p>Between vowels (with no i before it) and before a consonant, the letter <strong>x</strong> is usually read [ks], as in English: <em>taxi</em> [ˈtaksi], <em>màxim</em> [ˈmaksim], <em>explicar</em> [əkspliˈka]. The prefix <strong>ex-</strong> before a vowel or h is pronounced [ɡz], as in English “exam”: <em>examen</em> [əɡˈzamən], <em>exemple</em> [əɡˈzemplə], <em>exacte</em> [əɡˈzaktə].</p><p>In Valencian pronunciation the i of ix is pronounced, and j and g before e, i are pronounced [dʒ] (Lesson 13).</p>",
+    "explanation": "<p>Catalan has four “hushing” sounds, and English has all four: [ʃ] as in “shop”, [ʒ] as in “measure”, [tʃ] as in “church”, [dʒ] as in “jam”. The Catalan versions are slightly more palatal (“softer”), but the English sounds work perfectly well. The real difficulty is the spelling, and above all the letter <strong>j</strong>, which English speakers instinctively read as [dʒ].</p><ul><li><strong>[ʃ]</strong> is written x at the start of a word and after a consonant (<em>xocolata</em> [ʃukuˈlatə], <em>panxa</em> [ˈpanʃə]) and <strong>ix</strong> after a vowel (<em>caixa</em> [ˈkaʃə], <em>peix</em> [ˈpeʃ]). In Central Catalan the i of ix is not pronounced; it only signals the sound [ʃ], so <em>caixa</em> has no “eye” sound in it.</li><li><strong>[tʃ]</strong> is written tx (<em>cotxe</em> [ˈkɔtʃə], <em>despatx</em> [dəsˈpatʃ]) and ig at the end of a word after a vowel (<em>maig</em> [ˈmatʃ], <em>puig</em> [ˈputʃ], <em>vaig</em> [ˈbatʃ]); again the i is silent.</li><li><strong>[ʒ]</strong> is written j (before any vowel) and g before e, i: <em>jo</em> [ˈʒɔ], <em>dijous</em> [diˈʒɔws], <em>gent</em> [ˈʒen]. This is the sound of “measure”, “vision”, “beige”: <em>jo</em> “I” does not sound like English “Joe”.</li><li><strong>[dʒ]</strong> is written tj (before a, o, u) and tg (before e, i): <em>platja</em> [ˈpladʒə], <em>metge</em> [ˈmedʒə], <em>rellotge</em> [rəˈʎɔdʒə].</li></ul><p>Final -ig becomes tj or tg in the feminine and in derived words: <em>lleig</em> [ˈʎetʃ] “ugly” (masculine) → <em>lletja</em> [ˈʎedʒə] (feminine), <em>mig</em> [ˈmitʃ] → <em>mitja</em> [ˈmidʒə] “half” (masculine / feminine).</p><p>Between vowels (with no i before it) and before a consonant, the letter <strong>x</strong> is usually read [ks], as in English: <em>taxi</em> [ˈtaksi], <em>màxim</em> [ˈmaksim], <em>explicar</em> [əkspliˈka]. The prefix <strong>ex-</strong> before a vowel or h is pronounced [ɡz], as in English “exam”: <em>examen</em> [əɡˈzamən], <em>exemple</em> [əɡˈzemplə], <em>exacte</em> [əɡˈzaktə].</p><p>In Valencian pronunciation the i of ix is pronounced, and j and g before e, i are pronounced [dʒ] (Lesson 13).</p>",
     "sounds": [
       {
         "spelling": "x (at the start, after a consonant)",
@@ -1723,31 +1723,31 @@
         "instruction": "Which sound: [ʃ], [tʃ], [ʒ] or [dʒ]?",
         "items": [
           {
-            "q": "caixa — ix",
+            "q": "caixa (ix)",
             "a": "[ʃ]: [ˈkaʃə]"
           },
           {
-            "q": "cotxe — tx",
+            "q": "cotxe (tx)",
             "a": "[tʃ]: [ˈkɔtʃə]"
           },
           {
-            "q": "platja — tj",
+            "q": "platja (tj)",
             "a": "[dʒ]: [ˈpladʒə]"
           },
           {
-            "q": "maig — ig",
+            "q": "maig (ig)",
             "a": "[tʃ]: [ˈmatʃ]"
           },
           {
-            "q": "jardí — j",
+            "q": "jardí (j)",
             "a": "[ʒ]: [ʒəɾˈdi]"
           },
           {
-            "q": "metge — tg",
+            "q": "metge (tg)",
             "a": "[dʒ]: [ˈmedʒə]"
           },
           {
-            "q": "xocolata — x",
+            "q": "xocolata (x)",
             "a": "[ʃ]: [ʃukuˈlatə]"
           }
         ]
@@ -1794,7 +1794,7 @@
     "section": "Приголосні",
     "level": "A2",
     "summary": "Dark l, palatal ll [ʎ], double l·l and ny [ɲ].",
-    "explanation": "<p>In Central Catalan <strong>l</strong> is “dark” [ɫ]: the back of the tongue rises, much as for the English l in “full” or “milk”. So this sound is already familiar to English speakers. The difference is that Catalan uses it everywhere, also at the start of a word and before i and e, where many English accents have a “clear” l, as in “leaf”: <em>límit</em> [ˈlimit], <em>mel</em> [ˈmɛl], <em>sol</em> [ˈsɔl]. Two cautions: keep the tip of the tongue firmly against the gum ridge, so that a final l never turns into a vowel (as when some English speakers say “milk” as “miwk”), and do not let it drag the vowel before it into a diphthong: <em>sol</em> does not sound like English “soul”. In the course’s transcriptions this sound is written simply [l].</p><p><strong>ll</strong> is a separate sound, [ʎ]: the middle of the tongue presses against the hard palate. It occurs at the start, in the middle and at the end of a word: <em>lluna</em> [ˈʎunə], <em>gallina</em> [ɡəˈʎinə], <em>cavall</em> [kəˈbaʎ]. The nearest English sound is the “lli” in “million”, but Catalan [ʎ] is one single sound, not [l] + [j]: try saying the “lli” of “million” with the tip of your tongue resting behind your lower teeth. Do not read Catalan ll as an English l, as in “ball”: <em>cavall</em> ends in [ʎ]. The difference between l and ll changes meanings: <em>pala</em> [ˈpalə] “shovel” — <em>palla</em> [ˈpaʎə] “straw”, <em>vela</em> [ˈbɛlə] “sail” — <em>vella</em> [ˈbɛʎə] “old (feminine)”.</p><p><strong>l·l</strong> (<em>ela geminada</em>) is a double [lː]: in careful speech it sounds like two l’s across a syllable boundary, as in English “whole lot”: <em>col·legi</em> [kulˈlɛʒi], <em>il·lusió</em> [illuziˈo], <em>intel·ligent</em> [intəlliˈʒen]. In fast speech many speakers pronounce a single [l]. The dot is written at mid-height: spellings like <em>col.legi</em> or <em>colegi</em> are wrong.</p><p><strong>ny</strong> = [ɲ], close to the “ny” in “canyon” or Spanish ñ, but made as one sound, with the middle of the tongue against the palate: <em>any</em> [ˈaɲ], <em>Catalunya</em> [kətəˈluɲə], <em>muntanya</em> [munˈtaɲə]. It is spelled ny, not ñ as in Spanish. At the end of a word English speakers tend to say a plain [n]; keep the palatal quality: <em>any</em> “year” ends in [ɲ], with no vowel after it.</p>",
+    "explanation": "<p>In Central Catalan <strong>l</strong> is “dark” [ɫ]: the back of the tongue rises, much as for the English l in “full” or “milk”. So this sound is already familiar to English speakers. The difference is that Catalan uses it everywhere, also at the start of a word and before i and e, where many English accents have a “clear” l, as in “leaf”: <em>límit</em> [ˈlimit], <em>mel</em> [ˈmɛl], <em>sol</em> [ˈsɔl]. Two cautions: keep the tip of the tongue firmly against the gum ridge, so that a final l never turns into a vowel (as when some English speakers say “milk” as “miwk”), and do not let it drag the vowel before it into a diphthong: <em>sol</em> does not sound like English “soul”. In the course’s transcriptions this sound is written simply [l].</p><p><strong>ll</strong> is a separate sound, [ʎ]: the middle of the tongue presses against the hard palate. It occurs at the start, in the middle and at the end of a word: <em>lluna</em> [ˈʎunə], <em>gallina</em> [ɡəˈʎinə], <em>cavall</em> [kəˈbaʎ]. The nearest English sound is the “lli” in “million”, but Catalan [ʎ] is one single sound, not [l] + [j]: try saying the “lli” of “million” with the tip of your tongue resting behind your lower teeth. Do not read Catalan ll as an English l, as in “ball”: <em>cavall</em> ends in [ʎ]. The difference between l and ll changes meanings: <em>pala</em> [ˈpalə] “shovel” / <em>palla</em> [ˈpaʎə] “straw”, <em>vela</em> [ˈbɛlə] “sail” / <em>vella</em> [ˈbɛʎə] “old (feminine)”.</p><p><strong>l·l</strong> (<em>ela geminada</em>) is a double [lː]: in careful speech it sounds like two l’s across a syllable boundary, as in English “whole lot”: <em>col·legi</em> [kulˈlɛʒi], <em>il·lusió</em> [illuziˈo], <em>intel·ligent</em> [intəlliˈʒen]. In fast speech many speakers pronounce a single [l]. The dot is written at mid-height: spellings like <em>col.legi</em> or <em>colegi</em> are wrong.</p><p><strong>ny</strong> = [ɲ], close to the “ny” in “canyon” or Spanish ñ, but made as one sound, with the middle of the tongue against the palate: <em>any</em> [ˈaɲ], <em>Catalunya</em> [kətəˈluɲə], <em>muntanya</em> [munˈtaɲə]. It is spelled ny, not ñ as in Spanish. At the end of a word English speakers tend to say a plain [n]; keep the palatal quality: <em>any</em> “year” ends in [ɲ], with no vowel after it.</p>",
     "sounds": [
       {
         "spelling": "l",
@@ -1922,31 +1922,31 @@
         "instruction": "Which sound: [l], [ʎ], [lː] or [ɲ]?",
         "items": [
           {
-            "q": "palla — ll",
+            "q": "palla (ll)",
             "a": "[ʎ]: [ˈpaʎə]"
           },
           {
-            "q": "pala — l",
+            "q": "pala (l)",
             "a": "[l]: [ˈpalə]"
           },
           {
-            "q": "col·legi — l·l",
+            "q": "col·legi (l·l)",
             "a": "[lː] (in fast speech [l]): [kulˈlɛʒi]"
           },
           {
-            "q": "any — ny",
+            "q": "any (ny)",
             "a": "[ɲ]: [ˈaɲ]"
           },
           {
-            "q": "ull — ll",
+            "q": "ull (ll)",
             "a": "[ʎ]: [ˈuʎ]"
           },
           {
-            "q": "senyor — ny",
+            "q": "senyor (ny)",
             "a": "[ɲ]: [səˈɲo]"
           },
           {
-            "q": "vela — l",
+            "q": "vela (l)",
             "a": "[l]: [ˈbɛlə]"
           }
         ]
@@ -1989,7 +1989,7 @@
     "section": "Приголосні",
     "level": "A2",
     "summary": "The tapped [ɾ], the trilled [r], and final -r, which is often silent.",
-    "explanation": "<p>Catalan has two r sounds, and neither of them is the English “r”. For English r the tongue curls or bunches without touching anything; for Catalan r the tip of the tongue actually strikes the ridge behind the upper teeth.</p><ul><li><strong>[ɾ]</strong> is a single quick tap of the tongue tip, the sound American English uses for the “tt” in “better” or the “dd” in “ladder”. It occurs between vowels (<em>cara</em> [ˈkaɾə]) and after a consonant in the same syllable (<em>tres</em> [ˈtɾɛs], <em>gran</em> [ˈɡɾan], <em>llibre</em> [ˈʎibɾə]);</li><li><strong>[r]</strong> is a rolled r, a trill with several taps, as in Spanish <em>perro</em> or a Scottish rolled r. It occurs at the start of a word (<em>rosa</em> [ˈrɔzə], <em>riu</em> [ˈriw]), after n, l, s (<em>Enric</em> [ənˈrik], <em>Israel</em> [izrəˈɛl]) and for <strong>rr</strong> between vowels (<em>terra</em> [ˈtɛrə], <em>carrer</em> [kəˈre]).</li></ul><p>The difference changes meanings: <em>para</em> [ˈpaɾə] “(he/she) stops” — <em>parra</em> [ˈparə] “grapevine”. At the end of a syllable before a consonant (<em>porta</em> [ˈpɔɾtə]) and at the end of a word, r may be tapped or trilled; it makes no difference to the meaning. The course writes [ɾ] in these positions. Either way it is a real tongue-tip r: do not drop it as British English does in “port”, and do not replace it with an English r. If the trill does not come easily, start from a tap and repeat it fast, letting the tongue tip vibrate in the airflow.</p><p>In Central Catalan <strong>final -r is often silent</strong>:</p><ul><li>in infinitives: <em>cantar</em> [kənˈta], <em>dormir</em> [duɾˈmi];</li><li>in most words ending in -er, -or: <em>fuster</em> [fusˈte] “carpenter”, <em>carrer</em> [kəˈre], <em>primer</em> [pɾiˈme], <em>senyor</em> [səˈɲo];</li><li>in some other words: <em>ahir</em> [əˈi] “yesterday”.</li></ul><p>In many words, however, final -r is pronounced: <em>mar</em> [ˈmaɾ], <em>cor</em> [ˈkɔɾ], <em>amor</em> [əˈmoɾ], <em>or</em> [ˈɔɾ] “gold”. There is no single rule, so check the pronunciation in a dictionary. When a pronoun is attached to an infinitive with a hyphen, the r comes back: <em>cantar-la</em> [kənˈtaɾlə], <em>menjar-ho</em> [mənˈʒaɾu]. Speakers of British English may recognise the pattern from “far” and “far away”, where a silent r reappears before a vowel.</p>",
+    "explanation": "<p>Catalan has two r sounds, and neither of them is the English “r”. For English r the tongue curls or bunches without touching anything; for Catalan r the tip of the tongue actually strikes the ridge behind the upper teeth.</p><ul><li><strong>[ɾ]</strong> is a single quick tap of the tongue tip, the sound American English uses for the “tt” in “better” or the “dd” in “ladder”. It occurs between vowels (<em>cara</em> [ˈkaɾə]) and after a consonant in the same syllable (<em>tres</em> [ˈtɾɛs], <em>gran</em> [ˈɡɾan], <em>llibre</em> [ˈʎibɾə]);</li><li><strong>[r]</strong> is a rolled r, a trill with several taps, as in Spanish <em>perro</em> or a Scottish rolled r. It occurs at the start of a word (<em>rosa</em> [ˈrɔzə], <em>riu</em> [ˈriw]), after n, l, s (<em>Enric</em> [ənˈrik], <em>Israel</em> [izrəˈɛl]) and for <strong>rr</strong> between vowels (<em>terra</em> [ˈtɛrə], <em>carrer</em> [kəˈre]).</li></ul><p>The difference changes meanings: <em>para</em> [ˈpaɾə] “(he/she) stops” / <em>parra</em> [ˈparə] “grapevine”. At the end of a syllable before a consonant (<em>porta</em> [ˈpɔɾtə]) and at the end of a word, r may be tapped or trilled; it makes no difference to the meaning. The course writes [ɾ] in these positions. Either way it is a real tongue-tip r: do not drop it as British English does in “port”, and do not replace it with an English r. If the trill does not come easily, start from a tap and repeat it fast, letting the tongue tip vibrate in the airflow.</p><p>In Central Catalan <strong>final -r is often silent</strong>:</p><ul><li>in infinitives: <em>cantar</em> [kənˈta], <em>dormir</em> [duɾˈmi];</li><li>in most words ending in -er, -or: <em>fuster</em> [fusˈte] “carpenter”, <em>carrer</em> [kəˈre], <em>primer</em> [pɾiˈme], <em>senyor</em> [səˈɲo];</li><li>in some other words: <em>ahir</em> [əˈi] “yesterday”.</li></ul><p>In many words, however, final -r is pronounced: <em>mar</em> [ˈmaɾ], <em>cor</em> [ˈkɔɾ], <em>amor</em> [əˈmoɾ], <em>or</em> [ˈɔɾ] “gold”. There is no single rule, so check the pronunciation in a dictionary. When a pronoun is attached to an infinitive with a hyphen, the r comes back: <em>cantar-la</em> [kənˈtaɾlə], <em>menjar-ho</em> [mənˈʒaɾu]. Speakers of British English may recognise the pattern from “far” and “far away”, where a silent r reappears before a vowel.</p>",
     "sounds": [
       {
         "spelling": "r (between vowels)",
@@ -2125,31 +2125,31 @@
         "instruction": "[ɾ], [r] or silent?",
         "items": [
           {
-            "q": "cara — r",
+            "q": "cara (r)",
             "a": "[ɾ]: a single r between vowels"
           },
           {
-            "q": "rosa — r",
+            "q": "rosa (r)",
             "a": "[r]: at the start of a word"
           },
           {
-            "q": "terra — rr",
+            "q": "terra (rr)",
             "a": "[r]"
           },
           {
-            "q": "tres — r",
+            "q": "tres (r)",
             "a": "[ɾ]: after t in the same syllable"
           },
           {
-            "q": "Enric — r",
+            "q": "Enric (r)",
             "a": "[r]: after n"
           },
           {
-            "q": "cantar — final r",
+            "q": "cantar (final r)",
             "a": "silent: [kənˈta]"
           },
           {
-            "q": "honra — r",
+            "q": "honra (r)",
             "a": "[r]: after n, [ˈɔnrə]"
           }
         ]
@@ -2196,7 +2196,7 @@
     "section": "Приголосні",
     "level": "B1",
     "summary": "b and v sound the same, voiced consonants lose their voicing at the end of a word, and some letters are not pronounced.",
-    "explanation": "<p>In Central Catalan <strong>b</strong> and <strong>v</strong> are not distinguished: both are pronounced [b] (at the start of a phrase and after m, n) or as a softer [β] between vowels, with the lips almost but not quite closed. There is no lip-and-teeth “v” as in English: <em>vi</em> [ˈbi] “wine”, <em>València</em> [bəˈlɛnsiə], <em>beure</em> [ˈbɛwɾə] “to drink”. Resist the spelling: <em>vi</em> sounds like a short English “bee”, not “vee”. That is why the letter names add “be alta” and “ve baixa”. The course writes [b]; likewise, d and g between vowels actually soften to [ð] (a weak version of the “th” in “this”) and [ɣ], but we write [d] and [ɡ].</p><p>Two more differences from English affect the plosives. <strong>p, t, k</strong> are unaspirated, without the puff of air of English “pie”, “tie”, “kite”: say <em>pa</em>, <em>tu</em>, <em>casa</em> the way you say the p, t, k in “spy”, “sty”, “sky”. And <strong>t, d</strong> are dental: the tongue tip touches the back of the upper teeth, not the gum ridge behind them.</p><p><strong>Final devoicing.</strong> Voiced consonants become voiceless at the end of a word: b → [p], d → [t], g → [k]: <em>verd</em> [ˈbɛɾt], <em>fred</em> [ˈfɾɛt], <em>llarg</em> [ˈʎaɾk], <em>club</em> [ˈklup]. When a vowel follows, the voicing returns: <em>verda</em> [ˈbɛɾdə], <em>freda</em> [ˈfɾɛdə]. Sometimes this also shows in the spelling: <em>groc</em> [ˈɡɾɔk] — <em>groga</em> [ˈɡɾɔɡə], <em>gris</em> [ˈɡɾis] — <em>grisa</em> [ˈɡɾizə]. English does not devoice final consonants (“bed” and “bet” are different words), so this needs practice: <em>fred</em> “cold” ends in a clear [t], like English “fret”.</p><p><strong>Silent letters.</strong> English speakers are used to silent letters (“lamb”, “hour”), but Catalan has its own set:</p><ul><li><strong>h</strong> is silent in native Catalan words: <em>home</em> [ˈɔmə], <em>ahir</em> [əˈi];</li><li>t in final <strong>-nt</strong> and <strong>-lt</strong>: <em>cent</em> [ˈsen], <em>gent</em> [ˈʒen], <em>molt</em> [ˈmol]; in the feminine the t is pronounced: <em>molta</em> [ˈmoltə];</li><li>p in final <strong>-mp</strong>: <em>camp</em> [ˈkam], <em>llamp</em> [ˈʎam] “lightning” (compare the silent b in “lamb”);</li><li>c in final <strong>-nc</strong>, where n is pronounced [ŋ], the “ng” of “sing”: <em>blanc</em> [ˈblaŋ], <em>banc</em> [ˈbaŋ]; but <em>blanca</em> [ˈblaŋkə];</li><li>t in the clusters <strong>-rts</strong>, <strong>-nts</strong>: <em>dimarts</em> [diˈmaɾs], <em>cents</em> [ˈsens]; in the singular <em>fort</em> [ˈfɔɾt] the t is usually pronounced;</li><li>final -r in many words (Lesson 10).</li></ul><p>In Balearic and some Valencian varieties v is pronounced as a lip-and-teeth [v], as in English (Lesson 13).</p>",
+    "explanation": "<p>In Central Catalan <strong>b</strong> and <strong>v</strong> are not distinguished: both are pronounced [b] (at the start of a phrase and after m, n) or as a softer [β] between vowels, with the lips almost but not quite closed. There is no lip-and-teeth “v” as in English: <em>vi</em> [ˈbi] “wine”, <em>València</em> [bəˈlɛnsiə], <em>beure</em> [ˈbɛwɾə] “to drink”. Resist the spelling: <em>vi</em> sounds like a short English “bee”, not “vee”. That is why the letter names add “be alta” and “ve baixa”. The course writes [b]; likewise, d and g between vowels actually soften to [ð] (a weak version of the “th” in “this”) and [ɣ], but we write [d] and [ɡ].</p><p>Two more differences from English affect the plosives. <strong>p, t, k</strong> are unaspirated, without the puff of air of English “pie”, “tie”, “kite”: say <em>pa</em>, <em>tu</em>, <em>casa</em> the way you say the p, t, k in “spy”, “sty”, “sky”. And <strong>t, d</strong> are dental: the tongue tip touches the back of the upper teeth, not the gum ridge behind them.</p><p><strong>Final devoicing.</strong> Voiced consonants become voiceless at the end of a word: b → [p], d → [t], g → [k]: <em>verd</em> [ˈbɛɾt], <em>fred</em> [ˈfɾɛt], <em>llarg</em> [ˈʎaɾk], <em>club</em> [ˈklup]. When a vowel follows, the voicing returns: <em>verda</em> [ˈbɛɾdə], <em>freda</em> [ˈfɾɛdə]. Sometimes this also shows in the spelling: <em>groc</em> [ˈɡɾɔk] → <em>groga</em> [ˈɡɾɔɡə], <em>gris</em> [ˈɡɾis] → <em>grisa</em> [ˈɡɾizə]. English does not devoice final consonants (“bed” and “bet” are different words), so this needs practice: <em>fred</em> “cold” ends in a clear [t], like English “fret”.</p><p><strong>Silent letters.</strong> English speakers are used to silent letters (“lamb”, “hour”), but Catalan has its own set:</p><ul><li><strong>h</strong> is silent in native Catalan words: <em>home</em> [ˈɔmə], <em>ahir</em> [əˈi];</li><li>t in final <strong>-nt</strong> and <strong>-lt</strong>: <em>cent</em> [ˈsen], <em>gent</em> [ˈʒen], <em>molt</em> [ˈmol]; in the feminine the t is pronounced: <em>molta</em> [ˈmoltə];</li><li>p in final <strong>-mp</strong>: <em>camp</em> [ˈkam], <em>llamp</em> [ˈʎam] “lightning” (compare the silent b in “lamb”);</li><li>c in final <strong>-nc</strong>, where n is pronounced [ŋ], the “ng” of “sing”: <em>blanc</em> [ˈblaŋ], <em>banc</em> [ˈbaŋ]; but <em>blanca</em> [ˈblaŋkə];</li><li>t in the clusters <strong>-rts</strong>, <strong>-nts</strong>: <em>dimarts</em> [diˈmaɾs], <em>cents</em> [ˈsens]; in the singular <em>fort</em> [ˈfɔɾt] the t is usually pronounced;</li><li>final -r in many words (Lesson 10).</li></ul><p>In Balearic and some Valencian varieties v is pronounced as a lip-and-teeth [v], as in English (Lesson 13).</p>",
     "sounds": [
       {
         "spelling": "b",
@@ -2376,16 +2376,16 @@
             "a": "[ˈʎaɾk]: g at the end of a word sounds [k]"
           },
           {
-            "q": "groc — groga",
-            "a": "[ˈɡɾɔk] — [ˈɡɾɔɡə]: before a vowel the sound is voiced"
+            "q": "groc → groga",
+            "a": "[ˈɡɾɔk] → [ˈɡɾɔɡə]: before a vowel the sound is voiced"
           },
           {
-            "q": "gris — grisa",
-            "a": "[ˈɡɾis] — [ˈɡɾizə]"
+            "q": "gris → grisa",
+            "a": "[ˈɡɾis] → [ˈɡɾizə]"
           },
           {
-            "q": "sord — sorda",
-            "a": "[ˈsoɾt] — [ˈsoɾdə]"
+            "q": "sord → sorda",
+            "a": "[ˈsoɾt] → [ˈsoɾdə]"
           }
         ]
       },
@@ -2583,31 +2583,31 @@
         "instruction": "How is the marked sound pronounced at the word boundary?",
         "items": [
           {
-            "q": "els amics — s",
+            "q": "els amics (s)",
             "a": "[z]: before a vowel"
           },
           {
-            "q": "els pares — s",
+            "q": "els pares (s)",
             "a": "[s]: before voiceless p"
           },
           {
-            "q": "tres dies — s",
+            "q": "tres dies (s)",
             "a": "[z]: before voiced d, [ˈtɾɛz ˈdiəs]"
           },
           {
-            "q": "un poc — n",
+            "q": "un poc (n)",
             "a": "[m]: before p"
           },
           {
-            "q": "un gat — n",
+            "q": "un gat (n)",
             "a": "[ŋ]: before g"
           },
           {
-            "q": "peix a la planxa — x in peix",
+            "q": "peix a la planxa (x in peix)",
             "a": "[ʒ]: before a vowel"
           },
           {
-            "q": "set dies — t",
+            "q": "set dies (t)",
             "a": "[d]: before voiced d"
           }
         ]
