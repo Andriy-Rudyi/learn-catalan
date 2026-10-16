@@ -5,7 +5,7 @@
   "section": "Порівняння",
   "level": "A2",
   "summary": "Вищий ступінь і рівність.",
-  "explanation": "\n<p><strong>Більше / менше</strong>: <strong>més</strong> / <strong>menys</strong> + прикметник + <strong>que</strong>:</p>\n<ul>\n  <li>Barcelona és <strong>més</strong> gran <strong>que</strong> Girona.</li>\n  <li>Aquest cotxe és <strong>menys</strong> car <strong>que</strong> aquell.</li>\n</ul>\n<p><strong>Так само</strong>: <strong>tan</strong> + прикметник + <strong>com</strong>:\n<em>Ets <strong>tan</strong> alt <strong>com</strong> el teu pare.</em></p>\n<p>З іменниками — <strong>tant / tanta / tants / tantes … com</strong>:\n<em>No tinc <strong>tants</strong> llibres <strong>com</strong> tu.</em></p>\n<p>Неправильні форми: <strong>bo → millor</strong>, <strong>dolent → pitjor</strong>.\nУ книжній мові ще <em>major</em> (= més gran) і <em>menor</em> (= més petit).</p>\n<p>Перед числом — <strong>més de / menys de</strong>: <em>Hi havia <strong>més de</strong> cent persones.</em></p>\n",
+  "explanation": "\n<p><strong>Більше / менше</strong>: <strong>més</strong> / <strong>menys</strong> + прикметник + <strong>que</strong>:</p>\n<ul>\n  <li>Barcelona és <strong>més</strong> gran <strong>que</strong> Girona.</li>\n  <li>Aquest cotxe és <strong>menys</strong> car <strong>que</strong> aquell.</li>\n</ul>\n<p><strong>Так само</strong>: <strong>tan</strong> + прикметник + <strong>com</strong>:\n<em>Ets <strong>tan</strong> alt <strong>com</strong> el teu pare.</em></p>\n<p>З іменниками вживаємо <strong>tant / tanta / tants / tantes … com</strong>:\n<em>No tinc <strong>tants</strong> llibres <strong>com</strong> tu.</em></p>\n<p>Неправильні форми: <strong>bo → millor</strong>, <strong>dolent → pitjor</strong>.\nУ книжній мові ще <em>major</em> (= més gran) і <em>menor</em> (= més petit).</p>\n<p>Перед числом кажемо <strong>més de / menys de</strong>: <em>Hi havia <strong>més de</strong> cent persones.</em></p>\n",
   "examples": [
    {
     "ca": "El català és més fàcil que l’alemany.",
@@ -75,7 +75,7 @@
   "section": "Порівняння",
   "level": "A2",
   "summary": "Найкращий, найбільший і «дуже-дуже».",
-  "explanation": "\n<p><strong>Найвищий</strong> серед групи: <strong>el / la / els / les + més</strong> + прикметник\n(+ <strong>de</strong>):</p>\n<ul>\n  <li>És <strong>el</strong> carrer <strong>més</strong> llarg <strong>de</strong> la ciutat.</li>\n  <li>És <strong>la més</strong> intel·ligent <strong>de</strong> la classe.</li>\n  <li>És <strong>el millor</strong> restaurant del barri. — Найкращий.</li>\n</ul>\n<p><strong>Абсолютний</strong> ступінь («надзвичайно») — суфікс <strong>-íssim</strong>:</p>\n<ul>\n  <li>car → car<strong>íssim</strong>, fàcil → facil<strong>íssim</strong>,\n      bo → bon<strong>íssim</strong></li>\n  <li>з правописними змінами: bonic → boniqu<strong>íssim</strong>,\n      llarg → llargu<strong>íssim</strong></li>\n</ul>\n<p>Суфікс змінюється за родом і числом: <em>caríssima, caríssims, caríssimes</em>.\nТе саме значення дає <strong>molt</strong>: <em>molt car</em>.</p>\n",
+  "explanation": "\n<p><strong>Найвищий</strong> серед групи: <strong>el / la / els / les + més</strong> + прикметник\n(+ <strong>de</strong>):</p>\n<ul>\n  <li>És <strong>el</strong> carrer <strong>més</strong> llarg <strong>de</strong> la ciutat.</li>\n  <li>És <strong>la més</strong> intel·ligent <strong>de</strong> la classe.</li>\n  <li>És <strong>el millor</strong> restaurant del barri. (Найкращий.)</li>\n</ul>\n<p><strong>Абсолютний</strong> ступінь («надзвичайно») утворюють суфіксом <strong>-íssim</strong>:</p>\n<ul>\n  <li>car → car<strong>íssim</strong>, fàcil → facil<strong>íssim</strong>,\n      bo → bon<strong>íssim</strong></li>\n  <li>з правописними змінами: bonic → boniqu<strong>íssim</strong>,\n      llarg → llargu<strong>íssim</strong></li>\n</ul>\n<p>Суфікс змінюється за родом і числом: <em>caríssima, caríssims, caríssimes</em>.\nТе саме значення дає <strong>molt</strong>: <em>molt car</em>.</p>\n",
   "examples": [
    {
     "ca": "És la ciutat més bonica que he vist mai.",
@@ -145,7 +145,7 @@
   "section": "Будова речення",
   "level": "B1",
   "summary": "Як з’єднати два речення в одне.",
-  "explanation": "\n<p><strong>que</strong> — найуживаніший: і для людей, і для речей, у ролі підмета чи\nдодатка:</p>\n<ul>\n  <li>L’home <strong>que</strong> viu aquí és metge. — Чоловік, який тут живе, — лікар.</li>\n  <li>El llibre <strong>que</strong> llegeixo és bo. — Книжка, яку я читаю, добра.</li>\n</ul>\n<p><strong>on</strong> — для місця: <em>La casa <strong>on</strong> visc és vella.</em></p>\n<p>Після прийменника: <strong>qui</strong> — для людей, <strong>què</strong> — для речей:</p>\n<ul>\n  <li>La noia <strong>amb qui</strong> parlo és la meva cosina.</li>\n  <li>El tema <strong>de què</strong> parlem és important.</li>\n</ul>\n<p><strong>el que</strong> = «те, що»: <em><strong>El que</strong> dius és veritat.</em></p>\n<p>У книжній мові замість <em>qui / què</em> після прийменника вживають\n<strong>el qual / la qual / els quals / les quals</strong>:\n<em>la raó per la qual ho dic</em>.</p>\n",
+  "explanation": "\n<p><strong>que</strong> найуживаніший: і для людей, і для речей, у ролі підмета чи\nдодатка:</p>\n<ul>\n  <li>L’home <strong>que</strong> viu aquí és metge. (Чоловік, який тут живе, є лікарем.)</li>\n  <li>El llibre <strong>que</strong> llegeixo és bo. (Книжка, яку я читаю, добра.)</li>\n</ul>\n<p><strong>on</strong> вживаємо для місця: <em>La casa <strong>on</strong> visc és vella.</em></p>\n<p>Після прийменника: <strong>qui</strong> (для людей) і <strong>què</strong> (для речей):</p>\n<ul>\n  <li>La noia <strong>amb qui</strong> parlo és la meva cosina.</li>\n  <li>El tema <strong>de què</strong> parlem és important.</li>\n</ul>\n<p><strong>el que</strong> = «те, що»: <em><strong>El que</strong> dius és veritat.</em></p>\n<p>У книжній мові замість <em>qui / què</em> після прийменника вживають\n<strong>el qual / la qual / els quals / les quals</strong>:\n<em>la raó per la qual ho dic</em>.</p>\n",
   "examples": [
    {
     "ca": "Aquest és el pis que hem llogat.",
@@ -267,7 +267,7 @@
   "section": "Subjuntiu",
   "level": "B1",
   "summary": "Бажання і вимога щодо іншої людини.",
-  "explanation": "\n<p>Коли хтось хоче, просить, радить, щоб <em>інша</em> особа щось зробила,\nпісля <strong>que</strong> стоїть subjuntiu:</p>\n<ul>\n  <li><strong>Vull que</strong> <em>vinguis</em> a la festa.</li>\n  <li><strong>Espero que</strong> <em>t’agradi</em>.</li>\n  <li>Et <strong>demano que</strong> m’<em>ajudis</em>.</li>\n  <li><strong>Prefereixo que</strong> <em>parlem</em> demà.</li>\n</ul>\n<p>Якщо суб’єкт той самий, вживається <strong>інфінітив</strong>, а не que:</p>\n<ul>\n  <li><em>Vull venir.</em> — Я хочу прийти. (а не «vull que vingui»)</li>\n  <li><em>Vull que vinguis.</em> — Я хочу, щоб <u>ти</u> прийшов.</li>\n</ul>\n<p>Те саме з <em>desitjar, necessitar, permetre, prohibir, aconsellar, recomanar</em>.</p>\n",
+  "explanation": "\n<p>Коли хтось хоче, просить, радить, щоб <em>інша</em> особа щось зробила,\nпісля <strong>que</strong> стоїть subjuntiu:</p>\n<ul>\n  <li><strong>Vull que</strong> <em>vinguis</em> a la festa.</li>\n  <li><strong>Espero que</strong> <em>t’agradi</em>.</li>\n  <li>Et <strong>demano que</strong> m’<em>ajudis</em>.</li>\n  <li><strong>Prefereixo que</strong> <em>parlem</em> demà.</li>\n</ul>\n<p>Якщо суб’єкт той самий, вживається <strong>інфінітив</strong>, а не que:</p>\n<ul>\n  <li><em>Vull venir.</em> (Я хочу прийти.) Не «vull que vingui».</li>\n  <li><em>Vull que vinguis.</em> (Я хочу, щоб <u>ти</u> прийшов.)</li>\n</ul>\n<p>Те саме з <em>desitjar, necessitar, permetre, prohibir, aconsellar, recomanar</em>.</p>\n",
   "examples": [
    {
     "ca": "Els meus pares volen que estudiï medicina.",
@@ -337,7 +337,7 @@
   "section": "Subjuntiu",
   "level": "B1",
   "summary": "M’agrada que…, és important que…, no crec que…",
-  "explanation": "\n<p>Subjuntiu вживається після виразів <strong>емоцій</strong> і <strong>оцінки</strong>,\nякщо в підрядному реченні інший суб’єкт:</p>\n<ul>\n  <li><strong>M’agrada que</strong> <em>vinguis</em>.</li>\n  <li><strong>Em sap greu que</strong> <em>estiguis</em> malalt. — Мені шкода, що ти хворий.</li>\n  <li><strong>És important que</strong> <em>estudiïs</em>.</li>\n  <li><strong>És possible que</strong> <em>arribin</em> tard.</li>\n</ul>\n<p><strong>Думка</strong>: стверджувально — індикатив, заперечно — subjuntiu:</p>\n<ul>\n  <li><strong>Crec que</strong> <em>té</em> raó. — Я думаю, він має рацію.</li>\n  <li><strong>No crec que</strong> <em>tingui</em> raó. — Не думаю, що він має рацію.</li>\n</ul>\n<p>Безособові вирази <em>és clar que, és veritat que, és evident que</em> вимагають\nіндикатива: <em>És clar que <strong>ve</strong>.</em></p>\n",
+  "explanation": "\n<p>Subjuntiu вживається після виразів <strong>емоцій</strong> і <strong>оцінки</strong>,\nякщо в підрядному реченні інший суб’єкт:</p>\n<ul>\n  <li><strong>M’agrada que</strong> <em>vinguis</em>.</li>\n  <li><strong>Em sap greu que</strong> <em>estiguis</em> malalt. (Мені шкода, що ти хворий.)</li>\n  <li><strong>És important que</strong> <em>estudiïs</em>.</li>\n  <li><strong>És possible que</strong> <em>arribin</em> tard.</li>\n</ul>\n<p><strong>Думка</strong>: після ствердження йде індикатив, після заперечення йде subjuntiu:</p>\n<ul>\n  <li><strong>Crec que</strong> <em>té</em> raó. (Я думаю, він має рацію.)</li>\n  <li><strong>No crec que</strong> <em>tingui</em> raó. (Не думаю, що він має рацію.)</li>\n</ul>\n<p>Безособові вирази <em>és clar que, és veritat que, és evident que</em> вимагають\nіндикатива: <em>És clar que <strong>ve</strong>.</em></p>\n",
   "examples": [
    {
     "ca": "Estic content que hagis vingut.",
@@ -394,7 +394,7 @@
   "section": "Subjuntiu",
   "level": "B1",
   "summary": "Майбутнє, мета й «до того як».",
-  "explanation": "\n<p><strong>quan</strong> про <em>майбутнє</em> — subjuntiu, про звичне чи минуле — індикатив:</p>\n<ul>\n  <li><strong>Quan arribis</strong>, truca’m. — Коли приїдеш, подзвони мені.</li>\n  <li><strong>Quan arribo</strong> a casa, sopo. — Коли я приходжу додому, вечеряю.</li>\n</ul>\n<p><strong>perquè</strong> + subjuntiu — <em>мета</em> («щоб»); + індикатив —\n<em>причина</em> («бо»):</p>\n<ul>\n  <li>T’ho explico <strong>perquè</strong> ho <em>entenguis</em>. — щоб ти зрозумів.</li>\n  <li>No vinc <strong>perquè</strong> <em>estic</em> malalt. — бо я хворий.</li>\n</ul>\n<p>Завжди з subjuntiu: <strong>abans que</strong> (до того як), <strong>sense que</strong>\n(без того щоб), <strong>fins que</strong> (поки не — про майбутнє):</p>\n<ul>\n  <li>Marxa <strong>abans que</strong> <em>plogui</em>.</li>\n  <li>Esperaré <strong>fins que</strong> <em>tornis</em>.</li>\n</ul>\n",
+  "explanation": "\n<p><strong>quan</strong> про <em>майбутнє</em> вимагає subjuntiu, про звичне чи минуле вимагає індикатива:</p>\n<ul>\n  <li><strong>Quan arribis</strong>, truca’m. (Коли приїдеш, подзвони мені.)</li>\n  <li><strong>Quan arribo</strong> a casa, sopo. (Коли я приходжу додому, вечеряю.)</li>\n</ul>\n<p><strong>perquè</strong> + subjuntiu означає <em>мету</em> («щоб»); + індикатив означає\n<em>причину</em> («бо»):</p>\n<ul>\n  <li>T’ho explico <strong>perquè</strong> ho <em>entenguis</em>. (щоб ти зрозумів).</li>\n  <li>No vinc <strong>perquè</strong> <em>estic</em> malalt. (бо я хворий).</li>\n</ul>\n<p>Завжди з subjuntiu: <strong>abans que</strong> (до того як), <strong>sense que</strong>\n(без того щоб), <strong>fins que</strong> (поки не, про майбутнє):</p>\n<ul>\n  <li>Marxa <strong>abans que</strong> <em>plogui</em>.</li>\n  <li>Esperaré <strong>fins que</strong> <em>tornis</em>.</li>\n</ul>\n",
   "examples": [
    {
     "ca": "Quan tinguis temps, llegeix aquest llibre.",
@@ -451,7 +451,7 @@
   "section": "Дієслово: основи",
   "level": "A2",
   "summary": "Обов’язок, необхідність, можливість, імовірність.",
-  "explanation": "\n<p><strong>haver de</strong> + інфінітив — особистий обов’язок («мушу»):\n<em><strong>He de</strong> treballar demà.</em></p>\n<p><strong>cal</strong> (від <em>caldre</em>) — безособова необхідність («треба»):</p>\n<ul>\n  <li><strong>Cal</strong> estudiar cada dia. — Треба вчитися щодня.</li>\n  <li><strong>Cal que</strong> estudiïs. — Треба, щоб ти вчився. (+ subjuntiu)</li>\n  <li><strong>No cal</strong> que vinguis. — Не треба приходити.</li>\n</ul>\n<p>Так само безособово: <strong>s’ha de</strong> + інфінітив —\n<em>Aquí <strong>s’ha de</strong> parlar fluix.</em></p>\n<p><strong>poder</strong> — можливість і дозвіл: <em>Puc entrar?</em></p>\n<p><strong>deure</strong> + інфінітив — <em>імовірність</em> («мабуть»):\n<em><strong>Deu</strong> ser tard.</em> — Мабуть, уже пізно. <em><strong>Deuen</strong> haver\nsortit.</em> — Вони, напевно, вийшли.</p>\n",
+  "explanation": "\n<p><strong>haver de</strong> + інфінітив означає особистий обов’язок («мушу»):\n<em><strong>He de</strong> treballar demà.</em></p>\n<p><strong>cal</strong> (від <em>caldre</em>) означає безособову необхідність («треба»):</p>\n<ul>\n  <li><strong>Cal</strong> estudiar cada dia. (Треба вчитися щодня.)</li>\n  <li><strong>Cal que</strong> estudiïs. (Треба, щоб ти вчився.) Тут потрібен subjuntiu.</li>\n  <li><strong>No cal</strong> que vinguis. (Не треба приходити.)</li>\n</ul>\n<p>Так само безособово: <strong>s’ha de</strong> + інфінітив:\n<em>Aquí <strong>s’ha de</strong> parlar fluix.</em></p>\n<p><strong>poder</strong> означає можливість і дозвіл: <em>Puc entrar?</em></p>\n<p><strong>deure</strong> + інфінітив виражає <em>імовірність</em> («мабуть»):\n<em><strong>Deu</strong> ser tard.</em> (Мабуть, уже пізно.) <em><strong>Deuen</strong> haver\nsortit.</em> (Вони, напевно, вийшли.)</p>\n",
   "examples": [
    {
     "ca": "Hem de comprar pa.",
@@ -504,23 +504,23 @@
   "section": "Займенники та означники",
   "level": "B2",
   "summary": "Порядок і форми, коли займенників два.",
-  "explanation": "\n<p>Коли в реченні два слабкі займенники, <strong>непрямий</strong> (кому) іде перед\n<strong>прямим</strong> (що):</p>\n<ul>\n  <li>Em dones el llibre? — Sí, <strong>te’l</strong> dono. (et + el)</li>\n  <li>Ens portes les claus? — Sí, <strong>us les</strong> porto.</li>\n  <li>Se’l menja tot. (es + el)</li>\n</ul>\n<p>Перед іншим займенником <em>em, et, es</em> стають <strong>me, te, se</strong>:\n<em>me’l, me la, me’ls, me les, te’l, se la…</em></p>\n<p>З <strong>li</strong> + <em>el, la, els, les</em> у стандарті кажуть\n<strong>l’hi, la hi, els hi, les hi</strong>:\n<em>Has donat la carta a la Marta? — Sí, <strong>la hi</strong> he donat.</em>\nУ розмові часто чути <em>li la</em>, <em>li’l</em>.</p>\n<p>З <strong>en</strong> і <strong>hi</strong>: <em>me’n, te’n, se’n, n’hi, m’hi, t’hi, s’hi</em>:\n<em>Me’n vaig.</em> — Я йду. <em>N’hi ha molts.</em> — Їх багато.</p>\n",
+  "explanation": "\n<p>Коли в реченні два слабкі займенники, <strong>непрямий</strong> (кому) іде перед\n<strong>прямим</strong> (що):</p>\n<ul>\n  <li>Em dones el llibre? Sí, <strong>te’l</strong> dono. (et + el)</li>\n  <li>Ens portes les claus? Sí, <strong>us les</strong> porto.</li>\n  <li>Se’l menja tot. (es + el)</li>\n</ul>\n<p>Перед іншим займенником <em>em, et, es</em> стають <strong>me, te, se</strong>:\n<em>me’l, me la, me’ls, me les, te’l, se la…</em></p>\n<p>З <strong>li</strong> + <em>el, la, els, les</em> у стандарті кажуть\n<strong>l’hi, la hi, els hi, les hi</strong>:\n<em>Has donat la carta a la Marta? Sí, <strong>la hi</strong> he donat.</em>\nУ розмові часто чути <em>li la</em>, <em>li’l</em>.</p>\n<p>З <strong>en</strong> і <strong>hi</strong>: <em>me’n, te’n, se’n, n’hi, m’hi, t’hi, s’hi</em>:\n<em>Me’n vaig.</em> (Я йду.) <em>N’hi ha molts.</em> (Їх багато.)</p>\n",
   "examples": [
    {
-    "ca": "Me’l deixes? — Sí, te’l deixo.",
-    "uk": "Позичиш мені його? — Так, позичу."
+    "ca": "Me’l deixes? Sí, te’l deixo.",
+    "uk": "Позичиш мені його? Так, позичу."
    },
    {
-    "ca": "Has donat les claus al veí? — Sí, les hi he donat.",
-    "uk": "Ти віддав сусідові ключі? — Так, віддав."
+    "ca": "Has donat les claus al veí? Sí, les hi he donat.",
+    "uk": "Ти віддав сусідові ключі? Так, віддав."
    },
    {
     "ca": "Me’n vaig a dormir.",
     "uk": "Я піду спати."
    },
    {
-    "ca": "Has portat el regal al teu pare? — Sí, l’hi he portat.",
-    "uk": "Ти приніс подарунок батькові? — Так, я йому його приніс."
+    "ca": "Has portat el regal al teu pare? Sí, l’hi he portat.",
+    "uk": "Ти приніс подарунок батькові? Так, я йому його приніс."
    }
   ],
   "exercises": [
@@ -557,7 +557,7 @@
   "section": "Займенники та означники",
   "level": "B1",
   "summary": "З інфінітивом, герундієм і наказом займенник стоїть після дієслова.",
-  "explanation": "\n<p>З <strong>інфінітивом</strong>, <strong>герундієм</strong> і <strong>стверджувальним\nнаказом</strong> займенник приєднується до кінця дієслова:</p>\n<ul>\n  <li><em>Vull veure<strong>-la</strong>. Està mirant<strong>-lo</strong>. Digues<strong>-me</strong>!</em></li>\n</ul>\n<p>Форма залежить від закінчення дієслова:</p>\n<ul>\n  <li>після <strong>приголосного</strong> або <strong>-u</strong> — повна форма з дефісом:\n      <em>menjar<strong>-lo</strong>, fes<strong>-me</strong>, compreu<strong>-los</strong>,\n      dir<strong>-nos</strong></em></li>\n  <li>після <strong>голосного</strong> — скорочена з апострофом:\n      <em>compra<strong>’l</strong>, dona<strong>’m</strong>, vendre<strong>’ls</strong>,\n      porta<strong>’ns</strong></em></li>\n</ul>\n<p><strong>-ho</strong>, <strong>-la</strong>, <strong>-les</strong>, <strong>-li</strong>\nі <strong>-hi</strong> не скорочуються ніколи: <em>compra<strong>-la</strong>,\nfes<strong>-ho</strong>, digues<strong>-li</strong></em>. А «вас» має дві форми:\nпісля приголосного <strong>-vos</strong> (<em>ajudar<strong>-vos</strong></em>),\nпісля голосного <strong>-us</strong> (<em>veure<strong>-us</strong></em>).</p>\n",
+  "explanation": "\n<p>З <strong>інфінітивом</strong>, <strong>герундієм</strong> і <strong>стверджувальним\nнаказом</strong> займенник приєднується до кінця дієслова:</p>\n<ul>\n  <li><em>Vull veure<strong>-la</strong>. Està mirant<strong>-lo</strong>. Digues<strong>-me</strong>!</em></li>\n</ul>\n<p>Форма залежить від закінчення дієслова:</p>\n<ul>\n  <li>після <strong>приголосного</strong> або <strong>-u</strong> ставимо повну форму з дефісом:\n      <em>menjar<strong>-lo</strong>, fes<strong>-me</strong>, compreu<strong>-los</strong>,\n      dir<strong>-nos</strong></em></li>\n  <li>після <strong>голосного</strong> ставимо скорочену з апострофом:\n      <em>compra<strong>’l</strong>, dona<strong>’m</strong>, vendre<strong>’ls</strong>,\n      porta<strong>’ns</strong></em></li>\n</ul>\n<p><strong>-ho</strong>, <strong>-la</strong>, <strong>-les</strong>, <strong>-li</strong>\nі <strong>-hi</strong> не скорочуються ніколи: <em>compra<strong>-la</strong>,\nfes<strong>-ho</strong>, digues<strong>-li</strong></em>. А «вас» має дві форми:\nпісля приголосного <strong>-vos</strong> (<em>ajudar<strong>-vos</strong></em>),\nпісля голосного <strong>-us</strong> (<em>veure<strong>-us</strong></em>).</p>\n",
   "examples": [
    {
     "ca": "Dona’m la mà.",
@@ -618,7 +618,7 @@
   "section": "Будова речення",
   "level": "B1",
   "summary": "Коли неважливо, хто виконує дію.",
-  "explanation": "\n<p>Конструкція <strong>es + дієслово в 3-й особі</strong> означає, що діяч неважливий\nабо загальний («тут говорять», «продається»):</p>\n<ul>\n  <li>Aquí <strong>es parla</strong> català. — Тут говорять каталонською.</li>\n  <li>A Catalunya <strong>es menja</strong> molt de peix.</li>\n</ul>\n<p>Якщо є іменник у множині, дієслово з ним узгоджується:</p>\n<ul>\n  <li><strong>Es ven</strong> pis. — <strong>Es venen</strong> pisos. — Продаються квартири.</li>\n  <li><strong>Es lloga</strong> habitació. — <strong>Es lloguen</strong> habitacions.</li>\n</ul>\n<p>Інші способи сказати «люди взагалі»: 3-тя особа множини (<em>Diuen que farà fred</em>),\n<em>la gent</em>, а в книжному стилі — <strong>hom</strong>:\n<em>Hom diu que…</em></p>\n",
+  "explanation": "\n<p>Конструкція <strong>es + дієслово в 3-й особі</strong> означає, що діяч неважливий\nабо загальний («тут говорять», «продається»):</p>\n<ul>\n  <li>Aquí <strong>es parla</strong> català. (Тут говорять каталонською.)</li>\n  <li>A Catalunya <strong>es menja</strong> molt de peix.</li>\n</ul>\n<p>Якщо є іменник у множині, дієслово з ним узгоджується:</p>\n<ul>\n  <li><strong>Es ven</strong> pis. <strong>Es venen</strong> pisos. (Продаються квартири.)</li>\n  <li><strong>Es lloga</strong> habitació. <strong>Es lloguen</strong> habitacions.</li>\n</ul>\n<p>Інші способи сказати «люди взагалі»: 3-тя особа множини (<em>Diuen que farà fred</em>),\n<em>la gent</em>, а в книжному стилі ще й <strong>hom</strong>:\n<em>Hom diu que…</em></p>\n",
   "examples": [
    {
     "ca": "Com es diu això en català?",
@@ -667,7 +667,7 @@
   "section": "Будова речення",
   "level": "B1",
   "summary": "Дія над чимось і стан як результат.",
-  "explanation": "\n<p><strong>ser + дієприкметник</strong> — пасивна дія; дієприкметник узгоджується\nз підметом, а виконавця вводить <strong>per</strong>:</p>\n<ul>\n  <li>La Sagrada Família <strong>va ser dissenyada</strong> per Gaudí.</li>\n  <li>Els resultats <strong>seran publicats</strong> demà.</li>\n</ul>\n<p>У живій мові пасив з ser вживають рідко. Частіше кажуть активно або з <em>es</em>\n(юніт 39): <em>Gaudí va dissenyar la Sagrada Família.</em>\n<em>Els resultats es publicaran demà.</em></p>\n<p><strong>estar + дієприкметник</strong> описує <em>стан</em>, що є результатом дії:</p>\n<ul>\n  <li>La porta <strong>està tancada</strong>. — Двері зачинені.</li>\n  <li>El sopar <strong>està fet</strong>. — Вечеря готова.</li>\n</ul>\n",
+  "explanation": "\n<p><strong>ser + дієприкметник</strong> позначає пасивну дію; дієприкметник узгоджується\nз підметом, а виконавця вводить <strong>per</strong>:</p>\n<ul>\n  <li>La Sagrada Família <strong>va ser dissenyada</strong> per Gaudí.</li>\n  <li>Els resultats <strong>seran publicats</strong> demà.</li>\n</ul>\n<p>У живій мові пасив з ser вживають рідко. Частіше кажуть активно або з <em>es</em>\n(юніт 39): <em>Gaudí va dissenyar la Sagrada Família.</em>\n<em>Els resultats es publicaran demà.</em></p>\n<p><strong>estar + дієприкметник</strong> описує <em>стан</em>, що є результатом дії:</p>\n<ul>\n  <li>La porta <strong>està tancada</strong>. (Двері зачинені.)</li>\n  <li>El sopar <strong>està fet</strong>. (Вечеря готова.)</li>\n</ul>\n",
   "examples": [
    {
     "ca": "El llibre va ser traduït a deu llengües.",
@@ -725,7 +725,7 @@
   "section": "Минулі часи",
   "level": "B1",
   "summary": "Дія, що сталася раніше за іншу минулу дію.",
-  "explanation": "\n<p><strong>Plusquamperfet</strong> = imperfet дієслова <em>haver</em> + дієприкметник:</p>\n<ul>\n  <li><strong>havia</strong> parlat, <strong>havies</strong> parlat, <strong>havia</strong> parlat,\n      <strong>havíem</strong> parlat, <strong>havíeu</strong> parlat, <strong>havien</strong> parlat</li>\n</ul>\n<p>Він показує, що дія відбулася <em>до</em> іншого моменту в минулому:</p>\n<ul>\n  <li>Quan vaig arribar a l’estació, el tren ja <strong>havia sortit</strong>.\n      — Коли я прийшов на вокзал, поїзд уже пішов.</li>\n  <li>No havia vist mai la neu fins que vaig anar a Andorra.</li>\n</ul>\n<p>Часто з <em>ja</em> (уже), <em>encara no</em> (ще не), <em>mai</em> (ніколи).</p>\n",
+  "explanation": "\n<p><strong>Plusquamperfet</strong> = imperfet дієслова <em>haver</em> + дієприкметник:</p>\n<ul>\n  <li><strong>havia</strong> parlat, <strong>havies</strong> parlat, <strong>havia</strong> parlat,\n      <strong>havíem</strong> parlat, <strong>havíeu</strong> parlat, <strong>havien</strong> parlat</li>\n</ul>\n<p>Він показує, що дія відбулася <em>до</em> іншого моменту в минулому:</p>\n<ul>\n  <li>Quan vaig arribar a l’estació, el tren ja <strong>havia sortit</strong>.\n      (Коли я прийшов на вокзал, поїзд уже пішов.)</li>\n  <li>No havia vist mai la neu fins que vaig anar a Andorra.</li>\n</ul>\n<p>Часто з <em>ja</em> (уже), <em>encara no</em> (ще не), <em>mai</em> (ніколи).</p>\n",
   "examples": [
    {
     "ca": "Quan vam arribar, la festa ja havia acabat.",
@@ -778,7 +778,7 @@
   "section": "Будова речення",
   "level": "B1",
   "summary": "Як переказати чужі слова й узгодити часи.",
-  "explanation": "\n<p>Якщо дієслово мовлення в <strong>теперішньому</strong>, часи не змінюються:\n<em>«Estic cansat.» → <strong>Diu que</strong> està cansat.</em></p>\n<p>Якщо воно в <strong>минулому</strong> (<em>va dir, deia, ha dit</em>), часи\nзсуваються назад:</p>\n<ul>\n  <li>теперішній → imperfet: «Estic cansat» → Va dir que <strong>estava</strong> cansat.</li>\n  <li>perfet / perifràstic → plusquamperfet: «He acabat» → Va dir que <strong>havia acabat</strong>.</li>\n  <li>майбутній → condicional: «Vindré» → Va dir que <strong>vindria</strong>.</li>\n</ul>\n<p>Питання: загальні — через <strong>si</strong>, спеціальні — через питальне слово:</p>\n<ul>\n  <li>«Vols cafè?» → Em va preguntar <strong>si</strong> volia cafè.</li>\n  <li>«On vius?» → Em va preguntar <strong>on</strong> vivia.</li>\n</ul>\n<p>Наказ — <strong>que</strong> + subjuntiu: «Vine!» → Em va dir <strong>que vingués</strong>\n(imperfet de subjuntiu, B2) або, після теперішнього, <em>Em diu que vingui</em>.</p>\n",
+  "explanation": "\n<p>Якщо дієслово мовлення в <strong>теперішньому</strong>, часи не змінюються:\n<em>«Estic cansat.» → <strong>Diu que</strong> està cansat.</em></p>\n<p>Якщо воно в <strong>минулому</strong> (<em>va dir, deia, ha dit</em>), часи\nзсуваються назад:</p>\n<ul>\n  <li>теперішній → imperfet: «Estic cansat» → Va dir que <strong>estava</strong> cansat.</li>\n  <li>perfet / perifràstic → plusquamperfet: «He acabat» → Va dir que <strong>havia acabat</strong>.</li>\n  <li>майбутній → condicional: «Vindré» → Va dir que <strong>vindria</strong>.</li>\n</ul>\n<p>Питання: загальні вводимо через <strong>si</strong>, а спеціальні через питальне слово:</p>\n<ul>\n  <li>«Vols cafè?» → Em va preguntar <strong>si</strong> volia cafè.</li>\n  <li>«On vius?» → Em va preguntar <strong>on</strong> vivia.</li>\n</ul>\n<p>Наказ передаємо як <strong>que</strong> + subjuntiu: «Vine!» → Em va dir <strong>que vingués</strong>\n(imperfet de subjuntiu, B2) або, після теперішнього, <em>Em diu que vingui</em>.</p>\n",
   "examples": [
    {
     "ca": "Diu que arribarà tard.",

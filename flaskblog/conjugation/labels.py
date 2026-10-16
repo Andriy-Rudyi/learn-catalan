@@ -90,7 +90,7 @@ def ordered_moods(moods):
 # Messages for the error codes the service returns.
 ERROR_MESSAGES = {
     "empty": "Введіть дієслово в інфінітиві, наприклад «parlar».",
-    "too-long": "Це задовго для дієслова — перевірте, чи не вставилося кілька слів.",
+    "too-long": "Це задовго для дієслова. Перевірте, чи не вставилося кілька слів.",
     "not-a-single-word": (
         "Введіть одне дієслово в інфінітиві, без займенників та інших слів "
         "(наприклад «parlar», а не «jo parlo»)."

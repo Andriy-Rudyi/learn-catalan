@@ -4,8 +4,10 @@
 # database and, when data/varieties.json changes, opens a pull request into
 # dev. Merging it redeploys the site (Render builds from dev).
 #
-# Needs: Settings → Actions → General → Workflow permissions →
-# "Allow GitHub Actions to create and approve pull requests".
+# To have the pull request opened automatically, enable Settings → Actions →
+# General → Workflow permissions → "Allow GitHub Actions to create and approve
+# pull requests". Without it the results branch is still pushed and the run
+# summary links to "create pull request".
 name: Check regional words
 
 on:
@@ -82,6 +84,10 @@ jobs:
           } > pr-body.md
 
       - name: Open a pull request
+        id: cpr
+        # Fails when the repository does not allow Actions to open pull
+        # requests; the branch is pushed anyway and the next step links to it.
+        continue-on-error: true
         uses: peter-evans/create-pull-request@v7
         with:
           base: dev
@@ -91,3 +97,26 @@ jobs:
           commit-message: 'Regional words: weekly Wiktionary check'
           title: 'Regional words: weekly Wiktionary check'
           body-path: pr-body.md
+
+      - name: Summary
+        if: always()
+        env:
+          PR_URL: ${{ steps.cpr.outputs.pull-request-url }}
+          PR_OUTCOME: ${{ steps.cpr.outcome }}
+        run: |
+          {
+            if [ -f check.log ]; then
+              echo '```'
+              grep -v '^  ' check.log
+              echo '```'
+            fi
+            if [ -n "$PR_URL" ]; then
+              echo "Pull request: $PR_URL"
+            elif [ "$PR_OUTCOME" = "failure" ]; then
+              echo "### The results are on branch \`automation/dialect-check\`"
+              echo "GitHub Actions may not open pull requests in this repository, so open it by hand:"
+              echo "**[Create the pull request](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/compare/dev...automation/dialect-check?expand=1)**"
+            else
+              echo "No changes: every mark is up to date."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"

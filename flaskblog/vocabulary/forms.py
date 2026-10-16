@@ -25,18 +25,18 @@ class WordForm(FlaskForm):
     )
     part_of_speech = SelectField(
         _l('Частина мови'),
-        choices=_choices(PARTS_OF_SPEECH, '— не вказано —'),
+        choices=_choices(PARTS_OF_SPEECH, '(не вказано)'),
         validators=[Optional()],
     )
     gender = SelectField(
-        _l('Рід'), choices=_choices(GENDERS, '— не вказано —'), validators=[Optional()]
+        _l('Рід'), choices=_choices(GENDERS, '(не вказано)'), validators=[Optional()]
     )
     pronunciation = StringField(_l('Вимова'), validators=[Optional(), Length(max=100)])
     topic = SelectField(
-        _l('Тема'), choices=_choices(TOPICS, '— не вказано —'), validators=[Optional()]
+        _l('Тема'), choices=_choices(TOPICS, '(не вказано)'), validators=[Optional()]
     )
     level = SelectField(
-        _l('Рівень'), choices=_choices(LEVELS, '— не вказано —'), validators=[Optional()]
+        _l('Рівень'), choices=_choices(LEVELS, '(не вказано)'), validators=[Optional()]
     )
     example_ca = StringField(
         _l('Приклад каталонською'), validators=[Optional(), Length(max=255)]

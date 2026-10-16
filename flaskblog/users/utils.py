@@ -42,12 +42,12 @@ def save_picture(form_picture):
 
 def send_reset_email(user):
     token = user.get_reset_token()
-    msg = Message(_('LearnCatalan — зміна пароля'),
+    msg = Message(_('LearnCatalan: зміна пароля'),
                   sender='admin@learn-catalan.com',
                   recipients=[user.email])
     msg.body = _(
         'Щоб змінити пароль, перейдіть за посиланням:\n{link}\n\n'
-        'Якщо ви не надсилали цього запиту, просто проігноруйте лист — нічого не зміниться.\n',
+        'Якщо ви не надсилали цього запиту, просто проігноруйте лист, нічого не зміниться.\n',
         link=url_for('users.reset_token', token=token, _external=True),
     )
     mail.send(msg)

@@ -4,7 +4,7 @@
 <div class="conjugator">
   <h1>{{ _('Дієвідміна') }}</h1>
   <p class="text-muted">
-    {{ _('Введіть каталонське дієслово в інфінітиві — наприклад <em>parlar</em>, <em>ser</em> або <em>tenir</em>.') | safe }}
+    {{ _('Введіть каталонське дієслово в інфінітиві, наприклад <em>parlar</em>, <em>ser</em> або <em>tenir</em>.') | safe }}
   </p>
 
   <form method="POST" action="{{ url_for('main.conjugator') }}" autocomplete="off">
@@ -103,7 +103,7 @@
 
     {% if result.is_pronominal %}
       <div class="alert alert-info py-2">
-        {{ _('Нижче — дієвідміна дієслова <strong>{infinitive}</strong>. Займенник <code>{suffix}</code> додається до форми окремо: <em>jo em rento</em>, <em>ell es renta</em>.', infinitive=result.infinitive|e, suffix=result.pronominal_suffix|e) | safe }}
+        {{ _('Нижче наведено дієвідміну дієслова <strong>{infinitive}</strong>. Займенник <code>{suffix}</code> додається до форми окремо: <em>jo em rento</em>, <em>ell es renta</em>.', infinitive=result.infinitive|e, suffix=result.pronominal_suffix|e) | safe }}
       </div>
     {% endif %}
 
@@ -125,7 +125,7 @@
                         {% endif %}
                         <td {% if not labels[loop.index0] %}colspan="2"{% endif %}>
                           {% if form == '-' %}
-                            <span class="text-muted">—</span>
+                            <span class="text-muted">-</span>
                           {% else %}
                             {{ form }}
                           {% endif %}

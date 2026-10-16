@@ -27,9 +27,9 @@ _CATALOGS = {'en': EN_MESSAGES}
 # Shown by static/speak.js when the device has no Catalan voice.
 SPEAK_HINT = (
     'На цьому пристрої немає каталонського голосу для озвучення. '
-    'Додайте його в налаштуваннях: <strong>Android</strong> — «Синтез мовлення» Google → мова «Català»; '
-    '<strong>iPhone</strong> — Універсальний доступ → Озвучений вміст → Голоси → Català; '
-    '<strong>Windows</strong> — Час і мова → Мовлення → додати каталонську, або відкрийте сайт у браузері Edge.'
+    'Додайте його в налаштуваннях: <strong>Android</strong>: «Синтез мовлення» Google → мова «Català»; '
+    '<strong>iPhone</strong>: Універсальний доступ → Озвучений вміст → Голоси → Català; '
+    '<strong>Windows</strong>: Час і мова → Мовлення → додати каталонську, або відкрийте сайт у браузері Edge.'
 )
 
 
@@ -71,7 +71,7 @@ _ = gettext
 def plural(count, uk_forms, en_forms=None):
     """``"5 юнітів"`` / ``"5 units"``.
 
-    ``uk_forms`` is (one, few, many) — юніт, юніти, юнітів;
+    ``uk_forms`` is (one, few, many): юніт, юніти, юнітів;
     ``en_forms`` is (one, other). Without ``en_forms`` the Ukrainian forms are
     translated through the catalogue.
     """

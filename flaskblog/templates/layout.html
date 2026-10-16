@@ -34,86 +34,108 @@
 <body class="d-flex flex-column min-vh-100">
     {% set section = request.blueprint %}
     {% set endpoint = request.endpoint or '' %}
-    <header class="site-header">
-        <nav class="navbar navbar-expand-lg app-navbar fixed-top" data-bs-theme="dark">
-          <div class="container">
-            <a class="navbar-brand fw-semibold" href="{{ url_for('main.home') }}">Learn Catalan</a>
-            <div class="d-flex align-items-center order-lg-last">
-              <a class="btn lang-toggle me-2" href="{{ url_with_lang(other_lang) }}"
-                 hreflang="{{ other_lang }}" lang="{{ other_lang }}"
-                 title="{{ language_names[other_lang] }}"
-                 aria-label="{{ language_names[other_lang] }}">{{ language_short[other_lang] }}</a>
-              <button class="btn theme-toggle" type="button" id="themeToggle"
-                      aria-label="{{ _('Перемкнути тему') }}" title="{{ _('Перемкнути світлу / темну тему') }}">
-                <svg class="icon-moon" width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+    <header class="lc-header">
+      <div class="lc-container lc-header-inner">
+        <button class="lc-burger d-lg-none" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#sideMenu" aria-controls="sideMenu" aria-label="{{ _('Меню') }}">
+          <span></span><span></span><span></span>
+        </button>
+        <a class="lc-logo" href="{{ url_for('main.home') }}">Learn Catalan</a>
+        <form class="lc-search" method="get" action="{{ url_for('vocabulary.dictionary') }}" role="search">
+          <input class="lc-search-input" type="search" name="q" id="headerSearch"
+                 value="{{ request.args.get('q', '') if endpoint == 'vocabulary.dictionary' else '' }}"
+                 placeholder="{{ _('Пошук слова') }}" aria-label="{{ _('Пошук слова') }}"
+                 autocomplete="off" list="headerSearchSuggestions" maxlength="100">
+          <datalist id="headerSearchSuggestions"></datalist>
+        </form>
+        <div class="lc-header-right">
+          <a class="btn lang-toggle" href="{{ url_with_lang(other_lang) }}"
+             hreflang="{{ other_lang }}" lang="{{ other_lang }}"
+             title="{{ language_names[other_lang] }}"
+             aria-label="{{ language_names[other_lang] }}">{{ language_short[other_lang] }}</a>
+          <button class="btn theme-toggle" type="button" id="themeToggle"
+                  aria-label="{{ _('Перемкнути тему') }}" title="{{ _('Перемкнути світлу / темну тему') }}">
+            <svg class="icon-moon" width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
                   <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"/>
                 </svg>
-                <svg class="icon-sun" width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+            <svg class="icon-sun" width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
                   <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>
                 </svg>
-              </button>
-              <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="{{ _('Меню') }}">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-            </div>
-            <div class="collapse navbar-collapse" id="navbarToggle">
-              <div class="navbar-nav me-auto">
-                <a class="nav-item nav-link{% if section == 'grammar' %} active{% endif %}"
+          </button>
+          {% if current_user.is_authenticated %}
+            <a class="lc-header-link d-none d-sm-inline" href="{{ url_for('users.logout') }}">{{ _('Вийти') }}</a>
+          {% else %}
+            <a class="lc-header-link" href="{{ url_for('users.login') }}">{{ _('Увійти') }}</a>
+          {% endif %}
+        </div>
+      </div>
+    </header>
+
+    <div class="lc-container lc-page flex-grow-1">
+      <nav class="lc-side offcanvas-lg offcanvas-start" id="sideMenu" tabindex="-1"
+           aria-label="{{ _('Меню') }}">
+        <div class="offcanvas-header d-lg-none">
+          <span class="lc-side-title">Learn Catalan</span>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sideMenu"
+                  aria-label="{{ _('Закрити') }}"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="lc-menu">
+            {% if current_user.is_authenticated %}
+              <li><a class="lc-menu-link{% if endpoint == 'users.account' %} active{% endif %}"
+                     href="{{ url_for('users.account') }}">{{ _('Моя сторінка') }}</a></li>
+              <li><a class="lc-menu-link{% if endpoint == 'vocabulary.my_dictionary' %} active{% endif %}"
+                     href="{{ url_for('vocabulary.my_dictionary') }}">{{ _('Мій словник') }}</a></li>
+              <li class="lc-menu-sep" role="separator"></li>
+            {% endif %}
+            <li><a class="lc-menu-link{% if section == 'grammar' %} active{% endif %}"
                    {% if section == 'grammar' %}aria-current="page"{% endif %}
-                   href="{{ url_for('grammar.index') }}">{{ _('Граматика') }}</a>
-                <a class="nav-item nav-link{% if section == 'vocabulary' and endpoint != 'vocabulary.my_dictionary' %} active{% endif %}"
-                   href="{{ url_for('vocabulary.dictionary') }}">{{ _('Словник') }}</a>
-                <a class="nav-item nav-link{% if endpoint == 'main.conjugator' %} active{% endif %}"
-                   href="{{ url_for('main.conjugator') }}">{{ _('Дієвідміна') }}</a>
-                <a class="nav-item nav-link{% if section == 'phonetics' %} active{% endif %}"
-                   href="{{ url_for('phonetics.index') }}">{{ _('Фонетика') }}</a>
-                {% if config.SHOW_FAQ %}
-                <a class="nav-item nav-link{% if endpoint == 'main.faq' %} active{% endif %}"
-                   href="{{ url_for('main.faq') }}">FAQ</a>
-                {% endif %}
-              </div>
-              <!-- Navbar Right Side -->
-              <div class="navbar-nav">
-                {% if current_user.is_authenticated %}
-                  {% if is_admin() %}
-                  <a class="nav-item nav-link" href="{{ url_for('posts.new_post') }}">{{ _('Новий урок') }}</a>
-                  {% endif %}
-                  <a class="nav-item nav-link{% if endpoint == 'vocabulary.my_dictionary' %} active{% endif %}"
-                     href="{{ url_for('vocabulary.my_dictionary') }}">{{ _('Мій словник') }}</a>
-                  <a class="nav-item nav-link{% if endpoint == 'users.account' %} active{% endif %}"
-                     href="{{ url_for('users.account') }}">{{ _('Моя сторінка') }}</a>
-                  <a class="nav-item nav-link" href="{{ url_for('users.logout') }}">{{ _('Вийти') }}</a>
-                {% else %}
-                  <a class="nav-item nav-link{% if endpoint == 'users.login' %} active{% endif %}"
-                     href="{{ url_for('users.login') }}">{{ _('Увійти') }}</a>
-                  <a class="nav-item nav-link{% if endpoint == 'users.register' %} active{% endif %}"
-                     href="{{ url_for('users.register') }}">{{ _('Зареєструватися') }}</a>
-                {% endif %}
-              </div>
-            </div>
-          </div>
-        </nav>
-      </header>
-      <main role="main" class="container flex-grow-1">
-        <div class="row">
-          <div class="{% block main_class %}col-lg-9 col-xl-8 mx-auto{% endblock %}">
-            {% with messages = get_flashed_messages(with_categories=true) %}
-                {% if messages %}
-                    {% for category, message in messages %}
-                        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
-                            {{ message }}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="{{ _('Закрити') }}"></button>
-                        </div>
-                    {% endfor %}
-                {% endif %}
-            {% endwith %}
-            {% block content %}{% endblock %}
-          </div>
+                   href="{{ url_for('grammar.index') }}">{{ _('Граматика') }}</a></li>
+            <li><a class="lc-menu-link{% if section == 'vocabulary' and endpoint != 'vocabulary.my_dictionary' %} active{% endif %}"
+                   href="{{ url_for('vocabulary.dictionary') }}">{{ _('Словник') }}</a></li>
+            <li><a class="lc-menu-link{% if endpoint == 'main.conjugator' %} active{% endif %}"
+                   href="{{ url_for('main.conjugator') }}">{{ _('Дієвідміна') }}</a></li>
+            <li><a class="lc-menu-link{% if section == 'phonetics' %} active{% endif %}"
+                   href="{{ url_for('phonetics.index') }}">{{ _('Фонетика') }}</a></li>
+            {% if config.SHOW_FAQ %}
+            <li><a class="lc-menu-link{% if endpoint == 'main.faq' %} active{% endif %}"
+                   href="{{ url_for('main.faq') }}">FAQ</a></li>
+            {% endif %}
+            <li class="lc-menu-sep" role="separator"></li>
+            {% if current_user.is_authenticated %}
+              {% if is_admin() %}
+              <li><a class="lc-menu-link lc-menu-minor" href="{{ url_for('posts.new_post') }}">{{ _('Новий урок') }}</a></li>
+              {% endif %}
+              <li><a class="lc-menu-link lc-menu-minor" href="{{ url_for('users.logout') }}">{{ _('Вийти') }}</a></li>
+            {% else %}
+              <li><a class="lc-menu-link lc-menu-minor{% if endpoint == 'users.login' %} active{% endif %}"
+                     href="{{ url_for('users.login') }}">{{ _('Увійти') }}</a></li>
+              <li><a class="lc-menu-link lc-menu-minor{% if endpoint == 'users.register' %} active{% endif %}"
+                     href="{{ url_for('users.register') }}">{{ _('Зареєструватися') }}</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </nav>
+
+      <main role="main" class="lc-main">
+        <div class="{% block main_class %}{% endblock %}">
+          {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                  {% for category, message in messages %}
+                      <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                          {{ message }}
+                          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="{{ _('Закрити') }}"></button>
+                      </div>
+                  {% endfor %}
+              {% endif %}
+          {% endwith %}
+          {% block content %}{% endblock %}
         </div>
       </main>
+    </div>
       <!-- Footer -->
       <footer class="footer site-footer mt-auto py-3">
-        <div class="container">
+        <div class="lc-container">
           <p class="text-body-secondary text-center mb-0">&copy; 2024-2026 Learn Catalan. All rights reserved.</p>
         </div>
       </footer>
@@ -143,6 +165,34 @@
         })();
       </script>
       <script>window.SPEAK_HINT = {{ speak_hint | tojson }};</script>
+      <script>
+        // Word suggestions for the search box in the header.
+        (function () {
+          var input = document.getElementById('headerSearch');
+          var list = document.getElementById('headerSearchSuggestions');
+          if (!input || !list || !window.fetch) { return; }
+          var timer = null;
+          input.addEventListener('input', function () {
+            var query = input.value.trim();
+            window.clearTimeout(timer);
+            if (query.length < 2) { list.innerHTML = ''; return; }
+            timer = window.setTimeout(function () {
+              fetch({{ url_for('vocabulary.api_words') | tojson }} + '?q=' + encodeURIComponent(query))
+                .then(function (response) { return response.ok ? response.json() : { words: [] }; })
+                .then(function (data) {
+                  list.innerHTML = '';
+                  (data.words || []).forEach(function (word) {
+                    var option = document.createElement('option');
+                    option.value = word.term;
+                    option.label = word.translation;
+                    list.appendChild(option);
+                  });
+                })
+                .catch(function () { /* suggestions are optional */ });
+            }, 150);
+          });
+        })();
+      </script>
       <script src="{{ url_for('static', filename='speak.js') }}"></script>
       {% block scripts %}{% endblock %}
 </body>
