@@ -116,6 +116,8 @@ class EnglishPagesTests(AppTestCase):
             '/dictionary?q=house',
             '/dictionary?topic=food&level=A1',
             '/dictionary/' + word.slug,
+            '/dictionary/eixir',
+            '/dictionary?variety=regional',
             '/login',
             '/register',
             '/reset_password',
@@ -127,6 +129,7 @@ class EnglishPagesTests(AppTestCase):
         self.assertEnglish('/conjugator?verb=anar')
         self.assertEnglish('/conjugator?verb=rentar-se')
         self.assertEnglish('/conjugator?verb=xyzzy')
+        self.assertEnglish('/conjugator?verb=eixir')
 
     def test_pages_for_a_logged_in_user(self):
         user = self.create_user()

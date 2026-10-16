@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% from "partials/variety.html" import variety_notice with context %}
 {% block content %}
 <div class="dictionary">
   <p class="small"><a href="{{ url_for('vocabulary.dictionary') }}">← {{ _('До словника') }}</a></p>
@@ -15,6 +16,7 @@
           <p class="text-muted mb-1">[{{ word.pronunciation }}]</p>
         {% endif %}
         <p class="h5 text-secondary">{{ word.t_translation() }}</p>
+        {{ variety_notice(word.variety_codes, word.central_alternative, word.variety_source) }}
       </div>
       {% if current_user.is_authenticated %}
         {% if word.id in saved_word_ids %}

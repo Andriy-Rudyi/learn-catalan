@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% from "partials/variety.html" import variety_badge with context %}
 {% block content %}
 <div class="dictionary">
   <div class="d-flex flex-wrap justify-content-between align-items-center mb-2">
@@ -16,23 +17,27 @@
   <p class="text-muted">{{ _('Каталонсько-український словник') }}: {{ plural(total, ('слово', 'слова', 'слів'), ('word', 'words')) }}.</p>
 
   <form class="row g-2 align-items-end mb-4" method="GET" action="{{ url_for('vocabulary.dictionary') }}">
-    <div class="col-md-4">
+    <div class="col-md-6">
       {{ form.q.label(class="form-label small text-muted") }}
       {{ form.q(class="form-control", placeholder=_('слово каталонською або українською')) }}
     </div>
-    <div class="col-md-3">
+    <div class="col-md-6">
       {{ form.topic.label(class="form-label small text-muted") }}
       {{ form.topic(class="form-select") }}
     </div>
-    <div class="col-md-2">
+    <div class="col-6 col-md-3">
       {{ form.level.label(class="form-label small text-muted") }}
       {{ form.level(class="form-select") }}
     </div>
-    <div class="col-md-2">
+    <div class="col-6 col-md-3">
       {{ form.part_of_speech.label(class="form-label small text-muted") }}
       {{ form.part_of_speech(class="form-select") }}
     </div>
-    <div class="col-md-1">
+    <div class="col-md-4">
+      {{ form.variety.label(class="form-label small text-muted") }}
+      {{ form.variety(class="form-select") }}
+    </div>
+    <div class="col-md-2">
       <button class="btn btn-outline-info w-100" type="submit">{{ _('Знайти') }}</button>
     </div>
   </form>
@@ -41,10 +46,11 @@
     <div class="row">
       {% for word in words.items %}
         <div class="col-md-6">
-          <div class="word-card">
+          <div class="word-card{% if word.variety_codes %} word-regional{% endif %}">
             <div class="d-flex justify-content-between align-items-start">
               <div>
                 <a class="word-term" href="{{ url_for('vocabulary.word', slug=word.slug) }}">{{ word.term }}</a>
+                {{ variety_badge(word.variety_codes) }}
                 {% if word.gender %}<span class="text-muted small">({{ gender_label(word.gender) }})</span>{% endif %}
                 <div class="word-translation">{{ word.t_translation() }}</div>
               </div>
@@ -76,7 +82,7 @@
       {% for page_num in words.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
         {% if page_num %}
           <a class="btn mb-4 {% if words.page == page_num %}btn-outline-info{% else %}btn-outline-link{% endif %}"
-             href="{{ url_for('vocabulary.dictionary', page=page_num, q=form.q.data or None, topic=form.topic.data or None, level=form.level.data or None, part_of_speech=form.part_of_speech.data or None) }}">{{ page_num }}</a>
+             href="{{ url_for('vocabulary.dictionary', page=page_num, q=form.q.data or None, topic=form.topic.data or None, level=form.level.data or None, part_of_speech=form.part_of_speech.data or None, variety=form.variety.data or None) }}">{{ page_num }}</a>
         {% else %}
           <span class="btn mb-4 disabled">…</span>
         {% endif %}

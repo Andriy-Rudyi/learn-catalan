@@ -14,6 +14,7 @@ from flaskblog.conjugation.labels import (
 from flaskblog.phonetics.service import load_lessons
 from flaskblog.models import (Announcement, GrammarUnit, Post, Update, UserWord,
                               Word)
+from flaskblog.vocabulary import varieties
 from flaskblog.vocabulary.constants import part_of_speech_label
 from flaskblog.vocabulary.forms import ActionForm
 
@@ -94,6 +95,7 @@ def conjugator():
     message = error_message(result.error) if result and not result.ok else None
 
     word = _dictionary_entry(result.infinitive) if result and result.ok else None
+    verb_variety, verb_central, verb_source = _variety(word, result)
 
     return render_template(
         'conjugator.html',
@@ -103,6 +105,9 @@ def conjugator():
         error_message=message,
         word=word,
         word_is_saved=_is_saved(word),
+        verb_variety=verb_variety,
+        verb_central=verb_central,
+        verb_variety_source=verb_source,
         action_form=ActionForm(),
         suggested_verbs=SUGGESTED_VERBS,
         ordered_moods=ordered_moods,
@@ -110,6 +115,16 @@ def conjugator():
         person_labels=person_labels,
         part_of_speech_label=part_of_speech_label,
     )
+
+
+def _variety(word, result):
+    """(codes, central alternative, source) when the verb is not Central Catalan."""
+    if word is not None and word.variety_codes:
+        return word.variety_codes, word.central_alternative, word.variety_source
+    if result is None or not result.ok:
+        return (), None, None
+    entry = varieties.load().get(result.infinitive) or {}
+    return varieties.parse_codes(entry.get('variety')), entry.get('central'), entry.get('source')
 
 
 @main.route('/api/verbs')

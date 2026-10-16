@@ -1,0 +1,184 @@
+{
+ "acaçar": {
+  "variety": [
+   "balearic",
+   "valencian"
+  ],
+  "central": "empaitar, perseguir",
+  "source": "review"
+ },
+ "acotxar": {
+  "variety": [
+   "valencian",
+   "balearic"
+  ],
+  "central": "tapar, abrigar; ajupir-se",
+  "source": "review"
+ },
+ "ajaure": {
+  "variety": [
+   "valencian"
+  ],
+  "central": "ajeure",
+  "source": "review"
+ },
+ "alligar": {
+  "variety": [
+   "valencian"
+  ],
+  "central": "lligar",
+  "source": "review"
+ },
+ "apegar": {
+  "variety": [
+   "valencian"
+  ],
+  "central": "enganxar",
+  "source": "review"
+ },
+ "atraure": {
+  "variety": [
+   "valencian",
+   "balearic"
+  ],
+  "central": "atreure",
+  "source": "review"
+ },
+ "avençar": {
+  "variety": [
+   "dialectal"
+  ],
+  "central": "avançar",
+  "source": "review"
+ },
+ "caber": {
+  "variety": [
+   "valencian"
+  ],
+  "central": "cabre",
+  "source": "review"
+ },
+ "caler": {
+  "variety": [
+   "valencian"
+  ],
+  "central": "caldre",
+  "source": "review"
+ },
+ "distraure": {
+  "variety": [
+   "valencian",
+   "balearic"
+  ],
+  "central": "distreure",
+  "source": "review"
+ },
+ "eixir": {
+  "variety": [
+   "valencian"
+  ],
+  "central": "sortir",
+  "source": "review"
+ },
+ "empentar": {
+  "variety": [
+   "valencian",
+   "balearic"
+  ],
+  "central": "empènyer",
+  "source": "review"
+ },
+ "emprestar": {
+  "variety": [
+   "valencian",
+   "balearic"
+  ],
+  "central": "deixar, prestar",
+  "source": "review"
+ },
+ "extraure": {
+  "variety": [
+   "valencian"
+  ],
+  "central": "extreure",
+  "source": "review"
+ },
+ "gitar": {
+  "variety": [
+   "valencian"
+  ],
+  "central": "llençar; vomitar",
+  "source": "review"
+ },
+ "jaure": {
+  "variety": [
+   "valencian"
+  ],
+  "central": "jeure",
+  "source": "review"
+ },
+ "nadar": {
+  "variety": [
+   "valencian",
+   "balearic"
+  ],
+  "central": "nedar",
+  "source": "review"
+ },
+ "nàixer": {
+  "variety": [
+   "valencian"
+  ],
+  "central": "néixer",
+  "source": "review"
+ },
+ "redolar": {
+  "variety": [
+   "valencian"
+  ],
+  "central": "rodolar",
+  "source": "review"
+ },
+ "renàixer": {
+  "variety": [
+   "valencian"
+  ],
+  "central": "renéixer",
+  "source": "review"
+ },
+ "rossegar": {
+  "variety": [
+   "dialectal"
+  ],
+  "central": "rosegar",
+  "source": "review"
+ },
+ "tindre": {
+  "variety": [
+   "valencian"
+  ],
+  "central": "tenir",
+  "source": "review"
+ },
+ "torçar": {
+  "variety": [
+   "valencian"
+  ],
+  "central": "tòrcer",
+  "source": "review"
+ },
+ "traure": {
+  "variety": [
+   "western"
+  ],
+  "central": "treure",
+  "source": "review"
+ },
+ "vindre": {
+  "variety": [
+   "valencian"
+  ],
+  "central": "venir",
+  "source": "review"
+ }
+}

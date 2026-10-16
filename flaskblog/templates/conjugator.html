@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% from "partials/variety.html" import variety_notice with context %}
 {% block content %}
 <div class="conjugator">
   <h1>{{ _('Дієвідміна') }}</h1>
@@ -54,6 +55,8 @@
         </span>
       {% endif %}
     </div>
+
+    {{ variety_notice(verb_variety, verb_central, verb_variety_source) }}
 
     {% if word %}
       <div class="verb-translation">

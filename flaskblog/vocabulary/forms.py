@@ -73,6 +73,12 @@ class WordSearchForm(FlaskForm):
         choices=_choices(PARTS_OF_SPEECH, 'Усі частини мови'),
         validators=[Optional()],
     )
+    variety = SelectField(
+        _l('Діалект'),
+        choices=[('', _l('Усі слова')), ('central', _l('Лише центральні')),
+                 ('regional', _l('Лише регіональні й застарілі'))],
+        validators=[Optional()],
+    )
     submit = SubmitField(_l('Знайти'))
 
 

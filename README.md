@@ -191,6 +191,30 @@ across 21 topics (including Catalan cuisine and traditions), mostly A1–B1, inc
 verb up here to show its translation, so dictionary entries double as the
 conjugator's glossary.
 
+### Regional words
+
+The course teaches Central Catalan. Words that are Valencian, Balearic,
+North-Western… or archaic (*eixir*, *acotxar*, *tindre*) carry a mark with the
+Central equivalent (*sortir*); the dictionary can filter them out, and the
+conjugator warns about them. The marks live in
+`flaskblog/vocabulary/data/varieties.json` and are copied onto the words by
+`flask vocabulary seed`.
+
+To verify them against Wiktionary (public MediaWiki API of the English and
+Catalan editions, which label senses *Valencia*, *Balearic*, *valencià*…):
+
+```bash
+flask vocabulary check-dialects                 # report only → dialect_report.csv
+flask vocabulary check-dialects --apply         # write confirmed and new marks
+flask vocabulary check-dialects --verbs --apply # also every conjugator verb
+```
+
+It needs internet access and takes a few minutes (50 words per request, one
+request per second). A word without regional labels is *not* treated as
+proof that it is Central — normative dictionaries list many Valencian words
+without a mark — so existing marks are only ever confirmed or added, never
+removed automatically; the report lists the ones Wiktionary did not confirm.
+
 ## Grammar course
 
 `/grammar` is a grammar course laid out like Raymond Murphy's grammar books:

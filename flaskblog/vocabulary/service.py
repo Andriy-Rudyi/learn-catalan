@@ -10,6 +10,7 @@ from sqlalchemy import or_
 from flaskblog import db
 from flaskblog.models import Word
 from flaskblog.i18n import gettext
+from flaskblog.vocabulary import varieties
 from flaskblog.vocabulary.constants import CSV_COLUMNS
 
 DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
@@ -51,9 +52,17 @@ def unique_slug(term):
     return slug
 
 
-def search(query_text=None, topic=None, level=None, part_of_speech=None):
-    """A Word query narrowed by the dictionary filters."""
+def search(query_text=None, topic=None, level=None, part_of_speech=None, variety=None):
+    """A Word query narrowed by the dictionary filters.
+
+    *variety* is 'central' (hide regional and archaic words) or 'regional'
+    (only those).
+    """
     query = Word.query
+    if variety == 'central':
+        query = query.filter(or_(Word.variety.is_(None), Word.variety == ''))
+    elif variety == 'regional':
+        query = query.filter(Word.variety.isnot(None), Word.variety != '')
     if query_text:
         pattern = '%{}%'.format(query_text.strip())
         query = query.filter(
@@ -147,7 +156,36 @@ def import_file(path, author=None, update_existing=False):
 
 def import_seed(author=None, update_existing=False):
     """Load the dictionary that ships with the project."""
-    return import_file(SEED_FILE, author=author, update_existing=update_existing)
+    report = import_file(SEED_FILE, author=author, update_existing=update_existing)
+    apply_varieties()
+    return report
+
+
+# Marks that come from the data file; anything else was set by hand in the
+# admin and is left alone.
+GENERATED_SOURCES = ('review', 'wiktionary-en', 'wiktionary-ca')
+
+
+def apply_varieties(entries=None):
+    """Copy the regional marks from data/varieties.json onto the words.
+
+    Returns the number of words whose mark changed. The caller commits.
+    """
+    entries = varieties.load() if entries is None else entries
+    changed = 0
+    for word in Word.query.all():
+        entry = entries.get(word.term)
+        if entry:
+            value = ','.join(varieties.parse_codes(entry.get('variety'))) or None
+            source = entry.get('source') or 'review'
+        elif word.variety_source in GENERATED_SOURCES or not word.variety_source:
+            value = source = None
+        else:
+            continue  # a manual mark
+        if (word.variety, word.variety_source) != (value, source):
+            word.variety, word.variety_source = value, source
+            changed += 1
+    return changed
 
 
 def export_csv(words=None):
