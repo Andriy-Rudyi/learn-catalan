@@ -128,6 +128,8 @@ CA_LABELS = {
 }
 
 # Definitions that only point to another headword (verb forms, plurals…).
+# They count as ordinary senses: a page whose main sense is "feminine of
+# fill" must not look regional because of one labelled minor sense.
 FORM_OF = re.compile(
     r'\{\{\s*(inflection of|infl of|ca-verb form of|verb form of|plural of|feminine of|'
     r'feminine plural of|masculine plural of|forma-conj|forma-p|forma-f|forma-fp|forma-mp)\b',
@@ -190,8 +192,8 @@ def classify(wikitext, edition):
             continue
         if not re.match(r'#(?![:*#])', stripped):
             continue  # examples, quotations, sub-items
-        if FORM_OF.search(stripped):
-            continue
+        # A definition such as "feminine of fill" (filla) or "plural of" is
+        # still a sense of the word, used everywhere unless it is labelled.
         senses += 1
         labels = headword_codes + _labels(stripped, edition)
         marked = [code for code in labels if code]
@@ -262,8 +264,9 @@ def verdict(per_edition):
     """Combine the editions into (status, codes).
 
     - 'central': a sense is explicitly labelled Central — strong evidence;
-    - 'regional': an edition marks every sense of the word as regional or
-      archaic;
+    - 'regional': every edition that has the word marks every sense of it as
+      regional or archaic (the editions must agree: one of them often lists a
+      common meaning the other leaves out);
     - 'partial': some senses are marked regional, others are not;
     - 'unlabelled': the word is there without regional labels. That is NOT
       proof that it is Central (dictionaries often list Valencian or Balearic
@@ -278,7 +281,8 @@ def verdict(per_edition):
         codes.extend(code for code in result['codes'] if code not in codes)
     if any(result['labelled_central'] for result in found):
         return 'central', codes
-    if any(result['senses'] and result['regional'] == result['senses'] for result in found):
+    with_senses = [result for result in found if result['senses']]
+    if with_senses and all(r['regional'] == r['senses'] for r in with_senses):
         return 'regional', codes
     if codes:
         return 'partial', codes

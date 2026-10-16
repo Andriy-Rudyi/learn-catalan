@@ -79,8 +79,18 @@ class ClassifyTests(unittest.TestCase):
         self.assertEqual(['valencian'], result['codes'])
         self.assertTrue(result['central'])
 
-    def test_inflected_forms_are_not_senses(self):
-        self.assertEqual(0, varieties.classify(EN_FORM, 'en')['senses'])
+    def test_form_of_definitions_count_as_senses(self):
+        result = varieties.classify(EN_FORM, 'en')
+        self.assertEqual((1, 0), (result['senses'], result['regional']))
+
+    def test_feminine_form_keeps_a_word_central(self):
+        # filla: the main sense is "feminine of fill", one minor sense is marked.
+        filla = '''== {{-ca-}} ==
+=== {{-nom-|ca}} ===
+# {{forma-f|ca|fill}}
+# {{marca|ca|septentrional|antic}} Noia.
+'''
+        self.assertEqual('partial', varieties.verdict({'ca': varieties.classify(filla, 'ca')})[0])
 
     def test_headword_label_applies_to_every_sense(self):
         result = varieties.classify(EN_HEADWORD_LABEL, 'en')
@@ -102,8 +112,14 @@ class VerdictTests(unittest.TestCase):
             'ca': varieties.classify(ca, 'ca') if ca else None,
         })
 
-    def test_regional_when_one_edition_marks_every_sense(self):
-        self.assertEqual(('regional', ['valencian', 'balearic']), self._verdict(EN_EIXIR, CA_EIXIR))
+    def test_regional_when_every_edition_marks_every_sense(self):
+        self.assertEqual(('regional', ['valencian', 'balearic']), self._verdict(EN_EIXIR))
+        both = CA_EIXIR.replace('# Sortir.', '# {{marca|ca|valencià}} Sortir.', 1)
+        self.assertEqual('regional', self._verdict(EN_EIXIR, both)[0])
+
+    def test_editions_must_agree(self):
+        # English marks every sense, the Catalan edition has an unmarked one.
+        self.assertEqual(('partial', ['valencian', 'balearic']), self._verdict(EN_EIXIR, CA_EIXIR))
 
     def test_explicit_central_label_wins(self):
         self.assertEqual('central', self._verdict(EN_CENTRAL)[0])
@@ -132,7 +148,9 @@ class CheckTests(unittest.TestCase):
         terms = ['eixir'] + ['w{}'.format(i) for i in range(60)]
         results = varieties.check(terms, fetch=fake_fetch)
         self.assertEqual(4, len(calls))  # two batches of 50 per edition
-        self.assertEqual('regional', varieties.verdict(results['eixir'])[0])
+        # Both editions were asked; the Catalan one has an unmarked sense.
+        self.assertEqual(('en', 'ca'), tuple(results['eixir']))
+        self.assertEqual('partial', varieties.verdict(results['eixir'])[0])
         self.assertEqual('unknown', varieties.verdict(results['w1'])[0])
 
     def test_fetch_pages_reads_the_api_response(self):
