@@ -219,7 +219,9 @@ class VarietyInAppTests(AppTestCase):
         regional = {w.term for w in service.search(variety='regional')}
         self.assertNotIn('eixir', central)
         self.assertIn('sortir', central)
-        self.assertEqual(set(varieties.load()), regional)
+        # The file may also mark conjugator verbs that are not in the dictionary.
+        dictionary = {word.term for word in Word.query.all()}
+        self.assertEqual({t for t in varieties.load() if t in dictionary}, regional)
 
     def test_pages_show_the_mark(self):
         word_page = self.client.get('/dictionary/eixir').data.decode()
