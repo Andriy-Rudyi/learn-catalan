@@ -95,7 +95,7 @@ def check_dialects_command(apply_changes, verbs, report_path, limit, editions):
     if verbs:
         from flaskblog.conjugation import get_service
         known = set(terms)
-        terms += sorted(v for v in get_service().infinitives() if v not in known)
+        terms += sorted(v for v in get_service().infinitives if v not in known)
     if limit:
         terms = terms[:limit]
     editions = tuple(e.strip() for e in editions.split(',') if e.strip() in varieties.API)

@@ -209,7 +209,14 @@ flask vocabulary check-dialects --apply         # write confirmed and new marks
 flask vocabulary check-dialects --verbs --apply # also every conjugator verb
 ```
 
-It needs internet access and takes a few minutes (50 words per request, one
+The check also runs by itself every Monday in GitHub Actions
+(`.github/workflows/check-dialects.yml`, or *Actions → Check regional words →
+Run workflow*): when the marks change it opens a pull request into `dev`, and
+merging it redeploys the site. For that, enable *Settings → Actions → General →
+Workflow permissions → Allow GitHub Actions to create and approve pull
+requests*.
+
+Run locally, it needs internet access and takes a few minutes (50 words per request, one
 request per second). A word without regional labels is *not* treated as
 proof that it is Central — normative dictionaries list many Valencian words
 without a mark — so existing marks are only ever confirmed or added, never
