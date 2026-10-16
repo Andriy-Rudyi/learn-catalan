@@ -178,12 +178,16 @@ class DataFileTests(unittest.TestCase):
         self.assertIn('acotxar', entries)
         self.assertIn('eixir', entries)
         for term, entry in entries.items():
-            self.assertIn(term, terms)
             codes = varieties.parse_codes(entry['variety'])
             self.assertTrue(codes, term)
             self.assertEqual(len(codes), len(entry['variety']), term)
-            self.assertTrue(entry.get('central'), term)
             self.assertIn(entry['source'], service.GENERATED_SOURCES, term)
+            if entry['source'] == 'review':
+                # Hand-made marks are for dictionary words and say what to
+                # use instead; the Wiktionary check may also add conjugator
+                # verbs, without a Central equivalent.
+                self.assertIn(term, terms)
+                self.assertTrue(entry.get('central'), term)
 
 
 class VarietyInAppTests(AppTestCase):
@@ -270,8 +274,9 @@ class CheckDialectsCommandTests(AppTestCase):
                 mock.patch.object(varieties.load, '__defaults__', (self.data_file,)), \
                 mock.patch.object(varieties.save, '__defaults__', (self.data_file,)), \
                 mock.patch.object(varieties, 'check', fake_check):
-            db.session.add(Word(term='hui', translation='сьогодні', slug='hui'))
-            db.session.commit()
+            if Word.query.filter_by(term='hui').first() is None:
+                db.session.add(Word(term='hui', translation='сьогодні', slug='hui'))
+                db.session.commit()
             return self.app.test_cli_runner().invoke(
                 args=['vocabulary', 'check-dialects', '--report', self.report] + list(args)
             )
@@ -286,6 +291,18 @@ class CheckDialectsCommandTests(AppTestCase):
         self.assertEqual('not-confirmed', rows['acotxar']['action'])
         with open(self.data_file, encoding='utf-8') as handle:
             self.assertNotIn('hui', json.load(handle))
+
+    def test_verbs_option_adds_conjugator_verbs(self):
+        result = self._run('--verbs', '--limit', '30')
+        self.assertEqual(0, result.exit_code, result.output)
+        with open(self.report, encoding='utf-8') as handle:
+            self.assertEqual(30, len(list(csv.DictReader(handle))))
+        result = self._run('--verbs')
+        self.assertEqual(0, result.exit_code, result.output)
+        with open(self.report, encoding='utf-8') as handle:
+            checked = {row['term'] for row in csv.DictReader(handle)}
+        self.assertIn('parlar', checked)
+        self.assertGreater(len(checked), 8000)
 
     def test_apply_writes_confirmed_and_new_marks(self):
         result = self._run('--apply')
