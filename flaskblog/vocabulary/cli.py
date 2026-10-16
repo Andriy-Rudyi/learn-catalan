@@ -151,7 +151,7 @@ def check_dialects_command(apply_changes, verbs, report_path, limit, editions):
         writer.writerows(rows)
 
     labels = {
-        'confirmed': 'підтверджено', 'new': 'нові регіональні', 'conflict': 'конфлікт (у Вікісловнику — центральне)',
+        'confirmed': 'підтверджено', 'new': 'нові регіональні', 'conflict': 'конфлікт (у Вікісловнику центральне)',
         'not-confirmed': 'не підтверджено (немає позначки)', 'partial': 'частково регіональні значення',
         'unlabelled': 'без позначок', 'unknown': 'немає у Вікісловнику',
     }
@@ -170,7 +170,7 @@ def check_dialects_command(apply_changes, verbs, report_path, limit, editions):
 
 
 def _senses(result):
-    """'2/3' — regional senses out of all, or '-' when the page is missing."""
+    """'2/3': regional senses out of all, or '-' when the page is missing."""
     if not result:
         return '-'
     return '{}/{}'.format(result['regional'], result['senses'])

@@ -1,12 +1,11 @@
 {% extends "layout.html" %}
 
-{% block main_class %}col-xl-10 mx-auto{% endblock %}
 
 {% block content %}
 <section class="hero">
   <h1>{{ _('Вивчайте каталонську українською') }}</h1>
   <p class="lead mx-auto" style="max-width: 38rem;">
-    {{ _('Граматичний курс у стилі Murphy, каталонсько-український словник і перевірена дієвідміна дієслів — усе в одному місці.') }}
+    {{ _('Граматичний курс у стилі Murphy, каталонсько-український словник і перевірена дієвідміна дієслів в одному місці.') }}
   </p>
   <div class="d-flex flex-wrap justify-content-center gap-2 mt-4">
     <a class="btn btn-outline-info btn-lg px-4" href="{{ url_for('grammar.index') }}" role="button">{{ _('Розпочати навчання') }}</a>
@@ -19,7 +18,7 @@
     <a class="feature-card" href="{{ url_for('grammar.index') }}">
       <div class="feature-icon" aria-hidden="true">📘</div>
       <h3>{{ _('Граматика') }}</h3>
-      <p>{{ _('Короткі пояснення, приклади й вправи з відповідями — від A1 до C1.') }}</p>
+      <p>{{ _('Короткі пояснення, приклади й вправи з відповідями, від A1 до C1.') }}</p>
       {% if unit_count %}<span class="feature-count">{{ plural(unit_count, ('юніт', 'юніти', 'юнітів'), ('unit', 'units')) }}</span>{% endif %}
     </a>
   </div>

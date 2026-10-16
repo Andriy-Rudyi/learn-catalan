@@ -204,7 +204,7 @@ class Word(db.Model):
         return f"Word('{self.term}', '{self.translation}')"
 
     def __str__(self):
-        return f"{self.term} — {self.translation}"
+        return f"{self.term}: {self.translation}"
 
 
 class UserWord(db.Model):

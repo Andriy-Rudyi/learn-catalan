@@ -2,7 +2,7 @@
 
 Course content (grammar units, phonetics lessons, dictionary entries) is not
 here: it has its own English versions in the data files. Run the test suite
-after adding a ``_()`` string — it fails when an English page shows Cyrillic.
+after adding a ``_()`` string: it fails when an English page shows Cyrillic.
 """
 
 MESSAGES = {
@@ -25,23 +25,23 @@ MESSAGES = {
     'На головну': 'Back to the home page',
     'Прослухати': 'Listen',
     'Увійдіть, щоб відкрити цю сторінку.': 'Please log in to open this page.',
-    'На цьому пристрої немає каталонського голосу для озвучення. Додайте його в налаштуваннях: <strong>Android</strong> — «Синтез мовлення» Google → мова «Català»; <strong>iPhone</strong> — Універсальний доступ → Озвучений вміст → Голоси → Català; <strong>Windows</strong> — Час і мова → Мовлення → додати каталонську, або відкрийте сайт у браузері Edge.': (
+    'На цьому пристрої немає каталонського голосу для озвучення. Додайте його в налаштуваннях: <strong>Android</strong>: «Синтез мовлення» Google → мова «Català»; <strong>iPhone</strong>: Універсальний доступ → Озвучений вміст → Голоси → Català; <strong>Windows</strong>: Час і мова → Мовлення → додати каталонську, або відкрийте сайт у браузері Edge.': (
         'This device has no Catalan voice for reading aloud. You can add one in the settings: '
-        '<strong>Android</strong> — Google Text-to-speech → language “Català”; '
-        '<strong>iPhone</strong> — Accessibility → Spoken Content → Voices → Català; '
-        '<strong>Windows</strong> — Time &amp; language → Speech → add Catalan, or open the site in Microsoft Edge.'
+        '<strong>Android</strong>: Google Text-to-speech → language “Català”; '
+        '<strong>iPhone</strong>: Accessibility → Spoken Content → Voices → Català; '
+        '<strong>Windows</strong>: Time &amp; language → Speech → add Catalan, or open the site in Microsoft Edge.'
     ),
 
     # -- home page ---------------------------------------------------------
     'Вивчайте каталонську українською': 'Learn Catalan in English',
-    'Граматичний курс у стилі Murphy, каталонсько-український словник і перевірена дієвідміна дієслів — усе в одному місці.': (
-        'A Murphy-style grammar course, a Catalan–English dictionary, verified verb '
-        'conjugation and pronunciation lessons — all in one place.'
+    'Граматичний курс у стилі Murphy, каталонсько-український словник і перевірена дієвідміна дієслів в одному місці.': (
+        'A Murphy-style grammar course, a Catalan-English dictionary, verified verb '
+        'conjugation and pronunciation lessons in one place.'
     ),
     'Розпочати навчання': 'Start learning',
     'Почати з вимови': 'Start with pronunciation',
-    'Короткі пояснення, приклади й вправи з відповідями — від A1 до C1.': (
-        'Short explanations, examples and exercises with answers — from A1 to C1.'
+    'Короткі пояснення, приклади й вправи з відповідями, від A1 до C1.': (
+        'Short explanations, examples and exercises with answers, from A1 to C1.'
     ),
     'Слова з перекладом, прикладами та рівнем. Збирайте власний словник і позначайте вивчене.': (
         'Words with translations, examples and levels. Build your own word list and mark what you know.'
@@ -59,8 +59,8 @@ MESSAGES = {
     'Створити акаунт': 'Create an account',
 
     # -- conjugator --------------------------------------------------------
-    'Введіть каталонське дієслово в інфінітиві — наприклад <em>parlar</em>, <em>ser</em> або <em>tenir</em>.': (
-        'Type a Catalan verb in the infinitive — for example <em>parlar</em>, <em>ser</em> or <em>tenir</em>.'
+    'Введіть каталонське дієслово в інфінітиві, наприклад <em>parlar</em>, <em>ser</em> або <em>tenir</em>.': (
+        'Type a Catalan verb in the infinitive, for example <em>parlar</em>, <em>ser</em> or <em>tenir</em>.'
     ),
     'Введіть дієслово': 'Type a verb',
     'Відміняти': 'Conjugate',
@@ -82,7 +82,7 @@ MESSAGES = {
     'Зразок дієвідміни:': 'Conjugation model:',
     'основа:': 'stem:',
     'дані виправлені вручну': 'data corrected by hand',
-    'Нижче — дієвідміна дієслова <strong>{infinitive}</strong>. Займенник <code>{suffix}</code> додається до форми окремо: <em>jo em rento</em>, <em>ell es renta</em>.': (
+    'Нижче наведено дієвідміну дієслова <strong>{infinitive}</strong>. Займенник <code>{suffix}</code> додається до форми окремо: <em>jo em rento</em>, <em>ell es renta</em>.': (
         'Below is the conjugation of <strong>{infinitive}</strong>. The pronoun '
         '<code>{suffix}</code> is added to each form separately: <em>jo em rento</em>, <em>ell es renta</em>.'
     ),
@@ -123,8 +123,8 @@ MESSAGES = {
     'жін. мн.': 'fem. pl.',
     # conjugator errors
     'Введіть дієслово в інфінітиві, наприклад «parlar».': 'Type a verb in the infinitive, for example “parlar”.',
-    'Це задовго для дієслова — перевірте, чи не вставилося кілька слів.': (
-        'That is too long for a verb — check that you haven’t pasted several words.'
+    'Це задовго для дієслова. Перевірте, чи не вставилося кілька слів.': (
+        'That is too long for a verb. Check that you haven’t pasted several words.'
     ),
     'Введіть одне дієслово в інфінітиві, без займенників та інших слів (наприклад «parlar», а не «jo parlo»).': (
         'Type a single verb in the infinitive, without pronouns or other words '
@@ -138,7 +138,7 @@ MESSAGES = {
     'Не вдалося розпізнати дієслово.': 'The verb could not be recognised.',
 
     # -- dictionary --------------------------------------------------------
-    'Каталонсько-український словник': 'Catalan–English dictionary',
+    'Каталонсько-український словник': 'Catalan-English dictionary',
     'Додати слово': 'Add a word',
     'Імпорт': 'Import',
     'слово каталонською або українською': 'a word in Catalan or English',
@@ -177,7 +177,7 @@ MESSAGES = {
     'Переклад прикладу англійською': 'Example translation (English)',
     'Примітки англійською': 'Notes in English',
     'Зберегти': 'Save',
-    '— не вказано —': '— not set —',
+    '(не вказано)': '(not set)',
     'Усі теми': 'All topics',
     'Усі рівні': 'All levels',
     'Усі частини мови': 'All parts of speech',
@@ -196,7 +196,7 @@ MESSAGES = {
     ),
     'Свій файл CSV': 'Your own CSV file',
     'Колонки:': 'Columns:',
-    'Обов’язкові — лише <code>term</code> і <code>translation</code>.': (
+    'Обов’язкові лише <code>term</code> і <code>translation</code>.': (
         'Only <code>term</code> and <code>translation</code> are required.'
     ),
     'Зразок можна отримати, експортувавши словник:': 'For a sample, export the dictionary:',
@@ -264,11 +264,11 @@ MESSAGES = {
     'Каталонська культура': 'Catalan culture',
     'Базова лексика': 'Basic vocabulary',
     # levels
-    'A1 — початковий': 'A1 — beginner',
-    'A2 — елементарний': 'A2 — elementary',
-    'B1 — середній': 'B1 — intermediate',
-    'B2 — вище середнього': 'B2 — upper intermediate',
-    'C1 — продвинутий': 'C1 — advanced',
+    'A1 (початковий)': 'A1 (beginner)',
+    'A2 (елементарний)': 'A2 (elementary)',
+    'B1 (середній)': 'B1 (intermediate)',
+    'B2 (вище середнього)': 'B2 (upper intermediate)',
+    'C1 (продвинутий)': 'C1 (advanced)',
     # genders
     'чоловічий (el)': 'masculine (el)',
     'жіночий (la)': 'feminine (la)',
@@ -276,7 +276,7 @@ MESSAGES = {
 
     # -- grammar course ----------------------------------------------------
     'Курс каталонської граматики:': 'Catalan grammar course:',
-    'Кожен юніт — коротке пояснення з прикладами і вправи з відповідями.': (
+    'Кожен юніт містить коротке пояснення з прикладами і вправи з відповідями.': (
         'Each unit is a short explanation with examples, followed by exercises with answers.'
     ),
     'Сортувати:': 'Sort:',
@@ -306,7 +306,7 @@ MESSAGES = {
 
     # -- phonetics ---------------------------------------------------------
     'Як звучить каталанська:': 'How Catalan sounds:',
-    'про звуки, наголос і вимову у мовленні. У кожному уроці — таблиця звуків із транскрипцією, слова для тренування з кнопкою 🔊 і вправи. За основу взято центральну (барселонську) вимову.': (
+    'про звуки, наголос і вимову у мовленні. У кожному уроці є таблиця звуків із транскрипцією, слова для тренування з кнопкою 🔊 і вправи. За основу взято центральну (барселонську) вимову.': (
         'on sounds, stress and connected speech. Each lesson has a table of sounds with IPA, '
         'practice words with a 🔊 button, and exercises. The model is Central (Barcelona) Catalan.'
     ),
@@ -350,8 +350,8 @@ MESSAGES = {
     'Зареєструватися зараз': 'Sign up now',
     'Вже є обліковий запис?': 'Already have an account?',
     'Інформація про обліковий запис': 'Account details',
-    'LearnCatalan — зміна пароля': 'LearnCatalan — reset your password',
-    'Щоб змінити пароль, перейдіть за посиланням:\n{link}\n\nЯкщо ви не надсилали цього запиту, просто проігноруйте лист — нічого не зміниться.\n': (
+    'LearnCatalan: зміна пароля': 'LearnCatalan: reset your password',
+    'Щоб змінити пароль, перейдіть за посиланням:\n{link}\n\nЯкщо ви не надсилали цього запиту, просто проігноруйте лист, нічого не зміниться.\n': (
         'To reset your password, follow this link:\n{link}\n\n'
         'If you did not request this, just ignore this email and nothing will change.\n'
     ),
@@ -386,4 +386,6 @@ MESSAGES = {
     'Усі слова': 'All words',
     'Лише центральні': 'Central Catalan only',
     'Лише регіональні й застарілі': 'Regional / archaic',
+    # -- header ------------------------------------------------------------
+    'Пошук слова': 'Search for a word',
 }

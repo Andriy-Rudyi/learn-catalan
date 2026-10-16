@@ -1,7 +1,7 @@
 """Regional varieties: which words are not used in Central Catalan.
 
 The course teaches Central Catalan (Barcelona). Words that belong to another
-variety — eixir, xiquet, acotxar… — or that are archaic are marked, so the
+variety (eixir, xiquet, acotxar…) or that are archaic are marked, so the
 learner knows to use the central word instead.
 
 The marks live in ``data/varieties.json``::
@@ -171,9 +171,9 @@ def classify(wikitext, edition):
 
     Returns None when the page has no Catalan entry, otherwise a dict:
     ``senses`` (definitions counted), ``regional`` (definitions marked as not
-    Central), ``codes`` (their varieties), ``central`` — True when at least one
-    sense carries no regional mark — and ``labelled_central`` — True when a
-    sense is explicitly labelled Central.
+    Central), ``codes`` (their varieties), ``central`` (True when at least one
+    sense carries no regional mark) and ``labelled_central`` (True when a
+    sense is explicitly labelled Central).
     """
     section = _section(wikitext or '', edition)
     if section is None:
@@ -263,7 +263,7 @@ def check(terms, editions=('en', 'ca'), fetch=fetch_pages, progress=None):
 def verdict(per_edition):
     """Combine the editions into (status, codes).
 
-    - 'central': a sense is explicitly labelled Central — strong evidence;
+    - 'central': a sense is explicitly labelled Central, which is strong evidence;
     - 'regional': every edition that has the word marks every sense of it as
       regional or archaic (the editions must agree: one of them often lists a
       common meaning the other leaves out);

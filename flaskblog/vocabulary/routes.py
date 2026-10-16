@@ -1,7 +1,7 @@
 """The shared dictionary and everyone's personal word list."""
 
-from flask import (Blueprint, Response, abort, flash, redirect, render_template,
-                   request, url_for)
+from flask import (Blueprint, Response, abort, flash, jsonify, redirect,
+                   render_template, request, url_for)
 from flask_login import current_user, login_required
 
 from flaskblog import db
@@ -81,6 +81,21 @@ def dictionary():
         saved_word_ids=_saved_word_ids(),
         action_form=ActionForm(),
     )
+
+
+@vocabulary.route('/api/words')
+def api_words():
+    """Up to 8 dictionary words starting with ?q=, for search suggestions."""
+    query = (request.args.get('q') or '').strip()
+    if len(query) < 2:
+        return jsonify(words=[])
+    words = (
+        Word.query.filter(Word.term.ilike(query.replace('%', '').replace('_', '') + '%'))
+        .order_by(db.func.length(Word.term), Word.term)
+        .limit(8)
+        .all()
+    )
+    return jsonify(words=[{'term': w.term, 'translation': w.t_translation()} for w in words])
 
 
 @vocabulary.route('/dictionary/<string:slug>')

@@ -12,7 +12,7 @@ A Flask-based blog platform for learning and teaching the Catalan language.
 - Structured lessons organized by topic
 - **Verb conjugator** with validated input and corrected conjugation data
   (see [Conjugator](#conjugator))
-- **Catalan–Ukrainian dictionary** with search, filters, CSV import/export and
+- **Catalan-Ukrainian dictionary** with search, filters, CSV import/export and
   a personal word list for every user (see [Dictionary](#dictionary))
 - **Grammar course** of numbered units, each with an explanation, examples and
   exercises with answers (see [Grammar course](#grammar-course))
@@ -23,7 +23,7 @@ A Flask-based blog platform for learning and teaching the Catalan language.
   so no database step is needed.
 - Database-driven content management
 - Chronological and category-based post navigation
-- **Two interface languages — Ukrainian and English** (UA/EN switch in the
+- **Two interface languages, Ukrainian and English** (UA/EN switch in the
   menu; first visit follows the browser language). English learners get an
   adapted course, not a word-for-word translation: grammar units and
   pronunciation lessons are rewritten around English (false friends, “do”,
@@ -161,7 +161,7 @@ page; the rest are served as verbecc has them and marked accordingly.
 
 ## Dictionary
 
-`/dictionary` is a Catalan–Ukrainian dictionary with search (Catalan term,
+`/dictionary` is a Catalan-Ukrainian dictionary with search (Catalan term,
 Ukrainian translation or example), filters by topic, level and part of speech,
 and CSV export. Verb entries link to their conjugation.
 
@@ -187,7 +187,7 @@ required. Importing is idempotent: a term already in the dictionary is skipped
 unless `--update` is given.
 
 The starter file `flaskblog/vocabulary/data/seed_words.csv` holds 3,228 words
-across 21 topics (including Catalan cuisine and traditions), mostly A1–B1, including 2,210 verbs and C1 vocabulary such as discourse connectors and idioms. Verbs were chosen by how often their infinitive occurs in a Catalan subtitle corpus (OpenSubtitles 2018 frequency list), so the conjugator has a translation for nearly every verb people actually look up. The conjugator looks a
+across 21 topics (including Catalan cuisine and traditions), mostly A1-B1, including 2,210 verbs and C1 vocabulary such as discourse connectors and idioms. Verbs were chosen by how often their infinitive occurs in a Catalan subtitle corpus (OpenSubtitles 2018 frequency list), so the conjugator has a translation for nearly every verb people actually look up. The conjugator looks a
 verb up here to show its translation, so dictionary entries double as the
 conjugator's glossary.
 
@@ -218,8 +218,8 @@ requests*.
 
 Run locally, it needs internet access and takes a few minutes (50 words per request, one
 request per second). A word without regional labels is *not* treated as
-proof that it is Central — normative dictionaries list many Valencian words
-without a mark — so existing marks are only ever confirmed or added, never
+proof that it is Central (normative dictionaries list many Valencian words
+without a mark), so existing marks are only ever confirmed or added, never
 removed automatically; the report lists the ones Wiktionary did not confirm.
 
 ## Grammar course
@@ -229,7 +229,7 @@ each numbered unit holds a short explanation with examples and exercises whose
 answers can be revealed. The course is written in Ukrainian about Catalan
 grammar; only the format is borrowed.
 
-Units live in `flaskblog/grammar/data/*.json` — one file per batch, each unit
+Units live in `flaskblog/grammar/data/*.json`, one file per batch, each unit
 holding `number`, `title`, `section`, `level`, `summary`, `explanation` (HTML),
 `examples` and `exercises`. Loading is idempotent, so editing a file and
 re-running the seed updates the units in place:
@@ -351,10 +351,10 @@ steps as a `release` command (Heroku runs it automatically).
 Both have free plans with no time limit. The site sleeps after 15 minutes
 without visitors and takes about a minute to wake up.
 
-1. **Database** — sign up at [neon.tech](https://neon.tech), create a project
+1. **Database**: sign up at [neon.tech](https://neon.tech), create a project
    (region: Frankfurt) and copy the connection string
    (`postgresql://…neon.tech/neondb?sslmode=require…`).
-2. **Site** — sign up at [render.com](https://render.com) with GitHub, then
+2. **Site**: sign up at [render.com](https://render.com) with GitHub, then
    *New → Blueprint* → choose this repository. Render reads `render.yaml`
    and asks only for `DATABASE_URL`: paste the Neon string.
 3. Wait for the first build: it installs the packages, runs the migrations and
