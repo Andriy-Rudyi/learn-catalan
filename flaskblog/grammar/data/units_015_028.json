@@ -5,11 +5,11 @@
   "section": "Займенники та означники",
   "level": "A2",
   "summary": "Займенник замість іменника, на який спрямована дія.",
-  "explanation": "\n<p>Щоб не повторювати іменник, його замінюють <strong>слабким займенником</strong>,\nякий стоїть <em>перед</em> дієсловом:</p>\n<ul>\n  <li>Veus <em>el gos</em>? — Sí, <strong>el</strong> veig. — Так, я його бачу.</li>\n  <li>Coneixes <em>la Maria</em>? — Sí, <strong>la</strong> conec.</li>\n  <li>Compres <em>els llibres</em>? — Sí, <strong>els</strong> compro.</li>\n  <li>Llegeixes <em>les cartes</em>? — Sí, <strong>les</strong> llegeixo.</li>\n</ul>\n<p>Усі форми: <strong>em</strong> (мене), <strong>et</strong> (тебе),\n<strong>el</strong> / <strong>la</strong> (його / її), <strong>ens</strong> (нас),\n<strong>us</strong> (вас), <strong>els</strong> / <strong>les</strong> (їх).</p>\n<p>Перед голосним або <em>h</em> однинні форми скорочуються:\n<strong>m’</strong>, <strong>t’</strong>, <strong>l’</strong>:\n<em>M’escoltes? L’he vist.</em> Множинні не скорочуються: <em>els escolto</em>.</p>\n<p>Для цілої думки чи «цього» вживають <strong>ho</strong>:\n<em>No <strong>ho</strong> sé.</em> — Я цього не знаю.</p>\n<p>З інфінітивом займенник можна поставити перед дієсловом-помічником\nабо приєднати після інфінітива через дефіс: <em><strong>La</strong> vull veure</em> =\n<em>Vull veure<strong>-la</strong></em>.</p>\n",
+  "explanation": "\n<p>Щоб не повторювати іменник, його замінюють <strong>слабким займенником</strong>,\nякий стоїть <em>перед</em> дієсловом:</p>\n<ul>\n  <li>Veus <em>el gos</em>? Sí, <strong>el</strong> veig. (Так, я його бачу.)</li>\n  <li>Coneixes <em>la Maria</em>? Sí, <strong>la</strong> conec.</li>\n  <li>Compres <em>els llibres</em>? Sí, <strong>els</strong> compro.</li>\n  <li>Llegeixes <em>les cartes</em>? Sí, <strong>les</strong> llegeixo.</li>\n</ul>\n<p>Усі форми: <strong>em</strong> (мене), <strong>et</strong> (тебе),\n<strong>el</strong> / <strong>la</strong> (його / її), <strong>ens</strong> (нас),\n<strong>us</strong> (вас), <strong>els</strong> / <strong>les</strong> (їх).</p>\n<p>Перед голосним або <em>h</em> однинні форми скорочуються:\n<strong>m’</strong>, <strong>t’</strong>, <strong>l’</strong>:\n<em>M’escoltes? L’he vist.</em> Множинні не скорочуються: <em>els escolto</em>.</p>\n<p>Для цілої думки чи «цього» вживають <strong>ho</strong>:\n<em>No <strong>ho</strong> sé.</em> (Я цього не знаю.)</p>\n<p>З інфінітивом займенник можна поставити перед дієсловом-помічником\nабо приєднати після інфінітива через дефіс: <em><strong>La</strong> vull veure</em> =\n<em>Vull veure<strong>-la</strong></em>.</p>\n",
   "examples": [
    {
-    "ca": "On és la clau? — No la trobo.",
-    "uk": "Де ключ? — Не можу його знайти."
+    "ca": "On és la clau? No la trobo.",
+    "uk": "Де ключ? Не можу його знайти."
    },
    {
     "ca": "T’estimo.",
@@ -82,8 +82,8 @@
   "title": "Непрямий додаток: li, els",
   "section": "Займенники та означники",
   "level": "A2",
-  "summary": "Кому? — li (йому/їй) та els (їм).",
-  "explanation": "\n<p>Непрямий додаток відповідає на питання <em>кому?</em>. Займенники:</p>\n<ul>\n  <li><strong>em</strong> — мені, <strong>et</strong> — тобі,\n      <strong>li</strong> — йому / їй,</li>\n  <li><strong>ens</strong> — нам, <strong>us</strong> — вам, <strong>els</strong> — їм.</li>\n</ul>\n<p>Приклади:</p>\n<ul>\n  <li>Dono el llibre <em>a la Marta</em>. → <strong>Li</strong> dono el llibre.</li>\n  <li>Escric <em>als meus pares</em>. → <strong>Els</strong> escric.</li>\n</ul>\n<p>Зверніть увагу: <strong>li</strong> однаковий для чоловічого й жіночого роду,\nа <strong>els</strong> — і прямий («їх»), і непрямий («їм») додаток.</p>\n<p>Часто іменник і займенник уживають разом для наголосу:\n<em><strong>Li</strong> dic <strong>a la Maria</strong>.</em></p>\n",
+  "summary": "Кому? Займенники li (йому/їй) та els (їм).",
+  "explanation": "\n<p>Непрямий додаток відповідає на питання <em>кому?</em>. Займенники:</p>\n<ul>\n  <li><strong>em</strong> (мені), <strong>et</strong> (тобі),\n      <strong>li</strong> (йому / їй),</li>\n  <li><strong>ens</strong> (нам), <strong>us</strong> (вам), <strong>els</strong> (їм).</li>\n</ul>\n<p>Приклади:</p>\n<ul>\n  <li>Dono el llibre <em>a la Marta</em>. → <strong>Li</strong> dono el llibre.</li>\n  <li>Escric <em>als meus pares</em>. → <strong>Els</strong> escric.</li>\n</ul>\n<p>Зверніть увагу: <strong>li</strong> однаковий для чоловічого й жіночого роду,\nа <strong>els</strong> буває і прямим («їх»), і непрямим («їм») додатком.</p>\n<p>Часто іменник і займенник уживають разом для наголосу:\n<em><strong>Li</strong> dic <strong>a la Maria</strong>.</em></p>\n",
   "examples": [
    {
     "ca": "Li he enviat un missatge.",
@@ -152,16 +152,16 @@
   "title": "Займенник en",
   "section": "Займенники та означники",
   "level": "B1",
-  "summary": "«Цього», «з цього», «про це» — кількість і частина.",
-  "explanation": "\n<p><strong>en</strong> замінює:</p>\n<ul>\n  <li>іменник без артикля або з числом / кількістю:\n      <em>Tens pa? — Sí, <strong>en</strong> tinc.</em>\n      <em>Quantes germanes tens? — <strong>En</strong> tinc dues.</em></li>\n  <li>доповнення з прийменником <em>de</em>:\n      <em>Parles <u>de la feina</u>? — Sí, <strong>en</strong> parlo.</em>\n      <em>Vens <u>de Girona</u>? — Sí, <strong>en</strong> vinc.</em></li>\n</ul>\n<p>Перед голосним — <strong>n’</strong>: <em><strong>N’</strong>he comprat tres.</em>\nПісля інфінітива чи наказового способу — <strong>-ne</strong> після приголосного\nі <strong>’n</strong> після голосного:\n<em>Vull comprar<strong>-ne</strong>. Vull menjar<strong>-ne</strong>.</em>\nАле: <em>Vull beure<strong>’n</strong>. Compra<strong>’n</strong> dos!</em></p>\n<p>Важливо: якщо в реченні є кількість, займенник en <em>обов’язковий</em> —\nне можна сказати просто «Tinc dues».</p>\n",
+  "summary": "«Цього», «з цього», «про це»: кількість і частина.",
+  "explanation": "\n<p><strong>en</strong> замінює:</p>\n<ul>\n  <li>іменник без артикля або з числом / кількістю:\n      <em>Tens pa? Sí, <strong>en</strong> tinc.</em>\n      <em>Quantes germanes tens? <strong>En</strong> tinc dues.</em></li>\n  <li>доповнення з прийменником <em>de</em>:\n      <em>Parles <u>de la feina</u>? Sí, <strong>en</strong> parlo.</em>\n      <em>Vens <u>de Girona</u>? Sí, <strong>en</strong> vinc.</em></li>\n</ul>\n<p>Перед голосним пишемо <strong>n’</strong>: <em><strong>N’</strong>he comprat tres.</em>\nПісля інфінітива чи наказового способу пишемо <strong>-ne</strong> після приголосного\nі <strong>’n</strong> після голосного:\n<em>Vull comprar<strong>-ne</strong>. Vull menjar<strong>-ne</strong>.</em>\nАле: <em>Vull beure<strong>’n</strong>. Compra<strong>’n</strong> dos!</em></p>\n<p>Важливо: якщо в реченні є кількість, займенник en <em>обов’язковий</em>:\nне можна сказати просто «Tinc dues».</p>\n",
   "examples": [
    {
-    "ca": "Vols cafè? — No, gràcies, ja n’he pres.",
-    "uk": "Хочеш кави? — Ні, дякую, я вже пив."
+    "ca": "Vols cafè? No, gràcies, ja n’he pres.",
+    "uk": "Хочеш кави? Ні, дякую, я вже пив."
    },
    {
-    "ca": "Quants anys tens? — En tinc trenta.",
-    "uk": "Скільки тобі років? — Тридцять."
+    "ca": "Quants anys tens? En tinc trenta.",
+    "uk": "Скільки тобі років? Тридцять."
    },
    {
     "ca": "No en sé res.",
@@ -205,12 +205,12 @@
   "title": "Займенник hi",
   "section": "Займенники та означники",
   "level": "B1",
-  "summary": "«Там», «туди» — і як hi з’являється в hi ha.",
-  "explanation": "\n<p><strong>hi</strong> замінює місце (після <em>a, en, dins, sota</em>…):</p>\n<ul>\n  <li>Vas <u>a Girona</u>? — Sí, <strong>hi</strong> vaig demà.</li>\n  <li>Has estat <u>a Mallorca</u>? — No, no <strong>hi</strong> he estat mai.</li>\n</ul>\n<p>А також доповнення з <em>a</em> чи <em>en</em> при дієсловах на кшталт\n<em>pensar en</em>, <em>creure en</em>, <em>jugar a</em>:</p>\n<ul>\n  <li>Penses <u>en el viatge</u>? — Sí, <strong>hi</strong> penso molt.</li>\n</ul>\n<p>Займенник <strong>hi</strong> не змінює форми: перед голосним теж <em>hi</em>\n(<em>hi anem</em>), після інфінітива — <strong>-hi</strong>:\n<em>Vull anar<strong>-hi</strong>.</em></p>\n<p>У виразі <strong>hi ha</strong> (юніт 3) той самий займенник — він «закам’янів»\nі вже не означає місця.</p>\n",
+  "summary": "«Там», «туди», а також як hi з’являється в hi ha.",
+  "explanation": "\n<p><strong>hi</strong> замінює місце (після <em>a, en, dins, sota</em>…):</p>\n<ul>\n  <li>Vas <u>a Girona</u>? Sí, <strong>hi</strong> vaig demà.</li>\n  <li>Has estat <u>a Mallorca</u>? No, no <strong>hi</strong> he estat mai.</li>\n</ul>\n<p>А також доповнення з <em>a</em> чи <em>en</em> при дієсловах на кшталт\n<em>pensar en</em>, <em>creure en</em>, <em>jugar a</em>:</p>\n<ul>\n  <li>Penses <u>en el viatge</u>? Sí, <strong>hi</strong> penso molt.</li>\n</ul>\n<p>Займенник <strong>hi</strong> не змінює форми: перед голосним теж <em>hi</em>\n(<em>hi anem</em>), після інфінітива пишемо <strong>-hi</strong>:\n<em>Vull anar<strong>-hi</strong>.</em></p>\n<p>У виразі <strong>hi ha</strong> (юніт 3) той самий займенник: він «закам’янів»\nі вже не означає місця.</p>\n",
   "examples": [
    {
-    "ca": "Viu a Reus? — Sí, hi viu des de fa anys.",
-    "uk": "Він живе в Реусі? — Так, уже багато років."
+    "ca": "Viu a Reus? Sí, hi viu des de fa anys.",
+    "uk": "Він живе в Реусі? Так, уже багато років."
    },
    {
     "ca": "No hi entenc res.",
@@ -255,15 +255,15 @@
     "instruction": "en чи hi?",
     "items": [
      {
-      "q": "Vens de Lleida? — Sí, ___ vinc.",
+      "q": "Vens de Lleida? Sí, ___ vinc.",
       "a": "en"
      },
      {
-      "q": "Vas a Lleida? — Sí, ___ vaig.",
+      "q": "Vas a Lleida? Sí, ___ vaig.",
       "a": "hi"
      },
      {
-      "q": "Tens temps? — No, no ___ tinc.",
+      "q": "Tens temps? No, no ___ tinc.",
       "a": "en"
      }
     ]
@@ -279,8 +279,8 @@
   "explanation": "\n<p>Зворотні дієслова в словнику мають закінчення <strong>-se</strong>:\n<em>rentar-se</em> (митися), <em>llevar-se</em> (вставати),\n<em>dir-se</em> (зватися), <em>dutxar-se</em> (приймати душ).</p>\n<p>Займенник змінюється за особою і стоїть перед дієсловом:</p>\n<ul>\n  <li><strong>em</strong> rento, <strong>et</strong> rentes, <strong>es</strong> renta,</li>\n  <li><strong>ens</strong> rentem, <strong>us</strong> renteu, <strong>es</strong> renten.</li>\n</ul>\n<p>Перед голосним або <em>h</em>: <strong>m’</strong>, <strong>t’</strong>, <strong>s’</strong>:\n<em>m’aixeco, t’aixeques, s’aixeca</em>, але <em>ens aixequem, us aixequeu, s’aixequen</em>.</p>\n<p>З інфінітивом займенник приєднується через дефіс і узгоджується з особою:\n<em>Vull dutxar<strong>-me</strong></em> = <em><strong>Em</strong> vull dutxar.</em></p>\n",
   "examples": [
    {
-    "ca": "Com et dius? — Em dic Olena.",
-    "uk": "Як тебе звати? — Мене звати Олена."
+    "ca": "Com et dius? Em dic Olena.",
+    "uk": "Як тебе звати? Мене звати Олена."
    },
    {
     "ca": "Em llevo a les set.",
@@ -333,7 +333,7 @@
   "section": "Займенники та означники",
   "level": "A1",
   "summary": "Дієслово погоджується з тим, що подобається.",
-  "explanation": "\n<p>Як і українське «подобатися», <strong>agradar</strong> узгоджується з тим,\n<em>що</em> подобається, а людину виражає займенник:</p>\n<ul>\n  <li><strong>M’agrada</strong> el cafè. — Мені подобається кава.</li>\n  <li><strong>M’agraden</strong> els gats. — Мені подобаються коти.</li>\n  <li><strong>M’agrada</strong> llegir. — Мені подобається читати.</li>\n</ul>\n<p>Займенники: <strong>m’</strong>, <strong>t’</strong>, <strong>li</strong>,\n<strong>ens</strong>, <strong>us</strong>, <strong>els</strong>:\n<em>Li agrada, ens agrada, els agraden</em>.</p>\n<p>Для наголосу додають <em>a mi, a tu, a ell…</em>:\n<em><strong>A mi</strong> m’agrada el futbol, i <strong>a tu</strong>?</em></p>\n<p>Короткі відповіді: <em>A mi també</em> (мені теж), <em>A mi tampoc</em>\n(мені теж ні), <em>A mi sí</em> / <em>A mi no</em>.</p>\n<p>Так само будуються <em>interessar</em>, <em>encantar</em>,\n<em>fer mal</em>: <em>Em fa mal el cap</em> — у мене болить голова.</p>\n",
+  "explanation": "\n<p>Як і українське «подобатися», <strong>agradar</strong> узгоджується з тим,\n<em>що</em> подобається, а людину виражає займенник:</p>\n<ul>\n  <li><strong>M’agrada</strong> el cafè. (Мені подобається кава.)</li>\n  <li><strong>M’agraden</strong> els gats. (Мені подобаються коти.)</li>\n  <li><strong>M’agrada</strong> llegir. (Мені подобається читати.)</li>\n</ul>\n<p>Займенники: <strong>m’</strong>, <strong>t’</strong>, <strong>li</strong>,\n<strong>ens</strong>, <strong>us</strong>, <strong>els</strong>:\n<em>Li agrada, ens agrada, els agraden</em>.</p>\n<p>Для наголосу додають <em>a mi, a tu, a ell…</em>:\n<em><strong>A mi</strong> m’agrada el futbol, i <strong>a tu</strong>?</em></p>\n<p>Короткі відповіді: <em>A mi també</em> (мені теж), <em>A mi tampoc</em>\n(мені теж ні), <em>A mi sí</em> / <em>A mi no</em>.</p>\n<p>Так само будуються <em>interessar</em>, <em>encantar</em>,\n<em>fer mal</em>: <em>Em fa mal el cap</em> (у мене болить голова).</p>\n",
   "examples": [
    {
     "ca": "No m’agrada gens aquest temps.",
@@ -378,11 +378,11 @@
     "instruction": "Відповідайте: «мені теж» чи «мені теж ні».",
     "items": [
      {
-      "q": "M’agrada el mar. — (теж) ___",
+      "q": "M’agrada el mar. (теж) ___",
       "a": "A mi també."
      },
      {
-      "q": "No m’agrada el fred. — (теж ні) ___",
+      "q": "No m’agrada el fred. (теж ні) ___",
       "a": "A mi tampoc."
      }
     ]
@@ -395,7 +395,7 @@
   "section": "Минулі часи",
   "level": "A2",
   "summary": "Минулий незакінчений: звички та опис у минулому.",
-  "explanation": "\n<p><strong>Imperfet</strong> описує <em>звички</em> і <em>тло</em> в минулому —\nте, що бувало або тривало:</p>\n<ul>\n  <li>Quan era petit, <strong>jugava</strong> al carrer. — Коли я був малим, я грався на вулиці.</li>\n  <li><strong>Feia</strong> sol i <strong>estàvem</strong> contents. — Світило сонце, і ми були щасливі.</li>\n</ul>\n<p>Форми:</p>\n<ul>\n  <li>-ar: parl<strong>ava</strong>, parl<strong>aves</strong>, parl<strong>ava</strong>,\n      parl<strong>àvem</strong>, parl<strong>àveu</strong>, parl<strong>aven</strong></li>\n  <li>-er/-re та -ir: perd<strong>ia</strong>, perd<strong>ies</strong>, perd<strong>ia</strong>,\n      perd<strong>íem</strong>, perd<strong>íeu</strong>, perd<strong>ien</strong>\n      (dorm<strong>ia</strong>, serv<strong>ia</strong>…)</li>\n</ul>\n<p>Нерегулярні: <strong>ser</strong> → era, eres, era, érem, éreu, eren;\n<strong>fer</strong> → feia; <strong>dir</strong> → deia; <strong>veure</strong> → veia;\n<strong>creure</strong> → creia; <strong>riure</strong> → reia;\n<strong>treure</strong> → treia; <strong>viure</strong> → vivia;\n<strong>escriure</strong> → escrivia.</p>\n",
+  "explanation": "\n<p><strong>Imperfet</strong> описує <em>звички</em> і <em>тло</em> в минулому,\nтобто те, що бувало або тривало:</p>\n<ul>\n  <li>Quan era petit, <strong>jugava</strong> al carrer. (Коли я був малим, я грався на вулиці.)</li>\n  <li><strong>Feia</strong> sol i <strong>estàvem</strong> contents. (Світило сонце, і ми були щасливі.)</li>\n</ul>\n<p>Форми:</p>\n<ul>\n  <li>-ar: parl<strong>ava</strong>, parl<strong>aves</strong>, parl<strong>ava</strong>,\n      parl<strong>àvem</strong>, parl<strong>àveu</strong>, parl<strong>aven</strong></li>\n  <li>-er/-re та -ir: perd<strong>ia</strong>, perd<strong>ies</strong>, perd<strong>ia</strong>,\n      perd<strong>íem</strong>, perd<strong>íeu</strong>, perd<strong>ien</strong>\n      (dorm<strong>ia</strong>, serv<strong>ia</strong>…)</li>\n</ul>\n<p>Нерегулярні: <strong>ser</strong> → era, eres, era, érem, éreu, eren;\n<strong>fer</strong> → feia; <strong>dir</strong> → deia; <strong>veure</strong> → veia;\n<strong>creure</strong> → creia; <strong>riure</strong> → reia;\n<strong>treure</strong> → treia; <strong>viure</strong> → vivia;\n<strong>escriure</strong> → escrivia.</p>\n",
   "examples": [
    {
     "ca": "Abans vivíem a Kíiv.",
@@ -452,7 +452,7 @@
   "section": "Минулі часи",
   "level": "A2",
   "summary": "Минуле, пов’язане з теперішнім періодом.",
-  "explanation": "\n<p><strong>Perfet</strong> = теперішній час <em>haver</em> + дієприкметник:</p>\n<ul>\n  <li><strong>he</strong> parlat, <strong>has</strong> parlat, <strong>ha</strong> parlat,\n      <strong>hem</strong> parlat, <strong>heu</strong> parlat, <strong>han</strong> parlat</li>\n</ul>\n<p>Його вживають, коли період, у якому сталася дія, <em>ще не закінчився</em>:\n<em>avui, aquest matí, aquesta setmana, aquest any</em>, а також для досвіду\n(<em>mai, alguna vegada, ja, encara no</em>):</p>\n<ul>\n  <li>Avui <strong>he treballat</strong> molt. — Сьогодні я багато працював.</li>\n  <li><strong>Has estat</strong> mai a Andorra? — Ти колись був в Андоррі?</li>\n</ul>\n<p>Дієприкметник: -ar → <strong>-at</strong> (parlat), -er/-re → <strong>-ut</strong>\n(perdut), -ir → <strong>-it</strong> (dormit). Найчастіші нерегулярні:\n<em>fet, dit, vist, escrit, obert, pres, après, estat, tingut, pogut, volgut,\nsabut, vingut, viscut, begut, conegut, nascut, mort</em>.</p>\n",
+  "explanation": "\n<p><strong>Perfet</strong> = теперішній час <em>haver</em> + дієприкметник:</p>\n<ul>\n  <li><strong>he</strong> parlat, <strong>has</strong> parlat, <strong>ha</strong> parlat,\n      <strong>hem</strong> parlat, <strong>heu</strong> parlat, <strong>han</strong> parlat</li>\n</ul>\n<p>Його вживають, коли період, у якому сталася дія, <em>ще не закінчився</em>:\n<em>avui, aquest matí, aquesta setmana, aquest any</em>, а також для досвіду\n(<em>mai, alguna vegada, ja, encara no</em>):</p>\n<ul>\n  <li>Avui <strong>he treballat</strong> molt. (Сьогодні я багато працював.)</li>\n  <li><strong>Has estat</strong> mai a Andorra? (Ти колись був в Андоррі?)</li>\n</ul>\n<p>Дієприкметник: -ar → <strong>-at</strong> (parlat), -er/-re → <strong>-ut</strong>\n(perdut), -ir → <strong>-it</strong> (dormit). Найчастіші нерегулярні:\n<em>fet, dit, vist, escrit, obert, pres, après, estat, tingut, pogut, volgut,\nsabut, vingut, viscut, begut, conegut, nascut, mort</em>.</p>\n",
   "examples": [
    {
     "ca": "Aquest matí he anat al mercat.",
@@ -509,7 +509,7 @@
   "section": "Минулі часи",
   "level": "A2",
   "summary": "Perfet для «сьогодні», perifràstic для «вчора».",
-  "explanation": "\n<p>Обидва часи перекладаються українським минулим, але вибір залежить від\n<em>часового відрізка</em>:</p>\n<ul>\n  <li>період <em>триває</em> (avui, aquesta setmana, aquest any) → <strong>perfet</strong>:\n      <em>Avui <strong>he menjat</strong> paella.</em></li>\n  <li>період <em>закінчився</em> (ahir, la setmana passada, l’any passat, el 2020) →\n      <strong>passat perifràstic</strong>:\n      <em>Ahir <strong>vaig menjar</strong> paella.</em></li>\n</ul>\n<p>Порівняйте:</p>\n<ul>\n  <li>Aquest any <strong>he viatjat</strong> molt. — L’any passat <strong>vaig viatjar</strong> poc.</li>\n  <li>Aquest matí <strong>m’he llevat</strong> d’hora. — Ahir <strong>em vaig llevar</strong> tard.</li>\n</ul>\n<p>Якщо час не вказаний, а йдеться про досвід — perfet:\n<em>Has estat mai a París?</em> Якщо розповідаємо історію з чіткими подіями\nв минулому — perifràstic.</p>\n",
+  "explanation": "\n<p>Обидва часи перекладаються українським минулим, але вибір залежить від\n<em>часового відрізка</em>:</p>\n<ul>\n  <li>період <em>триває</em> (avui, aquesta setmana, aquest any) → <strong>perfet</strong>:\n      <em>Avui <strong>he menjat</strong> paella.</em></li>\n  <li>період <em>закінчився</em> (ahir, la setmana passada, l’any passat, el 2020) →\n      <strong>passat perifràstic</strong>:\n      <em>Ahir <strong>vaig menjar</strong> paella.</em></li>\n</ul>\n<p>Порівняйте:</p>\n<ul>\n  <li>Aquest any <strong>he viatjat</strong> molt. L’any passat <strong>vaig viatjar</strong> poc.</li>\n  <li>Aquest matí <strong>m’he llevat</strong> d’hora. Ahir <strong>em vaig llevar</strong> tard.</li>\n</ul>\n<p>Якщо час не вказаний, а йдеться про досвід, то perfet:\n<em>Has estat mai a París?</em> Якщо розповідаємо історію з чіткими подіями\nв минулому, то perifràstic.</p>\n",
   "examples": [
    {
     "ca": "Avui he parlat amb la Núria.",
@@ -566,7 +566,7 @@
   "section": "Майбутнє, умовний, наказовий",
   "level": "A2",
   "summary": "Майбутній час і його нерегулярні основи.",
-  "explanation": "\n<p>Майбутній час утворюється від <strong>інфінітива</strong> з закінченнями\n<strong>-é, -às, -à, -em, -eu, -an</strong>:</p>\n<ul>\n  <li>parlar → parlar<strong>é</strong>, parlar<strong>às</strong>, parlar<strong>à</strong>,\n      parlar<strong>em</strong>, parlar<strong>eu</strong>, parlar<strong>an</strong></li>\n  <li>dormir → dormir<strong>é</strong>, dormir<strong>às</strong>…</li>\n  <li>дієслова на -re втрачають кінцеве -e: perdre → perdr<strong>é</strong></li>\n</ul>\n<p>Нерегулярні основи (закінчення ті самі):</p>\n<ul>\n  <li>fer → <strong>far</strong>é, dir → <strong>dir</strong>é, anar → <strong>anir</strong>é,\n      ser → <strong>ser</strong>é, haver → <strong>haur</strong>é</li>\n  <li>tenir → <strong>tindr</strong>é, venir → <strong>vindr</strong>é,\n      voler → <strong>voldr</strong>é, poder → <strong>podr</strong>é,\n      saber → <strong>sabr</strong>é, valer → <strong>valdr</strong>é</li>\n</ul>\n<p>Про найближче майбутнє каталонці часто говорять простим теперішнім:\n<em>Demà treballo.</em> — Завтра я працюю.</p>\n",
+  "explanation": "\n<p>Майбутній час утворюється від <strong>інфінітива</strong> з закінченнями\n<strong>-é, -às, -à, -em, -eu, -an</strong>:</p>\n<ul>\n  <li>parlar → parlar<strong>é</strong>, parlar<strong>às</strong>, parlar<strong>à</strong>,\n      parlar<strong>em</strong>, parlar<strong>eu</strong>, parlar<strong>an</strong></li>\n  <li>dormir → dormir<strong>é</strong>, dormir<strong>às</strong>…</li>\n  <li>дієслова на -re втрачають кінцеве -e: perdre → perdr<strong>é</strong></li>\n</ul>\n<p>Нерегулярні основи (закінчення ті самі):</p>\n<ul>\n  <li>fer → <strong>far</strong>é, dir → <strong>dir</strong>é, anar → <strong>anir</strong>é,\n      ser → <strong>ser</strong>é, haver → <strong>haur</strong>é</li>\n  <li>tenir → <strong>tindr</strong>é, venir → <strong>vindr</strong>é,\n      voler → <strong>voldr</strong>é, poder → <strong>podr</strong>é,\n      saber → <strong>sabr</strong>é, valer → <strong>valdr</strong>é</li>\n</ul>\n<p>Про найближче майбутнє каталонці часто говорять простим теперішнім:\n<em>Demà treballo.</em> (Завтра я працюю.)</p>\n",
   "examples": [
    {
     "ca": "L’any que ve estudiaré a Barcelona.",
@@ -623,7 +623,7 @@
   "section": "Майбутнє, умовний, наказовий",
   "level": "B1",
   "summary": "Ввічливі прохання, побажання і припущення.",
-  "explanation": "\n<p>Умовний спосіб утворюється від тієї самої основи, що й майбутній,\nіз закінченнями <strong>-ia, -ies, -ia, -íem, -íeu, -ien</strong>:</p>\n<ul>\n  <li>parlar → parlar<strong>ia</strong>, parlar<strong>ies</strong>, parlar<strong>ia</strong>,\n      parlar<strong>íem</strong>, parlar<strong>íeu</strong>, parlar<strong>ien</strong></li>\n  <li>нерегулярні: <em>faria, diria, aniria, seria, hauria, tindria, vindria,\n      voldria, podria, sabria</em></li>\n</ul>\n<p>Головні вживання:</p>\n<ul>\n  <li><strong>ввічливість</strong>: <em>Voldria un cafè.</em> — Я хотів би каву.\n      <em>Podries ajudar-me?</em> — Ти міг би мені допомогти?</li>\n  <li><strong>побажання</strong>: <em>M’agradaria viatjar més.</em></li>\n  <li><strong>порада</strong>: <em>Jo, en el teu lloc, hi aniria.</em> — Я на твоєму місці пішов би.</li>\n  <li><strong>умова</strong> (з <em>si</em> + imperfet de subjuntiu, B2):\n      <em>Si tingués temps, ho faria.</em></li>\n</ul>\n",
+  "explanation": "\n<p>Умовний спосіб утворюється від тієї самої основи, що й майбутній,\nіз закінченнями <strong>-ia, -ies, -ia, -íem, -íeu, -ien</strong>:</p>\n<ul>\n  <li>parlar → parlar<strong>ia</strong>, parlar<strong>ies</strong>, parlar<strong>ia</strong>,\n      parlar<strong>íem</strong>, parlar<strong>íeu</strong>, parlar<strong>ien</strong></li>\n  <li>нерегулярні: <em>faria, diria, aniria, seria, hauria, tindria, vindria,\n      voldria, podria, sabria</em></li>\n</ul>\n<p>Головні вживання:</p>\n<ul>\n  <li><strong>ввічливість</strong>: <em>Voldria un cafè.</em> (Я хотів би каву.)\n      <em>Podries ajudar-me?</em> (Ти міг би мені допомогти?)</li>\n  <li><strong>побажання</strong>: <em>M’agradaria viatjar més.</em></li>\n  <li><strong>порада</strong>: <em>Jo, en el teu lloc, hi aniria.</em> (Я на твоєму місці пішов би.)</li>\n  <li><strong>умова</strong> (з <em>si</em> + imperfet de subjuntiu, B2):\n      <em>Si tingués temps, ho faria.</em></li>\n</ul>\n",
   "examples": [
    {
     "ca": "Voldria reservar una taula.",
@@ -685,7 +685,7 @@
   "section": "Майбутнє, умовний, наказовий",
   "level": "A2",
   "summary": "Стверджувальні й заперечні накази.",
-  "explanation": "\n<p><strong>Стверджувальний наказ</strong>:</p>\n<ul>\n  <li><em>tu</em>: як 3-тя особа теперішнього — <strong>parla!</strong>, <strong>menja!</strong>,\n      <strong>perd!</strong>, <strong>dorm!</strong>, <strong>llegeix!</strong></li>\n  <li><em>vosaltres</em>: як 2-га особа множини — <strong>parleu!</strong>,\n      <strong>perdeu!</strong>, <strong>dormiu!</strong></li>\n  <li>ввічливо <em>vostè / vostès</em>: форми subjuntiu — <strong>parli!</strong>,\n      <strong>parlin!</strong></li>\n</ul>\n<p><strong>Заперечний наказ</strong> — завжди <em>no</em> + subjuntiu:\n<strong>no parlis!</strong>, <strong>no parleu!</strong>, <strong>no mengis!</strong></p>\n<p>Нерегулярні (для tu): <em>ser → sigues, anar → ves, fer → fes, dir → digues,\nvenir → vine, tenir → tingues, estar → estigues, saber → sàpigues</em>.</p>\n<p>Займенники в стверджувальному наказі стоять <em>після</em> дієслова:\n<em>Digues<strong>-me</strong>!</em>, <em>Dona<strong>’m</strong> el llibre!</em>,\nа в заперечному — перед ним: <em>No <strong>em</strong> diguis res!</em></p>\n",
+  "explanation": "\n<p><strong>Стверджувальний наказ</strong>:</p>\n<ul>\n  <li><em>tu</em>: як 3-тя особа теперішнього (<strong>parla!</strong>, <strong>menja!</strong>,\n      <strong>perd!</strong>, <strong>dorm!</strong>, <strong>llegeix!</strong>)</li>\n  <li><em>vosaltres</em>: як 2-га особа множини (<strong>parleu!</strong>,\n      <strong>perdeu!</strong>, <strong>dormiu!</strong>)</li>\n  <li>ввічливо <em>vostè / vostès</em>: форми subjuntiu (<strong>parli!</strong>,\n      <strong>parlin!</strong>)</li>\n</ul>\n<p><strong>Заперечний наказ</strong> завжди будують як <em>no</em> + subjuntiu:\n<strong>no parlis!</strong>, <strong>no parleu!</strong>, <strong>no mengis!</strong></p>\n<p>Нерегулярні (для tu): <em>ser → sigues, anar → ves, fer → fes, dir → digues,\nvenir → vine, tenir → tingues, estar → estigues, saber → sàpigues</em>.</p>\n<p>Займенники в стверджувальному наказі стоять <em>після</em> дієслова:\n<em>Digues<strong>-me</strong>!</em>, <em>Dona<strong>’m</strong> el llibre!</em>,\nа в заперечному він стоїть перед ним: <em>No <strong>em</strong> diguis res!</em></p>\n",
   "examples": [
    {
     "ca": "Obre la finestra, si us plau.",
@@ -755,7 +755,7 @@
   "section": "Прийменники",
   "level": "A2",
   "summary": "Де, куди, звідки.",
-  "explanation": "\n<p>У каталонській <strong>a</strong> вживається і для <em>місця</em>, і для\n<em>напрямку</em> з назвами міст, країн і відомих місць:</p>\n<ul>\n  <li>Visc <strong>a</strong> Barcelona. — Я живу в Барселоні.</li>\n  <li>Vaig <strong>a</strong> Barcelona. — Я їду до Барселони.</li>\n  <li>Soc <strong>a</strong> casa / <strong>a</strong> la feina / <strong>a</strong> l’escola.</li>\n</ul>\n<p><strong>en</strong> ставлять перед неозначеним артиклем, вказівними і\nкількісними словами:</p>\n<ul>\n  <li>Viu <strong>en</strong> un poble petit. — Він живе в маленькому селі.</li>\n  <li><strong>En</strong> aquest carrer hi ha molts bars.</li>\n</ul>\n<p><strong>de</strong> позначає походження і рух «звідки»:</p>\n<ul>\n  <li>Soc <strong>d’</strong>Ucraïna. Vinc <strong>de</strong> la feina.</li>\n</ul>\n<p>Пам’ятайте про зрощення: <em>a + el = al</em>, <em>de + el = del</em> (юніт 4).</p>\n",
+  "explanation": "\n<p>У каталонській <strong>a</strong> вживається і для <em>місця</em>, і для\n<em>напрямку</em> з назвами міст, країн і відомих місць:</p>\n<ul>\n  <li>Visc <strong>a</strong> Barcelona. (Я живу в Барселоні.)</li>\n  <li>Vaig <strong>a</strong> Barcelona. (Я їду до Барселони.)</li>\n  <li>Soc <strong>a</strong> casa / <strong>a</strong> la feina / <strong>a</strong> l’escola.</li>\n</ul>\n<p><strong>en</strong> ставлять перед неозначеним артиклем, вказівними і\nкількісними словами:</p>\n<ul>\n  <li>Viu <strong>en</strong> un poble petit. (Він живе в маленькому селі.)</li>\n  <li><strong>En</strong> aquest carrer hi ha molts bars.</li>\n</ul>\n<p><strong>de</strong> позначає походження і рух «звідки»:</p>\n<ul>\n  <li>Soc <strong>d’</strong>Ucraïna. Vinc <strong>de</strong> la feina.</li>\n</ul>\n<p>Пам’ятайте про зрощення: <em>a + el = al</em>, <em>de + el = del</em> (юніт 4).</p>\n",
   "examples": [
    {
     "ca": "Treballo a l’hospital.",
@@ -812,7 +812,7 @@
   "section": "Прийменники",
   "level": "B1",
   "summary": "Причина й засіб проти мети й адресата.",
-  "explanation": "\n<p><strong>per</strong> означає:</p>\n<ul>\n  <li><em>причину</em>: Gràcies <strong>per</strong> tot. No surto <strong>per</strong> la pluja.</li>\n  <li><em>засіб</em>: Parlem <strong>per</strong> telèfon.</li>\n  <li><em>шлях «через»</em>: Passo <strong>per</strong> la plaça.</li>\n  <li><em>обмін, ціну</em>: L’he comprat <strong>per</strong> deu euros.</li>\n  <li><em>мету з інфінітивом</em>: Estudio català <strong>per</strong> treballar a Barcelona.</li>\n</ul>\n<p><strong>per a</strong> + іменник чи займенник означає <em>адресата</em>\nабо <em>призначення</em>:</p>\n<ul>\n  <li>Aquest regal és <strong>per a</strong> tu. — Цей подарунок для тебе.</li>\n  <li>Un llibre <strong>per a</strong> nens. — Книжка для дітей.</li>\n</ul>\n<p>Простіше правило після реформи IEC 2016: перед інфінітивом — <strong>per</strong>,\nперед іменником зі значенням «для когось / чогось» — <strong>per a</strong>.</p>\n",
+  "explanation": "\n<p><strong>per</strong> означає:</p>\n<ul>\n  <li><em>причину</em>: Gràcies <strong>per</strong> tot. No surto <strong>per</strong> la pluja.</li>\n  <li><em>засіб</em>: Parlem <strong>per</strong> telèfon.</li>\n  <li><em>шлях «через»</em>: Passo <strong>per</strong> la plaça.</li>\n  <li><em>обмін, ціну</em>: L’he comprat <strong>per</strong> deu euros.</li>\n  <li><em>мету з інфінітивом</em>: Estudio català <strong>per</strong> treballar a Barcelona.</li>\n</ul>\n<p><strong>per a</strong> + іменник чи займенник означає <em>адресата</em>\nабо <em>призначення</em>:</p>\n<ul>\n  <li>Aquest regal és <strong>per a</strong> tu. (Цей подарунок для тебе.)</li>\n  <li>Un llibre <strong>per a</strong> nens. (Книжка для дітей.)</li>\n</ul>\n<p>Простіше правило після реформи IEC 2016: перед інфінітивом ставимо <strong>per</strong>,\nперед іменником зі значенням «для когось / чогось» ставимо <strong>per a</strong>.</p>\n",
   "examples": [
    {
     "ca": "Moltes gràcies per la invitació.",
