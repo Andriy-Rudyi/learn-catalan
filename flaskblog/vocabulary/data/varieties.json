@@ -1,4 +1,49 @@
 {
+ "abatollar": {
+  "variety": [
+   "valencian"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "abessonar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "aborronar": {
+  "variety": [
+   "balearic",
+   "valencian"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "abrasir": {
+  "variety": [
+   "valencian"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "abstraure": {
+  "variety": [
+   "western"
+  ],
+  "source": "wiktionary-en"
+ },
+ "acalar": {
+  "variety": [
+   "archaic",
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "acatxar": {
+  "variety": [
+   "balearic",
+   "western"
+  ],
+  "source": "wiktionary-ca"
+ },
  "acaçar": {
   "variety": [
    "balearic",
@@ -15,12 +60,66 @@
   "central": "tapar, abrigar; ajupir-se",
   "source": "review"
  },
+ "acuindar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "acurtar": {
+  "variety": [
+   "archaic",
+   "dialectal",
+   "valencian"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "afonar": {
+  "variety": [
+   "balearic",
+   "western"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "agibellar": {
+  "variety": [
+   "dialectal"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "aguisar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
  "ajaure": {
+  "variety": [
+   "valencian",
+   "western"
+  ],
+  "central": "ajeure",
+  "source": "wiktionary-en"
+ },
+ "alapidar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "alfarrassar": {
   "variety": [
    "valencian"
   ],
-  "central": "ajeure",
-  "source": "review"
+  "source": "wiktionary-ca"
+ },
+ "alforrar": {
+  "variety": [
+   "archaic",
+   "balearic",
+   "valencian"
+  ],
+  "source": "wiktionary-ca"
  },
  "alligar": {
   "variety": [
@@ -29,12 +128,149 @@
   "central": "lligar",
   "source": "review"
  },
+ "almoinar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "altejar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "al·lotejar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "amortar": {
+  "variety": [
+   "archaic",
+   "northwestern"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "amuntonar": {
+  "variety": [
+   "alguerese",
+   "valencian",
+   "western"
+  ],
+  "source": "wiktionary-en"
+ },
+ "andarejar": {
+  "variety": [
+   "western"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "andoiar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "angelicar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "apanyussar": {
+  "variety": [
+   "western"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "aparaular": {
+  "variety": [
+   "dialectal"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "aparer": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "aparrussar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
  "apegar": {
   "variety": [
    "valencian"
   ],
   "central": "enganxar",
   "source": "review"
+ },
+ "apeixir": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "apellar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "apoquir": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "aporugar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "aquistar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "assitiar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "astrolicar": {
+  "variety": [
+   "alguerese",
+   "northwestern"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "atabacar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "ataquinar": {
+  "variety": [
+   "valencian",
+   "western"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "atarterar": {
+  "variety": [
+   "northwestern"
+  ],
+  "source": "wiktionary-ca"
  },
  "atraure": {
   "variety": [
@@ -44,12 +280,150 @@
   "central": "atreure",
   "source": "review"
  },
+ "atupar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-en"
+ },
+ "atxul·lar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "atzufar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
  "avençar": {
   "variety": [
    "dialectal"
   ],
   "central": "avançar",
   "source": "review"
+ },
+ "averar": {
+  "variety": [
+   "archaic",
+   "dialectal",
+   "northwestern"
+  ],
+  "source": "wiktionary-en"
+ },
+ "avortir": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "azotitzar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "badocar": {
+  "variety": [
+   "balearic",
+   "valencian",
+   "western"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "bafanejar": {
+  "variety": [
+   "valencian"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "barbutir": {
+  "variety": [
+   "northwestern"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "batiar": {
+  "variety": [
+   "alguerese",
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "belitrejar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "birbillejar": {
+  "variety": [
+   "northern"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "blaürar": {
+  "variety": [
+   "valencian"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "bofegar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "bonegar": {
+  "variety": [
+   "valencian"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "borrimejar": {
+  "variety": [
+   "western"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "boçar": {
+  "variety": [
+   "valencian",
+   "western"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "brufar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "brugolar": {
+  "variety": [
+   "northwestern"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "brusquejar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "brusquinejar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "buscallar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
  },
  "caber": {
   "variety": [
@@ -65,13 +439,159 @@
   "central": "caldre",
   "source": "review"
  },
- "distraure": {
+ "cantussolar": {
   "variety": [
-   "valencian",
    "balearic"
   ],
+  "source": "wiktionary-ca"
+ },
+ "cartenir": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "colcar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "compatir": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "conglaçar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "consellar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "corderar": {
+  "variety": [
+   "northwestern"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "crebar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-en"
+ },
+ "cruiar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "custodir": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "dar": {
+  "variety": [
+   "archaic",
+   "balearic"
+  ],
+  "source": "wiktionary-en"
+ },
+ "desconsellar": {
+  "variety": [
+   "alguerese",
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "desllavassar": {
+  "variety": [
+   "valencian"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "despagar": {
+  "variety": [
+   "alguerese",
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "despopar": {
+  "variety": [
+   "northwestern"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "desterrossar": {
+  "variety": [
+   "valencian",
+   "western"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "desvear": {
+  "variety": [
+   "western"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "detraure": {
+  "variety": [
+   "archaic",
+   "western"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "distraure": {
+  "variety": [
+   "balearic",
+   "valencian",
+   "western"
+  ],
   "central": "distreure",
-  "source": "review"
+  "source": "wiktionary-ca"
+ },
+ "eixalar": {
+  "variety": [
+   "alguerese"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "eixalavar": {
+  "variety": [
+   "northwestern",
+   "western"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "eixalbar": {
+  "variety": [
+   "archaic",
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "eixatar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "eixaugar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
  },
  "eixir": {
   "variety": [
@@ -79,6 +599,25 @@
   ],
   "central": "sortir",
   "source": "review"
+ },
+ "embalcar": {
+  "variety": [
+   "northern"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "embalçar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "emblancar": {
+  "variety": [
+   "archaic",
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
  },
  "empentar": {
   "variety": [
@@ -90,11 +629,205 @@
  },
  "emprestar": {
   "variety": [
-   "valencian",
-   "balearic"
+   "alguerese",
+   "archaic",
+   "balearic",
+   "valencian"
   ],
   "central": "deixar, prestar",
-  "source": "review"
+  "source": "wiktionary-ca"
+ },
+ "encalentir": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "encamerar": {
+  "variety": [
+   "archaic",
+   "northwestern"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "encapullar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "encerregar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "encerrellar": {
+  "variety": [
+   "valencian"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "enfilosar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "enforinyar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "engospar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "engronsar": {
+  "variety": [
+   "balearic",
+   "valencian"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "ensolcar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "ensomniar": {
+  "variety": [
+   "alguerese",
+   "valencian"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "entaferrar": {
+  "variety": [
+   "dialectal"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "entomar": {
+  "variety": [
+   "western"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "entrecanviar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "entrevenir": {
+  "variety": [
+   "archaic",
+   "dialectal"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "entropessar": {
+  "variety": [
+   "western"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "enturar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "escardar": {
+  "variety": [
+   "valencian"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "escarrollar": {
+  "variety": [
+   "northwestern"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "escarrufar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "escaïnar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "escellar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "escondir": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-en"
+ },
+ "esgarrinyar": {
+  "variety": [
+   "northwestern"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "esgramar": {
+  "variety": [
+   "northwestern"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "esmorronar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "espaventar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-en"
+ },
+ "estormeiar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "esvarar": {
+  "variety": [
+   "dialectal",
+   "valencian"
+  ],
+  "source": "wiktionary-en"
+ },
+ "esvellegar": {
+  "variety": [
+   "northwestern"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "exprimir": {
+  "variety": [
+   "alguerese",
+   "archaic"
+  ],
+  "source": "wiktionary-en"
  },
  "extraure": {
   "variety": [
@@ -103,6 +836,51 @@
   "central": "extreure",
   "source": "review"
  },
+ "flastomar": {
+  "variety": [
+   "alguerese",
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "foraviar": {
+  "variety": [
+   "northwestern"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "fossar": {
+  "variety": [
+   "archaic",
+   "balearic",
+   "valencian"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "gabar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "garsar": {
+  "variety": [
+   "valencian"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "girigar": {
+  "variety": [
+   "northwestern"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "giscar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
  "gitar": {
   "variety": [
    "valencian"
@@ -110,12 +888,171 @@
   "central": "llençar; vomitar",
   "source": "review"
  },
+ "grufar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "guaretar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "guiscar": {
+  "variety": [
+   "balearic",
+   "northern"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "hospitalejar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "infantar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "jaupar": {
+  "variety": [
+   "northern"
+  ],
+  "source": "wiktionary-ca"
+ },
  "jaure": {
   "variety": [
    "valencian"
   ],
   "central": "jeure",
   "source": "review"
+ },
+ "júnyer": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-en"
+ },
+ "llambrejar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "llassar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "llenegar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-en"
+ },
+ "llussiar": {
+  "variety": [
+   "western"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "malavejar": {
+  "variety": [
+   "archaic",
+   "balearic"
+  ],
+  "source": "wiktionary-en"
+ },
+ "malcorar": {
+  "variety": [
+   "valencian",
+   "western"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "mamprendre": {
+  "variety": [
+   "valencian"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "mamussar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "mantornar": {
+  "variety": [
+   "western"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "manyegar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "manyuclar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-en"
+ },
+ "manyuclejar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "marfondir": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "marrucar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "marruquejar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "memorar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "menjussar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-en"
+ },
+ "ministrar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "musar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-en"
  },
  "nadar": {
   "variety": [
@@ -125,12 +1062,147 @@
   "central": "nedar",
   "source": "review"
  },
+ "nasprar": {
+  "variety": [
+   "northern"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "nugar": {
+  "variety": [
+   "valencian",
+   "western"
+  ],
+  "source": "wiktionary-en"
+ },
  "nàixer": {
   "variety": [
    "valencian"
   ],
   "central": "néixer",
   "source": "review"
+ },
+ "nòmer": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "obtemperar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "oiar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "orgullar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "orquejar": {
+  "variety": [
+   "northwestern"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "orxegar": {
+  "variety": [
+   "northwestern"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "paccionar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "pallejar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "palpinyar": {
+  "variety": [
+   "western"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "palpunyar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "paltrigar": {
+  "variety": [
+   "northern",
+   "western"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "pellicar": {
+  "variety": [
+   "northwestern"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "perbocar": {
+  "variety": [
+   "dialectal"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "pilloscar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "pinyolar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "pipellejar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "pisar": {
+  "variety": [
+   "archaic",
+   "dialectal"
+  ],
+  "source": "wiktionary-en"
+ },
+ "platonar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "pleixellar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "plomejar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
  },
  "redolar": {
   "variety": [
@@ -139,12 +1211,70 @@
   "central": "rodolar",
   "source": "review"
  },
+ "regitar": {
+  "variety": [
+   "alguerese",
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
  "renàixer": {
   "variety": [
-   "valencian"
+   "alguerese",
+   "valencian",
+   "western"
   ],
   "central": "renéixer",
-  "source": "review"
+  "source": "wiktionary-ca"
+ },
+ "replujar": {
+  "variety": [
+   "northwestern"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "repotegar": {
+  "variety": [
+   "northern"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "returar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "retxar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "ricar": {
+  "variety": [
+   "western"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "rollar": {
+  "variety": [
+   "archaic",
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "rombollar": {
+  "variety": [
+   "dialectal"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "ronxar": {
+  "variety": [
+   "dialectal"
+  ],
+  "source": "wiktionary-ca"
  },
  "rossegar": {
   "variety": [
@@ -153,12 +1283,48 @@
   "central": "rosegar",
   "source": "review"
  },
+ "soldejar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "tafarrejar": {
+  "variety": [
+   "valencian"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "tallucar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "tastanejar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
  "tindre": {
   "variety": [
    "valencian"
   ],
   "central": "tenir",
   "source": "review"
+ },
+ "toldre": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-en"
+ },
+ "toriscar": {
+  "variety": [
+   "northern"
+  ],
+  "source": "wiktionary-ca"
  },
  "torçar": {
   "variety": [
@@ -167,6 +1333,13 @@
   "central": "tòrcer",
   "source": "review"
  },
+ "transir": {
+  "variety": [
+   "alguerese",
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
  "traure": {
   "variety": [
    "western"
@@ -174,11 +1347,94 @@
   "central": "treure",
   "source": "review"
  },
+ "travelar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "trespolar": {
+  "variety": [
+   "balearic",
+   "valencian"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "tudar": {
+  "variety": [
+   "archaic",
+   "balearic",
+   "northern"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "ucar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "ujar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "uïssar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "verguejar": {
+  "variety": [
+   "western"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "vesar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "vetlar": {
+  "variety": [
+   "balearic",
+   "valencian"
+  ],
+  "source": "wiktionary-ca"
+ },
  "vindre": {
   "variety": [
    "valencian"
   ],
   "central": "venir",
   "source": "review"
+ },
+ "xafigar": {
+  "variety": [
+   "valencian"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "xamar": {
+  "variety": [
+   "valencian"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "xinar": {
+  "variety": [
+   "northwestern"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "xuplar": {
+  "variety": [
+   "northern",
+   "valencian"
+  ],
+  "source": "wiktionary-ca"
  }
 }
