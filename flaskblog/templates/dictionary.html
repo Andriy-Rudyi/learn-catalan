@@ -14,9 +14,23 @@
       {% endif %}
     </div>
   </div>
-  <p class="text-muted">{{ _('Каталонсько-український словник') }}: {{ plural(total, ('слово', 'слова', 'слів'), ('word', 'words')) }}.</p>
+  {% set searching = form.q.data %}
+  {% if searching %}
+    <p class="search-summary mb-2">
+      {{ _('Результати для «{query}»', query=form.q.data) }}:
+      <strong>{{ words.total }}</strong>
+    </p>
+  {% else %}
+    <p class="text-muted">{{ _('Каталонсько-український словник') }}: {{ plural(total, ('слово', 'слова', 'слів'), ('word', 'words')) }}.</p>
+  {% endif %}
 
-  <form class="row g-2 align-items-end mb-4" method="GET" action="{{ url_for('vocabulary.dictionary') }}">
+  <button class="btn btn-sm btn-outline-secondary d-md-none mb-3" type="button"
+          data-bs-toggle="collapse" data-bs-target="#dictFilters"
+          aria-expanded="{{ 'false' if searching else 'true' }}" aria-controls="dictFilters">
+    {{ _('Фільтри') }}
+  </button>
+  <form class="row g-2 align-items-end mb-4 collapse d-md-flex{% if not searching %} show{% endif %}" id="dictFilters"
+        method="GET" action="{{ url_for('vocabulary.dictionary') }}">
     <div class="col-md-6">
       {{ form.q.label(class="form-label small text-muted") }}
       {{ form.q(class="form-control", placeholder=_('слово каталонською або українською')) }}
