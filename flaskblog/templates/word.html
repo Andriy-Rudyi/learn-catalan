@@ -1,4 +1,6 @@
 {% extends "layout.html" %}
+{% set seo_title = _('{term}: переклад з каталонської', term=word.term) %}
+{% block meta_description %}{{ word.term }}: {{ word.t_translation() }}.{% if word.example_ca %} {{ word.example_ca }}{% endif %} {{ _('Переклад, приклад і вимова в каталонсько-українському словнику.') }}{% endblock %}
 {% from "partials/variety.html" import variety_notice with context %}
 {% block content %}
 <div class="dictionary">

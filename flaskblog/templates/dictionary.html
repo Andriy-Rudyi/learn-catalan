@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% block meta_description %}{{ _('Каталонсько-український словник: {words} з перекладом, прикладами, рівнем і озвученням. Пошук каталонською та українською.', words=plural(total, ('слово', 'слова', 'слів'), ('word', 'words'))) }}{% endblock %}
 {% from "partials/variety.html" import variety_badge with context %}
 {% block content %}
 <div class="dictionary">

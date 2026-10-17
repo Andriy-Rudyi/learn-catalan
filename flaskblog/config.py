@@ -70,6 +70,13 @@ class Config:
     # DESIGN=classic rolls everybody back to the earlier look.
     DESIGN = os.getenv('DESIGN', 'modern')
 
+    # Tags for search engines and link previews, /robots.txt and /sitemap.xml
+    # (flaskblog/seo.py). SEO=False brings back the pages as they were before.
+    SEO = os.getenv('SEO', 'True') == 'True'
+    # Public address of the site for canonical links and the sitemap, e.g.
+    # https://learn-catalan.com. Without it the address of the request is used.
+    SITE_URL = os.getenv('SITE_URL')
+
     MAIL_SERVER = 'smtp-mail.outlook.com'
     MAIL_PORT = 587
     MAIL_USE_TLS = True
@@ -92,3 +99,5 @@ class TestConfig(Config):
     MAIL_SUPPRESS_SEND = True
     SHOW_FAQ = True
     DESIGN = 'modern'
+    SEO = True
+    SITE_URL = None

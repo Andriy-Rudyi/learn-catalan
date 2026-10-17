@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% block meta_description %}{% if lesson.summary %}{{ lesson.summary }} {% endif %}{{ _('Урок каталонської вимови: звуки з транскрипцією, слова для тренування з озвученням і вправи.') }}{% endblock %}
 {% block content %}
 <div class="grammar-unit phonetics">
   <p class="small"><a href="{{ url_for('phonetics.index') }}">← {{ _('До списку уроків') }}</a></p>

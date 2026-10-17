@@ -1,4 +1,7 @@
 {% extends "layout.html" %}
+{% set seo_noindex = query and not (result and result.ok) %}
+{% if result and result.ok %}{% set seo_title = _('{verb}: дієвідміна дієслова', verb=result.infinitive) %}{% endif %}
+{% block meta_description %}{% if result and result.ok %}{{ _('Дієвідміна каталонського дієслова {verb}: усі часи та способи, особові форми й переклад.', verb=result.infinitive) }}{% if word %} {{ result.infinitive }}: {{ word.t_translation() }}.{% endif %}{% else %}{{ _('Дієвідміна каталонських дієслів: усі часи та способи понад 8 000 дієслів з перекладом.') }}{% endif %}{% endblock %}
 {% from "partials/variety.html" import variety_notice with context %}
 {% block content %}
 <div class="conjugator">

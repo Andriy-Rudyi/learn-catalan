@@ -4,9 +4,9 @@
 
    Everything here applies only under <html data-design="modern">.
    The earlier look (main.css alone) comes back with data-design="classic":
-   per browser from the "Classic look" item in the menu, for every visitor
-   with DESIGN=classic in the environment, or for good by deleting this file
-   and its <link> in layout.html.
+   in one browser by opening any page with ?design=classic (?design=modern
+   switches back), for every visitor with DESIGN=classic in the environment,
+   or for good by deleting this file and its <link> in layout.html.
    ====================================================================== */
 
 html[data-design="modern"],
@@ -671,47 +671,140 @@ html[data-design="modern"] .site-footer {
   }
 }
 
-/* ---------- FAQ ---------- */
-html[data-design="modern"] .faq-item {
-  border: 0;
-  border-radius: var(--radius);
+/* ---------- FAQ: one white page, contents first, then the answers ---------- */
+html[data-design="modern"] .faq {
+  max-width: 820px;
+  padding: 2rem 2.5rem 2.25rem;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
-  margin-bottom: .75rem;
 }
 
-html[data-design="modern"] .faq-item > summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: .95rem 1.25rem;
-  font-weight: 600;
+html[data-design="modern"] .faq h1 {
+  font-size: 2rem;
+  margin-bottom: .5rem;
+}
+
+html[data-design="modern"] .faq-lead {
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+html[data-design="modern"] .faq-filter {
+  max-width: none;
+  height: 44px;
+  padding: 8px 16px 8px 44px;
+  background: var(--search-bg) no-repeat 16px center / 16px
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23868c92'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0'/%3E%3C/svg%3E");
+  border: 2px solid transparent;
+  border-radius: 22px;
+  outline: none;
+  margin-bottom: 1.75rem;
+}
+
+html[data-design="modern"] .faq-filter:focus {
+  border-color: var(--brand);
+  background-color: var(--surface);
+}
+
+html[data-design="modern"] .faq-toc {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem 2rem;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: .5rem;
+  border-radius: var(--radius);
+  background: var(--surface-muted);
+}
+
+html[data-design="modern"] .faq-toc-section + .faq-toc-section {
+  margin-top: 0;
+}
+
+html[data-design="modern"] .lc-main .faq-toc-title {
+  font-size: .8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--accent-text);
+  margin-bottom: .5rem;
+}
+
+html[data-design="modern"] .faq-toc ul {
   list-style: none;
+  padding-left: 0;
 }
 
-html[data-design="modern"] .faq-item > summary::-webkit-details-marker {
-  display: none;
+html[data-design="modern"] .faq-toc li {
+  margin-bottom: .35rem;
+  line-height: 1.4;
 }
 
-html[data-design="modern"] .faq-item > summary::after {
-  content: "";
-  flex-shrink: 0;
-  width: 9px;
-  height: 9px;
-  border-right: 2px solid var(--muted-text);
-  border-bottom: 2px solid var(--muted-text);
-  transform: rotate(45deg) translate(-2px, -2px);
-  transition: transform .15s ease;
+html[data-design="modern"] .faq-toc li a {
+  text-decoration: none;
 }
 
-html[data-design="modern"] .faq-item[open] > summary::after {
-  transform: rotate(-135deg) translate(-2px, -2px);
+html[data-design="modern"] .faq-toc li a:hover {
+  text-decoration: underline;
 }
 
-html[data-design="modern"] .faq-item[open] > summary {
-  border-bottom: 0;
+html[data-design="modern"] .faq-section {
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-soft);
+  margin-top: 1.5rem;
+}
+
+html[data-design="modern"] .lc-main .faq-section-title {
+  font-size: 1.45rem;
+  margin: .75rem 0 .25rem;
+}
+
+html[data-design="modern"] .faq-question {
+  padding: .9rem 0 .4rem;
+}
+
+html[data-design="modern"] .lc-main .faq-question h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: .55rem;
+}
+
+html[data-design="modern"] .faq-section,
+html[data-design="modern"] .faq-question {
+  scroll-margin-top: calc(var(--header-height) + 16px);
+}
+
+html[data-design="modern"] .faq-question:target h3 {
+  color: var(--accent-text);
+}
+
+html[data-design="modern"] .faq-anchor {
+  left: -1.3rem;
+  color: var(--accent-text);
+  font-weight: 600;
 }
 
 html[data-design="modern"] .faq-answer {
-  padding: 0 1.25rem 1.15rem;
+  font-size: .97rem;
+  line-height: 1.65;
+}
+
+html[data-design="modern"] .faq-top a {
+  text-decoration: none;
+}
+
+@media (max-width: 767.98px) {
+  html[data-design="modern"] .faq {
+    padding: 1.35rem 1.1rem 1.5rem;
+  }
+  html[data-design="modern"] .faq h1 {
+    font-size: 1.6rem;
+  }
+  html[data-design="modern"] .faq-toc {
+    grid-template-columns: 1fr;
+    padding: 1rem 1.1rem;
+  }
+  html[data-design="modern"] .faq-anchor {
+    display: none;
+  }
 }

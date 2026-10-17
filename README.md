@@ -31,13 +31,21 @@ A Flask-based blog platform for learning and teaching the Catalan language.
   See [Languages](#languages)
 - Responsive interface that works on phones, with a light/dark theme switch
 - Two looks: a modern design (default; the menu is pinned to
-  the left edge) and the earlier classic one. Visitors switch with the
-  “Classic look” / “New look” item at the bottom of the menu; `DESIGN=classic`
-  rolls everyone back. The modern look lives entirely in
-  `flaskblog/static/modern.css`, so deleting that file (and its `<link>` in
-  `layout.html`) removes it for good
-- FAQ (`/faq`), including step-by-step instructions for turning on audio in
-  the pronunciation lessons on Android, iPhone, Mac and Windows
+  the left edge) and the earlier classic one. There is no button for it:
+  opening any page with `?design=classic` switches that browser back
+  (`?design=modern` returns), and `DESIGN=classic` rolls everyone back. The
+  modern look lives entirely in `flaskblog/static/modern.css`, so deleting
+  that file (and its `<link>` in `layout.html`) removes it for good
+- FAQ (`/faq`) with contents, links to every question and a search box,
+  including step-by-step instructions for turning on audio in the
+  pronunciation lessons on Android, iPhone, Mac and Windows. The questions
+  live in `flaskblog/main/faq.py`
+- Search engine optimisation (`flaskblog/seo.py`): page descriptions,
+  canonical links, Ukrainian/English versions (hreflang), link previews
+  (Open Graph image `static/og-image.png`), structured data (site search,
+  FAQ), `noindex` on private pages and search results, `/robots.txt` and
+  `/sitemap.xml` (every unit, lesson, word and verb in both languages).
+  `SEO=False` switches all of it off and brings back the earlier page heads
   (follows the system setting until the user picks one)
 - Production-ready deployment configuration
 - Database migrations for schema management
@@ -319,6 +327,8 @@ EMAIL_PASS=your-smtp-password
 ADMIN_USERNAME=Andriy        # the account allowed to edit content
 SHOW_FAQ=True                # set to False to hide the FAQ page
 DESIGN=modern                # set to classic to bring back the earlier look for everyone
+SEO=True                     # set to False to switch off the search engine tags, robots.txt and sitemap.xml
+SITE_URL=https://example.com # public address for canonical links and the sitemap (optional)
 TEST_DATABASE_URI=           # optional, tests default to in-memory SQLite
 ```
 

@@ -848,19 +848,6 @@ a.article-title:hover {
   display: none;
 }
 
-.lc-design-toggle {
-  width: 100%;
-  border: 0;
-  background: transparent;
-  text-align: left;
-  font: inherit;
-}
-
-html[data-design="classic"] .lc-design-classic,
-html:not([data-design="classic"]) .lc-design-modern {
-  display: none;
-}
-
 .lc-menu-link {
   display: block;
   padding: 5px 8px;
@@ -1001,37 +988,113 @@ html:not([data-design="classic"]) .lc-design-modern {
 }
 
 /* ---------- FAQ ---------- */
-.faq-item {
+.faq {
+  max-width: 760px;
+}
+
+.faq-lead {
+  color: var(--muted-text);
+}
+
+.faq-filter {
+  width: 100%;
+  max-width: 420px;
+  margin-bottom: 1.25rem;
+  padding: .4rem .75rem;
+  font: inherit;
+  color: var(--bs-body-color);
   background: var(--surface);
   border: 1px solid var(--border-soft);
   border-radius: 4px;
-  margin-bottom: .6rem;
 }
 
-.faq-item > summary {
-  padding: .7rem 1rem;
-  font-weight: 700;
-  color: var(--heading-color);
-  cursor: pointer;
-  list-style-position: inside;
+.faq-toc {
+  margin-bottom: 1.5rem;
 }
 
-.faq-item[open] > summary {
-  border-bottom: 1px solid var(--border-soft);
+.faq-toc-section + .faq-toc-section {
+  margin-top: .9rem;
 }
 
-.faq-answer {
-  padding: .8rem 1rem 1rem;
+.lc-main .faq-toc-title {
+  font-size: 1rem;
+  margin-bottom: .35rem;
 }
 
-.faq-steps > li {
-  margin-bottom: .5rem;
+.faq-toc-title a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.faq-steps ul {
+.faq-toc ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.faq-toc li {
+  margin-bottom: .2rem;
+}
+
+.faq-section {
+  padding-top: .5rem;
+}
+
+.lc-main .faq-section-title {
+  font-size: 1.3rem;
+  margin: 1.5rem 0 .5rem;
+}
+
+.faq-question {
+  position: relative;
+  padding: .6rem 0;
+}
+
+.lc-main .faq-question h3 {
+  font-size: 1.02rem;
+  margin-bottom: .45rem;
+}
+
+.faq-section,
+.faq-question {
+  scroll-margin-top: 70px;  /* clear the fixed header after a #link */
+}
+
+.faq-anchor {
+  position: absolute;
+  left: -1.1rem;
+  color: var(--muted-text);
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity .15s ease;
+}
+
+.faq-question:hover .faq-anchor,
+.faq-anchor:focus {
+  opacity: 1;
+}
+
+.faq-answer > :last-child {
+  margin-bottom: 0;
+}
+
+.faq-answer li {
+  margin-bottom: .35rem;
+}
+
+.faq-answer ul,
+.faq-answer ol {
+  padding-left: 1.3rem;
+}
+
+.faq-answer li > ul {
   margin-top: .35rem;
 }
 
-.faq-steps ul > li {
-  margin-bottom: .35rem;
+.faq-top {
+  margin: .4rem 0 0;
+  font-size: .85rem;
+}
+
+.faq-top a {
+  color: var(--muted-text);
 }

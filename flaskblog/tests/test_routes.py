@@ -37,11 +37,20 @@ class RouteTests(AppTestCase):
         self.assertIn('/faq#sound', self.client.get('/phonetics').data.decode())
         self.assertIn('/faq#sound', body[body.index('SPEAK_HINT'):])
 
+    def test_faq_has_contents_and_links_to_every_question(self):
+        body = self.client.get('/faq').data.decode()
+        self.assertIn('id="faq-toc"', body)
+        self.assertIn('href="#sound"', body)
+        self.assertIn('id="faqFilter"', body)
+        self.assertNotIn('Хто стоїть', body)
+
     def test_design_can_be_switched_back_to_classic(self):
         body = self.client.get('/').data.decode()
         self.assertIn('data-design="modern"', body)
-        self.assertIn('id="designToggle"', body)
         self.assertIn('modern.css', body)
+        # No button in the menu; ?design=classic switches one browser.
+        self.assertNotIn('designToggle', body)
+        self.assertIn('design=(modern|classic)', body)
         self.app.config['DESIGN'] = 'classic'
         self.assertIn('data-design="classic"', self.client.get('/').data.decode())
 

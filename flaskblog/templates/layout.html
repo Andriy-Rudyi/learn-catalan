@@ -6,14 +6,18 @@
     <meta name="color-scheme" content="light dark">
     <meta name="theme-color" content="#1f7a8c">
 
-    <!-- Apply the saved (or system) colour theme and the chosen design before anything is painted -->
+    <!-- Apply the saved (or system) colour theme and the chosen design before anything is painted.
+         The design has no button: ?design=classic (or ?design=modern) switches it in this browser. -->
     <script>
       (function () {
         var stored = null, design = null;
+        var asked = /[?&]design=(modern|classic)\b/.exec(window.location.search);
         try {
+          if (asked) { localStorage.setItem('design', asked[1]); }
           stored = localStorage.getItem('theme');
           design = localStorage.getItem('design');
         } catch (e) {}
+        if (asked) { design = asked[1]; }
         var theme = stored === 'light' || stored === 'dark'
           ? stored
           : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -32,12 +36,47 @@
 
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
 
+    {% if config.SEO %}
+    {% set seo = seo_head(canonical_path=canonical_path, noindex=seo_noindex) %}
+    {% set page_title = ((seo_title or title) ~ ' — Learn Catalan') if (seo_title or title) else ('Learn Catalan — ' ~ _('каталонська мова українською')) %}
+    {% set description = self.meta_description() | trim %}
+    <title>{{ page_title }}</title>
+    <meta name="description" content="{{ description }}">
+    {% if seo.robots %}<meta name="robots" content="{{ seo.robots }}">{% endif %}
+    <link rel="canonical" href="{{ seo.canonical }}">
+    {% for lang, href in seo.alternates %}
+    <link rel="alternate" hreflang="{{ lang }}" href="{{ href }}">
+    {% endfor %}
+    <link rel="alternate" hreflang="x-default" href="{{ seo.x_default }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Learn Catalan">
+    <meta property="og:title" content="{{ seo_title or title or page_title }}">
+    <meta property="og:description" content="{{ description }}">
+    <meta property="og:url" content="{{ seo.canonical }}">
+    <meta property="og:image" content="{{ seo.site_url }}{{ url_for('static', filename='og-image.png') }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="{{ seo.og_locale }}">
+    {% for locale in seo.og_locale_alternates %}
+    <meta property="og:locale:alternate" content="{{ locale }}">
+    {% endfor %}
+    <meta name="twitter:card" content="summary_large_image">
+    {% if request.endpoint == 'main.home' %}
+    <script type="application/ld+json">{{ seo_website_data() | tojson }}</script>
+    {% endif %}
+    {% for data in structured_data or [] %}
+    <script type="application/ld+json">{{ data | tojson }}</script>
+    {% endfor %}
+    {% else %}
     {% if title %}
     <title>Learn Catalan - {{ title }}</title>
     {% else %}
     <title>Learn Catalan</title>
     {% endif %}
+    {% endif %}
 </head>
+{#- The page's summary for search results; pages override it. -#}
+{%- if false %}{% block meta_description %}{{ _('Вивчайте каталонську українською: курс граматики від A1 до C1, каталонсько-український словник, дієвідміна понад 8 000 дієслів і уроки вимови з озвученням.') }}{% endblock %}{% endif %}
 <body class="d-flex flex-column min-vh-100">
     {% from "partials/icons.html" import icon %}
     {% set section = request.blueprint %}
@@ -122,9 +161,6 @@
               <li><a class="lc-menu-link lc-menu-minor{% if endpoint == 'users.register' %} active{% endif %}"
                      href="{{ url_for('users.register') }}">{{ icon('register') }}<span>{{ _('Зареєструватися') }}</span></a></li>
             {% endif %}
-            <li><button class="lc-menu-link lc-menu-minor lc-design-toggle" type="button" id="designToggle">
-                {{ icon('design') }}<span class="lc-design-classic">{{ _('Класичний вигляд') }}</span><span class="lc-design-modern">{{ _('Новий вигляд') }}</span>
-            </button></li>
           </ul>
         </div>
       </nav>
@@ -162,15 +198,6 @@
               var next = root.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
               root.setAttribute('data-bs-theme', next);
               try { localStorage.setItem('theme', next); } catch (e) {}
-            });
-          }
-          // Modern / classic look; the choice is kept in this browser only.
-          var designButton = document.getElementById('designToggle');
-          if (designButton) {
-            designButton.addEventListener('click', function () {
-              var next = root.getAttribute('data-design') === 'classic' ? 'modern' : 'classic';
-              root.setAttribute('data-design', next);
-              try { localStorage.setItem('design', next); } catch (e) {}
             });
           }
           // Follow the system setting until the user picks a theme explicitly.

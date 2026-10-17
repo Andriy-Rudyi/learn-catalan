@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% block meta_description %}{{ _('Курс каталонської граматики українською: {count} юнітів від A1 до C1 з поясненнями, прикладами та вправами з відповідями.', count=total) }}{% endblock %}
 
 {% macro unit_row(unit, show_section) %}
   <a class="list-group-item list-group-item-action"

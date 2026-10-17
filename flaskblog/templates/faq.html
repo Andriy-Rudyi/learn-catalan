@@ -1,26 +1,78 @@
 {% extends "layout.html" %}
+{% block meta_description %}{{ _('Відповіді на часті запитання про Learn Catalan: як увімкнути звук у фонетиці, з чого почати вивчення каталонської, як користуватися словником і дієвідміною.') }}{% endblock %}
 {% block content %}
-<div class="faq">
-  <h1>{{ _('Часті запитання') }}</h1>
-  <p class="text-muted">
-    {{ _('Не знайшли відповіді? Напишіть нам:') }}
-    <a href="mailto:support@learn-catalan.com">support@learn-catalan.com</a>
-  </p>
+<article class="faq">
+  <header class="faq-head">
+    <h1>{{ _('Часті запитання') }}</h1>
+    <p class="faq-lead">
+      {{ _('Відповіді на найчастіші запитання про сайт. Не знайшли свого? Напишіть нам:') }}
+      <a href="mailto:{{ support_email }}">{{ support_email }}</a>
+    </p>
+    <input class="faq-filter" type="search" id="faqFilter" autocomplete="off"
+           placeholder="{{ _('Пошук у запитаннях') }}" aria-label="{{ _('Пошук у запитаннях') }}">
+  </header>
 
-  {% include 'faq/' ~ ('en' if current_lang == 'en' else 'uk') ~ '.html' %}
-</div>
+  <nav class="faq-toc" id="faq-toc" aria-label="{{ _('Зміст') }}">
+    {% for section in sections %}
+      <div class="faq-toc-section">
+        <h2 class="faq-toc-title"><a href="#{{ section.id }}">{{ section.title }}</a></h2>
+        <ul>
+          {% for question in section.questions %}
+            <li><a href="#{{ question.id }}">{{ question.q }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+  </nav>
+
+  {% for section in sections %}
+    <section class="faq-section" id="{{ section.id }}">
+      <h2 class="faq-section-title">{{ section.title }}</h2>
+      {% for question in section.questions %}
+        <div class="faq-question" id="{{ question.id }}">
+          <h3>
+            <a class="faq-anchor" href="#{{ question.id }}" aria-label="{{ _('Посилання на це запитання') }}">#</a>
+            {{ question.q }}
+          </h3>
+          <div class="faq-answer">{{ question.a | safe }}</div>
+        </div>
+      {% endfor %}
+      <p class="faq-top"><a href="#faq-toc">↑ {{ _('До змісту') }}</a></p>
+    </section>
+  {% endfor %}
+
+  <p class="faq-empty d-none" id="faqEmpty">
+    {{ _('Нічого не знайдено. Спробуйте інше слово або напишіть нам:') }}
+    <a href="mailto:{{ support_email }}">{{ support_email }}</a>
+  </p>
+</article>
 {% endblock content %}
 
 {% block scripts %}
 <script>
-  // A link to /faq#sound opens that answer.
+  // Filter the questions as you type.
   (function () {
-    function openFromHash() {
-      var item = window.location.hash && document.getElementById(window.location.hash.slice(1));
-      if (item && item.tagName === 'DETAILS') { item.open = true; item.scrollIntoView(); }
-    }
-    openFromHash();
-    window.addEventListener('hashchange', openFromHash);
+    var input = document.getElementById('faqFilter');
+    var toc = document.getElementById('faq-toc');
+    var empty = document.getElementById('faqEmpty');
+    if (!input) { return; }
+    input.addEventListener('input', function () {
+      var words = input.value.toLowerCase().split(/\s+/).filter(Boolean);
+      var found = 0;
+      document.querySelectorAll('.faq-section').forEach(function (section) {
+        var shown = 0;
+        section.querySelectorAll('.faq-question').forEach(function (question) {
+          var text = question.textContent.toLowerCase();
+          var match = words.every(function (word) { return text.indexOf(word) !== -1; });
+          question.classList.toggle('d-none', !match);
+          if (match) { shown += 1; }
+        });
+        section.classList.toggle('d-none', !shown);
+        found += shown;
+      });
+      toc.classList.toggle('d-none', words.length > 0);
+      empty.classList.toggle('d-none', found > 0);
+    });
   })();
 </script>
 {% endblock scripts %}

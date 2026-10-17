@@ -1,4 +1,6 @@
 {% extends "layout.html" %}
+{% set canonical_path = url_for('grammar.unit', slug=unit.slug) %}
+{% block meta_description %}{% if unit.l_summary %}{{ unit.l_summary }} {% endif %}{{ _('Юніт {number} курсу каталонської граматики ({level}): пояснення, приклади та вправи з відповідями.', number=unit.number, level=unit.level or 'A1') }}{% endblock %}
 {% block content %}
 <div class="grammar-unit">
   <p class="small"><a href="{{ url_for('grammar.index') }}">← {{ _('До списку юнітів') }}</a></p>

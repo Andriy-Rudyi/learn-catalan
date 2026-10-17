@@ -11,6 +11,7 @@ from flaskblog.conjugation.labels import (
     person_labels,
     tense_label,
 )
+from flaskblog.main import faq as faq_content
 from flaskblog.phonetics.service import load_lessons
 from flaskblog.models import (Announcement, GrammarUnit, Post, Update, UserWord,
                               Word)
@@ -49,7 +50,14 @@ def lessons():
 def faq():
     if not current_app.config.get('SHOW_FAQ'):
         abort(404)
-    return render_template('faq.html', title=_('Часті запитання'), ProjectName=PROJECT_NAME)
+    sections = faq_content.sections()
+    return render_template(
+        'faq.html',
+        title=_('Часті запитання'),
+        sections=sections,
+        support_email=faq_content.SUPPORT_EMAIL,
+        structured_data=[faq_content.structured_data(sections)],
+    )
 
 
 @main.route("/announcements")

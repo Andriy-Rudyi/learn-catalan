@@ -389,10 +389,55 @@ MESSAGES = {
     # -- header ------------------------------------------------------------
     'Пошук слова': 'Search for a word',
     # -- design switch and FAQ ----------------------------------------------
-    'Класичний вигляд': 'Classic look',
-    'Новий вигляд': 'New look',
     'Часті запитання': 'Frequently asked questions',
-    'Не знайшли відповіді? Напишіть нам:': 'Didn’t find an answer? Write to us:',
+    'Відповіді на найчастіші запитання про сайт. Не знайшли свого? Напишіть нам:': (
+        'Answers to the most common questions about the site. Didn’t find yours? Write to us:'
+    ),
+    'Пошук у запитаннях': 'Search the questions',
+    'Зміст': 'Contents',
+    'До змісту': 'Back to contents',
+    'Посилання на це запитання': 'Link to this question',
+    'Нічого не знайдено. Спробуйте інше слово або напишіть нам:': 'Nothing found. Try another word or write to us:',
+
+    # -- search engines and link previews ------------------------------------
+    'каталонська мова українською': 'grammar, dictionary and pronunciation',
+    '{verb}: дієвідміна дієслова': '{verb} conjugation',
+    '{term}: переклад з каталонської': '{term}: Catalan to English translation',
+    'Вивчайте каталонську українською: курс граматики від A1 до C1, каталонсько-український словник, дієвідміна понад 8 000 дієслів і уроки вимови з озвученням.': (
+        'Learn Catalan online: a grammar course from A1 to C1, a Catalan dictionary with English '
+        'translations, a conjugator for over 8,000 verbs and pronunciation lessons with audio.'
+    ),
+    'Відповіді на часті запитання про Learn Catalan: як увімкнути звук у фонетиці, з чого почати вивчення каталонської, як користуватися словником і дієвідміною.': (
+        'Answers to common questions about Learn Catalan: how to turn on audio in the pronunciation '
+        'lessons, where to start learning Catalan, and how to use the dictionary and conjugator.'
+    ),
+    'Курс каталонської граматики українською: {count} юнітів від A1 до C1 з поясненнями, прикладами та вправами з відповідями.': (
+        'A Catalan grammar course in English: {count} units from A1 to C1 with explanations, '
+        'examples and exercises with answers.'
+    ),
+    'Юніт {number} курсу каталонської граматики ({level}): пояснення, приклади та вправи з відповідями.': (
+        'Unit {number} of the Catalan grammar course ({level}): explanation, examples and exercises with answers.'
+    ),
+    'Каталонська вимова для українців: звуки, наголос і вимова у мовленні з транскрипцією, озвученими прикладами та вправами.': (
+        'Catalan pronunciation for English speakers: sounds, stress and connected speech with IPA, '
+        'audio examples and exercises.'
+    ),
+    'Урок каталонської вимови: звуки з транскрипцією, слова для тренування з озвученням і вправи.': (
+        'A Catalan pronunciation lesson: sounds with IPA, practice words with audio, and exercises.'
+    ),
+    'Каталонсько-український словник: {words} з перекладом, прикладами, рівнем і озвученням. Пошук каталонською та українською.': (
+        'Catalan dictionary: {words} with English translations, examples, levels and audio. '
+        'Search in Catalan or English.'
+    ),
+    'Переклад, приклад і вимова в каталонсько-українському словнику.': (
+        'Translation, example and pronunciation in the Catalan dictionary.'
+    ),
+    'Дієвідміна каталонського дієслова {verb}: усі часи та способи, особові форми й переклад.': (
+        'Conjugation of the Catalan verb {verb}: every tense and mood, all personal forms and the translation.'
+    ),
+    'Дієвідміна каталонських дієслів: усі часи та способи понад 8 000 дієслів з перекладом.': (
+        'Catalan verb conjugation: every tense and mood of over 8,000 verbs, with translations.'
+    ),
     'Не чути звуку?': 'No sound?',
     'Як увімкнути звук': 'How to turn on audio',
     'Докладна інструкція': 'Step-by-step instructions',

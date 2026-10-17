@@ -37,6 +37,9 @@ def create_app(config_class=Config):
     from flaskblog import i18n
     i18n.init_app(app)
     login_manager.localize_callback = i18n.gettext
+
+    from flaskblog import seo
+    seo.init_app(app)
     
     from flaskblog.admin.routes import admin_bp, init_admin
     init_admin(app)
