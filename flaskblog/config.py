@@ -1,17 +1,37 @@
 import os
 
 
+# Set by the hosting platforms; there a missing setting must be an error
+# rather than a silent fallback.
+HOSTED_MARKERS = ('RENDER', 'RAILWAY_ENVIRONMENT', 'DYNO', 'FLY_APP_NAME')
+
+# Local development without any settings: the SQLite file in instance/.
+LOCAL_DATABASE_URL = 'sqlite:///learn_catalan.db'
+LOCAL_SECRET_KEY = 'local-development-only'
+
+
+def is_hosted():
+    return any(os.getenv(marker) for marker in HOSTED_MARKERS)
+
+
 def database_url():
     """Database URL from the hosting environment.
 
     Railway exposes DATABASE_PUBLIC_URL; Render, Heroku and Fly use
     DATABASE_URL. Some of them still hand out the old ``postgres://``
-    scheme, which SQLAlchemy no longer accepts.
+    scheme, which SQLAlchemy no longer accepts. On a developer's machine
+    with neither set, the local SQLite database is used.
     """
     url = os.getenv('DATABASE_PUBLIC_URL') or os.getenv('DATABASE_URL')
     if url and url.startswith('postgres://'):
         url = 'postgresql://' + url[len('postgres://'):]
+    if not url and not is_hosted():
+        url = LOCAL_DATABASE_URL
     return url
+
+
+def secret_key():
+    return os.getenv('SECRET_KEY') or (None if is_hosted() else LOCAL_SECRET_KEY)
 
 
 class Config:
@@ -20,7 +40,7 @@ class Config:
     # SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI')
 
     # Production db
-    SECRET_KEY = os.getenv('SECRET_KEY')
+    SECRET_KEY = secret_key()
     SQLALCHEMY_DATABASE_URI = database_url()
     # Free hosted databases (Neon, Render) close idle connections; check each
     # pooled connection before use instead of failing the next request.

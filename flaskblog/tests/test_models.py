@@ -52,7 +52,7 @@ class DatabaseUrlTests(unittest.TestCase):
     def _url(self, **env):
         from unittest import mock
         from flaskblog.config import database_url
-        keys = ('DATABASE_PUBLIC_URL', 'DATABASE_URL')
+        keys = ('DATABASE_PUBLIC_URL', 'DATABASE_URL', 'RENDER')
         clean = {k: v for k, v in env.items() if k in keys}
         with mock.patch.dict('os.environ', clean, clear=False):
             for key in keys:
@@ -66,6 +66,12 @@ class DatabaseUrlTests(unittest.TestCase):
 
     def test_falls_back_to_database_url(self):
         self.assertEqual('sqlite:///b.db', self._url(DATABASE_URL='sqlite:///b.db'))
+
+    def test_local_sqlite_when_nothing_is_set(self):
+        self.assertEqual('sqlite:///learn_catalan.db', self._url())
+
+    def test_no_silent_fallback_on_a_host(self):
+        self.assertIsNone(self._url(RENDER='true'))
 
     def test_old_postgres_scheme_is_fixed(self):
         self.assertEqual('postgresql://u:p@h/db', self._url(DATABASE_URL='postgres://u:p@h/db'))
