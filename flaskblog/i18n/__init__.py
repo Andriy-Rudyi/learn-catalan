@@ -168,6 +168,8 @@ def init_app(app):
 
     @app.after_request
     def remember_language(response):
+        if request.blueprint == 'api':
+            return response  # ?lang= there picks translations, not the interface
         chosen = request.args.get('lang')
         if chosen in LANGUAGES and request.cookies.get(COOKIE_NAME) != chosen:
             response.set_cookie(COOKIE_NAME, chosen, max_age=COOKIE_MAX_AGE,

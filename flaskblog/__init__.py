@@ -40,6 +40,9 @@ def create_app(config_class=Config):
 
     from flaskblog import seo
     seo.init_app(app)
+
+    from flaskblog import api
+    api.init_app(app)
     
     from flaskblog.admin.routes import admin_bp, init_admin
     init_admin(app)

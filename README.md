@@ -123,7 +123,9 @@ learn-catalan/
 │   │   ├── routes.py      # Dictionary and personal word list
 │   │   ├── service.py     # Search, CSV import/export
 │   │   ├── cli.py         # flask vocabulary ...
-│   │   └── data/seed_words.csv
+│   │   └── data/words.csv, data/translations/<lang>.csv
+│   ├── api/               # Open API /api/v1 and the /developers page
+│   ├── languages.py       # Languages the dictionary is translated into
 │   ├── tests/             # Test suite
 │   ├── templates/         # Jinja templates
 │   └── static/            # CSS and assets
@@ -198,11 +200,34 @@ flask vocabulary stats             # counts by topic and level
 ```
 
 CSV columns: `term, translation, part_of_speech, gender, pronunciation, topic,
-level, example_ca, example_uk, notes`. Only `term` and `translation` are
-required. Importing is idempotent: a term already in the dictionary is skipped
-unless `--update` is given.
+level, example_ca, example_uk, notes, translation_en, example_en, notes_en`,
+and for any other language `translation_<code>`, `example_<code>`,
+`notes_<code>` (`translation_fr`, `example_fr`…). Only `term` and a translation
+in some language are required. Importing is idempotent: a term already in the
+dictionary is skipped unless `--update` is given, and then only the columns in
+the file change.
 
-The starter file `flaskblog/vocabulary/data/seed_words.csv` holds 3,228 words
+### Many languages
+
+A dictionary word is one Catalan entry (`Word`: term, part of speech, level,
+topic, Catalan example, regional marks) plus one `WordTranslation` row per
+language (translation, example in that language, notes). Adding a language
+therefore needs no database change:
+
+1. Add it to `flaskblog/languages.py` if it is not there (French, Italian,
+   Spanish, Polish, German, Arabic and Chinese already are).
+2. Put its translations in `flaskblog/vocabulary/data/translations/<code>.csv`
+   with the columns `term, translation, example, notes` (rows matched to
+   `data/words.csv` by `term`), or import a CSV with `translation_<code>`
+   columns, or add them one by one in the admin panel (Word Translation).
+3. `flask vocabulary seed --update` loads them; Render runs it on every deploy.
+
+Where a word has no translation in the language asked for, English and then
+Ukrainian are shown. The interface itself (menus, buttons) is translated
+separately, see [Languages](#languages).
+
+The bundled dictionary lives in `flaskblog/vocabulary/data/words.csv` (the
+Catalan side) and `data/translations/uk.csv`, `data/translations/en.csv`. It holds 3,572 words
 across 21 topics (including Catalan cuisine and traditions), mostly A1-B1, including 2,210 verbs and C1 vocabulary such as discourse connectors and idioms. Verbs were chosen by how often their infinitive occurs in a Catalan subtitle corpus (OpenSubtitles 2018 frequency list), so the conjugator has a translation for nearly every verb people actually look up. The conjugator looks a
 verb up here to show its translation, so dictionary entries double as the
 conjugator's glossary.
@@ -238,6 +263,27 @@ proof that it is Central (normative dictionaries list many Valencian words
 without a mark), so existing marks are only ever confirmed or added, never
 removed automatically; the report lists the ones Wiktionary did not confirm.
 
+## Open API
+
+The dictionary and the conjugator are open for other sites and apps:
+read-only JSON at `/api/v1`, no key, CORS open to every origin. A page for
+developers is at `/developers`, the OpenAPI description at
+`/api/v1/openapi.json`.
+
+| Endpoint | What it returns |
+| --- | --- |
+| `GET /api/v1/words?q=&lang=&topic=&level=&part_of_speech=&variety=&page=&per_page=` | Search, 20 words a page (up to 100) |
+| `GET /api/v1/words/<slug or term>?lang=fr,uk` | One word with its translations |
+| `GET /api/v1/conjugations/<verb>` | Every tense and mood, forms by person (`1s`…`3p`) |
+| `GET /api/v1/verbs?q=par` | Infinitives for autocomplete |
+| `GET /api/v1/languages` | Translation languages and word counts |
+| `GET /api/v1/dictionary.csv` | The whole dictionary, every language |
+
+Each client address may make `API_RATE_LIMIT` requests a minute (120 by
+default, `0` for no limit); beyond that the answer is 429 with `Retry-After`.
+The limit is counted per server process. Errors are
+`{"error": {"code", "message"}}`. The code is in `flaskblog/api/`.
+
 ## Grammar course
 
 `/grammar` is a grammar course laid out like Raymond Murphy's grammar books:
@@ -270,7 +316,7 @@ Course content has separate English versions:
 | --- | --- | --- |
 | Grammar units | `flaskblog/grammar/data/units_*.json` | `flaskblog/grammar/data/en/units_*.json` (loaded by `flask grammar seed` into `GrammarUnit.translations`) |
 | Phonetics | `flaskblog/phonetics/data/lessons.json` | `flaskblog/phonetics/data/lessons_en.json` |
-| Dictionary | `translation`, `example_uk`, `notes` | `translation_en`, `example_en`, `notes_en` columns of `seed_words.csv` |
+| Dictionary | `flaskblog/vocabulary/data/translations/uk.csv` | `flaskblog/vocabulary/data/translations/en.csv` (one file per language, see [Many languages](#many-languages)) |
 
 `flaskblog/tests/test_i18n.py` renders the English pages and fails if any of
 them still shows Cyrillic, so a missing translation is caught by the tests.
@@ -329,6 +375,7 @@ SHOW_FAQ=True                # set to False to hide the FAQ page
 DESIGN=modern                # set to classic to bring back the earlier look for everyone
 SEO=True                     # set to False to switch off the search engine tags, robots.txt and sitemap.xml
 SITE_URL=https://example.com # public address for canonical links and the sitemap (optional)
+API_RATE_LIMIT=120           # open API requests a minute per client address; 0 = no limit
 TEST_DATABASE_URI=           # optional, tests default to in-memory SQLite
 ```
 

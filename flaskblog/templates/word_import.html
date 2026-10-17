@@ -19,6 +19,7 @@
   <p class="small text-muted">
     {{ _('Колонки:') }} <code>term, translation, part_of_speech, gender, pronunciation, topic,
     level, example_ca, example_uk, notes, translation_en, example_en, notes_en</code>.
+    {{ _('Інші мови — колонки <code>translation_fr</code>, <code>example_fr</code>, <code>notes_fr</code> (і так само для it, es, pl, de, ar, zh).') | safe }}
     {{ _('Обов’язкові лише <code>term</code> і <code>translation</code>.') | safe }}
     {{ _('Зразок можна отримати, експортувавши словник:') }} <a href="{{ url_for('vocabulary.export_dictionary') }}">CSV</a>.
   </p>

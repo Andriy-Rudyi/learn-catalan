@@ -259,16 +259,10 @@ class SeedVerbTests(unittest.TestCase):
     """Every verb in the bundled dictionary must be conjugable."""
 
     def test_seed_verbs_conjugate(self):
-        import csv
-
-        from flaskblog.vocabulary.service import SEED_FILE
+        from flaskblog.vocabulary.service import seed_rows
 
         service = get_service()
-        with open(SEED_FILE, encoding='utf-8') as handle:
-            verbs = [
-                row['term'] for row in csv.DictReader(handle)
-                if row['part_of_speech'] == 'verb'
-            ]
+        verbs = [row['term'] for row in seed_rows() if row['part_of_speech'] == 'verb']
         self.assertGreater(len(verbs), 300)
         unknown = [verb for verb in verbs if not service.is_known_verb(verb)]
         self.assertEqual([], unknown)

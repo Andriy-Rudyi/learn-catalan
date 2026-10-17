@@ -20,7 +20,7 @@ def init_admin(app):
                                   CommentView, GrammarUnit, GrammarUnitView,
                                   Post, PostView, Update, UpdateView, User,
                                   UserView, UserWord, UserWordView, Word,
-                                  WordView)
+                                  WordTranslation, WordTranslationView, WordView)
 
     admin = Admin(
         name='My Admin Panel',
@@ -35,6 +35,7 @@ def init_admin(app):
     admin.add_view(AnnouncementView(Announcement, db.session))
     admin.add_view(GrammarUnitView(GrammarUnit, db.session))
     admin.add_view(WordView(Word, db.session))
+    admin.add_view(WordTranslationView(WordTranslation, db.session))
     admin.add_view(UserWordView(UserWord, db.session))
     admin.init_app(app)
     return admin

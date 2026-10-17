@@ -190,8 +190,7 @@ class CheckTests(unittest.TestCase):
 class DataFileTests(unittest.TestCase):
 
     def test_entries_are_valid_dictionary_words(self):
-        with open(service.SEED_FILE, encoding='utf-8') as handle:
-            terms = {row['term'] for row in csv.DictReader(handle)}
+        terms = {row['term'] for row in service.seed_rows()}
         entries = varieties.load()
         self.assertIn('acotxar', entries)
         self.assertIn('eixir', entries)

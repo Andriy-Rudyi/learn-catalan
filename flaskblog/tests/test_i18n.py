@@ -123,6 +123,7 @@ class EnglishPagesTests(AppTestCase):
             '/reset_password',
             '/no-such-page',
             '/faq',
+            '/developers',
         ):
             self.assertEnglish(url)
 
@@ -193,9 +194,7 @@ class EnglishContentTests(unittest.TestCase):
                               lesson['number'])
 
     def test_every_dictionary_word_has_an_english_translation(self):
-        with open(vocabulary_service.SEED_FILE, encoding='utf-8') as handle:
-            rows = vocabulary_service.read_rows(handle.read())
-        for row in rows:
+        for row in vocabulary_service.seed_rows():
             self.assertTrue(row.get('translation_en'), row['term'])
             for key in ('translation_en', 'example_en', 'notes_en'):
                 self.assertIsNone(CYRILLIC.search(row.get(key) or ''), (row['term'], key))

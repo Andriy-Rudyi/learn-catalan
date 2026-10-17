@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+{% block meta_description %}{{ _('Відкритий API Learn Catalan: каталонський словник із перекладами кількома мовами та дієвідміна дієслів у форматі JSON, без ключа.') }}{% endblock %}
+{% block content %}
+<article class="faq docs">
+  <header class="faq-head">
+    <h1>{{ _('API для розробників') }}</h1>
+    <p class="faq-lead">
+      {{ _('Словник і дієвідміна відкриті: їх можна вбудувати у свій сайт, застосунок або бота. Відповіді у форматі JSON, ключ не потрібен, запити дозволені з будь-якого домену (CORS).') }}
+    </p>
+  </header>
+
+  <section class="faq-section">
+    <h2 class="faq-section-title">{{ _('Швидкий старт') }}</h2>
+    <pre class="docs-code"><code>curl {{ base }}/words/anar
+curl "{{ base }}/words?q=casa&amp;lang=en,uk"
+curl {{ base }}/conjugations/parlar</code></pre>
+    <pre class="docs-code"><code>const res = await fetch('{{ base }}/conjugations/anar');
+const { data } = await res.json();
+console.log(data.moods.indicatiu.present);  // [{person: '1s', form: 'jo vaig'}, …]</code></pre>
+  </section>
+
+  <section class="faq-section">
+    <h2 class="faq-section-title">{{ _('Запити') }}</h2>
+    <div class="table-responsive">
+      <table class="table docs-table">
+        <tbody>
+          <tr><td><code>GET /words</code></td><td>{{ _('Пошук і список слів. Параметри: q, lang, topic, level, part_of_speech, variety, page, per_page (до 100).') }}</td></tr>
+          <tr><td><code>GET /words/{slug}</code></td><td>{{ _('Одне слово: переклади, приклад, рівень, тема, регіональні позначки.') }}</td></tr>
+          <tr><td><code>GET /conjugations/{verb}</code></td><td>{{ _('Усі часи та способи дієслова, зокрема зворотних (rentar-se).') }}</td></tr>
+          <tr><td><code>GET /verbs?q=par</code></td><td>{{ _('Дієслова, що починаються з цих літер (для автодоповнення).') }}</td></tr>
+          <tr><td><code>GET /languages</code></td><td>{{ _('Мови перекладів і кількість слів у кожній.') }}</td></tr>
+          <tr><td><code>GET /dictionary.csv</code></td><td>{{ _('Увесь словник одним файлом CSV, усіма мовами.') }}</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      {{ _('Адреса всіх запитів:') }} <code>{{ base }}</code>.
+      {{ _('Повний опис у форматі OpenAPI:') }} <a href="{{ url_for('api.openapi') }}">openapi.json</a>.
+    </p>
+  </section>
+
+  <section class="faq-section">
+    <h2 class="faq-section-title">{{ _('Приклад відповіді') }}</h2>
+    <pre class="docs-code"><code>{
+  "data": {
+    "term": "anar",
+    "language": "ca",
+    "part_of_speech": "verb",
+    "level": "A1",
+    "example": "Vaig a la feina.",
+    "translations": {
+      "en": {"translation": "go (on foot, by transport)", "example": "I’m going to work.", "notes": null},
+      {% if current_lang == 'uk' %}"uk": {"translation": "йти, їхати", "example": "Я йду на роботу.", "notes": null}{% else %}"uk": {…}{% endif %}
+    },
+    "conjugation": "{{ base }}/conjugations/anar",
+    "url": "…/dictionary/anar"
+  }
+}</code></pre>
+  </section>
+
+  <section class="faq-section">
+    <h2 class="faq-section-title">{{ _('Мови') }}</h2>
+    <p>
+      {{ _('Параметр <code>lang</code> вибирає мови перекладів, наприклад <code>lang=fr,uk</code>; без нього приходять усі.') | safe }}
+      {{ _('Коди:') }}
+      {% for language in languages %}<code>{{ language.code }}</code> ({{ language.name if current_lang == 'en' else language.native }}){% if not loop.last %}, {% endif %}{% endfor %}.
+      {{ _('Мови, для яких перекладів ще немає, з’являться у відповідях, щойно їх додадуть.') }}
+    </p>
+  </section>
+
+  <section class="faq-section">
+    <h2 class="faq-section-title">{{ _('Правила') }}</h2>
+    <ul>
+      {% if config.API_RATE_LIMIT %}
+      <li>{{ _('До {limit} запитів на хвилину з однієї адреси. Більше — відповідь 429 і заголовок Retry-After.', limit=config.API_RATE_LIMIT) }}</li>
+      {% endif %}
+      <li>{{ _('Відповіді можна кешувати: вони змінюються рідко (Cache-Control: 1 година).') }}</li>
+      <li>{{ _('Будь ласка, вказуйте джерело з посиланням на Learn Catalan.') }}</li>
+      <li>{{ _('Помилки приходять як') }} <code>{"error": {"code": "…", "message": "…"}}</code>.</li>
+    </ul>
+  </section>
+</article>
+{% endblock content %}

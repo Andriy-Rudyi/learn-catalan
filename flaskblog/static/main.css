@@ -1558,3 +1558,37 @@ a.article-title:hover {
     --size: 64px !important;
   }
 }
+
+/* ---------- Copyright at the bottom of the side menu ---------- */
+.lc-side .offcanvas-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.lc-side-footer {
+  margin: 1rem 8px 0;
+  padding-top: .75rem;
+  border-top: 1px solid var(--border-soft);
+  color: var(--muted-text);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* ---------- Developers page ---------- */
+.docs-code {
+  padding: .85rem 1rem;
+  border-radius: 6px;
+  background: var(--surface-muted);
+  border: 1px solid var(--border-soft);
+  font-size: .85rem;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.docs-table td:first-child {
+  white-space: nowrap;
+}
+
+.lc-side-footer a {
+  color: inherit;
+}

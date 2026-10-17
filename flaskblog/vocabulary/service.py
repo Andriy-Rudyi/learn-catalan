@@ -3,21 +3,55 @@
 import csv
 import io
 import os
+import re
 
 from slugify import slugify
 from sqlalchemy import case, or_
 
 from flaskblog import db
-from flaskblog.models import UserWord, Word
+from flaskblog.languages import CODES as LANGUAGE_CODES, is_known
+from flaskblog.models import UserWord, Word, WordTranslation
 from flaskblog.i18n import gettext
 from flaskblog.vocabulary import varieties
 from flaskblog.vocabulary.constants import CSV_COLUMNS
 
 DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
-SEED_FILE = os.path.join(DATA_DIR, 'seed_words.csv')
+# The bundled dictionary: the Catalan side of every word, and one file per
+# language with its translations (translations/uk.csv, translations/en.csv...),
+# all matched by "term". A new language is a new file there.
+WORDS_FILE = os.path.join(DATA_DIR, 'words.csv')
+TRANSLATIONS_DIR = os.path.join(DATA_DIR, 'translations')
 
-# Only these may be set from a CSV row; anything else in the file is ignored.
-IMPORTABLE_FIELDS = CSV_COLUMNS
+# Catalan fields of a word, as CSV columns.
+WORD_FIELDS = ('term', 'part_of_speech', 'gender', 'pronunciation', 'topic', 'level', 'example_ca')
+# Per-language fields, as columns "<field>_<lang>" (translation_fr, example_fr...).
+TRANSLATION_FIELDS = ('translation', 'example', 'notes')
+# Ukrainian and English keep the column names they had before.
+LEGACY_COLUMNS = {
+    'translation': ('uk', 'translation'),
+    'example_uk': ('uk', 'example'),
+    'notes': ('uk', 'notes'),
+    'translation_en': ('en', 'translation'),
+    'example_en': ('en', 'example'),
+    'notes_en': ('en', 'notes'),
+}
+_COLUMN_NAMES = {value: key for key, value in LEGACY_COLUMNS.items()}
+_COLUMN = re.compile(r'^(translation|example|notes)_([a-z]{2,3})$')
+
+
+def column_name(lang, field):
+    """The CSV column for *field* in *lang*: translation_fr, or a legacy name."""
+    return _COLUMN_NAMES.get((lang, field), '{}_{}'.format(field, lang))
+
+
+def parse_column(name):
+    """(lang, field) for a translation column, None for anything else."""
+    if name in LEGACY_COLUMNS:
+        return LEGACY_COLUMNS[name]
+    match = _COLUMN.match(name or '')
+    if match and is_known(match.group(2)):
+        return match.group(2), match.group(1)
+    return None
 
 
 class ImportReport(object):
@@ -62,6 +96,7 @@ def search(query_text=None, topic=None, level=None, part_of_speech=None, variety
     """
     query = Word.query
     rank = None
+    in_translation = None
     if variety == 'central':
         query = query.filter(or_(Word.variety.is_(None), Word.variety == ''))
     elif variety == 'regional':
@@ -69,18 +104,19 @@ def search(query_text=None, topic=None, level=None, part_of_speech=None, variety
     if query_text:
         text = query_text.strip().replace('%', '').replace('_', '')
         pattern = '%{}%'.format(text)
+        # A translation in any language.
+        in_translation = Word.translations.any(WordTranslation.translation.ilike(pattern))
         rank = case(
             (db.func.lower(Word.term) == text.lower(), 0),
             (Word.term.ilike(text + '%'), 1),
             (Word.term.ilike(pattern), 2),
-            (or_(Word.translation.ilike(pattern), Word.translation_en.ilike(pattern)), 3),
+            (in_translation, 3),
             else_=4,
         )
         query = query.filter(
             or_(
                 Word.term.ilike(pattern),
-                Word.translation.ilike(pattern),
-                Word.translation_en.ilike(pattern),
+                in_translation,
                 Word.example_ca.ilike(pattern),
             )
         )
@@ -118,39 +154,49 @@ def read_rows(stream):
 def import_rows(rows, author=None, update_existing=False):
     """Create (or update) dictionary entries from CSV-style rows.
 
-    Rows without a term and a translation are reported as errors; a term
-    that already exists is skipped unless *update_existing* is set.  The
-    caller commits.
+    Columns are the Catalan fields (WORD_FIELDS) and, per language,
+    ``translation_<lang>``, ``example_<lang>`` and ``notes_<lang>`` (or the
+    legacy names: translation, example_uk, notes, translation_en...). Rows
+    without a term or without a translation in any language are reported
+    as errors; a term that already exists is skipped unless
+    *update_existing* is set, and then only the columns in the row change.
+    The caller commits.
     """
     report = ImportReport()
+    existing_words = {word.term.lower(): word for word in Word.query.all()}
     for number, row in enumerate(rows, start=2):  # row 1 is the header
         values = {
             field: (row.get(field) or '').strip()
-            for field in IMPORTABLE_FIELDS
+            for field in WORD_FIELDS
             if field in row
         }
+        translations = {}
+        for column, value in row.items():
+            parsed = parse_column(column)
+            if parsed:
+                lang, field = parsed
+                translations.setdefault(lang, {})[field] = (value or '').strip()
         term = values.get('term', '')
-        translation = values.get('translation', '')
-        if not term or not translation:
+        if not term or not any(fields.get('translation') for fields in translations.values()):
             report.errors.append(
                 gettext('рядок {number}: потрібні колонки term і translation', number=number)
             )
             continue
 
-        existing = Word.query.filter(db.func.lower(Word.term) == term.lower()).first()
-        if existing is not None:
+        word = existing_words.get(term.lower())
+        if word is not None:
             if not update_existing:
                 report.skipped += 1
                 continue
             for field, value in values.items():
                 if field != 'term':
-                    setattr(existing, field, value or None)
+                    setattr(word, field, value or None)
+            _apply_translations(word, translations)
             report.updated += 1
             continue
 
         word = Word(
             term=term,
-            translation=translation,
             slug=unique_slug(term),
             part_of_speech=values.get('part_of_speech') or None,
             gender=values.get('gender') or None,
@@ -158,18 +204,21 @@ def import_rows(rows, author=None, update_existing=False):
             topic=values.get('topic') or None,
             level=values.get('level') or None,
             example_ca=values.get('example_ca') or None,
-            example_uk=values.get('example_uk') or None,
-            notes=values.get('notes') or None,
-            translation_en=values.get('translation_en') or None,
-            example_en=values.get('example_en') or None,
-            notes_en=values.get('notes_en') or None,
             user_id=getattr(author, 'id', None),
         )
+        _apply_translations(word, translations)
         db.session.add(word)
-        # Flush so that the next row's uniqueness checks see this term.
+        # Flush so that the next row's slug check sees this word.
         db.session.flush()
+        existing_words[term.lower()] = word
         report.created += 1
     return report
+
+
+def _apply_translations(word, translations):
+    for lang, fields in translations.items():
+        for field, value in fields.items():
+            word._set(lang, field, value)
 
 
 def import_file(path, author=None, update_existing=False):
@@ -177,9 +226,36 @@ def import_file(path, author=None, update_existing=False):
         return import_rows(read_rows(handle), author, update_existing)
 
 
+def _read_csv(path):
+    with io.open(path, encoding='utf-8-sig', newline='') as handle:
+        return list(csv.DictReader(handle))
+
+
+def seed_languages():
+    """Codes of the languages that have a translations file."""
+    names = os.listdir(TRANSLATIONS_DIR) if os.path.isdir(TRANSLATIONS_DIR) else []
+    found = {name[:-4] for name in names if name.endswith('.csv')}
+    return [code for code in LANGUAGE_CODES if code in found]
+
+
+def seed_rows():
+    """The bundled dictionary as import rows: words.csv joined with every
+    translations/<lang>.csv by term."""
+    rows = [dict(row) for row in _read_csv(WORDS_FILE)]
+    by_term = {row['term']: row for row in rows}
+    for lang in seed_languages():
+        for entry in _read_csv(os.path.join(TRANSLATIONS_DIR, lang + '.csv')):
+            row = by_term.get(entry.get('term'))
+            if row is None:
+                continue  # a translation of a word that is not in words.csv
+            for field in TRANSLATION_FIELDS:
+                row[column_name(lang, field)] = entry.get(field) or ''
+    return rows
+
+
 def import_seed(author=None, update_existing=False):
     """Load the dictionary that ships with the project."""
-    report = import_file(SEED_FILE, author=author, update_existing=update_existing)
+    report = import_rows(seed_rows(), author=author, update_existing=update_existing)
     apply_varieties()
     return report
 
@@ -212,16 +288,31 @@ def apply_varieties(entries=None):
 
 
 def export_csv(words=None):
-    """Serialise the dictionary (or *words*) as CSV text."""
+    """Serialise the dictionary (or *words*) as CSV text.
+
+    Ukrainian and English come in the familiar columns (CSV_COLUMNS); every
+    other language with translations adds translation_<lang>, example_<lang>
+    and notes_<lang>, so the file imports back unchanged.
+    """
     if words is None:
         words = Word.query.order_by(Word.term).all()
+    others = [
+        lang for lang in LANGUAGE_CODES
+        if lang not in ('uk', 'en') and any(lang in word.translations for word in words)
+    ]
+    columns = list(CSV_COLUMNS) + [
+        column_name(lang, field) for lang in others for field in TRANSLATION_FIELDS
+    ]
     buffer = io.StringIO()
-    writer = csv.DictWriter(buffer, fieldnames=list(CSV_COLUMNS))
+    writer = csv.DictWriter(buffer, fieldnames=columns)
     writer.writeheader()
     for word in words:
-        writer.writerow(
-            {field: getattr(word, field, '') or '' for field in CSV_COLUMNS}
-        )
+        row = {}
+        for column in columns:
+            parsed = parse_column(column)
+            value = word._get(*parsed) if parsed else getattr(word, column, '')
+            row[column] = value or ''
+        writer.writerow(row)
     return buffer.getvalue()
 
 

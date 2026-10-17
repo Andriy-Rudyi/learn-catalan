@@ -971,3 +971,21 @@ html[data-design="modern"] .lc-header-user:hover {
 html[data-design="modern"] .lc-header-user .lc-avatar {
   border: 0;
 }
+
+/* Copyright: pinned to the bottom of the side menu */
+html[data-design="modern"] .lc-side .offcanvas-body {
+  min-height: 100%;
+}
+
+html[data-design="modern"] .lc-side-footer {
+  margin: auto 14px 0;
+  padding-top: 1rem;
+  border-top: 0;
+  font-size: 12px;
+}
+
+html[data-design="modern"] .docs-code {
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--search-bg);
+}

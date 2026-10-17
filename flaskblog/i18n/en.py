@@ -205,6 +205,10 @@ MESSAGES = {
         'Import finished: {created} added, {updated} updated, {skipped} skipped.'
     ),
     'рядок {number}: потрібні колонки term і translation': 'row {number}: the term and translation columns are required',
+    'Інші мови — колонки <code>translation_fr</code>, <code>example_fr</code>, <code>notes_fr</code> (і так само для it, es, pl, de, ar, zh).': (
+        'Other languages: columns <code>translation_fr</code>, <code>example_fr</code>, <code>notes_fr</code> '
+        '(and the same for it, es, pl, de, ar, zh).'
+    ),
     # my dictionary
     'Загальний словник': 'Full dictionary',
     'Додати своє слово': 'Add your own word',
@@ -416,6 +420,49 @@ MESSAGES = {
     'До змісту': 'Back to contents',
     'Посилання на це запитання': 'Link to this question',
     'Нічого не знайдено. Спробуйте інше слово або напишіть нам:': 'Nothing found. Try another word or write to us:',
+
+    # -- developers page (open API) ------------------------------------------
+    'API для розробників': 'API for developers',
+    'Відкритий API Learn Catalan: каталонський словник із перекладами кількома мовами та дієвідміна дієслів у форматі JSON, без ключа.': (
+        'The Learn Catalan open API: a Catalan dictionary with translations into several languages '
+        'and verb conjugation as JSON, no key needed.'
+    ),
+    'Словник і дієвідміна відкриті: їх можна вбудувати у свій сайт, застосунок або бота. Відповіді у форматі JSON, ключ не потрібен, запити дозволені з будь-якого домену (CORS).': (
+        'The dictionary and the conjugator are open: build them into your site, app or bot. '
+        'Answers are JSON, no key is needed, and requests are allowed from any domain (CORS).'
+    ),
+    'Швидкий старт': 'Quick start',
+    'Запити': 'Endpoints',
+    'Пошук і список слів. Параметри: q, lang, topic, level, part_of_speech, variety, page, per_page (до 100).': (
+        'Search and list words. Parameters: q, lang, topic, level, part_of_speech, variety, page, per_page (up to 100).'
+    ),
+    'Одне слово: переклади, приклад, рівень, тема, регіональні позначки.': (
+        'One word: translations, example, level, topic, regional marks.'
+    ),
+    'Усі часи та способи дієслова, зокрема зворотних (rentar-se).': 'Every tense and mood of a verb, reflexive ones too (rentar-se).',
+    'Дієслова, що починаються з цих літер (для автодоповнення).': 'Verbs starting with these letters (for autocomplete).',
+    'Мови перекладів і кількість слів у кожній.': 'Translation languages and how many words each has.',
+    'Увесь словник одним файлом CSV, усіма мовами.': 'The whole dictionary as one CSV file, in every language.',
+    'Адреса всіх запитів:': 'Base address:',
+    'Повний опис у форматі OpenAPI:': 'Full description in OpenAPI format:',
+    'Приклад відповіді': 'Example answer',
+    'Мови': 'Languages',
+    'Параметр <code>lang</code> вибирає мови перекладів, наприклад <code>lang=fr,uk</code>; без нього приходять усі.': (
+        'The <code>lang</code> parameter picks the translation languages, e.g. <code>lang=fr,uk</code>; without it you get all of them.'
+    ),
+    'Коди:': 'Codes:',
+    'Мови, для яких перекладів ще немає, з’являться у відповідях, щойно їх додадуть.': (
+        'Languages without translations yet will appear in the answers as soon as they are added.'
+    ),
+    'Правила': 'Rules',
+    'До {limit} запитів на хвилину з однієї адреси. Більше — відповідь 429 і заголовок Retry-After.': (
+        'Up to {limit} requests a minute from one address. Beyond that the answer is 429 with a Retry-After header.'
+    ),
+    'Відповіді можна кешувати: вони змінюються рідко (Cache-Control: 1 година).': (
+        'Answers may be cached: they change rarely (Cache-Control: 1 hour).'
+    ),
+    'Будь ласка, вказуйте джерело з посиланням на Learn Catalan.': 'Please credit the source with a link to Learn Catalan.',
+    'Помилки приходять як': 'Errors look like',
 
     # -- search engines and link previews ------------------------------------
     'каталонська мова українською': 'grammar, dictionary and pronunciation',

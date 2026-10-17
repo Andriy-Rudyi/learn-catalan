@@ -77,6 +77,9 @@ class Config:
     # https://learn-catalan.com. Without it the address of the request is used.
     SITE_URL = os.getenv('SITE_URL')
 
+    # Open API (/api/v1): requests a minute per client address; 0 = no limit.
+    API_RATE_LIMIT = int(os.getenv('API_RATE_LIMIT', '120'))
+
     MAIL_SERVER = 'smtp-mail.outlook.com'
     MAIL_PORT = 587
     MAIL_USE_TLS = True

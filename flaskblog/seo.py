@@ -37,6 +37,7 @@ INDEXABLE = {
     'phonetics.lesson',
     'vocabulary.dictionary',
     'vocabulary.word',
+    'api_docs.developers',
 }
 
 # Query parameters that make a different page rather than a different view.
@@ -142,6 +143,7 @@ def robots_txt():
         'Disallow: /account',
         'Disallow: /my-dictionary',
         'Disallow: /api/',
+        'Allow: /api/v1/openapi.json',
         'Disallow: /reset_password',
         'Disallow: /dictionary/export.csv',
         'Disallow: /dictionary/import',
@@ -177,6 +179,7 @@ def _sitemap_paths():
             yield conjugator, [('verb', term)]
     if current_app.config.get('SHOW_FAQ'):
         yield url_for('main.faq'), []
+    yield url_for('api_docs.developers'), []
 
 
 def _build_sitemap():

@@ -81,10 +81,7 @@ class SeedQualityTests(unittest.TestCase):
     """Cheap guards on the bundled dictionary."""
 
     def setUp(self):
-        import csv
-
-        with open(service.SEED_FILE, encoding='utf-8') as handle:
-            self.rows = list(csv.DictReader(handle))
+        self.rows = service.seed_rows()
 
     def test_terms_are_unique(self):
         terms = [row['term'] for row in self.rows]

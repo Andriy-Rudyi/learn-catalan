@@ -25,6 +25,7 @@ def links():
         'register': url_for('users.register'),
         'login': url_for('users.login'),
         'reset': url_for('users.reset_request'),
+        'developers': url_for('api_docs.developers'),
         'email': SUPPORT_EMAIL,
     }
 
@@ -179,6 +180,14 @@ UK = [
 <p>Введіть дієслово в інфінітиві, наприклад <a href="{conjugator_anar}">anar</a>, і ви побачите
 всі часи та способи з особовими формами. Якщо дієслово є у словнику, поруч буде його переклад.
 Зворотні дієслова вводьте з -se: <em>rentar-se</em>.</p>""",
+            },
+            {
+                'id': 'api',
+                'q': 'Чи можна використати словник і дієвідміну у своєму застосунку?',
+                'a': """
+<p>Так. Словник і дієвідміна доступні через відкритий API у форматі JSON, без ключа:
+їх можна вбудувати у свій сайт, застосунок чи бота. Опис і приклади — на сторінці
+<a href="{developers}">API для розробників</a>.</p>""",
             },
         ],
     },
@@ -383,6 +392,14 @@ A word’s page has its translation, an example, audio and, for verbs, a link to
 <p>Enter a verb in the infinitive, for example <a href="{conjugator_anar}">anar</a>, to see every tense and mood
 with all the personal forms. If the verb is in the dictionary, its translation is shown too.
 Enter reflexive verbs with -se: <em>rentar-se</em>.</p>""",
+            },
+            {
+                'id': 'api',
+                'q': 'Can I use the dictionary and conjugator in my own app?',
+                'a': """
+<p>Yes. The dictionary and conjugator are available through an open JSON API with no key:
+build them into your site, app or bot. See <a href="{developers}">API for developers</a>
+for the details and examples.</p>""",
             },
         ],
     },

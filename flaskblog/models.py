@@ -3,11 +3,13 @@ from itsdangerous.url_safe import URLSafeTimedSerializer as Serializer
 from flask import current_app
 from flaskblog import db, login_manager
 from flaskblog.i18n import get_locale, gettext
+from flaskblog.languages import CODES as LANGUAGE_CODES, fallback_chain
 from flaskblog.permissions import is_admin
 from flask_login import UserMixin
 from flask_admin.contrib.sqla import ModelView
 from flask_admin import AdminIndexView
 from slugify import slugify
+from sqlalchemy.orm import attribute_keyed_dict
 import json
 
 @login_manager.user_loader
@@ -130,24 +132,24 @@ class AnnouncementView(ModelView):
         return is_admin()
 
 class Word(db.Model):
-    """An entry of the shared Catalan-Ukrainian dictionary."""
+    """A Catalan entry of the shared dictionary.
+
+    Everything about the Catalan word lives here; its translation, example
+    and notes in each language are WordTranslation rows (``word.translations``
+    is a dict by language code). ``translation``, ``example_uk``, ``notes``
+    and the ``*_en`` attributes read and write the Ukrainian and English rows,
+    as the columns of the same names did before.
+    """
 
     id = db.Column(db.Integer, primary_key=True)
     term = db.Column(db.String(100), nullable=False, index=True)
     slug = db.Column(db.String(120), unique=True, nullable=False)
-    translation = db.Column(db.String(255), nullable=False)
     part_of_speech = db.Column(db.String(20), nullable=True, index=True)
     gender = db.Column(db.String(10), nullable=True)
     pronunciation = db.Column(db.String(100), nullable=True)
     topic = db.Column(db.String(50), nullable=True, index=True)
     level = db.Column(db.String(5), nullable=True, index=True)
     example_ca = db.Column(db.String(255), nullable=True)
-    example_uk = db.Column(db.String(255), nullable=True)
-    notes = db.Column(db.Text, nullable=True)
-    # English counterparts of translation / example_uk / notes.
-    translation_en = db.Column(db.String(255), nullable=True)
-    example_en = db.Column(db.String(255), nullable=True)
-    notes_en = db.Column(db.Text, nullable=True)
     # Not used in Central Catalan: comma-separated codes from
     # flaskblog.vocabulary.varieties ("valencian,balearic"), and where the mark
     # comes from ("review", "wiktionary-en", "wiktionary-ca", "manual").
@@ -160,6 +162,12 @@ class Word(db.Model):
     saved_by = db.relationship(
         'UserWord', backref='word', lazy=True, cascade="all, delete-orphan"
     )
+    # {'uk': WordTranslation, 'en': ...}; loaded together with lists of words.
+    translations = db.relationship(
+        'WordTranslation', back_populates='word', lazy='selectin',
+        cascade='all, delete-orphan',
+        collection_class=attribute_keyed_dict('lang'),
+    )
 
     def __init__(self, *args, **kwargs):
         super(Word, self).__init__(*args, **kwargs)
@@ -170,11 +178,54 @@ class Word(db.Model):
     def is_verb(self):
         return self.part_of_speech == 'verb'
 
-    # -- text in the interface language; Ukrainian when English is missing
-    def _localized(self, ukrainian, english):
-        if get_locale() == 'en' and english:
-            return english
-        return ukrainian
+    # -- translations ------------------------------------------------------
+    def translation_in(self, lang, fallback=True):
+        """The WordTranslation for *lang*, or for the first fallback that has one."""
+        chain = fallback_chain(lang) if fallback else [lang]
+        for code in chain:
+            entry = self.translations.get(code)
+            if entry is not None and entry.translation:
+                return entry
+        return None
+
+    def _get(self, lang, field):
+        entry = self.translations.get(lang)
+        return getattr(entry, field) if entry is not None else None
+
+    def _set(self, lang, field, value):
+        value = value or None
+        entry = self.translations.get(lang)
+        if entry is None:
+            if value is None:
+                return
+            entry = self.translations[lang] = WordTranslation(lang=lang, translation='')
+        setattr(entry, field, value if field != 'translation' else (value or ''))
+        if not (entry.translation or entry.example or entry.notes):
+            del self.translations[lang]
+
+    def set_translation(self, lang, translation=None, example=None, notes=None):
+        self._set(lang, 'translation', translation)
+        self._set(lang, 'example', example)
+        self._set(lang, 'notes', notes)
+
+    @property
+    def languages(self):
+        """Codes of the languages this word is translated into."""
+        return [code for code in LANGUAGE_CODES if self._get(code, 'translation')]
+
+    # The Ukrainian and English rows under their former column names.
+    translation = property(lambda self: self._get('uk', 'translation'),
+                           lambda self, value: self._set('uk', 'translation', value))
+    example_uk = property(lambda self: self._get('uk', 'example'),
+                          lambda self, value: self._set('uk', 'example', value))
+    notes = property(lambda self: self._get('uk', 'notes'),
+                     lambda self, value: self._set('uk', 'notes', value))
+    translation_en = property(lambda self: self._get('en', 'translation'),
+                              lambda self, value: self._set('en', 'translation', value))
+    example_en = property(lambda self: self._get('en', 'example'),
+                          lambda self, value: self._set('en', 'example', value))
+    notes_en = property(lambda self: self._get('en', 'notes'),
+                        lambda self, value: self._set('en', 'notes', value))
 
     @property
     def variety_codes(self):
@@ -191,20 +242,50 @@ class Word(db.Model):
         from flaskblog.vocabulary import varieties
         return (varieties.load().get(self.term) or {}).get('central')
 
+    # -- text in the interface language, or the nearest one there is ----------
     def t_translation(self):
-        return self._localized(self.translation, self.translation_en)
+        entry = self.translation_in(get_locale())
+        return entry.translation if entry else ''
 
     def t_example(self):
-        return self._localized(self.example_uk, self.example_en)
+        entry = self.translation_in(get_locale())
+        return entry.example if entry else None
 
     def t_notes(self):
-        return self._localized(self.notes, self.notes_en)
+        entry = self.translation_in(get_locale())
+        return entry.notes if entry else None
 
     def __repr__(self):
         return f"Word('{self.term}', '{self.translation}')"
 
     def __str__(self):
         return f"{self.term}: {self.translation}"
+
+
+class WordTranslation(db.Model):
+    """A dictionary word in one language: translation, example and notes."""
+
+    __tablename__ = 'word_translation'
+    __table_args__ = (
+        db.UniqueConstraint('word_id', 'lang', name='uq_word_translation_lang'),
+    )
+
+    id = db.Column(db.Integer, primary_key=True)
+    word_id = db.Column(
+        db.Integer, db.ForeignKey('word.id', ondelete='CASCADE'), nullable=False, index=True
+    )
+    lang = db.Column(db.String(10), nullable=False, index=True)
+    translation = db.Column(db.String(255), nullable=False, default='')
+    example = db.Column(db.String(255), nullable=True)
+    notes = db.Column(db.Text, nullable=True)
+
+    word = db.relationship('Word', back_populates='translations')
+
+    def __repr__(self):
+        return f"WordTranslation({self.lang!r}, {self.translation!r})"
+
+    def __str__(self):
+        return f"{self.lang}: {self.translation}"
 
 
 class UserWord(db.Model):
@@ -254,12 +335,11 @@ class UserWord(db.Model):
 
 class WordView(ModelView):
     form_columns = [
-        'term', 'translation', 'part_of_speech', 'gender', 'pronunciation',
-        'topic', 'level', 'example_ca', 'example_uk', 'notes',
-        'translation_en', 'example_en', 'notes_en', 'variety', 'variety_source',
+        'term', 'part_of_speech', 'gender', 'pronunciation',
+        'topic', 'level', 'example_ca', 'variety', 'variety_source',
     ]
-    column_list = ['term', 'translation', 'translation_en', 'part_of_speech', 'topic', 'level']
-    column_searchable_list = ['term', 'translation', 'translation_en']
+    column_list = ['term', 'translation', 'translation_en', 'languages', 'part_of_speech', 'topic', 'level']
+    column_searchable_list = ['term']
     column_filters = ['part_of_speech', 'topic', 'level', 'variety']
     column_default_sort = 'term'
 
@@ -269,6 +349,22 @@ class WordView(ModelView):
     def on_model_change(self, form, model, is_created):
         if not model.slug and model.term:
             model.slug = slugify(model.term)
+
+
+class WordTranslationView(ModelView):
+    """Translations of dictionary words, one row per language: add French,
+    Polish... here (or in bulk with a CSV file)."""
+
+    column_list = ['word', 'lang', 'translation', 'example']
+    column_filters = ['lang']
+    column_searchable_list = ['translation', 'word.term']
+    column_default_sort = 'word_id'
+    form_columns = ['word', 'lang', 'translation', 'example', 'notes']
+    form_ajax_refs = {'word': {'fields': ['term'], 'page_size': 20}}
+    form_choices = {'lang': [(code, code) for code in LANGUAGE_CODES]}
+
+    def is_accessible(self):
+        return is_admin()
 
 
 class UserWordView(ModelView):
