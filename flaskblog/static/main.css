@@ -842,6 +842,12 @@ a.article-title:hover {
   .lc-side.offcanvas-lg {
     width: 260px;
     background: var(--surface);
+    /* As tall as the visible screen: Safari on iPhone lays its toolbar over
+       whatever reaches the very bottom (bottom: 0). */
+    bottom: auto;
+    height: 100vh;
+    height: 100dvh;
+    padding-bottom: env(safe-area-inset-bottom);
   }
   .lc-side .offcanvas-body {
     padding: 4px 10px 16px;

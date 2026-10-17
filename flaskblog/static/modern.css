@@ -972,9 +972,13 @@ html[data-design="modern"] .lc-header-user .lc-avatar {
   border: 0;
 }
 
-/* Copyright: pinned to the bottom of the side menu */
-html[data-design="modern"] .lc-side .offcanvas-body {
-  min-height: 100%;
+/* Copyright: pinned to the bottom of the side menu. On phones the body
+   already fills the drawer under its header (Bootstrap's flex-grow); a
+   min-height of 100% there pushed the copyright below the screen. */
+@media (min-width: 992px) {
+  html[data-design="modern"] .lc-side .offcanvas-body {
+    min-height: 100%;
+  }
 }
 
 html[data-design="modern"] .lc-side-footer {
