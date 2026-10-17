@@ -479,4 +479,5 @@ MESSAGES = {
     'множина': 'pluriel',
     'жіночий рід': 'féminin',
     'Синоніми на сторінці «Текст» взято з тезауруса Softcatalà (sinonims-cat), ліцензія CC BY 4.0.': 'Les synonymes de la page Texte proviennent du thésaurus de Softcatalà (sinonims-cat), sous licence CC BY 4.0.',
+    'Нова функція: можливі неточності': 'Nouvelle fonction : des imprécisions sont possibles',
 }

@@ -2124,3 +2124,33 @@ a.article-title:hover {
     max-height: none;
   }
 }
+
+/* "Beta" label on new features (the Text page). */
+.beta-badge {
+  display: inline-block;
+  margin-left: .45rem;
+  padding: .05rem .4rem;
+  border-radius: 999px;
+  background: rgba(224, 165, 38, .2);
+  color: #a86b00;
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .03em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+[data-bs-theme="dark"] .beta-badge {
+  color: #f5c46b;
+}
+
+.lc-menu-link.active .beta-badge {
+  background: rgba(255, 255, 255, .25);
+  color: inherit;
+}
+
+.beta-badge-lg {
+  font-size: .8rem;
+  vertical-align: .3em;
+}

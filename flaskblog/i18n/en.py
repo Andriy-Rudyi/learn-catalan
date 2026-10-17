@@ -613,4 +613,5 @@ MESSAGES = {
     'множина': 'plural',
     'жіночий рід': 'feminine',
     'Синоніми на сторінці «Текст» взято з тезауруса Softcatalà (sinonims-cat), ліцензія CC BY 4.0.': 'Synonyms on the Text page come from the Softcatalà thesaurus (sinonims-cat), licensed CC BY 4.0.',
+    'Нова функція: можливі неточності': 'New feature: there may be inaccuracies',
 }

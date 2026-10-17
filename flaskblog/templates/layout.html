@@ -156,7 +156,7 @@
                    href="{{ url_for('phonetics.index') }}">{{ icon('phonetics') }}<span>{{ _('Фонетика') }}</span></a></li>
             {% if config.READER %}
             <li><a class="lc-menu-link{% if endpoint == 'reader.index' %} active{% endif %}"
-                   href="{{ url_for('reader.index') }}">{{ icon('text') }}<span>{{ _('Текст') }}</span></a></li>
+                   href="{{ url_for('reader.index') }}">{{ icon('text') }}<span>{{ _('Текст') }}</span><span class="beta-badge">Beta</span></a></li>
             {% endif %}
             {% if config.SHOW_FAQ %}
             <li><a class="lc-menu-link{% if endpoint == 'main.faq' %} active{% endif %}"
