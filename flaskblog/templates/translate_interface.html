@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% from "partials/translate.html" import field_form, suggestion_list, filters_nav, search_box, login_hint with context %}
+{% block content %}
+{% set labels = {'missing': _('Без перекладу'), 'done': _('Перекладені'), 'suggestions': _('Пропозиції'), 'all': _('Усі')} %}
+<div class="translate">
+  <p class="small"><a href="{{ url_for('translate.index') }}">← {{ _('Усі мови') }}</a></p>
+  <div class="page-head">
+    <div>
+      <h1 class="mb-1">{{ _('Інтерфейс') }}: {{ language.native }}</h1>
+      <p class="text-muted mb-0">{{ _('Меню, кнопки й підказки сайту. Текст у фігурних дужках, як {count}, і HTML-теги залишайте як є.') }}</p>
+    </div>
+    <a class="btn btn-sm btn-outline-secondary" href="{{ url_for('translate.history', lang=lang) }}">{{ _('Історія змін') }}</a>
+  </div>
+
+  <div class="translate-toolbar">
+    {{ filters_nav('translate.interface', lang, status, filters, labels, q) }}
+    {{ search_box('translate.interface', lang, status, q) }}
+  </div>
+  {{ login_hint() }}
+
+  {% if lang not in site_languages %}
+    <p class="small text-muted">{{ _('Цієї мови ще немає в меню мов сайту: її вмикають у коді, коли інтерфейс перекладено.') }}</p>
+  {% endif %}
+
+  {% if not rows %}
+    <div class="content-section text-center text-muted">{{ _('Тут нічого немає. Спробуйте інший фільтр.') }}</div>
+  {% else %}
+    <div class="content-section translate-card">
+      {% for source, reference, current, on_site in rows %}
+        {% set key = key_of(source) %}
+        <div class="translate-row" id="k{{ key[:12] }}">
+          <div class="translate-ref">
+            <span class="translate-ref-line"><span class="translate-lang">uk</span> {{ source }}</span>
+            {% if reference %}<span class="translate-ref-line"><span class="translate-lang">en</span> {{ reference }}</span>{% endif %}
+          </div>
+          <div class="translate-edit">
+            {% if current is none %}
+              <span class="translate-chip translate-chip-missing">{{ _('немає') }}</span>
+            {% elif on_site %}
+              <span class="translate-chip translate-chip-done">{{ _('на сайті') }}</span>
+            {% else %}
+              <span class="translate-chip">{{ _('з файлу') }}</span>
+            {% endif %}
+            {{ field_form(form, url_for('translate.save_interface', lang=lang), 'k' ~ key[:12], current or '',
+                          {'key': key}, can_translate, can_suggest, multiline=(source | length > 70),
+                          maxlength=2000, label=source | truncate(40)) }}
+          </div>
+          {{ suggestion_list(suggestions.get(source), form, can_translate) }}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if pages > 1 %}
+    <nav class="translate-pages" aria-label="{{ _('Сторінки') }}">
+      {% if page > 1 %}<a class="btn btn-sm btn-outline-secondary" href="{{ url_for('translate.interface', lang=lang, status=status, q=q or None, page=page - 1) }}">← {{ _('Назад') }}</a>{% endif %}
+      <span class="text-muted small">{{ page }} / {{ pages }} · {{ total }}</span>
+      {% if page < pages %}<a class="btn btn-sm btn-outline-secondary" href="{{ url_for('translate.interface', lang=lang, status=status, q=q or None, page=page + 1) }}">{{ _('Далі') }} →</a>{% endif %}
+    </nav>
+  {% endif %}
+</div>
+{% endblock content %}

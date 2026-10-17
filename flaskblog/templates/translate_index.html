@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="translate">
+  <div class="page-head">
+    <div>
+      <h1 class="mb-1">{{ _('Переклад') }}</h1>
+      <p class="text-muted mb-0">{{ _('Допоможіть перекласти словник та інтерфейс сайту своєю мовою.') }}</p>
+    </div>
+  </div>
+
+  <section class="content-section translate-how">
+    <ol class="translate-steps">
+      <li>
+        <strong>{{ _('Виберіть мову') }}</strong>
+        <span>{{ _('Словник перекладають за значеннями: у слова «tocar» їх два, і кожне перекладається окремо. Поруч показано англійський переклад як орієнтир.') }}</span>
+      </li>
+      <li>
+        <strong>{{ _('Запропонуйте переклад') }}</strong>
+        <span>{{ _('Кожен, хто увійшов, може запропонувати переклад. Інші бачать пропозиції, тож одну роботу не роблять двічі.') }}</span>
+      </li>
+      <li>
+        <strong>{{ _('Перекладач перевіряє') }}</strong>
+        <span>{{ _('Перекладач мови приймає пропозиції, виправляє машинні переклади й позначає їх перевіреними. Кожну зміну видно в історії, її можна скасувати.') }}</span>
+      </li>
+    </ol>
+    <p class="small text-muted mb-0">
+      {% if not current_user.is_authenticated %}
+        {{ _('Щоб пропонувати переклади,') }} <a href="{{ url_for('users.login', next=request.path) }}">{{ _('увійдіть') }}</a>.
+      {% elif my_languages == ['*'] %}
+        {{ _('Ви можете перекладати й перевіряти всі мови.') }}
+      {% elif my_languages %}
+        {{ _('Ви перекладач:') }} {% for code in my_languages %}{{ language_label(code) }}{% if not loop.last %}, {% endif %}{% endfor %}.
+      {% else %}
+        {{ _('Ваші переклади йдуть як пропозиції. Хочете стати перекладачем мови? Напишіть адміністраторові.') }}
+      {% endif %}
+    </p>
+  </section>
+
+  <div class="translate-languages">
+    {% for row in rows %}
+      {% set code = row.language.code %}
+      <section class="content-section translate-language">
+        <div class="translate-language-head">
+          <h2 class="h5 mb-0">{{ row.language.native }}</h2>
+          <span class="text-muted small">{{ row.language.name }} · {{ code }}</span>
+          {% if row.suggestions %}
+            <a class="badge translate-badge-suggest ms-auto" href="{{ url_for('translate.dictionary', lang=code, status='suggestions') }}">
+              {{ _('пропозицій: {count}', count=row.suggestions) }}
+            </a>
+          {% endif %}
+        </div>
+
+        {% set done = percent(row.senses, row.senses_total) %}
+        {% set checked = percent(row.checked, row.senses_total) %}
+        <div class="translate-progress-label">
+          <a href="{{ url_for('translate.dictionary', lang=code) }}">{{ _('Словник') }}</a>
+          <span>{{ done }}%</span>
+        </div>
+        <div class="translate-progress" role="img" aria-label="{{ _('{done}% перекладено, {checked}% перевірено', done=done, checked=checked) }}">
+          <span class="translate-progress-checked" style="width: {{ checked }}%"></span>
+          <span class="translate-progress-draft" style="width: {{ done - checked }}%"></span>
+        </div>
+        <div class="translate-progress-note">{{ _('перевірено {checked}%', checked=checked) }}{% if done > checked %} · <span class="translate-dot-draft"></span>{{ _('чернетки') }}{% endif %}</div>
+
+        {% if row.interface is not none %}
+          {% set ui = percent(row.interface, row.interface_total) %}
+          <div class="translate-progress-label">
+            <a href="{{ url_for('translate.interface', lang=code) }}">{{ _('Інтерфейс') }}</a>
+            <span>{{ ui }}%</span>
+          </div>
+          <div class="translate-progress" role="img" aria-label="{{ _('{done}% перекладено', done=ui) }}">
+            <span class="translate-progress-checked" style="width: {{ ui }}%"></span>
+          </div>
+        {% else %}
+          <p class="small text-muted mt-2 mb-0">{{ _('Інтерфейс сайту написано цією мовою.') }}</p>
+        {% endif %}
+
+        <p class="small mt-2 mb-0"><a class="text-muted" href="{{ url_for('translate.history', lang=code) }}">{{ _('Історія змін') }}</a></p>
+      </section>
+    {% endfor %}
+  </div>
+
+  {% if changes %}
+    <section class="content-section">
+      <h2 class="h5">{{ _('Останні зміни') }}</h2>
+      <ul class="translate-recent">
+        {% for record in changes %}
+          <li>
+            <span class="text-muted small">{{ record.created_at.strftime('%Y-%m-%d %H:%M') }}</span>
+            <span class="translate-lang">{{ record.lang }}</span>
+            {% if record.kind == 'ui' %}{{ _('інтерфейс') }}{% elif record.word %}<a href="{{ url_for('vocabulary.word', slug=record.word.slug) }}">{{ record.word.term }}</a>{% endif %}
+            {% if record.action == 'review' %}<span class="text-muted">{{ _('позначено як перевірене') }}</span>{% elif record.new_text %}→ {{ record.new_text | truncate(80) }}{% else %}<span class="text-muted">{{ _('видалено') }}</span>{% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endif %}
+</div>
+{% endblock content %}

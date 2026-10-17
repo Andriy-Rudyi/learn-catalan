@@ -18,7 +18,8 @@ def init_admin(app):
     from flaskblog import db
     from flaskblog.models import (Announcement, AnnouncementView, Comment,
                                   CommentView, GrammarUnit, GrammarUnitView,
-                                  Post, PostView, Update, UpdateView, User,
+                                  Post, PostView, Translator, TranslatorView,
+                                  Update, UpdateView, User,
                                   UserView, UserWord, UserWordView, Word,
                                   WordTranslation, WordTranslationView, WordView)
 
@@ -37,5 +38,6 @@ def init_admin(app):
     admin.add_view(WordView(Word, db.session))
     admin.add_view(WordTranslationView(WordTranslation, db.session))
     admin.add_view(UserWordView(UserWord, db.session))
+    admin.add_view(TranslatorView(Translator, db.session))
     admin.init_app(app)
     return admin

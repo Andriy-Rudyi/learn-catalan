@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+  SPDX-License-Identifier: GPL-2.0-or-later
+
   Corrections to verbecc 1.9.7's Catalan data.
+
+  verbecc's Catalan data (conjugations-ca.xml, verbs-ca.xml) comes from
+  Verbiste (c) 2003-2016 Pierre Sarrazin and catverbs by Neil Roberts,
+  under the GNU General Public License, version 2 or later. These
+  corrections change that data and are under the same licence, unlike
+  the rest of this project (MIT).
 
   Endings follow verbecc's own notation: they are appended to the verb
   stem, each leading hyphen deletes one letter from the stem first ("mou"

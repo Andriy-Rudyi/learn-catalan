@@ -9,7 +9,7 @@ from flask_login import UserMixin
 from flask_admin.contrib.sqla import ModelView
 from flask_admin import AdminIndexView
 from slugify import slugify
-from sqlalchemy.orm import attribute_keyed_dict
+from sqlalchemy.orm import attribute_keyed_dict, declared_attr
 import json
 
 @login_manager.user_loader
@@ -168,6 +168,11 @@ class Word(db.Model):
         cascade='all, delete-orphan',
         collection_class=attribute_keyed_dict('lang'),
     )
+    # Its meanings, in order (flaskblog/vocabulary/senses.py).
+    senses = db.relationship(
+        'WordSense', back_populates='word', lazy='selectin',
+        cascade='all, delete-orphan', order_by='WordSense.position',
+    )
 
     def __init__(self, *args, **kwargs):
         super(Word, self).__init__(*args, **kwargs)
@@ -280,6 +285,9 @@ class WordTranslation(db.Model):
     notes = db.Column(db.Text, nullable=True)
     # False for a draft (e.g. a machine translation) nobody has checked yet.
     reviewed = db.Column(db.Boolean, nullable=False, default=True, server_default=db.true())
+    # Changed on the site (editor, translation platform, CSV upload): the
+    # bundled files no longer overwrite it on deploy.
+    edited = db.Column(db.Boolean, nullable=False, default=False, server_default=db.false())
 
     word = db.relationship('Word', back_populates='translations')
 
@@ -288,6 +296,176 @@ class WordTranslation(db.Model):
 
     def __str__(self):
         return f"{self.lang}: {self.translation}"
+
+
+class WordSense(db.Model):
+    """One meaning of a dictionary word ("tocar": 1. touch, 2. play).
+
+    Translations are attached to meanings: ``sense.translations`` is a dict
+    by language code. The meanings of a word follow its English translation
+    (the pivot language); WordTranslation.translation keeps every
+    language's meanings joined with ";" (flaskblog/vocabulary/senses.py
+    keeps the two in step).
+    """
+
+    __tablename__ = 'word_sense'
+
+    id = db.Column(db.Integer, primary_key=True)
+    word_id = db.Column(
+        db.Integer, db.ForeignKey('word.id', ondelete='CASCADE'), nullable=False, index=True
+    )
+    position = db.Column(db.Integer, nullable=False, default=1)
+
+    word = db.relationship('Word', back_populates='senses')
+    translations = db.relationship(
+        'SenseTranslation', back_populates='sense', lazy='selectin',
+        cascade='all, delete-orphan',
+        collection_class=attribute_keyed_dict('lang'),
+    )
+
+    def text_in(self, lang, fallback=True):
+        """The SenseTranslation for *lang*, or for the first fallback that has one."""
+        for code in (fallback_chain(lang) if fallback else [lang]):
+            entry = self.translations.get(code)
+            if entry is not None and entry.text:
+                return entry
+        return None
+
+    def __repr__(self):
+        return f"WordSense({self.word_id!r}, {self.position!r})"
+
+
+class SenseTranslation(db.Model):
+    """A meaning of a word in one language."""
+
+    __tablename__ = 'sense_translation'
+    __table_args__ = (
+        db.UniqueConstraint('sense_id', 'lang', name='uq_sense_translation_lang'),
+    )
+
+    id = db.Column(db.Integer, primary_key=True)
+    sense_id = db.Column(
+        db.Integer, db.ForeignKey('word_sense.id', ondelete='CASCADE'), nullable=False, index=True
+    )
+    lang = db.Column(db.String(10), nullable=False, index=True)
+    text = db.Column(db.String(255), nullable=False, default='')
+    reviewed = db.Column(db.Boolean, nullable=False, default=True, server_default=db.true())
+
+    sense = db.relationship('WordSense', back_populates='translations')
+
+    def __repr__(self):
+        return f"SenseTranslation({self.lang!r}, {self.text!r})"
+
+
+class Translator(db.Model):
+    """Someone who may translate and review one language on /translate
+    (``lang`` '*' for all of them). Granted in the admin panel."""
+
+    __tablename__ = 'translator'
+    __table_args__ = (
+        db.UniqueConstraint('user_id', 'lang', name='uq_translator_lang'),
+    )
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(
+        db.Integer, db.ForeignKey('user.id', ondelete='CASCADE'), nullable=False, index=True
+    )
+    lang = db.Column(db.String(10), nullable=False)
+
+    user = db.relationship(
+        'User', backref=db.backref('translator_roles', cascade='all, delete-orphan')
+    )
+
+    def __str__(self):
+        return f"{self.user.username if self.user else self.user_id}: {self.lang}"
+
+
+class UiTranslation(db.Model):
+    """An interface string translated on /translate. It overrides the
+    catalogue in flaskblog/i18n (``flask translations export`` writes it
+    back there)."""
+
+    __tablename__ = 'ui_translation'
+    __table_args__ = (
+        db.UniqueConstraint('lang', 'key', name='uq_ui_translation_key'),
+    )
+
+    id = db.Column(db.Integer, primary_key=True)
+    lang = db.Column(db.String(10), nullable=False, index=True)
+    # sha1 of the source (Ukrainian) string, which can be long.
+    key = db.Column(db.String(40), nullable=False)
+    source = db.Column(db.Text, nullable=False)
+    text = db.Column(db.Text, nullable=False)
+    updated_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    updated_by = db.Column(db.Integer, db.ForeignKey('user.id', ondelete='SET NULL'), nullable=True)
+
+
+class _TranslationTarget(object):
+    """What a suggestion or a change is about: a meaning of a word
+    (``kind`` 'sense'), the word's example or notes in a language
+    ('example', 'notes'), or an interface string ('ui')."""
+
+    lang = db.Column(db.String(10), nullable=False, index=True)
+    kind = db.Column(db.String(10), nullable=False)
+
+    @declared_attr
+    def sense_id(cls):
+        return db.Column(db.Integer, db.ForeignKey('word_sense.id', ondelete='CASCADE'),
+                         nullable=True, index=True)
+
+    @declared_attr
+    def word_id(cls):
+        return db.Column(db.Integer, db.ForeignKey('word.id', ondelete='CASCADE'),
+                         nullable=True, index=True)
+
+    ui_key = db.Column(db.String(40), nullable=True, index=True)
+    ui_source = db.Column(db.Text, nullable=True)
+
+    @declared_attr
+    def user_id(cls):
+        return db.Column(db.Integer, db.ForeignKey('user.id', ondelete='SET NULL'), nullable=True)
+
+    @declared_attr
+    def sense(cls):
+        return db.relationship('WordSense')
+
+    @declared_attr
+    def word(cls):
+        return db.relationship('Word')
+
+    @declared_attr
+    def user(cls):
+        return db.relationship('User', foreign_keys='{}.user_id'.format(cls.__name__))
+
+
+class TranslationSuggestion(_TranslationTarget, db.Model):
+    """A translation someone without translator rights proposes; a
+    translator of the language accepts or rejects it."""
+
+    __tablename__ = 'translation_suggestion'
+
+    OPEN, ACCEPTED, REJECTED = 'open', 'accepted', 'rejected'
+
+    id = db.Column(db.Integer, primary_key=True)
+    text = db.Column(db.Text, nullable=False)
+    status = db.Column(db.String(10), nullable=False, default=OPEN, index=True)
+    created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    decided_by = db.Column(db.Integer, db.ForeignKey('user.id', ondelete='SET NULL'), nullable=True)
+    decided_at = db.Column(db.DateTime, nullable=True)
+
+
+class TranslationChange(_TranslationTarget, db.Model):
+    """History of /translate: every save, review, accepted suggestion and
+    revert, with the text before and after, so any of them can be undone."""
+
+    __tablename__ = 'translation_change'
+
+    id = db.Column(db.Integer, primary_key=True)
+    action = db.Column(db.String(10), nullable=False)  # edit, review, accept, revert
+    old_text = db.Column(db.Text, nullable=True)
+    new_text = db.Column(db.Text, nullable=True)
+    old_reviewed = db.Column(db.Boolean, nullable=True)
+    created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow, index=True)
 
 
 class UserWord(db.Model):
@@ -365,6 +543,42 @@ class WordTranslationView(ModelView):
     form_columns = ['word', 'lang', 'translation', 'example', 'notes', 'reviewed']
     form_ajax_refs = {'word': {'fields': ['term'], 'page_size': 20}}
     form_choices = {'lang': [(code, code) for code in LANGUAGE_CODES]}
+
+    def is_accessible(self):
+        return is_admin()
+
+    def on_model_change(self, form, model, is_created):
+        model.edited = True
+
+    def after_model_change(self, form, model, is_created):
+        self._resync(model.word_id, model.lang, model.reviewed)
+
+    def after_model_delete(self, model):
+        self._resync(model.word_id, model.lang)
+
+    def _resync(self, word_id, lang, reviewed=None):
+        # The word's meanings follow its translation string, and its
+        # "reviewed" box, ticked or cleared here, applies to all of them.
+        from flaskblog.vocabulary import senses
+        word = db.session.get(Word, word_id)
+        if word is not None:
+            db.session.expire(word)
+            senses.sync_from_flat(word, [lang])
+            if reviewed is not None:
+                for sense in word.senses:
+                    if lang in sense.translations:
+                        sense.translations[lang].reviewed = reviewed
+            db.session.commit()
+
+
+class TranslatorView(ModelView):
+    """Who may translate and review which language on /translate
+    ('*' for every language)."""
+
+    column_list = ['user', 'lang']
+    form_columns = ['user', 'lang']
+    form_ajax_refs = {'user': {'fields': ['username'], 'page_size': 20}}
+    form_choices = {'lang': [('*', '*')] + [(code, code) for code in LANGUAGE_CODES]}
 
     def is_accessible(self):
         return is_admin()

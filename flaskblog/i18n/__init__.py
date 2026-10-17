@@ -15,7 +15,10 @@ The language comes from ``?lang=`` (remembered in a cookie), then the cookie,
 then the browser's Accept-Language header.
 """
 
-from flask import current_app, has_request_context, request
+import hashlib
+import time
+
+from flask import current_app, has_app_context, has_request_context, request
 
 from flaskblog.i18n.en import MESSAGES as EN_MESSAGES
 from flaskblog.i18n.fr import MESSAGES as FR_MESSAGES
@@ -82,16 +85,77 @@ def content_language(locale=None):
     return locale if locale in COURSE_LANGUAGES else FALLBACK_LANGUAGE
 
 
-def gettext(text, **kwargs):
+def source_key(text):
+    """Key of an interface string in the ui_translation table."""
+    return hashlib.sha1(text.encode('utf-8')).hexdigest()
+
+
+# Strings translated on /translate (ui_translation) are read at most this
+# often per process; a save on /translate clears the cache at once.
+OVERRIDES_SECONDS = 60
+
+
+def overrides(locale):
+    """{source: text} translated on the site for *locale*."""
+    if not has_app_context():
+        return {}
+    cache = current_app.extensions.setdefault('ui_translations', {})
+    now = time.monotonic()
+    hit = cache.get(locale)
+    if hit is not None and hit[0] > now:
+        return hit[1]
+    from sqlalchemy import text as sql
+    from sqlalchemy.exc import SQLAlchemyError
+
+    from flaskblog import db
+    try:
+        # A connection of its own: a failure (no table before the
+        # migration) must not spoil the request's session.
+        with db.engine.connect() as connection:
+            rows = connection.execute(
+                sql('SELECT source, text FROM ui_translation WHERE lang = :lang'), {'lang': locale}
+            ).fetchall()
+        found = {source: value for source, value in rows if value}
+    except SQLAlchemyError:
+        found = {}
+    cache[locale] = (now + OVERRIDES_SECONDS, found)
+    return found
+
+
+def forget_overrides():
+    if has_app_context():
+        current_app.extensions.pop('ui_translations', None)
+
+
+def catalog_entry(locale, text):
+    """The translation of *text* into *locale*: from the site, else the
+    catalogue file; None when there is none."""
+    found = overrides(locale).get(text)
+    if found is None:
+        found = _CATALOGS.get(locale, {}).get(text)
+    return found
+
+
+def gettext(text, /, **kwargs):
     """Translate a Ukrainian source string into the current language,
     falling back to English."""
     locale = get_locale()
+    source = text
     if locale != SOURCE_LANGUAGE:
-        translated = _CATALOGS.get(locale, {}).get(text)
+        translated = catalog_entry(locale, text)
         if translated is None:
-            translated = _CATALOGS[FALLBACK_LANGUAGE].get(text, text)
+            translated = catalog_entry(FALLBACK_LANGUAGE, text) or text
         text = translated
-    return text.format(**kwargs) if kwargs else text
+    if not kwargs:
+        return text
+    try:
+        return text.format(**kwargs)
+    except (KeyError, IndexError, ValueError):
+        # Should not happen (/translate checks the placeholders), but a
+        # broken translation must not break the page: use the file's.
+        fallback = (_CATALOGS.get(locale, {}).get(source)
+                    or _CATALOGS[FALLBACK_LANGUAGE].get(source) or source)
+        return fallback.format(**kwargs)
 
 
 _ = gettext
@@ -106,10 +170,10 @@ def plural(count, uk_forms, en_forms=None):
     """
     locale = get_locale()
     if locale != SOURCE_LANGUAGE:
-        catalog = _CATALOGS.get(locale, {})
         forms = None
-        if locale != FALLBACK_LANGUAGE and uk_forms[0] in catalog and uk_forms[2] in catalog:
-            forms = (catalog[uk_forms[0]], catalog[uk_forms[2]])
+        one, many = catalog_entry(locale, uk_forms[0]), catalog_entry(locale, uk_forms[2])
+        if locale != FALLBACK_LANGUAGE and one is not None and many is not None:
+            forms = (one, many)
         if forms is None:
             forms = en_forms or (gettext(uk_forms[0]), gettext(uk_forms[2]))
         # French counts 0 and 1 as singular; English only 1.

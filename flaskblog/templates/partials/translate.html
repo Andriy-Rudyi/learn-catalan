@@ -1,0 +1,80 @@
+{# Pieces of the /translate pages. #}
+
+{% macro status_chip(entry) -%}
+  {%- if entry is none -%}
+    <span class="translate-chip translate-chip-missing">{{ _('немає') }}</span>
+  {%- elif not entry.reviewed -%}
+    <span class="translate-chip translate-chip-draft" title="{{ _('Машинний або неперевірений переклад') }}">{{ _('чернетка') }}</span>
+  {%- else -%}
+    <span class="translate-chip translate-chip-done">{{ _('перевірено') }}</span>
+  {%- endif -%}
+{%- endmacro %}
+
+{% macro field_form(form, action, anchor, value, hidden, can_translate, can_suggest, multiline=False, maxlength=255, label='') -%}
+  {% set here = request.full_path.rstrip('?') %}
+  <form class="translate-form" method="POST" action="{{ action }}">
+    {{ form.csrf_token }}
+    <input type="hidden" name="next" value="{{ here }}#{{ anchor }}">
+    <input type="hidden" name="base" value="{{ value or '' }}">
+    {% for name, data in hidden.items() %}<input type="hidden" name="{{ name }}" value="{{ data }}">{% endfor %}
+    {% if multiline %}
+      <textarea class="form-control form-control-sm" name="text" rows="2" maxlength="{{ maxlength }}"
+                aria-label="{{ label }}"{% if not can_suggest %} disabled{% endif %}>{{ value or '' }}</textarea>
+    {% else %}
+      <input class="form-control form-control-sm" type="text" name="text" value="{{ value or '' }}" maxlength="{{ maxlength }}"
+             aria-label="{{ label }}"{% if not can_suggest %} disabled{% endif %}>
+    {% endif %}
+    {% if can_translate %}
+      <button class="btn btn-sm btn-outline-info" type="submit" name="action" value="save">{{ _('Зберегти') }}</button>
+    {% elif can_suggest %}
+      <button class="btn btn-sm btn-outline-info" type="submit" name="action" value="suggest">{{ _('Запропонувати') }}</button>
+    {% endif %}
+  </form>
+{%- endmacro %}
+
+{% macro suggestion_list(items, form, can_translate) -%}
+  {% if items %}
+    <ul class="translate-suggestions">
+      {% for item in items %}
+        <li>
+          <span class="translate-suggestion-text">{{ item.text }}</span>
+          <span class="text-muted small">{{ item.user.username if item.user else '—' }}, {{ item.created_at.strftime('%Y-%m-%d') }}</span>
+          {% if can_translate %}
+            {% set here = request.full_path.rstrip('?') %}
+            <form method="POST" action="{{ url_for('translate.decide', suggestion_id=item.id, decision='accept') }}">
+              {{ form.csrf_token }}<input type="hidden" name="next" value="{{ here }}">
+              <button class="btn btn-sm btn-outline-success" type="submit">{{ _('Прийняти') }}</button>
+            </form>
+            <form method="POST" action="{{ url_for('translate.decide', suggestion_id=item.id, decision='reject') }}">
+              {{ form.csrf_token }}<input type="hidden" name="next" value="{{ here }}">
+              <button class="btn btn-sm btn-outline-secondary" type="submit">{{ _('Відхилити') }}</button>
+            </form>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{%- endmacro %}
+
+{% macro filters_nav(endpoint, lang, status, filters, labels, q) -%}
+  <nav class="segmented" aria-label="{{ _('Фільтр') }}">
+    {% for name in filters %}
+      <a class="segmented-item{% if status == name %} active{% endif %}"
+         href="{{ url_for(endpoint, lang=lang, status=name, q=q or None) }}">{{ labels[name] }}</a>
+    {% endfor %}
+  </nav>
+{%- endmacro %}
+
+{% macro search_box(endpoint, lang, status, q) -%}
+  <form class="translate-search" method="GET" action="{{ url_for(endpoint, lang=lang) }}" role="search">
+    <input type="hidden" name="status" value="{{ status }}">
+    <input class="form-control form-control-sm" type="search" name="q" value="{{ q }}" maxlength="100"
+           placeholder="{{ _('Пошук') }}…" aria-label="{{ _('Пошук') }}">
+  </form>
+{%- endmacro %}
+
+{% macro login_hint() -%}
+  {% if not current_user.is_authenticated %}
+    <p class="small text-muted">{{ _('Щоб пропонувати переклади,') }} <a href="{{ url_for('users.login', next=request.full_path) }}">{{ _('увійдіть') }}</a>.</p>
+  {% endif %}
+{%- endmacro %}

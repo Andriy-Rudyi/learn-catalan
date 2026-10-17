@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+{% from "partials/translate.html" import status_chip, field_form, suggestion_list, filters_nav, search_box, login_hint with context %}
+{% block content %}
+{% set labels = {
+  'todo': _('До роботи'), 'missing': _('Без перекладу'), 'draft': _('Чернетки'),
+  'suggestions': _('Пропозиції'), 'all': _('Усі')} %}
+<div class="translate">
+  <p class="small"><a href="{{ url_for('translate.index') }}">← {{ _('Усі мови') }}</a></p>
+  <div class="page-head">
+    <div>
+      <h1 class="mb-1">{{ _('Словник') }}: {{ language.native }}</h1>
+      <p class="text-muted mb-0">{{ _('Перекладайте кожне значення слова окремо. Англійською показано, яке це значення.') }}</p>
+    </div>
+    <a class="btn btn-sm btn-outline-secondary" href="{{ url_for('translate.history', lang=lang) }}">{{ _('Історія змін') }}</a>
+  </div>
+
+  <div class="translate-toolbar">
+    {{ filters_nav('translate.dictionary', lang, status, filters, labels, q) }}
+    {{ search_box('translate.dictionary', lang, status, q) }}
+  </div>
+  {{ login_hint() }}
+
+  {% if not result.items %}
+    <div class="content-section text-center text-muted">{{ _('Тут нічого немає. Спробуйте інший фільтр.') }}</div>
+  {% endif %}
+
+  {% for word in result.items %}
+    {% set action = url_for('translate.save_word', lang=lang, word_id=word.id) %}
+    {% set entry = word.translations.get(lang) %}
+    <article class="content-section translate-card" id="w{{ word.id }}">
+      <header class="translate-card-head">
+        <a class="translate-term" href="{{ url_for('vocabulary.word', slug=word.slug) }}">{{ word.term }}</a>
+        {% if word.part_of_speech %}<span class="text-muted small">{{ part_of_speech_label(word.part_of_speech) }}</span>{% endif %}
+        {% if can_translate and word.id in drafts %}
+          <form class="ms-auto" method="POST" action="{{ action }}">
+            {{ form.csrf_token }}
+            <input type="hidden" name="action" value="check">
+            <input type="hidden" name="next" value="{{ request.full_path.rstrip('?') }}#w{{ word.id }}">
+            <button class="btn btn-sm btn-outline-success" type="submit">{{ _('Усе перевірено') }}</button>
+          </form>
+        {% endif %}
+      </header>
+
+      {% for sense in word.senses %}
+        {% set own = sense.translations.get(lang) %}
+        <div class="translate-row" id="s{{ sense.id }}">
+          <div class="translate-ref{% if word.senses | length > 1 %} translate-ref-numbered{% endif %}">
+            {% if word.senses | length > 1 %}<span class="translate-num">{{ sense.position }}.</span>{% endif %}
+            {% for code in references %}
+              {% set ref = sense.translations.get(code) %}
+              {% if ref %}<span class="translate-ref-line"><span class="translate-lang">{{ code }}</span> {{ ref.text }}</span>{% endif %}
+            {% endfor %}
+          </div>
+          <div class="translate-edit">
+            {{ status_chip(own) }}
+            {{ field_form(form, action, 's' ~ sense.id, own.text if own else '',
+                          {'kind': 'sense', 'sense_id': sense.id}, can_translate, can_suggest,
+                          label=word.term ~ ' ' ~ sense.position) }}
+          </div>
+          {{ suggestion_list(suggestions.get(('sense', sense.id)), form, can_translate) }}
+        </div>
+      {% endfor %}
+
+      {% if word.example_ca %}
+        <div class="translate-row" id="e{{ word.id }}">
+          <div class="translate-ref">
+            <span class="translate-ref-line"><span class="translate-lang">ca</span> <em>{{ word.example_ca }}</em></span>
+            {% for code in references %}
+              {% set ref = word.translations.get(code) %}
+              {% if ref and ref.example %}<span class="translate-ref-line"><span class="translate-lang">{{ code }}</span> {{ ref.example }}</span>{% endif %}
+            {% endfor %}
+          </div>
+          <div class="translate-edit">
+            <span class="translate-chip">{{ _('приклад') }}</span>
+            {{ field_form(form, action, 'e' ~ word.id, entry.example if entry else '',
+                          {'kind': 'example'}, can_translate, can_suggest, label=_('Приклад')) }}
+          </div>
+          {{ suggestion_list(suggestions.get(('example', word.id)), form, can_translate) }}
+        </div>
+      {% endif %}
+
+      {% set ref_notes = [] %}
+      {% for code in references %}{% set ref = word.translations.get(code) %}{% if ref and ref.notes %}{% if ref_notes.append((code, ref.notes)) %}{% endif %}{% endif %}{% endfor %}
+      {% if ref_notes or (entry and entry.notes) %}
+        <div class="translate-row" id="n{{ word.id }}">
+          <div class="translate-ref">
+            {% for code, notes in ref_notes %}<span class="translate-ref-line"><span class="translate-lang">{{ code }}</span> {{ notes }}</span>{% endfor %}
+          </div>
+          <div class="translate-edit">
+            <span class="translate-chip">{{ _('примітка') }}</span>
+            {{ field_form(form, action, 'n' ~ word.id, entry.notes if entry else '',
+                          {'kind': 'notes'}, can_translate, can_suggest, multiline=True, maxlength=1000, label=_('Примітки')) }}
+          </div>
+          {{ suggestion_list(suggestions.get(('notes', word.id)), form, can_translate) }}
+        </div>
+      {% endif %}
+    </article>
+  {% endfor %}
+
+  {% if result.pages > 1 %}
+    <nav class="translate-pages" aria-label="{{ _('Сторінки') }}">
+      {% if result.has_prev %}<a class="btn btn-sm btn-outline-secondary" href="{{ url_for('translate.dictionary', lang=lang, status=status, q=q or None, page=result.prev_num) }}">← {{ _('Назад') }}</a>{% endif %}
+      <span class="text-muted small">{{ result.page }} / {{ result.pages }} · {{ result.total }}</span>
+      {% if result.has_next %}<a class="btn btn-sm btn-outline-secondary" href="{{ url_for('translate.dictionary', lang=lang, status=status, q=q or None, page=result.next_num) }}">{{ _('Далі') }} →</a>{% endif %}
+    </nav>
+  {% endif %}
+</div>
+{% endblock content %}

@@ -12,7 +12,7 @@ from flaskblog import db
 from flaskblog.languages import CODES as LANGUAGE_CODES, is_known
 from flaskblog.models import UserWord, Word, WordTranslation
 from flaskblog.i18n import gettext
-from flaskblog.vocabulary import varieties
+from flaskblog.vocabulary import senses, varieties
 from flaskblog.vocabulary.constants import CSV_COLUMNS
 
 DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
@@ -153,7 +153,7 @@ def read_rows(stream):
     return [row for row in reader]
 
 
-def import_rows(rows, author=None, update_existing=False):
+def import_rows(rows, author=None, update_existing=False, seed=False):
     """Create (or update) dictionary entries from CSV-style rows.
 
     Columns are the Catalan fields (WORD_FIELDS) and, per language,
@@ -162,6 +162,10 @@ def import_rows(rows, author=None, update_existing=False):
     without a term or without a translation in any language are reported
     as errors; a term that already exists is skipped unless
     *update_existing* is set, and then only the columns in the row change.
+
+    A translation changed this way counts as edited on the site, except
+    with *seed* (the bundled files, loaded on every deploy): those leave
+    alone the languages of a word that were edited on the site.
     The caller commits.
     """
     report = ImportReport()
@@ -193,7 +197,7 @@ def import_rows(rows, author=None, update_existing=False):
             for field, value in values.items():
                 if field != 'term':
                     setattr(word, field, value or None)
-            _apply_translations(word, translations)
+            _apply_translations(word, translations, seed)
             report.updated += 1
             continue
 
@@ -208,7 +212,7 @@ def import_rows(rows, author=None, update_existing=False):
             example_ca=values.get('example_ca') or None,
             user_id=getattr(author, 'id', None),
         )
-        _apply_translations(word, translations)
+        _apply_translations(word, translations, seed)
         db.session.add(word)
         # Flush so that the next row's slug check sees this word.
         db.session.flush()
@@ -217,15 +221,23 @@ def import_rows(rows, author=None, update_existing=False):
     return report
 
 
-def _apply_translations(word, translations):
+def _apply_translations(word, translations, seed=False):
+    changed = []
     for lang, fields in translations.items():
         before = word.translations.get(lang)
+        if seed and before is not None and before.edited:
+            continue  # edited on the site since: the site wins
+        changed.append(lang)
         before = None if before is None else tuple(getattr(before, f) for f in TRANSLATION_FIELDS)
         for field, value in fields.items():
             if field != 'reviewed':
                 word._set(lang, field, value)
         entry = word.translations.get(lang)
-        if entry is None or 'reviewed' not in fields:
+        if entry is None:
+            continue
+        if not seed and before != tuple(getattr(entry, f) for f in TRANSLATION_FIELDS):
+            entry.edited = True
+        if 'reviewed' not in fields:
             continue
         if fields['reviewed'].lower() not in _DRAFT:
             entry.reviewed = True
@@ -233,6 +245,29 @@ def _apply_translations(word, translations):
             # A draft mark only applies to new or changed text, so re-seeding
             # does not undo an editor's review of the same translation.
             entry.reviewed = False
+    if changed:
+        senses.sync_from_flat(word, changed)
+
+
+def save_translations(word, translations):
+    """Translations typed in on the site (the editor's form, the admin):
+    {lang: {field: value}}. Changed languages are marked as edited on the
+    site and their meanings follow. The caller commits."""
+    changed = []
+    for lang, fields in translations.items():
+        before = word.translations.get(lang)
+        before = None if before is None else tuple(getattr(before, f) for f in TRANSLATION_FIELDS)
+        for field, value in fields.items():
+            word._set(lang, field, (value or '').strip() or None)
+        entry = word.translations.get(lang)
+        after = None if entry is None else tuple(getattr(entry, f) for f in TRANSLATION_FIELDS)
+        if before != after:
+            changed.append(lang)
+            if entry is not None:
+                entry.edited = True
+    if changed:
+        senses.sync_from_flat(word, changed)
+    return changed
 
 
 def import_file(path, author=None, update_existing=False):
@@ -270,7 +305,7 @@ def seed_rows():
 
 def import_seed(author=None, update_existing=False):
     """Load the dictionary that ships with the project."""
-    report = import_rows(seed_rows(), author=author, update_existing=update_existing)
+    report = import_rows(seed_rows(), author=author, update_existing=update_existing, seed=True)
     apply_varieties()
     return report
 

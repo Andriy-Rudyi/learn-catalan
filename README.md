@@ -31,6 +31,14 @@ A Flask-based blog platform for learning and teaching the Catalan language.
   translation. French has its own interface and dictionary translations; the
   courses are shown in English until they get a French version.
   See [Languages](#languages)
+- **Meanings**: a dictionary translation is attached to a meaning of the word,
+  not to the word (“tocar”: 1. touch, 2. play an instrument), with English
+  as the pivot. `SENSES=False` goes back to one line per language. See
+  [Meanings](#meanings)
+- **Translation platform** at `/translate`: anyone logged in suggests
+  translations of the dictionary and of the interface, translators of a
+  language accept them and check machine translations, every change can be
+  undone. See [Translation platform](#translation-platform)
 - Responsive interface that works on phones, with a light/dark theme switch
 - Two looks: a modern design (default; the menu is pinned to
   the left edge) and the earlier classic one. There is no button for it:
@@ -124,8 +132,10 @@ learn-catalan/
 │   ├── vocabulary/        # Dictionary (see below)
 │   │   ├── routes.py      # Dictionary and personal word list
 │   │   ├── service.py     # Search, CSV import/export
+│   │   ├── senses.py      # Meanings of words, kept in step with the translations
 │   │   ├── cli.py         # flask vocabulary ...
 │   │   └── data/words.csv, data/translations/<lang>.csv
+│   ├── translate/         # Translation platform /translate, flask translations ...
 │   ├── api/               # Open API /api/v1 and the /developers page
 │   ├── languages.py       # Languages the dictionary is translated into
 │   ├── tests/             # Test suite
@@ -230,9 +240,16 @@ Ukrainian are shown.
 Every translation has a `reviewed` flag. A file or CSV column `reviewed`
 (`reviewed_<code>` in an import) set to `0` marks drafts such as machine
 translations: the word page then says the translation has not been checked
-yet, and the API returns `"reviewed": false`. Editors switch it on in the
-admin panel (Word Translation) once a translation has been checked. The interface itself (menus, buttons) is translated
-separately, see [Languages](#languages).
+yet, and the API returns `"reviewed": false`. Translators mark it checked on
+`/translate` (or the editor in the admin panel, Word Translation). The
+interface itself (menus, buttons) is translated separately, see
+[Languages](#languages).
+
+A translation changed on the site (the editor's form, the admin panel, a CSV
+upload, `/translate`) is marked `edited`: from then on the bundled files no
+longer overwrite it when `flask vocabulary seed --update` runs on deploy. To
+keep such work in the repository, `flask translations export <code>` writes
+it back into `data/translations/<code>.csv`.
 
 The bundled dictionary lives in `flaskblog/vocabulary/data/words.csv` (the
 Catalan side) and `data/translations/uk.csv`, `data/translations/en.csv`,
@@ -240,6 +257,33 @@ Catalan side) and `data/translations/uk.csv`, `data/translations/en.csv`,
 across 21 topics (including Catalan cuisine and traditions), mostly A1-B1, including 2,210 verbs and C1 vocabulary such as discourse connectors and idioms. Verbs were chosen by how often their infinitive occurs in a Catalan subtitle corpus (OpenSubtitles 2018 frequency list), so the conjugator has a translation for nearly every verb people actually look up. The conjugator looks a
 verb up here to show its translation, so dictionary entries double as the
 conjugator's glossary.
+
+### Meanings
+
+Translations are attached to the meanings of a word (`WordSense`, with one
+`SenseTranslation` per language) rather than to the word: “tocar” has two
+meanings, *touch* and *play (an instrument)*, and each language translates
+each of them. English is the pivot: the meanings of a word are the parts of
+its English translation separated by `;`. The word page lists them
+numbered, the API returns them as `senses`, and `/translate` asks for them
+one by one with the English next to each.
+
+Each language also keeps its meanings joined with `;` in
+`WordTranslation.translation`: that is what the CSV files, imports and the
+editor's form use, and `flaskblog/vocabulary/senses.py` keeps the two in
+step. A language with fewer parts than English is spread over the meanings
+(French “batterie” is both *battery* and *drums*, shown with the English to
+tell them apart); one with more puts the extra parts into the last meaning.
+
+Rolling back:
+
+- `SENSES=False` shows one translation line per language on the word pages
+  and leaves `senses` out of the API. Nothing in the database changes, so
+  `SENSES=True` brings the meanings back.
+- Removing the feature: revert the commit and run `flask db downgrade`
+  (migration `c7e2d4a9f1b6`). The joined strings were kept all along, so
+  no translation is lost; tested on PostgreSQL 16 and SQLite.
+- `flask vocabulary senses` rebuilds every word's meanings from the strings.
 
 ### Regional words
 
@@ -292,6 +336,44 @@ Each client address may make `API_RATE_LIMIT` requests a minute (120 by
 default, `0` for no limit); beyond that the answer is 429 with `Retry-After`.
 The limit is counted per server process. Errors are
 `{"error": {"code", "message"}}`. The code is in `flaskblog/api/`.
+
+## Translation platform
+
+`/translate` (linked at the bottom of the menu as “Help translate”) is the
+site's own translation tool, in the same database. For every language in
+`flaskblog/languages.py` it shows how much of the dictionary and of the
+interface is translated and checked, and has three pages:
+
+- **Dictionary**: each word as a card, every meaning with its English and
+  Ukrainian, plus the example and notes; filters for what needs work, no
+  translation, drafts, suggestions; search.
+- **Interface**: the strings of `flaskblog/i18n`, with the Ukrainian source
+  and the English. A string saved here overrides the catalogue file at once.
+- **History**: every change with the text before and after, and an undo
+  button.
+
+Who does what:
+
+- Anyone logged in **suggests** a translation. It waits under the field,
+  visible to everyone, so nobody translates the same thing twice.
+- A **translator** of a language (granted in the admin panel, Translator, or
+  `flask translations grant <username> <code>`, `*` for every language)
+  saves directly, accepts or rejects suggestions and marks drafts such as
+  machine translations as checked. The editor (`ADMIN_USERNAME`) is a
+  translator of every language. Without any translators, every suggestion
+  goes through the editor.
+- A save is refused if someone else changed the same field after the page
+  was opened; the message shows their text.
+
+Checks: a meaning may not contain `;` (it separates meanings); an interface
+string must keep the `{placeholders}` and HTML tags of the original, so a
+translation can neither break a page nor add markup to it.
+
+`flask translations export <code>` writes a language back into the project:
+the dictionary into `vocabulary/data/translations/<code>.csv`, the interface
+into `flaskblog/i18n/<code>.py`. A new interface language also has to be
+added to `LANGUAGES` in `flaskblog/i18n/__init__.py` to appear in the
+language menu.
 
 ## Grammar course
 
@@ -394,6 +476,7 @@ DESIGN=modern                # set to classic to bring back the earlier look for
 SEO=True                     # set to False to switch off the search engine tags, robots.txt and sitemap.xml
 SITE_URL=https://example.com # public address for canonical links and the sitemap (optional)
 API_RATE_LIMIT=120           # open API requests a minute per client address; 0 = no limit
+SENSES=True                  # set to False to show one translation line per language instead of meanings
 TEST_DATABASE_URI=           # optional, tests default to in-memory SQLite
 ```
 
@@ -545,7 +628,26 @@ python run.py --port 5001
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+The code is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+### Data sources and licences
+
+Most of the content was written for this project: the dictionary
+(`words.csv`, the translations), the grammar units, the pronunciation lessons
+and the FAQ. The French dictionary translations are a machine translation
+made with an AI model and are marked `reviewed=0` until a translator checks
+them. Third-party material:
+
+| Data | Source | Licence | What it asks for |
+| --- | --- | --- | --- |
+| Regional labels (`vocabulary/data/varieties.json`, entries with source `wiktionary-en` / `wiktionary-ca`) | Wiktionary, English and Catalan editions, via `flask vocabulary check-dialects` | CC BY-SA 4.0 | Credit Wiktionary; the labels stay under CC BY-SA |
+| Which words and verbs are included | Chosen by frequency with FrequencyWords (Hermit Dave), from OpenSubtitles 2018 (OPUS); the list itself is not in the project | CC BY-SA 4.0 | Nothing is copied; credited as a courtesy |
+| Verb conjugations | The verbecc library (LGPL-3.0); its Catalan data comes from Verbiste (Pierre Sarrazin) and catverbs (Neil Roberts) | GPL-2.0-or-later | `conjugation/data/ca-corrections.xml` changes that data, so it is under GPL-2.0-or-later too (see its header). A bulk export of conjugations would have to be GPL as well |
+| Bootstrap, Bootstrap Icons (the search icon in the CSS) | CDN / inlined | MIT | — |
+
+The same list is on `/developers` and in the API index (`/api/v1/`,
+`sources`). No licence has been declared for the dictionary itself yet;
+nothing in it stands in the way of an open one such as CC BY-SA 4.0.
 
 ## Author
 

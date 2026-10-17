@@ -147,6 +147,7 @@ def robots_txt():
         'Disallow: /reset_password',
         'Disallow: /dictionary/export.csv',
         'Disallow: /dictionary/import',
+        'Disallow: /translate/',
         '',
         'Sitemap: ' + site_url() + url_for('seo.sitemap_xml'),
         '',

@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block content %}
+{% set actions = {'edit': _('зміна'), 'review': _('перевірено'), 'accept': _('прийнято пропозицію'), 'revert': _('скасування')} %}
+<div class="translate">
+  <p class="small"><a href="{{ url_for('translate.index') }}">← {{ _('Усі мови') }}</a></p>
+  <div class="page-head">
+    <div>
+      <h1 class="mb-1">{{ _('Історія змін') }}: {{ language.native }}</h1>
+      <p class="text-muted mb-0">{{ _('Останні 200 змін. Перекладач мови може скасувати будь-яку з них.') }}</p>
+    </div>
+  </div>
+
+  {% if not changes %}
+    <div class="content-section text-center text-muted">{{ _('Змін ще не було.') }}</div>
+  {% else %}
+    <div class="content-section translate-card">
+      {% for record in changes %}
+        <div class="translate-row translate-history-row">
+          <div class="translate-ref">
+            <span class="text-muted small">{{ record.created_at.strftime('%Y-%m-%d %H:%M') }} · {{ users[record.user_id].username if record.user_id in users else '—' }} · {{ actions.get(record.action, record.action) }}</span>
+            <span>
+              {% if record.kind == 'ui' %}
+                {{ _('інтерфейс') }}: <span class="text-muted">{{ record.ui_source | truncate(80) }}</span>
+              {% elif record.word %}
+                <a href="{{ url_for('translate.dictionary', lang=lang, status='all', q=record.word.term) }}">{{ record.word.term }}</a>
+                {% if record.kind == 'sense' and record.sense and record.word.senses | length > 1 %}({{ record.sense.position }}){% endif %}
+                {% if record.kind == 'example' %}<span class="text-muted">{{ _('приклад') }}</span>{% elif record.kind == 'notes' %}<span class="text-muted">{{ _('примітка') }}</span>{% endif %}
+              {% endif %}
+            </span>
+          </div>
+          <div class="translate-diff">
+            {% if record.action == 'review' %}
+              <span class="text-muted">{{ _('позначено як перевірене') }}</span>
+            {% else %}
+              <del>{{ record.old_text or '—' }}</del> → <ins>{{ record.new_text or '—' }}</ins>
+            {% endif %}
+            {% if can_translate %}
+              <form method="POST" action="{{ url_for('translate.revert', change_id=record.id) }}">
+                {{ form.csrf_token }}<input type="hidden" name="next" value="{{ request.full_path.rstrip('?') }}">
+                <button class="btn btn-sm btn-outline-secondary" type="submit">{{ _('Скасувати') }}</button>
+              </form>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>
+{% endblock content %}

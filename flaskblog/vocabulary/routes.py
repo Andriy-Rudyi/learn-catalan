@@ -1,15 +1,15 @@
 """The shared dictionary and everyone's personal word list."""
 
-from flask import (Blueprint, Response, abort, flash, jsonify, redirect,
+from flask import (Blueprint, Response, abort, current_app, flash, jsonify, redirect,
                    render_template, request, url_for)
 from flask_login import current_user, login_required
 
 from flaskblog import db
-from flaskblog.i18n import gettext as _
+from flaskblog.i18n import get_locale, gettext as _
 from flaskblog.conjugation import get_service as get_conjugation_service
 from flaskblog.models import UserWord, Word
 from flaskblog.permissions import is_admin
-from flaskblog.vocabulary import service, varieties
+from flaskblog.vocabulary import senses, service, varieties
 from flaskblog.vocabulary.constants import (
     gender_label,
     level_label,
@@ -106,14 +106,29 @@ def api_words():
 def word(slug):
     word = Word.query.filter_by(slug=slug).first_or_404()
     conjugable = bool(word.is_verb and get_conjugation_service().is_known_verb(word.term))
+    meanings = None
+    if current_app.config.get('SENSES') and len(word.senses) > 1:
+        meanings = senses.meanings(word, get_locale())
     return render_template(
         'word.html',
         title=word.term,
         word=word,
+        meanings=meanings,
+        draft_meaning=any(entry is not None and not entry.reviewed for entry, _hint in meanings or ()),
         conjugable=conjugable,
         saved_word_ids=_saved_word_ids(),
         action_form=ActionForm(),
     )
+
+
+def _form_translations(form):
+    """The Ukrainian and English fields of the editor's form."""
+    return {
+        'uk': {'translation': form.translation.data, 'example': form.example_uk.data,
+               'notes': form.notes.data},
+        'en': {'translation': form.translation_en.data, 'example': form.example_en.data,
+               'notes': form.notes_en.data},
+    }
 
 
 @vocabulary.route('/dictionary/new', methods=['GET', 'POST'])
@@ -124,18 +139,16 @@ def new_word():
     if form.validate_on_submit():
         word = Word(
             term=form.term.data.strip(),
-            translation=form.translation.data.strip(),
             part_of_speech=form.part_of_speech.data or None,
             gender=form.gender.data or None,
             pronunciation=form.pronunciation.data or None,
             topic=form.topic.data or None,
             level=form.level.data or None,
             example_ca=form.example_ca.data or None,
-            example_uk=form.example_uk.data or None,
-            notes=form.notes.data or None,
             user_id=current_user.id,
         )
         word.slug = service.unique_slug(word.term)
+        service.save_translations(word, _form_translations(form))
         db.session.add(word)
         db.session.commit()
         flash(_('Слово додано до словника.'), 'success')
@@ -153,15 +166,13 @@ def edit_word(slug):
     form = WordForm(obj=word)
     if form.validate_on_submit():
         word.term = form.term.data.strip()
-        word.translation = form.translation.data.strip()
         word.part_of_speech = form.part_of_speech.data or None
         word.gender = form.gender.data or None
         word.pronunciation = form.pronunciation.data or None
         word.topic = form.topic.data or None
         word.level = form.level.data or None
         word.example_ca = form.example_ca.data or None
-        word.example_uk = form.example_uk.data or None
-        word.notes = form.notes.data or None
+        service.save_translations(word, _form_translations(form))
         db.session.commit()
         flash(_('Слово оновлено.'), 'success')
         return redirect(url_for('vocabulary.word', slug=word.slug))

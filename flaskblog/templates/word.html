@@ -17,9 +17,17 @@
         {% if word.pronunciation %}
           <p class="text-muted mb-1">[{{ word.pronunciation }}]</p>
         {% endif %}
-        <p class="h5 text-secondary">{{ word.t_translation() }}</p>
+        {% if meanings %}
+          <ol class="word-senses h5 text-secondary">
+            {% for entry, hint in meanings %}
+              <li>{{ entry.text if entry else '' }}{% if hint %} <span class="word-sense-hint">({{ hint }})</span>{% endif %}</li>
+            {% endfor %}
+          </ol>
+        {% else %}
+          <p class="h5 text-secondary">{{ word.t_translation() }}</p>
+        {% endif %}
         {% set shown = word.translation_in(current_lang) %}
-        {% if shown and not shown.reviewed %}
+        {% if (shown and not shown.reviewed) or draft_meaning %}
           <p class="small text-muted mb-1">{{ _('Машинний переклад, ще не перевірений редактором.') }}</p>
         {% endif %}
         {{ variety_notice(word.variety_codes, word.central_alternative, word.variety_source) }}

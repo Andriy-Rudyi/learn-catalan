@@ -54,6 +54,18 @@ def export_command(path):
         click.echo(csv_text)
 
 
+@vocabulary_cli.command('senses')
+def senses_command():
+    """Rebuild every word's meanings from its translation strings."""
+    from flaskblog.vocabulary import senses
+    count = 0
+    for word in Word.query.all():
+        senses.sync_from_flat(word)
+        count += 1
+    db.session.commit()
+    click.echo('Значення перебудовано для {} слів.'.format(count))
+
+
 @vocabulary_cli.command('stats')
 def stats_command():
     """Show how many words the dictionary holds, by topic and level."""

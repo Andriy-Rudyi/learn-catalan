@@ -31,6 +31,30 @@ MOOD_PERSONS = {
     'gerundi': (),
 }
 
+# Third-party material in the data, and what its licence asks for (README,
+# "Data sources and licences").
+SOURCES = [
+    {
+        'data': 'Regional labels (where a word is used instead of Central Catalan)',
+        'source': 'Wiktionary, English and Catalan editions',
+        'license': 'CC BY-SA 4.0',
+        'url': 'https://www.wiktionary.org/',
+    },
+    {
+        'data': 'Which words and verbs the dictionary includes (by frequency)',
+        'source': 'FrequencyWords by Hermit Dave, from OpenSubtitles 2018 (OPUS)',
+        'license': 'CC BY-SA 4.0',
+        'url': 'https://github.com/hermitdave/FrequencyWords',
+    },
+    {
+        'data': 'Verb conjugations',
+        'source': 'verbecc (LGPL-3.0), with Catalan data from Verbiste and catverbs, '
+                  'and this site\'s corrections to it',
+        'license': 'GPL-2.0-or-later',
+        'url': 'https://github.com/bretttolbert/verbecc',
+    },
+]
+
 ERROR_MESSAGES = {
     'empty': 'No verb was given.',
     'too-long': 'The verb is too long.',
@@ -135,7 +159,7 @@ def word_json(word, languages=None):
         for lang, entry in sorted(word.translations.items())
         if entry.translation and (languages is None or lang in languages)
     }
-    return {
+    data = {
         'term': word.term,
         'slug': word.slug,
         'language': SOURCE,
@@ -153,6 +177,20 @@ def word_json(word, languages=None):
         'url': absolute('vocabulary.word', slug=word.slug),
         'api_url': absolute('api.word', slug=word.slug),
     }
+    if current_app.config.get('SENSES'):
+        # The same translations, meaning by meaning (English decides the meanings).
+        data['senses'] = [
+            {
+                'position': sense.position,
+                'translations': {
+                    lang: {'text': entry.text, 'reviewed': entry.reviewed}
+                    for lang, entry in sorted(sense.translations.items())
+                    if entry.text and (languages is None or lang in languages)
+                },
+            }
+            for sense in word.senses
+        ]
+    return data
 
 
 def conjugation_json(result):
@@ -200,6 +238,7 @@ def index():
             'verbs': absolute('api.verbs', q='par'),
             'dictionary_csv': absolute('api.dictionary_csv'),
         },
+        'sources': SOURCES,
     })
 
 

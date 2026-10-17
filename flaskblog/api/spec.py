@@ -26,7 +26,10 @@ def spec(server, topics, levels, parts_of_speech, languages, regions):
                 'Read-only access to the Learn Catalan dictionary (Catalan words with translations '
                 'into several languages) and to the Catalan verb conjugator. No key is needed; '
                 'every origin may call it (CORS). Each client may make a limited number of requests '
-                'a minute; over the limit the answer is 429 with a Retry-After header.'
+                'a minute; over the limit the answer is 429 with a Retry-After header. '
+                'Regional labels come partly from Wiktionary (CC BY-SA 4.0); conjugations are made '
+                'with verbecc from Verbiste/catverbs data (GPL-2.0-or-later). The API index lists '
+                'the sources.'
             ),
         },
         'servers': [{'url': server}],
@@ -116,9 +119,20 @@ def spec(server, topics, levels, parts_of_speech, languages, regions):
                 'central_alternative': {'type': 'string', 'nullable': True},
                 'translations': {'type': 'object', 'description': 'By language code: ' + ', '.join(languages) + '.',
                                  'additionalProperties': {'$ref': '#/components/schemas/Translation'}},
+                'senses': {'type': 'array', 'description': 'The meanings of the word in order, each with its '
+                           'translation per language (the meanings follow the English translation). '
+                           '"translation" above is these joined with ";".',
+                           'items': {'$ref': '#/components/schemas/Sense'}},
                 'conjugation': {'type': 'string', 'nullable': True, 'format': 'uri'},
                 'url': {'type': 'string', 'format': 'uri'},
                 'api_url': {'type': 'string', 'format': 'uri'},
+            }},
+            'Sense': {'type': 'object', 'properties': {
+                'position': {'type': 'integer', 'example': 1},
+                'translations': {'type': 'object', 'additionalProperties': {'type': 'object', 'properties': {
+                    'text': {'type': 'string'},
+                    'reviewed': {'type': 'boolean'},
+                }}},
             }},
             'Conjugation': {'type': 'object', 'properties': {
                 'infinitive': {'type': 'string'},

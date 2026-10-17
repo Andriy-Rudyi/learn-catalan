@@ -81,6 +81,11 @@ class Config:
     # languages (English, Ukrainian, French; Russian gets Ukrainian).
     DEFAULT_LANGUAGE = os.getenv('DEFAULT_LANGUAGE', 'en')
 
+    # Dictionary words show their meanings one by one, each translated
+    # (flaskblog/vocabulary/senses.py). SENSES=False shows one translation
+    # line per language, as before; nothing in the database changes.
+    SENSES = os.getenv('SENSES', 'True') == 'True'
+
     # Open API (/api/v1): requests a minute per client address; 0 = no limit.
     API_RATE_LIMIT = int(os.getenv('API_RATE_LIMIT', '120'))
 
@@ -107,6 +112,7 @@ class TestConfig(Config):
     SHOW_FAQ = True
     DESIGN = 'modern'
     SEO = True
+    SENSES = True
     SITE_URL = None
     # The suite was written against the Ukrainian pages.
     DEFAULT_LANGUAGE = 'uk'
