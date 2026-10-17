@@ -30,6 +30,14 @@ A Flask-based blog platform for learning and teaching the Catalan language.
   aspirated p/t/k…), and every dictionary entry has an English translation.
   See [Languages](#languages)
 - Responsive interface that works on phones, with a light/dark theme switch
+- Two looks: a modern design (default; the menu is pinned to
+  the left edge) and the earlier classic one. Visitors switch with the
+  “Classic look” / “New look” item at the bottom of the menu; `DESIGN=classic`
+  rolls everyone back. The modern look lives entirely in
+  `flaskblog/static/modern.css`, so deleting that file (and its `<link>` in
+  `layout.html`) removes it for good
+- FAQ (`/faq`), including step-by-step instructions for turning on audio in
+  the pronunciation lessons on Android, iPhone, Mac and Windows
   (follows the system setting until the user picks one)
 - Production-ready deployment configuration
 - Database migrations for schema management
@@ -309,7 +317,8 @@ DATABASE_PUBLIC_URL=postgresql://user:password@localhost/learn_catalan
 EMAIL_USER=your-smtp-user
 EMAIL_PASS=your-smtp-password
 ADMIN_USERNAME=Andriy        # the account allowed to edit content
-SHOW_FAQ=False               # set to True to bring back the FAQ page
+SHOW_FAQ=True                # set to False to hide the FAQ page
+DESIGN=modern                # set to classic to bring back the earlier look for everyone
 TEST_DATABASE_URI=           # optional, tests default to in-memory SQLite
 ```
 

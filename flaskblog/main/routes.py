@@ -49,7 +49,7 @@ def lessons():
 def faq():
     if not current_app.config.get('SHOW_FAQ'):
         abort(404)
-    return render_template('faq.html', title='FAQ', ProjectName=PROJECT_NAME)
+    return render_template('faq.html', title=_('Часті запитання'), ProjectName=PROJECT_NAME)
 
 
 @main.route("/announcements")

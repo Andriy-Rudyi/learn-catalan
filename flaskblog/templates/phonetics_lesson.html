@@ -70,6 +70,9 @@
     </div>
     <p class="small text-muted">
       {{ _('Озвучення використовує каталонський голос вашого браузера або телефона.') }}
+      {% if config.SHOW_FAQ %}
+        <a href="{{ url_for('main.faq', _anchor='sound') }}">{{ _('Не чути звуку?') }}</a>
+      {% endif %}
     </p>
   {% endif %}
 

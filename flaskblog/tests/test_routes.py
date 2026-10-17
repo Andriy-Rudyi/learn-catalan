@@ -19,14 +19,31 @@ class RouteTests(AppTestCase):
         self.assertEqual(response.status_code, 200)
         self.assertIn('Learn Catalan', response.data.decode())
 
-    def test_faq_is_hidden_by_default(self):
+    def test_faq_is_in_the_menu(self):
+        self.assertEqual(self.client.get('/faq').status_code, 200)
+        self.assertIn('FAQ', self._navbar('/'))
+
+    def test_faq_can_be_switched_off(self):
+        self.app.config['SHOW_FAQ'] = False
         self.assertEqual(self.client.get('/faq').status_code, 404)
         self.assertNotIn('FAQ', self._navbar('/'))
 
-    def test_faq_can_be_switched_back_on(self):
-        self.app.config['SHOW_FAQ'] = True
-        self.assertEqual(self.client.get('/faq').status_code, 200)
-        self.assertIn('FAQ', self._navbar('/'))
+    def test_faq_explains_how_to_turn_on_sound(self):
+        body = self.client.get('/faq').data.decode()
+        self.assertIn('id="sound"', body)
+        for platform in ('Android', 'iPhone', 'Windows', 'Mac'):
+            self.assertIn(platform, body)
+        # The phonetics pages and the "no Catalan voice" message link to it.
+        self.assertIn('/faq#sound', self.client.get('/phonetics').data.decode())
+        self.assertIn('/faq#sound', body[body.index('SPEAK_HINT'):])
+
+    def test_design_can_be_switched_back_to_classic(self):
+        body = self.client.get('/').data.decode()
+        self.assertIn('data-design="modern"', body)
+        self.assertIn('id="designToggle"', body)
+        self.assertIn('modern.css', body)
+        self.app.config['DESIGN'] = 'classic'
+        self.assertIn('data-design="classic"', self.client.get('/').data.decode())
 
     def _navbar(self, url):
         body = self.client.get(url).data.decode()
@@ -35,9 +52,9 @@ class RouteTests(AppTestCase):
     def test_menu_has_the_current_sections_only(self):
         for url in ('/', '/conjugator'):
             navbar = self._navbar(url)
-            for present in ('Дієвідміна', 'Словник', 'Граматика'):
+            for present in ('Дієвідміна', 'Словник', 'Граматика', 'Фонетика', 'FAQ'):
                 self.assertIn(present, navbar, url)
-            for absent in ('Уроки', 'Оголошення', 'Оновлення', 'FAQ'):
+            for absent in ('Уроки', 'Оголошення', 'Оновлення'):
                 self.assertNotIn(absent, navbar, url)
 
     def test_menu_order_is_grammar_dictionary_conjugator(self):

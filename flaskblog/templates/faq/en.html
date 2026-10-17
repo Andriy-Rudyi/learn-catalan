@@ -1,0 +1,131 @@
+<details class="faq-item" id="sound" open>
+  <summary>How do I turn on audio in the Pronunciation section?</summary>
+  <div class="faq-answer">
+    <p>
+      The 🔊 buttons in the pronunciation lessons (and in the dictionary, conjugation and grammar)
+      read Catalan words aloud with a voice that is already on your phone or computer. The site sends
+      nothing to outside services, so your device needs a <strong>Catalan voice</strong> installed.
+    </p>
+    <ol class="faq-steps">
+      <li>
+        <strong>Check the volume.</strong> Turn the sound on and raise the media volume.
+        On an iPhone, turn off Silent mode (the switch or Action button on the side).
+      </li>
+      <li>
+        <strong>Install a Catalan voice:</strong>
+        <ul>
+          <li>
+            <strong>Android:</strong> Settings → System → Languages &amp; input → Text-to-speech output.
+            Choose “Speech Services by Google” as the engine, tap ⚙ → “Install voice data” →
+            <em>Català</em> and download the voice. On Samsung phones switch the engine from Samsung
+            to Google first. Menu names vary between phones; searching the settings for
+            “Text-to-speech” is the quickest way.
+          </li>
+          <li>
+            <strong>iPhone and iPad:</strong> Settings → Accessibility → Spoken Content → Voices →
+            <em>Català</em> → download a voice (for example Montserrat or Jordi).
+          </li>
+          <li>
+            <strong>Mac:</strong> System Settings → Accessibility → Spoken Content →
+            System voice → “Manage Voices…” → <em>Català</em>.
+          </li>
+          <li>
+            <strong>Windows:</strong> the easiest way is to open the site in <strong>Microsoft Edge</strong>,
+            which already has Catalan voices. You can also add one in Settings → Time &amp; language →
+            Speech → “Add voices” → <em>Català</em>, but Chrome does not always see these voices.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Reload the page.</strong> If there is still no sound, close the browser and open it
+        again: some browsers only see a new voice after a restart.
+      </li>
+      <li>
+        <strong>Press 🔊</strong> next to an example in the table of sounds or next to a practice word.
+        The word is read a little slower than normal speech, so the sounds are easier to hear.
+      </li>
+    </ol>
+    <p class="mb-0">
+      If a yellow message saying “This device has no Catalan voice” appears, the voice is not installed
+      yet or the browser cannot see it: repeat steps 2 and 3. If there are no 🔊 buttons at all, your
+      browser cannot read text aloud: open the site in Chrome, Safari or Edge.
+    </p>
+  </div>
+</details>
+
+<details class="faq-item" id="about">
+  <summary>What is {{ ProjectName }}?</summary>
+  <div class="faq-answer">
+    <p class="mb-0">
+      {{ ProjectName }} is a place to learn Catalan: a <a href="{{ url_for('grammar.index') }}">grammar</a>
+      course, a Catalan <a href="{{ url_for('vocabulary.dictionary') }}">dictionary</a>,
+      a verb <a href="{{ url_for('main.conjugator') }}">conjugator</a>
+      and <a href="{{ url_for('phonetics.index') }}">pronunciation</a> lessons with audio examples.
+    </p>
+  </div>
+</details>
+
+<details class="faq-item" id="audience">
+  <summary>Who is {{ ProjectName }} for?</summary>
+  <div class="faq-answer">
+    <p class="mb-0">
+      For anyone who wants to learn Catalan quickly, correctly and easily: from complete beginners
+      to people who already speak and want to put their grammar in order.
+    </p>
+  </div>
+</details>
+
+<details class="faq-item" id="variety">
+  <summary>Which pronunciation and vocabulary do you teach?</summary>
+  <div class="faq-answer">
+    <p class="mb-0">
+      Central (Barcelona) Catalan. Words used only in other regions (Valencia, the Balearic Islands
+      and so on) or no longer in use are marked in the dictionary, with the Central Catalan word
+      shown next to them.
+    </p>
+  </div>
+</details>
+
+<details class="faq-item" id="account">
+  <summary>Do I need to sign up?</summary>
+  <div class="faq-answer">
+    <p class="mb-0">
+      No, all lessons, the dictionary and the conjugator are open to everyone. An account lets you
+      save words to “My dictionary” and mark the ones you know. To create one, open
+      <a href="{{ url_for('users.register') }}">Sign up</a> and enter a username (2 to 20 characters),
+      your email and your password twice.
+    </p>
+  </div>
+</details>
+
+<details class="faq-item" id="password">
+  <summary>How do I reset my password?</summary>
+  <div class="faq-answer">
+    <p class="mb-0">
+      On the <a href="{{ url_for('users.login') }}">Log in</a> page, press
+      “<a href="{{ url_for('users.reset_request') }}">Forgot your password?</a>”, enter your email,
+      and we will send you a link to set a new password.
+    </p>
+  </div>
+</details>
+
+<details class="faq-item" id="mistake">
+  <summary>I found a mistake. What should I do?</summary>
+  <div class="faq-answer">
+    <p class="mb-0">
+      Write to
+      <a href="mailto:support@learn-catalan.com?subject=Error on the LearnCatalan&body=Describe the error you found.">support@learn-catalan.com</a>
+      with the page (or word) and what is wrong. We fix mistakes as quickly as we can.
+    </p>
+  </div>
+</details>
+
+<details class="faq-item" id="team">
+  <summary>Who is behind this project?</summary>
+  <div class="faq-answer">
+    <p class="mb-0">
+      {{ ProjectName }} is run by Andriy Rudyi, who provides the project’s technical, academic
+      and editorial support and keeps it growing.
+    </p>
+  </div>
+</details>

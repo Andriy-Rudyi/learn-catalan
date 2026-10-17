@@ -31,12 +31,12 @@ class LanguageChoiceTests(AppTestCase):
 
     def test_ukrainian_is_the_default(self):
         self.assertIn('Граматика', self._nav('/'))
-        self.assertIn('<html lang="uk">', self._nav('/'))
+        self.assertIn('<html lang="uk"', self._nav('/'))
 
     def test_english_by_query_parameter_is_remembered(self):
         response = self.client.get('/?lang=en')
         body = response.data.decode()
-        self.assertIn('<html lang="en">', body)
+        self.assertIn('<html lang="en"', body)
         self.assertIn('Grammar', body)
         self.assertIn('lang=en', response.headers.get('Set-Cookie', ''))
         # The cookie keeps the choice on the next page.
@@ -122,6 +122,7 @@ class EnglishPagesTests(AppTestCase):
             '/register',
             '/reset_password',
             '/no-such-page',
+            '/faq',
         ):
             self.assertEnglish(url)
 

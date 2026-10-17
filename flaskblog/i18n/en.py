@@ -388,6 +388,14 @@ MESSAGES = {
     'Лише регіональні й застарілі': 'Regional / archaic',
     # -- header ------------------------------------------------------------
     'Пошук слова': 'Search for a word',
+    # -- design switch and FAQ ----------------------------------------------
+    'Класичний вигляд': 'Classic look',
+    'Новий вигляд': 'New look',
+    'Часті запитання': 'Frequently asked questions',
+    'Не знайшли відповіді? Напишіть нам:': 'Didn’t find an answer? Write to us:',
+    'Не чути звуку?': 'No sound?',
+    'Як увімкнути звук': 'How to turn on audio',
+    'Докладна інструкція': 'Step-by-step instructions',
     'Результати для «{query}»': 'Results for “{query}”',
     'Фільтри': 'Filters',
 }

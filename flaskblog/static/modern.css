@@ -1,0 +1,717 @@
+/* ======================================================================
+   Modern design: a menu pinned to the left edge,
+   rounded cards on a soft background, a system font and a blue accent.
+
+   Everything here applies only under <html data-design="modern">.
+   The earlier look (main.css alone) comes back with data-design="classic":
+   per browser from the "Classic look" item in the menu, for every visitor
+   with DESIGN=classic in the environment, or for good by deleting this file
+   and its <link> in layout.html.
+   ====================================================================== */
+
+html[data-design="modern"],
+html[data-design="modern"][data-bs-theme="light"] {
+  --side-width: 272px;
+  --header-height: 56px;
+  --radius: 14px;
+  --radius-lg: 18px;
+  --shadow: 0 1px 2px rgba(16, 24, 40, .06), 0 1px 3px rgba(16, 24, 40, .04);
+  --shadow-hover: 0 6px 20px rgba(16, 24, 40, .1);
+
+  --brand: #3390ec;
+  --brand-strong: #2481cc;
+  --brand-hover: #2b84dc;
+  --brand-tint: #e8f2fd;
+  --brand-contrast: #ffffff;
+  --navbar-bg: #ffffff;
+  --navbar-border: #e7e8ea;
+  --surface: #ffffff;
+  --surface-muted: #f4f4f5;
+  --border-soft: #e6e8eb;
+  --heading-color: #0f0f0f;
+  --muted-text: #707579;
+  --accent-text: #3390ec;
+  --answer-color: #1f9d55;
+  --menu-hover: #f4f4f5;
+  --menu-active-bg: #3390ec;
+  --menu-active-text: #ffffff;
+  --search-bg: #f1f2f4;
+  --hero-from: #3390ec;
+  --hero-to: #5cb3ff;
+  --button-secondary-bg: #e8f2fd;
+  --button-secondary-text: #2481cc;
+  --bs-body-bg: #f1f2f5;
+  --bs-body-color: #0f0f0f;
+  --bs-secondary-color: #707579;
+  --bs-link-color: #2481cc;
+  --bs-link-color-rgb: 36, 129, 204;
+  --bs-link-hover-color: #1a6fb5;
+  --bs-link-hover-color-rgb: 26, 111, 181;
+  --bs-border-color: #e6e8eb;
+}
+
+/* Dark: deep blue-grey surfaces. */
+html[data-design="modern"][data-bs-theme="dark"] {
+  --shadow: 0 1px 2px rgba(0, 0, 0, .25);
+  --shadow-hover: 0 6px 20px rgba(0, 0, 0, .35);
+
+  --brand: #5288c1;
+  --brand-strong: #6ab2f2;
+  --brand-hover: #5f95ce;
+  --brand-tint: #1f3349;
+  --brand-contrast: #ffffff;
+  --navbar-bg: #17212b;
+  --navbar-border: #0b1218;
+  --surface: #17212b;
+  --surface-muted: #0e1621;
+  --border-soft: #22303e;
+  --heading-color: #f5f5f5;
+  --muted-text: #7f91a4;
+  --accent-text: #6ab2f2;
+  --answer-color: #6fd1a8;
+  --menu-hover: #202b36;
+  --menu-active-bg: #2b5278;
+  --menu-active-text: #ffffff;
+  --search-bg: #242f3d;
+  --hero-from: #2b5278;
+  --hero-to: #3f72a6;
+  --button-secondary-bg: #1f3349;
+  --button-secondary-text: #6ab2f2;
+  --bs-body-bg: #0e1621;
+  --bs-body-color: #f5f5f5;
+  --bs-secondary-color: #7f91a4;
+  --bs-secondary-bg: #242f3d;
+  --bs-tertiary-bg: #1b2631;
+  --bs-link-color: #6ab2f2;
+  --bs-link-color-rgb: 106, 178, 242;
+  --bs-link-hover-color: #8cc4f6;
+  --bs-link-hover-color-rgb: 140, 196, 246;
+  --bs-border-color: #22303e;
+}
+
+html[data-design="modern"] body {
+  padding-top: var(--header-height);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: .9375rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Header ---------- */
+html[data-design="modern"] .lc-header {
+  height: var(--header-height);
+  background: var(--navbar-bg);
+  border-bottom: 1px solid var(--navbar-border);
+  box-shadow: none;
+}
+
+html[data-design="modern"] .lc-header .lc-container {
+  max-width: none;
+  padding: 0 16px;
+}
+
+html[data-design="modern"] .lc-header-inner {
+  gap: 12px;
+}
+
+html[data-design="modern"] .lc-logo,
+html[data-design="modern"] .lc-logo:hover {
+  color: var(--heading-color);
+  font-size: 17px;
+  letter-spacing: -.01em;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+html[data-design="modern"] .lc-logo::before {
+  content: "LC";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--hero-from), var(--hero-to));
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+
+@media (min-width: 992px) {
+  html[data-design="modern"] .lc-logo {
+    /* The search box starts where the content column does. */
+    width: calc(var(--side-width) - 28px);
+  }
+}
+
+html[data-design="modern"] .lc-search {
+  max-width: 420px;
+}
+
+html[data-design="modern"] .lc-search-input {
+  height: 40px;
+  padding: 6px 16px 6px 40px;
+  font-size: 15px;
+  color: var(--bs-body-color);
+  background: var(--search-bg) no-repeat 14px center / 16px
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23868c92'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0'/%3E%3C/svg%3E");
+  border: 2px solid transparent;
+  border-radius: 22px;
+  transition: border-color .15s ease, background-color .15s ease;
+}
+
+html[data-design="modern"] .lc-search-input::placeholder {
+  color: var(--muted-text);
+}
+
+html[data-design="modern"] .lc-search-input:focus {
+  color: var(--bs-body-color);
+  background-color: var(--surface);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%233390ec'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0'/%3E%3C/svg%3E");
+  border-color: var(--brand);
+}
+
+html[data-design="modern"] .lc-search-input:focus::placeholder {
+  color: var(--muted-text);
+}
+
+html[data-design="modern"] .lc-header .theme-toggle,
+html[data-design="modern"] .lc-header .lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  color: var(--muted-text);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+html[data-design="modern"] .lc-header .theme-toggle svg {
+  width: 18px;
+  height: 18px;
+}
+
+html[data-design="modern"] .lc-header .theme-toggle:hover,
+html[data-design="modern"] .lc-header .theme-toggle:focus-visible,
+html[data-design="modern"] .lc-header .lang-toggle:hover,
+html[data-design="modern"] .lc-header .lang-toggle:focus-visible {
+  color: var(--bs-body-color);
+  background: var(--menu-hover);
+}
+
+html[data-design="modern"] .lc-header-link,
+html[data-design="modern"] .lc-header-link:hover {
+  color: var(--brand-contrast);
+  background: var(--brand);
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+html[data-design="modern"] .lc-header-link:hover {
+  background: var(--brand-hover);
+}
+
+html[data-design="modern"] .lc-burger {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  padding: 0 11px;
+  gap: 4px;
+  border-radius: 50%;
+}
+
+html[data-design="modern"] .lc-burger span {
+  background: var(--muted-text);
+}
+
+html[data-design="modern"] .lc-burger:hover {
+  background: var(--menu-hover);
+}
+
+/* ---------- Side menu: pinned to the left edge on wide screens ---------- */
+html[data-design="modern"] .lc-menu-icon {
+  display: block;
+  flex-shrink: 0;
+  color: var(--muted-text);
+}
+
+html[data-design="modern"] .lc-menu-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 9px 14px;
+  border-radius: 12px;
+  color: var(--bs-body-color);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  transition: background-color .12s ease;
+}
+
+html[data-design="modern"] .lc-menu-link:hover,
+html[data-design="modern"] .lc-menu-link:focus-visible {
+  background: var(--menu-hover);
+  color: var(--bs-body-color);
+}
+
+html[data-design="modern"] .lc-menu-link.active,
+html[data-design="modern"] .lc-menu-link.active:hover {
+  background: var(--menu-active-bg);
+  color: var(--menu-active-text);
+  font-weight: 600;
+}
+
+html[data-design="modern"] .lc-menu-link.active .lc-menu-icon {
+  color: var(--menu-active-text);
+}
+
+html[data-design="modern"] .lc-menu-minor {
+  color: var(--muted-text);
+  font-weight: 400;
+}
+
+html[data-design="modern"] .lc-menu li + li {
+  margin-top: 2px;
+}
+
+html[data-design="modern"] .lc-menu-sep {
+  margin: 8px 14px;
+}
+
+html[data-design="modern"] .lc-side-title {
+  color: var(--heading-color);
+  font-size: 17px;
+}
+
+@media (min-width: 992px) {
+  html[data-design="modern"] .lc-side {
+    position: fixed;
+    top: var(--header-height);
+    bottom: 0;
+    left: 0;
+    width: var(--side-width);
+    overflow-y: auto;
+    padding: 12px 10px;
+    background: var(--surface) !important;  /* Bootstrap makes .offcanvas-lg transparent */
+    border-right: 1px solid var(--navbar-border);
+    z-index: 1020;
+  }
+
+  html[data-design="modern"] .lc-page,
+  html[data-design="modern"] .site-footer .lc-container {
+    max-width: none;
+    margin-left: var(--side-width);
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  html[data-design="modern"] .lc-main {
+    max-width: 960px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  html[data-design="modern"] .lc-side.offcanvas-lg {
+    width: 300px;
+    border-right: 0;
+  }
+  html[data-design="modern"] .lc-side .offcanvas-header {
+    padding: 14px 20px 6px;
+  }
+  html[data-design="modern"] .lc-side .offcanvas-body {
+    padding: 6px 10px 16px;
+  }
+}
+
+/* ---------- Page ---------- */
+html[data-design="modern"] .lc-page {
+  padding-top: 24px;
+  padding-bottom: 32px;
+}
+
+html[data-design="modern"] h1,
+html[data-design="modern"] h2,
+html[data-design="modern"] h3,
+html[data-design="modern"] h4,
+html[data-design="modern"] h5,
+html[data-design="modern"] h6 {
+  color: var(--heading-color);
+  letter-spacing: -.01em;
+}
+
+html[data-design="modern"] .lc-main h1 {
+  font-size: 1.75rem;
+  margin-bottom: .6rem;
+}
+
+html[data-design="modern"] .lc-main h2 {
+  font-size: 1.35rem;
+}
+
+html[data-design="modern"] .lc-main h3 {
+  font-size: 1.1rem;
+}
+
+html[data-design="modern"] .text-muted {
+  color: var(--muted-text) !important;
+}
+
+/* Cards and lists: white, rounded, no hard borders */
+html[data-design="modern"] .content-section,
+html[data-design="modern"] .card,
+html[data-design="modern"] .dictionary .word-card,
+html[data-design="modern"] .phonetics .practice-word {
+  border: 0;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+html[data-design="modern"] .content-section {
+  padding: 1.15rem 1.35rem;
+}
+
+html[data-design="modern"] .card {
+  --bs-card-border-radius: var(--radius);
+  --bs-card-inner-border-radius: var(--radius);
+}
+
+html[data-design="modern"] .dictionary .word-card {
+  padding: .9rem 1rem;
+}
+
+html[data-design="modern"] .dictionary .word-card.word-regional {
+  border: 1px dashed var(--bs-warning-border-subtle);
+}
+
+html[data-design="modern"] .list-group {
+  --bs-list-group-border-color: var(--border-soft);
+  --bs-list-group-border-radius: var(--radius);
+  --bs-list-group-action-hover-bg: var(--menu-hover);
+  --bs-list-group-action-active-bg: var(--menu-hover);
+  --bs-list-group-item-padding-y: .75rem;
+  --bs-list-group-item-padding-x: 1.1rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+html[data-design="modern"] .list-group-item {
+  border-left: 0;
+  border-right: 0;
+}
+
+html[data-design="modern"] .list-group-item:first-child {
+  border-top: 0;
+}
+
+html[data-design="modern"] .list-group-item:last-child {
+  border-bottom: 0;
+}
+
+html[data-design="modern"] .grammar .grammar-section h3,
+html[data-design="modern"] .conjugator .mood-section h3 {
+  border-bottom: 0;
+  padding-bottom: 0;
+  margin-bottom: .6rem;
+}
+
+html[data-design="modern"] .badge {
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+html[data-design="modern"] .alert {
+  border: 0;
+  border-radius: var(--radius);
+}
+
+/* ---------- Forms and buttons ---------- */
+html[data-design="modern"] .btn {
+  --bs-btn-border-radius: 12px;
+  --bs-btn-font-weight: 500;
+  --bs-btn-padding-x: 1rem;
+  --bs-btn-padding-y: .45rem;
+  --bs-btn-focus-box-shadow: 0 0 0 .2rem rgba(51, 144, 236, .3);
+}
+
+html[data-design="modern"] .btn-sm {
+  --bs-btn-border-radius: 10px;
+  --bs-btn-padding-x: .75rem;
+  --bs-btn-padding-y: .3rem;
+}
+
+html[data-design="modern"] .btn-lg {
+  --bs-btn-border-radius: 14px;
+  --bs-btn-padding-y: .65rem;
+}
+
+html[data-design="modern"] .btn-info,
+html[data-design="modern"] .btn-primary {
+  --bs-btn-color: var(--brand-contrast);
+  --bs-btn-bg: var(--brand);
+  --bs-btn-border-color: var(--brand);
+  --bs-btn-hover-color: var(--brand-contrast);
+  --bs-btn-hover-bg: var(--brand-hover);
+  --bs-btn-hover-border-color: var(--brand-hover);
+  --bs-btn-active-color: var(--brand-contrast);
+  --bs-btn-active-bg: var(--brand-hover);
+  --bs-btn-active-border-color: var(--brand-hover);
+}
+
+/* The site uses btn-outline-info for its main actions: a solid accent button. */
+html[data-design="modern"] .btn-outline-info {
+  --bs-btn-color: var(--brand-contrast);
+  --bs-btn-bg: var(--brand);
+  --bs-btn-border-color: var(--brand);
+  --bs-btn-hover-color: var(--brand-contrast);
+  --bs-btn-hover-bg: var(--brand-hover);
+  --bs-btn-hover-border-color: var(--brand-hover);
+  --bs-btn-active-color: var(--brand-contrast);
+  --bs-btn-active-bg: var(--brand-hover);
+  --bs-btn-active-border-color: var(--brand-hover);
+}
+
+html[data-design="modern"] .btn-outline-secondary {
+  --bs-btn-color: var(--button-secondary-text);
+  --bs-btn-bg: var(--button-secondary-bg);
+  --bs-btn-border-color: var(--button-secondary-bg);
+  --bs-btn-hover-color: var(--button-secondary-text);
+  --bs-btn-hover-bg: var(--brand-tint);
+  --bs-btn-hover-border-color: var(--brand-tint);
+  --bs-btn-active-color: var(--button-secondary-text);
+  --bs-btn-active-bg: var(--brand-tint);
+  --bs-btn-active-border-color: var(--brand-tint);
+}
+
+/* Segmented controls (e.g. "sort by number / by topic") */
+html[data-design="modern"] .btn-group {
+  padding: 3px;
+  gap: 2px;
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+html[data-design="modern"] .btn-group > .btn {
+  border-radius: 9px !important;
+  border: 0;
+}
+
+html[data-design="modern"] .btn-group > .btn-outline-info {
+  --bs-btn-color: var(--muted-text);
+  --bs-btn-bg: transparent;
+  --bs-btn-hover-color: var(--bs-body-color);
+  --bs-btn-hover-bg: var(--menu-hover);
+}
+
+html[data-design="modern"] .form-control,
+html[data-design="modern"] .form-select {
+  border-radius: 12px;
+  border-color: var(--border-soft);
+  background-color: var(--surface);
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+
+html[data-design="modern"] .form-control:focus,
+html[data-design="modern"] .form-select:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 .2rem rgba(51, 144, 236, .2);
+}
+
+html[data-design="modern"] .page-link {
+  border-radius: 10px;
+}
+
+/* ---------- Listen buttons ---------- */
+html[data-design="modern"] .btn-speak {
+  border: 0;
+  background: var(--brand-tint);
+  color: var(--brand-strong);
+}
+
+html[data-design="modern"] .btn-speak:hover,
+html[data-design="modern"] .btn-speak.speaking {
+  background: var(--brand);
+  color: var(--brand-contrast);
+}
+
+html[data-design="modern"] .speak-hint {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-hover);
+}
+
+/* ---------- Home page ---------- */
+html[data-design="modern"] .hero {
+  margin-bottom: 1.5rem;
+  padding: 2.75rem 1.5rem 2.5rem;
+  border-radius: 24px;
+  background: linear-gradient(135deg, var(--hero-from), var(--hero-to));
+  color: #fff;
+}
+
+html[data-design="modern"] .hero h1 {
+  color: #fff;
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  letter-spacing: -.02em;
+}
+
+html[data-design="modern"] .hero .lead {
+  color: rgba(255, 255, 255, .88);
+}
+
+html[data-design="modern"] .hero .btn-outline-info {
+  --bs-btn-color: var(--brand-strong);
+  --bs-btn-bg: #fff;
+  --bs-btn-border-color: #fff;
+  --bs-btn-hover-color: var(--brand-strong);
+  --bs-btn-hover-bg: rgba(255, 255, 255, .9);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-color: var(--brand-strong);
+  --bs-btn-active-bg: rgba(255, 255, 255, .85);
+}
+
+html[data-design="modern"][data-bs-theme="dark"] .hero .btn-outline-info {
+  --bs-btn-color: #2b5278;
+  --bs-btn-hover-color: #2b5278;
+  --bs-btn-active-color: #2b5278;
+}
+
+html[data-design="modern"] .hero .btn-outline-secondary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: rgba(0, 35, 80, .22);
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: rgba(0, 35, 80, .32);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: rgba(0, 35, 80, .32);
+}
+
+html[data-design="modern"] .feature-card {
+  border: 0;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 1.35rem;
+}
+
+html[data-design="modern"] .feature-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+html[data-design="modern"] .feature-card .feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--brand-tint);
+  font-size: 1.5rem;
+}
+
+html[data-design="modern"] .feature-card .feature-count {
+  color: var(--accent-text);
+}
+
+/* ---------- Footer ---------- */
+html[data-design="modern"] .site-footer {
+  border-top: 0;
+  background: transparent;
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 575.98px) {
+  html[data-design="modern"] {
+    --header-height: 52px;
+  }
+  html[data-design="modern"] .lc-header .lc-container {
+    padding: 0 8px;
+  }
+  /* The search box gets the room; the name is in the side menu. */
+  html[data-design="modern"] .lc-logo {
+    display: none;
+  }
+  html[data-design="modern"] .lc-header-inner {
+    gap: 6px;
+  }
+  html[data-design="modern"] .lc-header .theme-toggle,
+  html[data-design="modern"] .lc-header .lang-toggle {
+    width: 36px;
+    min-width: 36px;
+    height: 36px;
+  }
+  html[data-design="modern"] .lc-header-link,
+  html[data-design="modern"] .lc-header-link:hover {
+    padding: 6px 12px;
+  }
+  html[data-design="modern"] .lc-search-input {
+    height: 38px;
+  }
+  html[data-design="modern"] .lc-page {
+    padding-top: 16px;
+  }
+  html[data-design="modern"] .lc-main h1 {
+    font-size: 1.5rem;
+  }
+  html[data-design="modern"] .hero {
+    padding: 2rem 1rem 1.75rem;
+    border-radius: 20px;
+  }
+  html[data-design="modern"] .content-section {
+    padding: .95rem 1rem;
+  }
+}
+
+/* ---------- FAQ ---------- */
+html[data-design="modern"] .faq-item {
+  border: 0;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: .75rem;
+}
+
+html[data-design="modern"] .faq-item > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .95rem 1.25rem;
+  font-weight: 600;
+  list-style: none;
+}
+
+html[data-design="modern"] .faq-item > summary::-webkit-details-marker {
+  display: none;
+}
+
+html[data-design="modern"] .faq-item > summary::after {
+  content: "";
+  flex-shrink: 0;
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid var(--muted-text);
+  border-bottom: 2px solid var(--muted-text);
+  transform: rotate(45deg) translate(-2px, -2px);
+  transition: transform .15s ease;
+}
+
+html[data-design="modern"] .faq-item[open] > summary::after {
+  transform: rotate(-135deg) translate(-2px, -2px);
+}
+
+html[data-design="modern"] .faq-item[open] > summary {
+  border-bottom: 0;
+}
+
+html[data-design="modern"] .faq-answer {
+  padding: 0 1.25rem 1.15rem;
+}

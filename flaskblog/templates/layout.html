@@ -1,20 +1,26 @@
 <!DOCTYPE html>
-<html lang="{{ current_lang }}">
+<html lang="{{ current_lang }}" data-design="{{ config.DESIGN }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light dark">
     <meta name="theme-color" content="#1f7a8c">
 
-    <!-- Apply the saved (or system) colour theme before anything is painted -->
+    <!-- Apply the saved (or system) colour theme and the chosen design before anything is painted -->
     <script>
       (function () {
-        var stored = null;
-        try { stored = localStorage.getItem('theme'); } catch (e) {}
+        var stored = null, design = null;
+        try {
+          stored = localStorage.getItem('theme');
+          design = localStorage.getItem('design');
+        } catch (e) {}
         var theme = stored === 'light' || stored === 'dark'
           ? stored
           : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
         document.documentElement.setAttribute('data-bs-theme', theme);
+        if (design === 'modern' || design === 'classic') {
+          document.documentElement.setAttribute('data-design', design);
+        }
       })();
     </script>
 
@@ -22,6 +28,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='modern.css') }}">
 
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
 
@@ -32,6 +39,7 @@
     {% endif %}
 </head>
 <body class="d-flex flex-column min-vh-100">
+    {% from "partials/icons.html" import icon %}
     {% set section = request.blueprint %}
     {% set endpoint = request.endpoint or '' %}
     <header class="lc-header">
@@ -84,36 +92,39 @@
           <ul class="lc-menu">
             {% if current_user.is_authenticated %}
               <li><a class="lc-menu-link{% if endpoint == 'users.account' %} active{% endif %}"
-                     href="{{ url_for('users.account') }}">{{ _('Моя сторінка') }}</a></li>
+                     href="{{ url_for('users.account') }}">{{ icon('account') }}<span>{{ _('Моя сторінка') }}</span></a></li>
               <li><a class="lc-menu-link{% if endpoint == 'vocabulary.my_dictionary' %} active{% endif %}"
-                     href="{{ url_for('vocabulary.my_dictionary') }}">{{ _('Мій словник') }}</a></li>
+                     href="{{ url_for('vocabulary.my_dictionary') }}">{{ icon('my-dictionary') }}<span>{{ _('Мій словник') }}</span></a></li>
               <li class="lc-menu-sep" role="separator"></li>
             {% endif %}
             <li><a class="lc-menu-link{% if section == 'grammar' %} active{% endif %}"
                    {% if section == 'grammar' %}aria-current="page"{% endif %}
-                   href="{{ url_for('grammar.index') }}">{{ _('Граматика') }}</a></li>
+                   href="{{ url_for('grammar.index') }}">{{ icon('grammar') }}<span>{{ _('Граматика') }}</span></a></li>
             <li><a class="lc-menu-link{% if section == 'vocabulary' and endpoint != 'vocabulary.my_dictionary' %} active{% endif %}"
-                   href="{{ url_for('vocabulary.dictionary') }}">{{ _('Словник') }}</a></li>
+                   href="{{ url_for('vocabulary.dictionary') }}">{{ icon('dictionary') }}<span>{{ _('Словник') }}</span></a></li>
             <li><a class="lc-menu-link{% if endpoint == 'main.conjugator' %} active{% endif %}"
-                   href="{{ url_for('main.conjugator') }}">{{ _('Дієвідміна') }}</a></li>
+                   href="{{ url_for('main.conjugator') }}">{{ icon('conjugator') }}<span>{{ _('Дієвідміна') }}</span></a></li>
             <li><a class="lc-menu-link{% if section == 'phonetics' %} active{% endif %}"
-                   href="{{ url_for('phonetics.index') }}">{{ _('Фонетика') }}</a></li>
+                   href="{{ url_for('phonetics.index') }}">{{ icon('phonetics') }}<span>{{ _('Фонетика') }}</span></a></li>
             {% if config.SHOW_FAQ %}
             <li><a class="lc-menu-link{% if endpoint == 'main.faq' %} active{% endif %}"
-                   href="{{ url_for('main.faq') }}">FAQ</a></li>
+                   href="{{ url_for('main.faq') }}">{{ icon('faq') }}<span>FAQ</span></a></li>
             {% endif %}
             <li class="lc-menu-sep" role="separator"></li>
             {% if current_user.is_authenticated %}
               {% if is_admin() %}
-              <li><a class="lc-menu-link lc-menu-minor" href="{{ url_for('posts.new_post') }}">{{ _('Новий урок') }}</a></li>
+              <li><a class="lc-menu-link lc-menu-minor" href="{{ url_for('posts.new_post') }}">{{ icon('new') }}<span>{{ _('Новий урок') }}</span></a></li>
               {% endif %}
-              <li><a class="lc-menu-link lc-menu-minor" href="{{ url_for('users.logout') }}">{{ _('Вийти') }}</a></li>
+              <li><a class="lc-menu-link lc-menu-minor" href="{{ url_for('users.logout') }}">{{ icon('logout') }}<span>{{ _('Вийти') }}</span></a></li>
             {% else %}
               <li><a class="lc-menu-link lc-menu-minor{% if endpoint == 'users.login' %} active{% endif %}"
-                     href="{{ url_for('users.login') }}">{{ _('Увійти') }}</a></li>
+                     href="{{ url_for('users.login') }}">{{ icon('login') }}<span>{{ _('Увійти') }}</span></a></li>
               <li><a class="lc-menu-link lc-menu-minor{% if endpoint == 'users.register' %} active{% endif %}"
-                     href="{{ url_for('users.register') }}">{{ _('Зареєструватися') }}</a></li>
+                     href="{{ url_for('users.register') }}">{{ icon('register') }}<span>{{ _('Зареєструватися') }}</span></a></li>
             {% endif %}
+            <li><button class="lc-menu-link lc-menu-minor lc-design-toggle" type="button" id="designToggle">
+                {{ icon('design') }}<span class="lc-design-classic">{{ _('Класичний вигляд') }}</span><span class="lc-design-modern">{{ _('Новий вигляд') }}</span>
+            </button></li>
           </ul>
         </div>
       </nav>
@@ -153,6 +164,15 @@
               try { localStorage.setItem('theme', next); } catch (e) {}
             });
           }
+          // Modern / classic look; the choice is kept in this browser only.
+          var designButton = document.getElementById('designToggle');
+          if (designButton) {
+            designButton.addEventListener('click', function () {
+              var next = root.getAttribute('data-design') === 'classic' ? 'modern' : 'classic';
+              root.setAttribute('data-design', next);
+              try { localStorage.setItem('design', next); } catch (e) {}
+            });
+          }
           // Follow the system setting until the user picks a theme explicitly.
           if (window.matchMedia) {
             var media = window.matchMedia('(prefers-color-scheme: dark)');
@@ -165,7 +185,8 @@
           }
         })();
       </script>
-      <script>window.SPEAK_HINT = {{ speak_hint | tojson }};</script>
+      {% set sound_help = (' <a href="' ~ url_for('main.faq', _anchor='sound') ~ '">' ~ _('Докладна інструкція') ~ '</a>') if config.SHOW_FAQ else '' %}
+      <script>window.SPEAK_HINT = {{ (speak_hint ~ sound_help) | tojson }};</script>
       <script>
         // Word suggestions for the search box in the header.
         (function () {

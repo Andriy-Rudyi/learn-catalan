@@ -62,8 +62,13 @@ class Config:
     #SQLALCHEMY_DATABASE_URI = DB_URL
 
 
-    # FAQ is hidden for now; set SHOW_FAQ=True to bring the page back.
-    SHOW_FAQ = os.getenv('SHOW_FAQ') == 'True'
+    # FAQ is shown in the menu; set SHOW_FAQ=False to hide the page.
+    SHOW_FAQ = os.getenv('SHOW_FAQ', 'True') == 'True'
+
+    # Look of the site for visitors who have not picked one in the menu:
+    # 'modern' (rounded, with a pinned menu) or 'classic' (the earlier look).
+    # DESIGN=classic rolls everybody back to the earlier look.
+    DESIGN = os.getenv('DESIGN', 'modern')
 
     MAIL_SERVER = 'smtp-mail.outlook.com'
     MAIL_PORT = 587
@@ -85,4 +90,5 @@ class TestConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.getenv('TEST_DATABASE_URI', 'sqlite:///:memory:')
     WTF_CSRF_ENABLED = False
     MAIL_SUPPRESS_SEND = True
-    SHOW_FAQ = False
+    SHOW_FAQ = True
+    DESIGN = 'modern'

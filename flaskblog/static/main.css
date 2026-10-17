@@ -51,6 +51,13 @@ html[data-bs-theme="dark"] {
   --bs-link-hover-color-rgb: 182, 207, 234;
 }
 
+/* Keep room for the scrollbar on every page, so the menu and the content
+   stay in the same place whether or not a page is long enough to scroll. */
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
 body {
   background: var(--bs-body-bg);
   color: var(--bs-body-color);
@@ -833,6 +840,25 @@ a.article-title:hover {
   list-style: none;
   margin: 0;
   padding: 0;
+  width: 100%;  /* the offcanvas body is a flex box: do not shrink to the text */
+}
+
+/* Menu icons belong to the modern design (modern.css). */
+.lc-menu-icon {
+  display: none;
+}
+
+.lc-design-toggle {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  font: inherit;
+}
+
+html[data-design="classic"] .lc-design-classic,
+html:not([data-design="classic"]) .lc-design-modern {
+  display: none;
 }
 
 .lc-menu-link {
@@ -972,4 +998,40 @@ a.article-title:hover {
   .lc-logo {
     display: none;
   }
+}
+
+/* ---------- FAQ ---------- */
+.faq-item {
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: 4px;
+  margin-bottom: .6rem;
+}
+
+.faq-item > summary {
+  padding: .7rem 1rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  cursor: pointer;
+  list-style-position: inside;
+}
+
+.faq-item[open] > summary {
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.faq-answer {
+  padding: .8rem 1rem 1rem;
+}
+
+.faq-steps > li {
+  margin-bottom: .5rem;
+}
+
+.faq-steps ul {
+  margin-top: .35rem;
+}
+
+.faq-steps ul > li {
+  margin-bottom: .35rem;
 }
