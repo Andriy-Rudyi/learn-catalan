@@ -124,6 +124,7 @@ class EnglishPagesTests(AppTestCase):
             '/no-such-page',
             '/faq',
             '/developers',
+            '/text',
         ):
             self.assertEnglish(url)
 
@@ -218,7 +219,7 @@ class FrenchPagesTests(AppTestCase):
         lesson = phonetics_service.load_lessons(phonetics_service.DATA_FILE)[0]
         for url in ('/', '/grammar', '/grammar/' + unit.slug, '/phonetics',
                     '/phonetics/' + lesson['slug'], '/dictionary', '/dictionary/anar',
-                    '/conjugator?verb=anar', '/faq', '/developers', '/login', '/register'):
+                    '/conjugator?verb=anar', '/faq', '/developers', '/text', '/login', '/register'):
             body = self.client.get(url).data.decode()
             self.assertEqual([], cyrillic_snippets(body), url)
             self.assertIn('<html lang="fr"', body, url)
@@ -239,6 +240,11 @@ class FrenchPagesTests(AppTestCase):
         word = Word.query.filter_by(term='aigua').first()
         self.assertFalse(word.translation_in('fr').reviewed)
         self.assertTrue(word.translation_in('en').reviewed)
+
+    def test_text_page_lookup_in_french(self):
+        data = self.client.get('/text/word?w=anava').get_json()
+        reading = next(r for r in data['readings'] if r['lemma'] == 'anar')
+        self.assertEqual([], cyrillic_snippets(reading['form']))
 
     def test_browser_asking_for_french(self):
         self.client.delete_cookie('lang')

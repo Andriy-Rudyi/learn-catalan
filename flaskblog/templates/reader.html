@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+{% block meta_description %}{{ _('Вставте каталонський текст і натисніть будь-яке слово: початкова форма, переклад і синоніми в тій самій формі.') }}{% endblock %}
+{% block content %}
+<div class="reader">
+  <div class="page-head">
+    <div>
+      <h1 class="mb-1">{{ _('Робота з текстом') }}</h1>
+      <p class="text-muted mb-0">{{ _('Вставте каталонський текст і натисніть будь-яке слово: початкова форма, переклад і синоніми в тій самій формі.') }}</p>
+    </div>
+  </div>
+
+  <div class="reader-grid">
+    <section class="content-section reader-main">
+      <div id="reader-input">
+        <label class="form-label" for="reader-source">{{ _('Текст каталонською') }}</label>
+        <textarea id="reader-source" class="form-control" rows="9" maxlength="{{ max_text }}"
+                  placeholder="Ahir els meus amics decidiren anar a la platja…"></textarea>
+        <div class="reader-actions">
+          <button class="btn btn-info" type="button" id="reader-start">{{ _('Розібрати') }}</button>
+          <button class="btn btn-sm btn-outline-secondary" type="button" id="reader-example">{{ _('Приклад') }}</button>
+        </div>
+      </div>
+
+      <div id="reader-view" hidden>
+        <div class="reader-actions reader-toolbar">
+          <button class="btn btn-sm btn-outline-secondary" type="button" id="reader-edit">{{ _('Змінити текст') }}</button>
+          <button class="btn btn-sm btn-outline-secondary" type="button" id="reader-undo" disabled>{{ _('Скасувати') }}</button>
+          <button class="btn btn-sm btn-outline-secondary" type="button" id="reader-copy">{{ _('Копіювати текст') }}</button>
+        </div>
+        <div id="reader-text" class="reader-text" lang="ca" tabindex="0"
+             aria-label="{{ _('Текст: натисніть слово або виберіть його стрілками й натисніть Enter') }}"></div>
+        <p class="small text-muted mt-2 mb-0">{{ _('Натисніть слово. З клавіатури: стрілки ← → і Enter.') }}</p>
+      </div>
+    </section>
+
+    <aside class="content-section reader-panel" id="reader-panel" aria-live="polite">
+      <p class="text-muted mb-0" id="reader-panel-empty">{{ _('Тут з’являться переклад, форма й синоніми слова, яке ви натиснете.') }}</p>
+      <div id="reader-panel-body"></div>
+    </aside>
+  </div>
+
+  <section class="content-section" id="reader-history-box" hidden>
+    <h2 class="h6">{{ _('Історія змін') }}</h2>
+    <ol class="reader-history" id="reader-history"></ol>
+  </section>
+
+  <p class="small text-muted">
+    {{ _('Синоніми: тезаурус Softcatalà (CC BY 4.0). Форми дієслів: verbecc. Ідея й правила множини: ReeeWriter.') }}
+  </p>
+</div>
+
+{{ action_form.csrf_token }}
+<script type="application/json" id="reader-config">{{ {
+  'wordUrl': url_for('reader.word'),
+  'example': 'Ahir els meus amics decidiren anar a la platja. Les cases del poble eren boniques i el mar estava tranquil. Vam menjar pa amb tomàquet i vam parlar fins tard.',
+  'loggedIn': current_user.is_authenticated,
+  'strings': {
+    'loading': _('Шукаю…'),
+    'error': _('Не вдалося розібрати слово. Спробуйте ще раз.'),
+    'nothing': _('Цього слова немає ні в словнику, ні в тезаурусі.'),
+    'synonyms': _('Синоніми в тій самій формі'),
+    'noSynonyms': _('Синонімів не знайдено.'),
+    'replace': _('Замінити на «{text}»'),
+    'dictionary': _('У словнику'),
+    'conjugation': _('Дієвідміна'),
+    'save': _('Додати до мого словника'),
+    'saved': _('У вашому словнику'),
+    'listen': _('Прослухати'),
+    'verb': _('дієслово'),
+    'restore': _('Повернутися сюди'),
+    'original': _('Початковий текст'),
+    'copied': _('Скопійовано'),
+    'tooLong': _('Текст задовгий: до {count} знаків.', count=max_text),
+  },
+} | tojson }}</script>
+{% endblock content %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='reader.js') }}"></script>
+{% endblock %}

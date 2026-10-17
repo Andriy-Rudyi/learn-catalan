@@ -86,6 +86,10 @@ class Config:
     # line per language, as before; nothing in the database changes.
     SENSES = os.getenv('SENSES', 'True') == 'True'
 
+    # /text: paste a Catalan text, click a word for its form, translation and
+    # synonyms in that form. READER=False takes the page and its menu item away.
+    READER = os.getenv('READER', 'True') == 'True'
+
     # Open API (/api/v1): requests a minute per client address; 0 = no limit.
     API_RATE_LIMIT = int(os.getenv('API_RATE_LIMIT', '120'))
 
@@ -113,6 +117,7 @@ class TestConfig(Config):
     DESIGN = 'modern'
     SEO = True
     SENSES = True
+    READER = True
     SITE_URL = None
     # The suite was written against the Ukrainian pages.
     DEFAULT_LANGUAGE = 'uk'

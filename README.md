@@ -39,6 +39,11 @@ A Flask-based blog platform for learning and teaching the Catalan language.
   translations of the dictionary and of the interface, translators of a
   language accept them and check machine translations, every change can be
   undone. See [Translation platform](#translation-platform)
+- **Text page** at `/text`: paste a Catalan text and click any word for its
+  base form (convingueren → convenir, simple past, 3rd person plural), its
+  translation and synonyms already put into the same form; a synonym can
+  replace the word, with a history to go back through. See
+  [Text page](#text-page)
 - Responsive interface that works on phones, with a light/dark theme switch
 - Two looks: a modern design (default; the menu is pinned to
   the left edge) and the earlier classic one. There is no button for it:
@@ -136,6 +141,7 @@ learn-catalan/
 │   │   ├── cli.py         # flask vocabulary ...
 │   │   └── data/words.csv, data/translations/<lang>.csv
 │   ├── translate/         # Translation platform /translate, flask translations ...
+│   ├── reader/            # Text page /text: word forms and synonyms (data/ has its own licences)
 │   ├── api/               # Open API /api/v1 and the /developers page
 │   ├── languages.py       # Languages the dictionary is translated into
 │   ├── tests/             # Test suite
@@ -375,6 +381,35 @@ into `flaskblog/i18n/<code>.py`. A new interface language also has to be
 added to `LANGUAGES` in `flaskblog/i18n/__init__.py` to appear in the
 language menu.
 
+## Text page
+
+`/text` (“Text” in the menu) takes a pasted Catalan text and makes every word
+clickable. A click shows:
+
+- what the word is: the infinitive with mood, tense and person for a verb form
+  (`convingueren` → *convenir*, simple past, 3rd plural), the singular and
+  masculine for a noun or adjective (`boniques` → *bonic*), after taking off
+  punctuation, an elided article (`l'home`) and clitics (`fes-ho`, `dona'm`);
+- its translation from the dictionary, with links to the word and the
+  conjugator and a button to add it to “My dictionary”;
+- synonyms from the Softcatalà thesaurus put into the same form: conjugated
+  into the same slot for verbs (*acordaren*, *pactaren*), plural and feminine
+  for nouns and adjectives. Hovering one previews it in the sentence; a
+  click replaces the word. Every replacement goes into a history you can
+  go back through. The word before decides whether noun or verb readings
+  come first (“les obres” / “ells obren”).
+
+The text and its history stay in the visitor's browser. The page asks the
+server one word at a time (`/text/word?w=&prev=`). Verb forms come from
+the conjugator's own data (verbecc with this project's corrections): the
+forms of the verbs that start with the same three letters are built when
+first needed, and forms that start differently from their infinitive
+(*vaig*, *sóc*, *puc*) are indexed once per process, which takes a couple of
+seconds on the first click. The approach, the plural rule and the list of
+singular candidates come from [ReeeWriter](https://github.com/neuronids/reeewriter)
+(MIT); the data is in `flaskblog/reader/data/` (see its `SOURCES.md`).
+`READER=False` removes the page and its menu item.
+
 ## Grammar course
 
 `/grammar` is a grammar course laid out like Raymond Murphy's grammar books:
@@ -477,6 +512,7 @@ SEO=True                     # set to False to switch off the search engine tags
 SITE_URL=https://example.com # public address for canonical links and the sitemap (optional)
 API_RATE_LIMIT=120           # open API requests a minute per client address; 0 = no limit
 SENSES=True                  # set to False to show one translation line per language instead of meanings
+READER=True                  # set to False to take away the /text page
 TEST_DATABASE_URI=           # optional, tests default to in-memory SQLite
 ```
 
@@ -642,6 +678,9 @@ them. Third-party material:
 | --- | --- | --- | --- |
 | Regional labels (`vocabulary/data/varieties.json`, entries with source `wiktionary-en` / `wiktionary-ca`) | Wiktionary, English and Catalan editions, via `flask vocabulary check-dialects` | CC BY-SA 4.0 | Credit Wiktionary; the labels stay under CC BY-SA |
 | Which words and verbs are included | Chosen by frequency with FrequencyWords (Hermit Dave), from OpenSubtitles 2018 (OPUS); the list itself is not in the project | CC BY-SA 4.0 | Nothing is copied; credited as a courtesy |
+| Synonyms on `/text` (`reader/data/thesaurus.txt`) | sinonims-cat thesaurus by Jaume Ortolà Font and contributors, Softcatalà, in the compact form made by ReeeWriter | CC BY 4.0 | Credit Softcatalà (done on the page, `/developers` and the API index); commercial use allowed |
+| Plural exceptions (`reader/data/plural_exceptions.json`) | 154 pairs found against Softcatalà's catalan-dict-tools, via ReeeWriter | LGPL-2.1 | Keep the file under LGPL; not for a book sold under other terms |
+| Plural rule and singular candidates (`reader/morphology.py`) | Ported from ReeeWriter (neuronids) | MIT | Copyright notice kept in the file |
 | Verb conjugations | The verbecc library (LGPL-3.0); its Catalan data comes from Verbiste (Pierre Sarrazin) and catverbs (Neil Roberts) | GPL-2.0-or-later | `conjugation/data/ca-corrections.xml` changes that data, so it is under GPL-2.0-or-later too (see its header). A bulk export of conjugations would have to be GPL as well |
 | Bootstrap, Bootstrap Icons (the search icon in the CSS) | CDN / inlined | MIT | — |
 

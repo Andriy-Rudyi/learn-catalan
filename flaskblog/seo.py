@@ -38,6 +38,7 @@ INDEXABLE = {
     'vocabulary.dictionary',
     'vocabulary.word',
     'api_docs.developers',
+    'reader.index',
 }
 
 # Query parameters that make a different page rather than a different view.
@@ -181,6 +182,8 @@ def _sitemap_paths():
     if current_app.config.get('SHOW_FAQ'):
         yield url_for('main.faq'), []
     yield url_for('api_docs.developers'), []
+    if current_app.config.get('READER', True):
+        yield url_for('reader.index'), []
 
 
 def _build_sitemap():

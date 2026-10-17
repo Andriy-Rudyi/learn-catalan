@@ -6,10 +6,9 @@
  * wrong sounds); instead we explain how to install one.
  */
 (function () {
-  var buttons = document.querySelectorAll('.btn-speak');
-  if (!buttons.length) { return; }
   if (!('speechSynthesis' in window)) {
-    buttons.forEach(function (button) { button.classList.add('d-none'); });
+    // Also hides buttons added later (the text page draws its own).
+    document.documentElement.classList.add('no-speech');
     return;
   }
 
@@ -39,18 +38,19 @@
     }
   }
 
-  buttons.forEach(function (button) {
-    button.addEventListener('click', function () {
-      var voice = catalanVoice();
-      if (!voice) { showHint(); return; }
-      window.speechSynthesis.cancel();
-      var utterance = new SpeechSynthesisUtterance(button.getAttribute('data-say'));
-      utterance.voice = voice;
-      utterance.lang = voice.lang;
-      utterance.rate = 0.85;
-      button.classList.add('speaking');
-      utterance.onend = utterance.onerror = function () { button.classList.remove('speaking'); };
-      window.speechSynthesis.speak(utterance);
-    });
+  // One listener for every button, including ones added after the page loaded.
+  document.addEventListener('click', function (event) {
+    var button = event.target.closest ? event.target.closest('.btn-speak') : null;
+    if (!button) { return; }
+    var voice = catalanVoice();
+    if (!voice) { showHint(); return; }
+    window.speechSynthesis.cancel();
+    var utterance = new SpeechSynthesisUtterance(button.getAttribute('data-say'));
+    utterance.voice = voice;
+    utterance.lang = voice.lang;
+    utterance.rate = 0.85;
+    button.classList.add('speaking');
+    utterance.onend = utterance.onerror = function () { button.classList.remove('speaking'); };
+    window.speechSynthesis.speak(utterance);
   });
 })();

@@ -47,6 +47,12 @@ SOURCES = [
         'url': 'https://github.com/hermitdave/FrequencyWords',
     },
     {
+        'data': 'Synonyms on the /text page',
+        'source': 'sinonims-cat thesaurus by Jaume Ortolà Font and contributors, Softcatalà',
+        'license': 'CC BY 4.0',
+        'url': 'https://github.com/Softcatala/sinonims-cat',
+    },
+    {
         'data': 'Verb conjugations',
         'source': 'verbecc (LGPL-3.0), with Catalan data from Verbiste and catverbs, '
                   'and this site\'s corrections to it',
