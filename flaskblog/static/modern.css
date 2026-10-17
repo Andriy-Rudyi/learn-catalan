@@ -309,8 +309,13 @@ html[data-design="modern"] .lc-side-title {
   html[data-design="modern"] .site-footer .lc-container {
     max-width: none;
     margin-left: var(--side-width);
+    margin-right: 0;
     padding-left: 32px;
     padding-right: 32px;
+  }
+
+  html[data-design="modern"] .lc-page {
+    width: auto;  /* the full width minus the menu */
   }
 
   html[data-design="modern"] .lc-main {
@@ -807,4 +812,162 @@ html[data-design="modern"] .faq-top a {
   html[data-design="modern"] .faq-anchor {
     display: none;
   }
+}
+
+/* ---------- Log in, sign up, account, my dictionary ---------- */
+html[data-design="modern"] .auth-card,
+html[data-design="modern"] .profile-card,
+html[data-design="modern"] .stat-tile,
+html[data-design="modern"] .my-words,
+html[data-design="modern"] .empty-state,
+html[data-design="modern"] .segmented {
+  border: 0;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+html[data-design="modern"] .auth {
+  margin-top: 2.5rem;
+}
+
+html[data-design="modern"] .auth-card {
+  padding: 2.25rem 2rem 2rem;
+}
+
+html[data-design="modern"] .auth-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--hero-from), var(--hero-to));
+  color: #fff;
+}
+
+html[data-design="modern"] .auth-badge .lc-menu-icon {
+  width: 30px;
+  height: 30px;
+  color: #fff;
+}
+
+html[data-design="modern"] .lc-main .auth-title {
+  font-size: 1.6rem;
+}
+
+html[data-design="modern"] .lc-field .form-label {
+  font-size: .85rem;
+  color: var(--muted-text);
+}
+
+html[data-design="modern"] .auth .form-control {
+  height: 48px;
+  background: var(--search-bg);
+  border-color: transparent;
+}
+
+html[data-design="modern"] .auth .form-control:focus {
+  background: var(--surface);
+  border-color: var(--brand);
+}
+
+html[data-design="modern"] .auth .form-control.is-invalid {
+  border-color: var(--bs-form-invalid-border-color);
+}
+
+html[data-design="modern"] .auth-submit {
+  height: 48px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+html[data-design="modern"] .stat-tile:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+html[data-design="modern"] .stat-number {
+  font-size: 1.85rem;
+}
+
+html[data-design="modern"] .profile-card {
+  padding: 1.5rem;
+}
+
+html[data-design="modern"] .profile-role {
+  border-radius: 8px;
+}
+
+html[data-design="modern"] .file-picker {
+  border-radius: 12px;
+  border-width: 2px;
+}
+
+html[data-design="modern"] .segmented {
+  padding: 4px;
+}
+
+html[data-design="modern"] .segmented-item {
+  border-radius: 10px;
+  padding: .45rem 1rem;
+}
+
+html[data-design="modern"] .add-word {
+  margin-bottom: 1rem;
+}
+
+html[data-design="modern"] .my-word {
+  padding: .85rem 1.15rem;
+}
+
+html[data-design="modern"] .my-word-note .form-control {
+  background: var(--search-bg);
+  border-color: transparent;
+  border-radius: 10px;
+}
+
+html[data-design="modern"] .my-word-note .form-control:focus {
+  background: var(--surface);
+  border-color: var(--brand);
+}
+
+html[data-design="modern"] .my-word-badge {
+  border-radius: 8px;
+}
+
+html[data-design="modern"] .btn-outline-success {
+  --bs-btn-color: var(--answer-color);
+  --bs-btn-bg: var(--bs-success-bg-subtle);
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--bs-success);
+  --bs-btn-hover-border-color: transparent;
+}
+
+@media (max-width: 575.98px) {
+  html[data-design="modern"] .auth {
+    margin-top: .5rem;
+  }
+  html[data-design="modern"] .auth-card {
+    padding: 1.75rem 1.15rem 1.35rem;
+  }
+}
+
+html[data-design="modern"] .lc-avatar-letter {
+  background: linear-gradient(135deg, var(--hero-from), var(--hero-to));
+  color: #fff;
+}
+
+html[data-design="modern"] .lc-header-user,
+html[data-design="modern"] .lc-header-user:hover {
+  color: var(--bs-body-color);
+  font-weight: 600;
+}
+
+html[data-design="modern"] .lc-header-user:hover {
+  background: var(--menu-hover);
+}
+
+html[data-design="modern"] .lc-header-user .lc-avatar {
+  border: 0;
 }

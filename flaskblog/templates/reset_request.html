@@ -1,29 +1,18 @@
 {% extends "layout.html" %}
+{% from "partials/forms.html" import field with context %}
+{% from "partials/icons.html" import icon %}
 {% block content %}
-    <div class="content-section">
-        <form action="" method="POST" novalidate>
-            {{ form.hidden_tag() }}
-            <fieldset class="form-group row mb-3">
-                <legend class="border-bottom mb-4">{{ _('Скинути пароль') }}</legend>
-                
-                <div class="form-group">
-                    {{ form.email.label(class="form-control-label") }}
-                    
-                    {% if form.email.errors %}
-                        {{ form.email(class="form-control form-control-lg is-invalid") }}
-                        <div class="invalid-feedback">
-                            {% for error in form.email.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}  
-                        </div>
-                    {% else %}
-                        {{ form.email(class="form-control form-control-lg") }}
-                    {% endif %}
-                </div>
-            </fieldset>
-            <div class="form-group">
-                {{ form.submit(class="btn btn-outline-info") }}
-            </div>
-        </form>
-    </div>
+<div class="auth">
+  <div class="auth-card">
+    <div class="auth-badge">{{ icon('key') }}</div>
+    <h1 class="auth-title">{{ _('Зміна пароля') }}</h1>
+    <p class="auth-subtitle">{{ _('Введіть email, з яким ви реєструвалися, і ми надішлемо посилання для зміни пароля.') }}</p>
+    <form method="POST" novalidate>
+      {{ form.hidden_tag() }}
+      {{ field(form.email, autocomplete="email", inputmode="email", autofocus=true) }}
+      {{ form.submit(class="btn btn-outline-info w-100 auth-submit") }}
+    </form>
+  </div>
+  <p class="auth-switch"><a href="{{ url_for('users.login') }}">← {{ _('Назад до входу') }}</a></p>
+</div>
 {% endblock content %}

@@ -79,6 +79,7 @@
 {%- if false %}{% block meta_description %}{{ _('Вивчайте каталонську українською: курс граматики від A1 до C1, каталонсько-український словник, дієвідміна понад 8 000 дієслів і уроки вимови з озвученням.') }}{% endblock %}{% endif %}
 <body class="d-flex flex-column min-vh-100">
     {% from "partials/icons.html" import icon %}
+    {% from "partials/avatar.html" import avatar %}
     {% set section = request.blueprint %}
     {% set endpoint = request.endpoint or '' %}
     <header class="lc-header">
@@ -111,7 +112,9 @@
                 </svg>
           </button>
           {% if current_user.is_authenticated %}
-            <a class="lc-header-link d-none d-sm-inline" href="{{ url_for('users.logout') }}">{{ _('Вийти') }}</a>
+            <a class="lc-header-user" href="{{ url_for('users.account') }}" title="{{ _('Моя сторінка') }}">
+              {{ avatar(current_user, 32) }}<span class="lc-header-user-name">{{ current_user.username }}</span>
+            </a>
           {% else %}
             <a class="lc-header-link" href="{{ url_for('users.login') }}">{{ _('Увійти') }}</a>
           {% endif %}

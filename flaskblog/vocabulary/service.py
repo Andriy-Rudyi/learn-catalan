@@ -8,7 +8,7 @@ from slugify import slugify
 from sqlalchemy import case, or_
 
 from flaskblog import db
-from flaskblog.models import Word
+from flaskblog.models import UserWord, Word
 from flaskblog.i18n import gettext
 from flaskblog.vocabulary import varieties
 from flaskblog.vocabulary.constants import CSV_COLUMNS
@@ -93,6 +93,16 @@ def search(query_text=None, topic=None, level=None, part_of_speech=None, variety
     if rank is not None:
         return query.order_by(rank, db.func.length(Word.term), Word.term)
     return query.order_by(Word.term)
+
+
+def user_word_counts(user_id):
+    """How many words someone has in "My dictionary": all, learning, known."""
+    words = UserWord.query.filter_by(user_id=user_id)
+    return {
+        'all': words.count(),
+        'learning': words.filter(UserWord.status == UserWord.STATUS_LEARNING).count(),
+        'known': words.filter(UserWord.status == UserWord.STATUS_KNOWN).count(),
+    }
 
 
 def read_rows(stream):

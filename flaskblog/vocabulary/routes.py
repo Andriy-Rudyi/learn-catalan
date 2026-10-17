@@ -255,15 +255,7 @@ def my_dictionary():
         query = query.filter(UserWord.status == status)
     items = query.order_by(UserWord.date_added.desc()).all()
 
-    counts = {
-        'all': UserWord.query.filter_by(user_id=current_user.id).count(),
-        'learning': UserWord.query.filter_by(
-            user_id=current_user.id, status=UserWord.STATUS_LEARNING
-        ).count(),
-        'known': UserWord.query.filter_by(
-            user_id=current_user.id, status=UserWord.STATUS_KNOWN
-        ).count(),
-    }
+    counts = service.user_word_counts(current_user.id)
 
     return render_template(
         'my_dictionary.html',

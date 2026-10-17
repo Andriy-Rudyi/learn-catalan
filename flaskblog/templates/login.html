@@ -1,54 +1,29 @@
 {% extends "layout.html" %}
+{% from "partials/forms.html" import field, password_toggle_script with context %}
+{% from "partials/icons.html" import icon %}
 {% block content %}
-    <div class="content-section">
-        <form action="" method="POST" novalidate>
-            {{ form.hidden_tag() }}
-            <fieldset class="form-group row mb-3">
-                <legend class="border-bottom mb-4">{{ _('Увійти') }}</legend>
-                
-                <div class="form-group">
-                    {{ form.email.label(class="form-control-label") }}
-                    
-                    {% if form.email.errors %}
-                        {{ form.email(class="form-control form-control-lg is-invalid") }}
-                        <div class="invalid-feedback">
-                            {% for error in form.email.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}  
-                        </div>
-                    {% else %}
-                        {{ form.email(class="form-control form-control-lg") }}
-                    {% endif %}
-                </div>
-                <div class="form-group">
-                    {{ form.password.label(class="form-control-label") }}
-                    {% if form.password.errors %}
-                        {{ form.password(class="form-control form-control-lg is-invalid") }}
-                        <div class="invalid-feedback">
-                            {% for error in form.password.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}  
-                        </div>
-                    {% else %}
-                        {{ form.password(class="form-control form-control-lg") }}
-                    {% endif %}
-                </div>
-                <div class="form-check">
-                    {{ form.remember(class="form-check-input") }}
-                    {{ form.remember.label(class="form-check-label") }}
-                </div>
-            </fieldset>
-            <div class="form-group">
-                {{ form.submit(class="btn btn-outline-info") }}
-            </div>
-            <small class="text-muted ml-2">
-                <a href="{{ url_for('users.reset_request') }}">{{ _('Забули пароль?') }}</a>
-            </small>
-        </form>
-    </div>
-    <div class="border-top pt-3">
-        <small class="text-muted">
-            {{ _('Потрібен обліковий запис?') }} <a href="{{ url_for('users.register') }}" class="ml-2">{{ _('Зареєструватися зараз') }}</a>
-        </small>
-    </div>
+<div class="auth">
+  <div class="auth-card">
+    <div class="auth-badge">{{ icon('login') }}</div>
+    <h1 class="auth-title">{{ _('Вхід') }}</h1>
+    <p class="auth-subtitle">{{ _('Раді бачити вас знову! Увійдіть, щоб відкрити «Мій словник».') }}</p>
+    <form method="POST" novalidate>
+      {{ form.hidden_tag() }}
+      {{ field(form.email, autocomplete="email", inputmode="email", autofocus=true) }}
+      {{ field(form.password, autocomplete="current-password") }}
+      <div class="auth-row">
+        <div class="form-check mb-0">
+          {{ form.remember(class="form-check-input") }}
+          {{ form.remember.label(class="form-check-label") }}
+        </div>
+        <a href="{{ url_for('users.reset_request') }}">{{ _('Забули пароль?') }}</a>
+      </div>
+      {{ form.submit(class="btn btn-outline-info w-100 auth-submit") }}
+    </form>
+  </div>
+  <p class="auth-switch">
+    {{ _('Потрібен обліковий запис?') }} <a href="{{ url_for('users.register') }}">{{ _('Зареєструватися зараз') }}</a>
+  </p>
+</div>
 {% endblock content %}
+{% block scripts %}{{ password_toggle_script() }}{% endblock %}

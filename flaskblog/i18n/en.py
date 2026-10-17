@@ -343,6 +343,24 @@ MESSAGES = {
     'Посилання недійсне або застаріло.': 'This link is invalid or has expired.',
     'Пароль змінено! Тепер можна увійти.': 'Your password has been changed! You can now log in.',
     'Реєстрація': 'Sign up',
+    'Показати пароль': 'Show password',
+    'Раді бачити вас знову! Увійдіть, щоб відкрити «Мій словник».': 'Welcome back! Log in to open “My dictionary”.',
+    'Створіть акаунт, щоб зберігати слова в «Мій словник» і позначати вивчені.': (
+        'Create an account to save words to “My dictionary” and mark the ones you know.'
+    ),
+    'Від 2 до 20 символів.': '2 to 20 characters.',
+    'Введіть email, з яким ви реєструвалися, і ми надішлемо посилання для зміни пароля.': (
+        'Enter the email you signed up with and we will send you a link to reset your password.'
+    ),
+    'Назад до входу': 'Back to log in',
+    'Придумайте новий пароль для свого акаунта.': 'Choose a new password for your account.',
+    'Редактор сайту': 'Site editor',
+    'усього слів': 'words in total',
+    'Ім’я редактора сайту змінити не можна.': 'The site editor’s username cannot be changed.',
+    'Виберіть фото (JPG або PNG)': 'Choose a photo (JPG or PNG)',
+    'Слова, які ви вчите. Позначайте вивчені й додавайте нотатки.': 'Words you are learning. Mark the ones you know and add notes.',
+    'Фільтр': 'Filter',
+    'Відкрити словник': 'Open the dictionary',
     'Вхід': 'Log in',
     'Зміна пароля': 'Reset password',
     'Забули пароль?': 'Forgot your password?',

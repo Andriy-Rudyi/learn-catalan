@@ -1,74 +1,24 @@
 {% extends "layout.html" %}
+{% from "partials/forms.html" import field, password_toggle_script with context %}
+{% from "partials/icons.html" import icon %}
 {% block content %}
-    <div class="content-section">
-        <form action="" method="POST" novalidate>
-            {{ form.hidden_tag() }}
-            <fieldset class="form-group row mb-3">
-                <legend class="border-bottom mb-4">{{ _('Зареєструватися') }}</legend>
-                <div class="form-group">
-                    {{ form.username.label(class="form-control-label") }}
-
-                    {% if form.username.errors %}
-                        {{ form.username(class="form-control form-control-lg is-invalid") }}
-                        <div class="invalid-feedback">
-                            {% for error in form.username.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}  
-                        </div>
-                    {% else %}
-                        {{ form.username(class="form-control form-control-lg") }}
-                    {% endif %}
-
-                </div>
-                <div class="form-group">
-                    {{ form.email.label(class="form-control-label") }}
-                    
-                    {% if form.email.errors %}
-                        {{ form.email(class="form-control form-control-lg is-invalid") }}
-                        <div class="invalid-feedback">
-                            {% for error in form.email.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}  
-                        </div>
-                    {% else %}
-                        {{ form.email(class="form-control form-control-lg") }}
-                    {% endif %}
-                </div>
-                <div class="form-group">
-                    {{ form.password.label(class="form-control-label") }}
-                    {% if form.password.errors %}
-                        {{ form.password(class="form-control form-control-lg is-invalid") }}
-                        <div class="invalid-feedback">
-                            {% for error in form.password.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}  
-                        </div>
-                    {% else %}
-                        {{ form.password(class="form-control form-control-lg") }}
-                    {% endif %}
-                </div>
-                <div class="form-group">
-                    {{ form.confirm_password.label(class="form-control-label") }}
-                    {% if form.confirm_password.errors %}
-                        {{ form.confirm_password(class="form-control form-control-lg is-invalid") }}
-                        <div class="invalid-feedback">
-                            {% for error in form.confirm_password.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}  
-                        </div>
-                    {% else %}
-                        {{ form.confirm_password(class="form-control form-control-lg") }}
-                    {% endif %}
-                </div>
-            </fieldset>
-            <div class="form-group">
-                {{ form.submit(class="btn btn-outline-info") }}
-            </div>
-        </form>
-    </div>
-    <div class="border-top pt-3">
-        <small class="text-muted">
-            {{ _('Вже є обліковий запис?') }} <a href="{{ url_for('users.login') }}" class="ml-2">{{ _('Увійти') }}</a>
-        </small>
-    </div>
+<div class="auth">
+  <div class="auth-card">
+    <div class="auth-badge">{{ icon('register') }}</div>
+    <h1 class="auth-title">{{ _('Реєстрація') }}</h1>
+    <p class="auth-subtitle">{{ _('Створіть акаунт, щоб зберігати слова в «Мій словник» і позначати вивчені.') }}</p>
+    <form method="POST" novalidate>
+      {{ form.hidden_tag() }}
+      {{ field(form.username, autocomplete="username", hint=_('Від 2 до 20 символів.')) }}
+      {{ field(form.email, autocomplete="email", inputmode="email") }}
+      {{ field(form.password, autocomplete="new-password") }}
+      {{ field(form.confirm_password, autocomplete="new-password") }}
+      {{ form.submit(class="btn btn-outline-info w-100 auth-submit") }}
+    </form>
+  </div>
+  <p class="auth-switch">
+    {{ _('Вже є обліковий запис?') }} <a href="{{ url_for('users.login') }}">{{ _('Увійти') }}</a>
+  </p>
+</div>
 {% endblock content %}
+{% block scripts %}{{ password_toggle_script() }}{% endblock %}

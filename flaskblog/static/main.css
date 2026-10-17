@@ -797,6 +797,7 @@ a.article-title:hover {
 
 /* ---------- Page: menu + content ---------- */
 .lc-page {
+  width: 100%;  /* body is a flex column: without this short pages shrink and the menu moves */
   display: flex;
   align-items: flex-start;
   gap: 16px;
@@ -1097,4 +1098,463 @@ a.article-title:hover {
 
 .faq-top a {
   color: var(--muted-text);
+}
+
+/* ---------- Forms (partials/forms.html) ---------- */
+.lc-icon {
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+.lc-field {
+  margin-bottom: 1rem;
+}
+
+.lc-field .form-label {
+  font-weight: 600;
+  margin-bottom: .35rem;
+}
+
+.lc-password {
+  position: relative;
+}
+
+.lc-password .form-control {
+  padding-right: 2.75rem;
+}
+
+.lc-password-toggle {
+  position: absolute;
+  top: 50%;
+  right: .4rem;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted-text);
+}
+
+.lc-password-toggle:hover,
+.lc-password-toggle.active {
+  color: var(--brand-strong);
+}
+
+.lc-password .form-control.is-invalid {
+  background-image: none;
+}
+
+/* ---------- Log in, sign up, password reset ---------- */
+.auth {
+  max-width: 420px;
+  margin: 1.5rem auto 0;
+}
+
+.auth-card {
+  padding: 1.75rem 1.5rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
+}
+
+.auth-badge {
+  display: none;  /* the icon belongs to the modern design */
+}
+
+.lc-main .auth-title {
+  font-size: 1.5rem;
+  margin-bottom: .35rem;
+  text-align: center;
+}
+
+.auth-subtitle {
+  margin-bottom: 1.5rem;
+  color: var(--muted-text);
+  text-align: center;
+}
+
+.auth-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  margin: -.25rem 0 1.25rem;
+}
+
+.auth-submit {
+  padding-top: .55rem;
+  padding-bottom: .55rem;
+}
+
+.auth-switch {
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--muted-text);
+}
+
+/* ---------- My account ---------- */
+.account {
+  max-width: 760px;
+}
+
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+  padding: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
+}
+
+.lc-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--size, 40px);
+  height: var(--size, 40px);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.lc-avatar-letter {
+  background: var(--brand);
+  color: var(--brand-contrast);
+  font-size: calc(var(--size, 40px) * .45);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.lc-header-user {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 10px 3px 3px;
+  border-radius: 20px;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.lc-header-user:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, .12);
+}
+
+.lc-header-user .lc-avatar {
+  border: 1px solid rgba(255, 255, 255, .5);
+}
+
+@media (max-width: 767.98px) {
+  .lc-header-user-name {
+    display: none;
+  }
+  .lc-header-user {
+    padding-right: 3px;
+  }
+}
+
+.profile-info {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.lc-main .profile-name {
+  margin-bottom: .1rem;
+  font-size: 1.5rem;
+  overflow-wrap: anywhere;
+}
+
+.profile-email {
+  margin-bottom: .35rem;
+  color: var(--muted-text);
+  overflow-wrap: anywhere;
+}
+
+.profile-role {
+  background: var(--brand);
+  color: var(--brand-contrast);
+}
+
+.profile-logout {
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+.stat-tiles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .75rem;
+  margin-bottom: 1rem;
+}
+
+.stat-tile {
+  display: flex;
+  flex-direction: column;
+  padding: .9rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.stat-tile:hover {
+  color: inherit;
+  border-color: var(--brand);
+}
+
+.stat-number {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--accent-text);
+}
+
+.stat-known .stat-number {
+  color: var(--answer-color);
+}
+
+.stat-label {
+  color: var(--muted-text);
+  font-size: .85rem;
+}
+
+.lc-main .settings-title {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.file-picker {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .55rem .8rem;
+  border: 1px dashed var(--border-soft);
+  border-radius: 6px;
+  color: var(--muted-text);
+  cursor: pointer;
+}
+
+.file-picker:hover {
+  border-color: var(--brand);
+  color: var(--brand-strong);
+}
+
+.file-picker-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.file-picker-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+/* ---------- My dictionary ---------- */
+.page-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: .75rem;
+  margin-bottom: 1rem;
+}
+
+.segmented {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin-bottom: 1rem;
+  padding: 3px;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
+}
+
+.segmented-item {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .35rem .85rem;
+  border-radius: 4px;
+  color: var(--muted-text);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.segmented-item:hover {
+  color: var(--bs-body-color);
+  background: var(--menu-hover);
+}
+
+.segmented-item.active {
+  background: var(--brand);
+  color: var(--brand-contrast);
+}
+
+.segmented-count {
+  padding: 0 .45rem;
+  border-radius: 999px;
+  background: var(--menu-hover);
+  color: var(--bs-body-color);
+  font-size: .8rem;
+}
+
+.segmented-item.active .segmented-count {
+  background: rgba(255, 255, 255, .25);
+  color: inherit;
+}
+
+.add-word > summary {
+  font-weight: 700;
+  color: var(--heading-color);
+  cursor: pointer;
+}
+
+.add-word[open] > summary {
+  margin-bottom: .75rem;
+}
+
+.my-words {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
+}
+
+.my-word {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: .5rem 1rem;
+  padding: .7rem 1rem;
+}
+
+.my-word + .my-word {
+  border-top: 1px solid var(--border-soft);
+}
+
+.my-word-term {
+  font-weight: 700;
+  font-size: 1.02rem;
+}
+
+.my-word-term a {
+  text-decoration: none;
+}
+
+.my-word-translation {
+  color: var(--muted-text);
+}
+
+.my-word.is-known .my-word-term a,
+.my-word.is-known .my-word-term {
+  color: var(--muted-text);
+}
+
+.my-word-badge {
+  margin-left: .35rem;
+  background: var(--bs-success-bg-subtle);
+  color: var(--bs-success-text-emphasis);
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.my-word-note {
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+}
+
+.my-word-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: .35rem;
+  min-width: 6.5rem;  /* the same column on every row */
+}
+
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  flex-shrink: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted-text);
+}
+
+.icon-button svg {
+  width: 18px;
+  height: 18px;
+}
+
+.icon-button:hover {
+  background: var(--menu-hover);
+  color: var(--brand-strong);
+}
+
+.icon-button-danger:hover {
+  color: var(--bs-danger);
+}
+
+.empty-state {
+  padding: 2.5rem 1rem;
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
+}
+
+.empty-state-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+  margin-bottom: .75rem;
+}
+
+@media (max-width: 767.98px) {
+  .my-word {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .my-word-text {
+    grid-column: 1;
+  }
+  .my-word-actions {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .my-word-note {
+    grid-column: 1 / -1;
+  }
+  .stat-tiles {
+    gap: .5rem;
+  }
+  .stat-tile {
+    padding: .75rem;
+  }
+  .profile-card {
+    flex-wrap: wrap;
+  }
+  .profile-avatar {
+    --size: 64px !important;
+  }
 }

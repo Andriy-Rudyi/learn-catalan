@@ -1,13 +1,29 @@
 {% extends "layout.html" %}
+{% from "partials/icons.html" import icon %}
 {% block content %}
-<div class="dictionary">
-  <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
-    <h1 class="mb-0">{{ _('Мій словник') }}</h1>
-    <a class="btn btn-sm btn-outline-info" href="{{ url_for('vocabulary.dictionary') }}">{{ _('Загальний словник') }}</a>
+<div class="my-dictionary">
+  <div class="page-head">
+    <div>
+      <h1 class="mb-1">{{ _('Мій словник') }}</h1>
+      <p class="text-muted mb-0">{{ _('Слова, які ви вчите. Позначайте вивчені й додавайте нотатки.') }}</p>
+    </div>
+    <a class="btn btn-sm btn-outline-secondary" href="{{ url_for('vocabulary.dictionary') }}">{{ _('Загальний словник') }}</a>
   </div>
 
-  <div class="content-section mb-4">
-    <h5>{{ _('Додати своє слово') }}</h5>
+  <nav class="segmented" aria-label="{{ _('Фільтр') }}">
+    <a class="segmented-item{% if not status %} active{% endif %}" href="{{ url_for('vocabulary.my_dictionary') }}">
+      {{ _('Усі') }} <span class="segmented-count">{{ counts.all }}</span>
+    </a>
+    <a class="segmented-item{% if status == 'learning' %} active{% endif %}" href="{{ url_for('vocabulary.my_dictionary', status='learning') }}">
+      {{ _('Вчу') }} <span class="segmented-count">{{ counts.learning }}</span>
+    </a>
+    <a class="segmented-item{% if status == 'known' %} active{% endif %}" href="{{ url_for('vocabulary.my_dictionary', status='known') }}">
+      {{ _('Знаю') }} <span class="segmented-count">{{ counts.known }}</span>
+    </a>
+  </nav>
+
+  <details class="content-section add-word"{% if not counts.all or form.errors %} open{% endif %}>
+    <summary>{{ _('Додати своє слово') }}</summary>
     <form class="row g-2 align-items-end" method="POST" action="{{ url_for('vocabulary.add_my_word') }}" novalidate>
       {{ form.hidden_tag() }}
       <div class="col-md-4">
@@ -18,95 +34,67 @@
         {{ form.translation.label(class="form-label small text-muted") }}
         {{ form.translation(class="form-control", placeholder=_('говорити')) }}
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
         {{ form.note.label(class="form-label small text-muted") }}
         {{ form.note(class="form-control", placeholder=_('необов’язково')) }}
       </div>
-      <div class="col-md-1">
-        <button class="btn btn-outline-info w-100" type="submit">+</button>
+      <div class="col-12">
+        <button class="btn btn-outline-info" type="submit">{{ _('Додати') }}</button>
       </div>
     </form>
-  </div>
-
-  <ul class="nav nav-pills mb-3">
-    <li class="nav-item">
-      <a class="nav-link {% if not status %}active{% endif %}" href="{{ url_for('vocabulary.my_dictionary') }}">
-        {{ _('Усі') }} <span class="badge bg-body-secondary text-body-secondary">{{ counts.all }}</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link {% if status == 'learning' %}active{% endif %}" href="{{ url_for('vocabulary.my_dictionary', status='learning') }}">
-        {{ _('Вчу') }} <span class="badge bg-body-secondary text-body-secondary">{{ counts.learning }}</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link {% if status == 'known' %}active{% endif %}" href="{{ url_for('vocabulary.my_dictionary', status='known') }}">
-        {{ _('Знаю') }} <span class="badge bg-body-secondary text-body-secondary">{{ counts.known }}</span>
-      </a>
-    </li>
-  </ul>
+  </details>
 
   {% if items %}
-    <div class="table-responsive">
-    <table class="table align-middle">
-      <thead>
-        <tr>
-          <th scope="col">{{ _('Каталонською') }}</th>
-          <th scope="col">{{ _('Переклад') }}</th>
-          <th scope="col">{{ _('Нотатка') }}</th>
-          <th scope="col" class="text-end">{{ _('Дії') }}</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for item in items %}
-          <tr class="{% if item.is_known %}row-known{% endif %}">
-            <td>
+    <ul class="my-words">
+      {% for item in items %}
+        <li class="my-word{% if item.is_known %} is-known{% endif %}">
+          <div class="my-word-text">
+            <div class="my-word-term">
               {% if item.word %}
                 <a href="{{ url_for('vocabulary.word', slug=item.word.slug) }}">{{ item.display_term }}</a>
               {% else %}
                 {{ item.display_term }}
               {% endif %}
-            </td>
-            <td>{{ item.display_translation }}</td>
-            <td>
-              <form class="d-flex gap-1" method="POST" action="{{ url_for('vocabulary.edit_my_note', item_id=item.id) }}">
-                {{ note_form.hidden_tag() }}
-                <input class="form-control form-control-sm" type="text" name="note"
-                       value="{{ item.note or '' }}" maxlength="255" placeholder="…">
-                <button class="btn btn-sm btn-outline-secondary" type="submit" title="{{ _('Зберегти нотатку') }}">✓</button>
-              </form>
-            </td>
-            <td class="text-end">
-              <div class="d-inline-flex gap-1">
-                <form method="POST" action="{{ url_for('vocabulary.toggle_my_word', item_id=item.id) }}">
-                  {{ action_form.hidden_tag() }}
-                  <button class="btn btn-sm {% if item.is_known %}btn-outline-secondary{% else %}btn-outline-success{% endif %}"
-                          type="submit" title="{% if item.is_known %}{{ _('Позначити як «вчу»') }}{% else %}{{ _('Позначити як «знаю»') }}{% endif %}">
-                    {% if item.is_known %}{{ _('вчу') }}{% else %}{{ _('знаю') }}{% endif %}
-                  </button>
-                </form>
-                <form method="POST" action="{{ url_for('vocabulary.remove_my_word', item_id=item.id) }}">
-                  {{ action_form.hidden_tag() }}
-                  <button class="btn btn-sm btn-outline-danger" type="submit" title="{{ _('Вилучити') }}" aria-label="{{ _('Вилучити') }}">×</button>
-                </form>
-              </div>
-            </td>
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-    </div>
+              {% if item.is_known %}<span class="badge my-word-badge">{{ _('знаю') }}</span>{% endif %}
+            </div>
+            <div class="my-word-translation">{{ item.display_translation }}</div>
+          </div>
+          <form class="my-word-note" method="POST" action="{{ url_for('vocabulary.edit_my_note', item_id=item.id) }}">
+            {{ note_form.hidden_tag() }}
+            <input class="form-control form-control-sm" type="text" name="note"
+                   value="{{ item.note or '' }}" maxlength="255" placeholder="{{ _('Нотатка') }}…"
+                   aria-label="{{ _('Нотатка') }}: {{ item.display_term }}">
+            <button class="icon-button" type="submit" title="{{ _('Зберегти нотатку') }}" aria-label="{{ _('Зберегти нотатку') }}">{{ icon('check', 'lc-icon') }}</button>
+          </form>
+          <div class="my-word-actions">
+            <form method="POST" action="{{ url_for('vocabulary.toggle_my_word', item_id=item.id) }}">
+              {{ action_form.hidden_tag() }}
+              <button class="btn btn-sm {% if item.is_known %}btn-outline-secondary{% else %}btn-outline-success{% endif %}"
+                      type="submit" title="{% if item.is_known %}{{ _('Позначити як «вчу»') }}{% else %}{{ _('Позначити як «знаю»') }}{% endif %}">
+                {% if item.is_known %}{{ _('вчу') }}{% else %}{{ _('знаю') }}{% endif %}
+              </button>
+            </form>
+            <form method="POST" action="{{ url_for('vocabulary.remove_my_word', item_id=item.id) }}">
+              {{ action_form.hidden_tag() }}
+              <button class="icon-button icon-button-danger" type="submit" title="{{ _('Вилучити') }}" aria-label="{{ _('Вилучити') }}">{{ icon('trash', 'lc-icon') }}</button>
+            </form>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
 
-    <p class="small text-muted">
-      <a href="{{ url_for('vocabulary.export_my_dictionary') }}">{{ _('Завантажити мій словник у CSV') }}</a>
+    <p class="small mt-3">
+      <a class="text-muted" href="{{ url_for('vocabulary.export_my_dictionary') }}">{{ _('Завантажити мій словник у CSV') }}</a>
     </p>
   {% else %}
-    <div class="alert alert-secondary">
+    <div class="empty-state">
+      <div class="empty-state-icon" aria-hidden="true">📖</div>
       {% if status %}
-        {{ _('У цій категорії поки нічого немає.') }}
+        <p>{{ _('У цій категорії поки нічого немає.') }}</p>
       {% else %}
-        {{ _('Ваш словник порожній. Додайте слово вище або оберіть його') }}
-        <a href="{{ url_for('vocabulary.dictionary') }}">{{ _('у загальному словнику') }}</a>.
+        <p>{{ _('Ваш словник порожній. Додайте слово вище або оберіть його') }}
+          <a href="{{ url_for('vocabulary.dictionary') }}">{{ _('у загальному словнику') }}</a>.</p>
+        <a class="btn btn-outline-info" href="{{ url_for('vocabulary.dictionary') }}">{{ _('Відкрити словник') }}</a>
       {% endif %}
     </div>
   {% endif %}

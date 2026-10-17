@@ -1,0 +1,9 @@
+{# A user's photo, or the first letter of their name until they upload one. #}
+{% macro avatar(user, size=40, cls='') -%}
+{% if user.image_file and user.image_file != 'default.jpg' -%}
+<img class="lc-avatar {{ cls }}" style="--size: {{ size }}px" width="{{ size }}" height="{{ size }}" alt=""
+     src="{{ url_for('static', filename='profile_pics/' ~ user.image_file) }}">
+{%- else -%}
+<span class="lc-avatar lc-avatar-letter {{ cls }}" style="--size: {{ size }}px" aria-hidden="true">{{ user.username[:1] | upper }}</span>
+{%- endif %}
+{%- endmacro %}

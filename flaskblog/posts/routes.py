@@ -4,6 +4,7 @@ from flask_login import current_user, login_required
 
 from flaskblog import db
 from flaskblog.models import Comment, Post
+from flaskblog.permissions import is_admin
 from flaskblog.posts.forms import PostForm
 from slugify import slugify
 
@@ -28,8 +29,7 @@ def generate_unique_slug(slug):
 @posts.route("/lesson/new", methods=['GET', 'POST'])
 @login_required
 def new_post():
-    username = current_user.username
-    if username == "Andriy":
+    if is_admin():
         form = PostForm()
         if form.validate_on_submit():
 
@@ -63,8 +63,7 @@ def post(slug):
 @posts.route("/lesson/<string:slug>/update", methods=['GET', 'POST'])
 @login_required
 def update_post(slug):
-    username = current_user.username
-    if username == "Andriy":
+    if is_admin():
         post = Post.query.filter_by(slug=slug).first_or_404()
         if post.author != current_user:
             abort(403)
@@ -93,8 +92,7 @@ def update_post(slug):
 @posts.route("/lesson/<int:post_id>/delete", methods=['POST'])
 @login_required
 def delete_post(post_id):
-    username = current_user.username
-    if username == "Andriy":
+    if is_admin():
         post = Post.query.get_or_404(post_id)
         if post.author != current_user:
             abort(403)

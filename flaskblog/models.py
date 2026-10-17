@@ -4,7 +4,7 @@ from flask import current_app
 from flaskblog import db, login_manager
 from flaskblog.i18n import get_locale, gettext
 from flaskblog.permissions import is_admin
-from flask_login import UserMixin, current_user
+from flask_login import UserMixin
 from flask_admin.contrib.sqla import ModelView
 from flask_admin import AdminIndexView
 from slugify import slugify
@@ -16,7 +16,7 @@ def load_user(user_id):
 
 class MyAdminIndexView(AdminIndexView):
     def is_accessible(self):
-        return current_user.is_authenticated and current_user.username == 'Andriy'
+        return is_admin()
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
@@ -49,7 +49,7 @@ class User(db.Model, UserMixin):
     
 class UserView(ModelView):
     def is_accessible(self):
-        return current_user.is_authenticated and current_user.username == 'Andriy'
+        return is_admin()
     
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -83,7 +83,7 @@ class PostView(ModelView):
     column_list = ['title', 'author']
 
     def is_accessible(self):
-        return current_user.is_authenticated and current_user.username == 'Andriy'
+        return is_admin()
 
 
 class Comment(db.Model):
@@ -99,7 +99,7 @@ class CommentView(ModelView):
 
 
     def is_accessible(self):
-        return current_user.is_authenticated and current_user.username == 'Andriy'
+        return is_admin()
     
 class Update(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -114,7 +114,7 @@ class UpdateView(ModelView):
     column_default_sort = ('date_posted', True)
 
     def is_accessible(self):
-        return current_user.is_authenticated and current_user.username == 'Andriy'
+        return is_admin()
     
 class Announcement(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -127,7 +127,7 @@ class AnnouncementView(ModelView):
     column_list = ['title', 'date_posted']
 
     def is_accessible(self):
-        return current_user.is_authenticated and current_user.username == 'Andriy'
+        return is_admin()
 
 class Word(db.Model):
     """An entry of the shared Catalan-Ukrainian dictionary."""

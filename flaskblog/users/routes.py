@@ -8,6 +8,7 @@ from flaskblog.users.forms import (LoginForm, RegistrationForm,
                                    RequestResetForm, ResetPasswordForm,
                                    UpdateAccountForm)
 from flaskblog.users.utils import save_picture, send_reset_email
+from flaskblog.vocabulary.service import user_word_counts
 
 users = Blueprint('users', __name__)
 
@@ -70,7 +71,8 @@ def account():
     image_file = url_for(
         'static', filename='profile_pics/' + current_user.image_file)
     return render_template('account.html', title=_('Моя сторінка'),
-                           image_file=image_file, form=form)
+                           image_file=image_file, form=form,
+                           counts=user_word_counts(current_user.id))
 
 
 @users.route("/user/<string:username>")

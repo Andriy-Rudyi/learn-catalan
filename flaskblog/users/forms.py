@@ -5,6 +5,7 @@ from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationE
 from flask_login import current_user
 from flaskblog.i18n import gettext as _, lazy_gettext as _l
 from flaskblog.models import User
+from flaskblog.permissions import admin_username, is_admin
 
 
 class RegistrationForm(FlaskForm):
@@ -46,6 +47,12 @@ class UpdateAccountForm(FlaskForm):
 
     def validate_username(self, username):
         if username.data != current_user.username:
+            # Editing rights go with the editor's username: the editor keeps it,
+            # and nobody else can take it, even when it is free.
+            if is_admin():
+                raise ValidationError(_('Ім’я редактора сайту змінити не можна.'))
+            if username.data.strip().lower() == admin_username().lower():
+                raise ValidationError(_('Це ім’я вже зайняте. Оберіть інше.'))
             user = User.query.filter_by(username=username.data).first()
             if user:
                 raise ValidationError(_('Це ім’я вже зайняте. Оберіть інше.'))

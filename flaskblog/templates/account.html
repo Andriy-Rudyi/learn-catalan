@@ -1,59 +1,90 @@
 {% extends "layout.html" %}
+{% from "partials/forms.html" import field with context %}
+{% from "partials/icons.html" import icon %}
+{% from "partials/avatar.html" import avatar %}
 {% block content %}
-    <div class="content-section container">
-            <div class="media row row-cols-2">
-            <img class="rounded-circle account-img col p-0 m-2" src="{{ image_file }}" alt="">
-            <div class="media-body col m-2">
-                <h2 class="account-heading">{{ current_user.username }}</h2>
-                <p class="text-secondary">{{ current_user.email }}</p>
-            </div>
-        </div>
-            <form action="" method="POST" novalidate enctype="multipart/form-data">
-                {{ form.hidden_tag() }}
-                <fieldset class="form-group row mb-3">
-                    <legend class="border-bottom mb-4">{{ _('Інформація про обліковий запис') }}</legend>
-                    <div class="form-group">
-                        {{ form.username.label(class="form-control-label") }}
-    
-                        {% if form.username.errors %}
-                            {{ form.username(class="form-control form-control-lg is-invalid") }}
-                            <div class="invalid-feedback">
-                                {% for error in form.username.errors %}
-                                    <span>{{ error }}</span>
-                                {% endfor %}  
-                            </div>
-                        {% else %}
-                            {{ form.username(class="form-control form-control-lg") }}
-                        {% endif %}
-    
-                    </div>
-                    <div class="form-group">
-                        {{ form.email.label(class="form-control-label") }}   
-                        {% if form.email.errors %}
-                            {{ form.email(class="form-control form-control-lg is-invalid") }}
-                            <div class="invalid-feedback">
-                                {% for error in form.email.errors %}
-                                    <span>{{ error }}</span>
-                                {% endfor %}  
-                            </div>
-                        {% else %}
-                            {{ form.email(class="form-control form-control-lg") }}
-                        {% endif %}
-                    </div>
-                </fieldset>
-                <div class="form-group">
-                    {{ form.picture.label(class="form-label") }}</br>   
-                    {{ form.picture(class="form-control-file mb-2") }}</br>
-                    {% if form.picture.errors %}
-                        {% for error in form.picture.errors %}
-                            <span class="text-danger">{{ error }}</span></br>
-                        {% endfor %}  
-                    {% endif %}
-                </div>
-                <div class="form-group mt-3">
-                    {{ form.submit(class="btn btn-outline-info") }}
-                </div>
-            </form>
-
+<div class="account">
+  <section class="profile-card">
+    {{ avatar(current_user, 88, 'profile-avatar') }}
+    <div class="profile-info">
+      <h1 class="profile-name">{{ current_user.username }}</h1>
+      <p class="profile-email">{{ current_user.email }}</p>
+      {% if is_admin() %}<span class="badge profile-role">{{ _('Редактор сайту') }}</span>{% endif %}
     </div>
+    <a class="btn btn-outline-secondary btn-sm profile-logout" href="{{ url_for('users.logout') }}">{{ _('Вийти') }}</a>
+  </section>
+
+  <section class="stat-tiles" aria-label="{{ _('Мій словник') }}">
+    <a class="stat-tile" href="{{ url_for('vocabulary.my_dictionary') }}">
+      <span class="stat-number">{{ counts.all }}</span>
+      <span class="stat-label">{{ _('усього слів') }}</span>
+    </a>
+    <a class="stat-tile" href="{{ url_for('vocabulary.my_dictionary', status='learning') }}">
+      <span class="stat-number">{{ counts.learning }}</span>
+      <span class="stat-label">{{ _('вчу') }}</span>
+    </a>
+    <a class="stat-tile stat-known" href="{{ url_for('vocabulary.my_dictionary', status='known') }}">
+      <span class="stat-number">{{ counts.known }}</span>
+      <span class="stat-label">{{ _('знаю') }}</span>
+    </a>
+  </section>
+
+  <section class="content-section settings-card">
+    <h2 class="settings-title">{{ _('Інформація про обліковий запис') }}</h2>
+    <form method="POST" novalidate enctype="multipart/form-data">
+      {{ form.hidden_tag() }}
+      <div class="row g-3">
+        <div class="col-md-6">
+          {% if is_admin() %}
+            {{ field(form.username, autocomplete="username", readonly=true,
+                     hint=_('Ім’я редактора сайту змінити не можна.')) }}
+          {% else %}
+            {{ field(form.username, autocomplete="username") }}
+          {% endif %}
+        </div>
+        <div class="col-md-6">
+          {{ field(form.email, autocomplete="email", inputmode="email") }}
+        </div>
+      </div>
+      <div class="lc-field">
+        {{ form.picture.label(class="form-label") }}
+        <label class="file-picker">
+          {{ icon('camera', 'lc-icon') }}
+          <span class="file-picker-text" data-empty="{{ _('Виберіть фото (JPG або PNG)') }}">{{ _('Виберіть фото (JPG або PNG)') }}</span>
+          {{ form.picture(class="file-picker-input", accept=".jpg,.jpeg,.png") }}
+        </label>
+        {% for error in form.picture.errors %}
+          <div class="invalid-feedback d-block">{{ error }}</div>
+        {% endfor %}
+      </div>
+      {{ form.submit(class="btn btn-outline-info") }}
+    </form>
+  </section>
+</div>
 {% endblock content %}
+{% block scripts %}
+<script>
+  // Show the chosen file's name and a preview of the new photo.
+  (function () {
+    var input = document.querySelector('.file-picker-input');
+    if (!input) { return; }
+    input.addEventListener('change', function () {
+      var file = input.files && input.files[0];
+      var text = document.querySelector('.file-picker-text');
+      text.textContent = file ? file.name : text.getAttribute('data-empty');
+      if (file && window.URL) {
+        var current = document.querySelector('.profile-avatar');
+        var photo = current;
+        if (current.tagName !== 'IMG') {
+          photo = document.createElement('img');
+          photo.className = current.className.replace('lc-avatar-letter', '');
+          photo.setAttribute('style', current.getAttribute('style'));
+          photo.alt = '';
+          current.parentNode.replaceChild(photo, current);
+        }
+        photo.src = URL.createObjectURL(file);
+      }
+    });
+  })();
+</script>
+{% endblock %}
