@@ -73,5 +73,25 @@ class DatabaseUrlTests(unittest.TestCase):
     def test_no_silent_fallback_on_a_host(self):
         self.assertIsNone(self._url(RENDER='true'))
 
+    def test_local_secret_key_is_random_not_a_fixed_string(self):
+        from unittest import mock
+        from flaskblog.config import secret_key
+        with mock.patch.dict('os.environ', {}, clear=False):
+            for key in ('SECRET_KEY', 'RENDER', 'RAILWAY_ENVIRONMENT', 'DYNO', 'FLY_APP_NAME'):
+                os.environ.pop(key, None)
+            with self.assertWarns(UserWarning):
+                first = secret_key()
+            with self.assertWarns(UserWarning):
+                second = secret_key()
+        self.assertGreaterEqual(len(first), 32)
+        self.assertNotEqual(first, second)
+
+    def test_no_secret_key_fallback_on_a_host(self):
+        from unittest import mock
+        from flaskblog.config import secret_key
+        with mock.patch.dict('os.environ', {'RENDER': 'true'}, clear=False):
+            os.environ.pop('SECRET_KEY', None)
+            self.assertIsNone(secret_key())
+
     def test_old_postgres_scheme_is_fixed(self):
         self.assertEqual('postgresql://u:p@h/db', self._url(DATABASE_URL='postgres://u:p@h/db'))

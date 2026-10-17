@@ -1,4 +1,6 @@
 import os
+import secrets
+import warnings
 
 
 # Set by the hosting platforms; there a missing setting must be an error
@@ -7,7 +9,6 @@ HOSTED_MARKERS = ('RENDER', 'RAILWAY_ENVIRONMENT', 'DYNO', 'FLY_APP_NAME')
 
 # Local development without any settings: the SQLite file in instance/.
 LOCAL_DATABASE_URL = 'sqlite:///learn_catalan.db'
-LOCAL_SECRET_KEY = 'local-development-only'
 
 
 def is_hosted():
@@ -31,7 +32,18 @@ def database_url():
 
 
 def secret_key():
-    return os.getenv('SECRET_KEY') or (None if is_hosted() else LOCAL_SECRET_KEY)
+    """SECRET_KEY from the environment.
+
+    Without one, outside a known host, a random key is made for this run of
+    the app: forms and logins work, but nobody can forge a session cookie,
+    because the key is never written anywhere. (A fixed fallback key would
+    be public, since the code is.) You are logged out when the app restarts.
+    """
+    key = os.getenv('SECRET_KEY')
+    if key or is_hosted():
+        return key
+    warnings.warn('SECRET_KEY is not set: using a random key for this run only.')
+    return secrets.token_hex(32)
 
 
 class Config:
