@@ -1,0 +1,297 @@
+{
+  "act": 1,
+  "scene": 1,
+  "setting": "Venècia. Un carrer, davant la casa de Brabanci.",
+  "blocks": [
+    {"stage": "Entren RODERIGO i IAGO."},
+    {"speaker": "RODERIGO", "lines": [
+      "Calla, no m'ho diguis! Trobo molt mal fet",
+      "que tu, Iago, que has tingut la meva bossa",
+      "com si els cordons fossin teus, ho sabessis."
+    ]},
+    {"speaker": "IAGO", "lines": [
+      "Mal llamp! Però si no m'escolteu.",
+      "Si mai vaig somiar res de semblant,",
+      "avorriu-me."
+    ]},
+    {"speaker": "RODERIGO", "lines": [
+      "Em vas dir que el portaves dins el teu odi."
+    ]},
+    {"speaker": "IAGO", "lines": [
+      "Menyspreeu-me si no és així. Tres grans de la ciutat,",
+      "demanant-li en persona que em fes el seu lloctinent,",
+      "es van treure el barret davant d'ell; i, per la fe d'home,",
+      "sé el que valc: no mereixo un lloc pitjor.",
+      "Però ell, enamorat del seu orgull i dels seus designis,",
+      "els esquiva amb unes voltes de paraules inflades,",
+      "horriblement farcides de termes de guerra,",
+      "i, en conclusió,",
+      "desestima els meus mediadors. «Certament», diu ell,",
+      "«ja he triat el meu oficial.»",
+      "I qui era, aquest?",
+      "Doncs, mira per on, un gran aritmètic,",
+      "un tal Michael Cassio, un florentí,",
+      "un paio quasi condemnat per una dona bonica,",
+      "que mai no ha disposat un esquadró en el camp",
+      "ni sap com s'ordena una batalla",
+      "més que una filadora; tret de la teoria dels llibres,",
+      "de la qual els cònsols togats saben discórrer",
+      "tan magistralment com ell. Xerrameca sense pràctica:",
+      "això és tot el seu ofici de soldat. Però ell, senyor, va ser l'elegit;",
+      "i jo, que els seus ulls havien vist posat a prova",
+      "a Rodes, a Xipre i en altres terres",
+      "cristianes i paganes, m'he de quedar sense vent i encalmat",
+      "per culpa d'un deure-i-haver; aquest compta-fitxes,",
+      "ell, enhorabona, ha de ser el seu lloctinent,",
+      "i jo —Déu ens empari!— l'alferes de sa Moreria."
+    ]},
+    {"speaker": "RODERIGO", "lines": [
+      "Pel cel, jo m'hauria estimat més ser el seu botxí."
+    ]},
+    {"speaker": "IAGO", "lines": [
+      "Doncs no hi ha remei. És la maledicció del servei:",
+      "l'ascens va per cartes de recomanació i per afecte,",
+      "no per l'antiga gradació, on cada segon",
+      "era l'hereu del primer. Ara, senyor, jutgeu vós mateix",
+      "si per cap raó justa estic obligat",
+      "a estimar el moro."
+    ]},
+    {"speaker": "RODERIGO", "lines": [
+      "Doncs jo no el seguiria."
+    ]},
+    {"speaker": "IAGO", "lines": [
+      "Oh, senyor, calmeu-vos.",
+      "El segueixo per servir-me'n en profit meu.",
+      "No tots podem ser amos, ni tots els amos",
+      "poden ser seguits lleialment. Ja veureu",
+      "més d'un criat servicial i plegajonolls",
+      "que, embadalit amb la seva servitud obsequiosa,",
+      "gasta la vida igual que l'ase del seu amo,",
+      "per no res més que el pinso, i quan és vell, el fan fora.",
+      "Assoteu-me aquests bergants honrats! N'hi ha d'altres",
+      "que, abillats amb formes i semblances de deure,",
+      "mantenen el cor al servei d'ells mateixos",
+      "i, oferint als seus senyors només aparences de servei,",
+      "prosperen a costa d'ells; i quan s'han folrat la jaqueta,",
+      "es reten homenatge a si mateixos. Aquests paios tenen ànima,",
+      "i jo em declaro un d'ells.",
+      "Perquè, senyor,",
+      "tan cert com que vós sou Roderigo,",
+      "si jo fos el moro, no seria Iago.",
+      "Seguint-lo a ell, només em segueixo a mi.",
+      "El cel n'és el jutge: no ho faig per amor ni per deure,",
+      "sinó aparentant-ho, per a la meva fi particular.",
+      "Perquè el dia que els meus actes de fora mostrin",
+      "l'acció i la figura autèntiques del meu cor",
+      "amb cortesia externa, poc després",
+      "duré el cor penjat a la màniga",
+      "perquè me'l piquin les gralles. No soc el que soc."
+    ]},
+    {"speaker": "RODERIGO", "lines": [
+      "Quina sort tan completa que té el llavis-gruixuts,",
+      "si se'n surt d'aquesta manera!"
+    ]},
+    {"speaker": "IAGO", "lines": [
+      "Crideu el pare d'ella:",
+      "desperteu-lo, aneu-li al darrere, enverineu-li el goig,",
+      "denuncieu-lo pel carrer, enceneu els parents d'ella,",
+      "i, encara que visqui en un clima fèrtil,",
+      "empesteu-lo de mosques; encara que la seva joia sigui joia,",
+      "llanceu-hi tantes ocasions de disgust",
+      "que perdi una mica de color."
+    ]},
+    {"speaker": "RODERIGO", "lines": [
+      "Aquí és la casa del seu pare; cridaré fort."
+    ]},
+    {"speaker": "IAGO", "lines": [
+      "Feu-ho, amb un to tan esfereït i un crit tan terrible",
+      "com quan, de nit i per descuit, el foc",
+      "es veu a les ciutats populoses."
+    ]},
+    {"speaker": "RODERIGO", "lines": [
+      "Ei, Brabanci! Senyor Brabanci, ei!"
+    ]},
+    {"speaker": "IAGO", "lines": [
+      "Desperteu-vos! Ei, Brabanci! Lladres, lladres!",
+      "Vigileu la casa, la filla i les bosses!",
+      "Lladres, lladres!"
+    ]},
+    {"stage": "BRABANCI apareix a dalt, a una finestra."},
+    {"speaker": "BRABANCI", "lines": [
+      "Quina és la raó d'aquesta crida terrible?",
+      "Què hi ha, aquí baix?"
+    ]},
+    {"speaker": "RODERIGO", "lines": [
+      "Senyor, és a casa tota la vostra família?"
+    ]},
+    {"speaker": "IAGO", "lines": [
+      "Teniu les portes tancades amb clau?"
+    ]},
+    {"speaker": "BRABANCI", "lines": [
+      "Com? Per què ho pregunteu?"
+    ]},
+    {"speaker": "IAGO", "lines": [
+      "Redéu, senyor, us han robat! Per vergonya, poseu-vos la toga;",
+      "teniu el cor esberlat, heu perdut mitja ànima;",
+      "ara mateix, ara, en aquest mateix instant, un vell marrà negre",
+      "està muntant la vostra ovella blanca. Lleveu-vos, lleveu-vos;",
+      "desperteu amb la campana els ciutadans que ronquen,",
+      "o si no el diable us farà avi.",
+      "Lleveu-vos, us dic!"
+    ]},
+    {"speaker": "BRABANCI", "lines": [
+      "Què? Heu perdut el seny?"
+    ]},
+    {"speaker": "RODERIGO", "lines": [
+      "Reverendíssim senyor, coneixeu la meva veu?"
+    ]},
+    {"speaker": "BRABANCI", "lines": [
+      "Jo no. Qui sou?"
+    ]},
+    {"speaker": "RODERIGO", "lines": [
+      "Em dic Roderigo."
+    ]},
+    {"speaker": "BRABANCI", "lines": [
+      "Doncs pitjor benvinguda;",
+      "t'he manat que no rondis per les meves portes;",
+      "amb franquesa honrada m'has sentit dir",
+      "que la meva filla no és per a tu. I ara, en plena bogeria,",
+      "ple de sopar i de begudes que trastornen,",
+      "amb una fanfarroneria maliciosa, vens",
+      "a trencar-me el repòs."
+    ]},
+    {"speaker": "RODERIGO", "lines": [
+      "Senyor, senyor, senyor..."
+    ]},
+    {"speaker": "BRABANCI", "lines": [
+      "Però has d'estar ben segur",
+      "que el meu caràcter i el meu càrrec tenen prou poder",
+      "per fer que això et resulti amarg."
+    ]},
+    {"speaker": "RODERIGO", "lines": [
+      "Paciència, bon senyor."
+    ]},
+    {"speaker": "BRABANCI", "lines": [
+      "Què em dius de robatoris? Això és Venècia;",
+      "casa meva no és un mas aïllat."
+    ]},
+    {"speaker": "RODERIGO", "lines": [
+      "Molt respectable Brabanci,",
+      "vinc a vós amb l'ànima senzilla i pura."
+    ]},
+    {"speaker": "IAGO", "lines": [
+      "Redéu, senyor! Sou d'aquells que no servirien Déu",
+      "si els ho manés el diable. Com que venim a fer-vos un servei",
+      "i us penseu que som uns rufians, tindreu la filla",
+      "coberta per un cavall de Berberia; tindreu uns néts que us",
+      "renillaran; tindreu corsers per cosins i genets per germans."
+    ]},
+    {"speaker": "BRABANCI", "lines": [
+      "Quin miserable malparlat ets tu?"
+    ]},
+    {"speaker": "IAGO", "lines": [
+      "Soc un, senyor, que us ve a dir que la vostra filla i",
+      "el moro ara mateix estan fent la bèstia de dues esquenes."
+    ]},
+    {"speaker": "BRABANCI", "lines": [
+      "Ets un canalla."
+    ]},
+    {"speaker": "IAGO", "lines": [
+      "I vós, un senador."
+    ]},
+    {"speaker": "BRABANCI", "lines": [
+      "D'això me'n respondràs tu; et conec, Roderigo."
+    ]},
+    {"speaker": "RODERIGO", "lines": [
+      "Senyor, respondré de tot. Però us suplico",
+      "—si és pel vostre gust i amb el vostre savi consentiment,",
+      "com en part veig que és— que la vostra bella filla,",
+      "a aquesta hora incerta i ensopida de la nit,",
+      "hagi estat portada, sense més ni menys escorta",
+      "que un criat de lloguer qualsevol, un gondoler,",
+      "a les abraçades grolleres d'un moro lasciu;",
+      "si ho sabeu i ho heu permès,",
+      "aleshores us hem fet un greuge atrevit i insolent.",
+      "Però si no ho sabeu, la meva educació em diu",
+      "que ens renyeu injustament. No cregueu",
+      "que, contra tot sentit de la urbanitat,",
+      "jo vulgui jugar i fer burla de la vostra dignitat.",
+      "La vostra filla, si no li n'heu donat permís,",
+      "ho torno a dir, s'ha revoltat greument,",
+      "lligant el seu deure, bellesa, enginy i fortuna",
+      "a un foraster errant i rodamón,",
+      "d'aquí i d'arreu. Comproveu-ho tot seguit.",
+      "Si és a la seva cambra o a casa vostra,",
+      "deixeu caure sobre mi la justícia de l'estat",
+      "per haver-vos enganyat així."
+    ]},
+    {"speaker": "BRABANCI", "lines": [
+      "Feu foc a l'esca, ei!",
+      "Doneu-me una espelma; desperteu tota la meva gent.",
+      "Aquest fet s'assembla al meu somni;",
+      "creure-hi ja m'oprimeix.",
+      "Llum, us dic, llum!"
+    ]},
+    {"stage": "Surt."},
+    {"speaker": "IAGO", "lines": [
+      "Adeu, que us he de deixar.",
+      "No em sembla escaient ni saludable per al meu càrrec",
+      "que em facin declarar, com passaria si em quedo,",
+      "contra el moro. Perquè jo sé que l'estat,",
+      "per molt que això li costi alguna reprimenda,",
+      "no el pot destituir sense perill; perquè s'ha embarcat,",
+      "amb un acord tan clamorós, cap a les guerres de Xipre,",
+      "que ara mateix ja estan en marxa, que, per salvar l'ànima,",
+      "no en tenen cap altre de la seva talla",
+      "per dirigir els seus afers; i per aquesta raó,",
+      "encara que l'odio com odio les penes de l'infern,",
+      "per necessitat de la vida present",
+      "he de desplegar una bandera i un senyal d'amor,",
+      "que de fet no és més que senyal. Perquè el trobeu segur,",
+      "porteu al Sagitari la gent que hàgiu aixecat,",
+      "i allà hi seré amb ell. Doncs, adeu."
+    ]},
+    {"stage": "Surt."},
+    {"stage": "Entra BRABANCI en bata, i CRIATS amb torxes."},
+    {"speaker": "BRABANCI", "lines": [
+      "És una desgràcia massa certa. Se n'ha anat,",
+      "i el que em queda d'aquest temps menyspreat",
+      "no és res més que amargor. Digues, Roderigo,",
+      "on l'has vista? Oh, noia desgraciada!",
+      "Amb el moro, dius? Qui voldria ser pare?",
+      "Com has sabut que era ella? Oh, m'enganya",
+      "més enllà del que es pot pensar! Què us va dir? Porteu més espelmes,",
+      "aixequeu tots els meus parents. Creieu que s'han casat?"
+    ]},
+    {"speaker": "RODERIGO", "lines": [
+      "De debò, crec que sí."
+    ]},
+    {"speaker": "BRABANCI", "lines": [
+      "Oh, cel! Com ha pogut sortir? Oh, traïció de la sang!",
+      "Pares, d'ara endavant no us fieu del pensament de les filles",
+      "per allò que les veieu fer. No hi ha encanteris",
+      "amb què la naturalesa de la joventut i la donzellesa",
+      "pot ser pervertida? No n'heu llegit res, Roderigo,",
+      "d'alguna cosa així?"
+    ]},
+    {"speaker": "RODERIGO", "lines": [
+      "Sí, senyor, és clar que sí."
+    ]},
+    {"speaker": "BRABANCI", "lines": [
+      "Crideu el meu germà. Oh, tant de bo l'haguéssiu tinguda vós!",
+      "Uns per aquí, altres per allà. Sabeu",
+      "on podem atrapar-la a ella i el moro?"
+    ]},
+    {"speaker": "RODERIGO", "lines": [
+      "Crec que el puc trobar, si us plau",
+      "aplegar una bona escorta i venir amb mi."
+    ]},
+    {"speaker": "BRABANCI", "lines": [
+      "Si us plau, guieu-nos. Cridaré a cada casa;",
+      "a la majoria hi puc manar. Armes, ei!",
+      "I aixequeu alguns oficials especials de la nit.",
+      "Endavant, bon Roderigo; us recompensaré l'esforç."
+    ]},
+    {"stage": "Surten."}
+  ]
+}

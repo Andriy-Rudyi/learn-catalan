@@ -1,0 +1,23 @@
+{
+  "slug": "othello",
+  "title": "Otel·lo, el moro de Venècia",
+  "short_title": "Otel·lo",
+  "author": "William Shakespeare",
+  "year": 1603,
+  "level": "C1",
+  "characters": [
+    ["OTEL·LO", "general moro al servei de Venècia"],
+    ["DESDÈMONA", "la seva esposa, filla de Brabanci"],
+    ["IAGO", "alferes d'Otel·lo"],
+    ["EMÍLIA", "esposa de Iago, dama de Desdèmona"],
+    ["CASSIO", "lloctinent d'Otel·lo"],
+    ["RODERIGO", "cavaller venecià, enamorat de Desdèmona"],
+    ["BRABANCI", "senador, pare de Desdèmona"],
+    ["BIANCA", "amant de Cassio"],
+    ["EL DUX", "de Venècia"],
+    ["LODOVICO", "parent de Brabanci"],
+    ["GRACIÀ", "germà de Brabanci"],
+    ["MONTANO", "governador de Xipre abans d'Otel·lo"],
+    ["BUFÓ", "criat d'Otel·lo"]
+  ]
+}

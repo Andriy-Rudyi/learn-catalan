@@ -35,6 +35,8 @@ A Flask-based blog platform for learning and teaching the Catalan language.
   not to the word (“tocar”: 1. touch, 2. play an instrument), with English
   as the pivot. `SENSES=False` goes back to one line per language. See
   [Meanings](#meanings)
+- **Reading**: Shakespeare's *Othello* in full in Catalan, every word
+  clickable. See [Reading](#reading)
 - **Transcription**: every dictionary word shows how it sounds, in IPA and (on
   the Ukrainian site) in Ukrainian letters with the stress marked:
   casa [ˈkazə] ка́зə. See [Transcription](#transcription)
@@ -435,6 +437,26 @@ singular candidates come from [ReeeWriter](https://github.com/neuronids/reeewrit
 (MIT); the data is in `flaskblog/reader/data/` (see its `SOURCES.md`).
 `READER=False` removes the page and its menu item.
 
+## Reading
+
+`/reading` is a small library of whole works in Catalan, read in the same
+way as `/text`: every word of the text can be clicked for its form,
+translation, transcription and synonyms (the panel does not replace words
+here: the text is the author's).
+
+- The first work is Shakespeare's *Othello*, in full, in a new Catalan
+  translation made for this site from the English play text (public
+  domain). Only the play itself was translated: no notes or other
+  translations were used.
+- A work is a folder in `flaskblog/reader/data/works/` with `work.json`
+  (title, author, level, characters) and one file per scene,
+  `a{act}s{scene}.json` (see `flaskblog/reader/works.py` for the format).
+  Adding a work needs no code or migration.
+- `/reading/<work>` is the contents page; `/reading/<work>/<act>/<scene>` a
+  scene, with links to the previous and next one. All are in the sitemap.
+- `READING=False` removes the section and its menu item (so does
+  `READER=False`).
+
 ## Grammar course
 
 `/grammar` is a grammar course laid out like Raymond Murphy's grammar books:
@@ -538,6 +560,7 @@ SITE_URL=https://example.com # public address for canonical links and the sitema
 API_RATE_LIMIT=120           # open API requests a minute per client address; 0 = no limit
 SENSES=True                  # set to False to show one translation line per language instead of meanings
 READER=True                  # set to False to take away the /text page
+READING=True                 # set to False to take away the /reading section
 TRANSCRIPTION=True           # set to False to show only pronunciations typed in by an editor
 TEST_DATABASE_URI=           # optional, tests default to in-memory SQLite
 ```

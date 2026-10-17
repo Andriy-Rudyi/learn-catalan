@@ -1,0 +1,193 @@
+{
+  "act": 1,
+  "scene": 2,
+  "setting": "Venècia. Un altre carrer, davant el Sagitari.",
+  "blocks": [
+    {"stage": "Entren OTEL·LO, IAGO i ACOMPANYANTS amb torxes."},
+    {"speaker": "IAGO", "lines": [
+      "Encara que en l'ofici de la guerra he matat homes,",
+      "tinc per matèria essencial de la consciència",
+      "no cometre cap assassinat premeditat. Em falta maldat,",
+      "de vegades, per servir-me a mi mateix. Nou o deu vegades",
+      "havia pensat clavar-li-la aquí, sota les costelles."
+    ]},
+    {"speaker": "OTEL·LO", "lines": [
+      "Més val així."
+    ]},
+    {"speaker": "IAGO", "lines": [
+      "No, però xerrava,",
+      "i deia coses tan baixes i provocadores",
+      "contra el vostre honor",
+      "que, amb la poca pietat que tinc,",
+      "a penes em vaig poder contenir. Però digueu-me, senyor,",
+      "esteu ben casat? Perquè estigueu-ne segur:",
+      "el magnífic és molt estimat,",
+      "i té a les seves mans una veu tan poderosa",
+      "com el doble de la del dux. Us farà divorciar,",
+      "o us imposarà tota la restricció i el càstig",
+      "que la llei, amb tot el poder que ell té per aplicar-la,",
+      "li doni de corda."
+    ]},
+    {"speaker": "OTEL·LO", "lines": [
+      "Que faci tot el mal que pugui;",
+      "els serveis que he fet a la Signoria",
+      "cridaran més fort que les seves queixes. Encara no se sap",
+      "—i ho faré públic quan sàpiga que vantar-se",
+      "és un honor— que jo trec la vida i l'ésser",
+      "d'homes de soli reial, i que els meus mèrits",
+      "poden parlar, barret en mà, d'una fortuna tan alta",
+      "com aquesta que he assolit. Perquè has de saber, Iago,",
+      "que, si no estimés la gentil Desdèmona,",
+      "no posaria la meva condició lliure i sense llar",
+      "dins de límits i de fronteres",
+      "ni per tots els tresors del mar. Però mira quins llums venen per allà!"
+    ]},
+    {"speaker": "IAGO", "lines": [
+      "És el pare, alçat del llit, i els seus amics;",
+      "més us valdria entrar."
+    ]},
+    {"speaker": "OTEL·LO", "lines": [
+      "Jo no; m'han de trobar.",
+      "Les meves qualitats, el meu títol i la meva ànima íntegra",
+      "em mostraran tal com soc. Són ells?"
+    ]},
+    {"speaker": "IAGO", "lines": [
+      "Per Janus, em sembla que no."
+    ]},
+    {"stage": "Entren CASSIO i uns OFICIALS amb torxes."},
+    {"speaker": "OTEL·LO", "lines": [
+      "Els servidors del dux i el meu lloctinent!",
+      "Que la nit us sigui bona, amics.",
+      "Quines notícies hi ha?"
+    ]},
+    {"speaker": "CASSIO", "lines": [
+      "El dux us saluda, general,",
+      "i requereix que compareixeu a corre-cuita,",
+      "a l'instant mateix."
+    ]},
+    {"speaker": "OTEL·LO", "lines": [
+      "De què es tracta, segons vós?"
+    ]},
+    {"speaker": "CASSIO", "lines": [
+      "D'alguna cosa de Xipre, segons endevino.",
+      "És un afer força urgent. Les galeres",
+      "han enviat una dotzena de missatgers seguits",
+      "aquesta mateixa nit, l'un darrere l'altre;",
+      "i molts dels cònsols, llevats i reunits,",
+      "ja són al palau del dux. Us han cridat amb insistència,",
+      "i, com que no us trobaven al vostre allotjament,",
+      "el senat ha enviat per tot arreu tres escamots",
+      "a cercar-vos."
+    ]},
+    {"speaker": "OTEL·LO", "lines": [
+      "Està bé que m'hàgiu trobat vós.",
+      "Només diré una paraula aquí a la casa",
+      "i vinc amb vosaltres."
+    ]},
+    {"stage": "Surt."},
+    {"speaker": "CASSIO", "lines": [
+      "Alferes, què hi fa, aquí?"
+    ]},
+    {"speaker": "IAGO", "lines": [
+      "A fe, aquesta nit ha abordat un galió de terra ferma;",
+      "si resulta una presa legal, té la vida feta."
+    ]},
+    {"speaker": "CASSIO", "lines": [
+      "No ho entenc."
+    ]},
+    {"speaker": "IAGO", "lines": [
+      "S'ha casat."
+    ]},
+    {"speaker": "CASSIO", "lines": [
+      "Amb qui?"
+    ]},
+    {"stage": "Torna a entrar OTEL·LO."},
+    {"speaker": "IAGO", "lines": [
+      "Doncs, per la Mare de Déu, amb... Som-hi, capità, veniu?"
+    ]},
+    {"speaker": "OTEL·LO", "lines": [
+      "Anem."
+    ]},
+    {"speaker": "CASSIO", "lines": [
+      "Aquí ve una altra colla a buscar-vos."
+    ]},
+    {"stage": "Entren BRABANCI, RODERIGO i OFICIALS amb llums i armes."},
+    {"speaker": "IAGO", "lines": [
+      "És Brabanci. General, aneu amb compte:",
+      "ve amb males intencions."
+    ]},
+    {"speaker": "OTEL·LO", "lines": [
+      "Ei, atureu-vos!"
+    ]},
+    {"speaker": "RODERIGO", "lines": [
+      "Senyor, és el moro."
+    ]},
+    {"speaker": "BRABANCI", "lines": [
+      "Per terra amb ell, el lladre!"
+    ]},
+    {"speaker": "IAGO", "lines": [
+      "Vós, Roderigo? Vinga, senyor, aquí em teniu."
+    ]},
+    {"speaker": "OTEL·LO", "lines": [
+      "Guardeu les espases lluents, que la rosada les rovellarà.",
+      "Bon senyor, manareu més amb els vostres anys",
+      "que no pas amb les armes."
+    ]},
+    {"speaker": "BRABANCI", "lines": [
+      "Oh, lladre infame! On has amagat la meva filla?",
+      "Maleït com ets, l'has embruixada;",
+      "perquè ho deixo al judici de qualsevol ésser amb seny:",
+      "si no estigués lligada amb cadenes de màgia,",
+      "una donzella tan tendra, bella i feliç,",
+      "tan contrària al matrimoni que defugia",
+      "els rics galants arrissats de la nostra nació,",
+      "hauria mai, exposant-se a la burla de tothom,",
+      "fugit de la meva tutela cap al pit de sutge",
+      "d'una cosa com tu, que fa por i no pas delit?",
+      "Que el món em jutgi si no és ben evident",
+      "que l'has manipulada amb encanteris immunds,",
+      "que has corromput la seva tendra joventut amb drogues o minerals",
+      "que afebleixen els sentits. Faré que es debati;",
+      "és probable, i palpable per al pensament.",
+      "Per tant, t'agafo i et detinc",
+      "com a corruptor del món, com a practicant",
+      "d'arts prohibides i il·lícites.",
+      "Agafeu-lo. Si es resisteix,",
+      "reduïu-lo, i que el risc sigui seu."
+    ]},
+    {"speaker": "OTEL·LO", "lines": [
+      "Atureu les mans,",
+      "tant els del meu bàndol com els altres.",
+      "Si em toqués barallar-me, ho hauria sabut",
+      "sense apuntador. On voleu que vagi",
+      "a respondre d'aquesta acusació vostra?"
+    ]},
+    {"speaker": "BRABANCI", "lines": [
+      "A la presó, fins que el moment escaient",
+      "de la llei i el curs d'una sessió expressa",
+      "et cridin a respondre."
+    ]},
+    {"speaker": "OTEL·LO", "lines": [
+      "I si obeeixo?",
+      "Com quedarà satisfet el dux,",
+      "els missatgers del qual són aquí al meu costat",
+      "per algun afer urgent de l'estat,",
+      "per portar-me davant d'ell?"
+    ]},
+    {"speaker": "OFICIAL", "lines": [
+      "És cert, digníssim senyor;",
+      "el dux és en consell, i a la vostra noble persona",
+      "estic segur que també l'han fet cridar."
+    ]},
+    {"speaker": "BRABANCI", "lines": [
+      "Com? El dux en consell?",
+      "A aquestes hores de la nit? Emporteu-vos-el;",
+      "la meva causa no és cap fotesa. El mateix dux,",
+      "o qualsevol dels meus germans de l'estat,",
+      "no pot sinó sentir aquest greuge com si fos seu;",
+      "perquè si accions com aquesta poden passar lliurement,",
+      "esclaus i pagans seran els nostres governants."
+    ]},
+    {"stage": "Surten."}
+  ]
+}

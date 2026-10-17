@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% set seo_title = work.short_title ~ ' · ' ~ scene_label(scene) %}
+{% block meta_description %}{{ work.author }}, «{{ work.title }}», {{ scene_label(scene) }}. {{ scene.setting }} {{ _('Натисніть будь-яке слово: переклад, форма і синоніми.') }}{% endblock %}
+{% block content %}
+<div class="reader reading">
+  <p class="small reading-crumbs">
+    <a href="{{ url_for('reader.library') }}">{{ _('Читання') }}</a> ›
+    <a href="{{ url_for('reader.work', slug=work.slug) }}" lang="ca">{{ work.short_title }}</a>
+  </p>
+
+  <div class="reader-grid">
+    <section class="content-section reader-main">
+      <header class="play-head" lang="ca">
+        <p class="play-act">{{ act_title(scene.act) }}</p>
+        <h1 class="play-scene">Escena {{ scene.scene }}</h1>
+        {% if scene.setting %}<p class="play-setting">{{ scene.setting }}</p>{% endif %}
+      </header>
+
+      <div id="reader-text" class="reader-text play" lang="ca" tabindex="0"
+           aria-label="{{ _('Текст: натисніть слово або виберіть його стрілками й натисніть Enter') }}">
+        {% for block in scene.blocks %}
+          {% if block.stage %}
+            <p class="play-stage" data-words>{{ block.stage }}</p>
+          {% else %}
+            <div class="play-speech">
+              <div class="play-speaker">{{ block.speaker }}</div>
+              <div class="play-lines">
+                {% for line in block.lines %}<span class="play-line" data-words>{{ line }}</span>{% endfor %}
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <p class="small text-muted mt-3 mb-0">{{ _('Натисніть слово. З клавіатури: стрілки ← → і Enter.') }}</p>
+    </section>
+
+    <aside class="content-section reader-panel" id="reader-panel" aria-live="polite">
+      <p class="text-muted mb-0" id="reader-panel-empty">{{ _('Тут з’являться переклад, форма й синоніми слова, яке ви натиснете.') }}</p>
+      <div id="reader-panel-body"></div>
+    </aside>
+  </div>
+
+  <nav class="reading-pager" aria-label="{{ _('Сцени') }}">
+    {% if previous %}
+      <a class="btn btn-outline-secondary" rel="prev" lang="ca"
+         href="{{ url_for('reader.scene', slug=work.slug, act=previous.act, scene=previous.scene) }}">← {{ scene_label(previous) }}</a>
+    {% else %}<span></span>{% endif %}
+    <a class="btn btn-link" href="{{ url_for('reader.work', slug=work.slug) }}">{{ _('Зміст') }}</a>
+    {% if following %}
+      <a class="btn btn-outline-secondary" rel="next" lang="ca"
+         href="{{ url_for('reader.scene', slug=work.slug, act=following.act, scene=following.scene) }}">{{ scene_label(following) }} →</a>
+    {% else %}<span></span>{% endif %}
+  </nav>
+</div>
+
+{{ action_form.csrf_token }}
+<script type="application/json" id="reader-config">{{ {
+  'mode': 'read',
+  'wordUrl': url_for('reader.word'),
+  'loggedIn': current_user.is_authenticated,
+  'strings': panel_strings,
+} | tojson }}</script>
+{% endblock content %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='reader.js') }}"></script>
+{% endblock %}

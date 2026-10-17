@@ -9,7 +9,7 @@ from flaskblog import db
 from flaskblog.conjugation.labels import mood_label, person_labels, tense_label
 from flaskblog.i18n import get_locale, gettext as _
 from flaskblog.models import UserWord, Word
-from flaskblog.reader import morphology
+from flaskblog.reader import morphology, works
 from flaskblog.vocabulary import transcription
 from flaskblog.vocabulary.constants import part_of_speech_label
 from flaskblog.vocabulary.forms import ActionForm
@@ -62,7 +62,71 @@ def index():
         'reader.html',
         title=_('Робота з текстом'),
         max_text=MAX_TEXT,
+        panel_strings=panel_strings(),
         action_form=ActionForm(),
+    )
+
+
+def panel_strings():
+    """The word panel's texts, shared by /text and the reading pages."""
+    return {
+        'loading': _('Шукаю…'),
+        'error': _('Не вдалося розібрати слово. Спробуйте ще раз.'),
+        'nothing': _('Цього слова немає ні в словнику, ні в тезаурусі.'),
+        'synonyms': _('Синоніми в тій самій формі'),
+        'noSynonyms': _('Синонімів не знайдено.'),
+        'replace': _('Замінити на «{text}»'),
+        'dictionary': _('У словнику'),
+        'conjugation': _('Дієвідміна'),
+        'save': _('Додати до мого словника'),
+        'saved': _('У вашому словнику'),
+        'listen': _('Прослухати'),
+        'approximate': _('Приблизна вимова: правила не знають, відкрите чи закрите e/o, і чи вимовляється кінцеве -r.'),
+        'verb': _('дієслово'),
+        'restore': _('Повернутися сюди'),
+        'original': _('Початковий текст'),
+        'copied': _('Скопійовано'),
+        'tooLong': _('Текст задовгий: до {count} знаків.', count=MAX_TEXT),
+    }
+
+
+# -- reading: whole works, every word clickable ------------------------------------------
+
+def _reading_on():
+    if not current_app.config.get('READING', True):
+        abort(404)
+
+
+@reader.route('/reading')
+def library():
+    _reading_on()
+    return render_template('reading_index.html', title=_('Читання'), works=works.all_works())
+
+
+@reader.route('/reading/<slug>')
+def work(slug):
+    _reading_on()
+    found = works.load(slug)
+    if not found or not found['scenes']:
+        abort(404)
+    return render_template('reading_work.html', title=found['short_title'], work=found,
+                           act_title=works.act_title, scene_label=works.scene_label)
+
+
+@reader.route('/reading/<slug>/<int:act>/<int:scene>')
+def scene(slug, act, scene):
+    _reading_on()
+    found = works.load(slug)
+    place = works.find_scene(found, act, scene) if found else None
+    if not place:
+        abort(404)
+    previous, current, following = place
+    return render_template(
+        'reading_scene.html',
+        title='%s · %s' % (found['short_title'], works.scene_label(current)),
+        work=found, scene=current, previous=previous, following=following,
+        act_title=works.act_title, scene_label=works.scene_label,
+        panel_strings=panel_strings(), action_form=ActionForm(),
     )
 
 

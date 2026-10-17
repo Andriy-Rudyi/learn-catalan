@@ -1,0 +1,20 @@
+{
+  "act": 2,
+  "scene": 2,
+  "setting": "Xipre. Un carrer.",
+  "blocks": [
+    {"stage": "Entra l'HERALD d'Otel·lo amb una proclama."},
+    {"speaker": "HERALD", "lines": [
+      "És voluntat d'Otel·lo, el nostre noble i valent general,",
+      "que, per les notícies certes que acaben d'arribar",
+      "i que anuncien la destrucció total de la flota turca,",
+      "tothom es lliuri a la festa: uns a ballar, altres a fer fogueres,",
+      "cadascú als jocs i a les gresques on el porti la seva inclinació;",
+      "perquè, a més d'aquestes notícies tan profitoses,",
+      "és la celebració de les seves noces. Aquesta era la seva voluntat que es proclamés.",
+      "Tots els rebosts i cellers són oberts, i hi ha llibertat plena de festejar",
+      "des d'aquesta hora, les cinc, fins que la campana hagi tocat les onze.",
+      "Que el cel beneeixi l'illa de Xipre i el nostre noble general Otel·lo!"]},
+    {"stage": "Surt."}
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "act": 5,
+  "scene": 1,
+  "setting": "Xipre. Un carrer, de nit.",
+  "blocks": [
+    {"stage": "Entren IAGO i RODERIGO."},
+    {"speaker": "IAGO", "lines": [
+      "Aquí, posa't darrere aquest sortint; de seguida arribarà.",
+      "Porta la teva bona espasa nua, i clava-la a fons.",
+      "Ràpid, ràpid, no temis res; seré al teu costat.",
+      "O ens fa o ens desfà; pensa-hi bé,",
+      "i mantén ben ferma la teva resolució."
+    ]},
+    {"speaker": "RODERIGO", "lines": ["Queda't a prop; potser em falla el cop."]},
+    {"speaker": "IAGO", "lines": ["Aquí, a tocar de la teva mà; sigues valent i ocupa el teu lloc."]},
+    {"stage": "Es retira."},
+    {"speaker": "RODERIGO", "lines": [
+      "No sento gaire devoció per aquest acte,",
+      "i tanmateix m'ha donat raons convincents.",
+      "Només és un home menys. Fora, espasa! Morirà!"
+    ]},
+    {"speaker": "IAGO", "lines": [
+      "[A part] He gratat aquest granet de jovenàs gairebé fins a la carn viva,",
+      "i s'enfurisma. Ara, tant si mata Cassio,",
+      "com si Cassio el mata a ell, o es maten l'un a l'altre,",
+      "de totes maneres hi guanyo. Si Roderigo viu,",
+      "em reclamarà una gran restitució",
+      "de l'or i les joies que li he estafat",
+      "com a regals per a Desdèmona.",
+      "No pot ser. Si Cassio queda viu,",
+      "té una bellesa de cada dia en la seva vida",
+      "que a mi em fa lleig; i, a més, el moro",
+      "podria descobrir-me davant d'ell: hi corro un gran perill.",
+      "No, ha de morir. Però, silenci, el sento venir."
+    ]},
+    {"stage": "Entra CASSIO."},
+    {"speaker": "RODERIGO", "lines": ["Conec el seu pas; és ell. Canalla, mors!"]},
+    {"stage": "Envesteix Cassio."},
+    {"speaker": "CASSIO", "lines": [
+      "Aquesta estocada m'hauria estat ben enemiga, de debò,",
+      "si la meva casaca no fos millor del que et penses.",
+      "Ara posaré a prova la teva."
+    ]},
+    {"stage": "Fereix Roderigo."},
+    {"speaker": "RODERIGO", "lines": ["Oh, m'han mort!"]},
+    {"stage": "Iago fereix Cassio a la cama i surt."},
+    {"speaker": "CASSIO", "lines": ["Estic esguerrat per sempre. Auxili, ei! Assassins, assassins!"]},
+    {"stage": "Entra OTEL·LO."},
+    {"speaker": "OTEL·LO", "lines": ["[A part] La veu de Cassio: Iago compleix la seva paraula."]},
+    {"speaker": "RODERIGO", "lines": ["Oh, miserable de mi!"]},
+    {"speaker": "OTEL·LO", "lines": ["[A part] Així és, doncs."]},
+    {"speaker": "CASSIO", "lines": ["Oh, auxili, ei! Llum! Un cirurgià!"]},
+    {"speaker": "OTEL·LO", "lines": [
+      "[A part] És ell. Oh, valent Iago, honrat i just,",
+      "que sents tan noblement l'ofensa feta al teu amic!",
+      "Tu m'ensenyes el camí. Mimada, el vostre estimat jau mort,",
+      "i la vostra sort maleïda s'acosta de pressa. Bagassa, ja vinc!",
+      "Fora del meu cor, aquells encanteris, els teus ulls, han quedat esborrats;",
+      "el teu llit, tacat de luxúria, serà esquitxat amb sang luxuriosa."
+    ]},
+    {"stage": "Surt OTEL·LO."},
+    {"stage": "Entren LODOVICO i GRACIÀ."},
+    {"speaker": "CASSIO", "lines": ["Què, ei? No hi ha guàrdia? No passa ningú? Assassins, assassins!"]},
+    {"speaker": "GRACIÀ", "lines": ["És alguna desgràcia; el crit és ben esgarrifós."]},
+    {"speaker": "CASSIO", "lines": ["Oh, auxili!"]},
+    {"speaker": "LODOVICO", "lines": ["Escolteu!"]},
+    {"speaker": "RODERIGO", "lines": ["Oh, miserable canalla!"]},
+    {"speaker": "LODOVICO", "lines": [
+      "Gemeguen dos o tres. És una nit molt fosca.",
+      "Potser és un parany: considerem que és perillós",
+      "acostar-nos als crits sense més ajuda."
+    ]},
+    {"speaker": "RODERIGO", "lines": ["No ve ningú? Doncs em dessagnaré fins a morir."]},
+    {"speaker": "LODOVICO", "lines": ["Escolteu!"]},
+    {"stage": "Entra IAGO, amb una llum."},
+    {"speaker": "GRACIÀ", "lines": ["Aquí ve algú en camisa, amb llum i armes."]},
+    {"speaker": "IAGO", "lines": ["Qui hi ha? De qui són aquests crits d'assassinat?"]},
+    {"speaker": "LODOVICO", "lines": ["No ho sabem."]},
+    {"speaker": "IAGO", "lines": ["No heu sentit un crit?"]},
+    {"speaker": "CASSIO", "lines": ["Aquí, aquí; per l'amor de Déu, ajudeu-me!"]},
+    {"speaker": "IAGO", "lines": ["Què passa?"]},
+    {"speaker": "GRACIÀ", "lines": ["Aquest és l'alferes d'Otel·lo, si no m'erro."]},
+    {"speaker": "LODOVICO", "lines": ["El mateix, en efecte, un home molt valent."]},
+    {"speaker": "IAGO", "lines": ["Qui sou, aquí, que crideu tan dolorosament?"]},
+    {"speaker": "CASSIO", "lines": [
+      "Iago? Oh, estic perdut, desfet per uns canalles!",
+      "Doneu-me ajuda."
+    ]},
+    {"speaker": "IAGO", "lines": ["Ai de mi, lloctinent! Quins canalles us han fet això?"]},
+    {"speaker": "CASSIO", "lines": [
+      "Crec que un d'ells és per aquí a prop",
+      "i no pot fugir."
+    ]},
+    {"speaker": "IAGO", "lines": [
+      "Oh, canalles traïdors!",
+      "[A Lodovico i Gracià] Qui sou, allà? Acosteu-vos i doneu-nos un cop de mà."
+    ]},
+    {"speaker": "RODERIGO", "lines": ["Oh, ajudeu-me aquí!"]},
+    {"speaker": "CASSIO", "lines": ["Aquest és un d'ells."]},
+    {"speaker": "IAGO", "lines": ["Oh, esclau assassí! Oh, canalla!"]},
+    {"stage": "Apunyala Roderigo."},
+    {"speaker": "RODERIGO", "lines": ["Oh, maleït Iago! Oh, gos inhumà!"]},
+    {"stage": "Es desmaia."},
+    {"speaker": "IAGO", "lines": [
+      "Matar homes a les fosques? On són aquests lladres sanguinaris?",
+      "Que n'és, de silenciosa, aquesta ciutat! Ei, assassins, assassins!",
+      "[Lodovico i Gracià s'acosten.]",
+      "Qui deveu ser? Sou gent de bé o de mal?"
+    ]},
+    {"speaker": "LODOVICO", "lines": ["Segons com ens trobeu, jutgeu-nos."]},
+    {"speaker": "IAGO", "lines": ["El senyor Lodovico?"]},
+    {"speaker": "LODOVICO", "lines": ["El mateix, senyor."]},
+    {"speaker": "IAGO", "lines": ["Us demano perdó. Aquí hi ha Cassio, ferit per uns canalles."]},
+    {"speaker": "GRACIÀ", "lines": ["Cassio?"]},
+    {"speaker": "IAGO", "lines": ["Com us trobeu, germà?"]},
+    {"speaker": "CASSIO", "lines": ["Tinc la cama partida en dos."]},
+    {"speaker": "IAGO", "lines": [
+      "Déu no ho vulgui!",
+      "Llum, senyors. L'hi embenaré amb la meva camisa."
+    ]},
+    {"stage": "Entra BIANCA."},
+    {"speaker": "BIANCA", "lines": ["Què passa, ei? Qui és que ha cridat?"]},
+    {"speaker": "IAGO", "lines": ["Qui és que ha cridat?"]},
+    {"speaker": "BIANCA", "lines": [
+      "Oh, el meu estimat Cassio, el meu dolç Cassio!",
+      "Oh, Cassio, Cassio, Cassio!"
+    ]},
+    {"speaker": "IAGO", "lines": [
+      "Oh, bagassa de primera! Cassio, sospiteu",
+      "qui poden ser els que us han destrossat així?"
+    ]},
+    {"speaker": "CASSIO", "lines": ["No."]},
+    {"speaker": "GRACIÀ", "lines": ["Em sap greu trobar-vos així; us anava a buscar."]},
+    {"speaker": "IAGO", "lines": [
+      "Deixeu-me una lligacama: així. Oh, qui tingués una cadira",
+      "per endur-se'l d'aquí sense sotragades!"
+    ]},
+    {"speaker": "BIANCA", "lines": [
+      "Ai, que es desmaia!",
+      "Oh, Cassio, Cassio, Cassio!"
+    ]},
+    {"speaker": "IAGO", "lines": [
+      "Senyors, tots plegats, sospito que aquesta escòria",
+      "té part en aquesta agressió.",
+      "Una mica de paciència, bon Cassio. Vinga, vinga,",
+      "deixeu-me una llum. Coneixem aquesta cara o no?",
+      "Ai, el meu amic i estimat compatriota!",
+      "Roderigo? No... sí, segur... oh, cel, Roderigo!"
+    ]},
+    {"speaker": "GRACIÀ", "lines": ["Què, el de Venècia?"]},
+    {"speaker": "IAGO", "lines": ["Ell mateix, senyor; el coneixíeu?"]},
+    {"speaker": "GRACIÀ", "lines": ["Si el coneixia? Sí."]},
+    {"speaker": "IAGO", "lines": [
+      "Senyor Gracià! Us demano humilment perdó.",
+      "Aquests incidents sagnants han d'excusar els meus modals,",
+      "que així us han passat per alt."
+    ]},
+    {"speaker": "GRACIÀ", "lines": ["M'alegro de veure-us."]},
+    {"speaker": "IAGO", "lines": ["Com esteu, Cassio? Oh, una cadira, una cadira!"]},
+    {"speaker": "GRACIÀ", "lines": ["Roderigo?"]},
+    {"speaker": "IAGO", "lines": [
+      "Ell, ell, és ell.",
+      "[Entren SERVIDORS amb una cadira.]",
+      "Oh, ben fet, la cadira!",
+      "Que uns quants homes de bé se l'emportin d'aquí amb compte.",
+      "Aniré a buscar el cirurgià del general. [A Bianca] Pel que fa a vós, senyora,",
+      "estalvieu-vos la molèstia. Aquest que jau aquí mort, Cassio,",
+      "era el meu estimat amic. Quin rancor hi havia entre vosaltres?"
+    ]},
+    {"speaker": "CASSIO", "lines": ["Cap ni un; ni tan sols conec aquest home."]},
+    {"speaker": "IAGO", "lines": [
+      "[A Bianca] Què, us torneu pàl·lida? Oh, traieu-lo de l'aire.",
+      "[S'enduen Cassio; retiren el cos de Roderigo.]",
+      "Quedeu-vos, bons senyors. Esteu pàl·lida, senyora?",
+      "Veieu l'espant que té als ulls?",
+      "[A Bianca] Au, si mireu tan esbalaïda, aviat en sabrem més.",
+      "Observeu-la bé; us ho prego, mireu-la.",
+      "Ho veieu, senyors? Sí, la culpa",
+      "parlaria, encara que les llengües ja no servissin."
+    ]},
+    {"stage": "Entra EMÍLIA."},
+    {"speaker": "EMÍLIA", "lines": ["Ai, què passa? Què passa, marit?"]},
+    {"speaker": "IAGO", "lines": [
+      "Aquí, a les fosques, han assaltat Cassio",
+      "Roderigo i uns companys que s'han escapat.",
+      "Ell és gairebé mort, i Roderigo, mort."
+    ]},
+    {"speaker": "EMÍLIA", "lines": ["Ai, pobre senyor! Ai, bon Cassio!"]},
+    {"speaker": "IAGO", "lines": [
+      "Aquests són els fruits de putejar. Si et plau, Emília,",
+      "ves a saber de Cassio on ha sopat aquesta nit.",
+      "[A Bianca] Què, tremoleu per això?"
+    ]},
+    {"speaker": "BIANCA", "lines": ["Ha sopat a casa meva, però no per això tremolo."]},
+    {"speaker": "IAGO", "lines": ["Ah, sí? Us ordeno que vingueu amb mi."]},
+    {"speaker": "EMÍLIA", "lines": ["Oh, fàstic de tu, bagassa!"]},
+    {"speaker": "BIANCA", "lines": [
+      "No soc cap bagassa, sinó de vida tan honesta",
+      "com vós, que m'insulteu així."
+    ]},
+    {"speaker": "EMÍLIA", "lines": ["Com jo? Uf! Fàstic de tu!"]},
+    {"speaker": "IAGO", "lines": [
+      "Amables senyors, anem a veure com li curen la ferida al pobre Cassio.",
+      "Vinga, senyora, ens n'haureu d'explicar una altra.",
+      "Emília, corre a la ciutadella",
+      "i explica al meu senyor i a la meva senyora què ha passat.",
+      "Voleu passar davant? [A part] Aquesta és la nit",
+      "que o bé em fa o bé em desfà del tot."
+    ]},
+    {"stage": "Surten."}
+  ]
+}

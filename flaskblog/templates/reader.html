@@ -54,25 +54,7 @@
   'wordUrl': url_for('reader.word'),
   'example': 'Ahir els meus amics decidiren anar a la platja. Les cases del poble eren boniques i el mar estava tranquil. Vam menjar pa amb tomàquet i vam parlar fins tard.',
   'loggedIn': current_user.is_authenticated,
-  'strings': {
-    'loading': _('Шукаю…'),
-    'error': _('Не вдалося розібрати слово. Спробуйте ще раз.'),
-    'nothing': _('Цього слова немає ні в словнику, ні в тезаурусі.'),
-    'synonyms': _('Синоніми в тій самій формі'),
-    'noSynonyms': _('Синонімів не знайдено.'),
-    'replace': _('Замінити на «{text}»'),
-    'dictionary': _('У словнику'),
-    'conjugation': _('Дієвідміна'),
-    'save': _('Додати до мого словника'),
-    'saved': _('У вашому словнику'),
-    'listen': _('Прослухати'),
-    'approximate': _('Приблизна вимова: правила не знають, відкрите чи закрите e/o, і чи вимовляється кінцеве -r.'),
-    'verb': _('дієслово'),
-    'restore': _('Повернутися сюди'),
-    'original': _('Початковий текст'),
-    'copied': _('Скопійовано'),
-    'tooLong': _('Текст задовгий: до {count} знаків.', count=max_text),
-  },
+  'strings': panel_strings,
 } | tojson }}</script>
 {% endblock content %}
 {% block scripts %}

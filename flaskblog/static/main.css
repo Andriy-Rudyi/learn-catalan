@@ -1928,6 +1928,195 @@ a.article-title:hover {
   display: none !important;
 }
 
+/* ---------- Reading (/reading) ---------- */
+.reading-shelf {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.reading-card {
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+  color: inherit;
+  text-decoration: none;
+  border-left: 4px solid var(--brand);
+  transition: border-color .15s, transform .15s;
+}
+
+.reading-card:hover,
+.reading-card:focus-visible {
+  transform: translateY(-2px);
+  color: inherit;
+}
+
+.reading-card-author {
+  font-size: .78rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted-text);
+}
+
+.reading-card-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.35rem;
+  color: var(--heading-color);
+}
+
+.reading-card-meta {
+  font-size: .85rem;
+  color: var(--muted-text);
+}
+
+.reading-cover {
+  text-align: center;
+}
+
+.reading-cover-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  margin: .25rem 0 .5rem;
+}
+
+.reading-cover p {
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reading-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.reading-act {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.05rem;
+  margin: 1rem 0 .35rem;
+}
+
+.reading-toc {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.reading-toc li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem .75rem;
+  align-items: baseline;
+  padding: .35rem 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.reading-toc-setting {
+  flex: 1;
+  font-style: italic;
+  color: var(--muted-text);
+}
+
+.reading-toc-words {
+  font-size: .8rem;
+  color: var(--muted-text);
+}
+
+.reading-cast {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: .25rem .75rem;
+  margin: 0;
+}
+
+.reading-cast dt {
+  font-size: .85rem;
+  letter-spacing: .05em;
+}
+
+.reading-cast dd {
+  margin: 0;
+  color: var(--muted-text);
+}
+
+.play-head {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.play-act {
+  margin: 0;
+  font-size: .8rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted-text);
+}
+
+.play-scene {
+  font-family: Georgia, 'Times New Roman', serif;
+  margin: .1rem 0;
+}
+
+.play-setting {
+  margin: 0;
+  font-style: italic;
+  color: var(--muted-text);
+}
+
+.reader-text.play {
+  white-space: normal;
+  font-family: Georgia, 'Times New Roman', serif;
+  line-height: 1.75;
+}
+
+.play-speech {
+  margin-bottom: .9rem;
+}
+
+.play-speaker {
+  font-family: var(--bs-body-font-family);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: var(--heading-color);
+}
+
+.play-line {
+  display: block;
+  padding-left: 1rem;
+  text-indent: -1rem;
+}
+
+.play-stage {
+  margin: .5rem 0 .9rem;
+  font-style: italic;
+  color: var(--muted-text);
+  text-align: center;
+}
+
+.reading-pager {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .5rem;
+  margin: 1rem 0;
+}
+
+.reader-chip.is-static:hover {
+  border-color: var(--border-soft);
+}
+
+@media (max-width: 767.98px) {
+  .reading-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .reading-pager .btn {
+    font-size: .85rem;
+  }
+}
+
 /* ---------- Text page (/text) ---------- */
 .reader-grid {
   display: grid;

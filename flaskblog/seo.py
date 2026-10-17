@@ -39,6 +39,9 @@ INDEXABLE = {
     'vocabulary.word',
     'api_docs.developers',
     'reader.index',
+    'reader.library',
+    'reader.work',
+    'reader.scene',
 }
 
 # Query parameters that make a different page rather than a different view.
@@ -184,6 +187,14 @@ def _sitemap_paths():
     yield url_for('api_docs.developers'), []
     if current_app.config.get('READER', True):
         yield url_for('reader.index'), []
+        if current_app.config.get('READING', True):
+            from flaskblog.reader import works
+            yield url_for('reader.library'), []
+            for work in works.all_works():
+                yield url_for('reader.work', slug=work['slug']), []
+                for scene in work['scenes']:
+                    yield url_for('reader.scene', slug=work['slug'], act=scene.act,
+                                  scene=scene.scene), []
 
 
 def _build_sitemap():

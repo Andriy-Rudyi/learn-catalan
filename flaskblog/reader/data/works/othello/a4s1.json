@@ -1,0 +1,1133 @@
+{
+  "act": 4,
+  "scene": 1,
+  "setting": "Xipre. Davant del castell.",
+  "blocks": [
+    {
+      "stage": "Entren OTEL·LO i IAGO."
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Ho creureu així?"
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Creure-ho, Iago?"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Què?",
+        "Fer-se un petó a les amagades?"
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Un petó prohibit!"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "O estar nua amb el seu amic al llit",
+        "una hora o més, sense cap mala intenció?"
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Nua al llit, Iago, i sense mala intenció?",
+        "Això és hipocresia contra el diable.",
+        "Els qui tenen intencions virtuoses i fan això,",
+        "el diable els tempta la virtut, i ells tempten el cel."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Mentre no facin res, és una falta venial;",
+        "però si jo dono un mocador a la meva dona..."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Què, aleshores?"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Doncs aleshores és seu, senyor; i, essent seu,",
+        "crec que el pot donar a qualsevol home."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "També és la protectora del seu honor.",
+        "Que el pot donar, també?"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "L'honor és una essència que no es veu:",
+        "sovint en tenen els qui no en tenen.",
+        "Però, pel que fa al mocador..."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Per Déu, que de bon grat l'hauria oblidat.",
+        "Tu has dit... oh, em torna a la memòria",
+        "com el corb sobre la casa empestada,",
+        "que a tothom anuncia desgràcia!... que ell tenia el meu mocador."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Sí, i què?"
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Ara això no és tan bo."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "I què",
+        "si us hagués dit que l'he vist fer-vos una ofensa?",
+        "O que l'he sentit dir... perquè hi ha brivalls pel món",
+        "que, quan han vençut o satisfet alguna dama",
+        "amb la seva insistència importuna",
+        "o perquè ella els ha volgut de grat, no poden evitar",
+        "de xerrar-ho..."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Que ha dit alguna cosa?"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Sí, senyor; però estigueu ben segur",
+        "que no res que no pugui desjurar."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Què ha dit?"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "A fe, que ell va... no sé pas què va fer."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Què? Què?"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Jeure..."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Amb ella?"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Amb ella, sobre ella, com vulgueu."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Jeure amb ella? Jeure sobre ella? Diem que algú fa jeure",
+        "una dona en el fang quan l'enfanga de mentides. Jeure amb ella! Redéu,",
+        "quin fàstic! Mocador... confessions...",
+        "mocador! Que confessi i que el pengin",
+        "per la feina. No: primer penjat i després",
+        "que confessi. Tremolo de pensar-ho. La natura no es",
+        "vestiria d'una passió tan tenebrosa",
+        "sense algun fonament. No són paraules el que em sacseja",
+        "així. Puaf! Nassos, orelles i llavis. És possible?",
+        "Confessar? Mocador? Oh, diable!"
+      ]
+    },
+    {
+      "stage": "Cau en un rampell."
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Fes efecte,",
+        "medecina meva, fes efecte! Així és com s'agafen els ximples crèduls;",
+        "i així és com moltes dames dignes i castes,",
+        "del tot innocents, cauen en la vergonya. Ei, senyor",
+        "meu!",
+        "Senyor meu, us dic! Otel·lo!"
+      ]
+    },
+    {
+      "stage": "Entra CASSIO."
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Què hi ha, Cassio!"
+      ]
+    },
+    {
+      "speaker": "CASSIO",
+      "lines": [
+        "Què passa?"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "El meu senyor ha tingut un atac d'epilèpsia.",
+        "És el segon accés; ahir en va tenir un altre."
+      ]
+    },
+    {
+      "speaker": "CASSIO",
+      "lines": [
+        "Fregueu-li els polsos."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "No, deixeu-lo.",
+        "Aquest sopor ha de seguir el seu curs en calma.",
+        "Si no, treu escuma per la boca i, de seguida,",
+        "esclata en una follia salvatge. Mireu, es mou.",
+        "Retireu-vos una estona;",
+        "es recuperarà tot seguit. Quan se n'hagi anat,",
+        "voldria parlar amb vós d'un assumpte important. [Surt Cassio.]",
+        "Com esteu, general? No us heu fet mal al cap?"
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Que te'n rius, de mi?"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Riure-me'n, jo? No, per Déu!",
+        "Tant de bo suportéssiu la vostra sort com un home!"
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Un home amb banyes és un monstre i una bèstia."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Doncs n'hi ha moltes, de bèsties, en una ciutat populosa,",
+        "i molts monstres ben civilitzats."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Ho ha confessat?"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Bon senyor, sigueu un home:",
+        "penseu que qualsevol barbut que porti el jou",
+        "pot tirar del carro amb vós. Hi ha milions d'homes vius",
+        "que cada nit jeuen en llits que no són només seus",
+        "i que jurarien que són ben propis. El vostre cas és millor.",
+        "Oh, és la malícia de l'infern, la burla suprema del dimoni,",
+        "besar una dona lasciva en un llit sense sospites",
+        "i creure-la casta! No: jo vull saber-ho;",
+        "i sabent què soc jo, ja sé què serà d'ella."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Oh, ets savi; és ben cert."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Poseu-vos una estona a part,",
+        "i manteniu-vos dins els límits de la paciència.",
+        "Mentre éreu aquí, aclaparat pel dolor",
+        "(una passió gens pròpia d'un home com vós),",
+        "en Cassio ha vingut. L'he fet marxar amb un pretext",
+        "i he donat una bona excusa del vostre rampell;",
+        "li he dit que tornés de seguida a parlar amb mi,",
+        "i m'ho ha promès. Amagueu-vos, doncs,",
+        "i fixeu-vos en les ganyotes, les befes i els menyspreus evidents",
+        "que habiten en cada racó de la seva cara;",
+        "perquè li faré explicar de nou la història:",
+        "on, com, quantes vegades, fa quant de temps i quan",
+        "s'ha ajuntat i s'ha de tornar a ajuntar amb la vostra dona.",
+        "Només us dic que observeu els seus gestos. Però, paciència,",
+        "o diré que sou tot just un feix de còlera",
+        "i res d'home."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Em sents, Iago?",
+        "Seré astut com ningú en la meva paciència,",
+        "però, em sents?, sanguinari com ningú."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Això no està malament.",
+        "Però guardeu la mesura en tot. Us voleu retirar?"
+      ]
+    },
+    {
+      "stage": "[Otel·lo es retira.]"
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Ara preguntaré a en Cassio per la Bianca,",
+        "una mossa que, venent els seus desigs,",
+        "es compra pa i vestits. És una criatura",
+        "que està boja per en Cassio; i és el càstig de les meuques",
+        "enganyar-ne molts i ser enganyades per un.",
+        "Ell, quan sent parlar d'ella, no pot estar-se",
+        "de riure a cor què vols. Ja és aquí."
+      ]
+    },
+    {
+      "stage": "Entra Cassio."
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Com més somrigui ell, més boig es tornarà Otel·lo;",
+        "i la seva gelosia ignorant interpretarà",
+        "els somriures, els gestos i l'actitud alegre del pobre Cassio",
+        "del tot al revés. Com esteu ara, lloctinent?"
+      ]
+    },
+    {
+      "speaker": "CASSIO",
+      "lines": [
+        "Pitjor, ara que em doneu el títol",
+        "que em mata no tenir."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Insistiu bé a la Desdèmona i el tindreu segur.",
+        "I si aquesta petició depengués de la Bianca,",
+        "que de pressa que ho aconseguiríeu!"
+      ]
+    },
+    {
+      "speaker": "CASSIO",
+      "lines": [
+        "Ai, pobra desgraciada!"
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "[A part] Mireu com riu ja!"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Mai no he vist una dona que estimi tant un home."
+      ]
+    },
+    {
+      "speaker": "CASSIO",
+      "lines": [
+        "Ai, pobra bergant! Em sembla que, a fe, m'estima."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "[A part] Ara ho nega sense convicció, i ho dissol en rialles."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Em sentiu, Cassio?"
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "[A part] Ara l'empeny",
+        "a tornar-ho a explicar. Au, ben fet, ben fet!"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Ella fa córrer que us casareu amb ella.",
+        "Teniu aquesta intenció?"
+      ]
+    },
+    {
+      "speaker": "CASSIO",
+      "lines": [
+        "Ha, ha, ha!"
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "[A part] Triomfeu, romà? Triomfeu?"
+      ]
+    },
+    {
+      "speaker": "CASSIO",
+      "lines": [
+        "Casar-me jo amb ella? Què? Amb una dona de carrer! Si us",
+        "plau, tingueu una mica de caritat amb el meu seny. No el cregueu",
+        "tan malalt. Ha, ha, ha!"
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "[A part] Així, així, així, així: qui guanya riu."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "A fe, que corre la veu que us casareu amb ella."
+      ]
+    },
+    {
+      "speaker": "CASSIO",
+      "lines": [
+        "Si us plau, digueu la veritat."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Que em tinguin pel pitjor dels canalles si no és així."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "[A part] M'heu marcat amb el ferro? Molt bé."
+      ]
+    },
+    {
+      "speaker": "CASSIO",
+      "lines": [
+        "Això ho escampa la mona mateixa. Està convençuda que",
+        "em casaré amb ella per l'amor que em té i per les",
+        "il·lusions que es fa, no pas perquè jo li ho hagi",
+        "promès."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "[A part] Iago em fa senyals. Ara comença la història."
+      ]
+    },
+    {
+      "speaker": "CASSIO",
+      "lines": [
+        "Fa un moment era aquí. Em persegueix a tot arreu. L'altre",
+        "dia parlava a la vora del mar",
+        "amb uns venecians, i ve aquesta joguina",
+        "i, per aquesta mà, se'm penja així",
+        "del coll."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "[A part] Cridant «Oh, estimat Cassio!», per dir-ho així. Els seus gestos",
+        "ho donen a entendre."
+      ]
+    },
+    {
+      "speaker": "CASSIO",
+      "lines": [
+        "I així se m'arrapa, i s'hi deixa caure, i plora, i així m'estira i",
+        "m'estreny. Ha, ha, ha!"
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "[A part] Ara explica com ella l'arrossegava a la meva cam-",
+        "bra. Oh, veig aquest nas vostre,",
+        "però no el gos a qui el llançaré!"
+      ]
+    },
+    {
+      "speaker": "CASSIO",
+      "lines": [
+        "Bé, he de deixar de veure-la."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Per la meva ànima, mireu, ja ve!"
+      ]
+    },
+    {
+      "speaker": "CASSIO",
+      "lines": [
+        "És una mostela com totes! Això sí, una de perfumada."
+      ]
+    },
+    {
+      "stage": "Entra BIANCA."
+    },
+    {
+      "speaker": "CASSIO",
+      "lines": [
+        "Què vols dir amb aquesta manera de perseguir-me?"
+      ]
+    },
+    {
+      "speaker": "BIANCA",
+      "lines": [
+        "Que et persegueixin el diable i la seva mare! Què volies dir",
+        "amb aquell mocador que m'has donat fa un moment? Bona ximpleta",
+        "vaig ser d'agafar-lo. Que n'he de copiar el brodat? Quina",
+        "història més versemblant, que te l'hagis trobat",
+        "a la cambra i no sàpigues qui l'hi ha deixat!",
+        "És el regal d'alguna desvergonyida, i jo n'he de copiar",
+        "el brodat? Té, dona'l a la teva egua,",
+        "sigui on sigui que l'hagis tret. Jo no en copiaré cap brodat."
+      ]
+    },
+    {
+      "speaker": "CASSIO",
+      "lines": [
+        "Què passa, dolça Bianca meva! Què passa, què passa!"
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "[A part] Per Déu, aquest deu ser el meu mocador!"
+      ]
+    },
+    {
+      "speaker": "BIANCA",
+      "lines": [
+        "Si vols venir a sopar aquesta nit, vine. Si no",
+        "vols, ja vindràs quan t'hi tornis a preparar."
+      ]
+    },
+    {
+      "stage": "Surt."
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Darrere seu, darrere seu!"
+      ]
+    },
+    {
+      "speaker": "CASSIO",
+      "lines": [
+        "A fe, que hi he d'anar. Si no, farà escàndol pels carrers."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Hi sopareu?"
+      ]
+    },
+    {
+      "speaker": "CASSIO",
+      "lines": [
+        "A fe, que en tinc la intenció."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Bé, potser us hi vindré a veure; perquè tinc moltes ganes",
+        "de parlar amb vós."
+      ]
+    },
+    {
+      "speaker": "CASSIO",
+      "lines": [
+        "Vingueu, si us plau; vindreu?"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Au, vés; no en parlem més."
+      ]
+    },
+    {
+      "stage": "Surt Cassio."
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "[Avançant-se] Com el mataré, Iago?"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Us heu adonat de com reia de la seva mala acció?"
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Oh, Iago!"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "I heu vist el mocador?"
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Era el meu?"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "El vostre, per aquesta mà. I ja veieu quin cas",
+        "fa ell de la vostra dona, aquesta pobra ximple: ella l'hi va donar,",
+        "i ell l'ha donat a la seva puta."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Voldria estar-me nou anys matant-lo. Una dona exquisida, una",
+        "dona bella, una dona dolça!"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "No, això ho heu d'oblidar."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Sí, que es podreixi i que mori, i que es condemni aquesta nit, perquè",
+        "no ha de viure. No, el meu cor s'ha tornat de pedra: m'hi pico",
+        "i em fa mal a la mà. Oh, el món no té cap criatura més",
+        "dolça! Podria jeure al costat d'un emperador i",
+        "manar-li feines."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "No, aquest no és el vostre camí."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Que la pengin! Només dic el que és: tan delicada amb",
+        "l'agulla, una música admirable (oh, amb el seu cant faria",
+        "perdre la ferocitat a un ós!), d'un enginy tan alt i abundant,",
+        "i d'una imaginació..."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Tot això la fa pitjor."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Oh, mil i mil vegades! I, a més, de caràcter tan",
+        "gentil!"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Sí, massa complaent."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "No, això és cert; però quina llàstima, Iago! Oh, Iago, quina",
+        "llàstima, Iago!"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Si tan enamorat esteu de la seva iniquitat,",
+        "doneu-li llicència per pecar; perquè si a vós no us",
+        "toca, no fa mal a ningú."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "La faré a trossos com carn de carnisseria. Posar-me banyes!"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Oh, és una vilesa per part seva."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Amb el meu oficial!"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Això és més vil encara."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Aconsegueix-me verí, Iago, aquesta nit. No vull",
+        "discutir amb ella, no fos cas que el seu cos i la seva",
+        "bellesa em tornessin a desarmar l'ànim.",
+        "Aquesta nit, Iago."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "No ho feu amb verí; escanyeu-la al llit, al mateix",
+        "llit que ella ha contaminat."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Bé, bé! M'agrada la justícia d'això; molt bé!"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "I pel que fa a en Cassio, deixeu-me'l a mi.",
+        "En sabreu més cap a mitjanit."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Excel·lent!"
+      ]
+    },
+    {
+      "stage": "Sona una trompeta [a dins]."
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Quina trompeta és aquesta?"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Segur que és alguna cosa de Venècia."
+      ]
+    },
+    {
+      "stage": "Entren LODOVICO, DESDÈMONA i SEGUICI."
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "És en Lodovico. Ve de part del dux. Mireu, la vostra",
+        "dona l'acompanya."
+      ]
+    },
+    {
+      "speaker": "LODOVICO",
+      "lines": [
+        "Déu us guard, digne general!"
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Amb tot el cor, senyor."
+      ]
+    },
+    {
+      "speaker": "LODOVICO",
+      "lines": [
+        "El dux i els senadors de Venècia us saluden."
+      ]
+    },
+    {
+      "stage": "[Dona una carta a Otel·lo.]"
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Beso el document de la seva voluntat."
+      ]
+    },
+    {
+      "stage": "[Obre la carta i llegeix.]"
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "I quines notícies porteu, bon cosí Lodovico?"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Estic molt content de veure-us, senyor;",
+        "benvingut a Xipre."
+      ]
+    },
+    {
+      "speaker": "LODOVICO",
+      "lines": [
+        "Gràcies. Com està el lloctinent Cassio?"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Viu, senyor."
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "Cosí, entre ell i el meu senyor hi ha hagut",
+        "una desavinença dolorosa; però vós ho arreglareu tot."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "N'esteu segura?"
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "Senyor meu?"
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "«No deixeu de fer això, si voleu...»"
+      ]
+    },
+    {
+      "speaker": "LODOVICO",
+      "lines": [
+        "No us cridava; està enfeinat amb la carta.",
+        "Hi ha discòrdia entre el meu senyor i en Cassio?"
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "Una discòrdia molt trista; jo faria molt",
+        "per reconciliar-los, per l'afecte que tinc a en Cassio."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Foc i sofre!"
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "Senyor meu?"
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Teniu seny?"
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "Què, que està enfadat?"
+      ]
+    },
+    {
+      "speaker": "LODOVICO",
+      "lines": [
+        "Potser la carta l'ha trasbalsat;",
+        "perquè em sembla que li ordenen que torni a casa",
+        "i que deixi en Cassio en el seu lloc de govern."
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "Per la meva fe, me n'alegro."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "De debò!"
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "Senyor meu?"
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "M'alegro de veure-us boja."
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "Per què, dolç Otel·lo?"
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Dimoni!"
+      ]
+    },
+    {
+      "stage": "[La pega.]"
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "No m'ho he merescut."
+      ]
+    },
+    {
+      "speaker": "LODOVICO",
+      "lines": [
+        "Senyor meu, això no s'ho creurien a Venècia,",
+        "encara que jurés que ho he vist. És massa.",
+        "Demaneu-li perdó; plora."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Oh, dimoni, dimoni!",
+        "Si la terra es pogués fecundar amb llàgrimes de dona,",
+        "cada gota que ella deixa caure seria un cocodril.",
+        "Fora de la meva vista!"
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "No em quedaré per ofendre-us."
+      ]
+    },
+    {
+      "speaker": "LODOVICO",
+      "lines": [
+        "De debò, una dama obedient.",
+        "Us prego, senyoria, que la feu tornar."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Senyora!"
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "Senyor meu?"
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Què en voleu, d'ella, senyor?"
+      ]
+    },
+    {
+      "speaker": "LODOVICO",
+      "lines": [
+        "Qui? Jo, senyor?"
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Sí, vós volíeu que la fes girar.",
+        "Senyor, sap girar, i girar, i seguir endavant,",
+        "i tornar a girar-se. I sap plorar, senyor, plorar.",
+        "I és obedient; com dieu, obedient,",
+        "molt obedient. (Continueu amb les vostres llàgrimes.)",
+        "Pel que fa a això, senyor... (Oh, quina passió tan ben fingida!)",
+        "M'ordenen tornar a casa. (Fora d'aquí!",
+        "Ja t'enviaré a buscar.) Senyor, obeeixo el manament",
+        "i tornaré a Venècia. (Vés-te'n, fora!)",
+        "En Cassio ocuparà el meu lloc. I, senyor, aquesta nit [Surt Desdèmona.]",
+        "us prego que sopem junts.",
+        "Sigueu benvingut a Xipre, senyor. Cabres i micos!"
+      ]
+    },
+    {
+      "stage": "Surt."
+    },
+    {
+      "speaker": "LODOVICO",
+      "lines": [
+        "És aquest el noble moro que tot el nostre senat",
+        "considera capaç de tot? És aquest el caràcter",
+        "que la passió no podia sacsejar? Aquell la virtut sòlida del qual",
+        "ni el tret de l'atzar ni la sageta de la fortuna",
+        "no podien fregar ni travessar?"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Ha canviat molt."
+      ]
+    },
+    {
+      "speaker": "LODOVICO",
+      "lines": [
+        "Té el seny sencer? No té el cap trastocat?"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "És el que és; no em correspon dir el meu parer",
+        "sobre el que podria ser. Si no és el que podria ser,",
+        "tant de bo ho fos!"
+      ]
+    },
+    {
+      "speaker": "LODOVICO",
+      "lines": [
+        "Què! Pegar la seva dona!"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "A fe, que això no ha estat gaire bé; però tant de bo sabés",
+        "que aquest cop serà el pitjor."
+      ]
+    },
+    {
+      "speaker": "LODOVICO",
+      "lines": [
+        "És el seu costum?",
+        "O és que les cartes li han encès la sang",
+        "i han creat de nou aquesta falta?"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Ai las, ai las!",
+        "No seria honest per part meva explicar",
+        "el que he vist i sabut. Vós l'observareu,",
+        "i els seus propis actes el delataran prou",
+        "perquè jo em pugui estalviar les paraules. Seguiu-lo només,",
+        "i fixeu-vos en com es comporta."
+      ]
+    },
+    {
+      "speaker": "LODOVICO",
+      "lines": [
+        "Em sap greu haver-me equivocat amb ell."
+      ]
+    },
+    {
+      "stage": "Surten."
+    }
+  ]
+}

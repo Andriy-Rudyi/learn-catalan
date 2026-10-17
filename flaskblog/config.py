@@ -90,6 +90,11 @@ class Config:
     # synonyms in that form. READER=False takes the page and its menu item away.
     READER = os.getenv('READER', 'True') == 'True'
 
+    # /reading: whole works in Catalan (flaskblog/reader/works.py), every word
+    # clickable as on /text. READING=False takes the section and its menu
+    # item away (it also goes when READER=False).
+    READING = os.getenv('READING', 'True') == 'True'
+
     # Dictionary words show how they sound: IPA and Ukrainian letters, from the
     # editor's "Вимова" field, the pronunciation lessons or spelling rules
     # (flaskblog/vocabulary/transcription.py). TRANSCRIPTION=False shows only
@@ -124,6 +129,7 @@ class TestConfig(Config):
     SEO = True
     SENSES = True
     READER = True
+    READING = True
     TRANSCRIPTION = True
     SITE_URL = None
     # The suite was written against the Ukrainian pages.

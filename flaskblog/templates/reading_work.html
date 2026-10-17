@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% set seo_title = _('{title} каталанською', title=work.short_title) %}
+{% block meta_description %}{{ work.author }}, «{{ work.title }}»: {{ _('повний текст каталанською, кожне слово з перекладом і формою.') }}{% endblock %}
+{% block content %}
+<div class="reading">
+  <p class="small"><a href="{{ url_for('reader.library') }}">← {{ _('Читання') }}</a></p>
+
+  <div class="content-section reading-cover">
+    <span class="reading-card-author">{{ work.author }}</span>
+    <h1 class="reading-cover-title" lang="ca">{{ work.title }}</h1>
+    <p class="text-muted mb-3">
+      {{ _('Рівень {level}', level=work.level) }} ·
+      {{ _('Слів: {count}', count='{:,}'.format(work.words).replace(',', ' ')) }}
+    </p>
+    {% if work.slug == 'othello' %}
+      <p>{{ _('Трагедія 1603 року. Венеційський генерал Отелло таємно одружується з Дездемоною; його алферес Яго, ображений тим, що лейтенантом став Кассіо, крок за кроком переконує Отелло, що дружина йому зраджує.') }}</p>
+    {% endif %}
+    <p class="small text-muted mb-0">{{ _('Новий переклад каталанською, зроблений для цього сайту з англійського оригіналу (суспільне надбання). Текст повний, без скорочень.') }}</p>
+    <a class="btn btn-info mt-3" href="{{ url_for('reader.scene', slug=work.slug, act=work.scenes[0].act, scene=work.scenes[0].scene) }}">{{ _('Почати читати') }}</a>
+  </div>
+
+  <div class="reading-columns">
+    <section class="content-section">
+      <h2 class="h5">{{ _('Зміст') }}</h2>
+      {% for act in work.acts %}
+        <h3 class="reading-act" lang="ca">{{ act_title(act) }}</h3>
+        <ol class="reading-toc">
+          {% for scene in work.scenes if scene.act == act %}
+            <li>
+              <a href="{{ url_for('reader.scene', slug=work.slug, act=scene.act, scene=scene.scene) }}" lang="ca">{{ _('Сцена {number}', number=scene.scene) }}</a>
+              <span class="reading-toc-setting" lang="ca">{{ scene.setting }}</span>
+              <span class="reading-toc-words">{{ _('Слів: {count}', count=scene.words) }}</span>
+            </li>
+          {% endfor %}
+        </ol>
+      {% endfor %}
+    </section>
+
+    {% if work.characters %}
+    <section class="content-section">
+      <h2 class="h5">{{ _('Дійові особи') }}</h2>
+      <dl class="reading-cast" lang="ca">
+        {% for name, about in work.characters %}
+          <dt>{{ name }}</dt><dd>{{ about }}</dd>
+        {% endfor %}
+      </dl>
+    </section>
+    {% endif %}
+  </div>
+</div>
+{% endblock content %}

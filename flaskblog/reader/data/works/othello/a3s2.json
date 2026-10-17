@@ -1,0 +1,14 @@
+{
+  "act": 3,
+  "scene": 2,
+  "setting": "Xipre. Una sala del castell.",
+  "blocks": [
+    {"stage": "Entren OTEL·LO, IAGO i CAVALLERS."},
+    {"speaker": "OTEL·LO", "lines": ["Dona aquestes cartes al pilot, Iago,", "i per mitjà d'ell presenta els meus respectes al senat.", "Fet això, jo estaré passejant per les muralles;", "vine a trobar-me allà."]},
+    {"speaker": "IAGO", "lines": ["Molt bé, bon senyor meu, ho faré."]},
+    {"stage": "Surt IAGO."},
+    {"speaker": "OTEL·LO", "lines": ["Aquesta fortificació, senyors, l'anem a veure?"]},
+    {"speaker": "CAVALLERS", "lines": ["Acompanyarem vostra senyoria."]},
+    {"stage": "Surten."}
+  ]
+}

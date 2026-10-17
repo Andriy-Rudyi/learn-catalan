@@ -157,6 +157,10 @@
             {% if config.READER %}
             <li><a class="lc-menu-link{% if endpoint == 'reader.index' %} active{% endif %}"
                    href="{{ url_for('reader.index') }}">{{ icon('text') }}<span>{{ _('Текст') }}</span><span class="beta-badge">Beta</span></a></li>
+            {% if config.READING %}
+            <li><a class="lc-menu-link{% if endpoint in ('reader.library', 'reader.work', 'reader.scene') %} active{% endif %}"
+                   href="{{ url_for('reader.library') }}">{{ icon('book') }}<span>{{ _('Читання') }}</span><span class="beta-badge">Beta</span></a></li>
+            {% endif %}
             {% endif %}
             {% if config.SHOW_FAQ %}
             <li><a class="lc-menu-link{% if endpoint == 'main.faq' %} active{% endif %}"

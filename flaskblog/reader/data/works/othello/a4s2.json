@@ -1,0 +1,847 @@
+{
+  "act": 4,
+  "scene": 2,
+  "setting": "Xipre. Una cambra del castell.",
+  "blocks": [
+    {
+      "stage": "Entren OTEL·LO i EMÍLIA."
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Així, no heu vist res?"
+      ]
+    },
+    {
+      "speaker": "EMÍLIA",
+      "lines": [
+        "Ni he sentit mai res, ni mai n'he sospitat res."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Sí, que heu vist en Cassio i ella junts."
+      ]
+    },
+    {
+      "speaker": "EMÍLIA",
+      "lines": [
+        "Però aleshores no hi vaig veure res de mal, i aleshores vaig sentir",
+        "cada síl·laba que va sortir de la boca de tots dos."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Què! No xiuxiuejaven mai?"
+      ]
+    },
+    {
+      "speaker": "EMÍLIA",
+      "lines": [
+        "Mai, senyor."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Ni us feien anar enlloc per apartar-vos?"
+      ]
+    },
+    {
+      "speaker": "EMÍLIA",
+      "lines": [
+        "Mai."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "A buscar-li el ventall, els guants, la màscara, o qualsevol cosa?"
+      ]
+    },
+    {
+      "speaker": "EMÍLIA",
+      "lines": [
+        "Mai, senyor."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Això és estrany."
+      ]
+    },
+    {
+      "speaker": "EMÍLIA",
+      "lines": [
+        "Gosaria apostar, senyor, que és honesta,",
+        "i jugar-m'hi l'ànima. Si penseu una altra cosa,",
+        "traieu-vos-ho del cap; us enganya el cor.",
+        "Si algun miserable us ho ha posat al cap,",
+        "que el cel li ho pagui amb la maledicció de la serp!",
+        "Perquè si ella no és honesta, casta i fidel,",
+        "no hi ha cap home feliç. La més pura de les esposes",
+        "és tan bruta com la calúmnia."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Digueu-li que vingui; aneu!"
+      ]
+    },
+    {
+      "stage": "Surt Emília."
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Prou que parla; però seria una alcavota ben simple",
+        "la que no sabés dir-ne tant. Aquesta és una puta astuta,",
+        "un armari tancat amb pany i clau de secrets infames;",
+        "i tanmateix s'agenollarà i resarà. Jo l'hi he vist fer."
+      ]
+    },
+    {
+      "stage": "Entren DESDÈMONA i Emília."
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "Senyor meu, què voleu?"
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Si us plau, rateta, vine aquí."
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "Què desitgeu?"
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Deixa'm veure els teus ulls.",
+        "Mira'm a la cara."
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "Quina idea horrible és aquesta?"
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "[A Emília] Feu el vostre ofici, senyora:",
+        "deixeu sols els qui procreen i tanqueu la porta;",
+        "tossiu o feu «ehem» si ve algú.",
+        "El vostre ofici, el vostre ofici! Au, afanyeu-vos!"
+      ]
+    },
+    {
+      "stage": "Surt Emília."
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "Us ho demano de genolls: què volen dir les vostres paraules?",
+        "Hi entenc una fúria,",
+        "però no les paraules."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Per què? Tu què ets?"
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "La vostra dona, senyor; la vostra dona fidel i lleial."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Vinga, jura-ho; condemna't,",
+        "no fos cas que, semblant com ets un ésser del cel, els mateixos dimonis",
+        "tinguessin por d'agafar-te. Per tant, condemna't dues vegades:",
+        "jura que ets honesta."
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "El cel ho sap de veritat."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "El cel sap de veritat que ets falsa com l'infern."
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "Amb qui, senyor? Amb qui? Com soc falsa?"
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Ah, Desdèmona, fora, fora, fora!"
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "Ai, quin dia més trist! Per què ploreu?",
+        "Soc jo la causa d'aquestes llàgrimes, senyor?",
+        "Si per atzar sospiteu que el meu pare",
+        "ha tingut part en això que us facin tornar,",
+        "no me'n culpeu a mi. Si vós l'heu perdut,",
+        "jo també l'he perdut."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Si al cel li hagués plagut",
+        "posar-me a prova amb l'aflicció, si hagués fet ploure",
+        "tota mena de nafres i vergonyes sobre el meu cap nu,",
+        "si m'hagués submergit en la pobresa fins als llavis,",
+        "si m'hagués fet captiu a mi i les meves últimes esperances,",
+        "hauria trobat en algun racó de la meva ànima",
+        "una gota de paciència. Però, ai las, fer de mi",
+        "la figura immòbil a què el temps del menyspreu",
+        "assenyali amb el seu dit lent i quiet!",
+        "Fins i tot això ho podria suportar, bé, molt bé;",
+        "però allà on he desat el meu cor,",
+        "on he de viure o no tenir vida,",
+        "la font d'on raja el meu corrent",
+        "o s'asseca... que me'n facin fora,",
+        "o que l'hagi de guardar com una cisterna perquè hi facin nus",
+        "i hi criïn els gripaus fastigosos! Canvia de color",
+        "en aquest punt, Paciència, tu, querubí jove de llavis de rosa;",
+        "sí, posa-hi una cara terrible com l'infern!"
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "Espero que el meu noble senyor em consideri honesta."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Oh, sí: com les mosques d'estiu a l'escorxador,",
+        "que neixen tan bon punt hi ponen els ous. Oh, tu, mala herba,",
+        "tan formosa i bella, i que fas una olor tan dolça",
+        "que fa mal als sentits, tant de bo no haguessis nascut mai!"
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "Ai las, quin pecat he comès sense saber-ho?"
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Aquest paper tan blanc, aquest llibre tan bell,",
+        "es va fer per escriure-hi «puta»? Què has comès?",
+        "Comès! Oh, tu, dona de tothom!",
+        "Hauria de fer de les meves galtes veritables fargues",
+        "que cremarien fins a la cendra el pudor",
+        "només que expliqués els teus actes. Què has comès!",
+        "El cel s'hi tapa el nas, i la lluna hi acluca els ulls;",
+        "el vent impúdic, que besa tot el que troba,",
+        "s'amaga callat dins la cova fonda de la terra",
+        "i no ho vol sentir. Què has comès?",
+        "Meuca desvergonyida!"
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "Pel cel, que m'ofeneu injustament."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Que no ets una meuca?"
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "No, tan cert com soc cristiana.",
+        "Si guardar aquest vas per al meu senyor",
+        "de qualsevol altre contacte brut i il·lícit",
+        "no és ser una meuca, no ho soc."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Què, no ets una puta?"
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "No, tan cert com espero salvar-me."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "És possible?"
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "Oh, que el cel ens perdoni!"
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Us demano perdó, doncs:",
+        "us havia pres per aquella puta astuta de Venècia",
+        "que es va casar amb Otel·lo. Vós, senyora,",
+        "que teniu l'ofici contrari al de sant Pere",
+        "i guardeu la porta de l'infern! Vós, vós, sí, vós!"
+      ]
+    },
+    {
+      "stage": "Entra Emília."
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Ja hem acabat la nostra feina; aquí teniu diners per les molèsties.",
+        "Si us plau, gireu la clau i guardeu-nos el secret."
+      ]
+    },
+    {
+      "stage": "Surt."
+    },
+    {
+      "speaker": "EMÍLIA",
+      "lines": [
+        "Ai las, què s'ha ficat al cap aquest senyor?",
+        "Com esteu, senyora? Com esteu, bona senyora meva?"
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "A fe, mig adormida."
+      ]
+    },
+    {
+      "speaker": "EMÍLIA",
+      "lines": [
+        "Bona senyora, què li passa al meu senyor?"
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "A qui?"
+      ]
+    },
+    {
+      "speaker": "EMÍLIA",
+      "lines": [
+        "Doncs al meu senyor, senyora."
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "Qui és el teu senyor?"
+      ]
+    },
+    {
+      "speaker": "EMÍLIA",
+      "lines": [
+        "El que és el vostre, dolça senyora."
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "No en tinc cap. No em parlis, Emília.",
+        "No puc plorar, i no tinc cap resposta",
+        "que no s'hagi de dir amb llàgrimes. Si us plau, aquesta nit",
+        "posa'm al llit els llençols de noces, recorda-te'n;",
+        "i crida el teu marit que vingui."
+      ]
+    },
+    {
+      "speaker": "EMÍLIA",
+      "lines": [
+        "Sí que és un canvi, això!"
+      ]
+    },
+    {
+      "stage": "Surt."
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "Està bé que em tractin així, molt bé!",
+        "Com m'he comportat perquè ell pogués atribuir",
+        "el més petit retret a la meva falta més lleu?"
+      ]
+    },
+    {
+      "stage": "Entren IAGO i Emília."
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Què desitgeu, senyora? Com us trobeu?"
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "No ho sé dir. Els qui ensenyen els infants petits",
+        "ho fan amb mètodes suaus i feines fàcils.",
+        "Ell m'hauria pogut renyar així; perquè, de bona fe,",
+        "jo soc una criatura per als renys."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Què passa, senyora?"
+      ]
+    },
+    {
+      "speaker": "EMÍLIA",
+      "lines": [
+        "Ai las, Iago, el meu senyor l'ha tractada tant de puta,",
+        "li ha llançat tants insults i paraules tan dures,",
+        "que un cor sincer no ho pot suportar."
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "Soc jo aquest nom, Iago?"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Quin nom, bella senyora?"
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "El que ella ha dit que el meu senyor deia que jo era."
+      ]
+    },
+    {
+      "speaker": "EMÍLIA",
+      "lines": [
+        "L'ha anomenada puta. Un captaire embriac",
+        "no hauria dit paraules així a la seva bagassa."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Per què ho ha fet?"
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "No ho sé; estic segura que no soc res d'això."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "No ploreu, no ploreu! Ai, quin dia!"
+      ]
+    },
+    {
+      "speaker": "EMÍLIA",
+      "lines": [
+        "Ha renunciat a tants casaments nobles,",
+        "al seu pare, al seu país i als seus amics,",
+        "perquè l'anomenin puta? No n'hi ha per plorar?"
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "És la meva mala sort."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Maleït sigui per això!",
+        "Com se li ha ficat al cap aquesta dèria?"
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "Ai, el cel ho sap."
+      ]
+    },
+    {
+      "speaker": "EMÍLIA",
+      "lines": [
+        "Que em pengin si no és que algun canalla incorregible,",
+        "algun brivall entremetut i llepaire,",
+        "algun esclau trampós i enganyador, per aconseguir algun càrrec,",
+        "ha ordit aquesta calúmnia; que em pengin, si no."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Quina bestiesa, no hi ha cap home així; és impossible."
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "Si n'hi ha algun, que el cel el perdoni."
+      ]
+    },
+    {
+      "speaker": "EMÍLIA",
+      "lines": [
+        "Que el perdoni la forca, i que l'infern li rosegui els ossos!",
+        "Per què l'ha d'anomenar puta? Qui li fa companyia?",
+        "Quin lloc, quina hora, de quina manera, quins indicis?",
+        "El moro està enganyat per algun bergant d'allò més infame,",
+        "algun brivall vil i notori, algun individu fastigós.",
+        "Oh, cel, tant de bo desemmascaressis aquests pinxos",
+        "i posessis a cada mà honesta un fuet",
+        "per assotar els canalles nus per tot el món,",
+        "de l'est fins a l'oest!"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Parla més baix."
+      ]
+    },
+    {
+      "speaker": "EMÍLIA",
+      "lines": [
+        "Oh, fàstic de gent! Un d'aquests galifardeus va ser",
+        "el qui et va capgirar el seny com un mitjó",
+        "i et va fer sospitar que jo anava amb el moro."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Ets una ximple, calla."
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "Oh, bon Iago,",
+        "què he de fer per recuperar el meu senyor?",
+        "Bon amic, aneu a trobar-lo; perquè, per aquesta llum del cel,",
+        "no sé com l'he perdut. M'agenollo aquí:",
+        "si mai la meva voluntat ha pecat contra el seu amor",
+        "ja sigui en el curs del pensament o en un acte real;",
+        "o si els meus ulls, les meves orelles o cap altre sentit",
+        "s'han delectat en cap altra figura;",
+        "o si no l'estimo ara, i no l'he estimat sempre,",
+        "i no l'estimaré sempre (encara que em llanci",
+        "a un divorci miserable) amb tot el cor,",
+        "que el consol m'abandoni! La crueltat pot molt,",
+        "i la seva crueltat pot destruir-me la vida,",
+        "però mai no tacarà el meu amor. No puc dir «puta»:",
+        "em fa horror ara que pronuncio la paraula;",
+        "fer l'acte que em pogués guanyar aquest títol",
+        "no m'ho faria fer ni tota la vanitat del món."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Us prego que us calmeu; només és el seu humor.",
+        "Els afers de l'estat el molesten,",
+        "i s'ho descarrega amb vós."
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "Si no fos res més que això..."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "No és res més, us ho garanteixo."
+      ]
+    },
+    {
+      "stage": "[Sonen trompetes a dins.]"
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Escolteu com aquests instruments criden a sopar!",
+        "Els missatgers de Venècia esperen per menjar.",
+        "Entreu, i no ploreu; tot anirà bé."
+      ]
+    },
+    {
+      "stage": "Surten Desdèmona i Emília."
+    },
+    {
+      "stage": "Entra RODERIGO."
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Què hi ha, Roderigo?"
+      ]
+    },
+    {
+      "speaker": "RODERIGO",
+      "lines": [
+        "No trobo que em tractis amb justícia."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Què et fa pensar el contrari?"
+      ]
+    },
+    {
+      "speaker": "RODERIGO",
+      "lines": [
+        "Cada dia em despatxes amb algun pretext, Iago, i, pel que",
+        "ara em sembla, més aviat m'apartes de qualsevol ocasió",
+        "que no pas em dones el més petit avenç",
+        "en l'esperança. De debò que no ho aguantaré més. I encara",
+        "no estic disposat a empassar-me en pau",
+        "el que ja he sofert neciament."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Em vols escoltar, Roderigo?"
+      ]
+    },
+    {
+      "speaker": "RODERIGO",
+      "lines": [
+        "A fe, que ja t'he escoltat massa; perquè les teves paraules i els teus",
+        "actes no tenen cap parentiu."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "M'acuses molt injustament."
+      ]
+    },
+    {
+      "speaker": "RODERIGO",
+      "lines": [
+        "No t'acuso de res que no sigui veritat. M'he arruïnat i m'he quedat",
+        "sense recursos. Les joies que m'has pres per lliurar-les a la",
+        "Desdèmona haurien mig corromput una monja.",
+        "M'has dit que ella les ha rebudes, i m'has tornat",
+        "esperances i encoratjaments",
+        "d'un afecte i una coneixença immediats,",
+        "però no en trobo cap."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Bé, au; molt bé."
+      ]
+    },
+    {
+      "speaker": "RODERIGO",
+      "lines": [
+        "Molt bé, au! Jo no puc fer cap «au», home, i no",
+        "està gens bé. Per aquesta mà, et dic que és una porqueria",
+        "i començo a veure que m'hi han pres el pèl."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Molt bé."
+      ]
+    },
+    {
+      "speaker": "RODERIGO",
+      "lines": [
+        "Et dic que no està gens bé. Em presentaré a la",
+        "Desdèmona. Si em torna les joies, abandonaré",
+        "el meu festeig i em penediré de la meva sol·licitud il·lícita; si",
+        "no, pots estar segur que et demanaré",
+        "comptes a tu."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Ja has dit el que tenies a dir?"
+      ]
+    },
+    {
+      "speaker": "RODERIGO",
+      "lines": [
+        "Sí, i no he dit res que no declari que tinc la intenció",
+        "de fer."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Vaja, ara veig que tens coratge, i des d'aquest",
+        "mateix moment em formo de tu una opinió millor que mai",
+        "abans. Dona'm la mà, Roderigo. Has fet",
+        "contra mi una objecció molt justa; però tot i així",
+        "t'asseguro que he actuat amb tota rectitud en el",
+        "teu assumpte."
+      ]
+    },
+    {
+      "speaker": "RODERIGO",
+      "lines": [
+        "No ho ha semblat."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Admeto, de fet, que no ho ha semblat; i la teva sospita",
+        "no és pas mancada d'enginy ni de criteri. Però, Roderigo, si",
+        "de debò tens dins teu allò que ara tinc més",
+        "motius que mai per creure que tens (vull dir determinació,",
+        "coratge i valor), demostra-ho aquesta nit. Si la",
+        "nit següent no gaudeixes de la Desdèmona, treu-me",
+        "d'aquest món a traïció i ordeix maquinacions",
+        "contra la meva vida."
+      ]
+    },
+    {
+      "speaker": "RODERIGO",
+      "lines": [
+        "Bé, de què es tracta? És raonable i està al meu",
+        "abast?"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Senyor, ha arribat de Venècia una ordre expressa per posar",
+        "en Cassio al lloc d'Otel·lo."
+      ]
+    },
+    {
+      "speaker": "RODERIGO",
+      "lines": [
+        "És cert, això? Doncs aleshores Otel·lo i la Desdèmona tornen",
+        "a Venècia."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Oh, no; ell se'n va a Mauritània i s'emporta la bella",
+        "Desdèmona, tret que la seva estada aquí s'allargui",
+        "per algun accident; i cap no pot ser tan",
+        "decisiu com treure del mig en",
+        "Cassio."
+      ]
+    },
+    {
+      "speaker": "RODERIGO",
+      "lines": [
+        "Què vols dir, «treure'l del mig»?"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Doncs fer-lo incapaç d'ocupar el lloc d'Otel·lo:",
+        "rebentar-li el cervell."
+      ]
+    },
+    {
+      "speaker": "RODERIGO",
+      "lines": [
+        "I això vols que ho faci jo?"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Sí, si goses fer-te un profit i fer-te justícia. Ell sopa",
+        "aquesta nit amb una meuca, i jo aniré a trobar-lo",
+        "allà. Encara no sap res de la seva fortuna honorable. Si",
+        "vigiles quan surti d'allà (cosa que jo faré",
+        "que passi entre les dotze i la una), el podràs",
+        "agafar quan vulguis. Jo seré a prop per secundar el teu",
+        "intent, i caurà entre tots dos. Vinga, no et quedis",
+        "astorat, i acompanya'm. Et mostraré",
+        "que la seva mort és tan necessària que et sentiràs",
+        "obligat a donar-l'hi. Ja és ben bé hora de",
+        "sopar, i la nit va passant.",
+        "Som-hi!"
+      ]
+    },
+    {
+      "speaker": "RODERIGO",
+      "lines": [
+        "Vull sentir més raons per fer això."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "I quedaràs satisfet."
+      ]
+    },
+    {
+      "stage": "Surten."
+    }
+  ]
+}

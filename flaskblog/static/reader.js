@@ -2,6 +2,9 @@
  * synonyms in that same form (flaskblog/reader). A synonym can replace the
  * word; every replacement is kept in a history you can go back through.
  *
+ * The reading pages (/reading/...) use the same panel in "read" mode: the
+ * text is already on the page, its words are clickable, nothing is replaced.
+ *
  * Everything the server sends is put on the page with textContent, never as
  * HTML. The text and its history stay in this browser (localStorage) so a
  * reload does not lose them.
@@ -13,8 +16,10 @@
   if (!configNode) { return; }
   var config = JSON.parse(configNode.textContent);
   var S = config.strings;
+  var READ_ONLY = config.mode === 'read';
   var STORE = 'learn-catalan:text:v1';
-  var MAX = parseInt(document.getElementById('reader-source').getAttribute('maxlength'), 10) || 20000;
+  var sourceNode = document.getElementById('reader-source');
+  var MAX = (sourceNode && parseInt(sourceNode.getAttribute('maxlength'), 10)) || 20000;
 
   var els = {
     input: document.getElementById('reader-input'),
@@ -292,6 +297,14 @@
   }
 
   function chip(item, core, index) {
+    if (READ_ONLY) {
+      // The text is the author's: show the synonyms, don't swap them in.
+      var tag = el('span', 'reader-chip is-static');
+      tag.appendChild(el('span', 'reader-chip-text', item.text));
+      if (item.register) { tag.appendChild(el('span', 'reader-chip-register', item.register)); }
+      if (item.translation) { tag.appendChild(el('span', 'reader-chip-translation', item.translation)); }
+      return tag;
+    }
     var button = el('button', 'reader-chip');
     button.type = 'button';
     button.appendChild(el('span', 'reader-chip-text', item.text));
@@ -336,7 +349,27 @@
     select(index);
   }
 
+  // -- read mode: wrap the words already on the page --------------------------------------
+  function wrapWords() {
+    var index = 0;
+    els.text.querySelectorAll('[data-words]').forEach(function (node) {
+      var text = node.textContent;
+      node.textContent = '';
+      chunks(text).forEach(function (chunk) {
+        if (/^\s+$/.test(chunk)) {
+          node.appendChild(document.createTextNode(chunk));
+          return;
+        }
+        var span = el('span', 'reader-word', chunk);
+        span.setAttribute('data-i', String(index));
+        node.appendChild(span);
+        index += 1;
+      });
+    });
+  }
+
   // -- controls --------------------------------------------------------------------------------
+  function wireTextControls() {
   els.start.addEventListener('click', function () { start(els.source.value); });
   els.example.addEventListener('click', function () {
     els.source.value = config.example;
@@ -367,6 +400,13 @@
       navigator.clipboard.writeText(text).then(done, function () {});
     }
   });
+  }
+
+  if (READ_ONLY) {
+    wrapWords();
+  } else {
+    wireTextControls();
+  }
 
   els.text.addEventListener('click', function (event) {
     var span = event.target.closest ? event.target.closest('.reader-word') : null;
@@ -392,7 +432,7 @@
   });
 
   // A text from an earlier visit comes back where it was left.
-  var saved = load();
+  var saved = READ_ONLY ? null : load();
   if (saved) {
     state.history = saved;
     els.input.hidden = true;

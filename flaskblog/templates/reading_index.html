@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block meta_description %}{{ _('Твори каталанською для читання: натисніть будь-яке слово, щоб побачити його форму, переклад і синоніми.') }}{% endblock %}
+{% block content %}
+<div class="reading">
+  <div class="page-head">
+    <div>
+      <h1 class="mb-1">{{ _('Читання') }} <span class="beta-badge beta-badge-lg" title="{{ _('Нова функція: можливі неточності') }}">Beta</span></h1>
+      <p class="text-muted mb-0">{{ _('Твори каталанською для читання: натисніть будь-яке слово, щоб побачити його форму, переклад і синоніми.') }}</p>
+    </div>
+  </div>
+
+  <div class="reading-shelf">
+    {% for work in works %}
+      <a class="content-section reading-card" href="{{ url_for('reader.work', slug=work.slug) }}">
+        <span class="reading-card-author">{{ work.author }}</span>
+        <span class="reading-card-title" lang="ca">{{ work.title }}</span>
+        <span class="reading-card-meta">
+          {{ _('Рівень {level}', level=work.level) }} ·
+          {{ _('Слів: {count}', count='{:,}'.format(work.words).replace(',', ' ')) }} ·
+          {{ _('Сцен: {count}', count=work.scenes|length) }}
+        </span>
+      </a>
+    {% else %}
+      <p class="text-muted">{{ _('Тут поки нічого немає.') }}</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}
