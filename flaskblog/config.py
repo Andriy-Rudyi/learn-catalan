@@ -77,6 +77,10 @@ class Config:
     # https://learn-catalan.com. Without it the address of the request is used.
     SITE_URL = os.getenv('SITE_URL')
 
+    # Site language for visitors whose browser asks for none of the site's
+    # languages (English, Ukrainian, French; Russian gets Ukrainian).
+    DEFAULT_LANGUAGE = os.getenv('DEFAULT_LANGUAGE', 'en')
+
     # Open API (/api/v1): requests a minute per client address; 0 = no limit.
     API_RATE_LIMIT = int(os.getenv('API_RATE_LIMIT', '120'))
 
@@ -104,3 +108,5 @@ class TestConfig(Config):
     DESIGN = 'modern'
     SEO = True
     SITE_URL = None
+    # The suite was written against the Ukrainian pages.
+    DEFAULT_LANGUAGE = 'uk'

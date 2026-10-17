@@ -137,12 +137,34 @@ class MultilingualDictionaryTests(AppTestCase):
         word = Word.query.filter_by(term='pa').first()
         self.assertEqual(('хліб', 'le pain'), (word.translation, word.translations['fr'].translation))
 
+    def test_reseeding_keeps_an_editors_review(self):
+        from flaskblog.vocabulary import service
+        csv_text = 'term,translation_fr,reviewed_fr\npa,pain,0\n'
+        service.import_rows(service.read_rows(csv_text))
+        db.session.commit()
+        entry = Word.query.filter_by(term='pa').first().translations['fr']
+        self.assertFalse(entry.reviewed)
+        entry.reviewed = True
+        db.session.commit()
+        # The same draft text again (every deploy re-seeds): the review stays.
+        service.import_rows(service.read_rows(csv_text), update_existing=True)
+        db.session.commit()
+        self.assertTrue(Word.query.filter_by(term='pa').first().translations['fr'].reviewed)
+        # New text is a new draft.
+        service.import_rows(service.read_rows('term,translation_fr,reviewed_fr\npa,du pain,0\n'),
+                            update_existing=True)
+        db.session.commit()
+        self.assertFalse(Word.query.filter_by(term='pa').first().translations['fr'].reviewed)
+
     def test_bundled_files_cover_every_word(self):
         from flaskblog.vocabulary import service
-        self.assertEqual(['uk', 'en'], service.seed_languages())
+        self.assertEqual(['uk', 'en', 'fr'], service.seed_languages())
         rows = service.seed_rows()
         self.assertGreater(len(rows), 3000)
-        self.assertTrue(all(row.get('translation') and row.get('translation_en') for row in rows))
+        self.assertTrue(all(row.get('translation') and row.get('translation_en')
+                            and row.get('translation_fr') for row in rows))
+        # French is machine-translated: bundled as drafts until reviewed.
+        self.assertTrue(all(row.get('reviewed_fr') == '0' for row in rows))
 
 
 if __name__ == '__main__':

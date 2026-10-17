@@ -1,28 +1,40 @@
-"""Interface languages: Ukrainian (the source language) and English.
+"""Site languages: English (the main one), Ukrainian and French.
 
 Strings in the code and templates are written in Ukrainian and wrapped in
-``_()``; the English text is looked up in ``en.MESSAGES``. A missing English
-entry falls back to the Ukrainian text, and the test suite checks that the
-English pages contain no Cyrillic, so gaps are caught.
+``_()``; other languages look them up in their catalogue (en.MESSAGES,
+fr.MESSAGES). English is the default and the fallback for everything:
+visitors whose browser asks for none of the site's languages get English,
+a string missing from the French catalogue is shown in English, and so is
+course content that has no French version yet (grammar, pronunciation,
+FAQ). The dictionary shows French translations where they exist.
+
+The test suite checks that English and French pages contain no Cyrillic,
+so gaps in the catalogues are caught.
 
 The language comes from ``?lang=`` (remembered in a cookie), then the cookie,
 then the browser's Accept-Language header.
 """
 
-from flask import has_request_context, request
+from flask import current_app, has_request_context, request
 
 from flaskblog.i18n.en import MESSAGES as EN_MESSAGES
+from flaskblog.i18n.fr import MESSAGES as FR_MESSAGES
 
-LANGUAGES = ('uk', 'en')
-DEFAULT_LANGUAGE = 'uk'
+LANGUAGES = ('en', 'uk', 'fr')
+SOURCE_LANGUAGE = 'uk'   # the language the strings are written in
+FALLBACK_LANGUAGE = 'en'  # used for anything missing in the chosen language
+DEFAULT_LANGUAGE = 'en'   # when nothing tells us what the visitor reads
 COOKIE_NAME = 'lang'
 COOKIE_MAX_AGE = 365 * 24 * 3600
 _ENVIRON_KEY = 'learn_catalan.locale'
 
-LANGUAGE_NAMES = {'uk': 'Українська', 'en': 'English'}
-LANGUAGE_SHORT = {'uk': 'UA', 'en': 'EN'}
+LANGUAGE_NAMES = {'en': 'English', 'uk': 'Українська', 'fr': 'Français'}
+LANGUAGE_SHORT = {'en': 'EN', 'uk': 'UA', 'fr': 'FR'}
 
-_CATALOGS = {'en': EN_MESSAGES}
+_CATALOGS = {'en': EN_MESSAGES, 'fr': FR_MESSAGES}
+# Languages the courses (grammar, pronunciation, FAQ) are written for; the
+# others are shown the English course.
+COURSE_LANGUAGES = ('uk', 'en')
 
 # Shown by static/speak.js when the device has no Catalan voice.
 SPEAK_HINT = (
@@ -33,22 +45,28 @@ SPEAK_HINT = (
 )
 
 
+def _default_language():
+    if has_request_context():
+        return current_app.config.get('DEFAULT_LANGUAGE', DEFAULT_LANGUAGE)
+    return DEFAULT_LANGUAGE
+
+
 def _from_browser():
     header = request.headers.get('Accept-Language')
     if not header:
-        return DEFAULT_LANGUAGE
+        return _default_language()
     # Russian-speaking Ukrainians usually prefer the Ukrainian interface;
-    # anyone else is more likely to read English than Ukrainian.
-    best = request.accept_languages.best_match(('uk', 'ru', 'en'))
+    # anyone else gets their language if the site has it, English if not.
+    best = request.accept_languages.best_match(('uk', 'ru') + LANGUAGES)
     if best in ('uk', 'ru'):
         return 'uk'
-    return 'en'
+    return best if best in LANGUAGES else FALLBACK_LANGUAGE
 
 
 def get_locale():
     """Language of the current request."""
     if not has_request_context():
-        return DEFAULT_LANGUAGE
+        return SOURCE_LANGUAGE
     locale = request.environ.get(_ENVIRON_KEY)
     if locale is None:
         chosen = request.args.get('lang') or request.cookies.get(COOKIE_NAME)
@@ -57,11 +75,22 @@ def get_locale():
     return locale
 
 
+def content_language(locale=None):
+    """The language of the courses (grammar, pronunciation, FAQ): the chosen
+    one when there is a course for it, English otherwise."""
+    locale = locale or get_locale()
+    return locale if locale in COURSE_LANGUAGES else FALLBACK_LANGUAGE
+
+
 def gettext(text, **kwargs):
-    """Translate a Ukrainian source string into the current language."""
+    """Translate a Ukrainian source string into the current language,
+    falling back to English."""
     locale = get_locale()
-    if locale != DEFAULT_LANGUAGE:
-        text = _CATALOGS.get(locale, {}).get(text, text)
+    if locale != SOURCE_LANGUAGE:
+        translated = _CATALOGS.get(locale, {}).get(text)
+        if translated is None:
+            translated = _CATALOGS[FALLBACK_LANGUAGE].get(text, text)
+        text = translated
     return text.format(**kwargs) if kwargs else text
 
 
@@ -69,16 +98,23 @@ _ = gettext
 
 
 def plural(count, uk_forms, en_forms=None):
-    """``"5 юнітів"`` / ``"5 units"``.
+    """``"5 юнітів"`` / ``"5 units"`` / ``"5 unités"``.
 
     ``uk_forms`` is (one, few, many): юніт, юніти, юнітів;
-    ``en_forms`` is (one, other). Without ``en_forms`` the Ukrainian forms are
-    translated through the catalogue.
+    ``en_forms`` is (one, other). Other languages translate the Ukrainian
+    forms through their catalogue, falling back to ``en_forms``.
     """
-    if get_locale() == 'en':
-        if en_forms is None:
-            en_forms = (gettext(uk_forms[0]), gettext(uk_forms[2]))
-        word = en_forms[0] if count == 1 else en_forms[1]
+    locale = get_locale()
+    if locale != SOURCE_LANGUAGE:
+        catalog = _CATALOGS.get(locale, {})
+        forms = None
+        if locale != FALLBACK_LANGUAGE and uk_forms[0] in catalog and uk_forms[2] in catalog:
+            forms = (catalog[uk_forms[0]], catalog[uk_forms[2]])
+        if forms is None:
+            forms = en_forms or (gettext(uk_forms[0]), gettext(uk_forms[2]))
+        # French counts 0 and 1 as singular; English only 1.
+        singular = abs(count) < 2 if locale == 'fr' else count == 1
+        word = forms[0] if singular else forms[1]
     else:
         n = abs(count)
         if n % 10 == 1 and n % 100 != 11:
@@ -159,7 +195,8 @@ def init_app(app):
             '_': gettext,
             'plural': plural,
             'current_lang': locale,
-            'other_lang': 'en' if locale == 'uk' else 'uk',
+            'content_lang': content_language(locale),
+            'site_languages': LANGUAGES,
             'language_names': LANGUAGE_NAMES,
             'language_short': LANGUAGE_SHORT,
             'url_with_lang': url_with_lang,

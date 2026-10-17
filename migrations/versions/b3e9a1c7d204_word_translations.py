@@ -2,7 +2,9 @@
 
 Moves word.translation / example_uk / notes (Ukrainian) and
 translation_en / example_en / notes_en (English) into word_translation,
-so new languages need no new columns. Downgrade puts them back.
+so new languages need no new columns. "reviewed" marks drafts (machine
+translations) that nobody has checked yet. Downgrade puts the Ukrainian and
+English columns back.
 
 Revision ID: b3e9a1c7d204
 Revises: f4b8d2a61c37
@@ -35,6 +37,7 @@ def upgrade():
         sa.Column('translation', sa.String(length=255), nullable=False),
         sa.Column('example', sa.String(length=255), nullable=True),
         sa.Column('notes', sa.Text(), nullable=True),
+        sa.Column('reviewed', sa.Boolean(), nullable=False, server_default=sa.true()),
         sa.ForeignKeyConstraint(['word_id'], ['word.id'], ondelete='CASCADE'),
         sa.PrimaryKeyConstraint('id'),
         sa.UniqueConstraint('word_id', 'lang', name='uq_word_translation_lang'),

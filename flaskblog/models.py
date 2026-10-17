@@ -2,7 +2,7 @@ from datetime import datetime
 from itsdangerous.url_safe import URLSafeTimedSerializer as Serializer
 from flask import current_app
 from flaskblog import db, login_manager
-from flaskblog.i18n import get_locale, gettext
+from flaskblog.i18n import content_language, get_locale, gettext
 from flaskblog.languages import CODES as LANGUAGE_CODES, fallback_chain
 from flaskblog.permissions import is_admin
 from flask_login import UserMixin
@@ -278,6 +278,8 @@ class WordTranslation(db.Model):
     translation = db.Column(db.String(255), nullable=False, default='')
     example = db.Column(db.String(255), nullable=True)
     notes = db.Column(db.Text, nullable=True)
+    # False for a draft (e.g. a machine translation) nobody has checked yet.
+    reviewed = db.Column(db.Boolean, nullable=False, default=True, server_default=db.true())
 
     word = db.relationship('Word', back_populates='translations')
 
@@ -355,11 +357,12 @@ class WordTranslationView(ModelView):
     """Translations of dictionary words, one row per language: add French,
     Polish... here (or in bulk with a CSV file)."""
 
-    column_list = ['word', 'lang', 'translation', 'example']
-    column_filters = ['lang']
+    column_list = ['word', 'lang', 'translation', 'example', 'reviewed']
+    column_filters = ['lang', 'reviewed']
+    column_editable_list = ['reviewed']
     column_searchable_list = ['translation', 'word.term']
     column_default_sort = 'word_id'
-    form_columns = ['word', 'lang', 'translation', 'example', 'notes']
+    form_columns = ['word', 'lang', 'translation', 'example', 'notes', 'reviewed']
     form_ajax_refs = {'word': {'fields': ['term'], 'page_size': 20}}
     form_choices = {'lang': [(code, code) for code in LANGUAGE_CODES]}
 
@@ -433,8 +436,8 @@ class GrammarUnit(db.Model):
         self.translations = json.dumps(translations, ensure_ascii=False)
 
     def _version(self):
-        """The adapted version for the interface language, if there is one."""
-        locale = get_locale()
+        """The adapted version for the content language, if there is one."""
+        locale = content_language()
         if locale == 'uk':
             return None
         return self.get_translations().get(locale)
@@ -465,7 +468,7 @@ class GrammarUnit(db.Model):
         """Examples as [{"ca", "tr"}] with the translation in the interface language."""
         version = self._version()
         if version and version.get('examples'):
-            lang = get_locale()
+            lang = content_language()
             return [{'ca': e['ca'], 'tr': e.get(lang, '')} for e in version['examples']]
         return [{'ca': e['ca'], 'tr': e.get('uk', '')} for e in self.get_examples()]
 

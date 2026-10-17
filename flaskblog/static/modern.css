@@ -989,3 +989,19 @@ html[data-design="modern"] .docs-code {
   border-radius: var(--radius);
   background: var(--search-bg);
 }
+
+html[data-design="modern"] .lang-menu .dropdown-menu {
+  --bs-dropdown-border-radius: 12px;
+  --bs-dropdown-padding-y: .35rem;
+  --bs-dropdown-link-active-bg: var(--brand-tint);
+  --bs-dropdown-link-active-color: var(--brand-strong);
+  border: 0;
+  box-shadow: var(--shadow-hover);
+}
+
+html[data-design="modern"] .lang-menu .dropdown-item {
+  border-radius: 8px;
+  margin: 0 .35rem;
+  width: auto;
+  padding: .45rem .75rem;
+}

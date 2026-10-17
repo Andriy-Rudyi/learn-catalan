@@ -9,7 +9,7 @@ import json
 import os
 from collections import OrderedDict
 
-from flaskblog.i18n import get_locale
+from flaskblog.i18n import content_language
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 DATA_FILE = os.path.join(DATA_DIR, 'lessons.json')
@@ -31,7 +31,7 @@ _cache = {}
 
 def lessons_file(lang=None):
     """The lessons file for a language, Ukrainian when there is no adaptation."""
-    path = LANGUAGE_FILES.get(lang or get_locale())
+    path = LANGUAGE_FILES.get(lang or content_language())
     return path if path and os.path.exists(path) else DATA_FILE
 
 

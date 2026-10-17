@@ -36,7 +36,9 @@ LEGACY_COLUMNS = {
     'notes_en': ('en', 'notes'),
 }
 _COLUMN_NAMES = {value: key for key, value in LEGACY_COLUMNS.items()}
-_COLUMN = re.compile(r'^(translation|example|notes)_([a-z]{2,3})$')
+_COLUMN = re.compile(r'^(translation|example|notes|reviewed)_([a-z]{2,3})$')
+# Values of a "reviewed" column that mark a draft.
+_DRAFT = ('0', 'no', 'false', 'draft')
 
 
 def column_name(lang, field):
@@ -217,8 +219,20 @@ def import_rows(rows, author=None, update_existing=False):
 
 def _apply_translations(word, translations):
     for lang, fields in translations.items():
+        before = word.translations.get(lang)
+        before = None if before is None else tuple(getattr(before, f) for f in TRANSLATION_FIELDS)
         for field, value in fields.items():
-            word._set(lang, field, value)
+            if field != 'reviewed':
+                word._set(lang, field, value)
+        entry = word.translations.get(lang)
+        if entry is None or 'reviewed' not in fields:
+            continue
+        if fields['reviewed'].lower() not in _DRAFT:
+            entry.reviewed = True
+        elif before != tuple(getattr(entry, f) for f in TRANSLATION_FIELDS):
+            # A draft mark only applies to new or changed text, so re-seeding
+            # does not undo an editor's review of the same translation.
+            entry.reviewed = False
 
 
 def import_file(path, author=None, update_existing=False):
@@ -248,8 +262,9 @@ def seed_rows():
             row = by_term.get(entry.get('term'))
             if row is None:
                 continue  # a translation of a word that is not in words.csv
-            for field in TRANSLATION_FIELDS:
-                row[column_name(lang, field)] = entry.get(field) or ''
+            for field in TRANSLATION_FIELDS + ('reviewed',):
+                if field in entry:
+                    row[column_name(lang, field)] = entry.get(field) or ''
     return rows
 
 
@@ -301,7 +316,7 @@ def export_csv(words=None):
         if lang not in ('uk', 'en') and any(lang in word.translations for word in words)
     ]
     columns = list(CSV_COLUMNS) + [
-        column_name(lang, field) for lang in others for field in TRANSLATION_FIELDS
+        column_name(lang, field) for lang in others for field in TRANSLATION_FIELDS + ('reviewed',)
     ]
     buffer = io.StringIO()
     writer = csv.DictWriter(buffer, fieldnames=columns)
@@ -310,7 +325,11 @@ def export_csv(words=None):
         row = {}
         for column in columns:
             parsed = parse_column(column)
-            value = word._get(*parsed) if parsed else getattr(word, column, '')
+            if parsed and parsed[1] == 'reviewed':
+                entry = word.translations.get(parsed[0])
+                value = '' if entry is None else ('1' if entry.reviewed else '0')
+            else:
+                value = word._get(*parsed) if parsed else getattr(word, column, '')
             row[column] = value or ''
         writer.writerow(row)
     return buffer.getvalue()

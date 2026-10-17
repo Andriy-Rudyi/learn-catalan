@@ -99,6 +99,7 @@ def spec(server, topics, levels, parts_of_speech, languages, regions):
                 'translation': {'type': 'string'},
                 'example': {'type': 'string', 'nullable': True, 'description': 'The Catalan example in this language.'},
                 'notes': {'type': 'string', 'nullable': True},
+                'reviewed': {'type': 'boolean', 'description': 'False for a draft (machine) translation nobody has checked yet.'},
             }},
             'Word': {'type': 'object', 'properties': {
                 'term': {'type': 'string', 'example': 'anar'},

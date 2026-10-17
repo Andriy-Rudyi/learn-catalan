@@ -1592,3 +1592,12 @@ a.article-title:hover {
 .lc-side-footer a {
   color: inherit;
 }
+
+/* ---------- Language menu in the header ---------- */
+.lang-menu .dropdown-menu {
+  --bs-dropdown-min-width: 9rem;
+  --bs-dropdown-link-active-bg: var(--brand);
+  --bs-dropdown-bg: var(--surface);
+  --bs-dropdown-border-color: var(--border-soft);
+  font-size: .9rem;
+}

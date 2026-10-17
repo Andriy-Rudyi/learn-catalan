@@ -23,11 +23,13 @@ A Flask-based blog platform for learning and teaching the Catalan language.
   so no database step is needed.
 - Database-driven content management
 - Chronological and category-based post navigation
-- **Two interface languages, Ukrainian and English** (UA/EN switch in the
-  menu; first visit follows the browser language). English learners get an
-  adapted course, not a word-for-word translation: grammar units and
-  pronunciation lessons are rewritten around English (false friends, “do”,
-  aspirated p/t/k…), and every dictionary entry has an English translation.
+- **Three interface languages: English (the default), Ukrainian and French**
+  (language menu in the header; first visit follows the browser language).
+  English learners get an adapted course, not a word-for-word translation:
+  grammar units and pronunciation lessons are rewritten around English (false
+  friends, “do”, aspirated p/t/k…), and every dictionary entry has an English
+  translation. French has its own interface and dictionary translations; the
+  courses are shown in English until they get a French version.
   See [Languages](#languages)
 - Responsive interface that works on phones, with a light/dark theme switch
 - Two looks: a modern design (default; the menu is pinned to
@@ -217,17 +219,24 @@ therefore needs no database change:
 1. Add it to `flaskblog/languages.py` if it is not there (French, Italian,
    Spanish, Polish, German, Arabic and Chinese already are).
 2. Put its translations in `flaskblog/vocabulary/data/translations/<code>.csv`
-   with the columns `term, translation, example, notes` (rows matched to
-   `data/words.csv` by `term`), or import a CSV with `translation_<code>`
+   with the columns `term, translation, example, notes` and optionally
+   `reviewed` (rows matched to `data/words.csv` by `term`), or import a CSV with `translation_<code>`
    columns, or add them one by one in the admin panel (Word Translation).
 3. `flask vocabulary seed --update` loads them; Render runs it on every deploy.
 
 Where a word has no translation in the language asked for, English and then
-Ukrainian are shown. The interface itself (menus, buttons) is translated
+Ukrainian are shown.
+
+Every translation has a `reviewed` flag. A file or CSV column `reviewed`
+(`reviewed_<code>` in an import) set to `0` marks drafts such as machine
+translations: the word page then says the translation has not been checked
+yet, and the API returns `"reviewed": false`. Editors switch it on in the
+admin panel (Word Translation) once a translation has been checked. The interface itself (menus, buttons) is translated
 separately, see [Languages](#languages).
 
 The bundled dictionary lives in `flaskblog/vocabulary/data/words.csv` (the
-Catalan side) and `data/translations/uk.csv`, `data/translations/en.csv`. It holds 3,572 words
+Catalan side) and `data/translations/uk.csv`, `data/translations/en.csv`,
+`data/translations/fr.csv`. It holds 3,572 words
 across 21 topics (including Catalan cuisine and traditions), mostly A1-B1, including 2,210 verbs and C1 vocabulary such as discourse connectors and idioms. Verbs were chosen by how often their infinitive occurs in a Catalan subtitle corpus (OpenSubtitles 2018 frequency list), so the conjugator has a translation for nearly every verb people actually look up. The conjugator looks a
 verb up here to show its translation, so dictionary entries double as the
 conjugator's glossary.
@@ -306,9 +315,15 @@ The editor can also change a unit in the admin panel.
 ## Languages
 
 Interface strings are written in Ukrainian and wrapped in `_()` (templates and
-Python); English text lives in `flaskblog/i18n/en.py`, keyed by the Ukrainian
-original. The language comes from `?lang=uk|en` (stored in a cookie), then the
-cookie, then the browser's `Accept-Language`.
+Python); English and French text live in `flaskblog/i18n/en.py` and
+`flaskblog/i18n/fr.py`, keyed by the Ukrainian original. A string missing from a
+catalogue falls back to English. The language comes from `?lang=en|uk|fr`
+(stored in a cookie), then the cookie, then the browser's `Accept-Language`,
+and otherwise `DEFAULT_LANGUAGE` (environment variable, `en` by default).
+
+English is the main language of the site: whatever has no version in the
+language asked for (a course, an FAQ answer, a dictionary translation) is
+shown in English.
 
 Course content has separate English versions:
 
@@ -317,6 +332,9 @@ Course content has separate English versions:
 | Grammar units | `flaskblog/grammar/data/units_*.json` | `flaskblog/grammar/data/en/units_*.json` (loaded by `flask grammar seed` into `GrammarUnit.translations`) |
 | Phonetics | `flaskblog/phonetics/data/lessons.json` | `flaskblog/phonetics/data/lessons_en.json` |
 | Dictionary | `flaskblog/vocabulary/data/translations/uk.csv` | `flaskblog/vocabulary/data/translations/en.csv` (one file per language, see [Many languages](#many-languages)) |
+
+French has no course versions yet; its dictionary file
+`data/translations/fr.csv` is a machine translation marked `reviewed=0`.
 
 `flaskblog/tests/test_i18n.py` renders the English pages and fails if any of
 them still shows Cyrillic, so a missing translation is caught by the tests.

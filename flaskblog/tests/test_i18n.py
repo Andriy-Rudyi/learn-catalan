@@ -14,13 +14,13 @@ from flaskblog.tests.helpers import AppTestCase
 from flaskblog.vocabulary import service as vocabulary_service
 
 CYRILLIC = re.compile('[Ѐ-ӿ]')
-LANGUAGE_LINK = re.compile(r'<a class="btn lang-toggle.*?</a>', re.S)
+LANGUAGE_LINK = re.compile(r'<div class="dropdown lang-menu">.*?</ul>\s*</div>', re.S)
 GRAMMAR_DIR = os.path.join(os.path.dirname(grammar_service.__file__), 'data')
 
 
 def cyrillic_snippets(html):
     """Bits of an English page that are still in Ukrainian."""
-    html = LANGUAGE_LINK.sub('', html)  # the link to the Ukrainian version
+    html = LANGUAGE_LINK.sub('', html)  # the language menu names Українська
     return [html[max(m.start() - 40, 0):m.end() + 40] for m in CYRILLIC.finditer(html)][:5]
 
 
@@ -200,6 +200,64 @@ class EnglishContentTests(unittest.TestCase):
                 self.assertIsNone(CYRILLIC.search(row.get(key) or ''), (row['term'], key))
             if row.get('example_ca'):
                 self.assertTrue(row.get('example_en'), row['term'])
+
+
+class FrenchPagesTests(AppTestCase):
+    """French: the interface in French, everything without a French
+    version (courses, FAQ) in English, never in Ukrainian."""
+
+    def setUp(self):
+        super().setUp()
+        grammar_service.seed()
+        vocabulary_service.import_seed()
+        db.session.commit()
+        self.client.get('/?lang=fr')
+
+    def test_pages_have_no_ukrainian(self):
+        unit = GrammarUnit.query.filter_by(number=17).first()
+        lesson = phonetics_service.load_lessons(phonetics_service.DATA_FILE)[0]
+        for url in ('/', '/grammar', '/grammar/' + unit.slug, '/phonetics',
+                    '/phonetics/' + lesson['slug'], '/dictionary', '/dictionary/anar',
+                    '/conjugator?verb=anar', '/faq', '/developers', '/login', '/register'):
+            body = self.client.get(url).data.decode()
+            self.assertEqual([], cyrillic_snippets(body), url)
+            self.assertIn('<html lang="fr"', body, url)
+
+    def test_interface_is_french_and_courses_english(self):
+        home = self.client.get('/').data.decode()
+        self.assertIn('Grammaire', home)
+        self.assertIn('70 unités', home)
+        unit = self.client.get('/grammar/unit/1').data.decode()
+        self.assertIn('Exercices', unit)
+        faq = self.client.get('/faq').data.decode()
+        self.assertIn('How do I turn on audio', faq)
+
+    def test_word_page_in_french(self):
+        body = self.client.get('/dictionary/aigua').data.decode()
+        self.assertIn('eau', body)
+        self.assertIn('Traduction automatique', body)
+        word = Word.query.filter_by(term='aigua').first()
+        self.assertFalse(word.translation_in('fr').reviewed)
+        self.assertTrue(word.translation_in('en').reviewed)
+
+    def test_browser_asking_for_french(self):
+        self.client.delete_cookie('lang')
+        body = self.client.get('/', headers={'Accept-Language': 'fr-FR,fr;q=0.9'}).data.decode()
+        self.assertIn('<html lang="fr"', body)
+
+    def test_catalogue_matches_english(self):
+        from flaskblog.i18n.en import MESSAGES as EN
+        from flaskblog.i18n.fr import MESSAGES as FR
+        self.assertEqual([], [key for key in EN if key not in FR])
+
+
+class DefaultLanguageTests(AppTestCase):
+
+    def test_english_is_the_default(self):
+        self.app.config['DEFAULT_LANGUAGE'] = 'en'
+        self.assertIn('<html lang="en"', self.client.get('/').data.decode())
+        german = {'Accept-Language': 'de-DE,de;q=0.9'}
+        self.assertIn('<html lang="en"', self.client.get('/', headers=german).data.decode())
 
 
 if __name__ == '__main__':

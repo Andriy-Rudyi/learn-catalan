@@ -98,10 +98,16 @@
           <datalist id="headerSearchSuggestions"></datalist>
         </form>
         <div class="lc-header-right">
-          <a class="btn lang-toggle" href="{{ url_with_lang(other_lang) }}"
-             hreflang="{{ other_lang }}" lang="{{ other_lang }}"
-             title="{{ language_names[other_lang] }}"
-             aria-label="{{ language_names[other_lang] }}">{{ language_short[other_lang] }}</a>
+          <div class="dropdown lang-menu">
+            <button class="btn lang-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                    title="{{ _('Мова сайту') }}" aria-label="{{ _('Мова сайту') }}: {{ language_names[current_lang] }}">{{ language_short[current_lang] }}</button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              {% for code in site_languages %}
+                <li><a class="dropdown-item{% if code == current_lang %} active{% endif %}" href="{{ url_with_lang(code) }}"
+                       hreflang="{{ code }}" lang="{{ code }}"{% if code == current_lang %} aria-current="true"{% endif %}>{{ language_names[code] }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
           <button class="btn theme-toggle" type="button" id="themeToggle"
                   aria-label="{{ _('Перемкнути тему') }}" title="{{ _('Перемкнути світлу / темну тему') }}">
             <svg class="icon-moon" width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">

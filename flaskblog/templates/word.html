@@ -18,6 +18,10 @@
           <p class="text-muted mb-1">[{{ word.pronunciation }}]</p>
         {% endif %}
         <p class="h5 text-secondary">{{ word.t_translation() }}</p>
+        {% set shown = word.translation_in(current_lang) %}
+        {% if shown and not shown.reviewed %}
+          <p class="small text-muted mb-1">{{ _('Машинний переклад, ще не перевірений редактором.') }}</p>
+        {% endif %}
         {{ variety_notice(word.variety_codes, word.central_alternative, word.variety_source) }}
       </div>
       {% if current_user.is_authenticated %}

@@ -49,7 +49,7 @@ CANONICAL_ARGS = {
 # Dictionary filters: a filtered list is a search result, not a page to index.
 DICTIONARY_FILTERS = ('q', 'topic', 'level', 'part_of_speech', 'variety')
 
-OG_LOCALES = {'uk': 'uk_UA', 'en': 'en_US'}
+OG_LOCALES = {'uk': 'uk_UA', 'en': 'en_US', 'fr': 'fr_FR'}
 
 SITEMAP_TTL = 3600  # seconds
 _sitemap_cache = {}

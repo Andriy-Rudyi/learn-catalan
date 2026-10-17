@@ -8,7 +8,7 @@ for search engines. Each question has a stable ``id`` for links such as
 
 from flask import url_for
 
-from flaskblog.i18n import get_locale
+from flaskblog.i18n import content_language
 
 SUPPORT_EMAIL = 'support@learn-catalan.com'
 
@@ -464,7 +464,7 @@ def sections(lang=None):
             dict(question, a=question['a'].strip().format(**urls))
             for question in section['questions']
         ])
-        for section in _SECTIONS.get(lang or get_locale(), UK)
+        for section in _SECTIONS.get(lang or content_language(), EN)
     ]
 
 

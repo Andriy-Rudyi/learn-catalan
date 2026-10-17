@@ -130,7 +130,8 @@ def requested_languages():
 
 def word_json(word, languages=None):
     translations = {
-        lang: {'translation': entry.translation, 'example': entry.example, 'notes': entry.notes}
+        lang: {'translation': entry.translation, 'example': entry.example, 'notes': entry.notes,
+               'reviewed': entry.reviewed}
         for lang, entry in sorted(word.translations.items())
         if entry.translation and (languages is None or lang in languages)
     }

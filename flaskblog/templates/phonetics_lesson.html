@@ -43,7 +43,7 @@
                 </div>
               </td>
               <td class="small sound-how">
-                {{ sound[current_lang] or sound.uk }}
+                {{ sound[content_lang] or sound.uk }}
                 {% if sound.note %}<div class="text-muted">{{ sound.note }}</div>{% endif %}
               </td>
             </tr>
@@ -63,7 +63,7 @@
                     aria-label="{{ _('Прослухати') }}: {{ word.ca }}">🔊</button>
             <div>
               <div><span class="ca">{{ word.ca }}</span> <span class="ipa small">[{{ word.ipa }}]</span></div>
-              <div class="uk">{{ word[current_lang] or word.uk }}</div>
+              <div class="uk">{{ word[content_lang] or word.uk }}</div>
             </div>
           </div>
         </div>

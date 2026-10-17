@@ -50,7 +50,7 @@ console.log(data.moods.indicatiu.present);  // [{person: '1s', form: 'jo vaig'},
     "example": "Vaig a la feina.",
     "translations": {
       "en": {"translation": "go (on foot, by transport)", "example": "I’m going to work.", "notes": null},
-      {% if current_lang == 'uk' %}"uk": {"translation": "йти, їхати", "example": "Я йду на роботу.", "notes": null}{% else %}"uk": {…}{% endif %}
+      {% if content_lang == 'uk' %}"uk": {"translation": "йти, їхати", "example": "Я йду на роботу.", "notes": null}{% else %}"uk": {…}{% endif %}
     },
     "conjugation": "{{ base }}/conjugations/anar",
     "url": "…/dictionary/anar"
@@ -63,7 +63,7 @@ console.log(data.moods.indicatiu.present);  // [{person: '1s', form: 'jo vaig'},
     <p>
       {{ _('Параметр <code>lang</code> вибирає мови перекладів, наприклад <code>lang=fr,uk</code>; без нього приходять усі.') | safe }}
       {{ _('Коди:') }}
-      {% for language in languages %}<code>{{ language.code }}</code> ({{ language.name if current_lang == 'en' else language.native }}){% if not loop.last %}, {% endif %}{% endfor %}.
+      {% for language in languages %}<code>{{ language.code }}</code> ({{ language.name if content_lang == 'en' else language.native }}){% if not loop.last %}, {% endif %}{% endfor %}.
       {{ _('Мови, для яких перекладів ще немає, з’являться у відповідях, щойно їх додадуть.') }}
     </p>
   </section>
