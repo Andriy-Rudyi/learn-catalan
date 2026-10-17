@@ -14,7 +14,15 @@
           <button class="btn-speak" type="button" data-say="{{ word.term }}"
                   aria-label="{{ _('Прослухати') }}: {{ word.term }}" title="{{ _('Прослухати') }}">🔊</button>
         </div>
-        {% if word.pronunciation %}
+        {% if transcription %}
+          <p class="word-sound mb-1">
+            <span lang="ca-fonipa" title="{{ _('Міжнародний фонетичний алфавіт (МФА), центральний каталанський') }}">{% if not transcription.certain %}≈ {% endif %}[{{ transcription.ipa }}]</span>
+            {% if current_lang == 'uk' %}<span class="word-sound-uk" title="{{ _('Українськими літерами; ə — ненаголошений нечіткий звук, середній між «а» і «е»') }}">{{ transcription.cyrillic }}</span>{% endif %}
+            {% if not transcription.certain %}
+              <span class="d-block small text-muted">{{ _('Приблизна вимова: правила не знають, відкрите чи закрите e/o, і чи вимовляється кінцеве -r.') }}</span>
+            {% endif %}
+          </p>
+        {% elif word.pronunciation %}
           <p class="text-muted mb-1">[{{ word.pronunciation }}]</p>
         {% endif %}
         {% if meanings %}

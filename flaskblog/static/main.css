@@ -2003,6 +2003,20 @@ a.article-title:hover {
   color: var(--heading-color);
 }
 
+.reader-panel-sound {
+  margin: -.25rem 0 .5rem;
+  color: var(--muted-text);
+}
+
+/* Word page: [ˈkazə] ка́зə */
+.word-sound {
+  color: var(--muted-text);
+}
+
+.word-sound-uk {
+  margin-left: .5rem;
+}
+
 .reader-reading {
   padding: .5rem 0;
   border-top: 1px solid var(--border-soft);

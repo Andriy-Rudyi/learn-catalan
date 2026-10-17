@@ -9,7 +9,7 @@ from flaskblog.i18n import get_locale, gettext as _
 from flaskblog.conjugation import get_service as get_conjugation_service
 from flaskblog.models import UserWord, Word
 from flaskblog.permissions import is_admin
-from flaskblog.vocabulary import senses, service, varieties
+from flaskblog.vocabulary import senses, service, transcription, varieties
 from flaskblog.vocabulary.constants import (
     gender_label,
     level_label,
@@ -114,6 +114,7 @@ def word(slug):
         title=word.term,
         word=word,
         meanings=meanings,
+        transcription=transcription.for_word(word),
         draft_meaning=any(entry is not None and not entry.reviewed for entry, _hint in meanings or ()),
         conjugable=conjugable,
         saved_word_ids=_saved_word_ids(),

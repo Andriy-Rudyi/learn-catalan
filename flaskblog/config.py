@@ -90,6 +90,12 @@ class Config:
     # synonyms in that form. READER=False takes the page and its menu item away.
     READER = os.getenv('READER', 'True') == 'True'
 
+    # Dictionary words show how they sound: IPA and Ukrainian letters, from the
+    # editor's "Вимова" field, the pronunciation lessons or spelling rules
+    # (flaskblog/vocabulary/transcription.py). TRANSCRIPTION=False shows only
+    # what an editor typed in, as before.
+    TRANSCRIPTION = os.getenv('TRANSCRIPTION', 'True') == 'True'
+
     # Open API (/api/v1): requests a minute per client address; 0 = no limit.
     API_RATE_LIMIT = int(os.getenv('API_RATE_LIMIT', '120'))
 
@@ -118,6 +124,7 @@ class TestConfig(Config):
     SEO = True
     SENSES = True
     READER = True
+    TRANSCRIPTION = True
     SITE_URL = None
     # The suite was written against the Ukrainian pages.
     DEFAULT_LANGUAGE = 'uk'

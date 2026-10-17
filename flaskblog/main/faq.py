@@ -143,7 +143,11 @@ UK = [
                 'a': """
 <p>Це транскрипція за Міжнародним фонетичним алфавітом (МФА): вона показує, як слово звучить, а не як пишеться.
 Знак ˈ стоїть перед наголошеним складом. Усі символи пояснені в першому уроці <a href="{phonetics}">фонетики</a>,
-а в кожному уроці є таблиця звуків з українськими відповідниками.</p>""",
+а в кожному уроці є таблиця звуків з українськими відповідниками.</p>
+<p>У словнику поруч стоїть та сама вимова українськими літерами з наголосом (ка́зə), де ə — ненаголошений
+нечіткий звук між «а» і «е». Вимова центральна (Барселона). Слова з уроків і ті, що перевірив редактор,
+транскрибовано вручну, решту — за правилами читання. Правила не завжди знають, відкрите чи закрите
+наголошене e/o і чи вимовляється кінцеве -r: тоді перед транскрипцією стоїть ≈.</p>""",
             },
         ],
     },
@@ -355,7 +359,10 @@ The lessons in “Connected speech” explain how Catalan sounds at natural spee
                 'a': """
 <p>This is a transcription in the International Phonetic Alphabet (IPA): it shows how a word sounds, not how it is spelt.
 The mark ˈ comes before the stressed syllable. Every symbol is explained in the first <a href="{phonetics}">pronunciation</a>
-lesson, and each lesson has a table of sounds with English comparisons.</p>""",
+lesson, and each lesson has a table of sounds with English comparisons.</p>
+<p>Dictionary transcriptions are Central Catalan (Barcelona); the Ukrainian site also gives them in Ukrainian letters. Words from the lessons and words an editor has checked are transcribed by hand,
+the rest by the reading rules. The rules cannot always tell whether a stressed e/o is open or closed or whether
+a final -r is pronounced: such transcriptions start with ≈.</p>""",
             },
         ],
     },

@@ -211,6 +211,13 @@
       head.appendChild(listen);
     }
     els.body.appendChild(head);
+    if (data.transcription) {
+      var sound = el('div', 'reader-panel-sound',
+                     (data.transcription.certain ? '' : '≈ ') + '[' + data.transcription.ipa + ']' +
+                     (data.transcription.cyrillic ? ' · ' + data.transcription.cyrillic : ''));
+      if (!data.transcription.certain) { sound.title = S.approximate; }
+      els.body.appendChild(sound);
+    }
 
     if (!data.readings.length && !data.groups.length) {
       els.body.appendChild(el('p', 'text-muted mb-0', S.nothing));

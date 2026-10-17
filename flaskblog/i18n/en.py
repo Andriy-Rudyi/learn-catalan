@@ -614,4 +614,7 @@ MESSAGES = {
     'жіночий рід': 'feminine',
     'Синоніми на сторінці «Текст» взято з тезауруса Softcatalà (sinonims-cat), ліцензія CC BY 4.0.': 'Synonyms on the Text page come from the Softcatalà thesaurus (sinonims-cat), licensed CC BY 4.0.',
     'Нова функція: можливі неточності': 'New feature: there may be inaccuracies',
+    'Приблизна вимова: правила не знають, відкрите чи закрите e/o, і чи вимовляється кінцеве -r.': 'Approximate pronunciation: the rules cannot tell whether e/o is open or closed, or whether a final -r is pronounced.',
+    'Міжнародний фонетичний алфавіт (МФА), центральний каталанський': 'International Phonetic Alphabet (IPA), Central Catalan',
+    'Українськими літерами; ə — ненаголошений нечіткий звук, середній між «а» і «е»': 'In Ukrainian letters; ə is an unstressed neutral vowel between “a” and “e”',
 }

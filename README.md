@@ -35,6 +35,9 @@ A Flask-based blog platform for learning and teaching the Catalan language.
   not to the word (“tocar”: 1. touch, 2. play an instrument), with English
   as the pivot. `SENSES=False` goes back to one line per language. See
   [Meanings](#meanings)
+- **Transcription**: every dictionary word shows how it sounds, in IPA and (on
+  the Ukrainian site) in Ukrainian letters with the stress marked:
+  casa [ˈkazə] ка́зə. See [Transcription](#transcription)
 - **Translation platform** at `/translate`: anyone logged in suggests
   translations of the dictionary and of the interface, translators of a
   language accept them and check machine translations, every change can be
@@ -291,6 +294,28 @@ Rolling back:
   no translation is lost; tested on PostgreSQL 16 and SQLite.
 - `flask vocabulary senses` rebuilds every word's meanings from the strings.
 
+### Transcription
+
+`flaskblog/vocabulary/transcription.py` gives each word a transcription in
+Central Catalan, in the broad IPA of the pronunciation lessons, and the same
+in Ukrainian letters (ə for the neutral vowel, an acute on the stressed vowel).
+It comes from, most reliable first:
+
+1. the editor's "Вимова" field (`Word.pronunciation`);
+2. the words transcribed in the pronunciation lessons;
+3. our own reading rules: stress, vowel reduction (a/e → ə, o → u), voiced s,
+   ll/ny/tx/tg/ix, silent final r/t/c in the usual places.
+
+The rules agree with every lesson word except whether a stressed e/o is open
+or closed, which the spelling does not show. Such words, and a final -r
+outside verbs, are marked `certain: false` and shown with ≈. Nothing is taken
+from Wiktionary or other dictionaries, so there is no licence to follow.
+
+- The word page shows it under the term; `/text` shows it for the clicked word.
+- The API gives `transcription: {ipa, cyrillic, certain, source}`.
+- `TRANSCRIPTION=False` goes back to showing only what an editor typed in;
+  nothing is stored, so there is nothing to migrate.
+
 ### Regional words
 
 The course teaches Central Catalan. Words that are Valencian, Balearic,
@@ -513,6 +538,7 @@ SITE_URL=https://example.com # public address for canonical links and the sitema
 API_RATE_LIMIT=120           # open API requests a minute per client address; 0 = no limit
 SENSES=True                  # set to False to show one translation line per language instead of meanings
 READER=True                  # set to False to take away the /text page
+TRANSCRIPTION=True           # set to False to show only pronunciations typed in by an editor
 TEST_DATABASE_URI=           # optional, tests default to in-memory SQLite
 ```
 

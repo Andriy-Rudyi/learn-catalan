@@ -7,9 +7,10 @@ from flask_login import current_user
 
 from flaskblog import db
 from flaskblog.conjugation.labels import mood_label, person_labels, tense_label
-from flaskblog.i18n import gettext as _
+from flaskblog.i18n import get_locale, gettext as _
 from flaskblog.models import UserWord, Word
 from flaskblog.reader import morphology
+from flaskblog.vocabulary import transcription
 from flaskblog.vocabulary.constants import part_of_speech_label
 from flaskblog.vocabulary.forms import ActionForm
 
@@ -124,4 +125,14 @@ def word():
         groups.append({'lemma': group['lemma'], 'gloss': group['gloss'], 'kind': group['kind'],
                        'items': items})
 
-    return jsonify({'word': result['word'], 'readings': readings, 'groups': groups})
+    sound = None
+    if result['word'] and current_app.config.get('TRANSCRIPTION'):
+        # The word as it stands in the text; an infinitive drops its -r.
+        infinitive = any(r['kind'] == 'verb' and r['lemma'].lower() == result['word'].lower()
+                         for r in result['readings'])
+        sound = transcription.as_json(
+            transcription.transcribe(result['word'], 'verb' if infinitive else None))
+        if sound and get_locale() != 'uk':
+            sound['cyrillic'] = None                   # Ukrainian letters for Ukrainian readers
+    return jsonify({'word': result['word'], 'transcription': sound,
+                    'readings': readings, 'groups': groups})

@@ -12,7 +12,7 @@ from flaskblog.languages import LANGUAGES, SOURCE, is_known
 from flaskblog.seo import site_url
 from flaskblog.models import Word, WordTranslation
 from flaskblog.vocabulary import service as vocabulary_service
-from flaskblog.vocabulary import varieties
+from flaskblog.vocabulary import transcription, varieties
 from flaskblog.vocabulary.constants import LEVELS, PARTS_OF_SPEECH, TOPICS
 
 api = Blueprint('api', __name__, url_prefix='/api/v1')
@@ -172,6 +172,7 @@ def word_json(word, languages=None):
         'part_of_speech': word.part_of_speech,
         'gender': word.gender,
         'pronunciation': word.pronunciation,
+        'transcription': transcription.as_json(transcription.for_word(word)),
         'topic': word.topic,
         'level': word.level,
         'example': word.example_ca,
