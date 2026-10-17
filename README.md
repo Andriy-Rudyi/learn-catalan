@@ -318,6 +318,21 @@ back to `DATABASE_URL` (the name Render, Heroku and Fly use). An old-style
 `postgres://` URL is converted to `postgresql://` automatically
 (see `flaskblog/config.py`).
 
+**Local development needs no variables at all.** Without a database URL the
+app uses `instance/learn_catalan.db` (SQLite) and a development secret key,
+and `wsgi.py` lets `flask` find the app without `FLASK_APP`:
+
+```bash
+flask db upgrade
+flask vocabulary seed --update
+flask grammar seed
+python run.py
+```
+
+On a hosting platform (Render, Railway, Heroku, Fly) these fallbacks are
+switched off, so a missing `DATABASE_URL` or `SECRET_KEY` stops the app
+instead of silently using a throwaway database.
+
 ## Database
 
 The application uses SQLAlchemy as the ORM with Alembic for migrations. Database schema is version-controlled in the `migrations/` directory.
