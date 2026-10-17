@@ -1,0 +1,990 @@
+{
+ "act": 2,
+ "scene": 3,
+ "setting": "Xipre. Una sala del castell.",
+ "blocks": [
+  {
+   "stage": "Entren OTEL·LO, DESDÈMONA, CASSIO i acompanyants."
+  },
+  {
+   "speaker": "OTEL·LO",
+   "lines": [
+    "Bon Michael, vigileu la guàrdia aquesta nit.",
+    "Aprenguem nosaltres mateixos aquesta mesura honorable:",
+    "no passar-nos de la discreció en la festa."
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "Iago té instruccions del que cal fer;",
+    "però, tot i així, amb els meus propis ulls",
+    "ho vigilaré."
+   ]
+  },
+  {
+   "speaker": "OTEL·LO",
+   "lines": [
+    "Iago és honradíssim.",
+    "Michael, bona nit; demà, tan aviat com pugueu,",
+    "vull parlar amb vós. Veniu, amor meu estimat:",
+    "la compra ja és feta, ara n'han de venir els fruits;",
+    "aquest guany encara ens ha d'arribar a vós i a mi.",
+    "Bona nit."
+   ]
+  },
+  {
+   "stage": "Surten OTEL·LO, DESDÈMONA i acompanyants."
+  },
+  {
+   "stage": "Entra IAGO."
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "Benvingut, Iago; hem d'anar a la guàrdia."
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Encara no, lloctinent; no són ni les deu.",
+    "El nostre general ens ha despatxat tan d'hora per amor a la seva Desdèmona;",
+    "i no l'hem de culpar per això: encara no ha passat amb ella una nit de gresca,",
+    "i ella és un plaer digne de Júpiter."
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "És una dama exquisida."
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "I us garanteixo que és ben fogosa."
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "De debò que és una criatura frescíssima i delicada."
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Quins ulls que té! Em sembla que toquen a parlamentar amb la provocació."
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "Uns ulls que conviden, i tanmateix em sembla que ben modestos."
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "I quan parla, no és un toc de crida a l'amor?"
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "És la perfecció, de debò."
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Bé, sort als seus llençols! Vinga, lloctinent, tinc una gerra de vi,",
+    "i aquí fora hi ha un parell de gallards de Xipre",
+    "que voldrien beure a la salut del negre Otel·lo."
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "Aquesta nit no, bon Iago; tinc un cap molt fluix i desgraciat per a la beguda.",
+    "M'agradaria que la cortesia inventés algun altre costum per fer festa."
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Oh, són amics nostres; només una copa; ja beuré jo per vós."
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "Només he begut una copa aquesta nit, i encara aigualida amb astúcia;",
+    "i mireu quin trasbals em fa aquí. Tinc la desgràcia d'aquesta debilitat",
+    "i no goso carregar-la amb res més."
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Vinga, home! És una nit de festa; els gallards ho volen."
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "On són?"
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Aquí a la porta; us prego que els feu entrar."
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "Ho faré, però no m'agrada gens."
+   ]
+  },
+  {
+   "stage": "Surt."
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Si li puc fer beure només una copa,",
+    "amb el que ja ha begut aquesta nit,",
+    "estarà tan ple de ganes de brega i tan susceptible",
+    "com el gos de la meva jove senyora. Ara, el meu ximple malalt, Roderigo,",
+    "a qui l'amor ha deixat gairebé del revés,",
+    "ha brindat aquesta nit per Desdèmona",
+    "amb gerres buidades fins al fons, i ha de fer guàrdia.",
+    "Tres xicots de Xipre, esperits nobles i superbs,",
+    "que guarden el seu honor amb una distància ben recelosa,",
+    "els elements mateixos d'aquesta illa guerrera,",
+    "els he escalfat aquesta nit amb copes que vessaven;",
+    "i també fan guàrdia. Ara, enmig d'aquest ramat de borratxos,",
+    "he d'empènyer el nostre Cassio a fer alguna cosa",
+    "que ofengui l'illa. Però ja són aquí."
+   ]
+  },
+  {
+   "stage": "Entren CASSIO, MONTANO i CAVALLERS."
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Si el que passi confirma el meu somni,",
+    "la meva barca navega lliure, amb el vent i el corrent a favor."
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "Per Déu, ja m'han fet beure un bon got."
+   ]
+  },
+  {
+   "speaker": "MONTANO",
+   "lines": [
+    "A fe que petit; no més d'una pinta, paraula de soldat."
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Vi, ei!"
+   ]
+  },
+  {
+   "stage": "Canta."
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "I deixeu que dringui el gotet, dring, dring,",
+    "i deixeu que dringui el gotet;",
+    "un soldat és un home,",
+    "oh, la vida de l'home és un pam,",
+    "doncs deixeu que el soldat begui.",
+    "Vi, nois!"
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "Per Déu, una cançó excel·lent."
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "La vaig aprendre a Anglaterra, on, de fet, són molt forts bevent.",
+    "El vostre danès, el vostre alemany i el vostre holandès panxut",
+    "—vi, ei!— no són res al costat del vostre anglès."
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "Tan expert és el vostre anglès en beure?"
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Home, us beu el danès fins a deixar-lo mort de borratxo, i sense esforç;",
+    "no sua gens per tombar l'alemany;",
+    "i fa vomitar l'holandès abans que es pugui omplir la gerra següent."
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "A la salut del nostre general!"
+   ]
+  },
+  {
+   "speaker": "MONTANO",
+   "lines": [
+    "M'hi apunto, lloctinent, i us correspondré."
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Oh, dolça Anglaterra!"
+   ]
+  },
+  {
+   "stage": "Canta."
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "El rei Esteve era un senyor ben digne,",
+    "i les calces només li van costar una corona;",
+    "les trobava cares per sis penics,",
+    "i per això va dir pocavergonya al sastre.",
+    "Era un home de gran anomenada,",
+    "i tu no ets més que de baixa estofa;",
+    "és l'orgull el que arruïna la terra,",
+    "doncs tapa't amb la teva capa vella.",
+    "Vi, ei!"
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "Per Déu, aquesta cançó és encara més exquisida que l'altra."
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "La voleu tornar a sentir?"
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "No, perquè considero que no és digne del seu lloc qui fa aquestes coses.",
+    "Bé, Déu és per damunt de tot, i hi ha ànimes que s'han de salvar,",
+    "i hi ha ànimes que no s'han de salvar."
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "És veritat, bon lloctinent."
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "Pel que fa a mi —sense ofendre el general ni cap persona de rang—,",
+    "espero salvar-me."
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "I jo també, lloctinent."
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "Sí, però, amb el vostre permís, no abans que jo;",
+    "el lloctinent s'ha de salvar abans que l'alferes. Prou d'això;",
+    "anem per feina. Que Déu ens perdoni els pecats! Senyors,",
+    "anem a les nostres obligacions. No us penseu, senyors, que estic borratxo;",
+    "aquest és el meu alferes, aquesta és la meva mà dreta,",
+    "i aquesta és la meva mà esquerra. Ara no estic borratxo:",
+    "m'aguanto dret prou bé, i parlo prou bé."
+   ]
+  },
+  {
+   "speaker": "TOTS",
+   "lines": [
+    "Perfectament bé."
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "Doncs molt bé; no us heu de pensar, doncs, que estic borratxo."
+   ]
+  },
+  {
+   "stage": "Surt."
+  },
+  {
+   "speaker": "MONTANO",
+   "lines": [
+    "A la plataforma, senyors. Vinga, anem a muntar la guàrdia."
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Veieu aquest home que acaba de sortir?",
+    "És un soldat digne d'estar al costat de Cèsar",
+    "i donar ordres. I mireu, però, el seu vici:",
+    "és l'equinocci exacte de la seva virtut,",
+    "l'un tan llarg com l'altra. Quina pena que fa.",
+    "Temo que la confiança que Otel·lo li té,",
+    "en algun moment desgraciat de la seva debilitat,",
+    "farà trontollar aquesta illa."
+   ]
+  },
+  {
+   "speaker": "MONTANO",
+   "lines": [
+    "Però sovint està així?"
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "És sempre el pròleg del seu son:",
+    "vetllaria el rellotge dues voltes senceres",
+    "si la beguda no li gronxés el bressol."
+   ]
+  },
+  {
+   "speaker": "MONTANO",
+   "lines": [
+    "Estaria bé",
+    "que algú ho fes saber al general.",
+    "Potser no ho veu, o la seva bona natura",
+    "aprecia la virtut que es veu en Cassio",
+    "i no mira els seus defectes: no és així?"
+   ]
+  },
+  {
+   "stage": "Entra RODERIGO."
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "[A part, a Roderigo] Què hi ha, Roderigo?",
+    "Au, us prego que aneu darrere el lloctinent."
+   ]
+  },
+  {
+   "stage": "Surt RODERIGO."
+  },
+  {
+   "speaker": "MONTANO",
+   "lines": [
+    "I és una gran llàstima que el noble moro",
+    "arrisqui un lloc com el del seu segon",
+    "amb algú que té una debilitat tan arrelada;",
+    "seria una acció honrada dir-ho",
+    "al moro."
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Jo no, ni per tota aquesta bella illa:",
+    "estimo molt Cassio, i faria molt",
+    "per curar-lo d'aquest mal."
+   ]
+  },
+  {
+   "stage": "Criden a dins: «Ajuda, ajuda!»"
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Però escolteu! Quin soroll és aquest?"
+   ]
+  },
+  {
+   "stage": "Entra CASSIO, perseguint RODERIGO."
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "Redéu, brivall, canalla!"
+   ]
+  },
+  {
+   "speaker": "MONTANO",
+   "lines": [
+    "Què passa, lloctinent?"
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "Un bergant, ensenyar-me a mi el meu deure!",
+    "Li clavaré tantes bastonades que el deixaré com una ampolla folrada de vímet."
+   ]
+  },
+  {
+   "speaker": "RODERIGO",
+   "lines": [
+    "Pegar-me a mi?"
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "Encara xerres, brivall?"
+   ]
+  },
+  {
+   "stage": "Colpeja RODERIGO."
+  },
+  {
+   "speaker": "MONTANO",
+   "lines": [
+    "Au, bon lloctinent, us ho prego, senyor, atureu la mà."
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "Deixeu-me anar, senyor, o us esberlo la closca."
+   ]
+  },
+  {
+   "speaker": "MONTANO",
+   "lines": [
+    "Vinga, vinga, que esteu borratxo."
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "Borratxo?"
+   ]
+  },
+  {
+   "stage": "Es barallen."
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "[A part, a Roderigo] Fora, et dic; surt i crida que hi ha un avalot."
+   ]
+  },
+  {
+   "stage": "Surt RODERIGO."
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Prou, bon lloctinent! Per Déu, senyors!",
+    "Ajuda, ei! Lloctinent, senyor! Montano, senyor!",
+    "Ajuda, senyors! Quina guàrdia més bonica, de debò!"
+   ]
+  },
+  {
+   "stage": "Toca una campana."
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Qui és que toca la campana? Diable, ei!",
+    "La ciutat s'alçarà. Per Déu, lloctinent, atureu-vos!",
+    "Quedareu deshonrat per sempre."
+   ]
+  },
+  {
+   "stage": "Entren OTEL·LO i CAVALLERS amb armes."
+  },
+  {
+   "speaker": "OTEL·LO",
+   "lines": [
+    "Què passa aquí?"
+   ]
+  },
+  {
+   "speaker": "MONTANO",
+   "lines": [
+    "Redéu, encara sagno.",
+    "Estic ferit de mort."
+   ]
+  },
+  {
+   "speaker": "OTEL·LO",
+   "lines": [
+    "Atureu-vos, si estimeu la vida!"
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Atureu-vos, ei, lloctinent, senyor; Montano, senyors,",
+    "és que heu oblidat tot sentit del vostre lloc i del deure?",
+    "Atureu-vos! El general us parla; atureu-vos, quina vergonya!"
+   ]
+  },
+  {
+   "speaker": "OTEL·LO",
+   "lines": [
+    "Però què és això, ei! D'on ve tot això?",
+    "És que ens hem tornat turcs, i ens fem a nosaltres mateixos",
+    "el que el cel ha impedit de fer als otomans?",
+    "Per vergonya cristiana, deixeu aquesta brega bàrbara.",
+    "El primer que es mogui per tallar a gust de la seva ràbia",
+    "té la vida en poca estima: morirà al primer moviment.",
+    "Feu callar aquesta campana terrible: espanta l'illa",
+    "i la treu de la seva calma. Què passa, senyors?",
+    "Honrat Iago, que sembles mort de pena,",
+    "parla. Qui ho ha començat? Per l'amor que em tens, t'ho mano."
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "No ho sé. Tots amics fa un moment, fa un instant,",
+    "en tracte i en convivència com nuvi i núvia",
+    "que es despullen per anar al llit; i de cop i volta,",
+    "com si algun planeta hagués fet perdre el seny als homes,",
+    "espases fora, i embestint-se l'un al pit de l'altre",
+    "en un combat sagnant. No sé explicar",
+    "cap començament d'aquesta brega absurda;",
+    "i tant de bo hagués perdut en una acció gloriosa",
+    "aquestes cames que m'hi han portat a prendre-hi part!"
+   ]
+  },
+  {
+   "speaker": "OTEL·LO",
+   "lines": [
+    "Com és, Michael, que us heu oblidat així de vós mateix?"
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "Us prego que em perdoneu; no puc parlar."
+   ]
+  },
+  {
+   "speaker": "OTEL·LO",
+   "lines": [
+    "Digne Montano, vós solíeu ser assenyat:",
+    "la gravetat i la serenor de la vostra joventut",
+    "el món les ha remarcades, i el vostre nom és gran",
+    "en boca dels jutges més savis. Què passa",
+    "que deslligueu així la vostra reputació",
+    "i malgasteu el vostre ric prestigi pel nom",
+    "d'un bregós nocturn? Doneu-me'n resposta."
+   ]
+  },
+  {
+   "speaker": "MONTANO",
+   "lines": [
+    "Digne Otel·lo, estic greument ferit;",
+    "el vostre oficial Iago us pot informar",
+    "—mentre jo m'estalvio paraules, que ara em fan una mica de mal—",
+    "de tot el que jo sé; i no sé de res",
+    "que jo hagi dit o fet malament aquesta nit,",
+    "si no és que estimar-se a si mateix de vegades sigui un vici,",
+    "i que defensar-nos sigui un pecat",
+    "quan la violència ens ataca."
+   ]
+  },
+  {
+   "speaker": "OTEL·LO",
+   "lines": [
+    "Ara, pel cel,",
+    "la sang em comença a dominar els guies més segurs,",
+    "i la passió, després d'enfosquir el meu millor judici,",
+    "intenta prendre el comandament. Redéu, si em moc,",
+    "o si només aixeco aquest braç, el millor de vosaltres",
+    "caurà sota el meu càstig. Feu-me saber",
+    "com va començar aquest avalot vergonyós, qui l'ha atiat;",
+    "i aquell que en resulti culpable,",
+    "encara que fos el meu bessó, nascut del mateix part,",
+    "em perdrà. Què! En una plaça en peu de guerra,",
+    "encara alterada, amb el cor de la gent ple de por,",
+    "armar baralles privades i domèstiques,",
+    "de nit, i al mateix cos de guàrdia que vetlla per la seguretat?",
+    "És monstruós. Iago, qui l'ha començada?"
+   ]
+  },
+  {
+   "speaker": "MONTANO",
+   "lines": [
+    "Si, per parcialitat o per lligams de servei,",
+    "dius més o menys que la veritat,",
+    "no ets soldat."
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "No em toqueu tan a prop.",
+    "M'estimaria més que em tallessin aquesta llengua",
+    "que no pas que ofengués Michael Cassio.",
+    "Però estic convençut que dir la veritat",
+    "no el perjudicarà gens. És així, general:",
+    "Montano i jo estàvem parlant,",
+    "quan arriba un individu cridant auxili,",
+    "i Cassio que el segueix amb l'espasa decidida",
+    "a fer-ne justícia. Senyor, aquest cavaller",
+    "s'interposa davant de Cassio i li prega que s'aturi;",
+    "jo vaig perseguir l'individu que cridava,",
+    "no fos que amb els seus crits —com així va passar—",
+    "la ciutat s'espantés. Ell, lleuger de peus,",
+    "es va escapar del meu propòsit, i vaig tornar ben de pressa",
+    "perquè sentia el dring i els cops de les espases",
+    "i Cassio jurant a crits, cosa que fins aquesta nit",
+    "no l'havia pogut dir mai abans. Quan vaig tornar",
+    "—perquè això va ser breu—, els vaig trobar ben a prop,",
+    "a cops i estocades, tal com estaven",
+    "quan vós mateix els vau separar.",
+    "No us puc explicar res més d'aquest afer;",
+    "però els homes són homes; els millors de vegades s'obliden.",
+    "Tot i que Cassio li va fer algun petit mal,",
+    "com els homes enrabiats peguen a qui més els estima,",
+    "tanmateix segur que Cassio, crec jo, va rebre",
+    "de qui va fugir alguna ofensa estranya",
+    "que la paciència no podia deixar passar."
+   ]
+  },
+  {
+   "speaker": "OTEL·LO",
+   "lines": [
+    "Ja ho sé, Iago,",
+    "que la teva honradesa i el teu afecte suavitzen aquest afer",
+    "i el fan lleuger per a Cassio. Cassio, t'estimo,",
+    "però mai més no seràs oficial meu."
+   ]
+  },
+  {
+   "stage": "Entra DESDÈMONA, acompanyada."
+  },
+  {
+   "speaker": "OTEL·LO",
+   "lines": [
+    "Mireu si no han despertat el meu dolç amor!",
+    "Faré de tu un escarment."
+   ]
+  },
+  {
+   "speaker": "DESDÈMONA",
+   "lines": [
+    "Què passa, estimat?"
+   ]
+  },
+  {
+   "speaker": "OTEL·LO",
+   "lines": [
+    "Ara ja està tot bé, amor meu; veniu-vos-en al llit.",
+    "Senyor, de les vostres ferides, jo mateix en seré el cirurgià."
+   ]
+  },
+  {
+   "stage": "S'enduen MONTANO."
+  },
+  {
+   "speaker": "OTEL·LO",
+   "lines": [
+    "Iago, vigila bé la ciutat",
+    "i calma els que aquesta brega vil ha trasbalsat.",
+    "Veniu, Desdèmona; és la vida del soldat:",
+    "que la brega li desvetlli el son més assossegat."
+   ]
+  },
+  {
+   "stage": "Surten tots excepte IAGO i CASSIO."
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Què, esteu ferit, lloctinent?"
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "Sí, i no hi ha cirurgia que ho curi."
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Mare de Déu, Déu no ho vulgui!"
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "Reputació, reputació, reputació! Oh, he perdut la meva reputació!",
+    "He perdut la part immortal de mi mateix, i el que queda és bestial.",
+    "La meva reputació, Iago, la meva reputació!"
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Tan cert com soc un home honrat, em pensava que havíeu rebut alguna ferida al cos:",
+    "això sí que es nota més que la reputació.",
+    "La reputació és una imposició buida i ben falsa,",
+    "sovint guanyada sense mèrit i perduda sense culpa.",
+    "No heu perdut gens de reputació, si no és que vós mateix us en considereu perdedor.",
+    "Vinga, home! Hi ha maneres de tornar a guanyar-vos el general.",
+    "Ara només us ha despatxat per un rampell,",
+    "un càstig més per política que no pas per malícia,",
+    "igual com qui pega al seu gos innocent per espantar un lleó imperiós.",
+    "Torneu-li a suplicar, i és vostre."
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "Abans li suplicaria que em menyspreés que no pas enganyar un comandant tan bo",
+    "amb un oficial tan lleuger, tan borratxo i tan imprudent.",
+    "Borratxo! I parlar com un lloro! I barallar-se! Fanfarronejar! Jurar!",
+    "I engegar discursos inflats a la pròpia ombra!",
+    "Oh, tu, esperit invisible del vi, si no tens cap nom pel qual se't conegui,",
+    "deixa que et diguem dimoni!"
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Qui era el que perseguíeu amb l'espasa? Què us havia fet?"
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "No ho sé."
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "És possible?"
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "Recordo un munt de coses, però cap amb claredat:",
+    "una baralla, però no el perquè. Oh, Déu,",
+    "que els homes es fiquin un enemic a la boca perquè els robi el cervell!",
+    "Que amb alegria, plaer, gresca i aplaudiments",
+    "ens transformem en bèsties!"
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Però si ara ja esteu prou bé. Com és que us heu recuperat així?"
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "Al dimoni de la borratxera li ha plagut cedir el lloc al dimoni de la ira;",
+    "una imperfecció me'n mostra una altra,",
+    "perquè em menyspreï a mi mateix amb tota franquesa."
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Vinga, sou un moralista massa sever.",
+    "Tal com estan l'hora, el lloc i la situació d'aquest país,",
+    "de tot cor voldria que això no hagués passat;",
+    "però, ja que és com és, adobeu-ho pel vostre bé."
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "Li tornaré a demanar el meu lloc; em dirà que soc un borratxo.",
+    "Encara que tingués tantes boques com l'Hidra, una resposta així les faria callar totes.",
+    "Ser ara un home assenyat, al cap d'una estona un ximple,",
+    "i tot seguit una bèstia! Oh, quina cosa més estranya!",
+    "Cada copa de més és maleïda, i el que conté és un dimoni."
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Vinga, vinga, el bon vi és una criatura bona i familiar, si se'n fa bon ús;",
+    "no clameu més contra ell. I, bon lloctinent,",
+    "em sembla que ja penseu que us estimo."
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "Ho he comprovat ben bé, senyor. Jo, borratxo!"
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Vós o qualsevol home viu pot estar borratxo alguna vegada, home.",
+    "Us diré què heu de fer. La dona del nostre general ara és el general.",
+    "Ho puc dir en aquest sentit: ell s'ha consagrat i lliurat",
+    "a la contemplació, l'observació i l'estudi de les seves qualitats i gràcies.",
+    "Confesseu-vos-hi amb franquesa; importuneu-la perquè us ajudi",
+    "a tornar al vostre lloc. Té una disposició tan generosa, tan bondadosa,",
+    "tan amatent, tan beneïda, que considera un vici de la seva bondat",
+    "no fer més del que li demanen. Aquest os trencat",
+    "entre vós i el seu marit, demaneu-li que l'entablilli;",
+    "i m'aposto la fortuna contra qualsevol aposta que valgui la pena",
+    "que aquesta esquerda del vostre afecte",
+    "es farà més forta que no era abans."
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "Em doneu un bon consell."
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Us ho juro, amb la sinceritat de l'afecte i d'una bondat honrada."
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "N'estic ben convençut; i demà al matí, ben d'hora,",
+    "suplicaré a la virtuosa Desdèmona que intercedeixi per mi.",
+    "Perdré tota esperança en la meva fortuna si aquí em rebutgen."
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Teniu raó. Bona nit, lloctinent; he d'anar a la guàrdia."
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "Bona nit, honrat Iago."
+   ]
+  },
+  {
+   "stage": "Surt."
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "I qui és, doncs, el que diu que faig el dolent,",
+    "quan el consell que dono és generós i honrat,",
+    "raonable de pensar, i de fet el camí",
+    "per tornar a guanyar-se el moro? Perquè és facilíssim",
+    "que la complaent Desdèmona es deixi convèncer",
+    "per qualsevol petició honesta. Està feta tan generosa",
+    "com els elements lliures; i, a més, per a ella,",
+    "guanyar-se el moro —encara que fos per fer-lo renegar del baptisme,",
+    "de tots els segells i símbols del pecat redimit— és fàcil:",
+    "ell té l'ànima tan encadenada a l'amor que li té",
+    "que ella pot fer, desfer, fer el que vulgui,",
+    "talment com el seu desig faci de déu",
+    "amb les febles facultats d'ell. Com soc, doncs, un dolent",
+    "per aconsellar a Cassio aquest camí paral·lel",
+    "que duu dret al seu bé? Teologia de l'infern!",
+    "Quan els dimonis volen vestir els pecats més negres,",
+    "primer temptegen amb aparences celestials,",
+    "com faig jo ara. Perquè mentre aquest ximple honrat",
+    "importuna Desdèmona perquè li adobi la fortuna,",
+    "i ella intercedeix per ell amb força davant el moro,",
+    "jo li abocaré a l'orella aquesta pestilència:",
+    "que ella el vol fer tornar per la luxúria del seu cos;",
+    "i com més s'esforci a fer-li bé,",
+    "més desfarà el seu crèdit davant el moro.",
+    "Així convertiré la seva virtut en pega,",
+    "i de la seva mateixa bondat en faré la xarxa",
+    "que els enxarxarà a tots."
+   ]
+  },
+  {
+   "stage": "Entra RODERIGO."
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Què hi ha, Roderigo?"
+   ]
+  },
+  {
+   "speaker": "RODERIGO",
+   "lines": [
+    "Segueixo la cacera, però no com un gos que caça,",
+    "sinó com un que només fa bulla amb la gossada.",
+    "Els diners ja gairebé se m'han acabat; aquesta nit m'han apallissat de valent;",
+    "i em penso que la cosa acabarà així: que n'hauré tret tanta experiència",
+    "per les meves penes, i així, sense gens de diners",
+    "i amb una mica més de seny, me'n tornaré a Venècia."
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Que pobres que són els que no tenen paciència!",
+    "Quina ferida s'ha curat mai si no és a poc a poc?",
+    "Ja saps que treballem amb l'enginy i no amb bruixeria,",
+    "i l'enginy depèn del temps, que no té pressa.",
+    "Que no va bé? Cassio t'ha pegat,",
+    "i tu, amb aquest petit mal, has fet destituir Cassio.",
+    "Tot i que altres coses creixen ufanes al sol,",
+    "els fruits que floreixen primer seran els primers a madurar.",
+    "Conforma't una estona. Per la missa, ja és de dia:",
+    "el plaer i l'acció fan que les hores semblin curtes.",
+    "Retira't, ves on t'allotges.",
+    "Au, et dic; ja en sabràs més d'aquí endavant.",
+    "Va, ves-te'n."
+   ]
+  },
+  {
+   "stage": "Surt RODERIGO."
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Cal fer dues coses:",
+    "la meva dona ha d'intercedir per Cassio davant la seva senyora;",
+    "ja l'hi empenyeré;",
+    "mentrestant, jo m'enduré el moro a part",
+    "i el portaré just quan pugui trobar Cassio",
+    "suplicant la seva dona. Sí, aquest és el camí:",
+    "no esmorteeixis el pla amb fredor i demora."
+   ]
+  },
+  {
+   "stage": "Surt."
+  }
+ ]
+}
