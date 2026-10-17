@@ -319,7 +319,8 @@ back to `DATABASE_URL` (the name Render, Heroku and Fly use). An old-style
 (see `flaskblog/config.py`).
 
 **Local development needs no variables at all.** Without a database URL the
-app uses `instance/learn_catalan.db` (SQLite) and a development secret key,
+app uses `instance/learn_catalan.db` (SQLite) and a random secret key made
+fresh on every start (so you are logged out after a restart),
 and `wsgi.py` lets `flask` find the app without `FLASK_APP`:
 
 ```bash
