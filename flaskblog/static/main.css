@@ -2179,6 +2179,27 @@ a.article-title:hover {
   overflow-y: auto;
 }
 
+.reader-panel-close {
+  display: none;
+  position: absolute;
+  top: .35rem;
+  right: .6rem;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted-text);
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.reader-panel-close:hover,
+.reader-panel-close:focus-visible {
+  background: var(--border-soft);
+  color: var(--bs-body-color);
+}
+
 .reader-panel-head {
   display: flex;
   align-items: center;
@@ -2322,9 +2343,59 @@ a.article-title:hover {
     grid-template-columns: minmax(0, 1fr);
   }
 
+  /* Phones and tablets: the word panel is a sheet that slides up from the
+     bottom when a word is tapped, instead of sitting under the whole text. */
   .reader-panel {
-    position: static;
-    max-height: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    z-index: 1040;
+    max-height: 55vh;
+    margin: 0;
+    padding-top: 1.75rem;
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+    border-radius: 18px 18px 0 0;
+    box-shadow: 0 -8px 30px rgba(15, 30, 50, .18);
+    transform: translateY(105%);
+    transition: transform .22s ease;
+    overscroll-behavior: contain;
+  }
+
+  .reader-panel::before {
+    content: '';
+    position: absolute;
+    top: .6rem;
+    left: 50%;
+    width: 40px;
+    height: 4px;
+    margin-left: -20px;
+    border-radius: 2px;
+    background: var(--border-soft);
+  }
+
+  .reader-panel.is-open {
+    transform: none;
+  }
+
+  .reader-panel #reader-panel-empty {
+    display: none;
+  }
+
+  .reader-panel-close {
+    display: block;
+  }
+
+  /* Room under the text so its last lines can be scrolled above the sheet. */
+  body.reader-sheet-open .reader-main {
+    margin-bottom: 55vh;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reader-panel {
+    transition: none;
   }
 }
 

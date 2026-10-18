@@ -33,6 +33,8 @@
     copy: document.getElementById('reader-copy'),
     empty: document.getElementById('reader-panel-empty'),
     body: document.getElementById('reader-panel-body'),
+    panel: document.getElementById('reader-panel'),
+    close: document.getElementById('reader-panel-close'),
     historyBox: document.getElementById('reader-history-box'),
     history: document.getElementById('reader-history')
   };
@@ -160,6 +162,34 @@
   function showEmpty() {
     els.body.textContent = '';
     els.empty.hidden = false;
+    closeSheet();
+  }
+
+  // -- the panel as a bottom sheet on narrow screens (see main.css) ---------------
+  var sheetQuery = window.matchMedia ? window.matchMedia('(max-width: 991.98px)') : null;
+
+  function isSheet() {
+    return !!(sheetQuery && sheetQuery.matches);
+  }
+
+  function openSheet(span) {
+    if (!isSheet() || !els.panel) { return; }
+    els.panel.classList.add('is-open');
+    document.body.classList.add('reader-sheet-open');
+    // Keep the tapped word in sight above the sheet: near the top third.
+    if (span && span.getBoundingClientRect) {
+      var top = span.getBoundingClientRect().top;
+      var wanted = window.innerHeight * 0.25;
+      if (top > window.innerHeight * 0.4 || top < 60) {
+        window.scrollBy({ top: top - wanted, behavior: 'smooth' });
+      }
+    }
+  }
+
+  function closeSheet() {
+    if (!els.panel) { return; }
+    els.panel.classList.remove('is-open');
+    document.body.classList.remove('reader-sheet-open');
   }
 
   // -- one word ------------------------------------------------------------------------------
@@ -171,7 +201,11 @@
     list.forEach(function (span) { span.classList.remove('is-active'); });
     var span = list[index];
     span.classList.add('is-active');
-    if (span.scrollIntoView) { span.scrollIntoView({ block: 'nearest' }); }
+    if (isSheet()) {
+      openSheet(span);
+    } else if (span.scrollIntoView) {
+      span.scrollIntoView({ block: 'nearest' });
+    }
     var previous = index > 0 ? list[index - 1].textContent : '';
     lookup(span.textContent, previous, index);
   }
@@ -428,7 +462,19 @@
     }
   });
   els.body.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape') { els.text.focus(); }
+    if (event.key === 'Escape') {
+      closeSheet();
+      els.text.focus();
+    }
+  });
+  if (els.close) {
+    els.close.addEventListener('click', function () {
+      closeSheet();
+      els.text.focus({ preventScroll: true });
+    });
+  }
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && els.panel && els.panel.classList.contains('is-open')) { closeSheet(); }
   });
 
   // A text from an earlier visit comes back where it was left.
