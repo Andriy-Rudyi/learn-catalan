@@ -227,7 +227,7 @@ class FrenchPagesTests(AppTestCase):
     def test_interface_is_french_and_courses_english(self):
         home = self.client.get('/').data.decode()
         self.assertIn('Grammaire', home)
-        self.assertIn('70 unités', home)
+        self.assertIn('71 unités', home)
         unit = self.client.get('/grammar/unit/1').data.decode()
         self.assertIn('Exercices', unit)
         faq = self.client.get('/faq').data.decode()

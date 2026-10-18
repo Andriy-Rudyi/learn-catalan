@@ -2428,3 +2428,44 @@ a.article-title:hover {
   font-size: .8rem;
   vertical-align: .3em;
 }
+
+/* Tables in grammar explanations (verb endings, irregular forms). */
+.explanation .table-responsive {
+  margin: .75rem 0 1rem;
+}
+
+.grammar-table {
+  width: auto;
+  min-width: 60%;
+  margin-bottom: 0;
+  --bs-table-bg: transparent;
+  font-size: .95rem;
+}
+
+.grammar-table th,
+.grammar-table td {
+  padding: .35rem .75rem;
+  white-space: nowrap;
+  border-color: var(--border-soft);
+}
+
+.grammar-table thead th {
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  border-bottom-width: 2px;
+}
+
+.grammar-table tbody th {
+  font-weight: 500;
+  color: var(--muted-text);
+}
+
+.grammar-table strong {
+  color: var(--heading-color);
+}
+
+.explanation h3 {
+  font-size: 1.05rem;
+  margin: 1.25rem 0 .5rem;
+}

@@ -41,7 +41,7 @@ UK = [
                 'a': """
 <p>Learn Catalan — сайт для вивчення каталонської мови українською. Тут є:</p>
 <ul>
-  <li><a href="{grammar}">Граматика</a>: 70 юнітів від A1 до C1 з поясненнями, прикладами та вправами з відповідями.</li>
+  <li><a href="{grammar}">Граматика</a>: 71 юніт від A1 до C1 з поясненнями, прикладами та вправами з відповідями.</li>
   <li><a href="{dictionary}">Словник</a>: понад 3 500 слів із перекладом, прикладами та рівнем.</li>
   <li><a href="{conjugator}">Дієвідміна</a>: усі часи та способи понад 8 000 дієслів.</li>
   <li><a href="{phonetics}">Фонетика</a>: уроки вимови з транскрипцією та озвученими прикладами.</li>
@@ -159,7 +159,7 @@ UK = [
                 'id': 'grammar',
                 'q': 'Як влаштований курс граматики?',
                 'a': """
-<p>Курс складається з 70 юнітів: від A1 до C1. Кожен юніт — це коротке пояснення, таблиця прикладів
+<p>Курс складається з 71 юніта: від A1 до C1. Кожен юніт — це коротке пояснення, таблиця прикладів
 із перекладом і вправи. Юніти можна проходити по порядку або <a href="{grammar}?sort=topic">за темами</a>.</p>""",
             },
             {
@@ -257,7 +257,7 @@ EN = [
                 'a': """
 <p>Learn Catalan is a website for learning Catalan. It has:</p>
 <ul>
-  <li><a href="{grammar}">Grammar</a>: 70 units from A1 to C1 with explanations, examples and exercises with answers.</li>
+  <li><a href="{grammar}">Grammar</a>: 71 units from A1 to C1 with explanations, examples and exercises with answers.</li>
   <li>A <a href="{dictionary}">dictionary</a> of over 3,500 words with translations, examples and levels.</li>
   <li>A <a href="{conjugator}">conjugator</a> with every tense and mood of over 8,000 verbs.</li>
   <li><a href="{phonetics}">Pronunciation</a> lessons with phonetic transcription and audio examples.</li>
@@ -374,7 +374,7 @@ a final -r is pronounced: such transcriptions start with ≈.</p>""",
                 'id': 'grammar',
                 'q': 'How is the grammar course organised?',
                 'a': """
-<p>The course has 70 units from A1 to C1. Each unit has a short explanation, a table of examples
+<p>The course has 71 units from A1 to C1. Each unit has a short explanation, a table of examples
 with translations, and exercises. You can follow the units in order or <a href="{grammar}?sort=topic">by topic</a>.</p>""",
             },
             {
