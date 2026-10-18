@@ -10,7 +10,7 @@ OTHELLO_SCENES = [(1, 1), (1, 2), (1, 3), (2, 1), (2, 2), (2, 3), (3, 1), (3, 2)
                   (3, 4), (4, 1), (4, 2), (4, 3), (5, 1), (5, 2)]
 SPEAKERS = {'OTEL·LO', 'DESDÈMONA', 'IAGO', 'CASSIO', 'RODERIGO', 'BRABANCI', 'EMÍLIA',
             'BIANCA', 'LODOVICO', 'GRACIÀ', 'MONTANO', 'DUX', 'BUFÓ', 'SENADOR PRIMER',
-            'SENADOR SEGON', 'OFICIAL', 'MISSATGER', 'MARINER', 'CAVALLER PRIMER',
+            'SENADOR SEGON', 'SENADORS', 'OFICIAL', 'MISSATGER', 'MARINER', 'CAVALLER PRIMER',
             'CAVALLER SEGON', 'CAVALLER TERCER', 'CAVALLERS', 'HERALD', 'MÚSIC', 'TOTS'}
 
 
@@ -26,7 +26,7 @@ class OthelloDataTests(unittest.TestCase):
     def test_blocks(self):
         for scene in self.work['scenes']:
             self.assertTrue(scene.setting, (scene.act, scene.scene))
-            self.assertGreater(len(scene.blocks), 3, (scene.act, scene.scene))
+            self.assertGreaterEqual(len(scene.blocks), 3, (scene.act, scene.scene))  # 2.2: the herald
             for block in scene.blocks:
                 if 'stage' in block:
                     self.assertTrue(block['stage'].strip())

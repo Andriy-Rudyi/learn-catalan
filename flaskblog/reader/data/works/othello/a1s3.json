@@ -1,0 +1,923 @@
+{
+  "act": 1,
+  "scene": 3,
+  "setting": "Venècia. La cambra del consell.",
+  "blocks": [
+    {
+      "stage": "Entren el DUX i els SENADORS, asseguts a una taula amb llums, OFICIALS i ACOMPANYANTS."
+    },
+    {
+      "speaker": "DUX",
+      "lines": [
+        "No hi ha coherència en aquestes notícies",
+        "que les faci creïbles."
+      ]
+    },
+    {
+      "speaker": "SENADOR PRIMER",
+      "lines": [
+        "De fet, no quadren.",
+        "Les meves cartes diuen cent set galeres."
+      ]
+    },
+    {
+      "speaker": "DUX",
+      "lines": [
+        "I les meves, cent quaranta."
+      ]
+    },
+    {
+      "speaker": "SENADOR SEGON",
+      "lines": [
+        "I les meves, dues-centes;",
+        "però, encara que no coincideixin en un compte exacte",
+        "—com passa sovint en aquests casos, quan es dona",
+        "una estimació, que hi ha diferències—, totes confirmen",
+        "una flota turca que navega cap a Xipre."
+      ]
+    },
+    {
+      "speaker": "DUX",
+      "lines": [
+        "Sí, és prou possible, si s'hi pensa bé:",
+        "no em refio tant de la discrepància",
+        "que no doni per bo el punt principal",
+        "i me'n temi el pitjor."
+      ]
+    },
+    {
+      "speaker": "MARINER",
+      "lines": [
+        "[Des de dins] Ei! Ei! Ei!"
+      ]
+    },
+    {
+      "speaker": "OFICIAL",
+      "lines": [
+        "Un missatger de les galeres."
+      ]
+    },
+    {
+      "stage": "Entra un MARINER."
+    },
+    {
+      "speaker": "DUX",
+      "lines": [
+        "Bé, de què es tracta?"
+      ]
+    },
+    {
+      "speaker": "MARINER",
+      "lines": [
+        "L'armada turca es dirigeix cap a Rodes;",
+        "així m'ha manat que ho comuniqués aquí a l'estat",
+        "el senyor Angelo."
+      ]
+    },
+    {
+      "speaker": "DUX",
+      "lines": [
+        "Què en dieu, d'aquest canvi?"
+      ]
+    },
+    {
+      "speaker": "SENADOR PRIMER",
+      "lines": [
+        "Això no pot ser,",
+        "per cap prova de la raó. És una comèdia",
+        "per fer-nos mirar cap a una altra banda. Quan considerem",
+        "la importància que té Xipre per al turc,",
+        "i tornem a fer-nos entendre",
+        "que, així com li interessa més que Rodes,",
+        "també la pot prendre amb una lluita més fàcil,",
+        "perquè no està tan ben preparada per a la guerra,",
+        "sinó que no té cap de les defenses",
+        "de què Rodes està guarnida; si hi pensem bé,",
+        "no hem de creure que el turc sigui tan maldestre",
+        "que deixi per al final allò que li interessa primer,",
+        "i negligeixi una empresa fàcil i profitosa",
+        "per despertar i arriscar un perill sense profit."
+      ]
+    },
+    {
+      "speaker": "DUX",
+      "lines": [
+        "No, amb tota seguretat, no va cap a Rodes."
+      ]
+    },
+    {
+      "speaker": "OFICIAL",
+      "lines": [
+        "Aquí hi ha més notícies."
+      ]
+    },
+    {
+      "stage": "Entra un MISSATGER."
+    },
+    {
+      "speaker": "MISSATGER",
+      "lines": [
+        "Els otomans, reverends i benignes senyors,",
+        "navegant en línia recta cap a l'illa de Rodes,",
+        "s'hi han ajuntat amb una flota que els seguia."
+      ]
+    },
+    {
+      "speaker": "SENADOR PRIMER",
+      "lines": [
+        "Sí, ja m'ho pensava. Quantes naus, segons el vostre càlcul?"
+      ]
+    },
+    {
+      "speaker": "MISSATGER",
+      "lines": [
+        "Unes trenta veles; i ara refan",
+        "el camí de tornada, i adrecen ben a la vista",
+        "els seus propòsits cap a Xipre. El senyor Montano,",
+        "el vostre fidel i valentíssim servidor,",
+        "amb el seu deure lliurement complert, us ho comunica així",
+        "i us prega que el cregueu."
+      ]
+    },
+    {
+      "speaker": "DUX",
+      "lines": [
+        "Doncs és segur que van cap a Xipre.",
+        "Marcus Luccicos, no és a la ciutat?"
+      ]
+    },
+    {
+      "speaker": "SENADOR PRIMER",
+      "lines": [
+        "Ara és a Florència."
+      ]
+    },
+    {
+      "speaker": "DUX",
+      "lines": [
+        "Escriviu-li de part nostra;",
+        "envieu-ho cuita-corrents."
+      ]
+    },
+    {
+      "speaker": "SENADOR PRIMER",
+      "lines": [
+        "Aquí arriben Brabanci i el valent moro."
+      ]
+    },
+    {
+      "stage": "Entren BRABANCI, OTEL·LO, CASSIO, IAGO, RODERIGO i OFICIALS."
+    },
+    {
+      "speaker": "DUX",
+      "lines": [
+        "Valent Otel·lo, us hem d'emprar immediatament",
+        "contra l'enemic de tots, l'otomà.",
+        "[A Brabanci] No us havia vist; benvingut, noble senyor;",
+        "ens mancaven el vostre consell i la vostra ajuda aquesta nit."
+      ]
+    },
+    {
+      "speaker": "BRABANCI",
+      "lines": [
+        "I a mi els vostres. Excel·lència, perdoneu-me:",
+        "ni el meu càrrec ni res que hagi sentit dels afers",
+        "no m'ha fet llevar del llit, ni la preocupació general",
+        "s'apodera de mi; perquè el meu dolor particular",
+        "és d'una naturalesa tan desbordada i aclaparadora",
+        "que engoleix i s'empassa els altres pesars",
+        "i continua sent el mateix."
+      ]
+    },
+    {
+      "speaker": "DUX",
+      "lines": [
+        "Però què passa?"
+      ]
+    },
+    {
+      "speaker": "BRABANCI",
+      "lines": [
+        "La meva filla! Oh, la meva filla!"
+      ]
+    },
+    {
+      "speaker": "SENADORS",
+      "lines": [
+        "Morta?"
+      ]
+    },
+    {
+      "speaker": "BRABANCI",
+      "lines": [
+        "Sí, per a mi.",
+        "L'han ultratjada, me l'han robada i corrompuda",
+        "amb sortilegis i medicines comprades a xarlatans;",
+        "perquè la naturalesa s'erri d'una manera tan absurda,",
+        "sense ser deficient, ni cega, ni coixa de sentits,",
+        "sense bruixeria, no podria."
+      ]
+    },
+    {
+      "speaker": "DUX",
+      "lines": [
+        "Sigui qui sigui el que, amb aquest procedir infame,",
+        "ha pres així a la vostra filla el domini de si mateixa,",
+        "i a vós la vostra filla, el llibre sagnant de la llei",
+        "el llegireu vós mateix, en la seva lletra amarga,",
+        "segons el vostre propi criteri, encara que el meu propi fill",
+        "fos l'acusat de la vostra causa."
+      ]
+    },
+    {
+      "speaker": "BRABANCI",
+      "lines": [
+        "Humilment us dono les gràcies, Excel·lència.",
+        "Aquí teniu l'home: aquest moro, que ara sembla",
+        "que el vostre mandat especial per als afers de l'estat",
+        "ha fet venir aquí."
+      ]
+    },
+    {
+      "speaker": "TOTS",
+      "lines": [
+        "Ho sentim molt."
+      ]
+    },
+    {
+      "speaker": "DUX",
+      "lines": [
+        "[A Otel·lo] Què hi podeu dir, per la vostra part?"
+      ]
+    },
+    {
+      "speaker": "BRABANCI",
+      "lines": [
+        "Res, sinó que és així."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Poderosíssims, greus i reverends senyors,",
+        "nobilíssims i provats bons senyors meus:",
+        "que m'he endut la filla d'aquest ancià",
+        "és veritat del tot; és veritat que m'hi he casat;",
+        "tota l'alçada i l'amplada de la meva ofensa",
+        "fa aquesta mida, i no més. Soc rude en el parlar",
+        "i poc dotat de les frases suaus de la pau,",
+        "perquè des que aquests braços meus tenien la força de set anys",
+        "fins ara fa unes nou llunes, han dedicat",
+        "la seva acció més preuada al camp de les tendes;",
+        "i poca cosa d'aquest gran món puc dir",
+        "més enllà del que pertoca a gestes de brega i de batalla;",
+        "i per tant poc afavoriré la meva causa",
+        "parlant en nom meu. Però, amb la vostra benèvola paciència,",
+        "us faré un relat franc i sense vernís",
+        "de tot el curs del meu amor: amb quines drogues, quins encanteris,",
+        "quins conjurs i quina màgia poderosa",
+        "—perquè d'aquests procediments se m'acusa—",
+        "em vaig guanyar la seva filla."
+      ]
+    },
+    {
+      "speaker": "BRABANCI",
+      "lines": [
+        "Una donzella mai gosada;",
+        "d'esperit tan quiet i tranquil que els seus propis impulsos",
+        "la feien enrojolar; i ella, malgrat la naturalesa,",
+        "l'edat, el país, la reputació, malgrat tot,",
+        "s'havia d'enamorar del que li feia por de mirar?",
+        "És un judici mutilat i imperfectíssim",
+        "el que admeti que la perfecció pugui errar així",
+        "contra totes les regles de la naturalesa; i cal arribar",
+        "a les maquinacions de l'infern astut",
+        "per explicar per què ha passat. Per això afirmo de nou",
+        "que amb alguna mixtura poderosa sobre la sang",
+        "o amb algun beuratge conjurat per a aquest efecte",
+        "va obrar sobre ella."
+      ]
+    },
+    {
+      "speaker": "DUX",
+      "lines": [
+        "Afirmar-ho no és cap prova",
+        "sense un testimoni més ampli i més clar",
+        "que aquestes aparences primes i aquests pobres indicis",
+        "de versemblança vulgar que presenteu contra ell."
+      ]
+    },
+    {
+      "speaker": "SENADOR PRIMER",
+      "lines": [
+        "Però parleu, Otel·lo:",
+        "és que per mitjans indirectes i forçats",
+        "vau sotmetre i enverinar els afectes d'aquesta jove donzella?",
+        "O va venir per petició i per aquella conversa honesta",
+        "que una ànima ofereix a una altra?"
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Us suplico",
+        "que envieu a buscar la dama al Sagitari",
+        "i que parli de mi davant del seu pare.",
+        "Si en el seu relat em trobeu culpable,",
+        "la confiança, el càrrec que tinc per vosaltres,",
+        "no solament me'ls traieu, sinó que la vostra sentència",
+        "caigui fins i tot sobre la meva vida."
+      ]
+    },
+    {
+      "speaker": "DUX",
+      "lines": [
+        "Porteu aquí Desdèmona."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Alferes, guieu-los: vós coneixeu millor el lloc."
+      ]
+    },
+    {
+      "stage": "Surt IAGO amb dos o tres ACOMPANYANTS."
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "I fins que vingui, tan sincerament com al cel",
+        "confesso els vicis de la meva sang,",
+        "tan fidelment exposaré a les vostres greus orelles",
+        "com vaig prosperar en l'amor d'aquesta bella dama,",
+        "i ella en el meu."
+      ]
+    },
+    {
+      "speaker": "DUX",
+      "lines": [
+        "Digueu-ho, Otel·lo."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "El seu pare m'estimava, sovint em convidava,",
+        "i sempre em demanava la història de la meva vida",
+        "any per any: les batalles, els setges, les fortunes",
+        "que he passat.",
+        "Jo la hi recorria tota, des dels meus dies de noi",
+        "fins al moment mateix en què em demanava que l'expliqués;",
+        "i hi parlava de les desgràcies més desastroses,",
+        "d'aventures commovedores per mar i per terra,",
+        "d'escapades per un pèl a la bretxa mortal i imminent,",
+        "de com em va capturar l'enemic insolent",
+        "i em va vendre com a esclau; del meu rescat posterior,",
+        "i, amb tot això, la història dels meus viatges:",
+        "on, de coves immenses i deserts erms,",
+        "d'esqueis abruptes, roques i turons que toquen el cel amb el cim,",
+        "tenia ocasió de parlar —així anava la cosa—;",
+        "i dels caníbals que es mengen els uns als altres,",
+        "els antropòfags, i dels homes que tenen el cap",
+        "que els creix per sota de les espatlles. Desdèmona",
+        "s'inclinava amb tota l'ànima a escoltar-ho;",
+        "però sempre les feines de la casa se l'enduien,",
+        "i, tan aviat com les havia enllestides,",
+        "tornava, i amb una orella àvida",
+        "devorava les meves paraules; jo, en adonar-me'n,",
+        "vaig aprofitar una hora propícia i vaig trobar la manera",
+        "de treure-li una pregària de tot cor",
+        "perquè li contés per extens tot el meu pelegrinatge,",
+        "del qual havia sentit alguna cosa a trossos,",
+        "però no amb atenció seguida. Hi vaig consentir,",
+        "i sovint li arrencava les llàgrimes",
+        "quan parlava d'algun cop dolorós",
+        "que la meva joventut havia sofert. Acabada la història,",
+        "em va donar per les meves penes un món de sospirs:",
+        "jurava, per la seva fe, que era estrany, estranyíssim,",
+        "que feia pena, que feia una pena meravellosa;",
+        "desitjava no haver-ho sentit, i tanmateix desitjava",
+        "que el cel l'hagués feta un home així. Em va donar les gràcies,",
+        "i em va dir que, si tenia un amic que l'estimés,",
+        "només li calia ensenyar-li a explicar la meva història,",
+        "i això la conquistaria. Amb aquesta insinuació, vaig parlar:",
+        "ella em va estimar pels perills que havia passat,",
+        "i jo la vaig estimar perquè se'n compadia.",
+        "Aquesta és l'única bruixeria que he fet servir.",
+        "Aquí ve la dama: que ella en sigui testimoni."
+      ]
+    },
+    {
+      "stage": "Entren DESDÈMONA, IAGO i ACOMPANYANTS."
+    },
+    {
+      "speaker": "DUX",
+      "lines": [
+        "Crec que aquesta història també conquistaria la meva filla.",
+        "Bon Brabanci, preneu aquest afer espatllat de la millor manera:",
+        "els homes prefereixen fer servir les armes trencades",
+        "que no pas les mans nues."
+      ]
+    },
+    {
+      "speaker": "BRABANCI",
+      "lines": [
+        "Us prego que la sentiu parlar.",
+        "Si confessa que ella va fer la meitat del festeig,",
+        "que la destrucció em caigui sobre el cap si el meu mal retret",
+        "cau sobre l'home! Veniu aquí, gentil senyoreta;",
+        "veieu, en tota aquesta noble companyia,",
+        "a qui deveu més obediència?"
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "Noble pare meu,",
+        "aquí hi veig un deure dividit:",
+        "a vós us estic lligada per la vida i l'educació;",
+        "la vida i l'educació, totes dues m'ensenyen",
+        "a respectar-vos. Sou el senyor de tot el meu deure;",
+        "fins ara soc la vostra filla. Però aquí hi ha el meu marit;",
+        "i tant de deure com la meva mare us va mostrar",
+        "a vós, preferint-vos al seu pare,",
+        "tant en reclamo per poder declarar-lo",
+        "degut al moro, el meu senyor."
+      ]
+    },
+    {
+      "speaker": "BRABANCI",
+      "lines": [
+        "Déu vos guard! He acabat.",
+        "Si a Vostra Excel·lència li plau, passem als afers de l'estat.",
+        "M'estimaria més adoptar un fill que engendrar-lo.",
+        "Vine aquí, moro:",
+        "et dono aquí, amb tot el cor, allò",
+        "que, si no fos que ja ho tens, amb tot el cor",
+        "et negaria. Per culpa vostra, joia meva,",
+        "m'alegro en l'ànima de no tenir cap altre fill,",
+        "perquè la teva fugida m'ensenyaria la tirania",
+        "de penjar-los grillons. He acabat, senyor."
+      ]
+    },
+    {
+      "speaker": "DUX",
+      "lines": [
+        "Deixeu-me parlar com vós mateix i dir una sentència",
+        "que, com un graó o un esglaó, pugui ajudar aquests amants",
+        "a entrar en el vostre favor.",
+        "Quan no hi ha remei, la pena ja s'acaba",
+        "en veure el pitjor, que l'esperança aguantava.",
+        "Plorar una desgràcia passada i ja acabada",
+        "és el camí més curt per atreure'n una altra.",
+        "Quan la fortuna pren el que no es pot salvar,",
+        "la paciència converteix el seu greuge en burla.",
+        "El robat que somriu pren alguna cosa al lladre;",
+        "es roba a si mateix qui gasta un dolor debades."
+      ]
+    },
+    {
+      "speaker": "BRABANCI",
+      "lines": [
+        "Doncs que el turc ens prengui Xipre amb engany:",
+        "no la perdem mentre puguem somriure.",
+        "Suporta bé la sentència qui no ha de suportar",
+        "res més que el consol lliure que n'escolta;",
+        "però suporta alhora la sentència i el dolor",
+        "qui, per pagar la pena, ha de manllevar a la pobra paciència.",
+        "Aquestes sentències, de sucre o de fel,",
+        "com que són fortes per totes dues bandes, són equívoques.",
+        "Però les paraules són paraules; encara no he sentit mai",
+        "que al cor masegat s'hi arribés a través de l'orella.",
+        "Us ho prego, ara, als afers de l'estat."
+      ]
+    },
+    {
+      "speaker": "DUX",
+      "lines": [
+        "El turc, amb una armada poderosíssima, es dirigeix cap a Xipre.",
+        "Otel·lo, la fortalesa del lloc la coneixeu millor",
+        "que ningú; i, encara que hi tenim",
+        "un substitut de capacitat ben reconeguda,",
+        "l'opinió, que és una senyora més sobirana",
+        "dels efectes, us dona a vós un vot més segur.",
+        "Per tant, us haureu de resignar a enllardar",
+        "la lluentor de la vostra nova fortuna amb aquesta",
+        "expedició més aspra i violenta."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "El costum tirà, gravíssims senadors,",
+        "ha fet del llit de pedra i d'acer de la guerra",
+        "el meu llit del plomissol més fi. Reconec",
+        "una disposició natural i prompta",
+        "que trobo en la duresa, i emprenc",
+        "aquestes guerres presents contra els otomans.",
+        "Molt humilment, doncs, inclinant-me davant la vostra autoritat,",
+        "demano disposicions escaients per a la meva esposa:",
+        "el degut respecte al seu rang i una pensió,",
+        "amb l'allotjament i la companyia",
+        "que s'adiguin amb la seva condició."
+      ]
+    },
+    {
+      "speaker": "DUX",
+      "lines": [
+        "Si us sembla bé,",
+        "que sigui a casa del seu pare."
+      ]
+    },
+    {
+      "speaker": "BRABANCI",
+      "lines": [
+        "Jo no ho vull així."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Ni jo."
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "Ni jo; no voldria viure-hi",
+        "per no omplir el meu pare de pensaments impacients",
+        "estant sempre davant els seus ulls. Graciosíssim dux,",
+        "presteu la vostra orella favorable al que us exposaré",
+        "i deixeu-me trobar en la vostra veu una carta de privilegi",
+        "que ajudi la meva innocència."
+      ]
+    },
+    {
+      "speaker": "DUX",
+      "lines": [
+        "Què voleu, Desdèmona?"
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "Que he estimat el moro per viure amb ell,",
+        "la meva violència descarada i la tempesta de la meva fortuna",
+        "ho poden proclamar al món amb trompetes. El meu cor s'ha rendit",
+        "fins a la mateixa naturalesa del meu senyor.",
+        "Vaig veure el rostre d'Otel·lo en el seu esperit,",
+        "i als seus honors i a les seves virtuts valentes",
+        "vaig consagrar la meva ànima i el meu destí.",
+        "De manera que, estimats senyors, si em quedo enrere,",
+        "com una arna de la pau, i ell se'n va a la guerra,",
+        "em prenen els ritus pels quals l'estimo,",
+        "i hauré de suportar un interval feixuc",
+        "per la seva absència tan cara. Deixeu-me anar amb ell."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Doneu-li el vostre vot.",
+        "Que el cel en sigui testimoni: no ho demano",
+        "per complaure el paladar del meu apetit,",
+        "ni per satisfer amb ardor les passions joves",
+        "en el meu propi i particular plaer,",
+        "sinó per ser generós i esplèndid amb el seu esperit.",
+        "I el cel no permeti que les vostres bones ànimes pensin",
+        "que descuidaré els vostres afers seriosos i grans",
+        "perquè ella és amb mi. No: si mai les joguines d'ales lleugeres",
+        "del Cupido emplomallat em cusen, amb un ensopiment lasciu,",
+        "els ulls de l'enteniment i els instruments del meu càrrec,",
+        "de manera que els meus esbarjos corrompin i taquin la meva feina,",
+        "que les mestresses de casa facin una cassola del meu casc,",
+        "i que totes les adversitats indignes i baixes",
+        "s'alcin contra la meva reputació!"
+      ]
+    },
+    {
+      "speaker": "DUX",
+      "lines": [
+        "Que sigui com decidiu en privat,",
+        "tant si es queda com si se'n va. L'afer reclama pressa,",
+        "i la rapidesa hi ha de respondre. Heu de partir aquesta nit."
+      ]
+    },
+    {
+      "speaker": "DESDÈMONA",
+      "lines": [
+        "Aquesta nit, senyor?"
+      ]
+    },
+    {
+      "speaker": "DUX",
+      "lines": [
+        "Aquesta nit."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "De tot cor."
+      ]
+    },
+    {
+      "speaker": "DUX",
+      "lines": [
+        "A les nou del matí, ens tornarem a reunir aquí.",
+        "Otel·lo, deixeu algun oficial",
+        "i ell us portarà el nostre nomenament",
+        "amb totes les altres coses d'importància i consideració",
+        "que us concerneixin."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Si plau a Vostra Excel·lència, el meu alferes:",
+        "és un home honest i de confiança.",
+        "Confio la meva esposa a la seva escorta,",
+        "amb tot el que Vostra Excel·lència cregui necessari",
+        "enviar-me darrere meu."
+      ]
+    },
+    {
+      "speaker": "DUX",
+      "lines": [
+        "Així sigui.",
+        "Bona nit a tothom. [A Brabanci] I, noble senyor,",
+        "si la virtut no és mancada de bellesa,",
+        "el vostre gendre és molt més clar que negre."
+      ]
+    },
+    {
+      "speaker": "SENADOR PRIMER",
+      "lines": [
+        "Adeu, valent moro; tracteu bé Desdèmona."
+      ]
+    },
+    {
+      "speaker": "BRABANCI",
+      "lines": [
+        "Vigila-la, moro, si tens ulls per veure-hi:",
+        "ha enganyat el seu pare, i et pot enganyar a tu."
+      ]
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "M'hi jugo la vida, en la seva fidelitat!"
+      ]
+    },
+    {
+      "stage": "Surten el DUX, BRABANCI, CASSIO, els SENADORS i els ACOMPANYANTS."
+    },
+    {
+      "speaker": "OTEL·LO",
+      "lines": [
+        "Honest Iago,",
+        "la meva Desdèmona l'he de deixar a les teves mans;",
+        "et prego que la teva dona la serveixi,",
+        "i porta-la després, en l'ocasió més favorable.",
+        "Vine, Desdèmona; només tinc una hora",
+        "d'amor, d'afers mundans i d'instruccions",
+        "per passar amb tu. Hem d'obeir el temps."
+      ]
+    },
+    {
+      "stage": "Surten OTEL·LO i DESDÈMONA."
+    },
+    {
+      "speaker": "RODERIGO",
+      "lines": [
+        "Iago."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Què dius, cor noble?"
+      ]
+    },
+    {
+      "speaker": "RODERIGO",
+      "lines": [
+        "Què creus que faré?"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Doncs anar-te'n al llit i dormir."
+      ]
+    },
+    {
+      "speaker": "RODERIGO",
+      "lines": [
+        "M'ofegaré immediatament."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Si ho fas, ja no t'estimaré mai més. Per què, cavaller ximple?"
+      ]
+    },
+    {
+      "speaker": "RODERIGO",
+      "lines": [
+        "És una ximpleria viure, quan viure és un turment; i tenim",
+        "la prescripció de morir, quan la mort és el nostre metge."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Oh, quina infàmia! Fa quatre vegades set anys que miro",
+        "el món, i, des que sé distingir",
+        "entre un benefici i una ofensa, no he trobat mai",
+        "un home que sabés estimar-se a si mateix. Abans de dir",
+        "que m'ofegaria per amor d'una pintada,",
+        "canviaria la meva humanitat per la d'un babuí."
+      ]
+    },
+    {
+      "speaker": "RODERIGO",
+      "lines": [
+        "Què hauria de fer? Confesso que és una vergonya estar tan",
+        "encaterinat, però no està en la meva virtut",
+        "posar-hi remei."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "La virtut? Una figa! Depèn de nosaltres",
+        "ser així o aixà. Els nostres cossos són els nostres jardins,",
+        "i les nostres voluntats en són els jardiners. De manera que, tant si hi volem",
+        "plantar ortigues com sembrar enciams,",
+        "plantar-hi hisop o arrencar-ne la farigola,",
+        "omplir-lo d'una sola mena d'herbes o repartir-lo",
+        "entre moltes, tenir-lo erm",
+        "per mandra o adobat amb treball, doncs el",
+        "poder i l'autoritat correctora de tot això",
+        "rau en la nostra voluntat. Si la balança de les nostres vides no",
+        "tingués un plat de raó per contrapesar-ne un altre",
+        "de sensualitat, la sang i la baixesa de",
+        "la nostra naturalesa ens portarien a les conclusions",
+        "més absurdes. Però tenim la raó per refredar",
+        "els nostres impulsos furiosos, els nostres fiblons carnals,",
+        "les nostres luxúries desbocades; i d'aquí dedueixo",
+        "que això que en dieu amor no n'és més que un esqueix o un empelt."
+      ]
+    },
+    {
+      "speaker": "RODERIGO",
+      "lines": [
+        "No pot ser."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "No és res més que una luxúria de la sang i una concessió de la",
+        "voluntat. Vinga, sigues home. Ofegar-te? Ofega gats i",
+        "cadells cecs. M'he declarat amic teu, i",
+        "confesso que estic lligat als teus mèrits",
+        "amb cables d'una resistència perdurable.",
+        "Mai no et podria ser tan útil com ara.",
+        "Posa diners a la bossa. Segueix aquestes guerres; desfigura't",
+        "la cara amb una barba usurpada. Et dic que posis",
+        "diners a la bossa. No pot ser que Desdèmona",
+        "continuï gaire temps estimant el moro —posa diners",
+        "a la bossa—, ni ell a ella. Va ser un començament",
+        "violent, i ja veuràs",
+        "una separació a l'altura —tu posa diners a la bossa—.",
+        "Aquests moros són volubles en els seus desitjos —omple",
+        "la bossa de diners—. El menjar que ara li és",
+        "tan dolç com les garrofes",
+        "aviat li serà tan aspre com la coloquíntida.",
+        "Ella l'haurà de canviar per un de jove; quan estigui tipa",
+        "del seu cos, s'adonarà de l'error de la seva elecció.",
+        "Per tant, posa diners a la bossa. Si per força",
+        "t'has de condemnar, fes-ho d'una manera més delicada que ofegant-te.",
+        "Aplega tots els diners que puguis. Si una santimònia",
+        "i un vot fràgil entre un bàrbar",
+        "errant i una veneciana subtilíssima",
+        "no són massa durs per al meu enginy i per a tota",
+        "la tribu de l'infern, la gaudiràs; per tant, fes",
+        "diners. Mala pesta amb això d'ofegar-te! No ve gens",
+        "a tomb. Mira més aviat que et pengin per haver abraçat",
+        "el teu goig que no pas ofegar-te i quedar-te sense ella."
+      ]
+    },
+    {
+      "speaker": "RODERIGO",
+      "lines": [
+        "Donaràs suport ferm a les meves esperances, si confio",
+        "en el resultat?"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Pots estar segur de mi. Vés a fer diners. T'ho he dit",
+        "sovint, i t'ho torno a dir una vegada i una altra: odio el",
+        "moro. La meva causa la porto al cor; la teva no té",
+        "menys raó. Unim-nos en la nostra venjança",
+        "contra ell. Si li pots posar banyes, et dones",
+        "un plaer a tu i a mi una diversió. Hi ha molts esdeveniments",
+        "al ventre del temps que vindran a la llum. En marxa!",
+        "Vés, procura't els diners. Demà en parlarem més. Adeu."
+      ]
+    },
+    {
+      "speaker": "RODERIGO",
+      "lines": [
+        "On ens trobarem al matí?"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Al meu allotjament."
+      ]
+    },
+    {
+      "speaker": "RODERIGO",
+      "lines": [
+        "Hi seré d'hora."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Vinga, adeu. Que m'escolteu, Roderigo?"
+      ]
+    },
+    {
+      "speaker": "RODERIGO",
+      "lines": [
+        "Què dieu?"
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Prou d'ofegar-se, m'escolteu?"
+      ]
+    },
+    {
+      "speaker": "RODERIGO",
+      "lines": [
+        "He canviat."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Vinga, adeu. Poseu prou diners a la bossa."
+      ]
+    },
+    {
+      "speaker": "RODERIGO",
+      "lines": [
+        "Vendré totes les meves terres."
+      ]
+    },
+    {
+      "stage": "Surt."
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Així és com sempre faig del meu ximple la meva bossa;",
+        "perquè profanaria el saber que m'he guanyat",
+        "si perdés el temps amb un becadell com aquest",
+        "si no fos per diversió i profit. Odio el moro,",
+        "i corre la veu que entre els meus llençols",
+        "ha fet la meva feina. No sé si és veritat,",
+        "però jo, per una simple sospita en aquesta matèria,",
+        "faré com si fos una certesa. Em té en bona estima:",
+        "millor obrarà sobre ell el meu propòsit.",
+        "Cassio és un home ben plantat: a veure, doncs;",
+        "prendre-li el lloc i coronar el meu desig",
+        "amb una doble canallada. Com? Com? A veure.",
+        "Al cap d'un temps, enganyar l'orella d'Otel·lo",
+        "dient-li que ell és massa familiar amb la seva dona;",
+        "té una figura i unes maneres suaus",
+        "que fan sospitar, fetes per tornar infidels les dones.",
+        "El moro és de naturalesa franca i oberta,",
+        "creu honestos els homes que només ho semblen,",
+        "i es deixarà portar pel nas tan dòcilment",
+        "com els ases.",
+        "Ja ho tinc. Està engendrat. L'infern i la nit",
+        "han de dur aquest part monstruós a la llum del món."
+      ]
+    },
+    {
+      "stage": "Surt."
+    }
+  ]
+}
