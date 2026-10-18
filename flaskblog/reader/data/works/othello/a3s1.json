@@ -3,40 +3,225 @@
   "scene": 1,
   "setting": "Xipre. Davant del castell.",
   "blocks": [
-    {"stage": "Entren CASSIO, MÚSICS i el BUFÓ."},
-    {"speaker": "CASSIO", "lines": ["Mestres, toqueu aquí; ja us pagaré la feina.", "Una cosa curta, que digui: «Bon dia, general.»"]},
-    {"stage": "Toquen."},
-    {"speaker": "BUFÓ", "lines": ["Què passa, mestres, que els vostres instruments han estat a Nàpols,", "que parlen pel nas d'aquesta manera?"]},
-    {"speaker": "MÚSIC", "lines": ["Com dieu, senyor, com?"]},
-    {"speaker": "BUFÓ", "lines": ["Que no són, si us plau, instruments de vent?"]},
-    {"speaker": "MÚSIC", "lines": ["Sí, i tant que ho són, senyor."]},
-    {"speaker": "BUFÓ", "lines": ["Ah, doncs aquí hi penja una cua."]},
-    {"speaker": "MÚSIC", "lines": ["I on hi penja aquest conte, senyor?"]},
-    {"speaker": "BUFÓ", "lines": ["Doncs, senyor, a més d'un instrument de vent que jo", "conec. Però, mestres, aquí teniu diners; i al ge-", "neral li agrada tant la vostra música que us demana, per l'amor", "de Déu, que no hi feu més soroll."]},
-    {"speaker": "MÚSIC", "lines": ["Bé, senyor, no en farem."]},
-    {"speaker": "BUFÓ", "lines": ["Si teniu alguna música que no es pugui sentir, endavant", "amb ella; però, com diuen, sentir música, al general no", "li fa gaire gràcia."]},
-    {"speaker": "MÚSIC", "lines": ["D'aquesta no en tenim, senyor."]},
-    {"speaker": "BUFÓ", "lines": ["Doncs guardeu les flautes al sac, que jo me'n vaig.", "Vinga, esvaïu-vos en l'aire, fora!"]},
-    {"stage": "Surten els MÚSICS."},
-    {"speaker": "CASSIO", "lines": ["Que no em sents, el meu amic honest?"]},
-    {"speaker": "BUFÓ", "lines": ["No, no sento el vostre amic honest; us sento a vós."]},
-    {"speaker": "CASSIO", "lines": ["Si us plau, guarda't els jocs de paraules. Aquí tens una", "pobra peça d'or. Si la dama que", "serveix l'esposa del general ja s'ha llevat, digues-li que hi ha", "un tal Cassio que li prega el petit favor de parlar-hi. Ho", "faràs?"]},
-    {"speaker": "BUFÓ", "lines": ["Ja s'ha remogut, senyor; si es vol remoure fins aquí,", "miraré de fer-l'hi saber."]},
-    {"speaker": "CASSIO", "lines": ["Fes-ho, bon amic."]},
-    {"stage": "Surt el BUFÓ."},
-    {"stage": "Entra IAGO."},
-    {"speaker": "CASSIO", "lines": ["Arribes en bon moment, Iago."]},
-    {"speaker": "IAGO", "lines": ["Que no us heu ficat al llit, doncs?"]},
-    {"speaker": "CASSIO", "lines": ["Doncs no; ja s'havia fet de dia quan ens vam separar.", "M'he pres la llibertat, Iago,", "d'enviar algú a buscar la teva dona. El que li demano", "és que em procuri accés", "a la virtuosa Desdèmona."]},
-    {"speaker": "IAGO", "lines": ["Ara mateix us l'envio;", "i ja trobaré la manera d'apartar el moro", "del camí, perquè la vostra conversa i el vostre afer", "siguin més lliures."]},
-    {"speaker": "CASSIO", "lines": ["Te n'estic humilment agraït."]},
-    {"stage": "Surt IAGO."},
-    {"speaker": "CASSIO", "lines": ["No he conegut mai cap florentí més amable i honest."]},
-    {"stage": "Entra EMÍLIA."},
-    {"speaker": "EMÍLIA", "lines": ["Bon dia, bon lloctinent. Em sap greu", "la vostra desgràcia; però tot s'arreglarà, segur.", "El general i la seva esposa en parlen,", "i ella us defensa amb fermesa. El moro respon", "que l'home que vau ferir té gran fama a Xipre", "i grans parentius, i que, per pura prudència,", "no tenia més remei que rebutjar-vos; però assegura que us estima", "i que no necessita cap altre intercessor que el seu afecte", "per agafar la primera ocasió segura pels cabells", "i tornar-vos al vostre lloc."]},
-    {"speaker": "CASSIO", "lines": ["Tot i així us prego,", "si us sembla bé, o si es pot fer,", "que em doneu l'oportunitat de parlar breument", "amb Desdèmona a soles."]},
-    {"speaker": "EMÍLIA", "lines": ["Entreu, si us plau;", "us posaré on tindreu temps", "de dir lliurement el que porteu al cor."]},
-    {"speaker": "CASSIO", "lines": ["Us estic molt obligat."]},
-    {"stage": "Surten."}
+    {
+      "stage": "Entren CASSIO, MÚSICS i el BUFÓ."
+    },
+    {
+      "speaker": "CASSIO",
+      "lines": [
+        "Mestres, toqueu aquí; ja us pagaré la feina.",
+        "Una cosa curta, que digui: «Bon dia, general.»"
+      ]
+    },
+    {
+      "stage": "Toquen."
+    },
+    {
+      "speaker": "BUFÓ",
+      "lines": [
+        "Què passa, mestres, que els vostres instruments han estat a Nàpols,",
+        "que parlen pel nas d'aquesta manera?"
+      ]
+    },
+    {
+      "speaker": "MÚSIC",
+      "lines": [
+        "Com dieu, senyor, com?"
+      ]
+    },
+    {
+      "speaker": "BUFÓ",
+      "lines": [
+        "Que no són, si us plau, instruments de vent?"
+      ]
+    },
+    {
+      "speaker": "MÚSIC",
+      "lines": [
+        "Sí, i tant que ho són, senyor."
+      ]
+    },
+    {
+      "speaker": "BUFÓ",
+      "lines": [
+        "Ah, doncs aquí hi penja una cua."
+      ]
+    },
+    {
+      "speaker": "MÚSIC",
+      "lines": [
+        "I on hi penja aquest conte, senyor?"
+      ]
+    },
+    {
+      "speaker": "BUFÓ",
+      "lines": [
+        "Doncs, senyor, a més d'un instrument de vent que jo",
+        "conec. Però, mestres, aquí teniu diners; i al general",
+        "li agrada tant la vostra música que us demana, per l'amor",
+        "de Déu, que no hi feu més soroll."
+      ]
+    },
+    {
+      "speaker": "MÚSIC",
+      "lines": [
+        "Bé, senyor, no en farem."
+      ]
+    },
+    {
+      "speaker": "BUFÓ",
+      "lines": [
+        "Si teniu alguna música que no es pugui sentir, endavant",
+        "amb ella; però, com diuen, sentir música, al general no",
+        "li fa gaire gràcia."
+      ]
+    },
+    {
+      "speaker": "MÚSIC",
+      "lines": [
+        "D'aquesta no en tenim, senyor."
+      ]
+    },
+    {
+      "speaker": "BUFÓ",
+      "lines": [
+        "Doncs guardeu les flautes al sac, que jo me'n vaig.",
+        "Vinga, esvaïu-vos en l'aire, fora!"
+      ]
+    },
+    {
+      "stage": "Surten els MÚSICS."
+    },
+    {
+      "speaker": "CASSIO",
+      "lines": [
+        "Que no em sents, el meu amic honest?"
+      ]
+    },
+    {
+      "speaker": "BUFÓ",
+      "lines": [
+        "No, no sento el vostre amic honest; us sento a vós."
+      ]
+    },
+    {
+      "speaker": "CASSIO",
+      "lines": [
+        "Si us plau, guarda't els jocs de paraules. Aquí tens una",
+        "pobra peça d'or. Si la dama que",
+        "serveix l'esposa del general ja s'ha llevat, digues-li que hi ha",
+        "un tal Cassio que li prega el petit favor de parlar-hi. Ho",
+        "faràs?"
+      ]
+    },
+    {
+      "speaker": "BUFÓ",
+      "lines": [
+        "Ja s'ha remogut, senyor; si es vol remoure fins aquí,",
+        "miraré de fer-l'hi saber."
+      ]
+    },
+    {
+      "speaker": "CASSIO",
+      "lines": [
+        "Fes-ho, bon amic."
+      ]
+    },
+    {
+      "stage": "Surt el BUFÓ."
+    },
+    {
+      "stage": "Entra IAGO."
+    },
+    {
+      "speaker": "CASSIO",
+      "lines": [
+        "Arribes en bon moment, Iago."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Que no us heu ficat al llit, doncs?"
+      ]
+    },
+    {
+      "speaker": "CASSIO",
+      "lines": [
+        "Doncs no; ja s'havia fet de dia quan ens vam separar.",
+        "M'he pres la llibertat, Iago,",
+        "d'enviar algú a buscar la teva dona. El que li demano",
+        "és que em procuri accés",
+        "a la virtuosa Desdèmona."
+      ]
+    },
+    {
+      "speaker": "IAGO",
+      "lines": [
+        "Ara mateix us l'envio;",
+        "i ja trobaré la manera d'apartar el moro",
+        "del camí, perquè la vostra conversa i el vostre afer",
+        "siguin més lliures."
+      ]
+    },
+    {
+      "speaker": "CASSIO",
+      "lines": [
+        "Te n'estic humilment agraït."
+      ]
+    },
+    {
+      "stage": "Surt IAGO."
+    },
+    {
+      "speaker": "CASSIO",
+      "lines": [
+        "No he conegut mai cap florentí més amable i honest."
+      ]
+    },
+    {
+      "stage": "Entra EMÍLIA."
+    },
+    {
+      "speaker": "EMÍLIA",
+      "lines": [
+        "Bon dia, bon lloctinent. Em sap greu",
+        "la vostra desgràcia; però tot s'arreglarà, segur.",
+        "El general i la seva esposa en parlen,",
+        "i ella us defensa amb fermesa. El moro respon",
+        "que l'home que vau ferir té gran fama a Xipre",
+        "i grans parentius, i que, per pura prudència,",
+        "no tenia més remei que rebutjar-vos; però assegura que us estima",
+        "i que no necessita cap altre intercessor que el seu afecte",
+        "per agafar la primera ocasió segura pels cabells",
+        "i tornar-vos al vostre lloc."
+      ]
+    },
+    {
+      "speaker": "CASSIO",
+      "lines": [
+        "Tot i així us prego,",
+        "si us sembla bé, o si es pot fer,",
+        "que em doneu l'oportunitat de parlar breument",
+        "amb Desdèmona a soles."
+      ]
+    },
+    {
+      "speaker": "EMÍLIA",
+      "lines": [
+        "Entreu, si us plau;",
+        "us posaré on tindreu temps",
+        "de dir lliurement el que porteu al cor."
+      ]
+    },
+    {
+      "speaker": "CASSIO",
+      "lines": [
+        "Us estic molt obligat."
+      ]
+    },
+    {
+      "stage": "Surten."
+    }
   ]
 }

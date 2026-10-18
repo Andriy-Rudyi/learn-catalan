@@ -46,8 +46,8 @@ SIMPLE_TENSES = {
 WITH_PRONOUN = ('indicatiu', 'subjuntiu', 'condicional')
 
 APOSTROPHES = "'’"
-_EDGE_START = re.compile(r"^[«“\"(¿¡\[]+")
-_EDGE_END = re.compile(r"[.,;:!?»”\")\]…]+$")
+_EDGE_START = re.compile(r"^[«“\"(¿¡\[—–]+")
+_EDGE_END = re.compile(r"[.,;:!?»”\")\]…—–]+$")
 _ELIDED = re.compile(r"^(l|d|s|m|t|n)['’](?=\w)", re.IGNORECASE)
 _CLITIC = r"(?:lo|la|los|les|li|ho|hi|ne|me|te|se|nos|vos|ns|ls|n|l|m|t|s|us|en|el)"
 _HYPHEN_CLITICS = re.compile(r"(?:-" + _CLITIC + r")+$", re.IGNORECASE)
