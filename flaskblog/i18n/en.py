@@ -244,6 +244,7 @@ MESSAGES = {
     'прийменник': 'preposition',
     'сполучник': 'conjunction',
     'вигук': 'interjection',
+    'артикль': 'article',
     'вираз': 'phrase',
     # topics
     'Вітання та знайомство': 'Greetings and introductions',

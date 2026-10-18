@@ -16,6 +16,7 @@ PARTS_OF_SPEECH = (
     ('preposition', 'прийменник'),
     ('conjunction', 'сполучник'),
     ('interjection', 'вигук'),
+    ('article', 'артикль'),
     ('phrase', 'вираз'),
 )
 

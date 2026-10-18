@@ -184,6 +184,7 @@ MESSAGES = {
     'прийменник': 'préposition',
     'сполучник': 'conjonction',
     'вигук': 'interjection',
+    'артикль': 'article',
     'вираз': 'expression',
     'Вітання та знайомство': 'Salutations et présentations',
     'Сім’я та люди': 'Famille et personnes',

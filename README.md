@@ -456,6 +456,12 @@ here: the text is the author's).
   scene, with links to the previous and next one. All are in the sitemap.
 - `READING=False` removes the section and its menu item (so does
   `READER=False`).
+- The dictionary covers the play: its words that were missing (1,313:
+  everyday words, function words such as "el", "de", "meu", and the play's
+  literary vocabulary) were added with Ukrainian, English and French
+  translations. Each entry was written, then checked by a second,
+  independent pass; anything either pass was unsure about was left out.
+  A new part of speech, "article", is used for "el".
 
 ## Grammar course
 
