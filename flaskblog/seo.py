@@ -42,6 +42,7 @@ INDEXABLE = {
     'reader.library',
     'reader.work',
     'reader.scene',
+    'translator.index',
 }
 
 # Query parameters that make a different page rather than a different view.
@@ -185,6 +186,8 @@ def _sitemap_paths():
     if current_app.config.get('SHOW_FAQ'):
         yield url_for('main.faq'), []
     yield url_for('api_docs.developers'), []
+    if current_app.config.get('TRANSLATOR', True):
+        yield url_for('translator.index'), []
     if current_app.config.get('READER', True):
         yield url_for('reader.index'), []
         if current_app.config.get('READING', True):

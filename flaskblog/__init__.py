@@ -59,6 +59,7 @@ def create_app(config_class=Config):
     from flaskblog.vocabulary.routes import vocabulary
     from flaskblog.translate.routes import translate
     from flaskblog.reader.routes import reader
+    from flaskblog.translator.routes import translator
     app.register_blueprint(users)
     app.register_blueprint(posts)
     app.register_blueprint(main)
@@ -69,6 +70,7 @@ def create_app(config_class=Config):
     app.register_blueprint(phonetics)
     app.register_blueprint(translate)
     app.register_blueprint(reader)
+    app.register_blueprint(translator)
 
     from flaskblog.conjugation.cli import conjugation_cli
     from flaskblog.grammar.cli import grammar_cli

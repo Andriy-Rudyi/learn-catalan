@@ -400,6 +400,33 @@ class UiTranslation(db.Model):
     updated_by = db.Column(db.Integer, db.ForeignKey('user.id', ondelete='SET NULL'), nullable=True)
 
 
+class TranslationMemory(db.Model):
+    """A sentence and its translation for the translator (/translator):
+    proposed by someone on the site, used once a translator of the language
+    approves it (or straight away when they wrote it themselves). The
+    sentences bundled with the course need no rows: they are read from the
+    data files."""
+
+    __tablename__ = 'translation_memory'
+
+    PENDING, APPROVED, REJECTED = 'pending', 'approved', 'rejected'
+
+    id = db.Column(db.Integer, primary_key=True)
+    source_lang = db.Column(db.String(10), nullable=False)
+    target_lang = db.Column(db.String(10), nullable=False)
+    # sha1 of the normalised source sentence, to find it again.
+    source_key = db.Column(db.String(40), nullable=False, index=True)
+    source_text = db.Column(db.Text, nullable=False)
+    target_text = db.Column(db.Text, nullable=False)
+    status = db.Column(db.String(10), nullable=False, default=PENDING, index=True)
+    created_by = db.Column(db.Integer, db.ForeignKey('user.id', ondelete='SET NULL'), nullable=True)
+    created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    decided_by = db.Column(db.Integer, db.ForeignKey('user.id', ondelete='SET NULL'), nullable=True)
+    decided_at = db.Column(db.DateTime, nullable=True)
+
+    author = db.relationship('User', foreign_keys=[created_by])
+
+
 class _TranslationTarget(object):
     """What a suggestion or a change is about: a meaning of a word
     (``kind`` 'sense'), the word's example or notes in a language

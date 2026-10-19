@@ -101,6 +101,11 @@ class Config:
     # what an editor typed in, as before.
     TRANSCRIPTION = os.getenv('TRANSCRIPTION', 'True') == 'True'
 
+    # /translator: the site's own translator, Catalan <-> Ukrainian, English,
+    # French (flaskblog/translator/engine.py). TRANSLATOR=False takes the page
+    # and its menu item away; the translation memory stays in the database.
+    TRANSLATOR = os.getenv('TRANSLATOR', 'True') == 'True'
+
     # Open API (/api/v1): requests a minute per client address; 0 = no limit.
     API_RATE_LIMIT = int(os.getenv('API_RATE_LIMIT', '120'))
 
@@ -130,6 +135,7 @@ class TestConfig(Config):
     SENSES = True
     READER = True
     READING = True
+    TRANSLATOR = True
     TRANSCRIPTION = True
     SITE_URL = None
     # The suite was written against the Ukrainian pages.

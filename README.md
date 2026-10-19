@@ -35,6 +35,9 @@ A Flask-based blog platform for learning and teaching the Catalan language.
   not to the word (“tocar”: 1. touch, 2. play an instrument), with English
   as the pivot. `SENSES=False` goes back to one line per language. See
   [Meanings](#meanings)
+- **Translator** at `/translator`: Catalan ↔ Ukrainian, English, French with
+  the site's own engine; translation memory first, word by word otherwise,
+  and every approved correction makes it better. See [Translator](#translator)
 - **Reading**: Shakespeare's *Othello* in full in Catalan, every word
   clickable. See [Reading](#reading)
 - **Transcription**: every dictionary word shows how it sounds, in IPA and (on
@@ -463,6 +466,32 @@ here: the text is the author's).
   independent pass; anything either pass was unsure about was left out.
   A new part of speech, "article", is used for "el".
 
+## Translator
+
+`/translator` translates between Catalan and Ukrainian, English or French
+with the site's own engine (`flaskblog/translator/engine.py`), built to get
+better as it is used:
+
+1. **Translation memory.** A sentence that people have translated comes out
+   exactly as they translated it: the dictionary's example sentences, the
+   grammar course's examples, and every correction approved on the site
+   (table `translation_memory`). A close sentence from the memory is shown
+   next to the result.
+2. **Word by word.** Anything else is glossed: the dictionary's fixed
+   expressions, contractions (del, al), articles as the target language uses
+   them, clitics (l', d', -ho), "va" + infinitive and "ha" + participle, and
+   the reader's analysis of forms (decidiren → decidir). It is marked as an
+   approximate translation; words the dictionary lacks are highlighted.
+3. **Corrections.** Anyone logged in can suggest a better translation of a
+   sentence. A translator of that language (the same role as on
+   `/translate`) approves it on `/translator/review`, or it goes straight in
+   when they wrote it. From then on the sentence is translated from memory.
+
+The Catalan side of every translation can be clicked word by word (the
+`/text` panel), listened to, and the last 20 translations stay in the
+browser. `TRANSLATOR=False` removes the page and its menu item; migration
+`d5a8c3e1f907` adds the table (downgrade drops it).
+
 ## Grammar course
 
 `/grammar` is a grammar course laid out like Raymond Murphy's grammar books:
@@ -567,6 +596,7 @@ API_RATE_LIMIT=120           # open API requests a minute per client address; 0 
 SENSES=True                  # set to False to show one translation line per language instead of meanings
 READER=True                  # set to False to take away the /text page
 READING=True                 # set to False to take away the /reading section
+TRANSLATOR=True              # set to False to take away the /translator page
 TRANSCRIPTION=True           # set to False to show only pronunciations typed in by an editor
 TEST_DATABASE_URI=           # optional, tests default to in-memory SQLite
 ```

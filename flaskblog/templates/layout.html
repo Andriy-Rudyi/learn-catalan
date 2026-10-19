@@ -162,6 +162,10 @@
                    href="{{ url_for('reader.library') }}">{{ icon('book') }}<span>{{ _('Читання') }}</span><span class="beta-badge">Beta</span></a></li>
             {% endif %}
             {% endif %}
+            {% if config.TRANSLATOR %}
+            <li><a class="lc-menu-link{% if endpoint and endpoint.startswith('translator.') %} active{% endif %}"
+                   href="{{ url_for('translator.index') }}">{{ icon('translator') }}<span>{{ _('Перекладач') }}</span><span class="beta-badge">Beta</span></a></li>
+            {% endif %}
             {% if config.SHOW_FAQ %}
             <li><a class="lc-menu-link{% if endpoint == 'main.faq' %} active{% endif %}"
                    href="{{ url_for('main.faq') }}">{{ icon('faq') }}<span>FAQ</span></a></li>

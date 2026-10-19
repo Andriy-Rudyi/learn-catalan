@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="translator">
+  <p class="small"><a href="{{ url_for('translator.index') }}">← {{ _('Перекладач') }}</a></p>
+  <h1 class="mb-3">{{ _('Пропозиції перекладів') }}</h1>
+  {% for row in pending %}
+    <form class="content-section translator-review-item" method="POST"
+          action="{{ url_for('translator.decide', row_id=row.id) }}">
+      {{ action_form.csrf_token }}
+      <p class="small text-muted mb-1">{{ row.source_lang }} → {{ row.target_lang }}{% if row.author %} · {{ row.author.username }}{% endif %}</p>
+      <p class="mb-2" lang="{{ row.source_lang }}"><strong>{{ row.source_text }}</strong></p>
+      <label class="form-label small" for="t{{ row.id }}">{{ _('Переклад (можна виправити)') }}</label>
+      <textarea class="form-control mb-2" id="t{{ row.id }}" name="target_text" rows="2"
+                lang="{{ row.target_lang }}">{{ row.target_text }}</textarea>
+      <button class="btn btn-sm btn-info" name="decision" value="accept">{{ _('Прийняти') }}</button>
+      <button class="btn btn-sm btn-outline-secondary" name="decision" value="reject">{{ _('Відхилити') }}</button>
+    </form>
+  {% else %}
+    <p class="text-muted">{{ _('Нових пропозицій немає.') }}</p>
+  {% endfor %}
+</div>
+{% endblock content %}

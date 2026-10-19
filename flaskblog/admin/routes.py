@@ -38,6 +38,7 @@ def init_admin(app):
     admin.add_view(WordView(Word, db.session))
     admin.add_view(WordTranslationView(WordTranslation, db.session))
     admin.add_view(UserWordView(UserWord, db.session))
-    admin.add_view(TranslatorView(Translator, db.session))
+    # Its own endpoint: 'translator' is the /translator page.
+    admin.add_view(TranslatorView(Translator, db.session, endpoint='translator_admin', url='translator'))
     admin.init_app(app)
     return admin

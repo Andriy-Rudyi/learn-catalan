@@ -438,6 +438,14 @@
 
   if (READ_ONLY) {
     wrapWords();
+    // Pages that put Catalan text on the page later (the translator) wrap it again.
+    window.LearnCatalanReader = {
+      rewrap: function () {
+        state.active = -1;
+        wrapWords();
+        showEmpty();
+      }
+    };
   } else {
     wireTextControls();
   }

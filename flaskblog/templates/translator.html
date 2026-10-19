@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+{% block meta_description %}{{ _('Перекладач з каталанської та на каталанську: українська, англійська, французька. Кожне каталанське слово можна натиснути й побачити його форму, переклад і синоніми.') }}{% endblock %}
+{% block content %}
+<div class="reader translator">
+  <div class="page-head">
+    <div>
+      <h1 class="mb-1">{{ _('Перекладач') }} <span class="beta-badge beta-badge-lg" title="{{ _('Нова функція: можливі неточності') }}">Beta</span></h1>
+      <p class="text-muted mb-0">{{ _('Речення, які вже переклали люди, перекладаються точно. Решта — слово за словом, як підрядник. Кожне виправлення робить перекладач кращим.') }}</p>
+    </div>
+  </div>
+
+  <div class="reader-grid">
+    <section class="content-section reader-main">
+      <form id="translator-form" class="translator-form">
+        <div class="translator-langs">
+          <select class="form-select" id="translator-source" aria-label="{{ _('З мови') }}">
+            <option value="ca" selected>Català</option>
+            {% for code, name in languages %}<option value="{{ code }}">{{ name }}</option>{% endfor %}
+          </select>
+          <button class="btn btn-outline-secondary translator-swap" type="button" id="translator-swap"
+                  aria-label="{{ _('Поміняти мови місцями') }}" title="{{ _('Поміняти мови місцями') }}">⇄</button>
+          <select class="form-select" id="translator-target" aria-label="{{ _('На мову') }}">
+            <option value="ca">Català</option>
+            {% for code, name in languages %}<option value="{{ code }}"{% if code == default_target %} selected{% endif %}>{{ name }}</option>{% endfor %}
+          </select>
+        </div>
+        <label class="visually-hidden" for="translator-text">{{ _('Текст') }}</label>
+        <textarea id="translator-text" class="form-control" rows="6" maxlength="{{ max_text }}"
+                  placeholder="{{ _('Введіть текст…') }}"></textarea>
+        <div class="reader-actions">
+          <button class="btn btn-info" type="submit" id="translator-go">{{ _('Перекласти') }}</button>
+          <button class="btn btn-sm btn-outline-secondary" type="button" id="translator-say" data-say="" hidden>🔊 {{ _('Прослухати') }}</button>
+          <span class="small text-muted ms-auto" id="translator-count">0 / {{ max_text }}</span>
+        </div>
+      </form>
+
+      <div id="translator-result" class="translator-result" hidden>
+        <div class="reader-actions reader-toolbar">
+          <button class="btn btn-sm btn-outline-secondary" type="button" id="translator-copy">{{ _('Копіювати переклад') }}</button>
+          <button class="btn btn-sm btn-outline-secondary" type="button" id="translator-say-result" data-say="" hidden>🔊 {{ _('Прослухати') }}</button>
+        </div>
+        <div id="translator-sentences"></div>
+        <div id="reader-text" class="reader-text translator-catalan" lang="ca" tabindex="0" hidden
+             aria-label="{{ _('Текст: натисніть слово або виберіть його стрілками й натисніть Enter') }}"></div>
+      </div>
+    </section>
+
+    <aside class="content-section reader-panel" id="reader-panel" aria-live="polite">
+      <button class="reader-panel-close" type="button" id="reader-panel-close"
+              aria-label="{{ _('Закрити') }}" title="{{ _('Закрити') }}">×</button>
+      <p class="text-muted mb-0" id="reader-panel-empty">{{ _('Натисніть каталанське слово в тексті або в перекладі: тут з’являться його форма, переклад і синоніми.') }}</p>
+      <div id="reader-panel-body"></div>
+    </aside>
+  </div>
+
+  <section class="content-section" id="translator-history-box" hidden>
+    <div class="d-flex justify-content-between align-items-center">
+      <h2 class="h6 mb-0">{{ _('Історія') }}</h2>
+      <button class="btn btn-link btn-sm" type="button" id="translator-history-clear">{{ _('Очистити') }}</button>
+    </div>
+    <ol class="translator-history" id="translator-history"></ol>
+  </section>
+
+  {% if current_user.is_authenticated and has_review %}
+    <p class="small"><a href="{{ url_for('translator.review') }}">{{ _('Пропозиції перекладів на перевірку') }}</a></p>
+  {% endif %}
+</div>
+
+{{ action_form.csrf_token }}
+<script type="application/json" id="reader-config">{{ {
+  'mode': 'read',
+  'wordUrl': url_for('reader.word'),
+  'loggedIn': current_user.is_authenticated,
+  'strings': panel_strings,
+} | tojson }}</script>
+<script type="application/json" id="translator-config">{{ {
+  'runUrl': url_for('translator.run'),
+  'suggestUrl': url_for('translator.suggest'),
+  'loginUrl': url_for('users.login', next=url_for('translator.index')),
+  'loggedIn': current_user.is_authenticated,
+  'max': max_text,
+  'strings': {
+    'memory': _('Переклад людини'),
+    'words': _('Слово за словом — приблизно'),
+    'similar': _('Схоже речення в пам’яті:'),
+    'unknown': _('Цього слова немає в словнику'),
+    'improve': _('Запропонувати кращий переклад'),
+    'send': _('Надіслати'),
+    'cancel': _('Скасувати'),
+    'thanks': _('Дякуємо! Переклад перевірить перекладач мови.'),
+    'saved': _('Дякуємо! Переклад уже в пам’яті перекладача.'),
+    'login': _('Увійдіть, щоб запропонувати переклад.'),
+    'error': _('Не вдалося перекласти. Спробуйте ще раз.'),
+    'tooMany': _('Забагато запитів. Зачекайте хвилину.'),
+    'copied': _('Скопійовано'),
+    'empty': _('Введіть текст.'),
+  },
+} | tojson }}</script>
+{% endblock content %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='reader.js') }}"></script>
+<script src="{{ url_for('static', filename='translator.js') }}"></script>
+{% endblock %}

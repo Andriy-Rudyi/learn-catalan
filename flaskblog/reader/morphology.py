@@ -427,6 +427,22 @@ def nominal_readings(word, known):
     return out
 
 
+def readings(surface, previous=None, known=lambda lemma: False):
+    """[(lemma, kind, slot)] of *surface*, best first: analyse() without the
+    synonyms, for the translator."""
+    word = clean(surface)
+    if not word or len(word) > 60:
+        return []
+    out = [(infinitive, 'verb', tuple(slot)) for infinitive, slot in verbs().analyse(word)]
+    out += [(lemma, 'word', None) for lemma, _plural, _feminine in nominal_readings(word, known)]
+    before = clean(previous or '').lower()
+    if before in DETERMINERS:
+        out.sort(key=lambda reading: reading[1] == 'verb')
+    elif before in BEFORE_VERBS:
+        out.sort(key=lambda reading: reading[1] != 'verb')
+    return out
+
+
 def analyse(surface, previous=None, known=lambda lemma: False):
     """Readings of *surface* and synonym groups in its form.
 
