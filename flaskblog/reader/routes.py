@@ -107,10 +107,11 @@ def library():
 def work(slug):
     _reading_on()
     found = works.load(slug)
-    if not found or not found['scenes']:
+    if not found or not found['parts']:
         abort(404)
     return render_template('reading_work.html', title=found['short_title'], work=found,
-                           act_title=works.act_title, scene_label=works.scene_label)
+                           act_title=works.act_title, scene_label=works.scene_label,
+                           chapter_label=works.chapter_label)
 
 
 @reader.route('/reading/<slug>/<int:act>/<int:scene>')
@@ -126,6 +127,23 @@ def scene(slug, act, scene):
         title='%s · %s' % (found['short_title'], works.scene_label(current)),
         work=found, scene=current, previous=previous, following=following,
         act_title=works.act_title, scene_label=works.scene_label,
+        panel_strings=panel_strings(), action_form=ActionForm(),
+    )
+
+
+@reader.route('/reading/<slug>/<int:number>')
+def chapter(slug, number):
+    _reading_on()
+    found = works.load(slug)
+    place = works.find_chapter(found, number) if found else None
+    if not place:
+        abort(404)
+    previous, current, following = place
+    return render_template(
+        'reading_chapter.html',
+        title='%s · %s' % (found['short_title'], works.chapter_label(current)),
+        work=found, chapter=current, previous=previous, following=following,
+        chapter_label=works.chapter_label,
         panel_strings=panel_strings(), action_form=ActionForm(),
     )
 

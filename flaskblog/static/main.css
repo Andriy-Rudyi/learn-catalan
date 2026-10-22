@@ -2074,6 +2074,27 @@ a.article-title:hover {
   margin-bottom: .9rem;
 }
 
+.reader-text.prose {
+  white-space: normal;
+  font-family: Georgia, 'Times New Roman', serif;
+  line-height: 1.75;
+}
+
+.reader-text.prose p {
+  margin: 0 0 .9rem;
+  text-indent: 1.5em;
+  hyphens: auto;
+}
+
+.reading-toc-chapters {
+  columns: 2;
+  column-gap: 1.5rem;
+}
+
+.reading-toc-chapters li {
+  break-inside: avoid;
+}
+
 .play-speaker {
   font-family: var(--bs-body-font-family);
   font-size: .78rem;

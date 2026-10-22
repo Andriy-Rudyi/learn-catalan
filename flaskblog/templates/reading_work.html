@@ -14,14 +14,30 @@
     </p>
     {% if work.slug == 'othello' %}
       <p>{{ _('Трагедія 1603 року. Венеційський генерал Отелло таємно одружується з Дездемоною; його алферес Яго, ображений тим, що лейтенантом став Кассіо, крок за кроком переконує Отелло, що дружина йому зраджує.') }}</p>
+    {% elif work.slug == 'martin-eden' %}
+      <p>{{ _('Роман 1909 року. Моряк Мартін Іден закохується в Рут Морс, дівчину з освіченої заможної родини, і заради неї береться за самоосвіту, щоб стати письменником. Успіх приходить, але не приносить того, на що він чекав.') }}</p>
     {% endif %}
     <p class="small text-muted mb-0">{{ _('Новий переклад каталанською, зроблений для цього сайту з англійського оригіналу (суспільне надбання). Текст повний, без скорочень.') }}</p>
-    <a class="btn btn-info mt-3" href="{{ url_for('reader.scene', slug=work.slug, act=work.scenes[0].act, scene=work.scenes[0].scene) }}">{{ _('Почати читати') }}</a>
+    {% if work.kind == 'novel' %}
+      <a class="btn btn-info mt-3" href="{{ url_for('reader.chapter', slug=work.slug, number=work.chapters[0].number) }}">{{ _('Почати читати') }}</a>
+    {% else %}
+      <a class="btn btn-info mt-3" href="{{ url_for('reader.scene', slug=work.slug, act=work.scenes[0].act, scene=work.scenes[0].scene) }}">{{ _('Почати читати') }}</a>
+    {% endif %}
   </div>
 
   <div class="reading-columns">
     <section class="content-section">
       <h2 class="h5">{{ _('Зміст') }}</h2>
+      {% if work.chapters %}
+        <ol class="reading-toc reading-toc-chapters">
+          {% for chapter in work.chapters %}
+            <li>
+              <a href="{{ url_for('reader.chapter', slug=work.slug, number=chapter.number) }}" lang="ca">{{ chapter_label(chapter) }}</a>
+              <span class="reading-toc-words">{{ _('Слів: {count}', count=chapter.words) }}</span>
+            </li>
+          {% endfor %}
+        </ol>
+      {% endif %}
       {% for act in work.acts %}
         <h3 class="reading-act" lang="ca">{{ act_title(act) }}</h3>
         <ol class="reading-toc">

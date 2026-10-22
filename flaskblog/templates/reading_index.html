@@ -17,7 +17,7 @@
         <span class="reading-card-meta">
           {{ _('Рівень {level}', level=work.level) }} ·
           {{ _('Слів: {count}', count='{:,}'.format(work.words).replace(',', ' ')) }} ·
-          {{ _('Сцен: {count}', count=work.scenes|length) }}
+          {% if work.kind == 'novel' %}{{ _('Розділів: {count}', count=work.chapters|length) }}{% else %}{{ _('Сцен: {count}', count=work.scenes|length) }}{% endif %}
         </span>
       </a>
     {% else %}

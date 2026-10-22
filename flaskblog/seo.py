@@ -42,6 +42,7 @@ INDEXABLE = {
     'reader.library',
     'reader.work',
     'reader.scene',
+    'reader.chapter',
     'translator.index',
 }
 
@@ -198,6 +199,8 @@ def _sitemap_paths():
                 for scene in work['scenes']:
                     yield url_for('reader.scene', slug=work['slug'], act=scene.act,
                                   scene=scene.scene), []
+                for chapter in work['chapters']:
+                    yield url_for('reader.chapter', slug=work['slug'], number=chapter.number), []
 
 
 def _build_sitemap():
