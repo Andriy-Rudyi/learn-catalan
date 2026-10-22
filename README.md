@@ -451,12 +451,21 @@ here: the text is the author's).
   translation made for this site from the English play text (public
   domain). Only the play itself was translated: no notes or other
   translations were used.
+- The second is Jack London's novel *Martin Eden* (1909), also in full and
+  in a new translation made for this site, from a scan of the 1916 printing
+  (public domain). The scan's OCR text was corrected by hand; a few
+  passages it had mixed up beyond reading were rebuilt. The English is kept
+  beside the translation, paragraph for paragraph, in
+  `martin-eden/original/en/`, so the novel can later be translated into
+  other languages; the site does not load it.
 - A work is a folder in `flaskblog/reader/data/works/` with `work.json`
-  (title, author, level, characters) and one file per scene,
-  `a{act}s{scene}.json` (see `flaskblog/reader/works.py` for the format).
-  Adding a work needs no code or migration.
+  (title, author, level, kind, characters). A play has one file per scene,
+  `a{act}s{scene}.json`; a novel (`"kind": "novel"`) one file per chapter,
+  `c{NN}.json` (see `flaskblog/reader/works.py` for the formats). Adding a
+  work needs no code or migration.
 - `/reading/<work>` is the contents page; `/reading/<work>/<act>/<scene>` a
-  scene, with links to the previous and next one. All are in the sitemap.
+  scene of a play and `/reading/<work>/<chapter>` a chapter of a novel, with
+  links to the previous and next one. All are in the sitemap.
 - `READING=False` removes the section and its menu item (so does
   `READER=False`).
 - The dictionary covers the play: its words that were missing (1,313:

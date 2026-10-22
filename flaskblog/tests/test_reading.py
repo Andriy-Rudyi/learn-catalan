@@ -1,5 +1,9 @@
 # flaskblog/tests/test_reading.py
 
+import io
+import json
+import os
+import re
 import unittest
 
 from flaskblog.reader import works
@@ -47,6 +51,35 @@ class OthelloDataTests(unittest.TestCase):
         self.assertIsNone(works.load('no-such-work'))
 
 
+class MartinEdenDataTests(unittest.TestCase):
+
+    def setUp(self):
+        self.work = works.load('martin-eden')
+
+    def test_every_chapter_is_there(self):
+        self.assertEqual('novel', self.work['kind'])
+        self.assertEqual(list(range(1, 47)), [c.number for c in self.work['chapters']])
+        self.assertEqual([], self.work['scenes'])
+        self.assertGreater(self.work['words'], 120000)
+
+    def test_paragraphs_match_the_original(self):
+        folder = os.path.join(works.WORKS_DIR, 'martin-eden', 'original', 'en')
+        for chapter in self.work['chapters']:
+            with io.open(os.path.join(folder, 'c%02d.json' % chapter.number), encoding='utf-8') as handle:
+                original = json.load(handle)
+            self.assertEqual(chapter.number, original['chapter'])
+            self.assertEqual(len(original['paragraphs']), len(chapter.paragraphs), chapter.number)
+            for english, catalan in zip(original['paragraphs'], chapter.paragraphs):
+                self.assertTrue(english.strip() and catalan.strip(), chapter.number)
+
+    def test_catalan_text(self):
+        for chapter in self.work['chapters']:
+            for paragraph in chapter.paragraphs:
+                self.assertNotIn('"', paragraph, chapter.number)
+                self.assertEqual(paragraph.count('«'), paragraph.count('»'), paragraph[:60])
+                self.assertLess(len(re.findall(r'\b(the|and|was|with)\b', paragraph)), 2, paragraph[:80])
+
+
 class ReadingPagesTests(AppTestCase):
 
     def test_library_work_and_scene(self):
@@ -61,6 +94,20 @@ class ReadingPagesTests(AppTestCase):
         last = self.client.get('/reading/othello/5/2').data.decode()
         self.assertIn('href="/reading/othello/5/1"', last)
         self.assertNotIn('rel="next"', last)
+
+    def test_novel(self):
+        self.assertIn('Martin Eden', self.client.get('/reading').data.decode())
+        body = self.client.get('/reading/martin-eden').data.decode()
+        self.assertIn('href="/reading/martin-eden/46"', body)
+        self.assertIn('Capítol XLVI', body)
+        body = self.client.get('/reading/martin-eden/1').data.decode()
+        self.assertIn('Capítol I<', body)
+        self.assertIn('class="reader-text prose"', body)
+        self.assertIn('href="/reading/martin-eden/2"', body)
+        self.assertNotIn('rel="prev"', body)
+        self.assertEqual(404, self.client.get('/reading/martin-eden/47').status_code)
+        self.assertEqual(404, self.client.get('/reading/othello/1').status_code)
+        self.assertIn('/reading/martin-eden/12', self.client.get('/sitemap.xml').data.decode())
 
     def test_missing(self):
         self.assertEqual(404, self.client.get('/reading/othello/6/1').status_code)
