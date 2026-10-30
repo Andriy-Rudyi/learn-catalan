@@ -11,6 +11,16 @@
     {% endif %}
   </p>
 
+  {% if config.PHONETICS_TRAINER %}
+    <div class="content-section trainer-cta">
+      <div>
+        <strong>{{ _('Тренажер вимови') }}</strong> <span class="beta-badge" title="{{ _('Нова функція: можливі неточності') }}">Beta</span>
+        <div class="small text-muted">{{ _('Транскрипція з клавіатурою IPA, наголос, звуки й правила читання — з перевіркою відповідей.') }}</div>
+      </div>
+      <a class="btn btn-info" href="{{ url_for('phonetics.trainer_page') }}">{{ _('Тренуватися') }}</a>
+    </div>
+  {% endif %}
+
   {% for section, lessons in sections %}
     <div class="grammar-section">
       <h3>{{ _(section) }} <span class="small text-muted">· {{ lessons|length }}</span></h3>

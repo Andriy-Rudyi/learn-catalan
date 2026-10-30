@@ -21,6 +21,9 @@ A Flask-based blog platform for learning and teaching the Catalan language.
   with the device's own Catalan voice (also on dictionary, conjugator and
   grammar pages). Lessons live in `flaskblog/phonetics/data/lessons.json`,
   so no database step is needed.
+- **Pronunciation trainer** at `/phonetics/trainer`: self-checking rounds for
+  every lesson, with an on-screen IPA keyboard. See
+  [Pronunciation trainer](#pronunciation-trainer)
 - Database-driven content management
 - Chronological and category-based post navigation
 - **Three interface languages: English (the default), Ukrainian and French**
@@ -501,6 +504,32 @@ The Catalan side of every translation can be clicked word by word (the
 browser. `TRANSLATOR=False` removes the page and its menu item; migration
 `d5a8c3e1f907` adds the table (downgrade drops it).
 
+## Pronunciation trainer
+
+`/phonetics/trainer` turns every pronunciation lesson into a unit of
+self-checking practice; a round is ten random tasks of one lesson or of all
+of them:
+
+- write the transcription of a word, with an on-screen IPA keyboard (and
+  keyboard shortcuts: `@` ə, `E` ɛ, `O` ɔ, `R` ɾ, `L` ʎ, `N` ɲ, `G` ŋ, `S` ʃ,
+  `Z` ʒ, `C` tʃ, `J` dʒ, `'` ˈ). Right sounds with a missing or misplaced
+  stress mark count as half right and say so; one-syllable words need no
+  stress mark;
+- write the word of a transcription;
+- how is the highlighted letter pronounced, which syllable is stressed,
+  how is [kəˈfɛ] written, which word did the device say (only with a
+  Catalan voice on the device).
+
+The word tasks come from the lessons' practice words; the others from
+`flaskblog/phonetics/data/trainer.json`, which holds only Catalan and IPA, so
+it needs no translation. The tests check every task against the site's own
+transcriptions (`flaskblog/vocabulary/transcription.py`): the marked sound is
+in the word, the stressed syllable is the one the transcription stresses,
+the spelling is the word that sounds like the given IPA. Answers are checked
+in the browser (`flaskblog/static/phonetics-trainer.js`) and the best score
+of each unit stays in that browser; nothing is stored on the server.
+`PHONETICS_TRAINER=False` removes the page and its links.
+
 ## Grammar course
 
 `/grammar` is a grammar course laid out like Raymond Murphy's grammar books:
@@ -606,6 +635,7 @@ SENSES=True                  # set to False to show one translation line per lan
 READER=True                  # set to False to take away the /text page
 READING=True                 # set to False to take away the /reading section
 TRANSLATOR=True              # set to False to take away the /translator page
+PHONETICS_TRAINER=True       # set to False to take away /phonetics/trainer
 TRANSCRIPTION=True           # set to False to show only pronunciations typed in by an editor
 TEST_DATABASE_URI=           # optional, tests default to in-memory SQLite
 ```

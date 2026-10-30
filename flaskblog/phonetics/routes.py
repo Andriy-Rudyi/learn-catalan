@@ -1,7 +1,7 @@
-from flask import Blueprint, abort, render_template, request
+from flask import Blueprint, abort, current_app, render_template, request, url_for
 
-from flaskblog.i18n import gettext as _
-from flaskblog.phonetics import service
+from flaskblog.i18n import content_language, gettext as _
+from flaskblog.phonetics import service, trainer
 
 phonetics = Blueprint('phonetics', __name__)
 
@@ -14,6 +14,21 @@ def index():
         title=_('Фонетика'),
         sections=service.sections(),
         total=len(lessons),
+    )
+
+
+@phonetics.route('/phonetics/trainer')
+def trainer_page():
+    if not current_app.config.get('PHONETICS_TRAINER', True):
+        abort(404)
+    lang = content_language()
+    units = trainer.units(lang)
+    return render_template(
+        'phonetics_trainer.html',
+        title=_('Тренажер вимови'),
+        units=units,
+        lesson_urls={unit['slug']: url_for('phonetics.lesson', slug=unit['slug']) for unit in units},
+        per_round=trainer.QUESTIONS_PER_ROUND,
     )
 
 

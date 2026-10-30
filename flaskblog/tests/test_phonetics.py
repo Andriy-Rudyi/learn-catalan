@@ -3,7 +3,7 @@
 import re
 import unittest
 
-from flaskblog.phonetics import service
+from flaskblog.phonetics import service, trainer
 from flaskblog.tests.helpers import AppTestCase
 
 RUSSIAN_ONLY = re.compile('[ыЫэЭъЪёЁ]')
@@ -81,3 +81,98 @@ class PhoneticsPageTests(AppTestCase):
         navbar = body[body.index('<nav'):body.index('</nav>')]
         self.assertIn('Фонетика', navbar)
         self.assertLess(navbar.index('Дієвідміна'), navbar.index('Фонетика'))
+
+
+class TrainerDataTests(unittest.TestCase):
+    """Every hand-made task in phonetics/data/trainer.json agrees with the
+    transcriptions the site shows."""
+
+    NUCLEI = set('aəeɛiouɔ')
+
+    def setUp(self):
+        self.tasks = trainer.tasks_file()
+
+    def test_units_are_lessons(self):
+        slugs = [lesson['slug'] for lesson in service.load_lessons()]
+        self.assertLessEqual(set(self.tasks), set(slugs))
+        self.assertNotIn('trainer', slugs)   # /phonetics/trainer would hide it
+        for unit in trainer.units('uk'):
+            self.assertGreaterEqual(len(unit['tasks']), trainer.QUESTIONS_PER_ROUND, unit['slug'])
+
+    def test_sound_tasks(self):
+        for slug, tasks in self.tasks.items():
+            for task in tasks:
+                if task['type'] != 'sound':
+                    continue
+                self.assertIn(task['answer'], task['options'], task)
+                self.assertGreaterEqual(task['word'].count(task['mark']), task.get('nth', 1), task)
+                if task['answer'] != '∅':
+                    self.assertIn(task['answer'], trainer.ipa_of(task['word']).replace('ˈ', ''), task)
+
+    def test_stress_tasks(self):
+        for slug, tasks in self.tasks.items():
+            for task in tasks:
+                if task['type'] != 'stress':
+                    continue
+                self.assertEqual(task['word'], ''.join(task['syllables']), task)
+                ipa = trainer.ipa_of(task['word'])
+                vowels, stressed = 0, None
+                for char in ipa:
+                    if char == 'ˈ':
+                        stressed = vowels
+                    vowels += char in self.NUCLEI
+                self.assertEqual((len(task['syllables']), task['answer']), (vowels, stressed), (task, ipa))
+
+    def test_spelling_tasks(self):
+        for slug, tasks in self.tasks.items():
+            for task in tasks:
+                if task['type'] == 'spelling':
+                    self.assertIn(task['answer'], task['options'], task)
+                    self.assertEqual(len(task['options']), len(set(task['options'])), task)
+                    self.assertEqual(task['ipa'], trainer.ipa_of(task['answer']), task)
+                elif task['type'] == 'listen':
+                    self.assertEqual(len(task['options']), len(set(task['options'])), task)
+                else:
+                    self.assertIn(task['type'], ('sound', 'stress'), task)
+
+    def test_word_tasks_come_from_the_lesson(self):
+        for lesson, unit in zip(service.load_lessons(), trainer.units('uk')):
+            transcribe = [t for t in unit['tasks'] if t['type'] == 'transcribe']
+            self.assertEqual(len(lesson['words']), len(transcribe), lesson['slug'])
+            for task in unit['tasks']:
+                if task['type'] == 'spell':   # one spelling for the transcription
+                    self.assertEqual([task['answer']],
+                                     [w['ca'] for w in lesson['words'] if w['ipa'] == task['ipa']])
+        # Homographs: the meaning tells which word is meant.
+        dona = [t for t in trainer.units('uk')[2]['tasks'] if t['type'] == 'transcribe' and t['word'] == 'dona']
+        self.assertEqual({'ˈdɔnə', 'ˈdonə'}, {t['answer'] for t in dona})
+        self.assertEqual(2, len({t['meaning'] for t in dona}))
+
+
+class TrainerPageTests(AppTestCase):
+
+    def test_page(self):
+        response = self.client.get('/phonetics/trainer')
+        self.assertEqual(200, response.status_code)
+        body = response.data.decode()
+        self.assertIn('id="trainer-config"', body)
+        self.assertIn('phonetics-trainer.js', body)
+        self.assertIn('data-unit="naholos"', body)
+        self.assertIn('kəˈfɛ', body)
+
+    def test_links_and_sitemap(self):
+        self.assertIn('href="/phonetics/trainer"', self.client.get('/phonetics').data.decode())
+        lesson = service.load_lessons()[0]
+        body = self.client.get('/phonetics/' + lesson['slug']).data.decode()
+        self.assertIn('href="/phonetics/trainer#%s"' % lesson['slug'], body)
+        self.assertIn('/phonetics/trainer', self.client.get('/sitemap.xml').data.decode())
+
+    def test_english_meanings(self):
+        body = self.client.get('/phonetics/trainer?lang=en').data.decode()
+        self.assertIn('Pronunciation trainer', body)
+        self.assertIn('coffee', body)
+
+    def test_switched_off(self):
+        self.app.config['PHONETICS_TRAINER'] = False
+        self.assertEqual(404, self.client.get('/phonetics/trainer').status_code)
+        self.assertNotIn('/phonetics/trainer', self.client.get('/phonetics').data.decode())

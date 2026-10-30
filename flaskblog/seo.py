@@ -35,6 +35,7 @@ INDEXABLE = {
     'grammar.unit_by_number',
     'phonetics.index',
     'phonetics.lesson',
+    'phonetics.trainer_page',
     'vocabulary.dictionary',
     'vocabulary.word',
     'api_docs.developers',
@@ -172,6 +173,8 @@ def _sitemap_paths():
     for (slug,) in GrammarUnit.query.with_entities(GrammarUnit.slug).order_by(GrammarUnit.number):
         yield url_for('grammar.unit', slug=slug), []
     yield url_for('phonetics.index'), []
+    if current_app.config.get('PHONETICS_TRAINER', True):
+        yield url_for('phonetics.trainer_page'), []
     for lesson in load_lessons():
         yield url_for('phonetics.lesson', slug=lesson['slug']), []
     yield url_for('vocabulary.dictionary'), []

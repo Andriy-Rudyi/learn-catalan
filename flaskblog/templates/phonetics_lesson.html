@@ -109,6 +109,16 @@
     </p>
   {% endif %}
 
+  {% if config.PHONETICS_TRAINER %}
+    <div class="content-section trainer-cta mt-3">
+      <div>
+        <strong>{{ _('Перевірте себе') }}</strong>
+        <div class="small text-muted">{{ _('Вправи до цього уроку в тренажері вимови: відповіді перевіряються одразу.') }}</div>
+      </div>
+      <a class="btn btn-info" href="{{ url_for('phonetics.trainer_page', _anchor=lesson.slug) }}">{{ _('Тренуватися') }}</a>
+    </div>
+  {% endif %}
+
   <nav class="d-flex justify-content-between gap-2 mt-4">
     {% if previous %}
       <a class="btn btn-outline-link" href="{{ url_for('phonetics.lesson', slug=previous.slug) }}">

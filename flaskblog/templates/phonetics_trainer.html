@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+{% block meta_description %}{{ _('Тренажер каталонської вимови: транскрипція з клавіатурою IPA, наголос, звуки й правила читання, з перевіркою відповідей.') }}{% endblock %}
+{% block content %}
+<div class="grammar phonetics trainer">
+  <p class="small"><a href="{{ url_for('phonetics.index') }}">← {{ _('Фонетика') }}</a></p>
+  <h1>{{ _('Тренажер вимови') }} <span class="beta-badge beta-badge-lg" title="{{ _('Нова функція: можливі неточності') }}">Beta</span></h1>
+  <p class="text-muted">
+    {{ _('Вправи до кожного уроку фонетики з перевіркою відповідей: як звучить літера, де наголос, як записати слово транскрипцією і навпаки. Один раунд — {count} завдань.', count=per_round) }}
+    {{ _('Ваш найкращий результат зберігається в цьому браузері.') }}
+  </p>
+
+  <div class="trainer-grid">
+    <nav class="content-section trainer-units" aria-label="{{ _('Уроки') }}">
+      <h2 class="h6">{{ _('Оберіть урок') }}</h2>
+      <div class="list-group list-group-flush" id="trainer-units">
+        <button type="button" class="list-group-item list-group-item-action trainer-unit" data-unit="*">
+          <span class="unit-number">∑</span> <strong>{{ _('Усі уроки разом') }}</strong>
+          <span class="trainer-best" data-best="*"></span>
+        </button>
+        {% for unit in units %}
+          <button type="button" class="list-group-item list-group-item-action trainer-unit" data-unit="{{ unit.slug }}">
+            <span class="unit-number">{{ unit.number }}</span> {{ unit.title }}
+            <span class="trainer-best" data-best="{{ unit.slug }}"></span>
+          </button>
+        {% endfor %}
+      </div>
+    </nav>
+
+    <section class="content-section trainer-main" id="trainer-main" aria-live="polite">
+      <div id="trainer-start">
+        <p class="mb-2">{{ _('Оберіть урок ліворуч або почніть з усіх уроків разом.') }}</p>
+        <button type="button" class="btn btn-info" data-start="*">{{ _('Почати') }}</button>
+      </div>
+      <noscript><p class="text-danger">{{ _('Для тренажера потрібен JavaScript.') }}</p></noscript>
+    </section>
+  </div>
+
+  <details class="trainer-help content-section">
+    <summary>{{ _('Як вводити транскрипцію') }}</summary>
+    <p class="small mb-2">{{ _('Натискайте символи на екранній клавіатурі під полем відповіді або вводіть їх зі звичайної клавіатури:') }}</p>
+    <div class="trainer-legend small">
+      <span><kbd>@</kbd> ə</span> <span><kbd>E</kbd> ɛ</span> <span><kbd>O</kbd> ɔ</span> <span><kbd>R</kbd> ɾ</span>
+      <span><kbd>L</kbd> ʎ</span> <span><kbd>N</kbd> ɲ</span> <span><kbd>G</kbd> ŋ</span> <span><kbd>S</kbd> ʃ</span>
+      <span><kbd>Z</kbd> ʒ</span> <span><kbd>C</kbd> tʃ</span> <span><kbd>J</kbd> dʒ</span> <span><kbd>'</kbd> ˈ</span>
+    </div>
+    <p class="small text-muted mt-2 mb-0">{{ _('Наголос ˈ ставиться перед наголошеним складом: [ˈkazə], [kəˈfɛ]. В односкладових словах його можна не писати. Дужки [ ] вводити не треба.') }}</p>
+  </details>
+</div>
+
+<script type="application/json" id="trainer-config">{{ {
+  'units': units,
+  'lessonUrls': lesson_urls,
+  'perRound': per_round,
+  'strings': {
+    'all': _('Усі уроки разом'),
+    'question': _('Завдання {n} з {total}'),
+    'score': _('Правильно: {n}'),
+    'sound': _('Як звучить виділене?'),
+    'stress': _('Який склад наголошений?'),
+    'spelling': _('Як записати це слово?'),
+    'listen': _('Яке слово ви почули?'),
+    'play': _('Прослухати'),
+    'transcribe': _('Запишіть транскрипцію'),
+    'spell': _('Яке це слово? Напишіть його'),
+    'silent': _('не вимовляється'),
+    'check': _('Перевірити'),
+    'next': _('Далі'),
+    'finish': _('Результат'),
+    'again': _('Ще раз'),
+    'right': _('Правильно!'),
+    'wrong': _('Ні. Правильна відповідь:'),
+    'noStress': _('Звуки правильні, але позначте наголос ˈ перед наголошеним складом.'),
+    'badStress': _('Звуки правильні, але наголос ˈ стоїть не там.'),
+    'lesson': _('Урок'),
+    'done': _('Раунд завершено'),
+    'best': _('Найкращий результат'),
+    'erase': _('Стерти'),
+    'noVoice': _('На цьому пристрої немає каталанського голосу, тому завдання на слух пропущено.'),
+    'empty': _('Введіть відповідь.'),
+  },
+} | tojson }}</script>
+{% endblock content %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='phonetics-trainer.js') }}"></script>
+{% endblock %}

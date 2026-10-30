@@ -657,6 +657,262 @@ a.article-title:hover {
   }
 }
 
+/* ---------- Pronunciation trainer (/phonetics/trainer) ---------- */
+.trainer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 18rem) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.trainer-units .list-group-item {
+  display: flex;
+  align-items: baseline;
+  gap: .4rem;
+  text-align: left;
+  font-size: .92rem;
+  background: transparent;
+}
+
+.trainer-units .list-group-item.active {
+  background: var(--menu-hover);
+  color: inherit;
+  border-color: var(--border-soft);
+  font-weight: 600;
+}
+
+.trainer-best {
+  margin-left: auto;
+  font-size: .78rem;
+  color: var(--answer-color);
+  font-variant-numeric: tabular-nums;
+}
+
+.trainer-main {
+  min-height: 16rem;
+}
+
+.trainer-title {
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.trainer-bar {
+  height: 6px;
+  border-radius: 99px;
+  background: var(--border-soft);
+  overflow: hidden;
+  margin: .4rem 0 1rem;
+}
+
+.trainer-bar i {
+  display: block;
+  height: 100%;
+  background: var(--brand);
+  transition: width .3s;
+}
+
+.trainer-prompt {
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
+
+.trainer-target {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .6rem;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.trainer-target .ca {
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.trainer-target .ipa {
+  white-space: normal;
+}
+
+.trainer-meaning {
+  font-size: .95rem;
+  color: var(--muted-text);
+}
+
+.trainer-mark {
+  background: var(--bs-warning-bg-subtle);
+  color: inherit;
+  padding: 0 .1em;
+  border-radius: 3px;
+  text-decoration: underline;
+}
+
+.trainer-options,
+.trainer-syllables {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 9rem), 1fr));
+  gap: .5rem;
+}
+
+.trainer-syllables {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.trainer-option,
+.trainer-syllable {
+  border: 1px solid var(--border-soft);
+  background: var(--surface-muted);
+  color: inherit;
+  border-radius: 8px;
+  padding: .55rem .8rem;
+  min-height: 2.75rem;
+  font-size: 1.1rem;
+}
+
+.trainer-syllable {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.4rem;
+  min-width: 3.2rem;
+}
+
+.trainer-option:hover:not(:disabled),
+.trainer-syllable:hover:not(:disabled) {
+  border-color: var(--brand);
+}
+
+.trainer-option.is-right,
+.trainer-syllable.is-right {
+  border-color: var(--answer-color);
+  background: var(--bs-success-bg-subtle);
+}
+
+.trainer-option.is-wrong,
+.trainer-syllable.is-wrong {
+  border-color: var(--bs-danger);
+  background: var(--bs-danger-bg-subtle);
+}
+
+.trainer-input-row {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+.trainer-input-row .form-control {
+  font-size: 1.3rem;
+  min-width: 0;
+}
+
+.trainer-input-row .ipa-input {
+  font-family: "Charis SIL", "Doulos SIL", "Gentium Plus", "Noto Sans", "Segoe UI", "DejaVu Sans", sans-serif;
+}
+
+.trainer-bracket {
+  font-size: 1.4rem;
+  color: var(--muted-text);
+}
+
+.trainer-keys {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(2.6rem, 1fr));
+  gap: .3rem;
+  margin-top: .6rem;
+}
+
+.trainer-key {
+  border: 1px solid var(--border-soft);
+  background: var(--surface-muted);
+  color: inherit;
+  border-radius: 7px;
+  height: 2.6rem;
+  font-size: 1.15rem;
+  white-space: nowrap;
+}
+
+.trainer-key:hover {
+  border-color: var(--brand);
+}
+
+.trainer-key-wide {
+  grid-column: span 2;
+}
+
+.trainer-feedback {
+  margin-top: 1rem;
+  padding: .7rem .9rem;
+  border-radius: 8px;
+  border-left: 3px solid;
+}
+
+.trainer-feedback.is-ok {
+  background: var(--bs-success-bg-subtle);
+  border-color: var(--answer-color);
+}
+
+.trainer-feedback.is-no {
+  background: var(--bs-danger-bg-subtle);
+  border-color: var(--bs-danger);
+}
+
+.trainer-feedback.is-half {
+  background: var(--bs-warning-bg-subtle);
+  border-color: var(--bs-warning);
+}
+
+.trainer-answer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .4rem;
+  margin: .4rem 0;
+  font-size: 1.15rem;
+}
+
+.trainer-done {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.trainer-big {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  line-height: 1.1;
+}
+
+.trainer-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem .9rem;
+}
+
+.btn-speak-lg {
+  width: auto;
+  height: auto;
+  border-radius: 999px;
+  padding: .4rem 1rem;
+  font-size: 1rem;
+}
+
+.trainer-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+}
+
+@media (max-width: 767.98px) {
+  .trainer-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .trainer-units {
+    order: 2;
+  }
+}
+
 /* ---------- Words that are not Central Catalan ---------- */
 .variety-badge {
   background: var(--bs-warning-bg-subtle);

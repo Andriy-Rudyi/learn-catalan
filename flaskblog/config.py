@@ -106,6 +106,11 @@ class Config:
     # and its menu item away; the translation memory stays in the database.
     TRANSLATOR = os.getenv('TRANSLATOR', 'True') == 'True'
 
+    # /phonetics/trainer: self-checking practice for the pronunciation lessons
+    # (flaskblog/phonetics/trainer.py). PHONETICS_TRAINER=False takes the page
+    # and its links away.
+    PHONETICS_TRAINER = os.getenv('PHONETICS_TRAINER', 'True') == 'True'
+
     # Open API (/api/v1): requests a minute per client address; 0 = no limit.
     API_RATE_LIMIT = int(os.getenv('API_RATE_LIMIT', '120'))
 
@@ -136,6 +141,7 @@ class TestConfig(Config):
     READER = True
     READING = True
     TRANSLATOR = True
+    PHONETICS_TRAINER = True
     TRANSCRIPTION = True
     SITE_URL = None
     # The suite was written against the Ukrainian pages.
