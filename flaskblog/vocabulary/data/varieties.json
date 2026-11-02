@@ -1,9 +1,27 @@
 {
+ "Déu vos guard": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "abastir": {
+  "variety": [
+   "valencian"
+  ],
+  "source": "wiktionary-ca"
+ },
  "abatollar": {
   "variety": [
    "valencian"
   ],
   "source": "wiktionary-ca"
+ },
+ "abellir": {
+  "variety": [
+   "valencian"
+  ],
+  "source": "wiktionary-en"
  },
  "abessonar": {
   "variety": [
@@ -36,6 +54,12 @@
    "balearic"
   ],
   "source": "wiktionary-ca"
+ },
+ "acanissar": {
+  "variety": [
+   "balearic"
+  ],
+  "source": "wiktionary-en"
  },
  "acatxar": {
   "variety": [
@@ -274,11 +298,12 @@
  },
  "atraure": {
   "variety": [
+   "balearic",
    "valencian",
-   "balearic"
+   "western"
   ],
   "central": "atreure",
-  "source": "review"
+  "source": "wiktionary-en"
  },
  "atupar": {
   "variety": [
@@ -797,11 +822,17 @@
   ],
   "source": "wiktionary-ca"
  },
+ "esparracar": {
+  "variety": [
+   "northwestern"
+  ],
+  "source": "wiktionary-ca"
+ },
  "espaventar": {
   "variety": [
    "archaic"
   ],
-  "source": "wiktionary-en"
+  "source": "wiktionary-ca"
  },
  "estormeiar": {
   "variety": [
@@ -835,6 +866,13 @@
   ],
   "central": "extreure",
   "source": "review"
+ },
+ "festeig": {
+  "variety": [
+   "alguerese",
+   "balearic"
+  ],
+  "source": "wiktionary-ca"
  },
  "flastomar": {
   "variety": [
@@ -919,6 +957,12 @@
   ],
   "source": "wiktionary-ca"
  },
+ "infeccionar": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-ca"
+ },
  "jaupar": {
   "variety": [
    "northern"
@@ -967,7 +1011,7 @@
    "archaic",
    "balearic"
   ],
-  "source": "wiktionary-en"
+  "source": "wiktionary-ca"
  },
  "malcorar": {
   "variety": [
@@ -1056,17 +1100,24 @@
  },
  "nadar": {
   "variety": [
+   "balearic",
    "valencian",
-   "balearic"
+   "western"
   ],
   "central": "nedar",
-  "source": "review"
+  "source": "wiktionary-en"
  },
  "nasprar": {
   "variety": [
    "northern"
   ],
   "source": "wiktionary-ca"
+ },
+ "noure": {
+  "variety": [
+   "archaic"
+  ],
+  "source": "wiktionary-en"
  },
  "nugar": {
   "variety": [
@@ -1077,10 +1128,12 @@
  },
  "nàixer": {
   "variety": [
-   "valencian"
+   "alguerese",
+   "valencian",
+   "western"
   ],
   "central": "néixer",
-  "source": "review"
+  "source": "wiktionary-ca"
  },
  "nòmer": {
   "variety": [
@@ -1158,6 +1211,13 @@
  "perbocar": {
   "variety": [
    "dialectal"
+  ],
+  "source": "wiktionary-ca"
+ },
+ "pernoliar": {
+  "variety": [
+   "valencian",
+   "western"
   ],
   "source": "wiktionary-ca"
  },
