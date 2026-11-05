@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+{% block meta_description %}{{ _('Каталанські сталі вирази (frases fetes) за темами: значення, український відповідник, приклад і тренування.') }}{% endblock %}
+{% block content %}
+<div class="grammar course">
+  <p class="small"><a href="{{ url_for('course.index') }}">← {{ _('Курс C1/C2') }}</a></p>
+  <h1>{{ _('Сталі вирази (frases fetes)') }} <span class="beta-badge beta-badge-lg">Beta</span></h1>
+  <p class="text-muted">
+    {{ _('Вирази, які варто знати для рівнів C1 і C2: значення, український відповідник, дослівний переклад і приклад. Позначайте ті, що вже знаєте, і тренуйтеся.') }}
+    {{ _('Виразів: {count}', count=phrases|length) }}.
+  </p>
+
+  {% if phrases %}
+  <div class="content-section course-phrase-tools">
+    <input type="search" class="form-control" id="phrase-search" placeholder="{{ _('Пошук: вираз або значення') }}" aria-label="{{ _('Пошук') }}">
+    <select class="form-select" id="phrase-theme" aria-label="{{ _('Тема') }}">
+      <option value="">{{ _('Усі теми') }}</option>
+      {% for key, name, count in themes %}<option value="{{ key }}">{{ _(name) }} ({{ count }})</option>{% endfor %}
+    </select>
+    <label class="form-check-label small"><input class="form-check-input me-1" type="checkbox" id="phrase-unknown">{{ _('Лише ще не вивчені') }}</label>
+    <button type="button" class="btn btn-info" id="phrase-practice">{{ _('Тренуватися') }}</button>
+  </div>
+
+  <section class="content-section d-none" id="phrase-quiz" aria-live="polite"></section>
+
+  <div id="phrase-list">
+    {% for key, name, count in themes %}
+      <section class="course-theme" data-theme="{{ key }}">
+        <h2 class="h5">{{ _(name) }} <span class="small text-muted">· {{ count }}</span></h2>
+        {% for p in phrases if p.theme == key %}
+          <article class="course-phrase" data-phrase="{{ p.ca }}" data-theme="{{ key }}">
+            <div class="course-phrase-head">
+              <button class="btn-speak btn-speak-sm" type="button" data-say="{{ p.ca }}" aria-label="{{ _('Прослухати') }}: {{ p.ca }}">🔊</button>
+              <strong class="ca" lang="ca">{{ p.ca }}</strong>
+              <span class="badge bg-body-secondary text-body-secondary">{{ p.level }}</span>
+              {% if p.type == 'refrany' %}<span class="badge bg-body-secondary text-body-secondary">{{ _('прислів’я') }}</span>{% endif %}
+              <label class="course-known small ms-auto"><input type="checkbox" class="form-check-input me-1" data-known="{{ p.ca }}">{{ _('Знаю') }}</label>
+            </div>
+            <div class="course-phrase-meaning">
+              {% if lang == 'uk' %}{{ p.uk }}{% if p.uk_idiom %} <span class="text-muted">· {{ p.uk_idiom }}</span>{% endif %}
+              {% elif lang == 'fr' %}{{ p.fr or p.en }}{% else %}{{ p.en }}{% endif %}
+            </div>
+            {% if lang == 'uk' and p.literal_uk %}<div class="small text-muted">{{ _('Дослівно') }}: {{ p.literal_uk }}</div>{% endif %}
+            <div class="course-phrase-example small">
+              <span lang="ca">{{ p.example_ca }}</span>
+              <span class="text-muted">{% if lang == 'uk' %}{{ p.example_uk }}{% else %}{{ p.example_en }}{% endif %}</span>
+            </div>
+          </article>
+        {% endfor %}
+      </section>
+    {% endfor %}
+  </div>
+  {% else %}
+    <p class="text-muted">{{ _('Тут поки нічого немає.') }}</p>
+  {% endif %}
+</div>
+
+<script type="application/json" id="phrases-config">{{ {
+  'phrases': phrases | map(attribute='ca') | list,
+  'meanings': phrases_meanings,
+  'themes': phrases | map(attribute='theme') | list,
+  'strings': {
+    'meaning': _('Що означає цей вираз?'),
+    'which': _('Який вираз має це значення?'),
+    'right': _('Правильно!'),
+    'wrong': _('Ні. Правильно:'),
+    'next': _('Далі'),
+    'finish': _('Результат'),
+    'again': _('Ще раз'),
+    'close': _('Закрити'),
+    'few': _('Для тренування потрібно щонайменше 4 вирази: змініть фільтр.'),
+  },
+} | tojson }}</script>
+{% endblock content %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='course-phrases.js') }}"></script>
+{% endblock %}

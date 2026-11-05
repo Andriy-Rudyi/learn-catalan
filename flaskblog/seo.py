@@ -36,6 +36,10 @@ INDEXABLE = {
     'phonetics.index',
     'phonetics.lesson',
     'phonetics.trainer_page',
+    'course.index',
+    'course.phrases_page',
+    'course.article',
+    'course.monologue',
     'vocabulary.dictionary',
     'vocabulary.word',
     'api_docs.developers',
@@ -175,6 +179,9 @@ def _sitemap_paths():
     yield url_for('phonetics.index'), []
     if current_app.config.get('PHONETICS_TRAINER', True):
         yield url_for('phonetics.trainer_page'), []
+    if current_app.config.get('COURSE_C1', True):
+        for endpoint in ('course.index', 'course.phrases_page', 'course.article', 'course.monologue'):
+            yield url_for(endpoint), []
     for lesson in load_lessons():
         yield url_for('phonetics.lesson', slug=lesson['slug']), []
     yield url_for('vocabulary.dictionary'), []

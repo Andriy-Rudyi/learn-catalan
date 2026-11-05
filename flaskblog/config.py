@@ -111,6 +111,11 @@ class Config:
     # and its links away.
     PHONETICS_TRAINER = os.getenv('PHONETICS_TRAINER', 'True') == 'True'
 
+    # /c1: the C1/C2 course (flaskblog/course): its programme mapped to the
+    # site, frases fetes, opinion article and monologue trainers.
+    # COURSE_C1=False takes the pages and the menu item away.
+    COURSE_C1 = os.getenv('COURSE_C1', 'True') == 'True'
+
     # Open API (/api/v1): requests a minute per client address; 0 = no limit.
     API_RATE_LIMIT = int(os.getenv('API_RATE_LIMIT', '120'))
 
@@ -142,6 +147,7 @@ class TestConfig(Config):
     READING = True
     TRANSLATOR = True
     PHONETICS_TRAINER = True
+    COURSE_C1 = True
     TRANSCRIPTION = True
     SITE_URL = None
     # The suite was written against the Ukrainian pages.

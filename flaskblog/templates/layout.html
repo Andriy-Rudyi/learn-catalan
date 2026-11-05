@@ -154,11 +154,15 @@
                    href="{{ url_for('main.conjugator') }}">{{ icon('conjugator') }}<span>{{ _('Дієвідміна') }}</span></a></li>
             <li><a class="lc-menu-link{% if section == 'phonetics' %} active{% endif %}"
                    href="{{ url_for('phonetics.index') }}">{{ icon('phonetics') }}<span>{{ _('Фонетика') }}</span></a></li>
+            {% if config.COURSE_C1 %}
+            <li><a class="lc-menu-link{% if endpoint and endpoint.startswith('course.') %} active{% endif %}"
+                   href="{{ url_for('course.index') }}">{{ icon('course') }}<span>{{ _('Курс C1/C2') }}</span><span class="beta-badge">Beta</span></a></li>
+            {% endif %}
             {% if config.READER %}
             <li><a class="lc-menu-link{% if endpoint == 'reader.index' %} active{% endif %}"
                    href="{{ url_for('reader.index') }}">{{ icon('text') }}<span>{{ _('Текст') }}</span><span class="beta-badge">Beta</span></a></li>
             {% if config.READING %}
-            <li><a class="lc-menu-link{% if endpoint in ('reader.library', 'reader.work', 'reader.scene') %} active{% endif %}"
+            <li><a class="lc-menu-link{% if endpoint in ('reader.library', 'reader.work', 'reader.scene', 'reader.chapter') %} active{% endif %}"
                    href="{{ url_for('reader.library') }}">{{ icon('book') }}<span>{{ _('Читання') }}</span><span class="beta-badge">Beta</span></a></li>
             {% endif %}
             {% endif %}

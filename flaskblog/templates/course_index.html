@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block meta_description %}{{ _('Курс каталанської C1/C2 українською: програма курсу Superior, сталі вирази, тренажери статті-думки на {words} слів і монологу на {minutes} хвилин.', words=article_words, minutes=monologue_minutes) }}{% endblock %}
+{% block content %}
+<div class="grammar course">
+  <h1>{{ _('Курс C1/C2') }} <span class="beta-badge beta-badge-lg" title="{{ _('Нова функція: можливі неточності') }}">Beta</span></h1>
+  <p class="text-muted">
+    {{ _('Підготовка до рівнів C1 (Suficiència) і C2 (Superior): усі теми програми курсу Superior з посиланнями на юніти сайту, сталі вирази й тренажери двох завдань іспиту.') }}
+  </p>
+
+  <div class="course-cards">
+    <a class="content-section course-card" href="{{ url_for('course.phrases_page') }}">
+      <span class="course-card-title">{{ _('Сталі вирази (frases fetes)') }}</span>
+      <span class="small text-muted">{{ _('Вирази за темами зі значенням, українським відповідником і прикладом; тренування.') }}</span>
+      {% if phrase_count %}<span class="course-card-meta">{{ _('Виразів: {count}', count=phrase_count) }}</span>{% endif %}
+    </a>
+    <a class="content-section course-card" href="{{ url_for('course.article') }}">
+      <span class="course-card-title">{{ _('Стаття-думка') }}</span>
+      <span class="small text-muted">{{ _('Письмове завдання: стаття-думка на {words} слів. Редактор із лічильником слів, структурою та сполучними словами.', words=article_words) }}</span>
+    </a>
+    <a class="content-section course-card" href="{{ url_for('course.monologue') }}">
+      <span class="course-card-title">{{ _('Монолог') }}</span>
+      <span class="small text-muted">{{ _('Усне завдання: монолог на {minutes} хвилин. Картки тем, таймер, запис себе і самоперевірка.', minutes=monologue_minutes) }}</span>
+    </a>
+  </div>
+
+  <h2 class="h4 mt-4">{{ _('Програма курсу') }}</h2>
+  {% for part, rows in programme %}
+    <div class="grammar-section">
+      <h3>{{ loop.index }}. {{ _(part) }}</h3>
+      <div class="list-group">
+        {% for row in rows %}
+          <div class="list-group-item course-topic">
+            <strong>{{ _(row.topic) }}</strong>
+            <div class="course-links">
+              {% for unit in row.units %}
+                <a href="{{ url_for('grammar.unit', slug=unit.slug) }}"><span class="unit-number">{{ unit.number }}</span>{{ unit.l_title }}</a>
+              {% endfor %}
+              {% if row.page %}
+                <a class="course-page-link" href="{{ row.page }}">{{ _('Відкрити') }} →</a>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+
+  <div class="content-section mt-4">
+    <h2 class="h5">{{ _('Іспит') }}</h2>
+    <ul class="mb-0">
+      <li>{{ _('Письмо: стаття-думка (article d’opinió) приблизно на {words} слів.', words=article_words) }} <a href="{{ url_for('course.article') }}">{{ _('Тренуватися') }} →</a></li>
+      <li>{{ _('Усно: монолог приблизно на {minutes} хвилин.', minutes=monologue_minutes) }} <a href="{{ url_for('course.monologue') }}">{{ _('Тренуватися') }} →</a></li>
+      {% if config.PHONETICS_TRAINER %}
+      <li>{{ _('Вимова: тренажер вимови з транскрипцією та наголосом.') }} <a href="{{ url_for('phonetics.trainer_page') }}">{{ _('Тренуватися') }} →</a></li>
+      {% endif %}
+    </ul>
+  </div>
+</div>
+{% endblock content %}

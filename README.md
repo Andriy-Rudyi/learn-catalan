@@ -21,6 +21,9 @@ A Flask-based blog platform for learning and teaching the Catalan language.
   with the device's own Catalan voice (also on dictionary, conjugator and
   grammar pages). Lessons live in `flaskblog/phonetics/data/lessons.json`,
   so no database step is needed.
+- **C1/C2 course** at `/c1`: the Superior course programme mapped to the
+  site, frases fetes, opinion article and monologue trainers. See
+  [C1/C2 course](#c1c2-course)
 - **Pronunciation trainer** at `/phonetics/trainer`: self-checking rounds for
   every lesson, with an on-screen IPA keyboard. See
   [Pronunciation trainer](#pronunciation-trainer)
@@ -504,6 +507,29 @@ The Catalan side of every translation can be clicked word by word (the
 browser. `TRANSLATOR=False` removes the page and its menu item; migration
 `d5a8c3e1f907` adds the table (downgrade drops it).
 
+## C1/C2 course
+
+`/c1` gathers what a learner preparing C1 (Suficiència) or C2 (Superior)
+needs (`flaskblog/course/`):
+
+- the programme of the Superior course (spelling review, morphology,
+  vocabulary), each topic linked to the grammar units and pages that cover
+  it (`course/content.py`, units by number);
+- `/c1/frases-fetes`: about 200 Catalan idioms by theme with their meaning
+  in Catalan, Ukrainian, English and French, a Ukrainian equivalent, a
+  word-for-word rendering and an example; learners mark the ones they know
+  and practise both ways (meaning ↔ phrase). Each entry was written and
+  then checked by a second, independent pass; anything either was unsure
+  about was left out (`course/data/frases_fetes.json`);
+- `/c1/article`: an editor for an opinion article of about 410 words with a
+  live word count, the structure, connectors to insert and a check of
+  paragraphs, connectors, repeated words and long sentences;
+- `/c1/monologue`: topic cards, preparation time, a 6-minute timer that
+  says when to move on, recording in the browser and a self-check list.
+
+Drafts, known phrases and recordings stay in the learner's browser; nothing
+is sent to the server. `COURSE_C1=False` removes the pages and the menu item.
+
 ## Pronunciation trainer
 
 `/phonetics/trainer` turns every pronunciation lesson into a unit of
@@ -636,6 +662,7 @@ READER=True                  # set to False to take away the /text page
 READING=True                 # set to False to take away the /reading section
 TRANSLATOR=True              # set to False to take away the /translator page
 PHONETICS_TRAINER=True       # set to False to take away /phonetics/trainer
+COURSE_C1=True               # set to False to take away the /c1 course pages
 TRANSCRIPTION=True           # set to False to show only pronunciations typed in by an editor
 TEST_DATABASE_URI=           # optional, tests default to in-memory SQLite
 ```

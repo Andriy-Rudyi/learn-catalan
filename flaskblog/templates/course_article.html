@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+{% block meta_description %}{{ _('Тренажер статті-думки каталанською на {words} слів: лічильник слів, структура, сполучні слова й перевірка повторів.', words=words) }}{% endblock %}
+{% block content %}
+<div class="grammar course">
+  <p class="small"><a href="{{ url_for('course.index') }}">← {{ _('Курс C1/C2') }}</a></p>
+  <h1>{{ _('Стаття-думка') }} <span class="beta-badge beta-badge-lg">Beta</span></h1>
+  <p class="text-muted">{{ _('Напишіть статтю-думку приблизно на {words} слів. Чернетка зберігається лише в цьому браузері; текст нікуди не надсилається.', words=words) }}</p>
+
+  <div class="course-grid">
+    <section class="content-section">
+      <label class="form-label fw-semibold" for="article-topic">{{ _('Тема') }}</label>
+      <div class="d-flex gap-2 mb-3">
+        <select class="form-select" id="article-topic" lang="ca">
+          {% for topic in topics %}<option>{{ topic }}</option>{% endfor %}
+        </select>
+        <button type="button" class="btn btn-outline-secondary" id="article-random" title="{{ _('Випадкова тема') }}">🎲</button>
+      </div>
+      <label class="form-label fw-semibold" for="article-text">{{ _('Текст') }}</label>
+      <textarea class="form-control course-editor" id="article-text" lang="ca" rows="16" spellcheck="true"
+                placeholder="{{ _('Заголовок, вступ із тезою, аргументи, контраргумент, висновок…') }}"></textarea>
+      <div class="course-counter" id="article-counter" aria-live="polite"></div>
+      <div class="d-flex flex-wrap gap-2 mt-2">
+        <button type="button" class="btn btn-info" id="article-check">{{ _('Перевірити') }}</button>
+        <button type="button" class="btn btn-outline-secondary" id="article-copy">{{ _('Копіювати') }}</button>
+        <button type="button" class="btn btn-outline-danger ms-auto" id="article-clear">{{ _('Очистити') }}</button>
+      </div>
+      <div id="article-report" class="course-report mt-3" aria-live="polite"></div>
+    </section>
+
+    <aside>
+      <div class="content-section">
+        <h2 class="h6">{{ _('Структура') }}</h2>
+        <ol class="small mb-0 ps-3">
+          {% for name, about in structure %}<li><strong>{{ _(name) }}.</strong> {{ _(about) }}</li>{% endfor %}
+        </ol>
+      </div>
+      <div class="content-section">
+        <h2 class="h6">{{ _('Сполучні слова') }}</h2>
+        <p class="small text-muted">{{ _('Натисніть, щоб вставити в текст.') }}</p>
+        {% for label, items in connectors %}
+          <div class="course-connector-group">
+            <div class="small fw-semibold">{{ _(label) }}</div>
+            <div class="course-chips" lang="ca">
+              {% for item in items %}<button type="button" class="course-chip" data-insert="{{ item }}">{{ item }}</button>{% endfor %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </aside>
+  </div>
+</div>
+
+<script type="application/json" id="article-config">{{ {
+  'target': words,
+  'connectors': connectors | map('last') | list,
+  'strings': {
+    'words': _('Слів: {n} з ~{target}'),
+    'short': _('Ще приблизно {n} слів.'),
+    'long': _('На {n} слів більше, ніж треба: варто скоротити.'),
+    'good': _('Обсяг добрий.'),
+    'paragraphs': _('Абзаців: {n}. Радимо 4–6: вступ, аргументи, контраргумент, висновок.'),
+    'paragraphsOk': _('Абзаців: {n}.'),
+    'connectors': _('Різних сполучних слів: {n}.'),
+    'fewConnectors': _('Сполучних слів замало: додайте ще кілька, щоб текст був зв’язним.'),
+    'repeated': _('Слова, що повторюються найчастіше:'),
+    'noRepeats': _('Помітних повторів немає.'),
+    'longSentences': _('Задовгі речення (понад 40 слів): {n}. Спробуйте їх розділити.'),
+    'noTitle': _('Немає заголовка: перший рядок має бути короткою назвою статті.'),
+    'copied': _('Скопійовано'),
+    'confirmClear': _('Стерти текст?'),
+  },
+} | tojson }}</script>
+{% endblock content %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='course-article.js') }}"></script>
+{% endblock %}
