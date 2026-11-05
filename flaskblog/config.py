@@ -77,6 +77,12 @@ class Config:
     # https://learn-catalan.com. Without it the address of the request is used.
     SITE_URL = os.getenv('SITE_URL')
 
+    # One domain for all the language sites (flaskblog/sites.py), e.g.
+    # langwave.app: the domain itself shows the language picker,
+    # catalan.langwave.app is this site, and one login works on all of them.
+    # Without it every address is the Catalan site, as before.
+    BASE_DOMAIN = os.getenv('BASE_DOMAIN')
+
     # Site language for visitors whose browser asks for none of the site's
     # languages (English, Ukrainian, French; Russian gets Ukrainian).
     DEFAULT_LANGUAGE = os.getenv('DEFAULT_LANGUAGE', 'en')
@@ -150,5 +156,6 @@ class TestConfig(Config):
     COURSE_C1 = True
     TRANSCRIPTION = True
     SITE_URL = None
+    BASE_DOMAIN = None
     # The suite was written against the Ukrainian pages.
     DEFAULT_LANGUAGE = 'uk'

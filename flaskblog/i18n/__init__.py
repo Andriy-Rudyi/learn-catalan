@@ -273,8 +273,9 @@ def init_app(app):
             return response  # ?lang= there picks translations, not the interface
         chosen = request.args.get('lang')
         if chosen in LANGUAGES and request.cookies.get(COOKIE_NAME) != chosen:
+            from flaskblog.sites import cookie_domain
             response.set_cookie(COOKIE_NAME, chosen, max_age=COOKIE_MAX_AGE,
-                                samesite='Lax')
+                                samesite='Lax', domain=cookie_domain())
         response.vary.add('Cookie')
         response.vary.add('Accept-Language')
         return response

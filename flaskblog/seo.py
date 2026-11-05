@@ -72,6 +72,9 @@ def enabled():
 
 def site_url():
     """Scheme and host of the public site, without a trailing slash."""
+    from flaskblog import sites
+    if sites.active():
+        return sites.site_url()
     configured = current_app.config.get('SITE_URL')
     if configured:
         return configured.rstrip('/')

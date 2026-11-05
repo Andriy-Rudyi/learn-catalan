@@ -602,6 +602,35 @@ French has no course versions yet; its dictionary file
 `flaskblog/tests/test_i18n.py` renders the English pages and fails if any of
 them still shows Cyrillic, so a missing translation is caught by the tests.
 
+## Language sites
+
+All the language sites live under one domain (`flaskblog/sites.py`). With
+`BASE_DOMAIN=langwave.app`:
+
+| Address | What it shows |
+| --- | --- |
+| `langwave.app` | the language picker; any other path goes to the same path on the Catalan site |
+| `www.langwave.app` | goes to `langwave.app` |
+| `catalan.langwave.app` | this site |
+| `english.`, `french.`, `german.` | registered in `SITES` but switched off (404, not in the picker) |
+| other subdomains | go to the picker |
+| any other host (e.g. `*.onrender.com`) | goes to the same address on `catalan.` (301) |
+| `localhost` | the Catalan site, for development |
+
+Subdomains are named after the language in English, so they are not confused
+with the interface language (`?lang=en`). One account works everywhere: the
+session, "remember me" and interface language cookies are set for the whole
+domain. A site is switched on by setting `enabled=True` in `SITES` once it has
+its material.
+
+Without `BASE_DOMAIN` nothing changes: every host is the Catalan site.
+
+To go live on Render: add `langwave.app`, `www.langwave.app` and
+`catalan.langwave.app` as custom domains of the service (Settings → Custom
+Domains), create the DNS records the registrar is told to, then set
+`BASE_DOMAIN=langwave.app` in the environment. Everyone is logged out once,
+since the cookies move to the new domain.
+
 ## Testing
 
 ```bash
@@ -656,6 +685,7 @@ SHOW_FAQ=True                # set to False to hide the FAQ page
 DESIGN=modern                # set to classic to bring back the earlier look for everyone
 SEO=True                     # set to False to switch off the search engine tags, robots.txt and sitemap.xml
 SITE_URL=https://example.com # public address for canonical links and the sitemap (optional)
+BASE_DOMAIN=langwave.app     # one domain for all language sites, see Language sites (optional)
 API_RATE_LIMIT=120           # open API requests a minute per client address; 0 = no limit
 SENSES=True                  # set to False to show one translation line per language instead of meanings
 READER=True                  # set to False to take away the /text page
