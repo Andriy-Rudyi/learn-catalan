@@ -205,7 +205,7 @@ MESSAGES = {
         'Import finished: {created} added, {updated} updated, {skipped} skipped.'
     ),
     'рядок {number}: потрібні колонки term і translation': 'row {number}: the term and translation columns are required',
-    'Інші мови — колонки <code>translation_fr</code>, <code>example_fr</code>, <code>notes_fr</code> (і так само для it, es, pl, de, ar, zh).': (
+    'Інші мови – колонки <code>translation_fr</code>, <code>example_fr</code>, <code>notes_fr</code> (і так само для it, es, pl, de, ar, zh).': (
         'Other languages: columns <code>translation_fr</code>, <code>example_fr</code>, <code>notes_fr</code> '
         '(and the same for it, es, pl, de, ar, zh).'
     ),
@@ -458,7 +458,7 @@ MESSAGES = {
         'Languages without translations yet will appear in the answers as soon as they are added.'
     ),
     'Правила': 'Rules',
-    'До {limit} запитів на хвилину з однієї адреси. Більше — відповідь 429 і заголовок Retry-After.': (
+    'До {limit} запитів на хвилину з однієї адреси. Більше – відповідь 429 і заголовок Retry-After.': (
         'Up to {limit} requests a minute from one address. Beyond that the answer is 429 with a Retry-After header.'
     ),
     'Відповіді можна кешувати: вони змінюються рідко (Cache-Control: 1 година).': (
@@ -617,7 +617,7 @@ MESSAGES = {
     'Нова функція: можливі неточності': 'New feature: there may be inaccuracies',
     'Приблизна вимова: правила не знають, відкрите чи закрите e/o, і чи вимовляється кінцеве -r.': 'Approximate pronunciation: the rules cannot tell whether e/o is open or closed, or whether a final -r is pronounced.',
     'Міжнародний фонетичний алфавіт (МФА), центральний каталанський': 'International Phonetic Alphabet (IPA), Central Catalan',
-    'Українськими літерами; ə — ненаголошений нечіткий звук, середній між «а» і «е»': 'In Ukrainian letters; ə is an unstressed neutral vowel between “a” and “e”',
+    'Українськими літерами; ə – ненаголошений нечіткий звук, середній між «а» і «е»': 'In Ukrainian letters; ə is an unstressed neutral vowel between “a” and “e”',
     'Читання': 'Reading',
     'Твори каталанською для читання: натисніть будь-яке слово, щоб побачити його форму, переклад і синоніми.': 'Works in Catalan to read: click any word to see its form, translation and synonyms.',
     'Рівень {level}': 'Level {level}',
@@ -635,7 +635,7 @@ MESSAGES = {
     'Сцени': 'Scenes',
     'Тренажер каталонської вимови: транскрипція з клавіатурою IPA, наголос, звуки й правила читання, з перевіркою відповідей.': 'Catalan pronunciation trainer: transcription with an IPA keyboard, stress, sounds and spelling rules, with your answers checked.',
     'Тренажер вимови': 'Pronunciation trainer',
-    'Вправи до кожного уроку фонетики з перевіркою відповідей: як звучить літера, де наголос, як записати слово транскрипцією і навпаки. Один раунд — {count} завдань.': 'Practice for every pronunciation lesson, with your answers checked: how a letter sounds, where the stress falls, how to write a word in transcription and back. One round is {count} tasks.',
+    'Вправи до кожного уроку фонетики з перевіркою відповідей: як звучить літера, де наголос, як записати слово транскрипцією і навпаки. Один раунд – {count} завдань.': 'Practice for every pronunciation lesson, with your answers checked: how a letter sounds, where the stress falls, how to write a word in transcription and back. One round is {count} tasks.',
     'Ваш найкращий результат зберігається в цьому браузері.': 'Your best score is kept in this browser.',
     'Оберіть урок': 'Choose a lesson',
     'Усі уроки разом': 'All lessons together',
@@ -667,7 +667,7 @@ MESSAGES = {
     'Стерти': 'Delete',
     'На цьому пристрої немає каталанського голосу, тому завдання на слух пропущено.': 'This device has no Catalan voice, so the listening tasks are left out.',
     'Введіть відповідь.': 'Type your answer.',
-    'Транскрипція з клавіатурою IPA, наголос, звуки й правила читання — з перевіркою відповідей.': 'Transcription with an IPA keyboard, stress, sounds and spelling rules, with your answers checked.',
+    'Транскрипція з клавіатурою IPA, наголос, звуки й правила читання – з перевіркою відповідей.': 'Transcription with an IPA keyboard, stress, sounds and spelling rules, with your answers checked.',
     'Тренуватися': 'Practise',
     'Перевірте себе': 'Test yourself',
     'Вправи до цього уроку в тренажері вимови: відповіді перевіряються одразу.': 'Practice for this lesson in the pronunciation trainer: your answers are checked at once.',
@@ -698,8 +698,8 @@ MESSAGES = {
     'Поміняти мови місцями': 'Swap languages',
     'Пропозиції перекладів': 'Translation suggestions',
     'Пропозиції перекладів на перевірку': 'Translation suggestions to review',
-    'Речення, які вже переклали люди, перекладаються точно. Решта — слово за словом, як підрядник. Кожне виправлення робить перекладач кращим.': 'Sentences people have already translated come out exactly. The rest is translated word by word, as a rough gloss. Every correction makes the translator better.',
-    'Слово за словом — приблизно': 'Word by word — approximate',
+    'Речення, які вже переклали люди, перекладаються точно. Решта – слово за словом, як підрядник. Кожне виправлення робить перекладач кращим.': 'Sentences people have already translated come out exactly. The rest is translated word by word, as a rough gloss. Every correction makes the translator better.',
+    'Слово за словом – приблизно': 'Word by word – approximate',
     'Схоже речення в пам’яті:': 'A similar sentence in memory:',
     'Увійдіть, щоб запропонувати переклад.': 'Log in to suggest a translation.',
     'Цього слова немає в словнику': 'This word is not in the dictionary',

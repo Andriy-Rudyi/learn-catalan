@@ -25,11 +25,11 @@ class SeoTests(AppTestCase):
 
     def test_title_description_and_previews(self):
         head = self._head('/grammar')
-        self.assertIn('<title>Граматика — Learn Catalan</title>', head)
+        self.assertIn('<title>Граматика – Learn Catalan</title>', head)
         self.assertRegex(head, r'<meta name="description" content="[^"]{40,}">')
         self.assertIn('property="og:title"', head)
         self.assertIn('og-image.png', head)
-        self.assertIn('<title>anar: дієвідміна дієслова — Learn Catalan</title>', self._head('/conjugator?verb=anar'))
+        self.assertIn('<title>anar: дієвідміна дієслова – Learn Catalan</title>', self._head('/conjugator?verb=anar'))
 
     def test_canonical_and_language_versions(self):
         head = self._head('/grammar?sort=topic')

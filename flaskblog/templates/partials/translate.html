@@ -38,7 +38,7 @@
       {% for item in items %}
         <li>
           <span class="translate-suggestion-text">{{ item.text }}</span>
-          <span class="text-muted small">{{ item.user.username if item.user else '—' }}, {{ item.created_at.strftime('%Y-%m-%d') }}</span>
+          <span class="text-muted small">{{ item.user.username if item.user else '–' }}, {{ item.created_at.strftime('%Y-%m-%d') }}</span>
           {% if can_translate %}
             {% set here = request.full_path.rstrip('?') %}
             <form method="POST" action="{{ url_for('translate.decide', suggestion_id=item.id, decision='accept') }}">

@@ -72,7 +72,7 @@ console.log(data.moods.indicatiu.present);  // [{person: '1s', form: 'jo vaig'},
     <h2 class="faq-section-title">{{ _('Правила') }}</h2>
     <ul>
       {% if config.API_RATE_LIMIT %}
-      <li>{{ _('До {limit} запитів на хвилину з однієї адреси. Більше — відповідь 429 і заголовок Retry-After.', limit=config.API_RATE_LIMIT) }}</li>
+      <li>{{ _('До {limit} запитів на хвилину з однієї адреси. Більше – відповідь 429 і заголовок Retry-After.', limit=config.API_RATE_LIMIT) }}</li>
       {% endif %}
       <li>{{ _('Відповіді можна кешувати: вони змінюються рідко (Cache-Control: 1 година).') }}</li>
       <li>{{ _('Будь ласка, вказуйте джерело з посиланням на Learn Catalan.') }}</li>

@@ -240,7 +240,7 @@
   function show(data, index) {
     els.body.textContent = '';
     var head = el('div', 'reader-panel-head');
-    head.appendChild(el('span', 'reader-panel-word', data.word || '—'));
+    head.appendChild(el('span', 'reader-panel-word', data.word || '–'));
     if (data.word) {
       var listen = el('button', 'btn-speak btn-speak-sm', '🔊');
       listen.type = 'button';

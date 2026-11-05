@@ -17,7 +17,7 @@
       {% for record in changes %}
         <div class="translate-row translate-history-row">
           <div class="translate-ref">
-            <span class="text-muted small">{{ record.created_at.strftime('%Y-%m-%d %H:%M') }} · {{ users[record.user_id].username if record.user_id in users else '—' }} · {{ actions.get(record.action, record.action) }}</span>
+            <span class="text-muted small">{{ record.created_at.strftime('%Y-%m-%d %H:%M') }} · {{ users[record.user_id].username if record.user_id in users else '–' }} · {{ actions.get(record.action, record.action) }}</span>
             <span>
               {% if record.kind == 'ui' %}
                 {{ _('інтерфейс') }}: <span class="text-muted">{{ record.ui_source | truncate(80) }}</span>
@@ -32,7 +32,7 @@
             {% if record.action == 'review' %}
               <span class="text-muted">{{ _('позначено як перевірене') }}</span>
             {% else %}
-              <del>{{ record.old_text or '—' }}</del> → <ins>{{ record.new_text or '—' }}</ins>
+              <del>{{ record.old_text or '–' }}</del> → <ins>{{ record.new_text or '–' }}</ins>
             {% endif %}
             {% if can_translate %}
               <form method="POST" action="{{ url_for('translate.revert', change_id=record.id) }}">

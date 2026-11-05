@@ -194,7 +194,7 @@ def _save(target, form, back, label):
     current = target.shown()
     if (current or '') != (form.base.data or ''):
         flash(_('Поки ви редагували, хтось уже змінив цей переклад: «{text}». '
-                'Подивіться на нього й збережіть ще раз, якщо ваш кращий.', text=current or '—'),
+                'Подивіться на нього й збережіть ще раз, якщо ваш кращий.', text=current or '–'),
               'warning')
         return _back(back)
     if text == (current or '') or (not text and target.current()[0] is None):

@@ -97,7 +97,7 @@ def check_interface(source, text):
     if (sorted(_PLACEHOLDER.findall(source)) != sorted(_PLACEHOLDER.findall(text))
             or _stray(_PLACEHOLDER, '{}', text) != _stray(_PLACEHOLDER, '{}', source)):
         return _('Залиште ті самі заповнювачі у фігурних дужках, що й в оригіналі: {items}.',
-                 items=', '.join(_PLACEHOLDER.findall(source)) or '—')
+                 items=', '.join(_PLACEHOLDER.findall(source)) or '–')
     # The same tags, and no "<" or ">" besides them (a tag left open would
     # swallow the page's own markup).
     if (sorted(_TAG.findall(source)) != sorted(_TAG.findall(text))

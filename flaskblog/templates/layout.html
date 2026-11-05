@@ -38,7 +38,7 @@
 
     {% if config.SEO %}
     {% set seo = seo_head(canonical_path=canonical_path, noindex=seo_noindex) %}
-    {% set page_title = ((seo_title or title) ~ ' — Learn Catalan') if (seo_title or title) else ('Learn Catalan — ' ~ _('каталонська мова українською')) %}
+    {% set page_title = ((seo_title or title) ~ ' – Learn Catalan') if (seo_title or title) else ('Learn Catalan – ' ~ _('каталонська мова українською')) %}
     {% set description = self.meta_description() | trim %}
     <title>{{ page_title }}</title>
     <meta name="description" content="{{ description }}">

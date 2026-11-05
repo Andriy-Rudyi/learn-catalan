@@ -71,7 +71,7 @@ class CourseDataTests(unittest.TestCase):
             text = json.dumps(unit, ensure_ascii=False)
             with self.subTest(unit=unit['number']):
                 self.assertNotIn('?..', text)
-                self.assertNotIn('? — частіше', text)
+                self.assertNotIn('? – частіше', text)
 
     def test_missing_required_field_is_rejected(self):
         import json
