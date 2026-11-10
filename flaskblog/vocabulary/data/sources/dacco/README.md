@@ -1,19 +1,26 @@
-# DACCO Catalan-English
+# DACCO
 
-`entries.jsonl` is the Catalan-to-English part of **DACCO: The Open Source
-English-Catalan Dictionary** (edition 2012-01, http://www.catalandictionary.org),
-read from the PDF the DACCO team published ("Catalan to English for English
-Speakers") with `flask vocabulary dacco-parse <pdf>` (`flaskblog/vocabulary/dacco.py`).
+**DACCO** (Diccionari Obert Català de Codi Obert), the open
+Catalan-English / English-Catalan dictionary started in 2004 by Dr Linda
+Oxnard; contributing editors Prof Max Wheeler, Lou Hevly, Carles Pina i
+Estany, Prof Jonathan Kaye, Gill Martin, Josep M. Lopez Besora and
+Margarita Castañón. Web: http://www.catalandictionary.org
 
-Licence: **Creative Commons Attribution-ShareAlike 2.5**
-(https://creativecommons.org/licenses/by-sa/2.5/). Credit DACCO wherever
-this data or anything made from it is shown or shared, and share what is
-made from it under the same licence.
+Source: https://github.com/cpina/dacco, commit `f36744f` (2025-07-29),
+folders `dictionaries/cateng` and `dictionaries/engcat`, converted with
+`flask vocabulary dacco-convert <clone>` (`flaskblog/vocabulary/dacco.py`,
+where the format is described).
 
-16,540 entries, 22,028 meanings, 29,354 English translations, 1,026
-example pairs, 2,508 expressions and 557 usage notes. The format is
-described at the top of `flaskblog/vocabulary/dacco.py`. Changes made while
-reading the PDF: running headers and page numbers removed, lines joined,
-gender labels normalised (`m`, `f`, `m/f`, `m pl`, `f pl`). 901 expressions
-were printed without a gender between the Catalan phrase and the English;
-they were split by a guess and carry `"split_guess": true` until checked.
+| File | Direction | Entries | Meanings | Translations |
+| --- | --- | --- | --- | --- |
+| `ca-en.jsonl` | Catalan → English | 18,161 | 24,858 | 33,124 |
+| `en-ca.jsonl` | English → Catalan | 21,443 | 31,360 | 38,902 |
+
+Licence: the repository is distributed under the **GNU LGPL 2.1** (its
+`LICENSE` file); the PDF edition DACCO published states **Creative Commons
+Attribution-ShareAlike 2.5**. Either way: credit DACCO wherever this data
+or anything made from it is shown or shared, and share what is made from it
+under the same terms.
+
+The conversion keeps everything in the XML except the editing dates; HTML
+in the Catalan sample sentences (`<b>`) is removed.

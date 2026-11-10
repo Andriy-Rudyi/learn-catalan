@@ -188,16 +188,14 @@ def _senses(result):
     return '{}/{}'.format(result['regional'], result['senses'])
 
 
-@vocabulary_cli.command('dacco-parse')
-@click.argument('pdf', type=click.Path(exists=True, dir_okay=False))
-def dacco_parse_command(pdf):
-    """Read the DACCO Catalan-English PDF into data/sources/dacco/entries.jsonl
-    (needs: pip install pymupdf)."""
+@vocabulary_cli.command('dacco-convert')
+@click.argument('repository', type=click.Path(exists=True, file_okay=False))
+def dacco_convert_command(repository):
+    """Convert a clone of https://github.com/cpina/dacco into
+    data/sources/dacco/ca-en.jsonl and en-ca.jsonl."""
     from flaskblog.vocabulary import dacco
-    entries = dacco.parse_pdf(pdf)
-    dacco.write(entries)
-    dacco.load.cache_clear()
-    click.echo('Статей: {}.'.format(len(entries)))
+    for direction, count in dacco.convert(repository).items():
+        click.echo('{}: {}'.format(direction, count))
 
 
 @vocabulary_cli.command('dacco-report')
@@ -205,5 +203,7 @@ def dacco_report_command():
     """How much of the dictionary DACCO covers, and what it would add."""
     from flaskblog.vocabulary import dacco
     terms = [word.term for word in Word.query.with_entities(Word.term)]
-    for key, value in dacco.stats(terms).items():
-        click.echo('{}: {}'.format(key, value))
+    for direction in dacco.FILES:
+        click.echo(direction)
+        for key, value in dacco.stats(terms if direction == 'ca-en' else (), direction).items():
+            click.echo('  {}: {}'.format(key, value))

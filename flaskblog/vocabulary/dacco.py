@@ -1,360 +1,291 @@
-"""DACCO, the open Catalan-English dictionary (CC BY-SA 2.5), as data.
+"""DACCO, the open Catalan-English / English-Catalan dictionary, as data.
 
-``data/sources/dacco/entries.jsonl`` holds its Catalan-to-English part, one
-entry a line, read from the PDF the DACCO team published (2012-01) with
-:func:`parse_pdf` (``flask vocabulary dacco-parse``)::
+The source is the DACCO XML (https://github.com/cpina/dacco, the
+``dictionaries/cateng`` and ``dictionaries/engcat`` folders), converted
+with ``flask vocabulary dacco-convert <clone>`` (:func:`convert`) into one
+JSON entry a line:
 
-    {"head": "català",
-     "blocks": [{"pos": "noun",
-                 "senses": [{"n": 1, "gender": "m", "text": "Catalan"},
-                            {"n": 2, "gender": "m/f", "text": "Catalan"}]},
-                {"pos": "adjective", "senses": [{"text": "Catalan"}]}],
-     "expressions": [{"ca": "...", "en": "...", "gender": "f", "split_guess": true}],
-     "notes": ["..."]}
+* ``data/sources/dacco/ca-en.jsonl``: Catalan headwords, English translations;
+* ``data/sources/dacco/en-ca.jsonl``: English headwords, Catalan translations.
 
-A sense's ``text`` holds the English translations separated by " / ",
-sometimes with a Catalan gloss in square brackets ("[amb un verb de
-moviment] to / into") and labels in brackets ("(Am.)"). ``domain`` is a
-subject label ("sport"), ``examples`` are pairs {"ca", "en"}.
+An entry::
 
-Most expressions are printed with a gender between the Catalan phrase and
-its English, which splits them. The others were split by guessing where the
-English starts; they carry ``split_guess`` and need a look before they are
-shown.
+    {"head": "català", "frequency": 965000,
+     "parts": [{"pos": "noun",
+                "senses": [{"text": "Catalan", "gender": "m", "category": "language"},
+                           {"text": "Catalan", "gender": "m/f", "category": "nationality-europe"}]},
+               {"pos": "adjective",
+                "senses": [{"text": "Catalan", "fem": "catalana", "plural": "catalans"}]}],
+     "expressions": [{"text": "...", "senses": [...]}]}
 
-Nothing here is in the site's dictionary yet: the module only reads the
-data, finds the entries for a word and builds the English-to-Catalan index
-a future English site needs. Whatever is made from it stays under CC BY-SA
-and credits DACCO (http://www.catalandictionary.org).
+A part can also carry ``ipa``, ``conj`` (verbs) and English verb forms
+(``past``, ``participle``...). A sense's ``text`` holds the translations
+separated by " / ", sometimes after a gloss in square brackets; besides
+gender it can have ``category`` (a topic such as "food-fruit"),
+``register``, ``transitive`` / ``intransitive`` / ``reflexive`` /
+``pronominal``, ``disambiguate``, ``termcat``, ``local`` (where it is
+said), ``fem`` / ``plural`` / ``fem_plural`` (forms of the headword),
+``synonyms``, ``examples`` (pairs {"ca", "en"}), ``sentences`` (Catalan
+sentences using the word), ``note_ca`` / ``note_en`` and ``group`` (the
+number of a group of synonymous translations). Entries also hold
+``expressions``, ``phrasal_verbs`` (en-ca), ``acronyms`` and
+``mistakes`` (common mistakes with the word).
+
+Nothing here is in the site's dictionary yet: the module reads the data,
+finds the entries for a word in either direction and reports how much of
+the dictionary it covers. Credit DACCO (http://www.catalandictionary.org)
+wherever the data or anything made from it is shown or shared.
 """
 
 import functools
+import glob
+import html
 import io
 import json
 import os
 import re
+import xml.etree.ElementTree as ET
 
-DATA_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                         'data', 'sources', 'dacco', 'entries.jsonl')
+DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'sources', 'dacco')
+FILES = {'ca-en': 'ca-en.jsonl', 'en-ca': 'en-ca.jsonl'}
+# Source folder in the DACCO repository for each direction.
+SOURCE_FOLDERS = {'ca-en': 'cateng', 'en-ca': 'engcat'}
 
 SOURCE = {
-    'name': 'DACCO: The Open Source English-Catalan Dictionary (2012-01)',
-    'url': 'http://www.catalandictionary.org',
-    'licence': 'CC BY-SA 2.5',
+    'name': 'DACCO, Diccionari Obert Català de Codi Obert',
+    'url': 'https://github.com/cpina/dacco',
+    'site': 'http://www.catalandictionary.org',
+    'licence': 'LGPL-2.1 (repository); CC BY-SA 2.5 (published PDF edition)',
 }
 
 
-@functools.lru_cache(maxsize=1)
-def load():
+# -- reading the converted data -------------------------------------------------------------
+
+@functools.lru_cache(maxsize=None)
+def load(direction='ca-en'):
+    path = os.path.join(DATA_DIR, FILES[direction])
     try:
-        with io.open(DATA_FILE, encoding='utf-8') as handle:
+        with io.open(path, encoding='utf-8') as handle:
             return [json.loads(line) for line in handle if line.strip()]
     except OSError:
         return []
 
 
 def senses(entry):
-    """Every sense of an entry with its part of speech and gender."""
-    for block in entry.get('blocks', []):
-        for sense in block.get('senses', []):
-            yield dict(sense, pos=block.get('pos'), gender=sense.get('gender') or block.get('gender'))
+    """Every sense of an entry's parts, with its part of speech."""
+    for part in entry.get('parts', []):
+        for sense in part.get('senses', []):
+            yield dict(sense, pos=part['pos'])
 
 
 _GLOSS = re.compile(r'\[[^\]]*\]')
 
 
 def translations(sense):
-    """The English words of a sense, without the Catalan gloss."""
+    """The translations in a sense, without the gloss in square brackets."""
     text = _GLOSS.sub('', sense.get('text', ''))
     return [part.strip() for part in text.split(' / ') if part.strip() and part.strip() != '-']
 
 
 def _key(term):
-    return (term or '').strip().lower()
+    return re.sub(r'\s+', ' ', (term or '').strip().lower())
 
 
-@functools.lru_cache(maxsize=1)
-def _index():
+@functools.lru_cache(maxsize=None)
+def _index(direction):
     index = {}
-    for entry in load():
+    for entry in load(direction):
         head = _key(entry['head'])
         index.setdefault(head, []).append(entry)
-        # A verb listed as "abalançar-se" is found as "abalançar" too.
-        for ending in ('-se', "'s"):
-            if head.endswith(ending):
-                index.setdefault(head[:-len(ending)], []).append(entry)
+        if direction == 'ca-en':
+            # A verb listed as "abalançar-se" is found as "abalançar" too.
+            for ending in ('-se', "'s"):
+                if head.endswith(ending):
+                    index.setdefault(head[:-len(ending)], []).append(entry)
     return index
 
 
-def lookup(term):
-    """The DACCO entries for a Catalan word ("abalançar" finds "abalançar-se")."""
-    return _index().get(_key(term), [])
+def lookup(term, direction='ca-en'):
+    """The entries for a word ("abalançar" finds "abalançar-se")."""
+    return _index(direction).get(_key(term), [])
 
 
-_ARTICLE = re.compile(r'^(to|the|a|an)\s+', re.I)
-_BRACKETS = re.compile(r'\([^)]*\)')
-
-
-def english_key(text):
-    """"to rush towards (someone)" -> "rush towards"."""
-    text = _BRACKETS.sub('', text).strip().lower()
-    return re.sub(r'\s+', ' ', _ARTICLE.sub('', text)).strip()
-
-
-@functools.lru_cache(maxsize=1)
-def english_index():
-    """English word -> [(Catalan head, part of speech, sense number)], for
-    looking words up the other way (a future English site)."""
-    index = {}
-    for entry in load():
-        for sense in senses(entry):
-            for word in translations(sense):
-                key = english_key(word)
-                if key:
-                    index.setdefault(key, []).append((entry['head'], sense.get('pos'), sense.get('n')))
-    return index
-
-
-def stats(words=()):
+def stats(words=(), direction='ca-en'):
     """Numbers about the data, and how much of *words* (Catalan terms) it covers."""
-    entries = load()
+    entries = load(direction)
     all_senses = [s for e in entries for s in senses(e)]
     words = {_key(w) for w in words}
-    found = {w for w in words if lookup(w)}
-    return {
+    numbers = {
         'entries': len(entries),
         'senses': len(all_senses),
         'translations': sum(len(translations(s)) for s in all_senses),
-        'examples': sum(len(s.get('examples', [])) for s in all_senses)
-        + sum(len(x.get('examples', [])) for e in entries for x in e.get('expressions', [])),
+        'examples': sum(len(s.get('examples', [])) for s in all_senses),
+        'sentences': sum(len(s.get('sentences', [])) for s in all_senses),
         'expressions': sum(len(e.get('expressions', [])) for e in entries),
-        'expressions_to_check': sum(1 for e in entries for x in e.get('expressions', [])
-                                    if x.get('split_guess')),
-        'notes': sum(len(e.get('notes', [])) for e in entries),
-        'words': len(words),
-        'words_found': len(found),
-        'new_heads': len({_key(e['head']) for e in entries} - words) if words else None,
+        'notes': sum(1 for s in all_senses if s.get('note_ca') or s.get('note_en')),
     }
+    if words:
+        heads = {_key(e['head']) for e in entries}
+        numbers['words'] = len(words)
+        numbers['words_found'] = sum(1 for w in words if lookup(w, direction))
+        numbers['new_heads'] = len(heads - words)
+    return numbers
 
 
-# -- reading the PDF ------------------------------------------------------------------------
+# -- converting the XML -------------------------------------------------------------------------
 
-# The PDF marks every part of an entry with its own font.
-_KINDS = {
-    ('Arial,Bold', 12.0): 'head',
-    ('TimesNewRoman', 6.0): 'label',        # part of speech, gender, "expression", [domain]
-    ('TimesNewRoman', 8.0): 'num',          # sense number
-    ('TimesNewRoman', 12.0): 'text',        # translations
-    ('TimesNewRoman,Bold', 12.0): 'text',
-    ('TimesNewRoman,Bold', 10.0): 'ex_ca',
-    ('TimesNewRoman,Italic', 10.0): 'ex_en',
-    ('TimesNewRoman,BoldItalic', 8.0): 'sep',
-    ('TimesNewRoman', 10.0): 'note',
+_PARTS = {
+    'nouns': 'noun', 'adjectives': 'adjective', 'verbs': 'verb', 'adverbs': 'adverb',
+    'prepositions': 'preposition', 'conjunctions': 'conjunction', 'pronouns': 'pronoun',
+    'exclamations': 'exclamation', 'determiners': 'determiner', 'abbreviations': 'abbreviation',
+    'acronyms': 'acronym', 'verbTense': 'verb form',
 }
-_POS = {'noun', 'adjective', 'verb', 'adverb', 'preposition', 'conjunction', 'pronoun',
-        'exclamation'}
-_GENDERS = {'m': 'm', 'f': 'f', 'm / f': 'm/f', 'mf': 'm/f', 'mpl': 'm pl', 'fpl': 'f pl'}
+_GROUPS = {'expressions': 'expressions', 'phrasalverbs': 'phrasal_verbs'}
+_VERB_FORMS = {'past': 'past', 'participle': 'participle', 'gerund': 'gerund',
+               'firstPresent': 'present_1', 'secondPresent': 'present_2', 'thirdPresent': 'present_3'}
+_SENSE_ATTRS = {
+    'gender': 'gender', 'catagory': 'category', 'register': 'register', 'local': 'local',
+    'otherlocal': 'other_local', 'disambiguate': 'disambiguate', 'termcat': 'termcat',
+    'transitive': 'transitive', 'intransitive': 'intransitive', 'reflexive': 'reflexive',
+    'pronominal': 'pronominal', 'feminine': 'feminine', 'plural': 'plural_only',
+    'sourceplural': 'source_plural', 'capitalized': 'capitalized', 'collocation': 'collocation',
+    'falseFriend': 'false_friend', 'beforenoun': 'before_noun', 'noteng': 'no_english',
+    'general': 'general',
+}
+_SENSE_CHILDREN = {
+    'fems': 'fem', 'plural': 'plural', 'femplural': 'fem_plural', 'synonyms': 'synonyms',
+    'catnote': 'note_ca', 'engnote': 'note_en', 'otherlocal': 'other_local',
+    'beforenoun': 'before_noun', 'comparative': 'comparative', 'superlative': 'superlative',
+    'catacro': 'acronym_ca', 'engacro': 'acronym_en', 'examples': 'examples_text',
+}
+_TAGS = re.compile(r'<[^>]+>')
 
 
-def _spans(path):
-    import pymupdf  # only needed to re-read the PDF: pip install pymupdf
-
-    document = pymupdf.open(path)
-    for page in document.pages(1, len(document)):  # page 1 is the title page
-        middle = page.rect.width / 2
-        found = []
-        for block in page.get_text('dict')['blocks']:
-            for line in block.get('lines', []):
-                for span in line['spans']:
-                    kind = _KINDS.get((span['font'], round(span['size'], 1)))
-                    top = span['bbox'][1]
-                    if kind is None or not span['text'].strip() or top < 40 or top > 805:
-                        continue  # letter headings, running header and footer
-                    column = 0 if span['bbox'][0] < middle - 10 else 1
-                    found.append((column, round(line['bbox'][3]), span['bbox'][0], kind, span['text']))
-        found.sort(key=lambda row: row[:3])
-        for column, line, _x, kind, text in found:
-            yield kind, text, (column, line)
+def _clean(text):
+    text = html.unescape(_TAGS.sub('', text or ''))
+    return re.sub(r'\s+', ' ', text).strip()
 
 
-def _tokens(path):
-    """Spans of the same kind joined; "m /" + "/ f" joined; "fullform" dropped."""
-    merged, last = [], None
-    for kind, text, line in _spans(path):
-        if merged and merged[-1][0] == kind and kind in ('text', 'ex_ca', 'ex_en', 'note'):
-            merged[-1][1] += (' ' if line != last else '') + text
-        else:
-            merged.append([kind, text])
-        last = line
-    held = None
-    for kind, text in merged:
-        text = re.sub(r'\s+', ' ', text).strip()
-        if kind == 'label':
-            text = text.replace('fullform', '').strip()
-            if text == 'm /':
-                held = text
-                continue
-            if held and text == '/ f':
-                text, held = 'm / f', None
-        if held:
-            yield 'label', held
-            held = None
-        yield kind, text
+def _value(value):
+    value = _clean(value)
+    return True if value == 'true' else value
 
 
-def _new_sense(block, number=None):
-    sense = {'n': number, 'gender': None, 'domain': None, 'text': '', 'examples': []}
-    block['senses'].append(sense)
+def _gender(value):
+    value = re.sub(r'\s*/\s*', '/', value or '').strip()
+    return {'mf': 'm/f'}.get(value, value)
+
+
+def _sense(element, group=None):
+    sense = {'text': _clean(''.join([element.text or ''] + [child.tail or '' for child in element]))}
+    for name, key in _SENSE_ATTRS.items():
+        if name in element.attrib and element.attrib[name] not in ('', 'false'):
+            sense[key] = _gender(element.attrib[name]) if key == 'gender' else _value(element.attrib[name])
+    pending = {}
+    for child in element:
+        tag = child.tag
+        if tag in ('catexamp', 'engexamp'):
+            lang = 'ca' if tag == 'catexamp' else 'en'
+            if lang in pending:  # a sentence without its pair
+                sense.setdefault('examples', []).append(pending)
+                pending = {}
+            pending[lang] = _clean(child.text)
+            if 'ca' in pending and 'en' in pending:
+                sense.setdefault('examples', []).append(pending)
+                pending = {}
+        elif tag == 'example':
+            sense.setdefault('sentences', []).append(_clean(ET.tostring(child, encoding='unicode',
+                                                                          method='text')))
+        elif tag in _SENSE_CHILDREN:
+            sense[_SENSE_CHILDREN[tag]] = _clean(''.join(child.itertext()))
+    if pending:
+        sense.setdefault('examples', []).append(pending)
+    if group is not None:
+        sense['group'] = group
     return sense
 
 
-def _append(holder, key, text):
-    holder[key] = (holder[key] + ' ' + text).strip()
+def _senses(translations_element, start_group=1):
+    found = []
+    group = start_group
+    for child in translations_element:
+        if child.tag == 'translation':
+            found.append(_sense(child))
+        elif child.tag == 'grouptranslation':
+            shared = {key: _value(child.attrib[name]) for name, key in _SENSE_ATTRS.items()
+                      if name in child.attrib}
+            for translation in child:
+                if translation.tag == 'translation':
+                    found.append(dict(shared, **_sense(translation, group)))
+            group += 1
+    return found
 
 
-def parse_pdf(path):
-    """The entries of the DACCO Catalan-English PDF."""
+def _phrase(element):
+    """An expression or phrasal verb: its text and its senses."""
+    item = {'text': _clean(element.text), 'senses': []}
+    for name in ('register', 'local', 'intransitive', 'ipa'):
+        if element.attrib.get(name):
+            item[name] = _value(element.attrib[name])
+    for child in element:
+        if child.tag == 'translations':
+            item['senses'] += _senses(child)
+    return item
+
+
+def _entry(element):
+    entry = {'head': _clean(element.text), 'parts': []}
+    if element.attrib.get('frequency', '').isdigit():
+        entry['frequency'] = int(element.attrib['frequency'])
+    if element.attrib.get('hasSound') == 'true':
+        entry['sound'] = True
+    for child in element:
+        if child.tag in _GROUPS:
+            entry.setdefault(_GROUPS[child.tag], []).append(_phrase(child))
+        elif child.tag == 'mistakes':
+            entry.setdefault('mistakes', []).append(_clean(child.text))
+        elif child.tag in _PARTS:
+            part = {'pos': _PARTS[child.tag], 'senses': []}
+            for name in ('ipa', 'conj', 'inceptive', 'double', 'ie'):
+                if child.attrib.get(name):
+                    part[name] = _value(child.attrib[name])
+            for sub in child:
+                if sub.tag == 'translations':
+                    part['senses'] += _senses(sub)
+                elif sub.tag in _VERB_FORMS:
+                    part.setdefault('forms', {})[_VERB_FORMS[sub.tag]] = _clean(sub.text)
+                elif sub.tag == 'mistakes':
+                    entry.setdefault('mistakes', []).append(_clean(sub.text))
+                elif sub.tag in ('catacro', 'engacro'):
+                    part[sub.tag.replace('acro', '_acronym')] = _clean(sub.text)
+                elif sub.tag == 'expressions':
+                    entry.setdefault('expressions', []).append(_phrase(sub))
+            entry['parts'].append(part)
+    return entry
+
+
+def convert_folder(folder):
+    """The entries of one DACCO folder (``dictionaries/cateng``), in file order."""
     entries = []
-    entry = block = sense = expression = None
-    for kind, text in _tokens(path):
-        if kind == 'head':
-            entry = {'head': text, 'blocks': [], 'expressions': [], 'notes': []}
-            entries.append(entry)
-            block = sense = expression = None
-            continue
-        if entry is None or kind == 'sep':
-            continue
-        if kind == 'note':
-            entry['notes'].append(text)
-            continue
-        if kind == 'label' and text in _POS:
-            block = {'pos': text, 'gender': None, 'senses': []}
-            entry['blocks'].append(block)
-            sense = expression = None
-            continue
-        if kind == 'label' and text == 'expression':
-            expression = {'ca': '', 'gender': None, 'en': '', 'examples': [], 'split': False}
-            entry['expressions'].append(expression)
-            continue
-        if expression is not None:
-            if kind == 'num':
-                # "d'hora 1 early 2 soon": numbered meanings of the expression
-                if expression['en']:
-                    expression['en'] += ';'
-                expression['split'] = True
-            elif kind == 'label':
-                expression['gender'] = _GENDERS.get(text, expression['gender'])
-                expression['split'] = True
-            elif kind == 'text':
-                _append(expression, 'en' if expression['split'] else 'ca', text)
-            elif kind == 'ex_ca':
-                expression['examples'].append({'ca': text, 'en': ''})
-            elif kind == 'ex_en' and expression['examples']:
-                _append(expression['examples'][-1], 'en', text)
-            continue
-        expression = None
-        if block is None:
-            block = {'pos': None, 'gender': None, 'senses': []}
-            entry['blocks'].append(block)
-        if kind == 'num':
-            sense = _new_sense(block, int(text) if text.isdigit() else text)
-        elif kind == 'label':
-            if sense is None and not block['senses'] and not text.startswith('['):
-                block['gender'] = _GENDERS.get(text, text)
-                continue
-            if sense is None or sense['text']:
-                sense = _new_sense(block)
-            if text.startswith('['):
-                sense['domain'] = text.strip('[]')
-            else:
-                sense['gender'] = _GENDERS.get(text, text)
-        elif kind == 'text':
-            if sense is None or sense['examples']:
-                sense = _new_sense(block)
-            _append(sense, 'text', text)
-        elif kind == 'ex_ca':
-            if sense is None:
-                sense = _new_sense(block)
-            sense['examples'].append({'ca': text, 'en': ''})
-        elif kind == 'ex_en' and sense is not None and sense['examples']:
-            _append(sense['examples'][-1], 'en', text)
-    for entry in entries:
-        holders = [s for b in entry['blocks'] for s in b['senses']] + entry['expressions']
-        for holder in holders:
-            for example in holder['examples']:
-                example['en'] = re.sub(r'^-\s*', '', example['en']).strip()
-    _split_expressions(entries)
-    return [_compact(entry) for entry in entries]
+    for path in sorted(glob.glob(os.path.join(folder, '*.dic'))):
+        for element in ET.parse(path).getroot().findall('Entry'):
+            entries.append(_entry(element))
+    return entries
 
 
-_WORD = re.compile(r"[\w·'’-]+", re.U)
-_EN_WORDS = set("to the an of be on at in with for from by up out off somebody someone something "
-                "it its your you one's not have get go make take do is are very like into over down".split())
-_CA_WORDS = set("el la els les de del dels a al als en amb per que i un una uns unes no es se fer "
-                "ser estar tenir anar posar hi ho li com més sense sobre fins molt tot cap dir donar".split())
-_ACCENTED = re.compile(r'[àèéíïòóúüç·]')
+def convert(repository, out_dir=DATA_DIR):
+    """Convert both directions of a DACCO clone; returns {direction: count}."""
+    counts = {}
+    for direction, folder in SOURCE_FOLDERS.items():
+        entries = convert_folder(os.path.join(repository, 'dictionaries', folder))
+        write(entries, os.path.join(out_dir, FILES[direction]))
+        counts[direction] = len(entries)
+    load.cache_clear()
+    _index.cache_clear()
+    return counts
 
 
-def _split_expressions(entries):
-    """Split the expressions printed without a gender, where the English
-    most likely starts; mark them ``split_guess``."""
-    def words(text):
-        return [w.lower() for w in _WORD.findall(text)]
-
-    catalan, english = set(), set()
-    for entry in entries:
-        catalan.update(words(entry['head']))
-        for block in entry['blocks']:
-            for sense in block['senses']:
-                english.update(words(re.sub(r'\([^)]*\)|\[[^\]]*\]', '', sense['text'])))
-                for example in sense['examples']:
-                    catalan.update(words(example['ca']))
-                    english.update(words(example['en']))
-        for expression in entry['expressions']:
-            if expression['split']:
-                catalan.update(words(expression['ca']))
-                english.update(words(expression['en']))
-
-    def score(token, side):
-        word = token.lower().strip('()[],.;:!?¿¡')
-        if word in _EN_WORDS:
-            return 2 if side == 'en' else -2
-        if word in _CA_WORDS or word.startswith(("l'", "d'", "s'", "n'")):
-            return 2 if side == 'ca' else -2
-        is_ca = word in catalan or bool(_ACCENTED.search(word))
-        is_en = word in english
-        mine, other = (is_ca, is_en) if side == 'ca' else (is_en, is_ca)
-        return 1 if mine and not other else (-1 if other and not mine else 0)
-
-    for entry in entries:
-        stem = entry['head'].lower()[:4]
-        for expression in entry['expressions']:
-            if expression.pop('split') or not expression['ca']:
-                continue
-            tokens = expression['ca'].split(' ')
-            best = None
-            for k in range(1, len(tokens)):
-                left = tokens[:k]
-                if stem not in ' '.join(left).lower() and not any(t.lower() in catalan for t in left):
-                    continue
-                points = sum(score(t, 'ca') for t in left) + sum(score(t, 'en') for t in tokens[k:])
-                if best is None or points >= best[0]:
-                    best = (points, k)
-            if best:
-                expression['ca'] = ' '.join(tokens[:best[1]])
-                expression['en'] = ' '.join(tokens[best[1]:])
-            expression['split_guess'] = True
-
-
-def _compact(value):
-    if isinstance(value, dict):
-        return {k: _compact(v) for k, v in value.items() if v not in (None, '', [], False)}
-    if isinstance(value, list):
-        return [_compact(v) for v in value]
-    return value
-
-
-def write(entries, path=DATA_FILE):
+def write(entries, path):
     with io.open(path, 'w', encoding='utf-8') as handle:
         for entry in entries:
             handle.write(json.dumps(entry, ensure_ascii=False, separators=(',', ':')) + '\n')
