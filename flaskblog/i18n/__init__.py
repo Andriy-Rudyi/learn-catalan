@@ -1,8 +1,8 @@
-"""Site languages: English (the main one), Ukrainian and French.
+"""Site languages: English (the main one), Ukrainian, Spanish and French.
 
 Strings in the code and templates are written in Ukrainian and wrapped in
 ``_()``; other languages look them up in their catalogue (en.MESSAGES,
-fr.MESSAGES). English is the default and the fallback for everything:
+es.MESSAGES, fr.MESSAGES). English is the default and the fallback for everything:
 visitors whose browser asks for none of the site's languages get English,
 a string missing from the French catalogue is shown in English, and so is
 course content that has no French version yet (grammar, pronunciation,
@@ -21,9 +21,10 @@ import time
 from flask import current_app, has_app_context, has_request_context, request
 
 from flaskblog.i18n.en import MESSAGES as EN_MESSAGES
+from flaskblog.i18n.es import MESSAGES as ES_MESSAGES
 from flaskblog.i18n.fr import MESSAGES as FR_MESSAGES
 
-LANGUAGES = ('en', 'uk', 'fr')
+LANGUAGES = ('en', 'uk', 'es', 'fr')
 SOURCE_LANGUAGE = 'uk'   # the language the strings are written in
 FALLBACK_LANGUAGE = 'en'  # used for anything missing in the chosen language
 DEFAULT_LANGUAGE = 'en'   # when nothing tells us what the visitor reads
@@ -31,10 +32,10 @@ COOKIE_NAME = 'lang'
 COOKIE_MAX_AGE = 365 * 24 * 3600
 _ENVIRON_KEY = 'learn_catalan.locale'
 
-LANGUAGE_NAMES = {'en': 'English', 'uk': 'Українська', 'fr': 'Français'}
-LANGUAGE_SHORT = {'en': 'EN', 'uk': 'UA', 'fr': 'FR'}
+LANGUAGE_NAMES = {'en': 'English', 'uk': 'Українська', 'es': 'Español', 'fr': 'Français'}
+LANGUAGE_SHORT = {'en': 'EN', 'uk': 'UA', 'es': 'ES', 'fr': 'FR'}
 
-_CATALOGS = {'en': EN_MESSAGES, 'fr': FR_MESSAGES}
+_CATALOGS = {'en': EN_MESSAGES, 'es': ES_MESSAGES, 'fr': FR_MESSAGES}
 # Languages the courses (grammar, pronunciation, FAQ) are written for; the
 # others are shown the English course.
 COURSE_LANGUAGES = ('uk', 'en')

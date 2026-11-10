@@ -255,13 +255,21 @@ class Word(db.Model):
         entry = self.translation_in(get_locale())
         return entry.translation if entry else ''
 
+    def _t_field(self, field):
+        """*field* of the translation in the interface language, or of the
+        nearest language that has it (a Spanish translation from Apertium
+        has no example of its own, the English one shows instead)."""
+        for code in fallback_chain(get_locale()):
+            entry = self.translations.get(code)
+            if entry is not None and getattr(entry, field):
+                return getattr(entry, field)
+        return None
+
     def t_example(self):
-        entry = self.translation_in(get_locale())
-        return entry.example if entry else None
+        return self._t_field('example')
 
     def t_notes(self):
-        entry = self.translation_in(get_locale())
-        return entry.notes if entry else None
+        return self._t_field('notes')
 
     def __repr__(self):
         return f"Word('{self.term}', '{self.translation}')"

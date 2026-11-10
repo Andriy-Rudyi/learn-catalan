@@ -362,8 +362,8 @@ open Apertium Spanish-Catalan dictionary pairs it with
 with `flask vocabulary apertium-convert <clone>`): about 92% of the
 site's own words and 82% of the DACCO ones. Words of the same part of
 speech are preferred; the translation goes in as one meaning covering all
-the English ones. Spanish is not an interface language, so it shows in the
-API (`?lang=es`) and on the translation platform for now.
+the English ones. They show on the site in the Spanish interface (`?lang=es`), in the API
+and on the translation platform.
 `apertium-import --remove` takes away the Spanish translations nobody has
 edited.
 
@@ -618,9 +618,10 @@ The editor can also change a unit in the admin panel.
 ## Languages
 
 Interface strings are written in Ukrainian and wrapped in `_()` (templates and
-Python); English and French text live in `flaskblog/i18n/en.py` and
-`flaskblog/i18n/fr.py`, keyed by the Ukrainian original. A string missing from a
-catalogue falls back to English. The language comes from `?lang=en|uk|fr`
+Python); English, Spanish and French text live in `flaskblog/i18n/en.py`,
+`flaskblog/i18n/es.py` and `flaskblog/i18n/fr.py`, keyed by the Ukrainian
+original. A string missing from a catalogue falls back to English. The
+language comes from `?lang=en|uk|es|fr`
 (stored in a cookie), then the cookie, then the browser's `Accept-Language`,
 and otherwise `DEFAULT_LANGUAGE` (environment variable, `en` by default).
 
@@ -636,8 +637,10 @@ Course content has separate English versions:
 | Phonetics | `flaskblog/phonetics/data/lessons.json` | `flaskblog/phonetics/data/lessons_en.json` |
 | Dictionary | `flaskblog/vocabulary/data/translations/uk.csv` | `flaskblog/vocabulary/data/translations/en.csv` (one file per language, see [Many languages](#many-languages)) |
 
-French has no course versions yet; its dictionary file
-`data/translations/fr.csv` is a machine translation marked `reviewed=0`.
+French and Spanish have no course versions yet. The French dictionary file
+`data/translations/fr.csv` is a machine translation marked `reviewed=0`; the
+Spanish translations come from Apertium (see [Spanish (Apertium)](#spanish-apertium)),
+and where a word has no Spanish example or note the English one is shown.
 
 `flaskblog/tests/test_i18n.py` renders the English pages and fails if any of
 them still shows Cyrillic, so a missing translation is caught by the tests.

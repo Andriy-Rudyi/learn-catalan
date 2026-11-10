@@ -257,6 +257,55 @@ class FrenchPagesTests(AppTestCase):
         self.assertEqual([], [key for key in EN if key not in FR])
 
 
+class SpanishPagesTests(AppTestCase):
+    """Spanish: the interface in Spanish, the dictionary with the Spanish
+    translations from Apertium, courses without a Spanish version in English."""
+
+    def setUp(self):
+        super().setUp()
+        grammar_service.seed()
+        vocabulary_service.import_seed()
+        db.session.commit()
+        self.client.get('/?lang=es')
+
+    def test_pages_have_no_ukrainian(self):
+        unit = GrammarUnit.query.filter_by(number=17).first()
+        lesson = phonetics_service.load_lessons(phonetics_service.DATA_FILE)[0]
+        for url in ('/', '/grammar', '/grammar/' + unit.slug, '/phonetics',
+                    '/phonetics/' + lesson['slug'], '/phonetics/trainer', '/dictionary',
+                    '/dictionary/anar', '/conjugator?verb=anar', '/faq', '/developers', '/text',
+                    '/reading', '/translator', '/c1', '/c1/frases-fetes', '/c1/article',
+                    '/c1/monologue', '/translate/', '/login', '/register', '/no-such-page'):
+            body = self.client.get(url).data.decode()
+            # Language pickers name Ukrainian in Ukrainian.
+            self.assertEqual([], cyrillic_snippets(body.replace('Українська', '')), url)
+            self.assertIn('<html lang="es"', body, url)
+
+    def test_interface_is_spanish(self):
+        home = self.client.get('/').data.decode()
+        self.assertIn('Gramática', home)
+        self.assertIn('71 unidades', home)
+        self.assertIn('Español', home)
+
+    def test_word_page_shows_the_spanish_translation(self):
+        from flaskblog.vocabulary import apertium
+        word = Word.query.filter_by(term='aigua').first()
+        apertium.import_translations([word])
+        db.session.commit()
+        body = self.client.get('/dictionary/aigua').data.decode()
+        self.assertIn('agua', body)
+
+    def test_browser_asking_for_spanish(self):
+        self.client.delete_cookie('lang')
+        body = self.client.get('/', headers={'Accept-Language': 'es-ES,es;q=0.9'}).data.decode()
+        self.assertIn('<html lang="es"', body)
+
+    def test_catalogue_matches_english(self):
+        from flaskblog.i18n.en import MESSAGES as EN
+        from flaskblog.i18n.es import MESSAGES as ES
+        self.assertEqual([], [key for key in EN if key not in ES])
+
+
 class DefaultLanguageTests(AppTestCase):
 
     def test_english_is_the_default(self):
