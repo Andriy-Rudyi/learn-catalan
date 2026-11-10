@@ -186,3 +186,24 @@ def _senses(result):
     if not result:
         return '-'
     return '{}/{}'.format(result['regional'], result['senses'])
+
+
+@vocabulary_cli.command('dacco-parse')
+@click.argument('pdf', type=click.Path(exists=True, dir_okay=False))
+def dacco_parse_command(pdf):
+    """Read the DACCO Catalan-English PDF into data/sources/dacco/entries.jsonl
+    (needs: pip install pymupdf)."""
+    from flaskblog.vocabulary import dacco
+    entries = dacco.parse_pdf(pdf)
+    dacco.write(entries)
+    dacco.load.cache_clear()
+    click.echo('Статей: {}.'.format(len(entries)))
+
+
+@vocabulary_cli.command('dacco-report')
+def dacco_report_command():
+    """How much of the dictionary DACCO covers, and what it would add."""
+    from flaskblog.vocabulary import dacco
+    terms = [word.term for word in Word.query.with_entities(Word.term)]
+    for key, value in dacco.stats(terms).items():
+        click.echo('{}: {}'.format(key, value))
