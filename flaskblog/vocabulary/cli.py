@@ -222,3 +222,27 @@ def dacco_import_command(remove):
     count = dacco.import_words()
     db.session.commit()
     click.echo('Додано слів DACCO: {}.'.format(count))
+
+
+@vocabulary_cli.command('apertium-convert')
+@click.argument('repository', type=click.Path(exists=True, file_okay=False))
+def apertium_convert_command(repository):
+    """Convert a clone of https://github.com/apertium/apertium-spa-cat into
+    data/sources/apertium/ca-es.jsonl."""
+    from flaskblog.vocabulary import apertium
+    click.echo('Пар: {}.'.format(apertium.convert(repository)))
+
+
+@vocabulary_cli.command('apertium-import')
+@click.option('--remove', is_flag=True, help='Прибрати іспанські переклади, яких ніхто не редагував.')
+def apertium_import_command(remove):
+    """Give dictionary words their Spanish translation from Apertium."""
+    from flaskblog.vocabulary import apertium
+    if remove:
+        count = apertium.remove_translations()
+        db.session.commit()
+        click.echo('Прибрано іспанських перекладів: {}.'.format(count))
+        return
+    count = apertium.import_translations()
+    db.session.commit()
+    click.echo('Додано іспанських перекладів: {}.'.format(count))

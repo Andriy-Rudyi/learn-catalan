@@ -60,6 +60,12 @@ SOURCES = [
         'url': 'https://github.com/cpina/dacco',
     },
     {
+        'data': 'Spanish translations of dictionary words',
+        'source': 'Apertium spa-cat bilingual dictionary',
+        'license': 'GPL-2.0',
+        'url': 'https://github.com/apertium/apertium-spa-cat',
+    },
+    {
         'data': 'Verb conjugations',
         'source': 'verbecc (LGPL-3.0), with Catalan data from Verbiste and catverbs, '
                   'and this site\'s corrections to it',

@@ -353,6 +353,20 @@ words disappear from the dictionary, search and the API.
 (run it before `flask db downgrade` past the `word.source` migration).
 `flask vocabulary dacco-report` shows the numbers.
 
+### Spanish (Apertium)
+
+`flask vocabulary apertium-import` (run on every deploy) gives every
+dictionary word that has no Spanish translation yet the Spanish words the
+open Apertium Spanish-Catalan dictionary pairs it with
+(`vocabulary/data/sources/apertium/ca-es.jsonl`, 57,440 pairs, converted
+with `flask vocabulary apertium-convert <clone>`): about 92% of the
+site's own words and 82% of the DACCO ones. Words of the same part of
+speech are preferred; the translation goes in as one meaning covering all
+the English ones. Spanish is not an interface language, so it shows in the
+API (`?lang=es`) and on the translation platform for now.
+`apertium-import --remove` takes away the Spanish translations nobody has
+edited.
+
 ### Regional words
 
 The course teaches Central Catalan. Words that are Valencian, Balearic,
@@ -797,7 +811,7 @@ Every merge into `dev` redeploys automatically.
    (reference it from the web service's variables).
 3. Set `SECRET_KEY`, `FLASK_APP=run.py`, `DEBUG_MODE=False`.
 4. Settings → Deploy → *Pre-deploy command*:
-   `flask db upgrade && flask vocabulary seed --update && flask vocabulary dacco-import && flask grammar seed`.
+   `flask db upgrade && flask vocabulary seed --update && flask vocabulary dacco-import && flask vocabulary apertium-import && flask grammar seed`.
 5. Settings → Networking → *Generate domain* (or attach your own domain).
 
 ### Render
@@ -808,7 +822,7 @@ Every merge into `dev` redeploys automatically.
 3. Environment: `DATABASE_URL`, `SECRET_KEY`, `FLASK_APP=run.py`,
    `DEBUG_MODE=False`, `PYTHON_VERSION=3.11.9`.
 4. Pre-deploy command (paid plans) or a one-off shell:
-   `flask db upgrade && flask vocabulary seed --update && flask vocabulary dacco-import && flask grammar seed`.
+   `flask db upgrade && flask vocabulary seed --update && flask vocabulary dacco-import && flask vocabulary apertium-import && flask grammar seed`.
 
 ### Heroku / Fly.io
 
@@ -890,6 +904,7 @@ them. Third-party material:
 | Plural exceptions (`reader/data/plural_exceptions.json`) | 154 pairs found against Softcatalà's catalan-dict-tools, via ReeeWriter | LGPL-2.1 | Keep the file under LGPL; not for a book sold under other terms |
 | Plural rule and singular candidates (`reader/morphology.py`) | Ported from ReeeWriter (neuronids) | MIT | Copyright notice kept in the file |
 | Catalan-English and English-Catalan dictionary data (`vocabulary/data/sources/dacco/`) | DACCO, Diccionari Obert Català de Codi Obert ([cpina/dacco](https://github.com/cpina/dacco), catalandictionary.org), converted with `flask vocabulary dacco-convert` | LGPL-2.1 (repository); CC BY-SA 2.5 (PDF edition) | Credit DACCO and its editors; what is made from it stays under the same terms. Not in the dictionary yet |
+| Spanish translations of dictionary words (`vocabulary/data/sources/apertium/ca-es.jsonl`) | Apertium spa-cat bilingual dictionary ([apertium/apertium-spa-cat](https://github.com/apertium/apertium-spa-cat)), converted with `flask vocabulary apertium-convert` | GPL-2.0 | Credit Apertium; the pairs and the Spanish translations made from them stay under the GPL |
 | Verb conjugations | The verbecc library (LGPL-3.0); its Catalan data comes from Verbiste (Pierre Sarrazin) and catverbs (Neil Roberts) | GPL-2.0-or-later | `conjugation/data/ca-corrections.xml` changes that data, so it is under GPL-2.0-or-later too (see its header). A bulk export of conjugations would have to be GPL as well |
 | Bootstrap, Bootstrap Icons (the search icon in the CSS) | CDN / inlined | MIT | — |
 
