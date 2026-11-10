@@ -3147,3 +3147,25 @@ a.translator-gloss:hover {
     gap: .1rem;
   }
 }
+
+/* Entries of the open DACCO dictionary on a word page. */
+.dictionary .dacco-senses,
+.dictionary .dacco-expressions {
+  padding-left: 1.4rem;
+  margin-bottom: .75rem;
+}
+
+.dictionary .dacco-senses li + li,
+.dictionary .dacco-expressions li + li {
+  margin-top: .3rem;
+}
+
+.dictionary .dacco-tag {
+  display: inline-block;
+  font-size: .75em;
+  padding: 0 .35em;
+  margin-right: .25em;
+  border-radius: .25rem;
+  background: var(--bs-secondary-bg);
+  color: var(--bs-secondary-color);
+}

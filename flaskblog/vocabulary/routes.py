@@ -9,7 +9,7 @@ from flaskblog.i18n import get_locale, gettext as _
 from flaskblog.conjugation import get_service as get_conjugation_service
 from flaskblog.models import UserWord, Word
 from flaskblog.permissions import is_admin
-from flaskblog.vocabulary import senses, service, transcription, varieties
+from flaskblog.vocabulary import dacco, senses, service, transcription, varieties
 from flaskblog.vocabulary.constants import (
     gender_label,
     level_label,
@@ -40,6 +40,8 @@ def inject_labels():
         'part_of_speech_label': part_of_speech_label,
         'gender_label': gender_label,
         'variety_label': varieties.variety_label,
+        'dacco_pos': dacco.site_pos,
+        'dacco_gender': dacco.gender_text,
     }
 
 
@@ -90,7 +92,7 @@ def api_words():
     if len(query) < 2:
         return jsonify(words=[])
     words = (
-        Word.query.filter(Word.term.ilike(query.replace('%', '').replace('_', '') + '%'))
+        service.shown(Word.query).filter(Word.term.ilike(query.replace('%', '').replace('_', '') + '%'))
         .order_by(db.func.length(Word.term), Word.term)
         .limit(8)
         .all()
@@ -104,7 +106,7 @@ def api_words():
 
 @vocabulary.route('/dictionary/<string:slug>')
 def word(slug):
-    word = Word.query.filter_by(slug=slug).first_or_404()
+    word = service.shown(Word.query).filter_by(slug=slug).first_or_404()
     conjugable = bool(word.is_verb and get_conjugation_service().is_known_verb(word.term))
     meanings = None
     if current_app.config.get('SENSES') and len(word.senses) > 1:
@@ -117,6 +119,7 @@ def word(slug):
         transcription=transcription.for_word(word),
         draft_meaning=any(entry is not None and not entry.reviewed for entry, _hint in meanings or ()),
         conjugable=conjugable,
+        dacco=dacco.lookup(word.term) if current_app.config.get('DACCO', True) else [],
         saved_word_ids=_saved_word_ids(),
         action_form=ActionForm(),
     )

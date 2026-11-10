@@ -2,6 +2,7 @@
 {% set seo_title = _('{term}: переклад з каталонської', term=word.term) %}
 {% block meta_description %}{{ word.term }}: {{ word.t_translation() }}.{% if word.example_ca %} {{ word.example_ca }}{% endif %} {{ _('Переклад, приклад і вимова в каталонсько-українському словнику.') }}{% endblock %}
 {% from "partials/variety.html" import variety_notice with context %}
+{% from "partials/dacco.html" import dacco_entries with context %}
 {% block content %}
 <div class="dictionary">
   <p class="small"><a href="{{ url_for('vocabulary.dictionary') }}">← {{ _('До словника') }}</a></p>
@@ -33,6 +34,9 @@
           </ol>
         {% else %}
           <p class="h5 text-secondary">{{ word.t_translation() }}</p>
+        {% endif %}
+        {% if word.source == 'dacco' and not word.translation_in(current_lang, fallback=False) %}
+          <p class="small text-muted mb-1">{{ _('Переклад англійською з відкритого словника DACCO; перекладу вашою мовою ще немає.') }}</p>
         {% endif %}
         {% set shown = word.translation_in(current_lang) %}
         {% if (shown and not shown.reviewed) or draft_meaning %}
@@ -75,6 +79,8 @@
       <h5>{{ _('Примітки') }}</h5>
       <p class="mb-0">{{ word.t_notes() }}</p>
     {% endif %}
+
+    {{ dacco_entries(dacco) }}
 
     {% if conjugable %}
       <hr>

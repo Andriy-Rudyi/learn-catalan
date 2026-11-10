@@ -5,6 +5,7 @@ import io
 import os
 import re
 
+from flask import current_app
 from slugify import slugify
 from sqlalchemy import case, or_
 
@@ -88,6 +89,13 @@ def unique_slug(term):
     return slug
 
 
+def shown(query):
+    """*query* without the words imported from DACCO when DACCO=False."""
+    if current_app.config.get('DACCO', True):
+        return query
+    return query.filter(or_(Word.source.is_(None), Word.source != 'dacco'))
+
+
 def search(query_text=None, topic=None, level=None, part_of_speech=None, variety=None):
     """A Word query narrowed by the dictionary filters.
 
@@ -96,7 +104,7 @@ def search(query_text=None, topic=None, level=None, part_of_speech=None, variety
     itself, then words starting with it, then words containing it, then
     matches in the translations and finally in the examples.
     """
-    query = Word.query
+    query = shown(Word.query)
     rank = None
     in_translation = None
     if variety == 'central':
@@ -197,6 +205,7 @@ def import_rows(rows, author=None, update_existing=False, seed=False):
             for field, value in values.items():
                 if field != 'term':
                     setattr(word, field, value or None)
+            word.source = None  # an imported word is now one of the site's own
             _apply_translations(word, translations, seed)
             report.updated += 1
             continue

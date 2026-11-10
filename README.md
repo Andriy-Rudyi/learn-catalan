@@ -327,6 +327,32 @@ from Wiktionary or other dictionaries, so there is no licence to follow.
 - `TRANSCRIPTION=False` goes back to showing only what an editor typed in;
   nothing is stored, so there is nothing to migrate.
 
+### DACCO
+
+The open Catalan-English dictionary DACCO
+([cpina/dacco](https://github.com/cpina/dacco)) is converted into
+`vocabulary/data/sources/dacco/ca-en.jsonl` and `en-ca.jsonl`
+(`flask vocabulary dacco-convert <clone>`, format in
+`flaskblog/vocabulary/dacco.py`) and used in two ways:
+
+* every word page shows the word's DACCO entry: meanings with gender,
+  English translations, examples, notes, feminine and plural forms and
+  expressions, with the credit line;
+* `flask vocabulary dacco-import` (run on every deploy, like the seeds)
+  adds the DACCO words the dictionary does not have, with their English
+  translation, marked `Word.source = 'dacco'`: about 14,400 words. Words
+  already in the dictionary are never changed (a verb listed as
+  "abalançar-se" counts as our "abalançar"), and a word that later gets
+  into `words.csv` becomes one of ours. Pages of these words say that
+  there is no translation in the reader's language yet; they stay out of
+  the sitemap, which would otherwise pass 50,000 addresses.
+
+To hide all of it, set `DACCO=False`: the panels go, and the imported
+words disappear from the dictionary, search and the API.
+`flask vocabulary dacco-import --remove` deletes the imported words
+(run it before `flask db downgrade` past the `word.source` migration).
+`flask vocabulary dacco-report` shows the numbers.
+
 ### Regional words
 
 The course teaches Central Catalan. Words that are Valencian, Balearic,
@@ -693,6 +719,7 @@ READING=True                 # set to False to take away the /reading section
 TRANSLATOR=True              # set to False to take away the /translator page
 PHONETICS_TRAINER=True       # set to False to take away /phonetics/trainer
 COURSE_C1=True               # set to False to take away the /c1 course pages
+DACCO=True                   # set to False to hide the DACCO entries and the words imported from it
 TRANSCRIPTION=True           # set to False to show only pronunciations typed in by an editor
 TEST_DATABASE_URI=           # optional, tests default to in-memory SQLite
 ```
@@ -770,7 +797,7 @@ Every merge into `dev` redeploys automatically.
    (reference it from the web service's variables).
 3. Set `SECRET_KEY`, `FLASK_APP=run.py`, `DEBUG_MODE=False`.
 4. Settings → Deploy → *Pre-deploy command*:
-   `flask db upgrade && flask vocabulary seed --update && flask grammar seed`.
+   `flask db upgrade && flask vocabulary seed --update && flask vocabulary dacco-import && flask grammar seed`.
 5. Settings → Networking → *Generate domain* (or attach your own domain).
 
 ### Render
@@ -781,7 +808,7 @@ Every merge into `dev` redeploys automatically.
 3. Environment: `DATABASE_URL`, `SECRET_KEY`, `FLASK_APP=run.py`,
    `DEBUG_MODE=False`, `PYTHON_VERSION=3.11.9`.
 4. Pre-deploy command (paid plans) or a one-off shell:
-   `flask db upgrade && flask vocabulary seed --update && flask grammar seed`.
+   `flask db upgrade && flask vocabulary seed --update && flask vocabulary dacco-import && flask grammar seed`.
 
 ### Heroku / Fly.io
 

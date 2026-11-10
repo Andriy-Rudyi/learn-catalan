@@ -1,0 +1,63 @@
+{# Entries of the open DACCO dictionary for a word (flaskblog/vocabulary/dacco.py). #}
+{% macro dacco_entries(entries) %}
+{% if entries %}
+<hr>
+<section class="dacco" lang="en">
+  <h5 lang="{{ current_lang }}">{{ _('Словник DACCO') }} <small class="text-muted">{{ _('каталанська → англійська') }}</small></h5>
+  {% for entry in entries %}
+    {% for part in entry.parts %}
+      {% set site_pos = dacco_pos(part.pos) %}
+      <p class="dacco-pos mb-1" lang="{{ current_lang }}">
+        <strong lang="ca">{{ entry.head }}</strong>
+        <span class="text-muted">{{ part_of_speech_label(site_pos) if site_pos else part.pos }}</span>
+      </p>
+      <ol class="dacco-senses">
+        {% for sense in part.senses %}
+          <li>
+            {% if sense.gender %}<span class="dacco-tag" lang="{{ current_lang }}">{{ dacco_gender(sense.gender) }}</span>{% endif %}
+            {% if sense.register %}<span class="dacco-tag">{{ sense.register }}</span>{% endif %}
+            {% if sense.local %}<span class="dacco-tag">{{ sense.local }}</span>{% endif %}
+            {{ sense.text }}
+            {% if sense.fem or sense.plural or sense.fem_plural %}
+              <span class="d-block small text-muted" lang="{{ current_lang }}">
+                {% if sense.fem %}{{ _('жіноча форма') }}: <span lang="ca">{{ sense.fem }}</span>{% endif %}
+                {% if sense.plural %}{% if sense.fem %} · {% endif %}{{ _('множина') }}: <span lang="ca">{{ sense.plural }}</span>{% endif %}
+                {% if sense.fem_plural %} · <span lang="ca">{{ sense.fem_plural }}</span>{% endif %}
+              </span>
+            {% endif %}
+            {% if sense.synonyms %}<span class="d-block small text-muted"><span lang="{{ current_lang }}">{{ _('синоніми') }}</span>: <span lang="ca">{{ sense.synonyms }}</span></span>{% endif %}
+            {% for example in sense.examples %}
+              <span class="d-block small"><em lang="ca">{{ example.ca }}</em>{% if example.en %} – <span class="text-muted">{{ example.en }}</span>{% endif %}</span>
+            {% endfor %}
+            {% for sentence in sense.sentences %}
+              <span class="d-block small"><em lang="ca">{{ sentence }}</em></span>
+            {% endfor %}
+            {% if sense.note_en %}<span class="d-block small text-muted">{{ sense.note_en }}</span>{% endif %}
+            {% if sense.note_ca %}<span class="d-block small text-muted" lang="ca">{{ sense.note_ca }}</span>{% endif %}
+          </li>
+        {% endfor %}
+      </ol>
+    {% endfor %}
+    {% if entry.expressions %}
+      <p class="mb-1" lang="{{ current_lang }}"><strong>{{ _('Вирази') }}</strong></p>
+      <ul class="dacco-expressions">
+        {% for expression in entry.expressions %}
+          <li><span lang="ca" class="fw-semibold">{{ expression.text }}</span>{% if expression.senses %} –{% endif %}
+            {% for sense in expression.senses %}{% if not loop.first %}; {% endif %}{{ sense.text }}{% endfor %}
+            {% for sense in expression.senses %}{% for example in sense.examples %}
+              <span class="d-block small"><em lang="ca">{{ example.ca }}</em>{% if example.en %} – <span class="text-muted">{{ example.en }}</span>{% endif %}</span>
+            {% endfor %}{% for sentence in sense.sentences %}
+              <span class="d-block small"><em lang="ca">{{ sentence }}</em></span>
+            {% endfor %}{% endfor %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endfor %}
+  <p class="small text-muted mb-0" lang="{{ current_lang }}">
+    {{ _('Джерело') }}: <a href="https://github.com/cpina/dacco" rel="noopener">DACCO</a>
+    ({{ _('Diccionari Obert Català de Codi Obert') }}, catalandictionary.org), LGPL-2.1 / CC BY-SA 2.5.
+  </p>
+</section>
+{% endif %}
+{% endmacro %}

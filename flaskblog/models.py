@@ -155,6 +155,9 @@ class Word(db.Model):
     # comes from ("review", "wiktionary-en", "wiktionary-ca", "manual").
     variety = db.Column(db.String(80), nullable=True, index=True)
     variety_source = db.Column(db.String(20), nullable=True)
+    # Where the word came from: None for words written for the site,
+    # 'dacco' for words imported from DACCO (flaskblog/vocabulary/dacco.py).
+    source = db.Column(db.String(20), nullable=True, index=True)
     date_added = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=True)
 

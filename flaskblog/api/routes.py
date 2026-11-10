@@ -53,6 +53,13 @@ SOURCES = [
         'url': 'https://github.com/Softcatala/sinonims-cat',
     },
     {
+        'data': 'Dictionary words marked source "dacco", and the DACCO entries on word pages',
+        'source': 'DACCO, Diccionari Obert Català de Codi Obert (editor Dr Linda Oxnard '
+                  'and contributors), catalandictionary.org',
+        'license': 'LGPL-2.1 (repository); CC BY-SA 2.5 (PDF edition)',
+        'url': 'https://github.com/cpina/dacco',
+    },
+    {
         'data': 'Verb conjugations',
         'source': 'verbecc (LGPL-3.0), with Catalan data from Verbiste and catverbs, '
                   'and this site\'s corrections to it',
@@ -306,9 +313,10 @@ def word(slug):
     if unknown:
         return error(400, 'unknown-language', 'Unknown language: {}.'.format(', '.join(unknown)),
                      languages=list(LANGUAGES))
-    entry = Word.query.filter_by(slug=slug).first()
+    words = vocabulary_service.shown(Word.query)
+    entry = words.filter_by(slug=slug).first()
     if entry is None:
-        entry = Word.query.filter(db.func.lower(Word.term) == slug.lower()).first()
+        entry = words.filter(db.func.lower(Word.term) == slug.lower()).first()
     if entry is None:
         return error(404, 'not-found', 'No dictionary word with this slug or term.')
     return jsonify({'data': word_json(entry, languages)})

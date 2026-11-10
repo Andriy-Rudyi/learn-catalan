@@ -122,6 +122,11 @@ class Config:
     # COURSE_C1=False takes the pages and the menu item away.
     COURSE_C1 = os.getenv('COURSE_C1', 'True') == 'True'
 
+    # Dictionary pages show the word's entries from the open DACCO dictionary
+    # (flaskblog/vocabulary/dacco.py). DACCO=False hides them; the words
+    # imported from it go with `flask vocabulary dacco-import --remove`.
+    DACCO = os.getenv('DACCO', 'True') == 'True'
+
     # Open API (/api/v1): requests a minute per client address; 0 = no limit.
     API_RATE_LIMIT = int(os.getenv('API_RATE_LIMIT', '120'))
 
@@ -154,6 +159,7 @@ class TestConfig(Config):
     TRANSLATOR = True
     PHONETICS_TRAINER = True
     COURSE_C1 = True
+    DACCO = True
     TRANSCRIPTION = True
     SITE_URL = None
     BASE_DOMAIN = None

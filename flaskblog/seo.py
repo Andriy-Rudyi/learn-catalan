@@ -172,6 +172,8 @@ def robots_txt():
 def _sitemap_paths():
     """Paths of every page worth indexing, as (path, extra query args)."""
     from flaskblog.conjugation import get_service
+    from sqlalchemy import or_
+
     from flaskblog.models import GrammarUnit, Word
     from flaskblog.phonetics.service import load_lessons
 
@@ -188,7 +190,10 @@ def _sitemap_paths():
     for lesson in load_lessons():
         yield url_for('phonetics.lesson', slug=lesson['slug']), []
     yield url_for('vocabulary.dictionary'), []
-    words = Word.query.with_entities(Word.slug, Word.term, Word.part_of_speech).order_by(Word.term).all()
+    # Words imported from DACCO stay out: with them the sitemap would pass the
+    # 50,000 addresses a sitemap file may list.
+    words = (Word.query.filter(or_(Word.source.is_(None), Word.source != 'dacco'))
+             .with_entities(Word.slug, Word.term, Word.part_of_speech).order_by(Word.term).all())
     for slug, _term, _pos in words:
         yield url_for('vocabulary.word', slug=slug), []
     conjugator = url_for('main.conjugator')

@@ -289,3 +289,178 @@ def write(entries, path):
     with io.open(path, 'w', encoding='utf-8') as handle:
         for entry in entries:
             handle.write(json.dumps(entry, ensure_ascii=False, separators=(',', ':')) + '\n')
+
+
+# -- importing into the site's dictionary --------------------------------------------------
+
+SOURCE_TAG = 'dacco'
+
+_POS_TO_SITE = {
+    'noun': 'noun', 'verb': 'verb', 'verb form': 'verb', 'adjective': 'adjective',
+    'adverb': 'adverb', 'pronoun': 'pronoun', 'preposition': 'preposition',
+    'conjunction': 'conjunction', 'exclamation': 'interjection',
+}
+_GENDER_TO_SITE = {'m': 'm', 'f': 'f', 'm/f': 'mf', 'm pl': 'm', 'f pl': 'f'}
+# DACCO categories (their first part) -> the site's topics.
+_TOPICS = {
+    'food': 'food', 'fruit': 'food', 'animal': 'animals', 'animals': 'animals',
+    'body': 'body', 'medical': 'body', 'medicine': 'body', 'household': 'home', 'tools': 'home',
+    'clothes': 'clothes', 'weather': 'nature', 'plants': 'nature', 'plant': 'nature',
+    'naturaldisaster': 'nature', 'astronomy': 'nature', 'geography': 'travel',
+    'geograpy': 'travel', 'country': 'travel', 'region': 'travel', 'europe': 'travel',
+    'river': 'travel', 'tourism': 'travel', 'city': 'city', 'transport': 'city',
+    'transports': 'city', 'architecture': 'city', 'work': 'work', 'education': 'work',
+    'computers': 'work', 'computer': 'work', 'financial': 'shopping', 'legal': 'society',
+    'politics': 'society', 'political': 'society', 'religious': 'society',
+    'religiuos': 'society', 'monarchy': 'society', 'crime': 'society',
+    'topicalissues': 'society', 'media': 'society', 'nationality': 'society',
+    'sports': 'leisure', 'sport': 'leisure', 'entertainment': 'leisure',
+    'number': 'numbers', 'maths': 'numbers', 'time': 'time', 'timeOfDay': 'time',
+    'colour': 'colors', 'color': 'colors', 'family': 'family', 'language': 'communication',
+    'linguistics': 'communication', 'telephone': 'communication',
+}
+_MAX = 255  # WordTranslation.translation, example
+
+
+def site_pos(pos):
+    """The site's part of speech for a DACCO one, or None."""
+    return _POS_TO_SITE.get(pos)
+
+
+def gender_text(gender):
+    """How a DACCO gender reads on the page: "m", "f", "m/f", "m pl"."""
+    from flaskblog.i18n import gettext
+    return {'m': gettext('ч.'), 'f': gettext('ж.'), 'm/f': gettext('ч./ж.'),
+            'm pl': gettext('ч. мн.'), 'f pl': gettext('ж. мн.')}.get(gender, gender)
+
+
+def site_meaning(sense, pos):
+    """A DACCO sense in the site's style: "[instrument] to play / to strum"
+    -> "play, strum (instrument)"."""
+    glosses = re.findall(r'\[([^\]]*)\]', sense.get('text', ''))
+    parts = []
+    for item in translations(sense):
+        item = item.replace(';', ',')
+        if pos == 'verb' and item.lower().startswith('to '):
+            item = item[3:]
+        if item and item not in parts:
+            parts.append(item)
+    text = ', '.join(parts)
+    if glosses and text:
+        text += ' ({})'.format('; '.join(glosses).replace(';', ','))
+    return text
+
+
+def site_word(entry):
+    """The fields of a site Word for a DACCO entry, or None when it has no
+    translation to show."""
+    meanings = []
+    for sense in senses(entry):
+        text = site_meaning(sense, _POS_TO_SITE.get(sense['pos']))
+        if text and text not in meanings:
+            if len('; '.join(meanings + [text])) > _MAX:
+                if not meanings:
+                    meanings.append(text[:_MAX - 1] + '…')
+                break
+            meanings.append(text)
+    if not meanings:
+        return None
+    parts = entry.get('parts', [])
+    pos = _POS_TO_SITE.get(parts[0]['pos']) if parts else None
+    if pos is None and ' ' in entry['head']:
+        pos = 'phrase'
+    gender = None
+    for part in parts:
+        if part['pos'] == 'noun':
+            for sense in part['senses']:
+                if sense.get('gender') in _GENDER_TO_SITE:
+                    gender = _GENDER_TO_SITE[sense['gender']]
+                    break
+            break
+    topic = None
+    for sense in senses(entry):
+        if sense.get('category'):
+            topic = _TOPICS.get(sense['category'].split(',')[0].split('-')[0].strip())
+            if topic:
+                break
+    example = next((x for s in senses(entry) for x in s.get('examples', [])
+                    if x.get('ca') and x.get('en') and len(x['ca']) <= _MAX and len(x['en']) <= _MAX),
+                   None)
+    note = next((s['note_en'] for s in senses(entry) if s.get('note_en')), None)
+    return {
+        'term': entry['head'][:100],
+        'part_of_speech': pos,
+        'gender': gender,
+        'topic': topic,
+        'example_ca': example['ca'] if example else None,
+        'translation_en': '; '.join(meanings),
+        'example_en': example['en'] if example else None,
+        'notes_en': note,
+    }
+
+
+def _existing_keys(words):
+    keys = set()
+    for term in words:
+        key = _key(term)
+        keys.add(key)
+        keys.add(key + '-se')
+        keys.add(key + "'s")
+    return keys
+
+
+def import_words(entries=None):
+    """Add the DACCO words (*entries*, by default all of ca-en) the
+    dictionary does not have yet, with their English translation, marked
+    ``source='dacco'``. Safe to run again: words already there are left
+    alone. Returns how many were added. The caller commits."""
+    from flaskblog import db
+    from flaskblog.models import Word
+    from flaskblog.vocabulary import senses as word_senses
+
+    known = _existing_keys(term for (term,) in Word.query.with_entities(Word.term))
+    slugs = {slug for (slug,) in Word.query.with_entities(Word.slug)}
+    added = 0
+    for entry in load('ca-en') if entries is None else entries:
+        if _key(entry['head']) in known:
+            continue
+        fields = site_word(entry)
+        if fields is None:
+            continue
+        known.update(_existing_keys([fields['term']]))
+        word = Word(
+            term=fields['term'], slug=_free_slug(fields['term'], slugs),
+            part_of_speech=fields['part_of_speech'], gender=fields['gender'],
+            topic=fields['topic'], example_ca=fields['example_ca'], source=SOURCE_TAG,
+        )
+        slugs.add(word.slug)
+        word.set_translation('en', fields['translation_en'], fields['example_en'], fields['notes_en'])
+        word.translations['en'].reviewed = True
+        db.session.add(word)
+        word_senses.sync_from_flat(word, ['en'])
+        added += 1
+        if added % 1000 == 0:
+            db.session.flush()
+    return added
+
+
+def _free_slug(term, slugs):
+    from slugify import slugify
+    base = slugify(term) or 'word'
+    slug, counter = base, 1
+    while slug in slugs:
+        slug = '{}-{}'.format(base, counter)
+        counter += 1
+    return slug
+
+
+def remove_words():
+    """Take the imported DACCO words away again (saved copies in "My
+    dictionary" go with them). Returns how many. The caller commits."""
+    from flaskblog import db
+    from flaskblog.models import Word
+
+    words = Word.query.filter_by(source=SOURCE_TAG).all()
+    for word in words:
+        db.session.delete(word)
+    return len(words)

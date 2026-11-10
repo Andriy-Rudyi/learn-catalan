@@ -207,3 +207,18 @@ def dacco_report_command():
         click.echo(direction)
         for key, value in dacco.stats(terms if direction == 'ca-en' else (), direction).items():
             click.echo('  {}: {}'.format(key, value))
+
+
+@vocabulary_cli.command('dacco-import')
+@click.option('--remove', is_flag=True, help='Прибрати імпортовані слова DACCO.')
+def dacco_import_command(remove):
+    """Add the DACCO words the dictionary does not have (or take them away)."""
+    from flaskblog.vocabulary import dacco
+    if remove:
+        count = dacco.remove_words()
+        db.session.commit()
+        click.echo('Прибрано слів DACCO: {}.'.format(count))
+        return
+    count = dacco.import_words()
+    db.session.commit()
+    click.echo('Додано слів DACCO: {}.'.format(count))

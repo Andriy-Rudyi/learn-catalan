@@ -14,6 +14,7 @@ services:
       pip install -r requirements.txt &&
       flask db upgrade &&
       flask vocabulary seed --update &&
+      flask vocabulary dacco-import &&
       flask grammar seed
     # The free instance has a slow CPU; give the first request time to load.
     startCommand: gunicorn run:app --bind 0.0.0.0:$PORT --timeout 120
