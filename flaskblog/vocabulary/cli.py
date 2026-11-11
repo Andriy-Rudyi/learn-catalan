@@ -246,3 +246,53 @@ def apertium_import_command(remove):
     count = apertium.import_translations()
     db.session.commit()
     click.echo('Додано іспанських перекладів: {}.'.format(count))
+
+
+@vocabulary_cli.command('wiktionary-convert')
+@click.argument('folder', type=click.Path(exists=True, file_okay=False))
+def wiktionary_convert_command(folder):
+    """Build the Ukrainian-English and Ukrainian-Spanish dictionaries from
+    the kaikki.org downloads in FOLDER (see flaskblog/vocabulary/wiktionary.py)."""
+    from flaskblog.vocabulary import wiktionary
+    for name, count in wiktionary.convert(folder).items():
+        click.echo('{}: {}'.format(name, count))
+
+
+def _pivot_words():
+    """(term, part of speech, English translation) of every dictionary word."""
+    return [(word.term, word.part_of_speech, word.translation_en or '')
+            for word in Word.query.order_by(Word.term) if word.translation_en]
+
+
+@vocabulary_cli.command('pivot-export')
+def pivot_export_command():
+    """Write the Ukrainian-Catalan dictionary derived through English and
+    Spanish to data/derived/uk-ca.jsonl."""
+    from flaskblog.vocabulary import pivot
+    click.echo('Українських слів: {}.'.format(pivot.export(_pivot_words())))
+
+
+@vocabulary_cli.command('pivot-import')
+@click.option('--remove', is_flag=True, help='Прибрати виведені переклади, яких ніхто не перевірив.')
+def pivot_import_command(remove):
+    """Give words without a Ukrainian translation the derived one, as a draft."""
+    from flaskblog.vocabulary import pivot
+    if remove:
+        count = pivot.remove_translations()
+        db.session.commit()
+        click.echo('Прибрано виведених перекладів: {}.'.format(count))
+        return
+    count = pivot.import_translations()
+    db.session.commit()
+    click.echo('Додано виведених українських перекладів: {}.'.format(count))
+
+
+@vocabulary_cli.command('pivot-report')
+def pivot_report_command():
+    """Compare the derived Ukrainian with the hand-made translations."""
+    from flaskblog.vocabulary import pivot
+    rows = [(word.term, word.part_of_speech, word.translation_en or '', word.translation or '')
+            for word in Word.query.filter(Word.source.is_(None))
+            if word.translation and word.translations['uk'].reviewed]
+    for key, value in pivot.evaluate(rows).items():
+        click.echo('{}: {}'.format(key, value))

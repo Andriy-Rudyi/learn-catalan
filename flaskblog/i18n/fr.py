@@ -499,6 +499,7 @@ MESSAGES = {
     'Дійові особи': 'Personnages',
     'Натисніть будь-яке слово: переклад, форма і синоніми.': 'Cliquez sur un mot : traduction, forme et synonymes.',
     'Сцени': 'Scènes',
+    'Неперевірені українські переклади слів виведено через англійську та іспанську за даними Вікісловника (kaikki.org), ліцензія CC BY-SA 4.0.': 'Les traductions ukrainiennes non vérifiées sont dérivées via l’anglais et l’espagnol à partir des données du Wiktionnaire (kaikki.org), sous licence CC BY-SA 4.0.',
     'Іспанські переклади слів узято з відкритого іспансько-каталонського словника Apertium (apertium-spa-cat), ліцензія GPL-2.0.': 'Les traductions espagnoles des mots proviennent du dictionnaire libre espagnol-catalan d’Apertium (apertium-spa-cat), sous licence GPL-2.0.',
     'Слова з позначкою DACCO та статті DACCO на сторінках слів узято з відкритого каталонсько-англійського словника DACCO (Diccionari Obert Català de Codi Obert, редакторка д-р Лінда Окснард і співавтори), ліцензія LGPL-2.1 (репозиторій) / CC BY-SA 2.5 (PDF).': 'Les mots marqués DACCO et les articles DACCO des pages de mots proviennent du dictionnaire libre catalan-anglais DACCO (Diccionari Obert Català de Codi Obert, sous la direction de Linda Oxnard et de ses contributeurs), sous licence LGPL-2.1 (dépôt) / CC BY-SA 2.5 (PDF).',
     'Словник DACCO': 'Dictionnaire DACCO',

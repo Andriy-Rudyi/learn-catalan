@@ -66,6 +66,12 @@ SOURCES = [
         'url': 'https://github.com/apertium/apertium-spa-cat',
     },
     {
+        'data': 'Ukrainian translations marked as unreviewed drafts (derived through English and Spanish)',
+        'source': 'Wiktionary (English and Spanish editions) as extracted by wiktextract, kaikki.org',
+        'license': 'CC BY-SA 4.0',
+        'url': 'https://kaikki.org',
+    },
+    {
         'data': 'Verb conjugations',
         'source': 'verbecc (LGPL-3.0), with Catalan data from Verbiste and catverbs, '
                   'and this site\'s corrections to it',
