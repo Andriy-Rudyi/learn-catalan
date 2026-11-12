@@ -507,8 +507,18 @@ server one word at a time (`/text/word?w=&prev=`). Verb forms come from
 the conjugator's own data (verbecc with this project's corrections): the
 forms of the verbs that start with the same three letters are built when
 first needed, and forms that start differently from their infinitive
-(*vaig*, *sóc*, *puc*) are indexed once per process, which takes a couple of
-seconds on the first click. The approach, the plural rule and the list of
+(*vaig*, *sóc*, *puc*) are indexed once per process. That takes a couple of
+seconds (much longer on a small server), so the indexes are built in the
+background as soon as the process serves its first page, not on the first
+click.
+
+A word no dictionary has is looked for as a word built from one they have
+(`morphology.derived_readings`): *maldestresa* is shown as “derived: noun
+from an adjective” under *maldestre* with its translation; the same for
+adverbs in *-ment*, superlatives, diminutives, nouns and adjectives from
+verbs (*-ació*, *-dor*, *-able*) and prefixes (*des-*, *re-*, *in-*). A
+word that is only in Apertium's Spanish-Catalan dictionary shows its
+Spanish equivalent. The approach, the plural rule and the list of
 singular candidates come from [ReeeWriter](https://github.com/neuronids/reeewriter)
 (MIT); the data is in `flaskblog/reader/data/` (see its `SOURCES.md`).
 `READER=False` removes the page and its menu item.

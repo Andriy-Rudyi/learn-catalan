@@ -82,6 +82,35 @@ class AnalyseTests(unittest.TestCase):
         self.assertEqual({'word': '', 'readings': [], 'groups': []}, morphology.analyse('...'))
 
 
+class DerivedTests(unittest.TestCase):
+
+    def derived(self, word):
+        return morphology.derived_readings(word, lambda lemma: False)
+
+    def test_feminine_of_an_adjective_in_e(self):
+        self.assertIn(('maldestre', 'word', (), False, True),
+                      readings(morphology.analyse('maldestra')))
+
+    def test_noun_adverb_and_superlative_from_an_adjective(self):
+        self.assertEqual([('maldestre', 'quality', False)], self.derived('maldestresa'))
+        self.assertEqual([('maldestre', 'quality', True)], self.derived('maldestreses'))
+        self.assertIn(('maldestre', 'adverb', False), self.derived('maldestrament'))
+        self.assertIn(('bell', 'superlative', False), self.derived('bellíssima'))
+        self.assertIn(('ràpid', 'superlative', False), self.derived('rapidíssim'))
+
+    def test_from_a_verb_and_with_a_prefix(self):
+        self.assertIn(('actuar', 'action', False), self.derived('actuació'))
+        self.assertIn(('treballar', 'agent', False), self.derived('treballadora'))
+        self.assertIn(('acceptar', 'able', False), self.derived('acceptable'))
+        self.assertIn(('fer', 'prefix:re'), [r[:2] for r in self.derived('refeia')])
+
+    def test_only_when_the_word_itself_is_unknown(self):
+        self.assertEqual('derived', morphology.analyse('maldestresa')['readings'][0]['kind'])
+        # "tristesa" is a word of the thesaurus: no guessing.
+        self.assertNotIn('derived', [r['kind'] for r in morphology.analyse('tristesa')['readings']])
+        self.assertEqual([], self.derived('xyzzyqesa'))
+
+
 class TextPageTests(AppTestCase):
 
     def setUp(self):
@@ -113,6 +142,27 @@ class TextPageTests(AppTestCase):
         self.assertIsNone(reading['save_url'])  # not logged in
         items = {item['text']: item for group in data['groups'] for item in group['items']}
         self.assertEqual('домовлятися', items['Acordaren']['translation'])
+
+    def test_derived_word(self):
+        word = Word(term='maldestre', part_of_speech='adjective')
+        word.set_translation('uk', 'незграбний')
+        db.session.add(word)
+        db.session.commit()
+        self.app.extensions.pop('reader_terms', None)
+        reading, = self.client.get('/text/word?w=maldestresa').get_json()['readings']
+        self.assertEqual(('maldestre', 'незграбний'), (reading['lemma'], reading['translation']))
+        self.assertEqual('похідне: іменник від прикметника', reading['form'])
+        self.assertEqual('/dictionary/maldestre', reading['url'])
+        # Known to the thesaurus only: the word it is built from is shown too.
+        lemmas = [r['lemma'] for r in self.client.get('/text/word?w=maldestrament').get_json()['readings']]
+        self.assertEqual(['maldestrament', 'maldestre'], lemmas)
+
+    def test_spanish_for_a_word_outside_the_dictionary(self):
+        reading, = self.client.get('/text/word?w=malapteses').get_json()['readings']
+        self.assertEqual(('malaptesa', 'torpeza (іспанською)'), (reading['lemma'], reading['translation']))
+        self.assertIsNone(reading['url'])
+        reading, = self.client.get('/text/word?w=malaptesa&lang=es').get_json()['readings']
+        self.assertEqual('torpeza', reading['translation'])
 
     def test_word_lookup_in_english(self):
         data = self.client.get('/text/word?w=decidiren&lang=en').get_json()

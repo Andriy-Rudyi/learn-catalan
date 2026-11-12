@@ -1,5 +1,6 @@
 """/text: paste a Catalan text, click any word (flaskblog/reader/morphology.py)."""
 
+import threading
 import time
 
 from flask import Blueprint, abort, current_app, jsonify, render_template, request, url_for
@@ -10,7 +11,7 @@ from flaskblog.conjugation.labels import mood_label, person_labels, tense_label
 from flaskblog.i18n import get_locale, gettext as _
 from flaskblog.models import UserWord, Word
 from flaskblog.reader import morphology, works
-from flaskblog.vocabulary import transcription
+from flaskblog.vocabulary import apertium, transcription
 from flaskblog.vocabulary.constants import part_of_speech_label
 from flaskblog.vocabulary.forms import ActionForm
 
@@ -26,6 +27,34 @@ def switched_on():
         abort(404)
 
 
+_warming = threading.Event()
+
+
+@reader.before_app_request
+def warm_up():
+    """The first click on a word used to wait for the reader's indexes (the
+    forms of every verb, the thesaurus, the list of dictionary words): a few
+    seconds, much longer on a small server. They are built in the background
+    as soon as the process serves its first page, whichever page it is."""
+    if _warming.is_set() or current_app.testing or not current_app.config.get('READER', True):
+        return
+    _warming.set()
+    app = current_app._get_current_object()
+
+    def work():
+        try:
+            morphology.thesaurus()
+            morphology.verbs().analyse('anava')
+            apertium.has('casa')
+            with app.app_context():
+                _dictionary_terms()
+                db.session.remove()
+        except Exception:  # the click builds whatever is missing
+            app.logger.exception('reader warm-up failed')
+
+    threading.Thread(target=work, name='reader-warm-up', daemon=True).start()
+
+
 def _dictionary_terms():
     """Lower-case dictionary words, so a word only our dictionary knows is
     still recognised."""
@@ -37,8 +66,32 @@ def _dictionary_terms():
     return cache['terms']
 
 
+# How a word is built from the one shown (morphology.derived_readings).
+DERIVATIONS = {
+    'quality': 'іменник від прикметника',
+    'adverb': 'прислівник від прикметника',
+    'superlative': 'найвищий ступінь',
+    'diminutive': 'зменшувальна форма',
+    'augmentative': 'збільшувальна форма',
+    'action': 'іменник від дієслова',
+    'agent': 'виконавець дії, від дієслова',
+    'able': 'прикметник від дієслова',
+    'ism': 'похідне слово',
+}
+
+
 def _form_label(reading):
     """"Minulий простий, 3 ос. мн." or "множина, жіночий рід"."""
+    if reading['kind'] == 'derived':
+        kind = reading['derivation']
+        if kind.startswith('prefix:'):
+            label = _('з префіксом {prefix}-', prefix=kind[7:])
+        else:
+            label = _(DERIVATIONS[kind])
+        parts = [_('похідне') + ': ' + label]
+        if reading['plural']:
+            parts.append(_('множина'))
+        return ', '.join(parts)
     if reading['kind'] == 'verb':
         mood, tense, person = reading['slot']
         parts = [mood_label(mood)]
@@ -153,7 +206,20 @@ def word():
     surface = (request.args.get('w') or '')[:80]
     previous = (request.args.get('prev') or '')[:80]
     terms = _dictionary_terms()
-    result = morphology.analyse(surface, previous, known=lambda lemma: lemma.lower() in terms)
+
+    def known(lemma):
+        return lemma.lower() in terms or apertium.has(lemma)
+
+    result = morphology.analyse(surface, previous, known=known)
+    # A word only the thesaurus or Apertium knows has no translation of ours:
+    # show the word it is built from as well (maldestrament: maldestre).
+    if result['word'] and not any(r['lemma'].lower() in terms for r in result['readings']):
+        seen_lemmas = {r['lemma'].lower() for r in result['readings']}
+        for base, kind, is_plural in morphology.derived_readings(result['word'], known):
+            if base.lower() not in seen_lemmas and base.lower() in terms:
+                result['readings'].append({'lemma': base, 'kind': 'derived', 'slot': None,
+                                           'plural': is_plural, 'feminine': False,
+                                           'derivation': kind})
 
     lemmas = {reading['lemma'].lower() for reading in result['readings']}
     for group in result['groups']:
@@ -172,11 +238,20 @@ def word():
 
     readings, seen = [], set()
     for reading in result['readings']:
-        key = (reading['lemma'], reading['kind'], tuple(reading['slot'] or ()))
+        key = (reading['lemma'], reading['kind'], tuple(reading['slot'] or ()),
+               reading.get('derivation'))
         if key in seen:
             continue
         seen.add(key)
         entry = found.get(reading['lemma'].lower())
+        translation = entry.t_translation() if entry is not None else None
+        if translation is None and reading['kind'] != 'verb':
+            # Not in the dictionary: Apertium's Spanish is better than nothing.
+            spanish = apertium.spanish(reading['lemma'])[:3]
+            if spanish:
+                translation = ', '.join(spanish)
+                if get_locale() != 'es':
+                    translation += ' ' + _('(іспанською)')
         readings.append({
             'lemma': reading['lemma'],
             'kind': reading['kind'],
@@ -184,7 +259,7 @@ def word():
             'part_of_speech': (part_of_speech_label(entry.part_of_speech)
                                if entry is not None and entry.part_of_speech else
                                (part_of_speech_label('verb') if reading['kind'] == 'verb' else None)),
-            'translation': entry.t_translation() if entry is not None else None,
+            'translation': translation,
             'url': url_for('vocabulary.word', slug=entry.slug) if entry is not None else None,
             'save_url': (url_for('vocabulary.save_word', slug=entry.slug)
                          if entry is not None and current_user.is_authenticated else None),

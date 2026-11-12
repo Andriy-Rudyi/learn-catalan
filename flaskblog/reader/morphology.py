@@ -186,7 +186,7 @@ def masculines(word):
     famosa -> famós, nova -> nou); checked against the lexicon by the caller."""
     if not word.endswith('a') or len(word) < 3:
         return []
-    out = [word[:-1]]
+    out = [word[:-1], word[:-1] + 'e']   # maldestra -> maldestre, negra -> negre
     for ending, replacement in (('ga', 'c'), ('ja', 'ig'), ('va', 'u'), ('ssa', 's'),
                                 ('osa', 'ós'), ('esa', 'ès'), ('ina', 'í'), ('ona', 'ó'),
                                 ('ada', 'at'), ('ida', 'it'), ('uda', 'ut'), ('na', '')):
@@ -427,6 +427,134 @@ def nominal_readings(word, known):
     return out
 
 
+# -- derived words --------------------------------------------------------------------------
+#
+# A word no dictionary has may be built from one they do have: maldestresa
+# from maldestre, ràpidament from ràpid. (kind, ending, what replaces it to
+# get candidates for the base, which the base must be: 'adjective', 'verb'
+# or None for any known word).
+_DERIVATIONS = (
+    ('quality', 'esa', ('', 'e', 'a'), 'adjective'),          # maldestresa, tristesa
+    ('quality', 'quesa', ('c',), 'adjective'),                 # riquesa
+    ('quality', 'bilitat', ('ble',), 'adjective'),             # possibilitat
+    ('quality', 'itat', ('', 'e', 'i'), 'adjective'),          # obscuritat
+    ('quality', 'etat', ('', 'e'), 'adjective'),               # seguretat
+    ('quality', 'edat', ('', 'e'), 'adjective'),               # humitat/soledat
+    ('quality', 'or', ('', 'e', 'a'), 'adjective'),            # blancor, dolçor
+    ('quality', 'ària', ('', 'e'), 'adjective'),               # amplària
+    ('quality', 'ícia', ('', 'e'), 'adjective'),               # brutícia
+    ('adverb', 'ment', ('',), 'adjective'),                    # fàcilment, ràpidament
+    ('superlative', 'íssim', ('', 'e', 'a', 'o'), 'adjective'),
+    ('superlative', 'quíssim', ('c',), 'adjective'),           # riquíssim
+    ('diminutive', 'et', ('', 'e', 'a', 'o'), None),           # gatet, llibret
+    ('diminutive', 'eta', ('a', 'e', ''), None),               # caseta
+    ('diminutive', 'ó', ('', 'a', 'e'), None),                 # carreró
+    ('augmentative', 'às', ('', 'e', 'a', 'o'), None),         # homenàs
+    ('augmentative', 'assa', ('a', 'e', ''), None),
+    ('augmentative', 'ot', ('', 'e', 'a', 'o'), None),         # homenot
+    ('augmentative', 'ota', ('a', 'e', ''), None),
+    ('action', 'ació', ('ar',), 'verb'),                       # actuació
+    ('action', 'ició', ('ir',), 'verb'),                       # definició
+    ('action', 'ament', ('ar',), 'verb'),                      # tractament
+    ('action', 'iment', ('ir', 'er', 're'), 'verb'),           # sentiment
+    ('action', 'ada', ('ar',), 'verb'),                        # arribada
+    ('action', 'atge', ('ar',), 'verb'),                       # muntatge
+    ('agent', 'ador', ('ar',), 'verb'),                        # treballador
+    ('agent', 'adora', ('ar',), 'verb'),
+    ('agent', 'edor', ('er', 're'), 'verb'),                   # venedor
+    ('agent', 'edora', ('er', 're'), 'verb'),
+    ('agent', 'idor', ('ir',), 'verb'),                        # servidor
+    ('agent', 'idora', ('ir',), 'verb'),
+    ('agent', 'ant', ('ar',), 'verb'),                         # estudiant
+    ('able', 'able', ('ar',), 'verb'),                         # acceptable
+    ('able', 'ible', ('ir', 'er', 're'), 'verb'),              # llegible
+    ('ism', 'isme', ('', 'e', 'a', 'i', 'o'), None),           # socialisme
+    ('ism', 'ista', ('', 'e', 'a', 'i', 'o'), None),           # pianista
+)
+_PREFIXES = ('des', 'dis', 're', 'in', 'im', 'ir', 'il', 'a', 'sobre', 'sub', 'super', 'pre',
+             'post', 'anti', 'contra', 'auto', 'semi', 'inter', 'ex', 'mal', 'ben', 'no-',
+             'ultra', 'hiper', 'co', 'bes', 'entre', 'mig')
+_MIN_BASE = 3
+
+
+def _strip_stress(text):
+    return ''.join(_UNSTRESS.get(char, char) for char in text)
+
+
+def derived_readings(word, known):
+    """[(base, kind, plural)] for a word built from a known one: *kind* is
+    'quality', 'adverb', 'superlative', 'diminutive', 'augmentative',
+    'action', 'agent', 'able', 'ism' or 'prefix:<prefix>'."""
+    words = thesaurus()
+    engine = verbs()
+    lower = word.lower()
+    out = []
+
+    def has(base, need):
+        if len(base) < _MIN_BASE:
+            return False
+        if need == 'verb':
+            return engine.service.resolve(base) == base
+        if need == 'adjective':
+            return words.is_adjective(base)
+        return known(base) or base in words
+
+    def bases(stem, need):
+        """Known words a stem can stand for: itself, without the accent a
+        longer word needed, or with the one a shorter word needs."""
+        found = []
+        for candidate in (stem, _strip_stress(stem)):
+            if has(candidate, need) and candidate not in found:
+                found.append(candidate)
+        if not found:
+            # rapid(ament) -> ràpid: try an accent on each vowel.
+            for index, char in enumerate(stem):
+                for accented in {'a': 'à', 'e': 'èé', 'i': 'í', 'o': 'òó', 'u': 'ú'}.get(char, ''):
+                    candidate = stem[:index] + accented + stem[index + 1:]
+                    if has(candidate, need) and candidate not in found:
+                        found.append(candidate)
+        return found
+
+    def add(base, kind, plural_):
+        if base != lower and (base, kind, plural_) not in out:
+            out.append((base, kind, plural_))
+
+    forms = [(lower, False)] + [(single, True) for single in singulars(lower)]
+    for form, plural_ in forms:
+        for kind, ending, replacements, need in _DERIVATIONS:
+            if not form.endswith(ending) or len(form) - len(ending) < 2:
+                continue
+            stem = form[:-len(ending)]
+            stems = [stem + replacement for replacement in replacements]
+            if kind == 'adverb':
+                # The adverb is built on the feminine: ràpida-ment, maldestra-ment.
+                stems = masculines(stem) + stems
+            if kind == 'superlative' and form.endswith('íssima'):
+                continue
+            for candidate in stems:
+                for base in bases(candidate, need):
+                    add(base, kind, plural_)
+        if form.endswith('íssima'):
+            for replacement in ('', 'e', 'a', 'o'):
+                for base in bases(form[:-6] + replacement, 'adjective'):
+                    add(base, 'superlative', plural_)
+        if out:
+            break
+    if out:
+        return out
+    for prefix in sorted(_PREFIXES, key=len, reverse=True):
+        rest = lower[len(prefix):].lstrip('-')
+        if not lower.startswith(prefix) or len(rest) < _MIN_BASE + 1:
+            continue
+        for infinitive, _slot in engine.analyse(rest):
+            add(infinitive, 'prefix:' + prefix.strip('-'), False)
+        for lemma, plural_, _feminine in nominal_readings(rest, known):
+            add(lemma, 'prefix:' + prefix.strip('-'), plural_)
+        if out:
+            break
+    return out
+
+
 def readings(surface, previous=None, known=lambda lemma: False):
     """[(lemma, kind, slot)] of *surface*, best first: analyse() without the
     synonyms, for the translator."""
@@ -447,7 +575,8 @@ def analyse(surface, previous=None, known=lambda lemma: False):
     """Readings of *surface* and synonym groups in its form.
 
     Returns {"word": the cleaned word, "readings": [{"lemma", "kind",
-    "slot", "plural", "feminine"}], "groups": [{"pos", "gloss", "kind",
+    "slot", "plural", "feminine"}] (kind "derived" also has "derivation":
+    the word is built from the lemma, see derived_readings), "groups": [{"pos", "gloss", "kind",
     "lemma", "items": [{"text", "lemma", "register"}]}]}.
     """
     word = clean(surface)
@@ -512,6 +641,13 @@ def analyse(surface, previous=None, known=lambda lemma: False):
                 return plural(text) if is_plural else text
 
             add_group(group, 'word', lemma, inflect)
+
+    # Nothing found as it stands: a word built from one we know?
+    if not result['readings']:
+        for base, kind, is_plural in derived_readings(word, known):
+            result['readings'].append({'lemma': base, 'kind': 'derived', 'slot': None,
+                                       'plural': is_plural, 'feminine': False,
+                                       'derivation': kind})
 
     # "les obres" is a noun, "ells obren" a verb: the word before decides
     # which groups come first.

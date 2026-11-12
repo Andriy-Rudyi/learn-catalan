@@ -133,26 +133,41 @@ def load():
 
 @functools.lru_cache(maxsize=1)
 def _index():
-    index = {}
-    for pair in load():
-        if pair['dir'] in ('both', 'ca-es'):
-            index.setdefault(pair['ca'].lower(), []).append(pair)
-    return index
+    """{Catalan word: ((Spanish word, site part of speech), ...)}, the pairs
+    that hold both ways first. Read straight from the file and kept small:
+    the reader uses it on a server with little memory."""
+    found = {}
+    try:
+        with io.open(DATA_FILE, encoding='utf-8') as handle:
+            for line in handle:
+                if not line.strip():
+                    continue
+                pair = json.loads(line)
+                if pair['dir'] in ('both', 'ca-es'):
+                    rank = (pair['dir'] != 'both', str(pair.get('weight', '')))
+                    found.setdefault(pair['ca'].lower(), []).append((rank, pair['es'], POS[pair['pos']]))
+    except OSError:
+        return {}
+    return {term: tuple((es, pos) for _rank, es, pos in sorted(rows)) for term, rows in found.items()}
+
+
+def has(term):
+    """True when Apertium pairs this Catalan word with a Spanish one."""
+    return (term or '').strip().lower() in _index()
 
 
 def spanish(term, part_of_speech=None):
     """The Spanish words for a Catalan term, the ones of its part of speech
     first (all of them when none matches)."""
-    pairs = _index().get((term or '').strip().lower(), [])
+    pairs = _index().get((term or '').strip().lower(), ())
     if not pairs and (term or '').endswith('-se'):
-        pairs = _index().get(term[:-3].lower(), [])
+        pairs = _index().get(term[:-3].lower(), ())
     if part_of_speech:
-        same = [p for p in pairs if POS[p['pos']] == part_of_speech]
-        pairs = same or pairs
+        pairs = [pair for pair in pairs if pair[1] == part_of_speech] or pairs
     words = []
-    for pair in sorted(pairs, key=lambda p: (p['dir'] != 'both', str(p.get('weight', '')))):
-        if pair['es'] not in words:
-            words.append(pair['es'])
+    for es, _pos in pairs:
+        if es not in words:
+            words.append(es)
     return words
 
 
