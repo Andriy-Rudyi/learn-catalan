@@ -132,11 +132,14 @@ def load():
         return []
 
 
+_SEP_PAIR, _SEP_FIELD = '\x1e', '\x1f'
+
+
 @functools.lru_cache(maxsize=1)
 def _index():
-    """{Catalan word: ((Spanish word, site part of speech), ...)}, the pairs
-    that hold both ways first. Read straight from the file and kept small:
-    the reader uses it on a server with little memory."""
+    """{Catalan word: "spanish\x1fpos\x1espanish\x1fpos..."}, the pairs that
+    hold both ways first. Read straight from the file and kept as plain
+    strings: the reader uses it on a server with little memory."""
     found = {}
     try:
         with io.open(DATA_FILE, encoding='utf-8') as handle:
@@ -149,7 +152,15 @@ def _index():
                     found.setdefault(pair['ca'].lower(), []).append((rank, pair['es'], POS[pair['pos']]))
     except OSError:
         return {}
-    return {term: tuple((es, pos) for _rank, es, pos in sorted(rows)) for term, rows in found.items()}
+    return {term: _SEP_PAIR.join(es + _SEP_FIELD + pos for _rank, es, pos in sorted(rows))
+            for term, rows in found.items()}
+
+
+def _pairs(term):
+    packed = _index().get(term)
+    if not packed:
+        return ()
+    return [tuple(item.split(_SEP_FIELD)) for item in packed.split(_SEP_PAIR)]
 
 
 def has(term):
@@ -160,9 +171,9 @@ def has(term):
 def spanish(term, part_of_speech=None):
     """The Spanish words for a Catalan term, the ones of its part of speech
     first (all of them when none matches)."""
-    pairs = _index().get((term or '').strip().lower(), ())
+    pairs = _pairs((term or '').strip().lower())
     if not pairs and (term or '').endswith('-se'):
-        pairs = _index().get(term[:-3].lower(), ())
+        pairs = _pairs(term[:-3].lower())
     if part_of_speech:
         pairs = [pair for pair in pairs if pair[1] == part_of_speech] or pairs
     words = []

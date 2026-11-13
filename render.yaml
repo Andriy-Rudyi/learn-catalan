@@ -21,7 +21,7 @@ services:
       flask vocabulary pivot-import &&
       flask grammar seed
     # The free instance has a slow CPU; give the first request time to load.
-    startCommand: gunicorn run:app --bind 0.0.0.0:$PORT --timeout 120
+    startCommand: gunicorn run:app --bind 0.0.0.0:$PORT --timeout 120 --workers 1 --max-requests 500 --max-requests-jitter 100
     healthCheckPath: /
     envVars:
       - key: PYTHON_VERSION

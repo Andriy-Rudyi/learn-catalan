@@ -1,2 +1,2 @@
-web: gunicorn run:app
+web: gunicorn run:app --workers 1 --max-requests 500 --max-requests-jitter 100
 release: FLASK_APP=run.py flask db upgrade && FLASK_APP=run.py flask vocabulary seed --update && FLASK_APP=run.py flask vocabulary dacco-import && FLASK_APP=run.py flask vocabulary apertium-words && FLASK_APP=run.py flask vocabulary extra-words && FLASK_APP=run.py flask vocabulary apertium-import && FLASK_APP=run.py flask vocabulary pivot-import && FLASK_APP=run.py flask grammar seed

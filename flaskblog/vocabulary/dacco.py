@@ -93,21 +93,47 @@ def _key(term):
 
 @functools.lru_cache(maxsize=None)
 def _index(direction):
+    """{lower-case head: (byte offset of its line, ...)} of a direction's
+    file: the entries themselves are read when asked for, so a word page
+    does not keep the whole dictionary in memory."""
     index = {}
-    for entry in load(direction):
-        head = _key(entry['head'])
-        index.setdefault(head, []).append(entry)
-        if direction == 'ca-en':
-            # A verb listed as "abalançar-se" is found as "abalançar" too.
-            for ending in ('-se', "'s"):
-                if head.endswith(ending):
-                    index.setdefault(head[:-len(ending)], []).append(entry)
+    path = os.path.join(DATA_DIR, FILES[direction])
+    try:
+        handle = io.open(path, 'rb')
+    except OSError:
+        return {}
+    with handle:
+        offset = 0
+        for line in handle:
+            if line.strip():
+                try:
+                    start = line.index(b'{"head":"') + 9
+                    head = json.loads(b'"' + line[start:line.index(b'",', start)] + b'"')
+                except ValueError:
+                    head = json.loads(line)['head']
+                key = _key(head)
+                index[key] = index.get(key, ()) + (offset,)
+                if direction == 'ca-en':
+                    # A verb listed as "abalançar-se" is found as "abalançar" too.
+                    for ending in ('-se', "'s"):
+                        if key.endswith(ending):
+                            base = key[:-len(ending)]
+                            index[base] = index.get(base, ()) + (offset,)
+            offset += len(line)
     return index
 
 
 def lookup(term, direction='ca-en'):
     """The entries for a word ("abalançar" finds "abalançar-se")."""
-    return _index(direction).get(_key(term), [])
+    offsets = _index(direction).get(_key(term), ())
+    if not offsets:
+        return []
+    entries = []
+    with io.open(os.path.join(DATA_DIR, FILES[direction]), 'rb') as handle:
+        for offset in offsets:
+            handle.seek(offset)
+            entries.append(json.loads(handle.readline().decode('utf-8')))
+    return entries
 
 
 def stats(words=(), direction='ca-en'):

@@ -124,61 +124,71 @@ def forget():
 
 # -- what the translator knows --------------------------------------------------------------
 
-def _dictionary():
-    """{lang: {'words': {term: (gloss, full)}, 'phrases': {tokens: term},
-    'reverse': {phrase: term}}} from the dictionary in the database.
-
-    Plain columns, not Word objects: the dictionary has tens of thousands
-    of words and the server little memory."""
-    out = {}
-    words = {word_id: (term, slug, level) for word_id, term, slug, level in
-             db.session.query(Word.id, Word.term, Word.slug, Word.level)}
+def _phrases():
+    """{tokens: term} of the dictionary's multi-word terms."""
     phrases = {}
-    for term, _slug, _level in words.values():
+    for (term,) in db.session.query(Word.term).filter(Word.term.contains(' ')):
         tokens = tuple(normalise(term).replace("'", "' ").split())
         if len(tokens) > 1:
             phrases[tokens] = term.lower()
-    for lang in ('uk', 'en', 'fr'):
-        first_meanings = dict(
-            db.session.query(WordSense.word_id, SenseTranslation.text)
-            .join(SenseTranslation, SenseTranslation.sense_id == WordSense.id)
-            .filter(WordSense.position == 1, SenseTranslation.lang == lang, SenseTranslation.text != ''))
-        glosses, reverse = {}, {}
-        rows = (db.session.query(WordTranslation.word_id, WordTranslation.translation)
-                .filter(WordTranslation.lang == lang, WordTranslation.translation != ''))
-        for word_id, full in rows:
-            if word_id not in words:
-                continue
-            term, slug, level = words[word_id]
-            first = first_meanings.get(word_id, full)
-            glosses[term.lower()] = (_first_meaning(first, lang), full, slug)
-            rank = (LEVEL_RANK.get(level, 5), len(term))
-            for meaning in full.split(';'):
-                for item in _PARENTHESES.sub('', meaning).split(','):
-                    item = normalise(item)
-                    if lang == 'en' and item.startswith('to '):
-                        item = item[3:]
-                    if item and (item not in reverse or rank < reverse[item][1]):
-                        reverse[item] = (term, rank)
-        out[lang] = {'words': glosses, 'reverse': {k: v[0] for k, v in reverse.items()},
-                     'rank': {k: v[1] for k, v in reverse.items()}}
-    out['phrases'] = phrases
-    out['terms'] = {term.lower() for term, _slug, _level in words.values()}
-    return out
+    return phrases
+
+
+def _language(lang):
+    """{'words': {term: (gloss, full, slug)}, 'reverse': {phrase: term},
+    'rank': {phrase: rank}} for one language, from the database.
+
+    Plain columns, not Word objects, and one language at a time: the
+    dictionary has tens of thousands of words and the server little memory."""
+    first_meanings = dict(
+        db.session.query(WordSense.word_id, SenseTranslation.text)
+        .join(SenseTranslation, SenseTranslation.sense_id == WordSense.id)
+        .filter(WordSense.position == 1, SenseTranslation.lang == lang, SenseTranslation.text != ''))
+    glosses, reverse = {}, {}
+    rows = (db.session.query(Word.term, Word.slug, Word.level, WordTranslation.word_id,
+                             WordTranslation.translation)
+            .join(WordTranslation, WordTranslation.word_id == Word.id)
+            .filter(WordTranslation.lang == lang, WordTranslation.translation != ''))
+    for term, slug, level, word_id, full in rows:
+        first = first_meanings.get(word_id, full)
+        glosses[term.lower()] = (_first_meaning(first, lang), full, slug)
+        rank = (LEVEL_RANK.get(level, 5), len(term))
+        for meaning in full.split(';'):
+            for item in _PARENTHESES.sub('', meaning).split(','):
+                item = normalise(item)
+                if lang == 'en' and item.startswith('to '):
+                    item = item[3:]
+                if item and (item not in reverse or rank < reverse[item][1]):
+                    reverse[item] = (term, rank)
+    del first_meanings
+    return {'words': glosses, 'reverse': {k: v[0] for k, v in reverse.items()},
+            'rank': {k: v[1] for k, v in reverse.items()}}
+
+
+class _Known(dict):
+    """What the translator knows, built a language at a time when asked for
+    (known['uk'], known['phrases'])."""
+
+    def __missing__(self, key):
+        if key == 'phrases':
+            return _cached('phrases', CACHE_SECONDS, _phrases)
+        return _cached('dictionary:' + key, CACHE_SECONDS, lambda: _language(key))
 
 
 def dictionary():
-    return _cached('dictionary', CACHE_SECONDS, _dictionary)
+    return _Known()
 
 
 def _bundled_pairs():
     """{lang: [(catalan, translation)]}: the course's own translated sentences."""
     from flaskblog.grammar import service as grammar
     pairs = defaultdict(list)
-    for word in Word.query.filter(Word.example_ca.isnot(None)):
-        for lang, entry in word.translations.items():
-            if entry.example and word.example_ca:
-                pairs[lang].append((word.example_ca, entry.example))
+    rows = (db.session.query(Word.example_ca, WordTranslation.lang, WordTranslation.example)
+            .join(WordTranslation, WordTranslation.word_id == Word.id)
+            .filter(Word.example_ca.isnot(None), Word.example_ca != '',
+                    WordTranslation.example.isnot(None), WordTranslation.example != ''))
+    for example_ca, lang, example in rows:
+        pairs[lang].append((example_ca, example))
     try:
         for unit in grammar.load_units():
             for example in unit.get('examples', []):

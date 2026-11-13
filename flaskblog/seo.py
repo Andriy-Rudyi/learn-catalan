@@ -14,6 +14,8 @@ the browser, so for search engines each version gets an explicit address:
 ``?lang=uk`` and ``?lang=en``. The bare address is the ``x-default``.
 """
 
+import gzip
+import io
 import time
 from urllib.parse import urlencode
 
@@ -220,21 +222,23 @@ def _sitemap_paths():
 
 
 def _build_sitemap():
-    out = [
-        '<?xml version="1.0" encoding="UTF-8"?>',
-        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"'
-        ' xmlns:xhtml="http://www.w3.org/1999/xhtml">',
-    ]
-    for path, args in _sitemap_paths():
-        versions = [(lang, _url(path, args + [('lang', lang)])) for lang in LANGUAGES]
-        links = ''.join(
-            '<xhtml:link rel="alternate" hreflang="{}" href="{}"/>'.format(lang, escape(href))
-            for lang, href in versions
-        ) + '<xhtml:link rel="alternate" hreflang="x-default" href="{}"/>'.format(escape(_url(path, args)))
-        for _lang, href in versions:
-            out.append('<url><loc>{}</loc>{}</url>'.format(escape(href), links))
-    out.append('</urlset>')
-    return '\n'.join(out) + '\n'
+    """The sitemap, gzip-compressed as it is written: with every page in
+    every language it is tens of megabytes of text, a few as gzip."""
+    buffer = io.BytesIO()
+    with gzip.GzipFile(fileobj=buffer, mode='wb', compresslevel=6, mtime=0) as out:
+        out.write(b'<?xml version="1.0" encoding="UTF-8"?>\n'
+                  b'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"'
+                  b' xmlns:xhtml="http://www.w3.org/1999/xhtml">\n')
+        for path, args in _sitemap_paths():
+            versions = [(lang, _url(path, args + [('lang', lang)])) for lang in LANGUAGES]
+            links = ''.join(
+                '<xhtml:link rel="alternate" hreflang="{}" href="{}"/>'.format(lang, escape(href))
+                for lang, href in versions
+            ) + '<xhtml:link rel="alternate" hreflang="x-default" href="{}"/>'.format(escape(_url(path, args)))
+            out.write(''.join('<url><loc>{}</loc>{}</url>\n'.format(escape(href), links)
+                              for _lang, href in versions).encode('utf-8'))
+        out.write(b'</urlset>\n')
+    return buffer.getvalue()
 
 
 @seo.route('/sitemap.xml')
@@ -246,7 +250,12 @@ def sitemap_xml():
     if cached is None or time.time() - cached[0] > SITEMAP_TTL or current_app.testing:
         cached = (time.time(), _build_sitemap())
         _sitemap_cache[key] = cached
-    return Response(cached[1], mimetype='application/xml')
+    if 'gzip' in request.headers.get('Accept-Encoding', ''):
+        response = Response(cached[1], mimetype='application/xml')
+        response.headers['Content-Encoding'] = 'gzip'
+        response.vary.add('Accept-Encoding')
+        return response
+    return Response(gzip.decompress(cached[1]), mimetype='application/xml')
 
 
 def init_app(app):
