@@ -263,6 +263,21 @@ def apertium_words_command(remove):
     click.echo('Додано слів Apertium: {}.'.format(count))
 
 
+@vocabulary_cli.command('extra-words')
+@click.option('--remove', is_flag=True, help='Прибрати додані слова зі списку extra_words.txt.')
+def extra_words_command(remove):
+    """Add the words of data/extra_words.txt the dictionary does not have."""
+    from flaskblog.vocabulary import extra
+    if remove:
+        count = extra.remove_words()
+        db.session.commit()
+        click.echo('Прибрано слів: {}.'.format(count))
+        return
+    count = extra.import_words()
+    db.session.commit()
+    click.echo('Додано слів: {}.'.format(count))
+
+
 @vocabulary_cli.command('wiktionary-convert')
 @click.argument('folder', type=click.Path(exists=True, file_okay=False))
 def wiktionary_convert_command(folder):

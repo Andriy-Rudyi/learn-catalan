@@ -37,6 +37,8 @@
         {% endif %}
         {% if word.source == 'dacco' and not word.translation_in(current_lang, fallback=False) %}
           <p class="small text-muted mb-1">{{ _('Переклад англійською з відкритого словника DACCO; перекладу вашою мовою ще немає.') }}</p>
+        {% elif word.source == 'extra' and not word.translation_in(current_lang) %}
+          <p class="small text-muted mb-1">{{ _('Перекладу цього слова ще немає. Його можна запропонувати на платформі перекладів.') }}</p>
         {% elif word.source == 'apertium' and not word.translation_in(current_lang, fallback=False) %}
           {% set shown_in = word.translation_in(current_lang) %}
           <p class="small text-muted mb-1">{% if shown_in and shown_in.lang == 'es' %}{{ _('Переклад іспанською з відкритого словника Apertium; перекладу вашою мовою ще немає.') }}{% else %}{{ _('Слово з відкритого словника Apertium; перекладу вашою мовою ще немає.') }}{% endif %}</p>

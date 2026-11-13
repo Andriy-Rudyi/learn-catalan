@@ -632,6 +632,7 @@ MESSAGES = {
     'Дійові особи': 'Characters',
     'Натисніть будь-яке слово: переклад, форма і синоніми.': 'Click any word: translation, form and synonyms.',
     'Сцени': 'Scenes',
+    'Перекладу цього слова ще немає. Його можна запропонувати на платформі перекладів.': 'This word has no translation yet. You can suggest one on the translation platform.',
     'Форма слова': 'A form of',
     'слово будь-якою мовою: каталонською, українською, англійською, іспанською…': 'a word in any language: Catalan, English, Spanish, Ukrainian…',
     'Для «{query}» нічого не знайдено. Схожі результати для «{similar}»': 'Nothing found for “{query}”. Similar results for “{similar}”',

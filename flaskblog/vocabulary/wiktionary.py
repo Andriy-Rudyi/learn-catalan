@@ -332,6 +332,18 @@ def english(term, part_of_speech=None, spanish=(), limit=3):
     return words[:limit]
 
 
+def catalan_entry(term):
+    """(part of speech, [(English word, [Spanish words of its table])]) for a
+    Catalan word in the translation tables, the first part of speech found;
+    None when no table lists it."""
+    rows = _catalan_index().get((term or '').strip().lower(), [])
+    if not rows:
+        return None
+    pos = rows[0][0]
+    pairs = [pair for row_pos, found in rows if row_pos == pos for pair in found]
+    return pos, pairs
+
+
 def stats():
     return {
         'uk-en headwords': len(load(UK_EN)),

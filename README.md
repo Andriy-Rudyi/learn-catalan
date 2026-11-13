@@ -386,6 +386,21 @@ words. A page shows the Spanish when there is nothing else (Spanish is the
 last fallback language) and says so. These words stay out of the sitemap.
 `APERTIUM_WORDS=False` hides them; `apertium-words --remove` deletes them.
 
+### Words from a printed dictionary
+
+`vocabulary/data/extra_words.txt` lists 478 Catalan words that a printed
+Catalan-Spanish dictionary has and the site's dictionary did not (its
+headwords were read from photos of the pages and compared). Only the words
+are taken, nothing of the book's translations, transcriptions or notes, and
+only words that an open source also knows (the Softcatalà thesaurus, the
+English Wiktionary's translation tables or the conjugator's verbs).
+`flask vocabulary extra-words` (run on every deploy, see
+`flaskblog/vocabulary/extra.py`) adds them as `Word.source = 'extra'`:
+with English and Spanish drafts from Wiktionary where it has them (about
+170, and the Ukrainian is derived from those), the others without a
+translation, waiting on the translation platform. `--remove` takes them
+away.
+
 ### Ukrainian through English and Spanish
 
 `vocabulary/data/sources/wiktionary/` holds a Ukrainian-English dictionary
@@ -871,7 +886,7 @@ Every merge into `dev` redeploys automatically.
    (reference it from the web service's variables).
 3. Set `SECRET_KEY`, `FLASK_APP=run.py`, `DEBUG_MODE=False`.
 4. Settings → Deploy → *Pre-deploy command*:
-   `flask db upgrade && flask vocabulary seed --update && flask vocabulary dacco-import && flask vocabulary apertium-words && flask vocabulary apertium-import && flask vocabulary pivot-import && flask grammar seed`.
+   `flask db upgrade && flask vocabulary seed --update && flask vocabulary dacco-import && flask vocabulary apertium-words && flask vocabulary extra-words && flask vocabulary apertium-import && flask vocabulary pivot-import && flask grammar seed`.
 5. Settings → Networking → *Generate domain* (or attach your own domain).
 
 ### Render
@@ -882,7 +897,7 @@ Every merge into `dev` redeploys automatically.
 3. Environment: `DATABASE_URL`, `SECRET_KEY`, `FLASK_APP=run.py`,
    `DEBUG_MODE=False`, `PYTHON_VERSION=3.11.9`.
 4. Pre-deploy command (paid plans) or a one-off shell:
-   `flask db upgrade && flask vocabulary seed --update && flask vocabulary dacco-import && flask vocabulary apertium-words && flask vocabulary apertium-import && flask vocabulary pivot-import && flask grammar seed`.
+   `flask db upgrade && flask vocabulary seed --update && flask vocabulary dacco-import && flask vocabulary apertium-words && flask vocabulary extra-words && flask vocabulary apertium-import && flask vocabulary pivot-import && flask grammar seed`.
 
 ### Heroku / Fly.io
 

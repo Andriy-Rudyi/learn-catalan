@@ -498,6 +498,7 @@ MESSAGES = {
     'Дійові особи': 'Personnages',
     'Натисніть будь-яке слово: переклад, форма і синоніми.': 'Cliquez sur un mot : traduction, forme et synonymes.',
     'Сцени': 'Scènes',
+    'Перекладу цього слова ще немає. Його можна запропонувати на платформі перекладів.': 'Ce mot n’a pas encore de traduction. Vous pouvez en proposer une sur la plateforme de traduction.',
     'Форма слова': 'Forme de',
     'слово будь-якою мовою: каталонською, українською, англійською, іспанською…': 'un mot dans n’importe quelle langue : catalan, français, anglais, espagnol…',
     'Для «{query}» нічого не знайдено. Схожі результати для «{similar}»': 'Rien trouvé pour « {query} ». Résultats proches pour « {similar} »',
