@@ -16,9 +16,10 @@ Spanish, or only from Spanish to Catalan. Nouns also carry ``gender_ca`` /
 
 ``flask vocabulary apertium-import`` (:func:`import_translations`) gives
 every dictionary word without a Spanish translation the Spanish words of
-its pairs. Spanish is not a language of the interface yet, so the
-translations show in the API (``?lang=es``) and on the translation
-platform; the file is also the start of a future Spanish site. The data
+its pairs. ``flask vocabulary apertium-words`` (:func:`import_words`) adds
+the Catalan words of the pairs that the dictionary does not have, marked
+``Word.source = 'apertium'``. The file is also the start of a future
+Spanish site. The data
 and anything made from it stay under the GPL; credit Apertium.
 """
 
@@ -171,14 +172,84 @@ def spanish(term, part_of_speech=None):
     return words
 
 
+SOURCE_TAG = 'apertium'
+_WORD = re.compile(r"[A-Za-zÀ-ÿ·'’ -]{2,60}")
+_GENDER_TO_SITE = {'m': 'm', 'f': 'f', 'mf': 'mf'}
+
+
+def _join(words, limit=255):
+    text = ''
+    for word in words:
+        candidate = word if not text else text + ', ' + word
+        if len(candidate) > limit:
+            break
+        text = candidate
+    return text
+
+
+def import_words(pairs=None):
+    """Add the Catalan words of Apertium (*pairs*, by default all) that the
+    dictionary does not have, marked ``source='apertium'``: with their
+    Spanish equivalents and, where Wiktionary lists the Catalan word next
+    to one of them, the English word of that table, as a draft. Safe to
+    run again. Returns how many were added. The caller commits."""
+    from flaskblog import db
+    from flaskblog.models import Word
+    from flaskblog.vocabulary import senses, wiktionary
+    from flaskblog.vocabulary.dacco import _existing_keys, _free_slug
+
+    known = _existing_keys(term for (term,) in Word.query.with_entities(Word.term))
+    slugs = {slug for (slug,) in Word.query.with_entities(Word.slug)}
+    added = 0
+    for pair in load() if pairs is None else pairs:
+        term = pair['ca']
+        if (pair['dir'] == 'es-ca' or term.lower() in known or not _WORD.fullmatch(term)
+                or term.isupper()):   # abbreviations
+            continue
+        known.update(_existing_keys([term]))
+        pos = 'phrase' if ' ' in term else POS[pair['pos']]
+        found = spanish(term, POS[pair['pos']])
+        if not found:
+            continue
+        word = Word(term=term, slug=_free_slug(term, slugs), part_of_speech=pos,
+                    gender=_GENDER_TO_SITE.get(pair.get('gender_ca')) if pos == 'noun' else None,
+                    source=SOURCE_TAG)
+        slugs.add(word.slug)
+        word.set_translation('es', _join(found))
+        word.translations['es'].reviewed = True
+        english = wiktionary.english(term, POS[pair['pos']], spanish=found)
+        if english:
+            word.set_translation('en', _join(english))
+            word.translations['en'].reviewed = False
+        db.session.add(word)
+        senses.sync_from_flat(word)
+        added += 1
+        if added % 1000 == 0:
+            db.session.flush()
+    return added
+
+
+def remove_words():
+    """Take the words added by :func:`import_words` away again. Returns how
+    many. The caller commits."""
+    from flaskblog import db
+    from flaskblog.models import Word
+
+    words = Word.query.filter_by(source=SOURCE_TAG).all()
+    for word in words:
+        db.session.delete(word)
+    return len(words)
+
+
 def import_translations(words=None):
     """Give each word (all dictionary words by default) that has no Spanish
     translation yet the Spanish words Apertium pairs it with. Returns how
     many words got one. The caller commits."""
-    from flaskblog.models import Word
+    from flaskblog.models import Word, WordTranslation
     from flaskblog.vocabulary import senses
 
-    words = Word.query.all() if words is None else words
+    if words is None:
+        words = Word.query.filter(~Word.translations.any(WordTranslation.lang == 'es')).all()
     added = 0
     for word in words:
         if word.translation_in('es', fallback=False) is not None:
@@ -206,12 +277,15 @@ def remove_translations():
     from flaskblog.models import WordTranslation
     from flaskblog.vocabulary import senses
 
-    entries = WordTranslation.query.filter_by(lang='es', edited=False).all()
-    for entry in entries:
+    removed = 0
+    for entry in WordTranslation.query.filter_by(lang='es', edited=False).all():
         word = entry.word
+        if word.source == SOURCE_TAG:
+            continue  # the word itself came from Apertium: remove_words()
         del word.translations['es']
         senses.sync_from_flat(word, ['es'])
-    return len(entries)
+        removed += 1
+    return removed
 
 
 def stats(terms=()):

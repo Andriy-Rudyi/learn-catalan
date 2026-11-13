@@ -89,11 +89,17 @@ def unique_slug(term):
     return slug
 
 
+# Config flag -> the Word.source it shows.
+SOURCE_FLAGS = (('DACCO', 'dacco'), ('APERTIUM_WORDS', 'apertium'))
+
+
 def shown(query):
-    """*query* without the words imported from DACCO when DACCO=False."""
-    if current_app.config.get('DACCO', True):
+    """*query* without the imported words whose source is switched off
+    (DACCO=False, APERTIUM_WORDS=False)."""
+    hidden = [source for flag, source in SOURCE_FLAGS if not current_app.config.get(flag, True)]
+    if not hidden:
         return query
-    return query.filter(or_(Word.source.is_(None), Word.source != 'dacco'))
+    return query.filter(or_(Word.source.is_(None), Word.source.notin_(hidden)))
 
 
 def search(query_text=None, topic=None, level=None, part_of_speech=None, variety=None):
@@ -141,6 +147,79 @@ def search(query_text=None, topic=None, level=None, part_of_speech=None, variety
     return query.order_by(Word.term)
 
 
+def similar_queries(query_text):
+    """What to look for when *query_text* finds nothing: the dictionary
+    form of a Catalan word ("maldestres" -> "maldestre", "anava" -> "anar"),
+    then the word without its last letters ("deflection" -> "deflect"),
+    which reaches related words in any language."""
+    text = (query_text or '').strip()
+    if not text or ' ' in text:
+        return []
+    out = []
+    try:
+        from flaskblog.reader import morphology
+        for lemma, _kind, _slot in morphology.readings(text):
+            if lemma.lower() != text.lower() and lemma not in out:
+                out.append(lemma)
+        for base, _kind, _plural in morphology.derived_readings(text, lambda lemma: False):
+            if base not in out:
+                out.append(base)
+    except Exception:  # the reader's data is missing: only the shorter forms
+        pass
+    for cut in range(1, 5):
+        if len(text) - cut >= 4:
+            out.append(text[:-cut])
+    return out
+
+
+def base_words(query_text, limit=4):
+    """Dictionary words *query_text* is a form of ("anava" -> anar,
+    "maldestres" -> maldestre), for a line above the search results."""
+    text = (query_text or '').strip()
+    if not text or ' ' in text or len(text) > 40:
+        return []
+    try:
+        from flaskblog.reader import morphology
+        lemmas = [lemma.lower() for lemma, _kind, _slot in morphology.readings(text)]
+    except Exception:
+        return []
+    lemmas = [lemma for lemma in dict.fromkeys(lemmas) if lemma != text.lower()][:8]
+    if not lemmas:
+        return []
+    found = {word.term.lower(): word
+             for word in shown(Word.query).filter(db.func.lower(Word.term).in_(lemmas))}
+    return [found[lemma] for lemma in lemmas if lemma in found][:limit]
+
+
+def search_with_fallback(query_text=None, **filters):
+    """(query, None) as :func:`search`, or, when that finds nothing,
+    (the query of the first similar search that finds something, what it
+    looked for)."""
+    query = search(query_text, **filters)
+    if not query_text or query.limit(1).count():
+        return query, None
+    for candidate in similar_queries(query_text)[:8]:
+        similar = search(candidate, **filters)
+        if similar.limit(1).count():
+            return similar, candidate
+    return query, None
+
+
+def suggestions(prefix, limit=8):
+    """Words for the search box: Catalan words starting with *prefix*, then
+    words with a translation, in any language, that starts with it."""
+    text = prefix.replace('%', '').replace('_', '')
+    words = (shown(Word.query).filter(Word.term.ilike(text + '%'))
+             .order_by(db.func.length(Word.term), Word.term).limit(limit).all())
+    if len(words) < limit:
+        seen = {word.id for word in words}
+        translated = (shown(Word.query)
+                      .filter(Word.translations.any(WordTranslation.translation.ilike(text + '%')))
+                      .order_by(db.func.length(Word.term), Word.term).limit(limit).all())
+        words += [word for word in translated if word.id not in seen][:limit - len(words)]
+    return words
+
+
 def user_word_counts(user_id):
     """How many words someone has in "My dictionary": all, learning, known."""
     words = UserWord.query.filter_by(user_id=user_id)
@@ -177,7 +256,13 @@ def import_rows(rows, author=None, update_existing=False, seed=False):
     The caller commits.
     """
     report = ImportReport()
-    existing_words = {word.term.lower(): word for word in Word.query.all()}
+    # Only the words the rows name: the dictionary is far bigger than a file.
+    wanted = sorted({(row.get('term') or '').strip().lower() for row in rows} - {''})
+    existing_words = {}
+    for start in range(0, len(wanted), 500):
+        chunk = wanted[start:start + 500]
+        for word in Word.query.filter(db.func.lower(Word.term).in_(chunk)):
+            existing_words[word.term.lower()] = word
     for number, row in enumerate(rows, start=2):  # row 1 is the header
         values = {
             field: (row.get(field) or '').strip()

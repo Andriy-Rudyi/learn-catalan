@@ -54,7 +54,10 @@ class WiktionaryConvertTests(unittest.TestCase):
                 {'word': 'sandía', 'pos': 'noun', 'translations': [{'lang_code': 'uk', 'word': 'кавун'}]},
             ])
             counts = wiktionary.convert(folder, out)
-            self.assertEqual({'uk-en.jsonl': 2, 'senses.jsonl': 1, 'uk-es.jsonl': 1}, counts)
+            self.assertEqual({'uk-en.jsonl': 2, 'senses.jsonl': 1, 'ca-en.jsonl': 1, 'uk-es.jsonl': 1},
+                             counts)
+            catalan = json.loads(open(os.path.join(out, 'ca-en.jsonl'), encoding='utf-8').read())
+            self.assertEqual({'ca': 'síndria', 'pos': 'noun', 'en': [['watermelon', ['sandía']]]}, catalan)
             rows = [json.loads(line) for line in open(os.path.join(out, 'uk-en.jsonl'), encoding='utf-8')]
             self.assertEqual({'uk': 'написати', 'pos': 'verb', 'senses': [{'en': 'to write'}],
                               'stressed': 'написа́ти', 'aspect': 'pf', 'pair': 'писа́ти'}, rows[0])
@@ -73,6 +76,13 @@ class DeriveTests(unittest.TestCase):
         numbers = wiktionary.stats()
         self.assertGreater(numbers['uk-en headwords'], 25000)
         self.assertGreater(numbers['uk-es headwords'], 25000)
+
+    def test_english_of_a_catalan_word(self):
+        self.assertEqual(['watermelon'], wiktionary.english('síndria', 'noun'))
+        # With the Spanish equivalent, only the tables that list it too.
+        self.assertIn('deviation', wiktionary.english('desviació', 'noun', spanish=['desviación']))
+        self.assertNotIn('bypass', wiktionary.english('desviació', 'noun', spanish=['desviación']))
+        self.assertEqual([], wiktionary.english('xyzzyq'))
 
     def test_meanings(self):
         self.assertEqual([['touch'], ['play', 'strum']],

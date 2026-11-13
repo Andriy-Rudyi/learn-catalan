@@ -192,7 +192,10 @@ def import_translations(words=None, sure_only=True):
     from flaskblog.models import SenseTranslation, Word, WordTranslation
     from flaskblog.vocabulary import senses
 
-    words = Word.query.all() if words is None else words
+    if words is None:
+        # Only the words still without Ukrainian, a thousand at a time.
+        words = (Word.query.filter(~Word.translations.any(WordTranslation.lang == 'uk'))
+                 .order_by(Word.id).yield_per(1000))
     added = 0
     for word in words:
         if word.translations.get('uk') is not None and word.translations['uk'].translation:

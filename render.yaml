@@ -15,6 +15,7 @@ services:
       flask db upgrade &&
       flask vocabulary seed --update &&
       flask vocabulary dacco-import &&
+      flask vocabulary apertium-words &&
       flask vocabulary apertium-import &&
       flask vocabulary pivot-import &&
       flask grammar seed

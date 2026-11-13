@@ -211,9 +211,18 @@ page; the rest are served as verbecc has them and marked accordingly.
 
 ## Dictionary
 
-`/dictionary` is a Catalan-Ukrainian dictionary with search (Catalan term,
-Ukrainian translation or example), filters by topic, level and part of speech,
-and CSV export. Verb entries link to their conjugation.
+`/dictionary` is a Catalan-Ukrainian dictionary with search, filters by
+topic, level and part of speech, and CSV export. Verb entries link to their
+conjugation.
+
+The search takes a word in any language: it looks in the Catalan terms, in
+the translations of every language (Ukrainian, English, Spanish, French…)
+and in the examples. A form of a Catalan word names its dictionary form
+above the results (*anava*: a form of *anar*). When nothing is found, the
+dictionary form of the word is searched for, then the word without its last
+letters (*deflection* finds what *deflect* finds), and the page says what it
+looked for instead. The search box suggests Catalan words that start with
+what is typed, then words translated by a word that starts with it.
 
 Logged-in users keep a personal list at `/my-dictionary`: words saved from the
 shared dictionary or typed in themselves, each with a note, a
@@ -366,6 +375,16 @@ the English ones. They show on the site in the Spanish interface (`?lang=es`), i
 and on the translation platform.
 `apertium-import --remove` takes away the Spanish translations nobody has
 edited.
+
+`flask vocabulary apertium-words` (run on every deploy) adds the Catalan
+words of those pairs that the dictionary does not have, marked
+`Word.source = 'apertium'`: about 33,700 words with their Spanish
+equivalents. Where Wiktionary lists the Catalan word next to one of them in
+a translation table, the English word of that table goes in as a draft
+(about 6,900 words), and the Ukrainian is then derived as for the other
+words. A page shows the Spanish when there is nothing else (Spanish is the
+last fallback language) and says so. These words stay out of the sitemap.
+`APERTIUM_WORDS=False` hides them; `apertium-words --remove` deletes them.
 
 ### Ukrainian through English and Spanish
 
@@ -774,6 +793,7 @@ TRANSLATOR=True              # set to False to take away the /translator page
 PHONETICS_TRAINER=True       # set to False to take away /phonetics/trainer
 COURSE_C1=True               # set to False to take away the /c1 course pages
 DACCO=True                   # set to False to hide the DACCO entries and the words imported from it
+APERTIUM_WORDS=True          # set to False to hide the words added from Apertium
 TRANSCRIPTION=True           # set to False to show only pronunciations typed in by an editor
 TEST_DATABASE_URI=           # optional, tests default to in-memory SQLite
 ```
@@ -851,7 +871,7 @@ Every merge into `dev` redeploys automatically.
    (reference it from the web service's variables).
 3. Set `SECRET_KEY`, `FLASK_APP=run.py`, `DEBUG_MODE=False`.
 4. Settings → Deploy → *Pre-deploy command*:
-   `flask db upgrade && flask vocabulary seed --update && flask vocabulary dacco-import && flask vocabulary apertium-import && flask vocabulary pivot-import && flask grammar seed`.
+   `flask db upgrade && flask vocabulary seed --update && flask vocabulary dacco-import && flask vocabulary apertium-words && flask vocabulary apertium-import && flask vocabulary pivot-import && flask grammar seed`.
 5. Settings → Networking → *Generate domain* (or attach your own domain).
 
 ### Render
@@ -862,7 +882,7 @@ Every merge into `dev` redeploys automatically.
 3. Environment: `DATABASE_URL`, `SECRET_KEY`, `FLASK_APP=run.py`,
    `DEBUG_MODE=False`, `PYTHON_VERSION=3.11.9`.
 4. Pre-deploy command (paid plans) or a one-off shell:
-   `flask db upgrade && flask vocabulary seed --update && flask vocabulary dacco-import && flask vocabulary apertium-import && flask vocabulary pivot-import && flask grammar seed`.
+   `flask db upgrade && flask vocabulary seed --update && flask vocabulary dacco-import && flask vocabulary apertium-words && flask vocabulary apertium-import && flask vocabulary pivot-import && flask grammar seed`.
 
 ### Heroku / Fly.io
 

@@ -141,7 +141,6 @@ MESSAGES = {
     'Каталонсько-український словник': 'Catalan-English dictionary',
     'Додати слово': 'Add a word',
     'Імпорт': 'Import',
-    'слово каталонською або українською': 'a word in Catalan or English',
     'Пошук': 'Search',
     'Знайти': 'Search',
     'у словнику': 'saved',
@@ -493,7 +492,7 @@ MESSAGES = {
     'Урок каталонської вимови: звуки з транскрипцією, слова для тренування з озвученням і вправи.': (
         'A Catalan pronunciation lesson: sounds with IPA, practice words with audio, and exercises.'
     ),
-    'Каталонсько-український словник: {words} з перекладом, прикладами, рівнем і озвученням. Пошук каталонською та українською.': (
+    'Каталонсько-український словник: {words} з перекладом, прикладами, рівнем і озвученням. Пошук каталонською, українською, англійською та іспанською.': (
         'Catalan dictionary: {words} with English translations, examples, levels and audio. '
         'Search in Catalan or English.'
     ),
@@ -633,6 +632,11 @@ MESSAGES = {
     'Дійові особи': 'Characters',
     'Натисніть будь-яке слово: переклад, форма і синоніми.': 'Click any word: translation, form and synonyms.',
     'Сцени': 'Scenes',
+    'Форма слова': 'A form of',
+    'слово будь-якою мовою: каталонською, українською, англійською, іспанською…': 'a word in any language: Catalan, English, Spanish, Ukrainian…',
+    'Для «{query}» нічого не знайдено. Схожі результати для «{similar}»': 'Nothing found for “{query}”. Similar results for “{similar}”',
+    'Переклад іспанською з відкритого словника Apertium; перекладу вашою мовою ще немає.': 'Spanish translation from the open Apertium dictionary; there is no English translation yet.',
+    'Слово з відкритого словника Apertium; перекладу вашою мовою ще немає.': 'A word from the open Apertium dictionary; there is no English translation yet.',
     'іменник від прикметника': 'noun from an adjective',
     'прислівник від прикметника': 'adverb from an adjective',
     'найвищий ступінь': 'superlative',

@@ -248,6 +248,21 @@ def apertium_import_command(remove):
     click.echo('Додано іспанських перекладів: {}.'.format(count))
 
 
+@vocabulary_cli.command('apertium-words')
+@click.option('--remove', is_flag=True, help='Прибрати слова, додані з Apertium.')
+def apertium_words_command(remove):
+    """Add the Catalan words of Apertium the dictionary does not have."""
+    from flaskblog.vocabulary import apertium
+    if remove:
+        count = apertium.remove_words()
+        db.session.commit()
+        click.echo('Прибрано слів Apertium: {}.'.format(count))
+        return
+    count = apertium.import_words()
+    db.session.commit()
+    click.echo('Додано слів Apertium: {}.'.format(count))
+
+
 @vocabulary_cli.command('wiktionary-convert')
 @click.argument('folder', type=click.Path(exists=True, file_okay=False))
 def wiktionary_convert_command(folder):

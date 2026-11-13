@@ -34,7 +34,8 @@ LANGUAGES = {language.code: language for language in _ALL}
 CODES = tuple(language.code for language in _ALL)
 
 # Where a missing translation is taken from, after the language asked for.
-FALLBACK = ('en', 'uk')
+# Spanish last: words that came from Apertium have nothing else.
+FALLBACK = ('en', 'uk', 'es')
 
 
 def is_known(code):

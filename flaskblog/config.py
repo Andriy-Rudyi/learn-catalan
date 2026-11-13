@@ -127,6 +127,13 @@ class Config:
     # imported from it go with `flask vocabulary dacco-import --remove`.
     DACCO = os.getenv('DACCO', 'True') == 'True'
 
+    # The dictionary shows the Catalan words added from Apertium's
+    # Spanish-Catalan dictionary (flaskblog/vocabulary/apertium.py), which
+    # have a Spanish translation and often nothing else.
+    # APERTIUM_WORDS=False hides them; `flask vocabulary apertium-words
+    # --remove` deletes them.
+    APERTIUM_WORDS = os.getenv('APERTIUM_WORDS', 'True') == 'True'
+
     # Open API (/api/v1): requests a minute per client address; 0 = no limit.
     API_RATE_LIMIT = int(os.getenv('API_RATE_LIMIT', '120'))
 
@@ -160,6 +167,7 @@ class TestConfig(Config):
     PHONETICS_TRAINER = True
     COURSE_C1 = True
     DACCO = True
+    APERTIUM_WORDS = True
     TRANSCRIPTION = True
     SITE_URL = None
     BASE_DOMAIN = None

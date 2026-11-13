@@ -83,5 +83,61 @@ class ImportTests(AppTestCase):
         self.assertIn('es', Word.query.filter_by(term='tocar').one().translations)
 
 
+class ImportWordsTests(AppTestCase):
+
+    PAIRS = [
+        {'ca': 'deflactar', 'es': 'deflactar', 'pos': 'vblex', 'dir': 'both'},
+        {'ca': 'desviació', 'es': 'desviación', 'pos': 'n', 'dir': 'both', 'gender_ca': 'f'},
+        {'ca': 'fer mal', 'es': 'hacer daño', 'pos': 'vblex', 'dir': 'both'},
+        {'ca': 'tocar', 'es': 'tocar', 'pos': 'vblex', 'dir': 'both'},      # already there
+        {'ca': 'atapeït', 'es': 'atestado', 'pos': 'adj', 'dir': 'es-ca'},  # Spanish to Catalan only
+        {'ca': 'RD', 'es': 'RD', 'pos': 'n', 'dir': 'both'},                # an abbreviation
+    ]
+
+    def setUp(self):
+        super().setUp()
+        vocabulary_service.import_rows([
+            {'term': 'tocar', 'part_of_speech': 'verb', 'translation_en': 'touch', 'translation_uk': 'торкатися'},
+        ], seed=True)
+        db.session.commit()
+        self.assertEqual(3, apertium.import_words(self.PAIRS))
+        db.session.commit()
+
+    def test_words_are_added_once_with_what_is_known(self):
+        self.assertEqual(0, apertium.import_words(self.PAIRS))
+        word = Word.query.filter_by(term='deflactar').one()
+        self.assertEqual(('apertium', 'verb'), (word.source, word.part_of_speech))
+        self.assertEqual('deflactar', word.translations['es'].translation)
+        self.assertNotIn('en', word.translations)
+        noun = Word.query.filter_by(term='desviació').one()
+        self.assertEqual('f', noun.gender)
+        # English from the Wiktionary table that lists the Spanish word too, as a draft.
+        self.assertIn('deviation', noun.translation_en)
+        self.assertFalse(noun.translations['en'].reviewed)
+        self.assertEqual('phrase', Word.query.filter_by(term='fer mal').one().part_of_speech)
+        self.assertIsNone(Word.query.filter_by(term='tocar').one().source)
+
+    def test_page_falls_back_to_spanish(self):
+        body = self.client.get('/dictionary/deflactar').get_data(as_text=True)
+        self.assertIn('Переклад іспанською з відкритого словника Apertium', body)
+        self.assertIn('<p class="h5 text-secondary">deflactar</p>', body)
+        self.assertEqual(1, vocabulary_service.search('deflactar').count())
+        self.assertNotIn('/dictionary/deflactar', self.client.get('/sitemap.xml').get_data(as_text=True))
+
+    def test_hidden_and_removed(self):
+        self.app.config['APERTIUM_WORDS'] = False
+        self.assertEqual(404, self.client.get('/dictionary/deflactar').status_code)
+        self.assertEqual(0, vocabulary_service.search('deflactar').count())
+        self.app.config['APERTIUM_WORDS'] = True
+        # Taking the Spanish translations back leaves these words alone.
+        apertium.import_translations()
+        db.session.commit()
+        self.assertEqual(1, apertium.remove_translations())   # tocar
+        self.assertIn('es', Word.query.filter_by(term='deflactar').one().translations)
+        self.assertEqual(3, apertium.remove_words())
+        db.session.commit()
+        self.assertEqual(1, Word.query.count())
+
+
 if __name__ == '__main__':
     unittest.main()

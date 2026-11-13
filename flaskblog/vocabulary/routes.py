@@ -66,19 +66,22 @@ def _saved_word_ids():
 def dictionary():
     form = WordSearchForm(request.args, meta={'csrf': False})
     page = request.args.get('page', 1, type=int)
-    words = service.search(
+    query, similar = service.search_with_fallback(
         query_text=form.q.data,
         topic=form.topic.data,
         level=form.level.data,
         part_of_speech=form.part_of_speech.data,
         variety=form.variety.data,
-    ).paginate(page=page, per_page=WORDS_PER_PAGE)
+    )
+    words = query.paginate(page=page, per_page=WORDS_PER_PAGE)
 
     return render_template(
         'dictionary.html',
         title=_('Словник'),
         form=form,
         words=words,
+        similar=similar,
+        base_words=service.base_words(form.q.data) if page == 1 else [],
         total=Word.query.count(),
         saved_word_ids=_saved_word_ids(),
         action_form=ActionForm(),
@@ -87,16 +90,12 @@ def dictionary():
 
 @vocabulary.route('/api/words')
 def api_words():
-    """Up to 8 dictionary words starting with ?q=, for search suggestions."""
+    """Up to 8 dictionary words for ?q=, for search suggestions: Catalan
+    words starting with it, then words translated by a word starting with it."""
     query = (request.args.get('q') or '').strip()
     if len(query) < 2:
         return jsonify(words=[])
-    words = (
-        service.shown(Word.query).filter(Word.term.ilike(query.replace('%', '').replace('_', '') + '%'))
-        .order_by(db.func.length(Word.term), Word.term)
-        .limit(8)
-        .all()
-    )
+    words = service.suggestions(query)
     return jsonify(words=[
         {'term': w.term, 'translation': w.t_translation(),
          'url': url_for('vocabulary.word', slug=w.slug)}

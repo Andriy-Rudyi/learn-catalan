@@ -9,6 +9,7 @@ editions) as extracted by wiktextract and published on https://kaikki.org
 | --- | --- | --- |
 | `uk-en.jsonl` | Ukrainian headwords with English glosses, stress, gender, verb aspect (Ukrainian entries of the English Wiktionary) | 30,219 |
 | `senses.jsonl` | One meaning of an English word with its Ukrainian, Spanish and Catalan translations (translation tables of the English Wiktionary that have a Ukrainian word) | 34,074 |
+| `ca-en.jsonl` | Catalan words with the English words whose translation tables list them, each with the Spanish words of the same table (all tables of the English Wiktionary that have a Catalan word) | 41,118 |
 | `uk-es.jsonl` | Ukrainian words with their Spanish equivalents: from the Spanish Wiktionary (`direct`) and from the tables above, where both translate the same meaning of an English word | 31,941 |
 
 Downloads the converter expects in its folder:

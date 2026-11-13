@@ -35,6 +35,12 @@ translate the same meaning of an English word in the tables above::
     {"uk": "каву́н", "pos": "noun", "es": ["sandía", "melón de agua"],
      "direct": ["sandía"]}
 
+``ca-en.jsonl``, Catalan words with the English words whose translation
+tables list them (all tables, with or without Ukrainian), each with the
+Spanish words of the same table::
+
+    {"ca": "síndria", "pos": "noun", "en": [["watermelon", ["sandía", ...]]]}
+
 Ukrainian words keep their stress mark (U+0301); :func:`uk_key` takes it
 away for comparing. Credit Wiktionary and keep these files and what is made
 from them under CC BY-SA.
@@ -51,6 +57,7 @@ DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'sou
 UK_EN = 'uk-en.jsonl'
 SENSES = 'senses.jsonl'
 UK_ES = 'uk-es.jsonl'
+CA_EN = 'ca-en.jsonl'
 
 # The downloads :func:`convert` looks for in its folder.
 DOWNLOADS = {
@@ -206,7 +213,8 @@ def _translations(entry, wanted, code_key):
 
 
 def english_senses(path):
-    """Translation tables of English entries that have a Ukrainian word."""
+    """Translation tables of English entries that have a Ukrainian or a
+    Catalan word."""
     for line in _lines(path):
         if '"translations"' not in line:
             continue
@@ -215,7 +223,7 @@ def english_senses(path):
         if pos is None:
             continue
         for sense, words in _translations(entry, ('uk', 'es', 'ca'), 'code').items():
-            if 'uk' in words:
+            if 'uk' in words or 'ca' in words:
                 yield dict({'en': entry['word'], 'pos': pos, 'sense': sense[:120]}, **words)
 
 
@@ -248,8 +256,21 @@ def convert(folder, out_dir=DATA_DIR):
     counts = {}
     counts[UK_EN] = _write(os.path.join(out_dir, UK_EN),
                            ukrainian_entries(os.path.join(folder, DOWNLOADS['ukrainian'])))
-    senses = list(english_senses(os.path.join(folder, DOWNLOADS['english'])))
+    tables = list(english_senses(os.path.join(folder, DOWNLOADS['english'])))
+    senses = [row for row in tables if 'uk' in row]
     counts[SENSES] = _write(os.path.join(out_dir, SENSES), senses)
+    # Catalan word (with its part of speech) -> the English words it translates.
+    catalan = {}
+    for row in tables:
+        spanish = [es_key(word) for word in row.get('es', [])][:4]
+        for word in row.get('ca', []):
+            item = catalan.setdefault((word.lower(), row['pos']), {'ca': word, 'pos': row['pos'], 'en': []})
+            known = next((pair for pair in item['en'] if pair[0] == row['en']), None)
+            if known is None:
+                item['en'].append([row['en'], spanish])
+            else:
+                known[1].extend(es for es in spanish if es not in known[1])
+    counts[CA_EN] = _write(os.path.join(out_dir, CA_EN), catalan.values())
     # Ukrainian word (with its part of speech) -> its Spanish words.
     grouped = {}
 
@@ -270,6 +291,7 @@ def convert(folder, out_dir=DATA_DIR):
                 add(uk, es, sense['pos'], False)
     counts[UK_ES] = _write(os.path.join(out_dir, UK_ES), grouped.values())
     load.cache_clear()
+    _catalan_index.cache_clear()
     return counts
 
 
@@ -285,11 +307,37 @@ def load(name):
         return []
 
 
+@functools.lru_cache(maxsize=1)
+def _catalan_index():
+    index = {}
+    for row in load(CA_EN):
+        index.setdefault(row['ca'].lower(), []).append((row['pos'], row['en']))
+    return index
+
+
+def english(term, part_of_speech=None, spanish=(), limit=3):
+    """English words whose Wiktionary translation tables list this Catalan
+    word, those of its part of speech (all when none matches). With
+    *spanish* (the word's Spanish equivalents), only the English words
+    whose table lists one of them as well: the two agree on the meaning."""
+    rows = _catalan_index().get((term or '').strip().lower(), [])
+    if part_of_speech:
+        rows = [row for row in rows if row[0] == part_of_speech] or rows
+    wanted = {es_key(word) for word in spanish}
+    words = []
+    for _pos, found in rows:
+        for word, same_table in found:
+            if word not in words and (not wanted or wanted & set(same_table)):
+                words.append(word)
+    return words[:limit]
+
+
 def stats():
     return {
         'uk-en headwords': len(load(UK_EN)),
         'uk-en meanings': sum(len(entry['senses']) for entry in load(UK_EN)),
         'translation tables with Ukrainian': len(load(SENSES)),
+        'ca-en Catalan words': len(load(CA_EN)),
         'uk-es headwords': len(load(UK_ES)),
         'uk-es pairs': sum(len(row['es']) for row in load(UK_ES)),
     }

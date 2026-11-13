@@ -141,6 +141,42 @@ class SearchTests(AppTestCase):
     def test_search_inside_examples(self):
         self.assertEqual(['parlar'], [w.term for w in service.search('català').all()])
 
+    def test_search_in_any_language(self):
+        word = Word.query.filter_by(term='cotxe').one()
+        word.set_translation('en', 'car')
+        word.set_translation('es', 'coche')
+        db.session.commit()
+        for text in ('car', 'coche', 'машина'):
+            self.assertEqual(['cotxe'], [w.term for w in service.search(text).all()], text)
+        body = self.client.get('/dictionary').get_data(as_text=True)
+        self.assertIn('слово будь-якою мовою', body)
+
+    def test_nothing_found_falls_back_to_a_similar_word(self):
+        # A Catalan form goes to its dictionary form, any other word loses its ending.
+        query, similar = service.search_with_fallback('parlaven')
+        self.assertEqual(('parlar', ['parlar']), (similar, [w.term for w in query.all()]))
+        query, similar = service.search_with_fallback('машинами')
+        self.assertEqual(('машина', ['cotxe']), (similar, [w.term for w in query.all()]))
+        query, similar = service.search_with_fallback('pom')
+        self.assertIsNone(similar)
+        query, similar = service.search_with_fallback('xyzzyqwerty')
+        self.assertEqual((None, 0), (similar, query.count()))
+        body = self.client.get('/dictionary?q=машинами').get_data(as_text=True)
+        self.assertIn('Для «машинами» нічого не знайдено. Схожі результати для «машина»', body)
+        self.assertIn('cotxe', body)
+
+    def test_form_of_a_word_is_named(self):
+        self.assertEqual(['parlar'], [w.term for w in service.base_words('parlaven')])
+        self.assertEqual([], service.base_words('parlar'))
+        body = self.client.get('/dictionary?q=parlo').get_data(as_text=True)
+        self.assertIn('Форма слова', body)
+
+    def test_suggestions_by_translation(self):
+        self.assertEqual(['poma'], [w.term for w in service.suggestions('po')])
+        self.assertEqual(['cotxe'], [w.term for w in service.suggestions('маш')])
+        data = self.client.get('/api/words?q=ябл').get_json()
+        self.assertEqual(['poma'], [w['term'] for w in data['words']])
+
     def test_filters_combine(self):
         found = service.search(topic='food', level='A1').all()
         self.assertEqual(['poma'], [w.term for w in found])

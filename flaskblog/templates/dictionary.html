@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% block meta_description %}{{ _('Каталонсько-український словник: {words} з перекладом, прикладами, рівнем і озвученням. Пошук каталонською та українською.', words=plural(total, ('слово', 'слова', 'слів'), ('word', 'words'))) }}{% endblock %}
+{% block meta_description %}{{ _('Каталонсько-український словник: {words} з перекладом, прикладами, рівнем і озвученням. Пошук каталонською, українською, англійською та іспанською.', words=plural(total, ('слово', 'слова', 'слів'), ('word', 'words'))) }}{% endblock %}
 {% from "partials/variety.html" import variety_badge with context %}
 {% block content %}
 <div class="dictionary">
@@ -17,10 +17,23 @@
   </div>
   {% set searching = form.q.data %}
   {% if searching %}
+    {% if similar %}
+    <p class="search-summary mb-2">
+      {{ _('Для «{query}» нічого не знайдено. Схожі результати для «{similar}»', query=form.q.data, similar=similar) }}:
+      <strong>{{ words.total }}</strong>
+    </p>
+    {% else %}
     <p class="search-summary mb-2">
       {{ _('Результати для «{query}»', query=form.q.data) }}:
       <strong>{{ words.total }}</strong>
     </p>
+    {% endif %}
+    {% if base_words %}
+    <p class="mb-2">
+      {{ _('Форма слова') }}:
+      {% for word in base_words %}<a class="word-term" href="{{ url_for('vocabulary.word', slug=word.slug) }}">{{ word.term }}</a>{% if word.t_translation() %} <span class="text-muted">{{ word.t_translation() }}</span>{% endif %}{% if not loop.last %} · {% endif %}{% endfor %}
+    </p>
+    {% endif %}
   {% else %}
     <p class="text-muted">{{ _('Каталонсько-український словник') }}: {{ plural(total, ('слово', 'слова', 'слів'), ('word', 'words')) }}.</p>
   {% endif %}
@@ -34,7 +47,7 @@
         method="GET" action="{{ url_for('vocabulary.dictionary') }}">
     <div class="col-md-6">
       {{ form.q.label(class="form-label small text-muted") }}
-      {{ form.q(class="form-control", placeholder=_('слово каталонською або українською')) }}
+      {{ form.q(class="form-control", placeholder=_('слово будь-якою мовою: каталонською, українською, англійською, іспанською…')) }}
     </div>
     <div class="col-md-6">
       {{ form.topic.label(class="form-label small text-muted") }}

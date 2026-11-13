@@ -29,7 +29,7 @@ from flask import current_app
 
 from flaskblog import db
 from flaskblog.languages import SOURCE
-from flaskblog.models import TranslationMemory, Word
+from flaskblog.models import SenseTranslation, TranslationMemory, Word, WordSense, WordTranslation
 
 MAX_TEXT = 2000           # characters per request
 CACHE_SECONDS = 300       # dictionary and bundled memory
@@ -126,39 +126,44 @@ def forget():
 
 def _dictionary():
     """{lang: {'words': {term: (gloss, full)}, 'phrases': {tokens: term},
-    'reverse': {phrase: term}}} from the dictionary in the database."""
+    'reverse': {phrase: term}}} from the dictionary in the database.
+
+    Plain columns, not Word objects: the dictionary has tens of thousands
+    of words and the server little memory."""
     out = {}
-    words = Word.query.all()
+    words = {word_id: (term, slug, level) for word_id, term, slug, level in
+             db.session.query(Word.id, Word.term, Word.slug, Word.level)}
     phrases = {}
-    for word in words:
-        tokens = tuple(normalise(word.term).replace("'", "' ").split())
+    for term, _slug, _level in words.values():
+        tokens = tuple(normalise(term).replace("'", "' ").split())
         if len(tokens) > 1:
-            phrases[tokens] = word.term.lower()
+            phrases[tokens] = term.lower()
     for lang in ('uk', 'en', 'fr'):
+        first_meanings = dict(
+            db.session.query(WordSense.word_id, SenseTranslation.text)
+            .join(SenseTranslation, SenseTranslation.sense_id == WordSense.id)
+            .filter(WordSense.position == 1, SenseTranslation.lang == lang, SenseTranslation.text != ''))
         glosses, reverse = {}, {}
-        for word in words:
-            entry = word.translation_in(lang, fallback=False)
-            if entry is None:
+        rows = (db.session.query(WordTranslation.word_id, WordTranslation.translation)
+                .filter(WordTranslation.lang == lang, WordTranslation.translation != ''))
+        for word_id, full in rows:
+            if word_id not in words:
                 continue
-            full = entry.translation
-            if word.senses:
-                sense = word.senses[0].text_in(lang, fallback=False)
-                first = sense.text if sense is not None else full
-            else:
-                first = full
-            glosses[word.term.lower()] = (_first_meaning(first, lang), full, word.slug)
-            rank = (LEVEL_RANK.get(word.level, 5), len(word.term))
+            term, slug, level = words[word_id]
+            first = first_meanings.get(word_id, full)
+            glosses[term.lower()] = (_first_meaning(first, lang), full, slug)
+            rank = (LEVEL_RANK.get(level, 5), len(term))
             for meaning in full.split(';'):
                 for item in _PARENTHESES.sub('', meaning).split(','):
                     item = normalise(item)
                     if lang == 'en' and item.startswith('to '):
                         item = item[3:]
                     if item and (item not in reverse or rank < reverse[item][1]):
-                        reverse[item] = (word.term, rank)
+                        reverse[item] = (term, rank)
         out[lang] = {'words': glosses, 'reverse': {k: v[0] for k, v in reverse.items()},
                      'rank': {k: v[1] for k, v in reverse.items()}}
     out['phrases'] = phrases
-    out['terms'] = {word.term.lower() for word in words}
+    out['terms'] = {term.lower() for term, _slug, _level in words.values()}
     return out
 
 
