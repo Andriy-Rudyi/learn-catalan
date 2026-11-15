@@ -388,16 +388,20 @@ last fallback language) and says so. These words stay out of the sitemap.
 
 ### Words from a printed dictionary
 
-`vocabulary/data/extra_words.txt` lists 478 Catalan words that a printed
+`vocabulary/data/extra_words.txt` lists 2,005 Catalan words that a printed
 Catalan-Spanish dictionary has and the site's dictionary did not (its
 headwords were read from photos of the pages and compared). Only the words
 are taken, nothing of the book's translations, transcriptions or notes, and
-only words that an open source also knows (the Softcatalà thesaurus, the
-English Wiktionary's translation tables or the conjugator's verbs).
+only words that an open source also knows (the Softcatalà Catalan
+dictionary, catalan-dict-tools; the Softcatalà thesaurus; the English
+Wiktionary's translation tables or the conjugator's verbs). The headwords
+no open source confirms (mostly misreadings) wait in
+`vocabulary/data/extra_words_to_check.txt` to be checked by hand; they are
+not imported.
 `flask vocabulary extra-words` (run on every deploy, see
 `flaskblog/vocabulary/extra.py`) adds them as `Word.source = 'extra'`:
-with English and Spanish drafts from Wiktionary where it has them (about
-170, and the Ukrainian is derived from those), the others without a
+with English and Spanish drafts from Wiktionary where it has them (the
+Ukrainian is derived from those), the others without a
 translation, waiting on the translation platform. `--remove` takes them
 away.
 

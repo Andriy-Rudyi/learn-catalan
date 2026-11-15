@@ -3,9 +3,12 @@
 ``data/extra_words.txt`` lists Catalan words, one a line, that a printed
 Catalan-Spanish dictionary has and the site's dictionary (with the words
 from DACCO and Apertium) did not. Only the words were taken: each one is
-also in an open source (the Softcatalà thesaurus, the English Wiktionary's
-translation tables or the conjugator's verb list), and nothing else of the
-book, its translations or its notes, is used.
+also in an open source (the Softcatalà Catalan dictionary, catalan-dict-tools;
+the Softcatalà thesaurus; the English Wiktionary's translation tables or the
+conjugator's verb list), and nothing else of the book, its translations or
+its notes, is used. Headwords no open source confirms wait in
+``data/extra_words_to_check.txt`` to be checked by hand; they are not
+imported.
 
 ``flask vocabulary extra-words`` (:func:`import_words`) adds them, marked
 ``Word.source = 'extra'``. Where Wiktionary lists a word in an English
