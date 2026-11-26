@@ -88,7 +88,7 @@ jobs:
         # Fails when the repository does not allow Actions to open pull
         # requests; the branch is pushed anyway and the next step links to it.
         continue-on-error: true
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           base: dev
           branch: automation/dialect-check
