@@ -771,10 +771,32 @@ sees it in the menu as hidden; everybody else gets 404:
 The dictionary of a section is a sorted JSON-lines file read on demand
 (`flaskblog/langsites/dictionary.py`): only its keys and byte offsets stay in
 memory, and the index for searching by translation is built only when
-somebody searches that way. `flask langsites build uk` writes the Ukrainian
-one (44,102 words) from the Wiktionary files of the Catalan dictionary
-(`uk-en`, `uk-es`) and the derived Ukrainian-Catalan pairs; the other
-languages will get their own builders from their Wiktionary extracts.
+somebody searches that way (at most four such indexes are kept).
+`flask langsites build <code>` writes them from data already in the
+project; each file's sources are in `data/<code>/meta.json` and shown under
+its pages:
+
+| Section | Words | Built from |
+| --- | --- | --- |
+| Ukrainian (`uk`) | 44,102 | Wiktionary `uk-en`, `uk-es` and the derived Ukrainian-Catalan pairs |
+| English (`en`) | 39,707 | Wiktionary translation tables (`senses.jsonl`: meanings with Ukrainian, Spanish, Catalan) and DACCO English-Catalan |
+| Spanish (`es`) | 72,562 | Apertium Spanish-Catalan, Wiktionary `uk-es` (turned round) and the Spanish of `senses.jsonl` |
+| French (`fr`) | 5,591 | the French translations of this site's Catalan words, turned round (Ukrainian and English through the same Catalan word) |
+| German (`de`) | | not yet: needs a Wiktionary extract |
+
+A translation links to its word in the Catalan dictionary or in the section
+of its language. `/<section>/lookup?q=` finds a word as it stands in a text
+(English: plurals, past forms, -ing, a list of irregular forms) for the
+reading panel.
+
+**Reading** (`/<section>/reading`): the section's works, every word
+clickable (a panel shows its translations). A section reads its own works
+from `langsites/data/<code>/works/<slug>/` and the Catalan site's works
+whose original is in its language (`reader/data/works/<slug>/original/<code>/`).
+English has *Martin Eden* (the original of the Catalan translation, 46
+chapters) and *Othello* (15 scenes: the Moby Shakespeare text, public
+domain, in Jon Bosak's XML from the NLTK corpus, imported with
+`flask langsites import-play <xml> en othello ...`).
 
 ## Testing
 

@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+{% macro clickable(line) -%}
+{%- for piece, is_word in tokens(line) -%}
+{%- if is_word %}<span class="lw">{{ piece }}</span>{% else %}{{ piece }}{% endif -%}
+{%- endfor -%}
+{%- endmacro %}
+{% block content %}
+{% include "partials/langsite_header.html" %}
+<p class="mb-1"><a href="{{ url_for('langsites.library', slug=lang_site.slug) }}">{{ _('Читання') }}</a></p>
+<h1 class="h3" lang="{{ lang_site.code }}">{{ work.title }}</h1>
+<p class="text-muted">
+  {{ work.author }} ·
+  {% if work.kind == 'novel' %}{{ _('Розділ') }} {{ part_title }}{% else %}{{ _('Дія') }} {{ part_title[0] }}, {{ _('сцена') }} {{ part_title[1] }}{% endif %}
+  ({{ number }}/{{ total }})
+</p>
+{% macro pager() %}
+<nav class="d-flex justify-content-between my-3">
+  {% if number > 1 %}<a class="btn btn-sm btn-outline-info" href="{{ url_for('langsites.read', slug=lang_site.slug, work_slug=work.slug, number=number - 1) }}">&larr; {{ _('Назад') }}</a>{% else %}<span></span>{% endif %}
+  {% if number < total %}<a class="btn btn-sm btn-outline-info" href="{{ url_for('langsites.read', slug=lang_site.slug, work_slug=work.slug, number=number + 1) }}">{{ _('Далі') }} &rarr;</a>{% endif %}
+</nav>
+{% endmacro %}
+{{ pager() }}
+<article class="langsite-text" lang="{{ lang_site.code }}" data-lookup="{{ url_for('langsites.lookup', slug=lang_site.slug) }}">
+  {% if work.kind == 'novel' %}
+    {% for paragraph in text.paragraphs %}<p>{{ clickable(paragraph) }}</p>{% endfor %}
+  {% else %}
+    {% if text.setting %}<p class="fst-italic">{{ clickable(text.setting) }}</p>{% endif %}
+    {% for block in text.blocks %}
+      {% if block.stage %}<p class="fst-italic text-muted">{{ clickable(block.stage) }}</p>
+      {% else %}<p><strong>{{ block.speaker }}</strong><br>{% for line in block.lines %}{{ clickable(line) }}{% if not loop.last %}<br>{% endif %}{% endfor %}</p>{% endif %}
+    {% endfor %}
+  {% endif %}
+</article>
+{{ pager() }}
+{% if work.source %}<p class="small text-muted mt-4" lang="en">{{ work.source }}</p>{% endif %}
+
+<div class="card shadow langsite-panel d-none" id="wordPanel" role="dialog" aria-live="polite">
+  <div class="card-body">
+    <button type="button" class="btn-close float-end" aria-label="{{ _('Закрити') }}" id="wordPanelClose"></button>
+    <div id="wordPanelBody"></div>
+  </div>
+</div>
+<style>
+  .langsite-text .lw { cursor: pointer; border-radius: 3px; }
+  .langsite-text .lw:hover, .langsite-text .lw.on { background: rgba(31, 122, 140, .18); }
+  .langsite-panel { position: fixed; right: 16px; bottom: 16px; width: min(380px, calc(100vw - 32px));
+                    max-height: 60vh; overflow: auto; z-index: 1050; }
+</style>
+{% endblock %}
+{% block scripts %}
+<script>
+(function () {
+  var text = document.querySelector('.langsite-text');
+  var panel = document.getElementById('wordPanel');
+  var body = document.getElementById('wordPanelBody');
+  var current = null;
+  var labels = {
+    none: {{ _('Цього слова в словнику поки немає.') | tojson }},
+    open: {{ _('Відкрити в словнику') | tojson }},
+    loading: {{ _('Шукаю…') | tojson }}
+  };
+  function escape(value) {
+    var div = document.createElement('div');
+    div.textContent = value;
+    return div.innerHTML;
+  }
+  document.getElementById('wordPanelClose').addEventListener('click', function () {
+    panel.classList.add('d-none');
+    if (current) { current.classList.remove('on'); }
+  });
+  text.addEventListener('click', function (event) {
+    var span = event.target.closest('.lw');
+    if (!span) { return; }
+    if (current) { current.classList.remove('on'); }
+    current = span;
+    span.classList.add('on');
+    panel.classList.remove('d-none');
+    body.innerHTML = '<strong>' + escape(span.textContent) + '</strong><p class="text-muted mb-0">' + labels.loading + '</p>';
+    fetch(text.dataset.lookup + '?q=' + encodeURIComponent(span.textContent))
+      .then(function (response) { return response.json(); })
+      .then(function (data) {
+        if (!data.entries.length) {
+          body.innerHTML = '<strong>' + escape(span.textContent) + '</strong><p class="text-muted mb-0">' + labels.none + '</p>';
+          return;
+        }
+        var html = '';
+        data.entries.forEach(function (entry) {
+          html += '<div class="mb-2"><strong>' + escape(entry.word) + '</strong>';
+          entry.translations.forEach(function (row) {
+            html += '<div><span class="text-muted">' + escape(row.lang) + ':</span> ' + escape(row.text) + '</div>';
+          });
+          html += '</div>';
+        });
+        html += '<a href="' + data.url + '">' + labels.open + '</a>';
+        body.innerHTML = html;
+      })
+      .catch(function () { body.innerHTML = '<p class="text-muted mb-0">' + labels.none + '</p>'; });
+  });
+})();
+</script>
+{% endblock %}

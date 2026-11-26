@@ -24,5 +24,5 @@
 {% else %}
   <p class="text-muted">{{ plural(words, ('слово', 'слова', 'слів'), ('word', 'words')) }}.</p>
 {% endif %}
-<p class="small text-muted mt-4">{{ _('Джерело: Вікісловник (CC BY-SA); переклади каталанською виведено автоматично.') }}</p>
+{% if sources %}<p class="small text-muted mt-4">{{ _('Джерела') }}: <span lang="en">{{ sources | join('; ') }}</span>.</p>{% endif %}
 {% endblock %}

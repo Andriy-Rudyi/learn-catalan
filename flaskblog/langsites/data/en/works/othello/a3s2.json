@@ -1,0 +1,40 @@
+{
+ "act": 3,
+ "scene": 2,
+ "setting": "A room in the castle.",
+ "blocks": [
+  {
+   "stage": "Enter OTHELLO, IAGO, and Gentlemen"
+  },
+  {
+   "speaker": "OTHELLO",
+   "lines": [
+    "These letters give, Iago, to the pilot;",
+    "And by him do my duties to the senate:",
+    "That done, I will be walking on the works;",
+    "Repair there to me."
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Well, my good lord, I'll do't."
+   ]
+  },
+  {
+   "speaker": "OTHELLO",
+   "lines": [
+    "This fortification, gentlemen, shall we see't?"
+   ]
+  },
+  {
+   "speaker": "Gentleman",
+   "lines": [
+    "We'll wait upon your lordship."
+   ]
+  },
+  {
+   "stage": "Exeunt"
+  }
+ ]
+}

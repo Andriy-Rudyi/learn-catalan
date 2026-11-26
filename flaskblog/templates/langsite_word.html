@@ -9,5 +9,5 @@
   {% include "partials/langsite_entry.html" %}
 </section>
 {% endfor %}
-<p class="small text-muted mt-4">{{ _('Джерело: Вікісловник (CC BY-SA); переклади каталанською виведено автоматично.') }}</p>
+{% if sources %}<p class="small text-muted mt-4">{{ _('Джерела') }}: <span lang="en">{{ sources | join('; ') }}</span>.</p>{% endif %}
 {% endblock %}

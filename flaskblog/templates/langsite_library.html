@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+{% include "partials/langsite_header.html" %}
+<h1>{{ _('Читання') }}</h1>
+{% if works %}
+<p class="text-muted">{{ _('Натисніть на будь-яке слово в тексті, щоб побачити переклад.') }}</p>
+<ul class="list-unstyled">
+  {% for work in works %}
+  <li class="mb-3">
+    <a class="h5" href="{{ url_for('langsites.read', slug=lang_site.slug, work_slug=work.slug, number=1) }}" lang="{{ lang_site.code }}">{{ work.title }}</a>
+    <div class="text-muted">
+      {{ work.author }}{% if work.year %}, {{ work.year }}{% endif %}
+      {% if work.level %} · {{ work.level }}{% endif %}
+      · {% if work.kind == 'novel' %}{{ _('розділів') }}{% else %}{{ _('сцен') }}{% endif %}: {{ work.files | length }}
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p class="text-muted">{{ _('Матеріали для цієї частини ще готуються.') }}</p>
+{% endif %}
+{% endblock %}

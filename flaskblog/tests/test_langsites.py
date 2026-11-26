@@ -85,7 +85,8 @@ class SectionTests(AppTestCase):
             for part in parts:
                 response = self.client.get('/{}/{}'.format(site.slug, part))
                 self.assertEqual(200, response.status_code, (site.slug, part))
-                self.assertIn('ще готуються', response.get_data(as_text=True))
+                if not (part == 'reading' and site.slug == 'english'):
+                    self.assertIn('ще готуються', response.get_data(as_text=True), (site.slug, part))
         self.assertEqual(404, self.client.get('/ukrainian/nothing').status_code)
 
     def test_section_menu_logo_and_search(self):
@@ -168,6 +169,81 @@ class AdminSectionTests(AppTestCase):
         body = self.client.get('/ukrainian/dictionary/написати').get_data(as_text=True)
         self.assertIn('доконаний вид', body)
         self.assertIn('/ukrainian/dictionary/' + quote('писати'), body)
+
+
+class OtherDictionariesTests(unittest.TestCase):
+    """The English, Spanish and French dictionaries (flask langsites build)."""
+
+    def test_sizes(self):
+        self.assertGreater(dictionary.size('en'), 35000)
+        self.assertGreater(dictionary.size('es'), 60000)
+        self.assertGreater(dictionary.size('fr'), 4000)
+        self.assertFalse(dictionary.available('de'))
+
+    def test_english(self):
+        house = dictionary.lookup('en', 'house')
+        noun = next(entry for entry in house if entry['pos'] == 'noun')
+        self.assertIn('дім', noun['uk'])
+        self.assertIn('casa', noun['ca'])
+        self.assertIn('human abode', [sense['en'] for sense in noun['senses']])
+        self.assertIn('albergar', next(e for e in house if e['pos'] == 'verb')['ca'])  # DACCO
+        entries, how = dictionary.search('en', 'хата', ['uk'])
+        self.assertIn('house', [entry['k'] for entry in entries])
+
+    def test_spanish_and_french(self):
+        casa = dictionary.lookup('es', 'casa')[0]
+        self.assertIn('casa', casa['ca'])
+        self.assertIn('дім', [w.replace('\u0301', '') for w in casa['uk']])
+        self.assertIn('house', casa['en'])
+        maison = dictionary.lookup('fr', 'maison')[0]
+        self.assertEqual(['casa'], maison['ca'])
+        self.assertTrue(dictionary.meta('fr')['sources'])
+
+    def test_words_as_they_stand_in_a_text(self):
+        for word, form in (('walked', 'walk'), ('Houses', 'house'), ('ran', 'run'),
+                           ('went', 'go'), ('stopped', 'stop'), ('cities', 'city'), ('Hath', 'have')):
+            entries, found = dictionary.find('en', word)
+            self.assertEqual(form, found, word)
+        self.assertEqual(([], None), dictionary.find('en', 'qqqzzz'))
+
+
+class ReadingTests(AppTestCase):
+
+    def test_english_works(self):
+        from flaskblog.langsites import reading
+        works = {work['slug']: work for work in reading.works('en')}
+        self.assertEqual(46, len(works['martin-eden']['files']))
+        self.assertEqual('novel', works['martin-eden']['kind'])
+        self.assertEqual(15, len(works['othello']['files']))
+        self.assertEqual('play', works['othello']['kind'])
+        self.assertEqual([], reading.works('de'))
+
+    def test_pages(self):
+        library = self.client.get('/english/reading').get_data(as_text=True)
+        self.assertIn('Martin Eden', library)
+        self.assertIn('Othello', library)
+        chapter = self.client.get('/english/reading/martin-eden/1').get_data(as_text=True)
+        self.assertIn('<span class="lw">latch-key</span>', chapter)
+        self.assertIn('/english/reading/martin-eden/2', chapter)
+        scene = self.client.get('/english/reading/othello/1').get_data(as_text=True)
+        self.assertIn('RODERIGO', scene)
+        self.assertIn('<span class="lw">Tush</span>', scene)
+        self.assertEqual(404, self.client.get('/english/reading/othello/16').status_code)
+        self.assertEqual(404, self.client.get('/english/reading/nothing/1').status_code)
+        self.assertIn('ще готуються', self.client.get('/german/reading').get_data(as_text=True))
+
+    def test_lookup(self):
+        data = self.client.get('/english/lookup?q=walked').get_json()
+        self.assertEqual('walk', data['form'])
+        self.assertEqual('/english/dictionary/walk', data['url'])
+        self.assertTrue(any(row['text'] for entry in data['entries'] for row in entry['translations']))
+        self.assertEqual([], self.client.get('/english/lookup?q=qqqzzz').get_json()['entries'])
+
+    def test_translations_lead_to_other_sections(self):
+        body = self.client.get('/english/dictionary/house').get_data(as_text=True)
+        self.assertIn('/ukrainian/dictionary?q=', body)
+        self.assertIn('/spanish/dictionary?q=casa', body)
+        self.assertIn('/dictionary?q=casa', body)
 
 
 if __name__ == '__main__':

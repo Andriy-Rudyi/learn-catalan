@@ -1,0 +1,717 @@
+{
+ "act": 3,
+ "scene": 4,
+ "setting": "Before the castle.",
+ "blocks": [
+  {
+   "stage": "Enter DESDEMONA, EMILIA, and Clown"
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "Do you know, sirrah, where Lieutenant Cassio lies?"
+   ]
+  },
+  {
+   "speaker": "Clown",
+   "lines": [
+    "I dare not say he lies any where."
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "Why, man?"
+   ]
+  },
+  {
+   "speaker": "Clown",
+   "lines": [
+    "He's a soldier, and for one to say a soldier lies,",
+    "is stabbing."
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "Go to: where lodges he?"
+   ]
+  },
+  {
+   "speaker": "Clown",
+   "lines": [
+    "To tell you where he lodges, is to tell you where I lie."
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "Can any thing be made of this?"
+   ]
+  },
+  {
+   "speaker": "Clown",
+   "lines": [
+    "I know not where he lodges, and for me to devise a",
+    "lodging and say he lies here or he lies there, were",
+    "to lie in mine own throat."
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "Can you inquire him out, and be edified by report?"
+   ]
+  },
+  {
+   "speaker": "Clown",
+   "lines": [
+    "I will catechise the world for him; that is, make",
+    "questions, and by them answer."
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "Seek him, bid him come hither: tell him I have",
+    "moved my lord on his behalf, and hope all will be well."
+   ]
+  },
+  {
+   "speaker": "Clown",
+   "lines": [
+    "To do this is within the compass of man's wit: and",
+    "therefore I will attempt the doing it."
+   ]
+  },
+  {
+   "stage": "Exit"
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "Where should I lose that handkerchief, Emilia?"
+   ]
+  },
+  {
+   "speaker": "EMILIA",
+   "lines": [
+    "I know not, madam."
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "Believe me, I had rather have lost my purse",
+    "Full of crusadoes: and, but my noble Moor",
+    "Is true of mind and made of no such baseness",
+    "As jealous creatures are, it were enough",
+    "To put him to ill thinking."
+   ]
+  },
+  {
+   "speaker": "EMILIA",
+   "lines": [
+    "Is he not jealous?"
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "Who, he? I think the sun where he was born",
+    "Drew all such humours from him."
+   ]
+  },
+  {
+   "speaker": "EMILIA",
+   "lines": [
+    "Look, where he comes."
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "I will not leave him now till Cassio",
+    "Be call'd to him. [Enter OTHELLO]",
+    "How is't with you, my lord"
+   ]
+  },
+  {
+   "speaker": "OTHELLO",
+   "lines": [
+    "Well, my good lady. [Aside]",
+    "O, hardness to dissemble!--",
+    "How do you, Desdemona?"
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "Well, my good lord."
+   ]
+  },
+  {
+   "speaker": "OTHELLO",
+   "lines": [
+    "Give me your hand: this hand is moist, my lady."
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "It yet hath felt no age nor known no sorrow."
+   ]
+  },
+  {
+   "speaker": "OTHELLO",
+   "lines": [
+    "This argues fruitfulness and liberal heart:",
+    "Hot, hot, and moist: this hand of yours requires",
+    "A sequester from liberty, fasting and prayer,",
+    "Much castigation, exercise devout;",
+    "For here's a young and sweating devil here,",
+    "That commonly rebels. 'Tis a good hand,",
+    "A frank one."
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "You may, indeed, say so;",
+    "For 'twas that hand that gave away my heart."
+   ]
+  },
+  {
+   "speaker": "OTHELLO",
+   "lines": [
+    "A liberal hand: the hearts of old gave hands;",
+    "But our new heraldry is hands, not hearts."
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "I cannot speak of this. Come now, your promise."
+   ]
+  },
+  {
+   "speaker": "OTHELLO",
+   "lines": [
+    "What promise, chuck?"
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "I have sent to bid Cassio come speak with you."
+   ]
+  },
+  {
+   "speaker": "OTHELLO",
+   "lines": [
+    "I have a salt and sorry rheum offends me;",
+    "Lend me thy handkerchief."
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "Here, my lord."
+   ]
+  },
+  {
+   "speaker": "OTHELLO",
+   "lines": [
+    "That which I gave you."
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "I have it not about me."
+   ]
+  },
+  {
+   "speaker": "OTHELLO",
+   "lines": [
+    "Not?"
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "No, indeed, my lord."
+   ]
+  },
+  {
+   "speaker": "OTHELLO",
+   "lines": [
+    "That is a fault.",
+    "That handkerchief",
+    "Did an Egyptian to my mother give;",
+    "She was a charmer, and could almost read",
+    "The thoughts of people: she told her, while",
+    "she kept it,",
+    "'Twould make her amiable and subdue my father",
+    "Entirely to her love, but if she lost it",
+    "Or made gift of it, my father's eye",
+    "Should hold her loathed and his spirits should hunt",
+    "After new fancies: she, dying, gave it me;",
+    "And bid me, when my fate would have me wive,",
+    "To give it her. I did so: and take heed on't;",
+    "Make it a darling like your precious eye;",
+    "To lose't or give't away were such perdition",
+    "As nothing else could match."
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "Is't possible?"
+   ]
+  },
+  {
+   "speaker": "OTHELLO",
+   "lines": [
+    "'Tis true: there's magic in the web of it:",
+    "A sibyl, that had number'd in the world",
+    "The sun to course two hundred compasses,",
+    "In her prophetic fury sew'd the work;",
+    "The worms were hallow'd that did breed the silk;",
+    "And it was dyed in mummy which the skilful",
+    "Conserved of maidens' hearts."
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "Indeed! is't true?"
+   ]
+  },
+  {
+   "speaker": "OTHELLO",
+   "lines": [
+    "Most veritable; therefore look to't well."
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "Then would to God that I had never seen't!"
+   ]
+  },
+  {
+   "speaker": "OTHELLO",
+   "lines": [
+    "Ha! wherefore?"
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "Why do you speak so startingly and rash?"
+   ]
+  },
+  {
+   "speaker": "OTHELLO",
+   "lines": [
+    "Is't lost? is't gone? speak, is it out",
+    "o' the way?"
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "Heaven bless us!"
+   ]
+  },
+  {
+   "speaker": "OTHELLO",
+   "lines": [
+    "Say you?"
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "It is not lost; but what an if it were?"
+   ]
+  },
+  {
+   "speaker": "OTHELLO",
+   "lines": [
+    "How!"
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "I say, it is not lost."
+   ]
+  },
+  {
+   "speaker": "OTHELLO",
+   "lines": [
+    "Fetch't, let me see't."
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "Why, so I can, sir, but I will not now.",
+    "This is a trick to put me from my suit:",
+    "Pray you, let Cassio be received again."
+   ]
+  },
+  {
+   "speaker": "OTHELLO",
+   "lines": [
+    "Fetch me the handkerchief: my mind misgives."
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "Come, come;",
+    "You'll never meet a more sufficient man."
+   ]
+  },
+  {
+   "speaker": "OTHELLO",
+   "lines": [
+    "The handkerchief!"
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "I pray, talk me of Cassio."
+   ]
+  },
+  {
+   "speaker": "OTHELLO",
+   "lines": [
+    "The handkerchief!"
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "A man that all his time",
+    "Hath founded his good fortunes on your love,",
+    "Shared dangers with you,--"
+   ]
+  },
+  {
+   "speaker": "OTHELLO",
+   "lines": [
+    "The handkerchief!"
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "In sooth, you are to blame."
+   ]
+  },
+  {
+   "speaker": "OTHELLO",
+   "lines": [
+    "Away!"
+   ]
+  },
+  {
+   "stage": "Exit"
+  },
+  {
+   "speaker": "EMILIA",
+   "lines": [
+    "Is not this man jealous?"
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "I ne'er saw this before.",
+    "Sure, there's some wonder in this handkerchief:",
+    "I am most unhappy in the loss of it."
+   ]
+  },
+  {
+   "speaker": "EMILIA",
+   "lines": [
+    "'Tis not a year or two shows us a man:",
+    "They are all but stomachs, and we all but food;",
+    "To eat us hungerly, and when they are full,",
+    "They belch us. Look you, Cassio and my husband!"
+   ]
+  },
+  {
+   "stage": "Enter CASSIO and IAGO"
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "There is no other way; 'tis she must do't:",
+    "And, lo, the happiness! go, and importune her."
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "How now, good Cassio! what's the news with you?"
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "Madam, my former suit: I do beseech you",
+    "That by your virtuous means I may again",
+    "Exist, and be a member of his love",
+    "Whom I with all the office of my heart",
+    "Entirely honour: I would not be delay'd.",
+    "If my offence be of such mortal kind",
+    "That nor my service past, nor present sorrows,",
+    "Nor purposed merit in futurity,",
+    "Can ransom me into his love again,",
+    "But to know so must be my benefit;",
+    "So shall I clothe me in a forced content,",
+    "And shut myself up in some other course,",
+    "To fortune's alms."
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "Alas, thrice-gentle Cassio!",
+    "My advocation is not now in tune;",
+    "My lord is not my lord; nor should I know him,",
+    "Were he in favour as in humour alter'd.",
+    "So help me every spirit sanctified,",
+    "As I have spoken for you all my best",
+    "And stood within the blank of his displeasure",
+    "For my free speech! you must awhile be patient:",
+    "What I can do I will; and more I will",
+    "Than for myself I dare: let that suffice you."
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Is my lord angry?"
+   ]
+  },
+  {
+   "speaker": "EMILIA",
+   "lines": [
+    "He went hence but now,",
+    "And certainly in strange unquietness."
+   ]
+  },
+  {
+   "speaker": "IAGO",
+   "lines": [
+    "Can he be angry? I have seen the cannon,",
+    "When it hath blown his ranks into the air,",
+    "And, like the devil, from his very arm",
+    "Puff'd his own brother:--and can he be angry?",
+    "Something of moment then: I will go meet him:",
+    "There's matter in't indeed, if he be angry."
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "I prithee, do so. [Exit IAGO]",
+    "Something, sure, of state,",
+    "Either from Venice, or some unhatch'd practise",
+    "Made demonstrable here in Cyprus to him,",
+    "Hath puddled his clear spirit: and in such cases",
+    "Men's natures wrangle with inferior things,",
+    "Though great ones are their object. 'Tis even so;",
+    "For let our finger ache, and it indues",
+    "Our other healthful members even to that sense",
+    "Of pain: nay, we must think men are not gods,",
+    "Nor of them look for such observances",
+    "As fit the bridal. Beshrew me much, Emilia,",
+    "I was, unhandsome warrior as I am,",
+    "Arraigning his unkindness with my soul;",
+    "But now I find I had suborn'd the witness,",
+    "And he's indicted falsely."
+   ]
+  },
+  {
+   "speaker": "EMILIA",
+   "lines": [
+    "Pray heaven it be state-matters, as you think,",
+    "And no conception nor no jealous toy",
+    "Concerning you."
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "Alas the day! I never gave him cause."
+   ]
+  },
+  {
+   "speaker": "EMILIA",
+   "lines": [
+    "But jealous souls will not be answer'd so;",
+    "They are not ever jealous for the cause,",
+    "But jealous for they are jealous: 'tis a monster",
+    "Begot upon itself, born on itself."
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "Heaven keep that monster from Othello's mind!"
+   ]
+  },
+  {
+   "speaker": "EMILIA",
+   "lines": [
+    "Lady, amen."
+   ]
+  },
+  {
+   "speaker": "DESDEMONA",
+   "lines": [
+    "I will go seek him. Cassio, walk hereabout:",
+    "If I do find him fit, I'll move your suit",
+    "And seek to effect it to my uttermost."
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "I humbly thank your ladyship."
+   ]
+  },
+  {
+   "stage": "Exeunt DESDEMONA and EMILIA"
+  },
+  {
+   "stage": "Enter BIANCA"
+  },
+  {
+   "speaker": "BIANCA",
+   "lines": [
+    "Save you, friend Cassio!"
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "What make you from home?",
+    "How is it with you, my most fair Bianca?",
+    "I' faith, sweet love, I was coming to your house."
+   ]
+  },
+  {
+   "speaker": "BIANCA",
+   "lines": [
+    "And I was going to your lodging, Cassio.",
+    "What, keep a week away? seven days and nights?",
+    "Eight score eight hours? and lovers' absent hours,",
+    "More tedious than the dial eight score times?",
+    "O weary reckoning!"
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "Pardon me, Bianca:",
+    "I have this while with leaden thoughts been press'd:",
+    "But I shall, in a more continuate time,",
+    "Strike off this score of absence. Sweet Bianca, [Giving her DESDEMONA's handkerchief]",
+    "Take me this work out."
+   ]
+  },
+  {
+   "speaker": "BIANCA",
+   "lines": [
+    "O Cassio, whence came this?",
+    "This is some token from a newer friend:",
+    "To the felt absence now I feel a cause:",
+    "Is't come to this? Well, well."
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "Go to, woman!",
+    "Throw your vile guesses in the devil's teeth,",
+    "From whence you have them. You are jealous now",
+    "That this is from some mistress, some remembrance:",
+    "No, in good troth, Bianca."
+   ]
+  },
+  {
+   "speaker": "BIANCA",
+   "lines": [
+    "Why, whose is it?"
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "I know not, sweet: I found it in my chamber.",
+    "I like the work well: ere it be demanded--",
+    "As like enough it will--I'ld have it copied:",
+    "Take it, and do't; and leave me for this time."
+   ]
+  },
+  {
+   "speaker": "BIANCA",
+   "lines": [
+    "Leave you! wherefore?"
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "I do attend here on the general;",
+    "And think it no addition, nor my wish,",
+    "To have him see me woman'd."
+   ]
+  },
+  {
+   "speaker": "BIANCA",
+   "lines": [
+    "Why, I pray you?"
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "Not that I love you not."
+   ]
+  },
+  {
+   "speaker": "BIANCA",
+   "lines": [
+    "But that you do not love me.",
+    "I pray you, bring me on the way a little,",
+    "And say if I shall see you soon at night."
+   ]
+  },
+  {
+   "speaker": "CASSIO",
+   "lines": [
+    "'Tis but a little way that I can bring you;",
+    "For I attend here: but I'll see you soon."
+   ]
+  },
+  {
+   "speaker": "BIANCA",
+   "lines": [
+    "'Tis very good; I must be circumstanced."
+   ]
+  },
+  {
+   "stage": "Exeunt"
+  }
+ ]
+}
