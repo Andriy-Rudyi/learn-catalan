@@ -753,14 +753,18 @@ since the cookies move to the new domain.
 
 `flaskblog/langsites` builds the pages of every site but the Catalan one,
 from data files in `flaskblog/langsites/data/<code>/`. For now they live at
-paths and appear in the side menu (marked Beta). All of them are switched
+paths and appear in the side menu (marked Beta). Inside a section the side
+menu, the logo and the search box in the header are the section's own
+(`langsites.routes.PAGES`), with links back to the Catalan site and to the
+other languages. All of them are switched
 on; the ones without material yet say so. A site switched off in `SITES`
 (`enabled=False`) can be opened only by the editor (the admin account), who
 sees it in the menu as hidden; everybody else gets 404:
 
 | Address | What it shows |
 | --- | --- |
-| `/ukrainian/` (`/english/`, `/spanish/`, `/french/`, `/german/`) | the section's start page |
+| `/ukrainian/` (`/english/`, `/spanish/`, `/french/`, `/german/`) | the section's start page: its parts, as on the Catalan site |
+| `/ukrainian/grammar`, `lessons`, `conjugator`, `phonetics`, `course`, `text`, `reading`, `translator` | the same parts as the Catalan site; empty ("being prepared") until their material is written |
 | `/ukrainian/dictionary?q=…` | search: the word itself, a translation (English, Spanish, Catalan), or the beginning of a word |
 | `/ukrainian/dictionary/<word>` | the word: part of speech, gender or aspect, meanings in English, Spanish and Catalan equivalents |
 

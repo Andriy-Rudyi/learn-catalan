@@ -75,8 +75,33 @@ class SectionTests(AppTestCase):
         for slug in ('ukrainian', 'english', 'spanish', 'french', 'german'):
             self.assertIn('href="/{}/"'.format(slug), menu)
 
+    def test_every_section_has_the_parts_of_the_catalan_site(self):
+        parts = ('grammar', 'lessons', 'conjugator', 'phonetics', 'course', 'text', 'reading',
+                 'translator')
+        for site in sites.SECTIONS:
+            home = self.client.get('/{}/'.format(site.slug)).get_data(as_text=True)
+            for part in parts + ('dictionary',):
+                self.assertIn('href="/{}/{}"'.format(site.slug, part), home, (site.slug, part))
+            for part in parts:
+                response = self.client.get('/{}/{}'.format(site.slug, part))
+                self.assertEqual(200, response.status_code, (site.slug, part))
+                self.assertIn('ще готуються', response.get_data(as_text=True))
+        self.assertEqual(404, self.client.get('/ukrainian/nothing').status_code)
+
+    def test_section_menu_logo_and_search(self):
+        body = self.client.get('/french/grammar').get_data(as_text=True)
+        self.assertIn('LangWave', body)
+        self.assertIn('action="/french/dictionary"', body)
+        self.assertIn('href="/french/phonetics"', body)
+        self.assertNotIn('href="/grammar"', body)  # the Catalan menu is not shown
+        self.assertIn('href="/home"', body)  # back to the Catalan site
+        self.assertNotIn('/api/words', body)  # no Catalan suggestions in the search box
+        catalan = self.client.get('/grammar').get_data(as_text=True)
+        self.assertIn('Learn Catalan', catalan)
+        self.assertNotIn('href="/french/phonetics"', catalan)
+
     def test_section_without_material(self):
-        self.assertIn('ще готуються', self.client.get('/german/').get_data(as_text=True))
+        self.assertIn('Готується', self.client.get('/german/').get_data(as_text=True))
         self.assertIn('нічого не знайдено',
                       self.client.get('/german/dictionary?q=Hund').get_data(as_text=True))
 

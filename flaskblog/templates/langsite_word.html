@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
 {% include "partials/langsite_header.html" %}
+{% include "partials/langsite_search.html" %}
 <h1 lang="{{ lang_site.code }}">{{ entries[0].w }}</h1>
 {% for entry in entries %}
 <section class="mb-4">

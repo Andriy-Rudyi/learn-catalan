@@ -1,14 +1,23 @@
 {% extends "layout.html" %}
+{% from "partials/icons.html" import icon %}
 {% block content %}
 {% include "partials/langsite_header.html" %}
 <h1 lang="{{ lang_site.code }}">{{ lang_site.native }}</h1>
 <p class="lead">{{ lang_site.name }}</p>
-{% if words %}
-<p>
-  <a href="{{ url_for('langsites.dictionary_page', slug=lang_site.slug) }}">{{ _('Словник') }}</a>:
-  {{ plural(words, ('слово', 'слова', 'слів'), ('word', 'words')) }}.
-</p>
-{% else %}
-<p class="text-muted">{{ _('Матеріали для цієї мови ще готуються.') }}</p>
-{% endif %}
+<div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
+  {% for part in section_pages %}
+  <div class="col">
+    <a class="card h-100 text-decoration-none" href="{{ part.url }}">
+      <div class="card-body">
+        <h2 class="h5 card-title d-flex align-items-center gap-2">{{ icon(part.icon) }}<span>{{ part.name }}</span></h2>
+        {% if part.key == 'dictionary' and words %}
+        <p class="card-text text-muted mb-0">{{ plural(words, ('слово', 'слова', 'слів'), ('word', 'words')) }}</p>
+        {% elif not part.ready %}
+        <p class="card-text text-muted mb-0">{{ _('Готується') }}</p>
+        {% endif %}
+      </div>
+    </a>
+  </div>
+  {% endfor %}
+</div>
 {% endblock %}

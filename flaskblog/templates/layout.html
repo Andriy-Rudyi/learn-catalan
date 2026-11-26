@@ -82,14 +82,22 @@
     {% from "partials/avatar.html" import avatar %}
     {% set section = request.blueprint %}
     {% set endpoint = request.endpoint or '' %}
+    {#- Inside the section of another language (flaskblog/langsites) the
+        menu, logo and search belong to that section. -#}
+    {% set in_section = lang_site is defined and lang_site %}
     <header class="lc-header">
       <div class="lc-container lc-header-inner">
         <button class="lc-burger d-lg-none" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#sideMenu" aria-controls="sideMenu" aria-label="{{ _('Меню') }}">
           <span></span><span></span><span></span>
         </button>
+        {% if in_section %}
+        <a class="lc-logo" href="{{ url_for('langsites.home', slug=lang_site.slug) }}">LangWave · <span lang="{{ lang_site.code }}">{{ lang_site.native }}</span></a>
+        <form class="lc-search" method="get" action="{{ url_for('langsites.dictionary_page', slug=lang_site.slug) }}" role="search">
+        {% else %}
         <a class="lc-logo" href="{{ url_for('main.home') }}">Learn Catalan</a>
         <form class="lc-search" method="get" action="{{ url_for('vocabulary.dictionary') }}" role="search">
+        {% endif %}
           <input class="lc-search-input" type="search" name="q" id="headerSearch"
                  value="{{ request.args.get('q', '') if endpoint == 'vocabulary.dictionary' else '' }}"
                  placeholder="{{ _('Пошук слова') }}" aria-label="{{ _('Пошук слова') }}"
@@ -145,6 +153,12 @@
                      href="{{ url_for('vocabulary.my_dictionary') }}">{{ icon('my-dictionary') }}<span>{{ _('Мій словник') }}</span></a></li>
               <li class="lc-menu-sep" role="separator"></li>
             {% endif %}
+            {% if in_section %}
+            {% for part in section_pages %}
+            <li><a class="lc-menu-link{% if page_key == part.key or (part.key == 'dictionary' and endpoint in ('langsites.dictionary_page', 'langsites.word')) %} active{% endif %}"
+                   href="{{ part.url }}">{{ icon(part.icon) }}<span>{{ part.name }}</span>{% if not part.ready %}<span class="beta-badge">{{ _('Готується') }}</span>{% endif %}</a></li>
+            {% endfor %}
+            {% else %}
             <li><a class="lc-menu-link{% if section == 'grammar' %} active{% endif %}"
                    {% if section == 'grammar' %}aria-current="page"{% endif %}
                    href="{{ url_for('grammar.index') }}">{{ icon('grammar') }}<span>{{ _('Граматика') }}</span></a></li>
@@ -174,8 +188,13 @@
             <li><a class="lc-menu-link{% if endpoint == 'main.faq' %} active{% endif %}"
                    href="{{ url_for('main.faq') }}">{{ icon('faq') }}<span>FAQ</span></a></li>
             {% endif %}
+            {% endif %}
+            <li class="lc-menu-sep" role="separator"></li>
+            {% if in_section %}
+            <li><a class="lc-menu-link" href="{{ url_for('main.home') }}">{{ icon('dictionary') }}<span>{{ _('Каталанська') }}</span></a></li>
+            {% endif %}
             {% for lang_section in language_sections() %}
-            <li><a class="lc-menu-link{% if request.view_args and request.view_args.get('slug') == lang_section.slug %} active{% endif %}"
+            <li><a class="lc-menu-link{% if in_section and lang_site.slug == lang_section.slug %} active{% endif %}"
                    href="{{ url_for('langsites.home', slug=lang_section.slug) }}">{{ icon('dictionary') }}<span>{{ lang_section.name }}</span>{% if lang_section.enabled %}<span class="beta-badge">Beta</span>{% else %}<span class="beta-badge">{{ _('приховано') }}</span>{% endif %}</a></li>
             {% endfor %}
             <li class="lc-menu-sep" role="separator"></li>
@@ -242,6 +261,7 @@
       </script>
       {% set sound_help = (' <a href="' ~ url_for('main.faq', _anchor='sound') ~ '">' ~ _('Докладна інструкція') ~ '</a>') if config.SHOW_FAQ else '' %}
       <script>window.SPEAK_HINT = {{ (speak_hint ~ sound_help) | tojson }};</script>
+      {% if not in_section %}
       <script>
         // Word suggestions for the search box in the header.
         (function () {
@@ -279,6 +299,7 @@
           });
         })();
       </script>
+      {% endif %}
       <script src="{{ url_for('static', filename='speak.js') }}"></script>
       {% block scripts %}{% endblock %}
 </body>

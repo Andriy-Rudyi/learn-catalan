@@ -2,6 +2,7 @@
 {% block content %}
 {% include "partials/langsite_header.html" %}
 <h1>{{ _('Словник') }}</h1>
+{% include "partials/langsite_search.html" %}
 {% if query %}
   {% if entries %}
     {% if how == 'prefix' %}
