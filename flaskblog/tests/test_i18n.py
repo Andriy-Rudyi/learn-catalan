@@ -14,13 +14,13 @@ from flaskblog.tests.helpers import AppTestCase
 from flaskblog.vocabulary import service as vocabulary_service
 
 CYRILLIC = re.compile('[Ѐ-ӿ]')
-LANGUAGE_LINK = re.compile(r'<div class="dropdown lang-menu">.*?</ul>\s*</div>', re.S)
+LANGUAGE_LINK = re.compile(r'<div class="dropdown lang-menu[^"]*">.*?</ul>\s*</div>', re.S)
 GRAMMAR_DIR = os.path.join(os.path.dirname(grammar_service.__file__), 'data')
 
 
 def cyrillic_snippets(html):
     """Bits of an English page that are still in Ukrainian."""
-    html = LANGUAGE_LINK.sub('', html)  # the language menu names Українська
+    html = LANGUAGE_LINK.sub('', html)  # the language menus name Українська
     return [html[max(m.start() - 40, 0):m.end() + 40] for m in CYRILLIC.finditer(html)][:5]
 
 

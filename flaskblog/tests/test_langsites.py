@@ -119,6 +119,27 @@ class SectionTests(AppTestCase):
         self.assertIn('Learn Catalan', catalan)
         self.assertNotIn('href="/french/phonetics"', catalan)
 
+    def test_learning_and_known_language_pickers(self):
+        body = self.client.get('/grammar').get_data(as_text=True)
+        self.assertIn('Вивчаю', body)
+        self.assertIn('Знаю', body)
+        for url in ('/home', '/ukrainian/', '/english/', '/spanish/', '/french/', '/german/'):
+            self.assertIn('href="{}"'.format(url), body)
+        # Sorted by the language's own name: Catalan is not put first.
+        self.assertLess(body.index('>Català<'), body.index('>Deutsch<'))
+        self.assertLess(body.index('>Deutsch<'), body.index('>English<'))
+        self.assertLess(body.index('>Français<'), body.index('>Українська<'))
+        french = self.client.get('/french/grammar').get_data(as_text=True)
+        self.assertIn('<li class="lc-menu-heading"><span lang="fr">Français</span>', french)
+        self.assertRegex(french, r'class="dropdown-item active" href="/french/"')
+
+    def test_bootstrap_is_served_by_the_site(self):
+        body = self.client.get('/').get_data(as_text=True)
+        self.assertNotIn('cdn.jsdelivr.net', body)
+        self.assertIn('/static/vendor/bootstrap-5.3.3/bootstrap.min.css', body)
+        self.assertIn('/static/flex-gap.css', body)
+        self.assertEqual(200, self.client.get('/static/vendor/bootstrap-5.3.3/bootstrap.bundle.min.js').status_code)
+
     def test_part_without_material(self):
         self.assertIn('Готується', self.client.get('/german/').get_data(as_text=True))  # translator
         self.assertIn('нічого не знайдено',

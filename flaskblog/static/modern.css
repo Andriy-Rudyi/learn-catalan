@@ -1009,3 +1009,34 @@ html[data-design="modern"] .lang-menu .dropdown-item {
   width: auto;
   padding: .45rem .75rem;
 }
+
+/* "Learning" and "I know" pickers: a rounded label with the language, not a circle. */
+html[data-design="modern"] .lc-header .lang-pick-toggle {
+  width: auto;
+  min-width: 0;
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 20px;
+  align-items: flex-start;
+  justify-content: center;
+  background: var(--search-bg);
+  color: var(--bs-body-color);
+}
+
+html[data-design="modern"] .lc-header .lang-pick-toggle .lang-pick-label {
+  color: var(--muted-text);
+  opacity: 1;
+}
+
+html[data-design="modern"] .lc-menu-heading {
+  padding: 4px 14px 10px;
+}
+
+@media (max-width: 575.98px) {
+  html[data-design="modern"] .lc-header .lang-pick-toggle {
+    width: auto;
+    min-width: 0;
+    height: 36px;
+    padding: 0 10px;
+  }
+}

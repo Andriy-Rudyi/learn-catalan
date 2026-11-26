@@ -25,14 +25,26 @@
         if (design === 'modern' || design === 'classic') {
           document.documentElement.setAttribute('data-design', design);
         }
+        // Older browsers (Chrome before 84, e.g. on old Android tablets) ignore
+        // gap in flex boxes: static/flex-gap.css then puts margins there.
+        try {
+          var root = document.documentElement, box = document.createElement('div');
+          box.style.cssText = 'display:flex;flex-direction:column;row-gap:1px;position:absolute;visibility:hidden';
+          box.appendChild(document.createElement('div'));
+          box.appendChild(document.createElement('div'));
+          root.appendChild(box);
+          if (box.scrollHeight !== 1) { root.className += ' no-flex-gap'; }
+          root.removeChild(box);
+        } catch (e) {}
       })();
     </script>
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="{{ url_for('static', filename='vendor/bootstrap-5.3.3/bootstrap.min.css') }}" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='modern.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='flex-gap.css') }}">
 
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
 
@@ -80,6 +92,41 @@
 <body class="d-flex flex-column min-vh-100">
     {% from "partials/icons.html" import icon %}
     {% from "partials/avatar.html" import avatar %}
+{% macro lang_pickers(learning, learnt, extra_class='') %}
+          <div class="dropdown lang-menu lang-pick {{ extra_class }}">
+            <button class="btn lang-toggle lang-pick-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                    title="{{ _('Мова, яку ви вивчаєте') }}"
+                    aria-label="{{ _('Мова, яку ви вивчаєте') }}: {{ learnt.site.native if learnt else '' }}">
+              <span class="lang-pick-label">{{ _('Вивчаю') }}</span>
+              <span class="lang-pick-value" lang="{{ learnt.site.code if learnt else '' }}"><span class="lang-pick-long">{{ learnt.site.native if learnt else '' }}</span><span class="lang-pick-short">{{ learnt.site.code | upper if learnt else '' }}</span></span>
+            </button>
+            <ul class="dropdown-menu{% if not extra_class %} dropdown-menu-end{% endif %}">
+              <li><h6 class="dropdown-header">{{ _('Мова, яку ви вивчаєте') }}</h6></li>
+              {% for item in learning %}
+                <li><a class="dropdown-item{% if item.active %} active{% endif %}" href="{{ item.url }}"
+                       {% if item.active %}aria-current="true"{% endif %}>
+                  <span lang="{{ item.site.code }}">{{ item.site.native }}</span>
+                  <span class="lang-pick-name">{{ item.site.name }}</span>{% if not item.site.enabled %} <span class="beta-badge">{{ _('приховано') }}</span>{% endif %}
+                </a></li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="dropdown lang-menu lang-pick {{ extra_class }}">
+            <button class="btn lang-toggle lang-pick-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                    title="{{ _('Мова, яку ви знаєте (мова сайту)') }}"
+                    aria-label="{{ _('Мова, яку ви знаєте (мова сайту)') }}: {{ language_names[current_lang] }}">
+              <span class="lang-pick-label">{{ _('Знаю') }}</span>
+              <span class="lang-pick-value"><span class="lang-pick-long" lang="{{ current_lang }}">{{ language_names[current_lang] }}</span><span class="lang-pick-short">{{ language_short[current_lang] }}</span></span>
+            </button>
+            <ul class="dropdown-menu{% if not extra_class %} dropdown-menu-end{% endif %}">
+              <li><h6 class="dropdown-header">{{ _('Мова, яку ви знаєте (мова сайту)') }}</h6></li>
+              {% for code in site_languages %}
+                <li><a class="dropdown-item{% if code == current_lang %} active{% endif %}" href="{{ url_with_lang(code) }}"
+                       hreflang="{{ code }}" lang="{{ code }}"{% if code == current_lang %} aria-current="true"{% endif %}>{{ language_names[code] }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+{% endmacro %}
     {% set section = request.blueprint %}
     {% set endpoint = request.endpoint or '' %}
     {#- Inside the section of another language (flaskblog/langsites) the
@@ -106,16 +153,10 @@
           <datalist id="headerSearchSuggestions"></datalist>
         </form>
         <div class="lc-header-right">
-          <div class="dropdown lang-menu">
-            <button class="btn lang-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
-                    title="{{ _('Мова сайту') }}" aria-label="{{ _('Мова сайту') }}: {{ language_names[current_lang] }}">{{ language_short[current_lang] }}</button>
-            <ul class="dropdown-menu dropdown-menu-end">
-              {% for code in site_languages %}
-                <li><a class="dropdown-item{% if code == current_lang %} active{% endif %}" href="{{ url_with_lang(code) }}"
-                       hreflang="{{ code }}" lang="{{ code }}"{% if code == current_lang %} aria-current="true"{% endif %}>{{ language_names[code] }}</a></li>
-              {% endfor %}
-            </ul>
-          </div>
+          {% set learning = learning_languages(lang_site.slug if in_section else none) %}
+          {% set learnt = (learning | selectattr('active') | first) %}
+          <div class="lang-picks lang-picks-header">
+{{ lang_pickers(learning, learnt) }}          </div>
           <button class="btn theme-toggle" type="button" id="themeToggle"
                   aria-label="{{ _('Перемкнути тему') }}" title="{{ _('Перемкнути світлу / темну тему') }}">
             <svg class="icon-moon" width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
@@ -140,12 +181,17 @@
       <nav class="lc-side offcanvas-lg offcanvas-start" id="sideMenu" tabindex="-1"
            aria-label="{{ _('Меню') }}">
         <div class="offcanvas-header d-lg-none">
-          <span class="lc-side-title">Learn Catalan</span>
+          <span class="lc-side-title">{% if in_section %}LangWave{% else %}Learn Catalan{% endif %}</span>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sideMenu"
                   aria-label="{{ _('Закрити') }}"></button>
         </div>
         <div class="offcanvas-body">
+          <div class="lang-picks lang-picks-side">
+{{ lang_pickers(learning, learnt, 'dropdown-side') }}          </div>
           <ul class="lc-menu">
+            {% if learnt %}
+              <li class="lc-menu-heading"><span lang="{{ learnt.site.code }}">{{ learnt.site.native }}</span>{% if learnt.site.native != learnt.site.name | string %}<span class="lc-menu-heading-name">{{ learnt.site.name }}</span>{% endif %}</li>
+            {% endif %}
             {% if current_user.is_authenticated %}
               <li><a class="lc-menu-link{% if endpoint == 'users.account' %} active{% endif %}"
                      href="{{ url_for('users.account') }}">{{ icon('account') }}<span>{{ _('Моя сторінка') }}</span></a></li>
@@ -190,14 +236,6 @@
             {% endif %}
             {% endif %}
             <li class="lc-menu-sep" role="separator"></li>
-            {% if in_section %}
-            <li><a class="lc-menu-link" href="{{ url_for('main.home') }}">{{ icon('dictionary') }}<span>{{ _('Каталанська') }}</span></a></li>
-            {% endif %}
-            {% for lang_section in language_sections() %}
-            <li><a class="lc-menu-link{% if in_section and lang_site.slug == lang_section.slug %} active{% endif %}"
-                   href="{{ url_for('langsites.home', slug=lang_section.slug) }}">{{ icon('dictionary') }}<span>{{ lang_section.name }}</span>{% if lang_section.enabled %}<span class="beta-badge">Beta</span>{% else %}<span class="beta-badge">{{ _('приховано') }}</span>{% endif %}</a></li>
-            {% endfor %}
-            <li class="lc-menu-sep" role="separator"></li>
             {% if current_user.is_authenticated %}
               {% if is_admin() %}
               <li><a class="lc-menu-link lc-menu-minor" href="{{ url_for('posts.new_post') }}">{{ icon('new') }}<span>{{ _('Новий урок') }}</span></a></li>
@@ -235,7 +273,7 @@
       </main>
     </div>
 
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      <script src="{{ url_for('static', filename='vendor/bootstrap-5.3.3/bootstrap.bundle.min.js') }}"></script>
       <script>
         (function () {
           var root = document.documentElement;

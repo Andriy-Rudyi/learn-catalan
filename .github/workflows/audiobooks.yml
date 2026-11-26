@@ -109,7 +109,8 @@ jobs:
           python scripts/make_audiobooks.py --out out --manifest
       - name: Commit flaskblog/audiobooks.json
         run: |
-          if git diff --quiet -- flaskblog/audiobooks.json; then echo "No change."; exit 0; fi
+          # status, not diff: the first time the file is new (untracked).
+          if [ -z "$(git status --porcelain -- flaskblog/audiobooks.json)" ]; then echo "No change."; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add flaskblog/audiobooks.json

@@ -39,12 +39,26 @@ _ASPECTS = {'pf': 'доконаний вид', 'ipf': 'недоконаний в
 
 @langsites.app_context_processor
 def inject_sections():
-    """The sections for the side menu: the switched-on ones, and for the
-    editor also the hidden ones."""
+    """The languages for the "learning" picker in the header: every
+    switched-on site (and for the editor also the hidden ones), sorted by
+    the language's own name, so that none of them comes first."""
     def visible():
         editor = is_admin()
         return [site for site in sites.SECTIONS if site.enabled or editor]
-    return {'language_sections': visible}
+
+    def learning(current=None):
+        editor = is_admin()
+        current = current or sites.DEFAULT.slug
+        items = []
+        every = [sites.BY_SLUG[site.slug] for site in sites.SITES]
+        for site in sorted(every, key=lambda site: site.native.casefold()):
+            if not (site.enabled or editor):
+                continue
+            url = (url_for('main.home') if site.slug == sites.DEFAULT.slug
+                   else url_for('langsites.home', slug=site.slug))
+            items.append({'site': site, 'url': url, 'active': site.slug == current})
+        return items
+    return {'language_sections': visible, 'learning_languages': learning}
 
 
 def _section(slug):
