@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+{#- The conjugator of a language section (flaskblog/langsites/conjugator.py),
+    with the look of the Catalan one. -#}
+{% block content %}
+{% include "partials/langsite_header.html" %}
+<div class="conjugator">
+  <h1>{{ _('Дієвідміна') }} <span class="beta-badge beta-badge-lg">Beta</span></h1>
+  {% if available %}
+  <p class="text-muted">{{ _('Введіть дієслово в інфінітиві або будь-якій формі.') }}</p>
+
+  <form method="GET" action="{{ url_for('langsites.conjugator_page', slug=lang_site.slug) }}" autocomplete="off">
+    <div class="input-group mb-2">
+      <input class="form-control" type="text" name="verb" lang="{{ lang_site.code }}"
+             placeholder="{{ _('Введіть дієслово') }}" aria-label="{{ _('Введіть дієслово') }}"
+             value="{{ query }}" maxlength="60" required>
+      <button class="btn btn-outline-info" type="submit">{{ _('Відміняти') }}</button>
+    </div>
+  </form>
+
+  <p class="small text-muted mb-4">
+    {{ _('Приклади:') }}
+    {% for verb in examples %}
+      <a class="verb-example" lang="{{ lang_site.code }}" href="{{ url_for('langsites.conjugator_page', slug=lang_site.slug, verb=verb) }}">{{ verb }}</a>{% if not loop.last %}, {% endif %}
+    {% endfor %}
+  </p>
+
+  {% if query and not result %}
+    <div class="alert alert-warning" role="alert">
+      <p class="mb-0">{{ _('Дієслова «{verb}» не знайдено.', verb=query) }}</p>
+    </div>
+  {% endif %}
+
+  {% if result %}
+    <hr>
+    <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+      <h2 class="mb-0" lang="{{ lang_site.code }}">{{ result.w }}</h2>
+      <button class="btn-speak" type="button" data-say="{{ result.w }}" data-lang="{{ lang_site.code }}"
+              aria-label="{{ _('Прослухати') }}: {{ result.w }}" title="{{ _('Прослухати') }}">🔊</button>
+      <span class="badge bg-secondary">{{ 'verbecc' if result.source == 'verbecc' else _('Вікісловник') }}</span>
+    </div>
+    {% if result.asked %}
+      <p class="small text-muted mb-2">{{ _('«{form}» – форма дієслова «{verb}».', form=result.asked, verb=result.w) }}
+      {% if result.others %}{{ _('Також може бути формою:') }}
+        {% for verb in result.others %}<a lang="{{ lang_site.code }}" href="{{ url_for('langsites.conjugator_page', slug=lang_site.slug, verb=verb) }}">{{ verb }}</a>{% if not loop.last %}, {% endif %}{% endfor %}.
+      {% endif %}</p>
+    {% endif %}
+    {% for entry in entries %}
+      <div class="verb-translation">
+        {% include "partials/langsite_entry.html" %}
+        <a class="btn btn-sm btn-outline-secondary" href="{{ url_for('langsites.word', slug=lang_site.slug, word=entry.k) }}">{{ _('У словнику') }}</a>
+      </div>
+    {% endfor %}
+
+    {% for mood, tables in moods %}
+      <div class="mood-section">
+        {% if mood %}<h3 lang="{{ lang_site.code }}">{{ mood }}</h3>{% endif %}
+        <div class="row">
+          {% for table in tables %}
+            <div class="col-md-6">
+              <div class="tense-card">
+                <h4 lang="{{ lang_site.code if lang_site.code != 'uk' else 'en' }}">{{ table.title }}</h4>
+                <table class="table table-sm conjugation-table" lang="{{ lang_site.code }}">
+                  <tbody>
+                    {% for row in table.rows %}
+                      <tr>
+                        {% if row | length > 1 %}<th scope="row" class="person-cell">{{ row[0] }}</th><td>{{ row[1] }}</td>
+                        {% else %}<td colspan="2">{{ row[0] }}</td>{% endif %}
+                      </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+    <p class="small text-muted" lang="en">
+      {% if result.source == 'verbecc' %}Forms: verbecc (LGPL).{% else %}Forms: English Wiktionary, via kaikki.org (CC BY-SA 4.0).{% endif %}
+    </p>
+  {% endif %}
+  {% else %}
+  <p class="text-muted">{{ _('Повний дієвідмінювач для цієї мови ще готується. Нижче основні дієслова.') }}</p>
+  {% endif %}
+
+  {% if items and not result %}
+    <hr>
+    <h2 class="h4">{{ _('Основні дієслова') }}</h2>
+    {% for item in items %}
+    <section class="mb-4" lang="{{ explained_in }}">
+      <h3 class="h5">{{ item.title }}</h3>
+      {% for paragraph in item.paragraphs or () %}<p>{{ paragraph }}</p>{% endfor %}
+      {% if item.table %}
+      <div class="table-responsive">
+        <table class="table table-sm conjugation-table">
+          {% if item.table.head %}<thead><tr>{% for cell in item.table.head %}<th>{{ cell }}</th>{% endfor %}</tr></thead>{% endif %}
+          <tbody>
+            {% for row in item.table.rows %}
+            <tr>{% for cell in row %}<td{% if loop.first or item.table.lang_columns and loop.index0 in item.table.lang_columns %} lang="{{ lang_site.code }}"{% endif %}>{{ cell }}</td>{% endfor %}</tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% endif %}
+    </section>
+    {% endfor %}
+  {% endif %}
+</div>
+{% endblock %}

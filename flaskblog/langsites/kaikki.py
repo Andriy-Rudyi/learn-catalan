@@ -139,7 +139,9 @@ def lemmas(code, word):
                 break
             form, _tab, rest = line.decode('utf-8').rstrip('\n').partition('\t')
             if form == target:
-                return rest.split('|')
+                # The shorter dictionary form first: usually the commoner
+                # word (French "suis": être before suivre).
+                return sorted(rest.split('|'), key=lambda lemma: (len(lemma), lemma))
             if form > target:
                 break
     return []

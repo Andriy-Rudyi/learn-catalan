@@ -60,11 +60,12 @@ def available(code):
 class _Index(object):
     """Sorted keys of a dictionary file and the byte offset of each entry."""
 
-    def __init__(self, code):
+    def __init__(self, code, name=FILE_NAME):
         self.code = code
+        self.path = os.path.join(DATA_DIR, code, name)
         keys, offsets = [], array.array('Q')  # 8 bytes an offset, not a Python int
         try:
-            with io.open(path(code), 'rb') as handle:
+            with io.open(self.path, 'rb') as handle:
                 offset = 0
                 for line in handle:
                     if line.strip():
@@ -82,7 +83,7 @@ class _Index(object):
         return len(self.keys)
 
     def read(self, position):
-        with io.open(path(self.code), 'rb') as handle:
+        with io.open(self.path, 'rb') as handle:
             handle.seek(self.offsets[position])
             return json.loads(handle.readline().decode('utf-8'))
 
@@ -101,9 +102,11 @@ class _Index(object):
         return found
 
 
-@functools.lru_cache(maxsize=8)
-def index(code):
-    return _Index(code)
+@functools.lru_cache(maxsize=16)
+def index(code, name=FILE_NAME):
+    """The index of a section's dictionary file (or of another file in the
+    same format, e.g. the conjugation tables)."""
+    return _Index(code, name)
 
 
 def size(code):

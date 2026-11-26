@@ -47,3 +47,12 @@ def forms_command(code, extract):
     """Write the table of word forms of a section from a Wiktionary extract."""
     from flaskblog.langsites import kaikki
     click.echo('Форм: {}.'.format(kaikki.write_forms(code, extract)))
+
+
+@langsites_cli.command('conjugation')
+@click.argument('code')
+@click.argument('extract', type=click.Path(exists=True, dir_okay=False))
+def conjugation_command(code, extract):
+    """Write the conjugation tables of a section (de, uk) from a Wiktionary extract."""
+    from flaskblog.langsites import conjugator
+    click.echo('Дієслів: {}.'.format(conjugator.write_tables(code, extract)))

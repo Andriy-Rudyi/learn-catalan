@@ -4,7 +4,7 @@ from flask import Blueprint, abort, jsonify, render_template, request, url_for
 
 from flaskblog import sites
 from flaskblog.i18n import get_locale, gettext as _
-from flaskblog.langsites import content as sections_content, dictionary, reading
+from flaskblog.langsites import content as sections_content, conjugator, dictionary, reading
 from flaskblog.vocabulary.constants import part_of_speech_label
 from flaskblog.permissions import is_admin
 
@@ -87,6 +87,8 @@ def _common(site):
             return url_for('langsites.text_page', slug=site.slug)
         if key in _EMPTY:
             return url_for('langsites.page', slug=site.slug, page=key)
+        if key == 'conjugator':
+            return url_for('langsites.conjugator_page', slug=site.slug)
         return url_for('langsites.content_page', slug=site.slug, page=key)
 
     pages = [{'key': key, 'name': _(name), 'icon': icon, 'ready': _ready(site, key), 'url': url(key)}
@@ -233,7 +235,40 @@ def text_page(slug):
                            **_common(site))
 
 
-@langsites.route(_PREFIX + '/<any(grammar,phonetics,conjugator,course):page>')
+_EXAMPLE_VERBS = {
+    'uk': ('бути', 'мати', 'читати', 'написати', 'говорити', 'іти'),
+    'en': ('be', 'have', 'go', 'take', 'write', 'think'),
+    'es': ('ser', 'estar', 'tener', 'ir', 'hablar', 'comer', 'vivir'),
+    'fr': ('être', 'avoir', 'aller', 'faire', 'parler', 'finir', 'prendre'),
+    'de': ('sein', 'haben', 'werden', 'gehen', 'machen', 'sprechen', 'fahren'),
+}
+
+
+@langsites.route(_PREFIX + '/conjugator')
+def conjugator_page(slug):
+    site = _section(slug)
+    query = (request.args.get('verb') or '').strip()[:60]
+    result = conjugator.conjugate(site.code, query) if query else None
+    moods = []
+    if result:
+        for table in result['tables']:
+            mood, _sep, tense = table['title'].partition(' · ')
+            if not tense:
+                mood, tense = '', table['title']
+            if not moods or moods[-1][0] != mood:
+                moods.append((mood, []))
+            moods[-1][1].append(dict(table, title=tense))
+    entries = dictionary.lookup(site.code, result['k']) if result else []
+    content = sections_content.load(site.code)
+    return render_template('langsite_conjugator.html', title=_('Дієвідміна'), page_key='conjugator',
+                           query=query, result=result, moods=moods, languages=_languages(site),
+                           entries=[entry for entry in entries if entry['pos'] == 'verb'][:1],
+                           examples=_EXAMPLE_VERBS.get(site.code, ()), available=conjugator.available(site.code),
+                           items=content.get('conjugator', ()), explained_in=content.get('explained_in', 'uk'),
+                           **_common(site))
+
+
+@langsites.route(_PREFIX + '/<any(grammar,phonetics,course):page>')
 def content_page(slug, page):
     site = _section(slug)
     content = sections_content.load(site.code)

@@ -85,7 +85,7 @@ class SectionTests(AppTestCase):
                 response = self.client.get('/{}/{}'.format(site.slug, part))
                 self.assertEqual(200, response.status_code, (site.slug, part))
             # Some real starter material in every section, the translator still to come.
-            for part in ('grammar', 'phonetics', 'conjugator', 'course'):
+            for part in ('grammar', 'phonetics', 'course'):
                 body = self.client.get('/{}/{}'.format(site.slug, part)).get_data(as_text=True)
                 self.assertNotIn('ще готуються', body, (site.slug, part))
                 self.assertIn('unit-number-big', body, (site.slug, part))
@@ -264,6 +264,53 @@ class OtherDictionariesTests(unittest.TestCase):
             entries, found = dictionary.find('en', word)
             self.assertEqual(form, found, word)
         self.assertEqual(([], None), dictionary.find('en', 'qqqzzz'))
+
+
+class ConjugatorTests(AppTestCase):
+
+    def test_tables_from_wiktionary(self):
+        from flaskblog.langsites import conjugator
+        gehen = conjugator.conjugate('de', 'ging')
+        self.assertEqual('gehen', gehen['w'])
+        self.assertEqual('ging', gehen['asked'])
+        titles = [table['title'] for table in gehen['tables']]
+        for title in ('Präsens', 'Präteritum', 'Perfekt', 'Konjunktiv II', 'Imperativ', 'Grundformen'):
+            self.assertIn(title, titles)
+        presens = gehen['tables'][0]['rows']
+        self.assertEqual(['ich', 'gehe'], presens[0])
+        self.assertEqual(['du', 'gehst'], presens[1])
+        chytaty = conjugator.conjugate('uk', 'читати')
+        tables = {table['title']: dict(table['rows']) for table in chytaty['tables']}
+        self.assertEqual('чита́ю', tables['Present']['я'])
+        self.assertEqual('чита́ла', tables['Past']['вона'])
+        self.assertEqual('прочита́ти', tables['Forms']['Perfective'])
+        self.assertEqual('написати', dictionary.key(conjugator.conjugate('uk', 'написав')['w']))
+
+    def test_verbecc_for_spanish_and_french(self):
+        from flaskblog.langsites import conjugator
+        hablar = conjugator.conjugate('es', 'hablo')
+        self.assertEqual('hablar', hablar['w'])
+        self.assertEqual(['yo hablo'], hablar['tables'][0]['rows'][0])
+        suis = conjugator.conjugate('fr', 'suis')
+        self.assertEqual({'suivre', 'être'}, {suis['w']} | set(suis['others']))
+        self.assertIsNone(conjugator.conjugate('es', 'qqqzzz'))
+        self.assertIsNone(conjugator.conjugate('en', 'go'))  # English has no tables yet
+
+    def test_pages(self):
+        body = self.client.get('/german/conjugator?verb=ging').get_data(as_text=True)
+        self.assertIn('tense-card', body)
+        self.assertIn('gingst', body)
+        body = self.client.get('/french/conjugator?verb=suis').get_data(as_text=True)
+        self.assertIn('Також може бути формою', body)
+        self.assertIn('nous sommes', body)
+        self.assertIn('не знайдено', self.client.get('/spanish/conjugator?verb=qqqzzz').get_data(as_text=True))
+        empty = self.client.get('/spanish/conjugator').get_data(as_text=True)
+        self.assertIn('Основні дієслова', empty)
+        self.assertIn('/spanish/conjugator?verb=hablar', empty)
+        english = self.client.get('/english/conjugator').get_data(as_text=True)
+        self.assertIn('ще готується', english)
+        self.assertIn('Основні дієслова', english)
+        self.assertIn('form of', self.client.get('/german/conjugator?verb=ging&lang=en').get_data(as_text=True))
 
 
 class ReadingTests(AppTestCase):

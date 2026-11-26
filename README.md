@@ -819,7 +819,7 @@ of its language.
 look (same templates' markup and CSS classes, the same word panel,
 `static/reader.js`):
 
-- **Grammar, Phonetics, Conjugator, C1/C2 course**: starter material from
+- **Grammar, Phonetics, C1/C2 course** (and the Conjugator's page before a search): starter material from
   `langsites/data/<code>/content.json` (`flaskblog/langsites/content.py`):
   a few short, real units for each language (articles and the verb "to be",
   the alphabet and the hardest sounds, the commonest verbs, the official
@@ -827,6 +827,21 @@ look (same templates' markup and CSS classes, the same word panel,
   Ukrainian section, which is for people who do not speak Ukrainian yet.
   Example sentences have a listen button in the language of the section
   (`static/speak.js` takes `data-lang`).
+- **Conjugator** (`/<section>/conjugator?verb=`), with the look of the
+  Catalan one (`flaskblog/langsites/conjugator.py`); the verb can be given
+  in any form (`ging`, `hablo`, `написав`), and a form of two verbs shows
+  both (French `suis`: être, suivre):
+  - Spanish and French: verbecc, the library of the Catalan conjugator,
+    every mood and tense under its own name; only one of the two is kept
+    in memory at a time (Spanish takes ~35 MB, French ~12 MB);
+  - German and Ukrainian: the English Wiktionary's conjugation tables,
+    written by `flask langsites conjugation <code> <extract>` to
+    `langsites/data/<code>/conjugation.jsonl` (German 10,026 verbs: Präsens,
+    Präteritum, Perfekt, Plusquamperfekt, Futur I, Konjunktiv I and II,
+    Imperativ, Grundformen; Ukrainian 5,515 verbs with stress: present,
+    past by gender, future, imperative, the aspect partner, adverbial and
+    passive participles) and read on demand like the dictionary;
+  - English: not yet; the page shows the starter tables.
 - **Text** (`/<section>/text`): paste a text and click its words, as on the
   Catalan text page, without synonyms; the text is kept per section.
 - **Reading** (`/<section>/reading`): the works of the section, every word
