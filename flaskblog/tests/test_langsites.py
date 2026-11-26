@@ -1,6 +1,7 @@
 # flaskblog/tests/test_langsites.py
 
 import unittest
+from unittest import mock
 from urllib.parse import quote
 
 from flaskblog import sites
@@ -49,40 +50,61 @@ class DictionaryFileTests(unittest.TestCase):
         self.assertEqual(0, dictionary.size('xx'))
 
 
-class HiddenSectionTests(AppTestCase):
-    """Sections stay hidden until their site is enabled: only the editor
-    sees them."""
+def _hidden(slug):
+    """Switch a section off for the length of a test."""
+    site = sites.BY_SLUG[slug]._replace(enabled=False)
+    return mock.patch.multiple(
+        sites, BY_SLUG=dict(sites.BY_SLUG, **{slug: site}),
+        SECTIONS=tuple(site if s.slug == slug else s for s in sites.SECTIONS))
+
+
+class SectionTests(AppTestCase):
 
     def test_registry(self):
         self.assertEqual(['ukrainian', 'english', 'spanish', 'french', 'german'],
                          [site.slug for site in sites.SECTIONS])
-        self.assertEqual(['ukrainian'], [site.slug for site in sites.SECTIONS if site.enabled])
+        self.assertTrue(all(site.enabled for site in sites.SECTIONS))
 
-    def test_hidden_from_visitors(self):
-        for url in ('/english/', '/english/dictionary?q=dog', '/spanish/', '/french/',
-                    '/german/dictionary'):
-            self.assertEqual(404, self.client.get(url).status_code, url)
-        user = self.create_user()
-        self.login_as(user)
-        self.assertEqual(404, self.client.get('/english/').status_code)
-
-    def test_ukrainian_is_open_to_everybody(self):
-        for url in ('/ukrainian/', '/ukrainian/dictionary?q=dog', '/ukrainian/dictionary/собака'):
+    def test_open_to_everybody(self):
+        for url in ('/ukrainian/', '/ukrainian/dictionary?q=dog', '/ukrainian/dictionary/собака',
+                    '/english/', '/spanish/', '/french/', '/german/dictionary?q=Hund'):
             response = self.client.get(url)
             self.assertEqual(200, response.status_code, url)
             self.assertNotIn('лише ви як адміністратор', response.get_data(as_text=True))
         menu = self.client.get('/grammar').get_data(as_text=True)
-        self.assertIn('href="/ukrainian/"', menu)
-        self.assertNotIn('href="/english/"', menu)
+        for slug in ('ukrainian', 'english', 'spanish', 'french', 'german'):
+            self.assertIn('href="/{}/"'.format(slug), menu)
+
+    def test_section_without_material(self):
+        self.assertIn('ще готуються', self.client.get('/german/').get_data(as_text=True))
+        self.assertIn('нічого не знайдено',
+                      self.client.get('/german/dictionary?q=Hund').get_data(as_text=True))
 
     def test_unknown_section(self):
-        self.create_admin()
-        self.login(self.create_user('someone').email)
         self.assertEqual(404, self.client.get('/klingon/').status_code)
 
     def test_catalan_pages_still_work(self):
         self.assertEqual(200, self.client.get('/grammar').status_code)
         self.assertEqual(200, self.client.get('/dictionary').status_code)
+
+
+class HiddenSectionTests(AppTestCase):
+    """A switched-off section: only the editor sees it."""
+
+    def test_hidden_from_visitors(self):
+        with _hidden('english'):
+            for url in ('/english/', '/english/dictionary?q=dog'):
+                self.assertEqual(404, self.client.get(url).status_code, url)
+            self.login_as(self.create_user())
+            self.assertEqual(404, self.client.get('/english/').status_code)
+            self.assertNotIn('href="/english/"', self.client.get('/grammar').get_data(as_text=True))
+
+    def test_editor_sees_it(self):
+        with _hidden('english'):
+            self.login_as(self.create_admin())
+            body = self.client.get('/english/').get_data(as_text=True)
+            self.assertIn('лише ви як адміністратор', body)
+            self.assertIn('href="/english/"', body)
 
 
 class AdminSectionTests(AppTestCase):
@@ -95,15 +117,6 @@ class AdminSectionTests(AppTestCase):
         body = self.client.get('/ukrainian/').get_data(as_text=True)
         self.assertIn('Українська', body)
         self.assertIn('/ukrainian/dictionary', body)
-        hidden = self.client.get('/english/').get_data(as_text=True)
-        self.assertIn('лише ви як адміністратор', hidden)
-        self.assertIn('href="/english/"', hidden)  # in the editor's menu
-
-    def test_section_without_material(self):
-        response = self.client.get('/german/')
-        self.assertEqual(200, response.status_code)
-        self.assertIn('ще готуються', response.get_data(as_text=True))
-        self.assertIn('нічого не знайдено', self.client.get('/german/dictionary?q=Hund').get_data(as_text=True))
 
     def test_search_and_word_page(self):
         body = self.client.get('/ukrainian/dictionary?q=dog').get_data(as_text=True)

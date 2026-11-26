@@ -42,9 +42,8 @@ class DomainTests(AppTestCase):
         self.assertIn('LangWave', body)
         self.assertIn('href="https://catalan.{}/?lang=uk"'.format(BASE), body)
         self.assertIn('Català', body)
-        # Registered but switched off: not shown.
-        for slug in ('english', 'french', 'german'):
-            self.assertNotIn('{}.{}'.format(slug, BASE), body)
+        for slug in ('ukrainian', 'english', 'spanish', 'french', 'german'):
+            self.assertIn('{}.{}'.format(slug, BASE), body)
 
     def test_picker_follows_the_interface_language(self):
         body = self.get(BASE, '/?lang=en').get_data(as_text=True)
@@ -76,8 +75,11 @@ class DomainTests(AppTestCase):
         self.assertIn('href="https://ukrainian.{}/?lang=uk"'.format(BASE), self.get(BASE).get_data(as_text=True))
 
     def test_hidden_sites_are_not_found(self):
-        for slug in ('english', 'french', 'german'):
-            self.assertEqual(404, self.get('{}.{}'.format(slug, BASE)).status_code, slug)
+        from unittest import mock
+        from flaskblog import sites
+        hidden = sites.BY_SLUG['german']._replace(enabled=False)
+        with mock.patch.dict(sites.BY_SLUG, {'german': hidden}):
+            self.assertEqual(404, self.get('german.' + BASE).status_code)
 
     def test_unknown_subdomain_goes_to_the_picker(self):
         response = self.get('klingon.' + BASE, '/grammar')
@@ -114,7 +116,7 @@ class DomainTests(AppTestCase):
         sitemap = self.get(BASE, '/sitemap.xml').get_data(as_text=True)
         self.assertIn('<loc>https://{}/</loc>'.format(BASE), sitemap)
         self.assertIn('<loc>https://catalan.{}/</loc>'.format(BASE), sitemap)
-        self.assertNotIn('english.', sitemap)
+        self.assertIn('<loc>https://english.{}/</loc>'.format(BASE), sitemap)
         catalan = self.get('catalan.' + BASE, '/robots.txt').get_data(as_text=True)
         self.assertIn('Sitemap: https://catalan.{}/sitemap.xml'.format(BASE), catalan)
 

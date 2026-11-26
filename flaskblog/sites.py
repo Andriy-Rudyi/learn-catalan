@@ -10,10 +10,9 @@ With BASE_DOMAIN set (e.g. ``langwave.app``):
 * the other sites in SITES are sections built in flaskblog/langsites,
   which live at paths (``/ukrainian/...``): on ``ukrainian.<domain>`` the
   address ``/`` goes to ``/ukrainian/`` and any path outside it to the
-  Catalan site. ``ukrainian`` is switched on; ``english.``, ``spanish.``,
-  ``french.`` and ``german.`` are registered but switched off: their
-  addresses answer 404 and the picker does not show them until ``enabled``
-  is True and they have material (only the editor can open them);
+  Catalan site. All of them are switched on; a site with ``enabled``
+  False would answer 404, stay out of the picker and be open only to the
+  site's editor;
 * an unknown subdomain goes to the picker;
 * any other host (the old address of the app) goes, path and all, to the
   Catalan site, so old links keep working; localhost is served as the
@@ -44,10 +43,10 @@ Site = namedtuple('Site', 'slug code native name enabled')
 SITES = (
     Site('catalan', 'ca', 'Català', lazy_gettext('Каталанська'), True),
     Site('ukrainian', 'uk', 'Українська', lazy_gettext('Українська'), True),
-    Site('english', 'en', 'English', lazy_gettext('Англійська'), False),
-    Site('spanish', 'es', 'Español', lazy_gettext('Іспанська'), False),
-    Site('french', 'fr', 'Français', lazy_gettext('Французька'), False),
-    Site('german', 'de', 'Deutsch', lazy_gettext('Німецька'), False),
+    Site('english', 'en', 'English', lazy_gettext('Англійська'), True),
+    Site('spanish', 'es', 'Español', lazy_gettext('Іспанська'), True),
+    Site('french', 'fr', 'Français', lazy_gettext('Французька'), True),
+    Site('german', 'de', 'Deutsch', lazy_gettext('Німецька'), True),
 )
 BY_SLUG = {site.slug: site for site in SITES}
 # The sections built by flaskblog/langsites (every site but the Catalan one).

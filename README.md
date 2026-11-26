@@ -730,8 +730,7 @@ All the language sites live under one domain (`flaskblog/sites.py`). With
 | `langwave.app` | the language picker; any other path goes to the same path on the Catalan site |
 | `www.langwave.app` | goes to `langwave.app` |
 | `catalan.langwave.app` | this site |
-| `ukrainian.` | the Ukrainian section: `/` goes to `/ukrainian/`, other paths go to the Catalan site |
-| `english.`, `spanish.`, `french.`, `german.` | registered in `SITES` but switched off (404, not in the picker) |
+| `ukrainian.`, `english.`, `spanish.`, `french.`, `german.` | the sections of the other languages: `/` goes to `/ukrainian/` (and so on), other paths go to the Catalan site |
 | other subdomains | go to the picker |
 | any other host (e.g. `*.onrender.com`) | goes to the same address on `catalan.` (301) |
 | `localhost` | the Catalan site, for development |
@@ -754,10 +753,10 @@ since the cookies move to the new domain.
 
 `flaskblog/langsites` builds the pages of every site but the Catalan one,
 from data files in `flaskblog/langsites/data/<code>/`. For now they live at
-paths and appear in the side menu. The Ukrainian section is switched on
-(marked Beta); while a site is switched off only the editor (the admin
-account) can open its section and sees it in the menu as hidden; everybody
-else gets 404:
+paths and appear in the side menu (marked Beta). All of them are switched
+on; the ones without material yet say so. A site switched off in `SITES`
+(`enabled=False`) can be opened only by the editor (the admin account), who
+sees it in the menu as hidden; everybody else gets 404:
 
 | Address | What it shows |
 | --- | --- |
