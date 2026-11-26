@@ -958,6 +958,38 @@ flask db downgrade base
 flask db upgrade
 ```
 
+## Audiobooks
+
+The reading works can be listened to like a podcast, also with the screen
+locked (in the car, with headphones): `/reading/<work>/listen` for the
+Catalan works and `/<section>/reading/<work>/listen` for the other
+languages, linked from the work's page ("Listen to the audiobook") and from
+every chapter or scene ("Listen"). The page (`templates/audiobook.html`,
+`static/audiobook.js`) plays the parts one after another in one `<audio>`
+element; real audio files keep playing with the screen locked, which the
+browser's speech synthesis does not. The Media Session API gives the lock
+screen, headphones and the car (Bluetooth, CarPlay, Android Auto) play and
+pause, previous and next part, and seeking, with the title shown. Speed
+(0.75-1.5×) and the place where the listener stopped are kept in the
+browser and offered on the next visit; `?part=N` starts at a part.
+
+The audio is made with [Piper](https://github.com/OHF-Voice/piper1-gpl), an
+open speech synthesiser, by `scripts/make_audiobooks.py`: one MP3 per
+chapter or scene (mono, 40 kbit/s, about 18 MB an hour), the title read
+first, a pause after each paragraph, speakers' names before their lines in
+the plays. Voices: Catalan `upc_ona` (CC BY-SA 3.0 ES), Ukrainian `tetiana`
+(Apache 2.0), English `kristin` (public domain), Spanish `davefx` (CC0),
+French `siwis` (CC BY 4.0), German `thorsten` (CC0).
+
+`.github/workflows/audiobooks.yml` runs it on GitHub (one job per
+language) when the texts or the script change on `dev`, or on demand: the
+MP3s become assets of the release `audiobooks` (GitHub serves them, with
+seeking; the site stores nothing), and the last job commits
+`flaskblog/audiobooks.json`, the list of parts with their length
+(`flaskblog/audiobooks.py`). Without that file the pages and links are not
+shown. Parts already in the release are not made again; to remake one,
+delete its `.mp3` and `.mp3.json` from the release.
+
 ## Backups
 
 `.github/workflows/backup.yml` dumps the database every night (pg_dump,

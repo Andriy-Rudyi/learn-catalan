@@ -162,9 +162,39 @@ def work(slug):
     found = works.load(slug)
     if not found or not found['parts']:
         abort(404)
+    from flaskblog import audiobooks
     return render_template('reading_work.html', title=found['short_title'], work=found,
                            act_title=works.act_title, scene_label=works.scene_label,
-                           chapter_label=works.chapter_label)
+                           chapter_label=works.chapter_label,
+                           audiobook=audiobooks.available('ca', slug))
+
+
+def _listen_part(slug, position):
+    """The address of a part in the work's audiobook, or None."""
+    from flaskblog import audiobooks
+    if not audiobooks.available('ca', slug):
+        return None
+    return url_for('reader.listen', slug=slug, part=position)
+
+
+@reader.route('/reading/<slug>/listen')
+def listen(slug):
+    """The work as an audiobook (flaskblog/audiobooks.py)."""
+    from flaskblog import audiobooks
+
+    _reading_on()
+    found = works.load(slug)
+    if not found or not audiobooks.available('ca', slug):
+        abort(404)
+    if found.get('chapters'):
+        labels = [works.chapter_label(chapter) for chapter in found['chapters']]
+        read_urls = [url_for('reader.chapter', slug=slug, number=chapter.number) for chapter in found['chapters']]
+    else:
+        labels = [works.scene_label(scene) for scene in found['scenes']]
+        read_urls = [url_for('reader.scene', slug=slug, act=scene.act, scene=scene.scene) for scene in found['scenes']]
+    book, config = audiobooks.page('ca', slug, found['title'], found['author'], labels, read_urls)
+    return render_template('audiobook.html', title=_('Аудіокнига') + ' · ' + found['short_title'],
+                           book=book, config=config, back_url=url_for('reader.work', slug=slug))
 
 
 @reader.route('/reading/<slug>/<int:act>/<int:scene>')
@@ -181,6 +211,7 @@ def scene(slug, act, scene):
         work=found, scene=current, previous=previous, following=following,
         act_title=works.act_title, scene_label=works.scene_label,
         panel_strings=panel_strings(), action_form=ActionForm(),
+        listen_part=_listen_part(slug, found['scenes'].index(current) + 1),
     )
 
 
@@ -198,6 +229,7 @@ def chapter(slug, number):
         work=found, chapter=current, previous=previous, following=following,
         chapter_label=works.chapter_label,
         panel_strings=panel_strings(), action_form=ActionForm(),
+        listen_part=_listen_part(slug, found['chapters'].index(current) + 1),
     )
 
 

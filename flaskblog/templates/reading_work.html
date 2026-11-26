@@ -23,6 +23,9 @@
     {% else %}
       <a class="btn btn-info mt-3" href="{{ url_for('reader.scene', slug=work.slug, act=work.scenes[0].act, scene=work.scenes[0].scene) }}">{{ _('Почати читати') }}</a>
     {% endif %}
+    {% if audiobook %}
+      <a class="btn btn-outline-info mt-3" href="{{ url_for('reader.listen', slug=work.slug) }}">🎧 {{ _('Слухати аудіокнигу') }}</a>
+    {% endif %}
   </div>
 
   <div class="reading-columns">

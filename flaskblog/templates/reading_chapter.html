@@ -6,6 +6,7 @@
   <p class="small reading-crumbs">
     <a href="{{ url_for('reader.library') }}">{{ _('Читання') }}</a> ›
     <a href="{{ url_for('reader.work', slug=work.slug) }}" lang="ca">{{ work.short_title }}</a>
+    {% if listen_part %} · <a href="{{ listen_part }}">🎧 {{ _('Слухати') }}</a>{% endif %}
   </p>
 
   <div class="reader-grid">

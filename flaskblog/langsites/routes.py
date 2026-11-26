@@ -2,7 +2,7 @@
 
 from flask import Blueprint, abort, jsonify, render_template, request, url_for
 
-from flaskblog import sites
+from flaskblog import audiobooks, sites
 from flaskblog.i18n import get_locale, gettext as _
 from flaskblog.langsites import content as sections_content, conjugator, dictionary, reading
 from flaskblog.vocabulary.constants import part_of_speech_label
@@ -207,7 +207,29 @@ def work_page(slug, work_slug):
     if work is None:
         abort(404)
     return render_template('langsite_work.html', title=work.get('short_title') or work['title'],
-                           page_key='reading', work=work, **_common(site))
+                           page_key='reading', work=work,
+                           audiobook=audiobooks.available(site.code, work_slug), **_common(site))
+
+
+@langsites.route(_PREFIX + '/reading/<work_slug>/listen')
+def listen(slug, work_slug):
+    site = _section(slug)
+    work = reading.work(site.code, work_slug)
+    if work is None or not audiobooks.available(site.code, work_slug):
+        abort(404)
+    labels = []
+    for part in work['parts']:
+        if work['kind'] == 'novel':
+            labels.append('{} {}'.format(_('Розділ'), part['chapter']))
+        else:
+            labels.append('{} {}, {} {}'.format(_('Дія'), part['act'], _('сцена'), part['scene']))
+    read_urls = [url_for('langsites.read', slug=site.slug, work_slug=work_slug, number=part['number'])
+                 for part in work['parts']]
+    book, config = audiobooks.page(site.code, work_slug, work['title'], work.get('author'), labels, read_urls)
+    return render_template('audiobook.html', title=_('Аудіокнига') + ' · ' + (work.get('short_title') or work['title']),
+                           page_key='reading', book=book, config=config,
+                           back_url=url_for('langsites.work_page', slug=site.slug, work_slug=work_slug),
+                           **_common(site))
 
 
 @langsites.route(_PREFIX + '/reading/<work_slug>/<int:number>')
@@ -222,6 +244,7 @@ def read(slug, work_slug, number):
     return render_template('langsite_read.html', title=work.get('short_title') or work['title'],
                            page_key='reading', work=work, number=number, text=text,
                            total=len(work['files']), parts=work['parts'],
+                           audiobook=audiobooks.available(site.code, work_slug),
                            panel_config=_panel_config(site, 'read'), **_common(site))
 
 

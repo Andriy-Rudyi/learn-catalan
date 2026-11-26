@@ -9,6 +9,7 @@
   <p class="small reading-crumbs">
     <a href="{{ url_for('langsites.library', slug=lang_site.slug) }}">{{ _('Читання') }}</a> ›
     <a href="{{ url_for('langsites.work_page', slug=lang_site.slug, work_slug=work.slug) }}" lang="{{ lang_site.code }}">{{ work.short_title or work.title }}</a>
+    {% if audiobook %} · <a href="{{ url_for('langsites.listen', slug=lang_site.slug, work_slug=work.slug, part=number) }}">🎧 {{ _('Слухати') }}</a>{% endif %}
   </p>
 
   <div class="reader-grid">

@@ -1,0 +1,117 @@
+# Audiobooks: the reading works read aloud by Piper, published as MP3s.
+#
+# For every language, scripts/make_audiobooks.py reads each chapter or scene
+# of the site's works with an open Piper voice (downloaded from Hugging Face)
+# and the MP3s go to the GitHub release "audiobooks", which serves them to
+# the site's player (flaskblog/audiobooks.py). Parts already in the release
+# are not made again. The last job writes flaskblog/audiobooks.json (the list
+# of parts, with their length) and commits it to dev, which redeploys the
+# site with the new audio.
+#
+# Runs when the texts or the script change on dev, and on demand
+# (Actions → Audiobooks → Run workflow). To make a part again, delete its
+# .mp3 and .mp3.json from the release first.
+name: Audiobooks
+
+on:
+  push:
+    branches: [dev]
+    paths:
+      - scripts/make_audiobooks.py
+      - .github/workflows/audiobooks.yml
+      - flaskblog/reader/data/works/**
+      - flaskblog/langsites/data/*/works/**
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: audiobooks
+  cancel-in-progress: false
+
+env:
+  RELEASE: audiobooks
+  GH_TOKEN: ${{ github.token }}
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Make sure the release exists
+        run: |
+          gh release view "$RELEASE" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1 || \
+            gh release create "$RELEASE" -R "$GITHUB_REPOSITORY" --title "Audiobooks" --latest=false \
+              --notes "Audio of the site's reading works, one MP3 per chapter or scene, read by the Piper speech synthesiser (scripts/make_audiobooks.py, listed in flaskblog/audiobooks.json). Voices: upc_ona (CC BY-SA 3.0 ES), tetiana (Apache 2.0), kristin (public domain), davefx (CC0), siwis (CC BY 4.0), thorsten (CC0). Texts: public domain (Jack London, Shakespeare) or translations made for the site."
+
+  speak:
+    needs: release
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {lang: ca, voice: ca/ca_ES/upc_ona/medium/ca_ES-upc_ona-medium}
+          - {lang: en, voice: en/en_US/kristin/medium/en_US-kristin-medium}
+          - {lang: uk, voice: uk/uk_UA/tetiana/high/uk_UA-tetiana-high}
+          - {lang: es, voice: es/es_ES/davefx/medium/es_ES-davefx-medium}
+          - {lang: fr, voice: fr/fr_FR/siwis/medium/fr_FR-siwis-medium}
+          - {lang: de, voice: de/de_DE/thorsten/medium/de_DE-thorsten-medium}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install
+        run: pip install -r requirements.txt piper-tts lameenc
+      - name: Download the voice
+        run: |
+          mkdir -p voices
+          base=https://huggingface.co/rhasspy/piper-voices/resolve/main/${{ matrix.voice }}
+          name=$(basename "${{ matrix.voice }}")
+          curl -sSfL -o "voices/$name.onnx" "$base.onnx"
+          curl -sSfL -o "voices/$name.onnx.json" "$base.onnx.json"
+      - name: Parts already published
+        run: |
+          mkdir -p out
+          gh release download "$RELEASE" -R "$GITHUB_REPOSITORY" --pattern "${{ matrix.lang }}-*.mp3.json" --dir out || true
+          ls out | wc -l
+      - name: Read aloud
+        env:
+          OMP_NUM_THREADS: '4'
+        run: python scripts/make_audiobooks.py --voices voices --out out --langs ${{ matrix.lang }}
+      - name: Publish the new parts
+        run: |
+          shopt -s nullglob
+          files=(out/*.mp3)
+          if [ ${#files[@]} -eq 0 ]; then echo "Nothing new."; exit 0; fi
+          for mp3 in "${files[@]}"; do
+            gh release upload "$RELEASE" -R "$GITHUB_REPOSITORY" --clobber "$mp3" "$mp3.json"
+          done
+
+  manifest:
+    needs: speak
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: dev
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: List the published parts
+        run: |
+          mkdir -p out
+          gh release download "$RELEASE" -R "$GITHUB_REPOSITORY" --pattern "*.mp3.json" --dir out
+          python scripts/make_audiobooks.py --out out --manifest
+      - name: Commit flaskblog/audiobooks.json
+        run: |
+          if git diff --quiet -- flaskblog/audiobooks.json; then echo "No change."; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add flaskblog/audiobooks.json
+          git commit -m "Audiobooks: list of published parts"
+          git push origin HEAD:dev
