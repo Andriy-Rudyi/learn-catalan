@@ -632,6 +632,7 @@ MESSAGES = {
     'Дійові особи': 'Characters',
     'Натисніть будь-яке слово: переклад, форма і синоніми.': 'Click any word: translation, form and synonyms.',
     'Сцени': 'Scenes',
+    'Не вдалося завантажити звук. Перевірте інтернет і натисніть ▶ ще раз.': 'Could not load the sound. Check the internet connection and press ▶ again.',
     'Вивчаю': 'Learning',
     'Знаю': 'I know',
     'Мова, яку ви вивчаєте': 'The language you are learning',

@@ -192,9 +192,9 @@ def listen(slug):
     else:
         labels = [works.scene_label(scene) for scene in found['scenes']]
         read_urls = [url_for('reader.scene', slug=slug, act=scene.act, scene=scene.scene) for scene in found['scenes']]
-    book, config = audiobooks.page('ca', slug, found['title'], found['author'], labels, read_urls)
+    book, player = audiobooks.page('ca', slug, found['title'], found['author'], labels, read_urls)
     return render_template('audiobook.html', title=_('Аудіокнига') + ' · ' + found['short_title'],
-                           book=book, config=config, back_url=url_for('reader.work', slug=slug))
+                           book=book, player=player, back_url=url_for('reader.work', slug=slug))
 
 
 @reader.route('/reading/<slug>/<int:act>/<int:scene>')

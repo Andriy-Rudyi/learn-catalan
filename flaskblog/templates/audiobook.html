@@ -58,7 +58,7 @@
   .audiobook-list a.is-playing { font-weight: 600; }
   .audiobook-list a.is-playing::before { content: "▶ "; }
 </style>
-<script type="application/json" id="audiobook-config">{{ config | tojson }}</script>
+<script type="application/json" id="audiobook-config">{{ player | tojson }}</script>
 {% endblock content %}
 {% block scripts %}
 <script src="{{ url_for('static', filename='audiobook.js') }}"></script>

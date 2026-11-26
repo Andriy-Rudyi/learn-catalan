@@ -80,5 +80,6 @@ def page(lang, slug, title, author, labels, read_urls):
               'artwork': url_for('static', filename='og-image.png', _external=True),
               'parts': [{'title': item['title'], 'url': item['url'], 'seconds': item['seconds']} for item in items],
               'strings': {'play': _('Слухати'), 'pause': _('Пауза'),
-                          'resume': _('Ви зупинилися на «{part}», {time}. Натисніть ▶, щоб продовжити.')}}
+                          'resume': _('Ви зупинилися на «{part}», {time}. Натисніть ▶, щоб продовжити.'),
+                          'error': _('Не вдалося завантажити звук. Перевірте інтернет і натисніть ▶ ще раз.')}}
     return book, config

@@ -87,10 +87,13 @@
     var start = function () {
       if (startAt) { audio.currentTime = startAt; }
       audio.playbackRate = Number(els.rate.value) || 1;
-      if (autoplay) { audio.play().catch(function () { showPaused(); }); }
     };
     audio.addEventListener('loadedmetadata', start, { once: true });
+    els.resume.classList.remove('text-danger');
     audio.load();
+    // play() right away, still inside the tap: Safari on iPhone and iPad
+    // refuses to start the sound later (after the file's data has come).
+    if (autoplay) { play(); }
     save(true);
   }
 
@@ -105,9 +108,15 @@
     if ('mediaSession' in navigator) { navigator.mediaSession.playbackState = 'paused'; }
   }
 
+  function play() {
+    var started = audio.play();
+    if (started && started.catch) { started.catch(function () { showPaused(); }); }
+  }
+
   function toggle() {
     if (audio.paused) {
-      audio.play().catch(function () { showPaused(); });
+      if (audio.error) { select(current, Math.floor(audio.currentTime || 0), true); return; }
+      play();
     } else {
       audio.pause();
     }
@@ -119,6 +128,13 @@
 
   // -- events ----------------------------------------------------------------------------------
   audio.addEventListener('play', function () { showPlaying(); metadata(); });
+  audio.addEventListener('error', function () {
+    // Say so instead of a button that does nothing.
+    showPaused();
+    els.resume.hidden = false;
+    els.resume.classList.add('text-danger');
+    els.resume.textContent = S.error;
+  });
   audio.addEventListener('pause', function () { showPaused(); save(true); });
   audio.addEventListener('ended', function () {
     if (current + 1 < parts.length) {
@@ -160,7 +176,7 @@
 
   if ('mediaSession' in navigator) {
     var handlers = {
-      play: function () { audio.play(); },
+      play: function () { play(); },
       pause: function () { audio.pause(); },
       previoustrack: function () { select(Math.max(0, current - 1), 0, true); },
       nexttrack: function () { select(current + 1, 0, true); },

@@ -239,9 +239,9 @@ def listen(slug, work_slug):
             labels.append('{} {}, {} {}'.format(_('Дія'), part['act'], _('сцена'), part['scene']))
     read_urls = [url_for('langsites.read', slug=site.slug, work_slug=work_slug, number=part['number'])
                  for part in work['parts']]
-    book, config = audiobooks.page(site.code, work_slug, work['title'], work.get('author'), labels, read_urls)
+    book, player = audiobooks.page(site.code, work_slug, work['title'], work.get('author'), labels, read_urls)
     return render_template('audiobook.html', title=_('Аудіокнига') + ' · ' + (work.get('short_title') or work['title']),
-                           page_key='reading', book=book, config=config,
+                           page_key='reading', book=book, player=player,
                            back_url=url_for('langsites.work_page', slug=site.slug, work_slug=work_slug),
                            **_common(site))
 

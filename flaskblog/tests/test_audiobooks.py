@@ -51,6 +51,10 @@ class AudiobookTests(AppTestCase):
         self.assertEqual('audiobook:ca:martin-eden', config['store'])
         self.assertIn('/reading/martin-eden/1', body)  # read the part
         self.assertIn('upc_ona', body)  # the voice is credited
+        # The player's settings do not hide the site's: same design and menu as the other pages.
+        self.assertNotIn('data-design=""', body)
+        self.assertIn('href="/reading"', body)
+        self.assertTrue(config['strings']['error'])
         scenes = self.config(self.client.get('/reading/othello/listen').get_data(as_text=True))
         self.assertEqual(15, len(scenes['parts']))
 

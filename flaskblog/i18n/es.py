@@ -488,6 +488,7 @@ MESSAGES = {
     'Дійові особи': 'Personajes',
     'Натисніть будь-яке слово: переклад, форма і синоніми.': 'Haz clic en cualquier palabra: traducción, forma y sinónimos.',
     'Сцени': 'Escenas',
+    'Не вдалося завантажити звук. Перевірте інтернет і натисніть ▶ ще раз.': 'No se ha podido cargar el sonido. Compruebe la conexión a internet y pulse ▶ otra vez.',
     'Вивчаю': 'Aprendo',
     'Знаю': 'Sé',
     'Мова, яку ви вивчаєте': 'El idioma que aprende',
