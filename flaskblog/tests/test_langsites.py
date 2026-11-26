@@ -56,15 +56,24 @@ class HiddenSectionTests(AppTestCase):
     def test_registry(self):
         self.assertEqual(['ukrainian', 'english', 'spanish', 'french', 'german'],
                          [site.slug for site in sites.SECTIONS])
-        self.assertFalse(any(site.enabled for site in sites.SECTIONS))
+        self.assertEqual(['ukrainian'], [site.slug for site in sites.SECTIONS if site.enabled])
 
     def test_hidden_from_visitors(self):
-        for url in ('/ukrainian/', '/ukrainian/dictionary?q=dog', '/ukrainian/dictionary/собака',
-                    '/english/', '/german/dictionary'):
+        for url in ('/english/', '/english/dictionary?q=dog', '/spanish/', '/french/',
+                    '/german/dictionary'):
             self.assertEqual(404, self.client.get(url).status_code, url)
         user = self.create_user()
         self.login_as(user)
-        self.assertEqual(404, self.client.get('/ukrainian/').status_code)
+        self.assertEqual(404, self.client.get('/english/').status_code)
+
+    def test_ukrainian_is_open_to_everybody(self):
+        for url in ('/ukrainian/', '/ukrainian/dictionary?q=dog', '/ukrainian/dictionary/собака'):
+            response = self.client.get(url)
+            self.assertEqual(200, response.status_code, url)
+            self.assertNotIn('лише ви як адміністратор', response.get_data(as_text=True))
+        menu = self.client.get('/grammar').get_data(as_text=True)
+        self.assertIn('href="/ukrainian/"', menu)
+        self.assertNotIn('href="/english/"', menu)
 
     def test_unknown_section(self):
         self.create_admin()
@@ -85,8 +94,10 @@ class AdminSectionTests(AppTestCase):
     def test_home(self):
         body = self.client.get('/ukrainian/').get_data(as_text=True)
         self.assertIn('Українська', body)
-        self.assertIn('лише ви як адміністратор', body)
         self.assertIn('/ukrainian/dictionary', body)
+        hidden = self.client.get('/english/').get_data(as_text=True)
+        self.assertIn('лише ви як адміністратор', hidden)
+        self.assertIn('href="/english/"', hidden)  # in the editor's menu
 
     def test_section_without_material(self):
         response = self.client.get('/german/')

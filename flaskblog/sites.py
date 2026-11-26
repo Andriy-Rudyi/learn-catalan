@@ -7,12 +7,13 @@ With BASE_DOMAIN set (e.g. ``langwave.app``):
   to the same address on the Catalan site;
 * ``www.langwave.app`` goes to ``langwave.app``;
 * ``catalan.langwave.app`` is the Catalan site, as it is today;
-* the other sites in SITES (``ukrainian.``, ``english.``, ``spanish.``,
-  ``french.``, ``german.``) are registered but switched off: their
+* the other sites in SITES are sections built in flaskblog/langsites,
+  which live at paths (``/ukrainian/...``): on ``ukrainian.<domain>`` the
+  address ``/`` goes to ``/ukrainian/`` and any path outside it to the
+  Catalan site. ``ukrainian`` is switched on; ``english.``, ``spanish.``,
+  ``french.`` and ``german.`` are registered but switched off: their
   addresses answer 404 and the picker does not show them until ``enabled``
-  is True and they have material. Their pages are built in
-  flaskblog/langsites and, for now, live at paths (``/ukrainian/...``),
-  open only to the site's editor while the site is off;
+  is True and they have material (only the editor can open them);
 * an unknown subdomain goes to the picker;
 * any other host (the old address of the app) goes, path and all, to the
   Catalan site, so old links keep working; localhost is served as the
@@ -42,7 +43,7 @@ Site = namedtuple('Site', 'slug code native name enabled')
 # language the site teaches; ``name`` is its Ukrainian name (translated).
 SITES = (
     Site('catalan', 'ca', 'Català', lazy_gettext('Каталанська'), True),
-    Site('ukrainian', 'uk', 'Українська', lazy_gettext('Українська'), False),
+    Site('ukrainian', 'uk', 'Українська', lazy_gettext('Українська'), True),
     Site('english', 'en', 'English', lazy_gettext('Англійська'), False),
     Site('spanish', 'es', 'Español', lazy_gettext('Іспанська'), False),
     Site('french', 'fr', 'Français', lazy_gettext('Французька'), False),
@@ -172,6 +173,14 @@ def dispatch():
             abort(404)
         g.site = site
         g.site_host = True
+        if site is not DEFAULT and not static:
+            # Sections live at /<slug>/ (flaskblog/langsites); the rest of
+            # the app is the Catalan site.
+            prefix = '/' + site.slug
+            if request.path == '/':
+                return redirect(prefix + '/')
+            if request.path != prefix and not request.path.startswith(prefix + '/'):
+                return _moved(_target(site_url(DEFAULT)))
         return None
 
     if host in LOCAL_HOSTS:

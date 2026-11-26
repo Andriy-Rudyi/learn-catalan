@@ -498,6 +498,7 @@ MESSAGES = {
     'Дійові особи': 'Personnages',
     'Натисніть будь-яке слово: переклад, форма і синоніми.': 'Cliquez sur un mot : traduction, forme et synonymes.',
     'Сцени': 'Scènes',
+    'приховано': 'masqué',
     'Українська': 'Ukrainien',
     'Іспанська': 'Espagnol',
     'Цей розділ ще в розробці: його бачите лише ви як адміністратор.': 'Cette section est encore en construction : vous seul, en tant qu’administrateur, pouvez la voir.',

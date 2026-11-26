@@ -20,6 +20,16 @@ _GENDERS = {'m': 'чоловічий рід', 'f': 'жіночий рід', 'n':
 _ASPECTS = {'pf': 'доконаний вид', 'ipf': 'недоконаний вид'}
 
 
+@langsites.app_context_processor
+def inject_sections():
+    """The sections for the side menu: the switched-on ones, and for the
+    editor also the hidden ones."""
+    def visible():
+        editor = is_admin()
+        return [site for site in sites.SECTIONS if site.enabled or editor]
+    return {'language_sections': visible}
+
+
 def _section(slug):
     """The site of *slug*; a hidden one only for the editor."""
     site = sites.BY_SLUG[slug]

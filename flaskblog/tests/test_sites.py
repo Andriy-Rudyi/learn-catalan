@@ -66,6 +66,15 @@ class DomainTests(AppTestCase):
         self.assertEqual(200, response.status_code)
         self.assertIn('href="https://catalan.{}/grammar?lang=uk"'.format(BASE), response.get_data(as_text=True))
 
+    def test_ukrainian_section_on_its_subdomain(self):
+        host = 'ukrainian.' + BASE
+        self.assertEqual('/ukrainian/', self.get(host).headers['Location'])
+        self.assertEqual(200, self.get(host, '/ukrainian/').status_code)
+        moved = self.get(host, '/grammar')
+        self.assertEqual(301, moved.status_code)
+        self.assertEqual('https://catalan.{}/grammar'.format(BASE), moved.headers['Location'])
+        self.assertIn('href="https://ukrainian.{}/?lang=uk"'.format(BASE), self.get(BASE).get_data(as_text=True))
+
     def test_hidden_sites_are_not_found(self):
         for slug in ('english', 'french', 'german'):
             self.assertEqual(404, self.get('{}.{}'.format(slug, BASE)).status_code, slug)
