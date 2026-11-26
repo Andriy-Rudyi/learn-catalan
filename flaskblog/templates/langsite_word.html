@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+{% include "partials/langsite_header.html" %}
+<h1 lang="{{ lang_site.code }}">{{ entries[0].w }}</h1>
+{% for entry in entries %}
+<section class="mb-4">
+  {% if entries | length > 1 %}<h2 class="h5" lang="{{ lang_site.code }}">{{ entry.w }}</h2>{% endif %}
+  {% include "partials/langsite_entry.html" %}
+</section>
+{% endfor %}
+<p class="small text-muted mt-4">{{ _('Джерело: Вікісловник (CC BY-SA); переклади каталанською виведено автоматично.') }}</p>
+{% endblock %}

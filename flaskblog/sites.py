@@ -7,9 +7,12 @@ With BASE_DOMAIN set (e.g. ``langwave.app``):
   to the same address on the Catalan site;
 * ``www.langwave.app`` goes to ``langwave.app``;
 * ``catalan.langwave.app`` is the Catalan site, as it is today;
-* the other sites in SITES (``english.``, ``french.``, ``german.``) are
-  registered but switched off: their addresses answer 404 and the picker
-  does not show them until ``enabled`` is True and they have material;
+* the other sites in SITES (``ukrainian.``, ``english.``, ``spanish.``,
+  ``french.``, ``german.``) are registered but switched off: their
+  addresses answer 404 and the picker does not show them until ``enabled``
+  is True and they have material. Their pages are built in
+  flaskblog/langsites and, for now, live at paths (``/ukrainian/...``),
+  open only to the site's editor while the site is off;
 * an unknown subdomain goes to the picker;
 * any other host (the old address of the app) goes, path and all, to the
   Catalan site, so old links keep working; localhost is served as the
@@ -39,11 +42,15 @@ Site = namedtuple('Site', 'slug code native name enabled')
 # language the site teaches; ``name`` is its Ukrainian name (translated).
 SITES = (
     Site('catalan', 'ca', 'Català', lazy_gettext('Каталанська'), True),
+    Site('ukrainian', 'uk', 'Українська', lazy_gettext('Українська'), False),
     Site('english', 'en', 'English', lazy_gettext('Англійська'), False),
+    Site('spanish', 'es', 'Español', lazy_gettext('Іспанська'), False),
     Site('french', 'fr', 'Français', lazy_gettext('Французька'), False),
     Site('german', 'de', 'Deutsch', lazy_gettext('Німецька'), False),
 )
 BY_SLUG = {site.slug: site for site in SITES}
+# The sections built by flaskblog/langsites (every site but the Catalan one).
+SECTIONS = tuple(site for site in SITES if site.code != 'ca')
 DEFAULT = BY_SLUG['catalan']
 
 LOCAL_HOSTS = ('localhost', '127.0.0.1', '::1', '[::1]')

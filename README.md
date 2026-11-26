@@ -730,7 +730,7 @@ All the language sites live under one domain (`flaskblog/sites.py`). With
 | `langwave.app` | the language picker; any other path goes to the same path on the Catalan site |
 | `www.langwave.app` | goes to `langwave.app` |
 | `catalan.langwave.app` | this site |
-| `english.`, `french.`, `german.` | registered in `SITES` but switched off (404, not in the picker) |
+| `ukrainian.`, `english.`, `spanish.`, `french.`, `german.` | registered in `SITES` but switched off (404, not in the picker) |
 | other subdomains | go to the picker |
 | any other host (e.g. `*.onrender.com`) | goes to the same address on `catalan.` (301) |
 | `localhost` | the Catalan site, for development |
@@ -748,6 +748,27 @@ To go live on Render: add `langwave.app`, `www.langwave.app` and
 Domains), create the DNS records the registrar is told to, then set
 `BASE_DOMAIN=langwave.app` in the environment. Everyone is logged out once,
 since the cookies move to the new domain.
+
+### Sections of the other languages
+
+`flaskblog/langsites` builds the pages of every site but the Catalan one,
+from data files in `flaskblog/langsites/data/<code>/`. For now they live at
+paths and, while their site is switched off, only the editor (the admin
+account) can open them; everybody else gets 404:
+
+| Address | What it shows |
+| --- | --- |
+| `/ukrainian/` (`/english/`, `/spanish/`, `/french/`, `/german/`) | the section's start page |
+| `/ukrainian/dictionary?q=…` | search: the word itself, a translation (English, Spanish, Catalan), or the beginning of a word |
+| `/ukrainian/dictionary/<word>` | the word: part of speech, gender or aspect, meanings in English, Spanish and Catalan equivalents |
+
+The dictionary of a section is a sorted JSON-lines file read on demand
+(`flaskblog/langsites/dictionary.py`): only its keys and byte offsets stay in
+memory, and the index for searching by translation is built only when
+somebody searches that way. `flask langsites build uk` writes the Ukrainian
+one (44,102 words) from the Wiktionary files of the Catalan dictionary
+(`uk-en`, `uk-es`) and the derived Ukrainian-Catalan pairs; the other
+languages will get their own builders from their Wiktionary extracts.
 
 ## Testing
 

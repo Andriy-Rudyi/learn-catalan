@@ -1,0 +1,30 @@
+{#- One entry of a language section's dictionary: ``entry`` (see
+    flaskblog/langsites/dictionary.py), ``languages`` in the order to show. -#}
+{% set names = {'en': _('Англійська'), 'es': _('Іспанська'), 'ca': _('Каталанська')} %}
+<div class="mb-2">
+  <span class="text-muted">{{ part_of_speech_label(entry.pos) }}</span>
+  {% if entry.g %}<span class="text-muted">· {{ gender_text(entry.g) }}</span>{% endif %}
+  {% if entry.asp %}<span class="text-muted">· {{ aspect_text(entry.asp) }}</span>
+    {% if entry.pair %}(<a href="{{ url_for('langsites.word', slug=lang_site.slug, word=entry.pair.replace('́', '')) }}" lang="{{ lang_site.code }}">{{ entry.pair }}</a>){% endif %}
+  {% endif %}
+</div>
+{% for lang in languages %}
+  {% if lang == 'en' and entry.senses %}
+  <div class="mb-2">
+    <strong>{{ names.en }}:</strong>
+    <ol class="mb-1" lang="en">
+      {% for sense in entry.senses %}
+      <li>{{ sense.en }}{% if sense.tags %} <small class="text-muted">({{ sense.tags | join(', ') }})</small>{% endif %}</li>
+      {% endfor %}
+    </ol>
+  </div>
+  {% elif lang == 'es' and entry.es %}
+  <p class="mb-2"><strong>{{ names.es }}:</strong> <span lang="es">{{ entry.es | join(', ') }}</span></p>
+  {% elif lang == 'ca' and entry.ca %}
+  <p class="mb-2"><strong>{{ names.ca }}:</strong>
+    {% for item in entry.ca %}
+      <a href="{{ url_for('vocabulary.dictionary', q=item.w) }}" lang="ca">{{ item.w }}</a>{% if item.unsure %}<small class="text-muted">?</small>{% endif %}{% if not loop.last %}, {% endif %}
+    {% endfor %}
+  </p>
+  {% endif %}
+{% endfor %}

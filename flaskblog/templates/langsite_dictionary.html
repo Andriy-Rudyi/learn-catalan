@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+{% include "partials/langsite_header.html" %}
+<h1>{{ _('Словник') }}</h1>
+{% if query %}
+  {% if entries %}
+    {% if how == 'prefix' %}
+    <p class="text-muted">{{ _('Слова, що починаються з «{query}»', query=query) }}:</p>
+    {% elif how == 'translation' %}
+    <p class="text-muted">{{ _('Слова з перекладом «{query}»', query=query) }}:</p>
+    {% endif %}
+    <ul class="list-unstyled">
+      {% for entry in entries %}
+      <li class="mb-3">
+        <a class="h5" href="{{ url_for('langsites.word', slug=lang_site.slug, word=entry.k) }}" lang="{{ lang_site.code }}">{{ entry.w }}</a>
+        {% include "partials/langsite_entry.html" %}
+      </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>{{ _('Для «{query}» нічого не знайдено.', query=query) }}</p>
+  {% endif %}
+{% else %}
+  <p class="text-muted">{{ plural(words, ('слово', 'слова', 'слів'), ('word', 'words')) }}.</p>
+{% endif %}
+<p class="small text-muted mt-4">{{ _('Джерело: Вікісловник (CC BY-SA); переклади каталанською виведено автоматично.') }}</p>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+{% include "partials/langsite_header.html" %}
+<h1 lang="{{ lang_site.code }}">{{ lang_site.native }}</h1>
+<p class="lead">{{ lang_site.name }}</p>
+{% if words %}
+<p>
+  <a href="{{ url_for('langsites.dictionary_page', slug=lang_site.slug) }}">{{ _('Словник') }}</a>:
+  {{ plural(words, ('слово', 'слова', 'слів'), ('word', 'words')) }}.
+</p>
+{% else %}
+<p class="text-muted">{{ _('Матеріали для цієї мови ще готуються.') }}</p>
+{% endif %}
+{% endblock %}
