@@ -498,6 +498,8 @@ MESSAGES = {
     'Дійові особи': 'Personnages',
     'Натисніть будь-яке слово: переклад, форма і синоніми.': 'Cliquez sur un mot : traduction, forme et synonymes.',
     'Сцени': 'Scènes',
+    'Виведено автоматично, ще не перевірено': 'Obtenu automatiquement, pas encore vérifié',
+    'Забагато невдалих спроб входу. Спробуйте знову за {minutes} хв.': 'Trop de tentatives de connexion échouées. Réessayez dans {minutes} min.',
     'Вставте текст цією мовою і натисніть будь-яке слово: початкова форма і переклад.': 'Collez un texte dans cette langue et cliquez sur n’importe quel mot : sa forme de base et sa traduction.',
     'Тут з’являться переклад і форма слова, яке ви натиснете.': 'La traduction et la forme du mot sur lequel vous cliquez apparaîtront ici.',
     'від «{lemma}»': 'de « {lemma} »',

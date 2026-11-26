@@ -27,7 +27,7 @@
   <p class="mb-2"><strong>{{ names[lang] }}:</strong>
     {%- for item in entry[lang] %}
       {%- set url = word_url(lang, item) %}
-      {% if url %}<a href="{{ url }}" lang="{{ lang }}">{{ item_word(item) }}</a>{% else %}<span lang="{{ lang }}">{{ item_word(item) }}</span>{% endif %}{% if item.unsure is defined and item.unsure %}<small class="text-muted">?</small>{% endif %}{% if not loop.last %},{% endif %}
+      {% if url %}<a href="{{ url }}" lang="{{ lang }}">{{ item_word(item) }}</a>{% else %}<span lang="{{ lang }}">{{ item_word(item) }}</span>{% endif %}{% if item.unsure is defined and item.unsure %}<small class="text-muted" title="{{ _('Виведено автоматично, ще не перевірено') }}">?</small>{% endif %}{% if not loop.last %},{% endif %}
     {%- endfor %}
   </p>
   {% endif %}

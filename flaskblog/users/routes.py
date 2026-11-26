@@ -1,7 +1,7 @@
-from flask import Blueprint, flash, redirect, render_template, request, url_for
+from flask import Blueprint, current_app, flash, redirect, render_template, request, url_for
 from flask_login import current_user, login_required, login_user, logout_user
 
-from flaskblog import bcrypt, db
+from flaskblog import bcrypt, db, security
 from flaskblog.i18n import gettext as _
 from flaskblog.models import Post, User
 from flaskblog.users.forms import (LoginForm, RegistrationForm,
@@ -36,12 +36,20 @@ def login():
         return redirect(url_for('main.home'))
     form = LoginForm()
     if form.validate_on_submit():
-        user = User.query.filter_by(email=form.email.data).first()
+        address, email = request.remote_addr, form.email.data
+        wait = security.login_blocked(current_app, address, email)
+        if wait:
+            flash(_('Забагато невдалих спроб входу. Спробуйте знову за {minutes} хв.',
+                    minutes=max(1, (wait + 59) // 60)), 'danger')
+            return render_template('login.html', title=_('Вхід'), form=form), 429
+        user = User.query.filter_by(email=email).first()
         if user and bcrypt.check_password_hash(user.password, form.password.data):
+            security.login_succeeded(address, email)
             login_user(user, remember=form.remember.data)
-            next_page = request.args.get('next')
+            next_page = security.safe_next(request.args.get('next'))
             return redirect(next_page) if next_page else redirect(url_for('main.home'))
         else:
+            security.login_failed(current_app, address, email)
             flash(_('Не вдалося увійти. Перевірте email і пароль.'), 'danger')
     return render_template('login.html', title=_('Вхід'), form=form)
 

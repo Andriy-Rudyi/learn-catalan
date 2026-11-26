@@ -1,0 +1,14 @@
+# Weekly pull requests that update the Python packages (requirements.txt) and,
+# monthly, the GitHub Actions used by the workflows. Each comes with the
+# release notes; merge after the tests pass.
+version: 2
+updates:
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly

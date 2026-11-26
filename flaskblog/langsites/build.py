@@ -200,6 +200,69 @@ def _add_meanings(entries, extract, add_new=True):
             item['g'] = found['g']
 
 
+_NOT_EQUIVALENT = re.compile(
+    r'^(an? |the )?((male|female|unisex) )?(surname|given name|placename|place name|town|city|village|'
+    r'river|municipality|commune|quarter|district|region|province|island|mountain|lake)\b'
+    r'|^(alternative|obsolete|archaic|dated|nonstandard) (spelling|form) of|^(abbreviation|initialism|acronym) of',
+    re.I)
+_DERIVED_UK = 'Ukrainian equivalents derived through English (this project), marked as unchecked'
+
+
+def _derive_ukrainian(entries, per_meaning=2, limit=4):
+    """Give the entries without Ukrainian a Ukrainian equivalent derived
+    from their English meanings (the Wiktionary tables of pivot.py): a
+    Ukrainian word is taken when an English word of a meaning has only it
+    for that part of speech, or when two English words of the meaning agree
+    on it. Each is marked ``unsure`` (shown as unchecked). Returns how many
+    entries got one."""
+    data = pivot.tables()
+    en_uk, shown, order = data['en_uk'], data['shown'], data['order']
+    imperfective = data['imperfective']
+    added = 0
+    for item in entries.values():
+        if item.get('uk'):
+            continue
+        # Short glosses only ("dog, hound"): a long one is a description
+        # ("a quarter in Schortens, East Frisia, Germany"), not equivalents.
+        glosses = [sense['en'] for sense in item.get('senses', ())] + list(item.get('en', ()))
+        meanings = [wiktionary.gloss_parts(gloss) for gloss in glosses
+                    if len(re.sub(r'\([^)]*\)', ' ', gloss).split()) <= 8 and not _NOT_EQUIVALENT.match(gloss)]
+        found = []
+        for words in meanings:
+            votes = {}
+            for english in words:
+                candidates = {}
+                for key, parts in en_uk.get(english, {}).items():
+                    if item['pos'] not in pivot._STRICT_POS or item['pos'] in parts:
+                        key = imperfective.get(key, key)
+                        candidates[key] = min(candidates.get(key, 99), order.get((english, key), 99))
+                for key, position in candidates.items():
+                    vote = votes.setdefault(key, [0, 99, False])
+                    vote[0] += 1
+                    vote[1] = min(vote[1], position)
+                    vote[2] = vote[2] or len(candidates) == 1
+            chosen = sorted((key for key, (count, _pos, only) in votes.items() if only or count >= 2),
+                            key=lambda key: (-votes[key][0], votes[key][1], len(key)))
+            if not chosen and words:
+                # The usual word: the one Wiktionary lists first for the
+                # meaning's first English word.
+                first = [key for key, (_count, position, _only) in votes.items() if position == 0
+                         and any(english == words[0] for english in words[:1])
+                         and key in {imperfective.get(k, k) for k in en_uk.get(words[0], {})}]
+                chosen = sorted(first, key=len)[:1]
+            for key in chosen[:per_meaning]:
+                word = shown.get(key, key)
+                # No proper names (and German nouns are capitalised anyway).
+                if word[:1].isupper() or len(key.split()) > 3:
+                    continue
+                if word not in [entry['w'] for entry in found]:
+                    found.append({'w': word, 'unsure': True})
+        if found:
+            item['uk'] = found[:limit]
+            added += 1
+    return added
+
+
 @_builder('de')
 def build_german(extract=None):
     """German: the English Wiktionary's German words with their English
@@ -208,7 +271,8 @@ def build_german(extract=None):
         raise ValueError('German needs a Wiktionary extract (kaikki.org-dictionary-German.jsonl.gz)')
     entries = _Entries()
     _add_meanings(entries, extract)
-    _write_meta('de', [_WIKTIONARY])
+    _derive_ukrainian(entries)
+    _write_meta('de', [_WIKTIONARY, _DERIVED_UK])
     return _write('de', entries)
 
 
@@ -229,7 +293,8 @@ def build_spanish(extract=None):
             entries.add(spanish, row['pos'], 'en', [row['en']])
     if extract:
         _add_meanings(entries, extract)
-    _write_meta('es', [_APERTIUM, _WIKTIONARY])
+    _derive_ukrainian(entries)
+    _write_meta('es', [_APERTIUM, _WIKTIONARY, _DERIVED_UK])
     return _write('es', entries)
 
 
@@ -263,7 +328,8 @@ def build_french(extract=None):
                 entries.add(word, 'phrase' if ' ' in word and pos != 'verb' else pos, 'en', [english[term]])
     if extract:
         _add_meanings(entries, extract)
-    _write_meta('fr', [_SITE, _WIKTIONARY] if extract else [_SITE])
+    _derive_ukrainian(entries)
+    _write_meta('fr', ([_SITE, _WIKTIONARY] if extract else [_SITE]) + [_DERIVED_UK])
     return _write('fr', entries)
 
 

@@ -34,6 +34,9 @@ def create_app(config_class=Config):
     ckeditor.init_app(app)
     migrate.init_app(app, db)
 
+    from flaskblog import security
+    security.init_app(app)
+
     from flaskblog import i18n
     i18n.init_app(app)
     login_manager.localize_callback = i18n.gettext

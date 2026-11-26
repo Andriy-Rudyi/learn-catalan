@@ -632,6 +632,8 @@ MESSAGES = {
     'Дійові особи': 'Characters',
     'Натисніть будь-яке слово: переклад, форма і синоніми.': 'Click any word: translation, form and synonyms.',
     'Сцени': 'Scenes',
+    'Виведено автоматично, ще не перевірено': 'Derived automatically, not checked yet',
+    'Забагато невдалих спроб входу. Спробуйте знову за {minutes} хв.': 'Too many failed login attempts. Try again in {minutes} min.',
     'Вставте текст цією мовою і натисніть будь-яке слово: початкова форма і переклад.': 'Paste a text in this language and click any word: its dictionary form and translation.',
     'Тут з’являться переклад і форма слова, яке ви натиснете.': 'The translation and form of the word you click will appear here.',
     'від «{lemma}»': 'from “{lemma}”',

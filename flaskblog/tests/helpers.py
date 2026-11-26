@@ -12,6 +12,8 @@ class AppTestCase(unittest.TestCase):
     """A test case with an application context and an empty database."""
 
     def setUp(self):
+        from flaskblog import security
+        security.reset_attempts()
         self.app = create_app(TestConfig)
         self.app_context = self.app.app_context()
         self.app_context.push()

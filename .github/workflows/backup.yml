@@ -1,0 +1,72 @@
+# Nightly backup of the site's database.
+#
+# Dumps the PostgreSQL database (pg_dump, custom format) and keeps it as an
+# encrypted artifact of the run for 90 days: Actions → "Database backup" → a
+# run → Artifacts. The file is encrypted with a passphrase (GPG, AES-256),
+# because the database holds people's email addresses and password hashes.
+#
+# Needs two repository secrets (Settings → Secrets and variables → Actions):
+#   BACKUP_DATABASE_URL  the database address, as in Render's DATABASE_URL
+#                        (Neon: postgresql://user:password@host/db?sslmode=require)
+#   BACKUP_PASSPHRASE    a long passphrase; keep it somewhere safe, without it
+#                        the backups cannot be opened
+# Without them the run only says that they are missing.
+#
+# To restore:  gpg --decrypt backup.dump.gpg > backup.dump
+#              pg_restore --no-owner --dbname "$NEW_DATABASE_URL" backup.dump
+name: Database backup
+
+on:
+  schedule:
+    - cron: '23 2 * * *'  # every night, 02:23 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: database-backup
+  cancel-in-progress: false
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      DATABASE_URL: ${{ secrets.BACKUP_DATABASE_URL }}
+      PASSPHRASE: ${{ secrets.BACKUP_PASSPHRASE }}
+    steps:
+      - name: Check the secrets
+        id: secrets
+        run: |
+          if [ -z "$DATABASE_URL" ] || [ -z "$PASSPHRASE" ]; then
+            echo "::warning::BACKUP_DATABASE_URL or BACKUP_PASSPHRASE is not set: no backup made."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Dump the database
+        if: steps.secrets.outputs.ready == 'true'
+        run: |
+          # The client must not be older than the server: use PostgreSQL 17's.
+          docker run --rm -e DATABASE_URL postgres:17 \
+            sh -c 'pg_dump --format=custom --no-owner --no-privileges "$DATABASE_URL"' > backup.dump
+          test -s backup.dump
+          echo "Dump: $(du -h backup.dump | cut -f1)"
+
+      - name: Encrypt
+        if: steps.secrets.outputs.ready == 'true'
+        run: |
+          gpg --batch --yes --pinentry-mode loopback --passphrase "$PASSPHRASE" \
+              --symmetric --cipher-algo AES256 --output backup.dump.gpg backup.dump
+          rm backup.dump
+
+      - name: Keep it for 90 days
+        if: steps.secrets.outputs.ready == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: database-${{ github.run_number }}
+          path: backup.dump.gpg
+          retention-days: 90
+          if-no-files-found: error

@@ -784,6 +784,17 @@ its pages:
 | French (`fr`) | 93,557 | the French translations of this site's Catalan words, turned round (Ukrainian and English through the same Catalan word), and the English meanings of the Wiktionary French extract |
 | German (`de`) | 93,458 | the Wiktionary German extract: English meanings and gender |
 
+Spanish, French and German words without a Ukrainian equivalent get one
+derived from their English meanings (`build._derive_ukrainian`, with the
+English-Ukrainian tables of `vocabulary/pivot.py`): a Ukrainian word is
+taken when an English word of a meaning has only it for that part of
+speech, when two English words of the meaning agree on it, or else the
+usual word, the one Wiktionary lists first. Descriptions of names and places
+("a surname", "a village in...") and long definitions are skipped, and so
+are Ukrainian proper names. These are marked unchecked (a "?" on the page).
+About a third of the words get one (German 35%, Spanish 39%, French 32%,
+counting the Ukrainian that came from elsewhere).
+
 The extracts are kaikki.org's files made from the English Wiktionary
 (`kaikki.org-dictionary-<Language>.jsonl.gz`, CC BY-SA), passed to the build:
 `flask langsites build de <extract>` (German needs one; Spanish and French
@@ -931,6 +942,34 @@ To reset the database:
 flask db downgrade base
 flask db upgrade
 ```
+
+## Backups
+
+`.github/workflows/backup.yml` dumps the database every night (pg_dump,
+PostgreSQL 17 client) and keeps the dump for 90 days as an artifact of the
+run, encrypted with a passphrase (GPG, AES-256): it holds email addresses and
+password hashes. It needs two repository secrets (Settings → Secrets and
+variables → Actions): `BACKUP_DATABASE_URL` (the same address as Render's
+`DATABASE_URL`) and `BACKUP_PASSPHRASE` (keep it safe: without it the
+backups cannot be opened). Without them the run only warns. "Run workflow"
+makes a backup at once. To restore:
+
+```bash
+gpg --decrypt backup.dump.gpg > backup.dump
+pg_restore --no-owner --dbname "$NEW_DATABASE_URL" backup.dump
+```
+
+## Security
+
+`flaskblog/security.py`: HttpOnly, SameSite=Lax cookies (Secure on the
+host or with `SECURE_COOKIES=True`); headers on every response
+(X-Content-Type-Options, X-Frame-Options, Referrer-Policy,
+Permissions-Policy with the microphone for the site only, a CSP limited to
+framing, plugins and the base address, and HSTS over HTTPS); after
+`LOGIN_MAX_FAILURES` (5) failed logins in `LOGIN_WINDOW` (900) seconds from
+one address or for one email, logging in waits; the address to go to after
+logging in must be on the site. `.github/dependabot.yml` proposes package
+updates weekly.
 
 ## Deployment
 

@@ -222,6 +222,21 @@ class OtherDictionariesTests(unittest.TestCase):
         self.assertIn('dog', hund['senses'][0]['en'])
         self.assertTrue(dictionary.meta('fr')['sources'])
 
+    def test_ukrainian_derived_through_english(self):
+        hund = dictionary.lookup('de', 'Hund')[0]
+        words = [item['w'].replace('\u0301', '') for item in hund['uk']]
+        self.assertIn('собака', words)
+        self.assertTrue(all(item['unsure'] for item in hund['uk']))
+        # Not for descriptions of names and places.
+        for entry in dictionary.lookup('de', 'Behne'):
+            self.assertNotIn('uk', entry)
+        # A Ukrainian equivalent that came from elsewhere is kept as it is.
+        maison = next(e for e in dictionary.lookup('fr', 'maison') if e['pos'] == 'noun')
+        self.assertEqual(['дім, будинок'], maison['uk'])
+        for code in ('de', 'es', 'fr'):
+            self.assertTrue(any('derived through English' in source
+                                for source in dictionary.meta(code)['sources']), code)
+
     def test_inflected_forms(self):
         from flaskblog.langsites import kaikki
         for code, form, lemma in (('uk', 'собаки', 'собака'), ('es', 'abrió', 'abrir'),
