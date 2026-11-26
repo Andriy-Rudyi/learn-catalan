@@ -1,0 +1,400 @@
+{
+ "explained_in": "uk",
+ "text_example": "Los sábados por la mañana voy al mercado con mi hermana. Compramos fruta, pan y queso, y después tomamos un café en la plaza. Por la tarde leemos un libro o paseamos por la playa.",
+ "grammar": [
+  {
+   "title": "Рід іменників і артиклі",
+   "level": "A1",
+   "paragraphs": [
+    "В іспанській мові два роди: чоловічий і жіночий. Більшість іменників на -o – чоловічого роду (el libro), на -a – жіночого (la casa), але є винятки: el día, el mapa, la mano.",
+    "Означені артиклі: el, la, los, las; неозначені: un, una, unos, unas. Прикметник узгоджується з іменником у роді й числі: la casa blanca, los coches blancos."
+   ],
+   "table": {
+    "head": [
+     "",
+     "Чоловічий",
+     "Жіночий"
+    ],
+    "rows": [
+     [
+      "Однина, означений",
+      "el",
+      "la"
+     ],
+     [
+      "Множина, означений",
+      "los",
+      "las"
+     ],
+     [
+      "Однина, неозначений",
+      "un",
+      "una"
+     ],
+     [
+      "Множина, неозначений",
+      "unos",
+      "unas"
+     ]
+    ]
+   },
+   "examples": [
+    [
+     "el libro, los libros",
+     "книжка, книжки"
+    ],
+    [
+     "una casa grande",
+     "великий будинок"
+    ],
+    [
+     "el día",
+     "день"
+    ]
+   ]
+  },
+  {
+   "title": "Ser і estar",
+   "level": "A1",
+   "paragraphs": [
+    "Обидва дієслова означають «бути». Ser описує постійні ознаки, походження, професію, час: Soy ucraniano. Son las tres.",
+    "Estar описує місце розташування, стан і тимчасові ознаки: Estoy en casa. Estoy cansado."
+   ],
+   "examples": [
+    [
+     "Soy de Ucrania.",
+     "Я з України."
+    ],
+    [
+     "Madrid está en España.",
+     "Мадрид розташований в Іспанії."
+    ],
+    [
+     "La sopa está fría.",
+     "Суп холодний (зараз)."
+    ],
+    [
+     "Mi hermano es médico.",
+     "Мій брат лікар."
+    ]
+   ]
+  },
+  {
+   "title": "Теперішній час правильних дієслів",
+   "level": "A1",
+   "paragraphs": [
+    "Дієслова поділяються на три групи за закінченням інфінітива: -ar, -er, -ir. Особові займенники часто опускають, бо особу показує закінчення."
+   ],
+   "table": {
+    "head": [
+     "Особа",
+     "hablar",
+     "comer",
+     "vivir"
+    ],
+    "lang_columns": [
+     1,
+     2,
+     3
+    ],
+    "rows": [
+     [
+      "yo",
+      "hablo",
+      "como",
+      "vivo"
+     ],
+     [
+      "tú",
+      "hablas",
+      "comes",
+      "vives"
+     ],
+     [
+      "él / ella / usted",
+      "habla",
+      "come",
+      "vive"
+     ],
+     [
+      "nosotros",
+      "hablamos",
+      "comemos",
+      "vivimos"
+     ],
+     [
+      "vosotros",
+      "habláis",
+      "coméis",
+      "vivís"
+     ],
+     [
+      "ellos / ustedes",
+      "hablan",
+      "comen",
+      "viven"
+     ]
+    ]
+   }
+  }
+ ],
+ "phonetics": [
+  {
+   "title": "Іспанська абетка",
+   "level": "A1",
+   "paragraphs": [
+    "В іспанській абетці 27 літер: латинські літери й ñ (eñe). Літери k і w трапляються переважно в запозиченнях. Іспанське письмо досить послідовне: як пишеться, так здебільшого й читається."
+   ],
+   "examples": [
+    [
+     "España",
+     "Іспанія (ñ = [ɲ], як «нь»)"
+    ],
+    [
+     "niño",
+     "дитина"
+    ]
+   ]
+  },
+  {
+   "title": "Особливі звуки: j, g, c, z, ll",
+   "level": "A1",
+   "paragraphs": [
+    "J, а також g перед e та i, вимовляються як глухий гортанний [x], схожий на українське «х»: jamón, gente.",
+    "В Іспанії c перед e, i та z вимовляються як [θ] (як англійське th у think): cielo, zapato. У Латинській Америці та на Канарах – як [s].",
+    "H не вимовляється: hola [ˈola]. Ll і y у більшості регіонів звучать однаково, приблизно як «й»."
+   ],
+   "examples": [
+    [
+     "jamón",
+     "хамон"
+    ],
+    [
+     "gente",
+     "люди"
+    ],
+    [
+     "zapato",
+     "черевик"
+    ],
+    [
+     "hola",
+     "привіт"
+    ]
+   ]
+  },
+  {
+   "title": "R і RR",
+   "level": "A2",
+   "paragraphs": [
+    "Одинарне r між голосними – один короткий удар язика: pero (але). Подвійне rr і r на початку слова – розкотисте, кілька ударів: perro (собака), rojo (червоний). Від цього залежить значення слова."
+   ],
+   "examples": [
+    [
+     "pero – perro",
+     "але – собака"
+    ],
+    [
+     "caro – carro",
+     "дорогий – візок, авто"
+    ]
+   ]
+  }
+ ],
+ "conjugator": [
+  {
+   "title": "ser – бути",
+   "table": {
+    "head": [
+     "Особа",
+     "Presente",
+     "Pretérito indefinido"
+    ],
+    "lang_columns": [
+     1,
+     2
+    ],
+    "rows": [
+     [
+      "yo",
+      "soy",
+      "fui"
+     ],
+     [
+      "tú",
+      "eres",
+      "fuiste"
+     ],
+     [
+      "él / ella / usted",
+      "es",
+      "fue"
+     ],
+     [
+      "nosotros",
+      "somos",
+      "fuimos"
+     ],
+     [
+      "vosotros",
+      "sois",
+      "fuisteis"
+     ],
+     [
+      "ellos / ustedes",
+      "son",
+      "fueron"
+     ]
+    ]
+   }
+  },
+  {
+   "title": "estar – бути, перебувати",
+   "table": {
+    "head": [
+     "Особа",
+     "Presente",
+     "Pretérito indefinido"
+    ],
+    "lang_columns": [
+     1,
+     2
+    ],
+    "rows": [
+     [
+      "yo",
+      "estoy",
+      "estuve"
+     ],
+     [
+      "tú",
+      "estás",
+      "estuviste"
+     ],
+     [
+      "él / ella / usted",
+      "está",
+      "estuvo"
+     ],
+     [
+      "nosotros",
+      "estamos",
+      "estuvimos"
+     ],
+     [
+      "vosotros",
+      "estáis",
+      "estuvisteis"
+     ],
+     [
+      "ellos / ustedes",
+      "están",
+      "estuvieron"
+     ]
+    ]
+   }
+  },
+  {
+   "title": "tener – мати",
+   "table": {
+    "head": [
+     "Особа",
+     "Presente",
+     "Pretérito indefinido"
+    ],
+    "lang_columns": [
+     1,
+     2
+    ],
+    "rows": [
+     [
+      "yo",
+      "tengo",
+      "tuve"
+     ],
+     [
+      "tú",
+      "tienes",
+      "tuviste"
+     ],
+     [
+      "él / ella / usted",
+      "tiene",
+      "tuvo"
+     ],
+     [
+      "nosotros",
+      "tenemos",
+      "tuvimos"
+     ],
+     [
+      "vosotros",
+      "tenéis",
+      "tuvisteis"
+     ],
+     [
+      "ellos / ustedes",
+      "tienen",
+      "tuvieron"
+     ]
+    ]
+   }
+  },
+  {
+   "title": "ir – іти, їхати",
+   "table": {
+    "head": [
+     "Особа",
+     "Presente",
+     "Pretérito indefinido"
+    ],
+    "lang_columns": [
+     1,
+     2
+    ],
+    "rows": [
+     [
+      "yo",
+      "voy",
+      "fui"
+     ],
+     [
+      "tú",
+      "vas",
+      "fuiste"
+     ],
+     [
+      "él / ella / usted",
+      "va",
+      "fue"
+     ],
+     [
+      "nosotros",
+      "vamos",
+      "fuimos"
+     ],
+     [
+      "vosotros",
+      "vais",
+      "fuisteis"
+     ],
+     [
+      "ellos / ustedes",
+      "van",
+      "fueron"
+     ]
+    ]
+   }
+  }
+ ],
+ "course": [
+  {
+   "title": "Іспити рівнів C1 і C2",
+   "paragraphs": [
+    "Офіційні дипломи DELE (Diplomas de Español como Lengua Extranjera) видає Інститут Сервантеса від імені Міністерства освіти Іспанії. Дипломи DELE C1 і C2 безстрокові.",
+    "SIELE – іспит Інституту Сервантеса та університетів, що складається на комп'ютері; результат дійсний п'ять років.",
+    "Курс C1/C2 для іспанської ще готується: тут з'являться тренажери письма й усного мовлення, як у каталанському розділі."
+   ]
+  }
+ ]
+}

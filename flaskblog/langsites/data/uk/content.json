@@ -1,0 +1,355 @@
+{
+ "explained_in": "en",
+ "text_example": "Щоранку Олена п'є каву й читає новини. Потім вона їде на роботу трамваєм. Увечері вона гуляє в парку з собакою або телефонує мамі.",
+ "grammar": [
+  {
+   "title": "Gender of nouns",
+   "level": "A1",
+   "paragraphs": [
+    "Ukrainian nouns have three genders, and the ending of the nominative singular usually shows which one.",
+    "Masculine nouns mostly end in a consonant (стіл, брат), feminine nouns in -а / -я (мама, земля), neuter nouns in -о, -е or -я after a doubled consonant (вікно, море, життя). Some feminine nouns end in a soft consonant (ніч, сіль)."
+   ],
+   "examples": [
+    [
+     "мій стіл",
+     "my table (masculine)"
+    ],
+    [
+     "моя книжка",
+     "my book (feminine)"
+    ],
+    [
+     "моє вікно",
+     "my window (neuter)"
+    ]
+   ]
+  },
+  {
+   "title": "The seven cases",
+   "level": "A1",
+   "paragraphs": [
+    "Nouns, adjectives and pronouns change their endings for case. Ukrainian has seven cases; the vocative is used when you call or address someone."
+   ],
+   "table": {
+    "head": [
+     "Case",
+     "Question",
+     "Example: мама"
+    ],
+    "lang_columns": [
+     1,
+     2
+    ],
+    "rows": [
+     [
+      "Nominative",
+      "хто? що?",
+      "мама"
+     ],
+     [
+      "Genitive",
+      "кого? чого?",
+      "мами"
+     ],
+     [
+      "Dative",
+      "кому? чому?",
+      "мамі"
+     ],
+     [
+      "Accusative",
+      "кого? що?",
+      "маму"
+     ],
+     [
+      "Instrumental",
+      "ким? чим?",
+      "мамою"
+     ],
+     [
+      "Locative",
+      "на кому? на чому?",
+      "(на) мамі"
+     ],
+     [
+      "Vocative",
+      "–",
+      "мамо!"
+     ]
+    ]
+   },
+   "examples": [
+    [
+     "Це мама.",
+     "This is mum."
+    ],
+    [
+     "Я бачу маму.",
+     "I see mum."
+    ],
+    [
+     "Мамо, де ти?",
+     "Mum, where are you?"
+    ]
+   ]
+  },
+  {
+   "title": "Verb aspect",
+   "level": "A2",
+   "paragraphs": [
+    "Most verbs come in pairs: an imperfective verb for a process or repeated action, and a perfective one for a single completed action. The perfective is often made with a prefix (писати → написати) or a different suffix (давати → дати).",
+    "Perfective verbs have no present tense: their present-looking forms mean the future (напишу – I will write)."
+   ],
+   "examples": [
+    [
+     "Я писав лист цілий вечір.",
+     "I was writing a letter all evening."
+    ],
+    [
+     "Я написав лист.",
+     "I wrote (finished) the letter."
+    ],
+    [
+     "Завтра я напишу.",
+     "I will write tomorrow."
+    ]
+   ]
+  }
+ ],
+ "phonetics": [
+  {
+   "title": "The Ukrainian alphabet",
+   "level": "A1",
+   "paragraphs": [
+    "Ukrainian is written in the Cyrillic alphabet with 33 letters. Most letters stand for one sound, so words are read largely as they are written.",
+    "Some letters to note: и [ɪ] and і [i] are two different vowels; ї is [ji]; є is [jɛ]; щ is [ʃtʃ]; ь (the soft sign) has no sound of its own and softens the consonant before it."
+   ],
+   "table": {
+    "head": [
+     "Letter",
+     "Sound",
+     "Example"
+    ],
+    "lang_columns": [
+     0,
+     2
+    ],
+    "rows": [
+     [
+      "и",
+      "[ɪ]",
+      "син (son)"
+     ],
+     [
+      "і",
+      "[i]",
+      "сік (juice)"
+     ],
+     [
+      "ї",
+      "[ji]",
+      "їжа (food)"
+     ],
+     [
+      "є",
+      "[jɛ]",
+      "є (there is)"
+     ],
+     [
+      "щ",
+      "[ʃtʃ]",
+      "що (what)"
+     ],
+     [
+      "ж",
+      "[ʒ]",
+      "жук (beetle)"
+     ]
+    ]
+   }
+  },
+  {
+   "title": "г and ґ",
+   "level": "A1",
+   "paragraphs": [
+    "The letter г is a voiced [ɦ], softer than the English h and pronounced from the throat: голова (head), гора (mountain).",
+    "The letter ґ is a hard [g] as in English go. It appears in fewer words: ґанок (porch), ґудзик (button)."
+   ],
+   "examples": [
+    [
+     "гора",
+     "mountain"
+    ],
+    [
+     "ґанок",
+     "porch"
+    ],
+    [
+     "гарно",
+     "nicely"
+    ]
+   ]
+  },
+  {
+   "title": "Stress and the apostrophe",
+   "level": "A2",
+   "paragraphs": [
+    "Stress can fall on any syllable and can move between forms of a word; it can also change the meaning: за́мок (castle) and замо́к (lock). Dictionaries and learning texts mark it with an accent.",
+    "The apostrophe shows that a consonant stays hard before я, ю, є, ї, which are then pronounced with [j]: м'ясо [mjasɔ] (meat), сім'я (family)."
+   ],
+   "examples": [
+    [
+     "за́мок – замо́к",
+     "castle – lock"
+    ],
+    [
+     "м'ясо",
+     "meat"
+    ],
+    [
+     "сім'я",
+     "family"
+    ]
+   ]
+  }
+ ],
+ "conjugator": [
+  {
+   "title": "читати – to read (first conjugation)",
+   "table": {
+    "head": [
+     "Person",
+     "Present"
+    ],
+    "lang_columns": [
+     0,
+     1
+    ],
+    "rows": [
+     [
+      "я",
+      "читаю"
+     ],
+     [
+      "ти",
+      "читаєш"
+     ],
+     [
+      "він / вона / воно",
+      "читає"
+     ],
+     [
+      "ми",
+      "читаємо"
+     ],
+     [
+      "ви",
+      "читаєте"
+     ],
+     [
+      "вони",
+      "читають"
+     ]
+    ]
+   }
+  },
+  {
+   "title": "говорити – to speak (second conjugation)",
+   "table": {
+    "head": [
+     "Person",
+     "Present"
+    ],
+    "lang_columns": [
+     0,
+     1
+    ],
+    "rows": [
+     [
+      "я",
+      "говорю"
+     ],
+     [
+      "ти",
+      "говориш"
+     ],
+     [
+      "він / вона / воно",
+      "говорить"
+     ],
+     [
+      "ми",
+      "говоримо"
+     ],
+     [
+      "ви",
+      "говорите"
+     ],
+     [
+      "вони",
+      "говорять"
+     ]
+    ]
+   }
+  },
+  {
+   "title": "бути – to be",
+   "paragraphs": [
+    "In the present tense бути is usually left out (Я студент – I am a student); the form є means \"there is / is\". The past tense agrees with the gender of the subject."
+   ],
+   "table": {
+    "head": [
+     "Person",
+     "Past",
+     "Future"
+    ],
+    "lang_columns": [
+     0,
+     1,
+     2
+    ],
+    "rows": [
+     [
+      "я",
+      "був / була",
+      "буду"
+     ],
+     [
+      "ти",
+      "був / була",
+      "будеш"
+     ],
+     [
+      "він / вона / воно",
+      "був / була / було",
+      "буде"
+     ],
+     [
+      "ми",
+      "були",
+      "будемо"
+     ],
+     [
+      "ви",
+      "були",
+      "будете"
+     ],
+     [
+      "вони",
+      "були",
+      "будуть"
+     ]
+    ]
+   }
+  }
+ ],
+ "course": [
+  {
+   "title": "Exams in Ukrainian",
+   "paragraphs": [
+    "In Ukraine, the National Commission on State Language Standards (Національна комісія зі стандартів державної мови) holds the official exams on the level of proficiency in the state language, required for some posts in public service.",
+    "A C1/C2 course for Ukrainian is being prepared: writing and speaking trainers will appear here, as in the Catalan section."
+   ]
+  }
+ ]
+}

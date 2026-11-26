@@ -1,0 +1,341 @@
+{
+ "explained_in": "uk",
+ "text_example": "Le dimanche, Marie se lève tard. Elle prend son petit-déjeuner sur le balcon et lit le journal. L'après-midi, elle va au cinéma avec ses amis ou se promène au bord de la rivière.",
+ "grammar": [
+  {
+   "title": "Артиклі",
+   "level": "A1",
+   "paragraphs": [
+    "У французькій мові два роди, чоловічий і жіночий, і перед іменником майже завжди стоїть артикль.",
+    "Означені артиклі: le (ч. р.), la (ж. р.), l' (перед голосним або німим h), les (множина). Неозначені: un, une, des.",
+    "Частковий артикль du, de la, de l' вживається з тим, що не рахують: du pain, de l'eau."
+   ],
+   "table": {
+    "head": [
+     "",
+     "Чоловічий",
+     "Жіночий",
+     "Множина"
+    ],
+    "rows": [
+     [
+      "Означений",
+      "le / l'",
+      "la / l'",
+      "les"
+     ],
+     [
+      "Неозначений",
+      "un",
+      "une",
+      "des"
+     ],
+     [
+      "Частковий",
+      "du / de l'",
+      "de la / de l'",
+      "des"
+     ]
+    ]
+   },
+   "examples": [
+    [
+     "le livre, la table, l'ami",
+     "книжка, стіл, друг"
+    ],
+    [
+     "un café et des croissants",
+     "кава й круасани"
+    ],
+    [
+     "Je bois de l'eau.",
+     "Я п'ю воду."
+    ]
+   ]
+  },
+  {
+   "title": "Заперечення ne … pas",
+   "level": "A1",
+   "paragraphs": [
+    "Заперечення складається з двох частин навколо дієслова: ne перед ним і pas після. Перед голосним ne скорочується до n'. У розмовній мові ne часто випускають."
+   ],
+   "examples": [
+    [
+     "Je ne parle pas allemand.",
+     "Я не розмовляю німецькою."
+    ],
+    [
+     "Il n'aime pas le café.",
+     "Він не любить каву."
+    ],
+    [
+     "Ce n'est pas grave.",
+     "Нічого страшного."
+    ]
+   ]
+  },
+  {
+   "title": "Дієслова 1-ї групи на -er",
+   "level": "A1",
+   "paragraphs": [
+    "Найбільша група французьких дієслів закінчується на -er і відмінюється однаково. Закінчення -e, -es, -ent звучать однаково і не вимовляються."
+   ],
+   "table": {
+    "head": [
+     "Особа",
+     "parler"
+    ],
+    "lang_columns": [
+     1
+    ],
+    "rows": [
+     [
+      "je",
+      "parle"
+     ],
+     [
+      "tu",
+      "parles"
+     ],
+     [
+      "il / elle / on",
+      "parle"
+     ],
+     [
+      "nous",
+      "parlons"
+     ],
+     [
+      "vous",
+      "parlez"
+     ],
+     [
+      "ils / elles",
+      "parlent"
+     ]
+    ]
+   }
+  }
+ ],
+ "phonetics": [
+  {
+   "title": "Носові голосні",
+   "level": "A1",
+   "paragraphs": [
+    "У французькій є носові голосні: повітря виходить і через рот, і через ніс, а [n] чи [m] після голосного не вимовляється.",
+    "an / en – [ɑ̃] (enfant), on – [ɔ̃] (bon), in / ain / ein – [ɛ̃] (vin, pain)."
+   ],
+   "examples": [
+    [
+     "enfant",
+     "дитина"
+    ],
+    [
+     "bon",
+     "добрий"
+    ],
+    [
+     "vin",
+     "вино"
+    ],
+    [
+     "pain",
+     "хліб"
+    ]
+   ]
+  },
+  {
+   "title": "Німі кінцеві літери і зв'язування (liaison)",
+   "level": "A1",
+   "paragraphs": [
+    "Кінцеві приголосні здебільшого не вимовляються: petit [pəti], vous [vu], ils parlent [il paʁl]. Кінцеве e без наголосу теж німе.",
+    "Якщо наступне слово починається з голосного, німа приголосна часто вимовляється й зливається з ним: vous avez [vuzave], les amis [lezami]."
+   ],
+   "examples": [
+    [
+     "vous avez",
+     "ви маєте"
+    ],
+    [
+     "les enfants",
+     "діти"
+    ],
+    [
+     "petit ami",
+     "хлопець (друг)"
+    ]
+   ]
+  },
+  {
+   "title": "Звук [y] і літера r",
+   "level": "A2",
+   "paragraphs": [
+    "Літера u звучить як [y]: губи округлені, як для «у», а язик – як для «і»: tu, rue. Сполучення ou звучить як [u]: tout, rue ≠ roue.",
+    "Французьке r вимовляється задньою частиною язика біля м'якого піднебіння, гаркаво: [ʁ]."
+   ],
+   "examples": [
+    [
+     "tu – tout",
+     "ти – усе"
+    ],
+    [
+     "rue – roue",
+     "вулиця – колесо"
+    ]
+   ]
+  }
+ ],
+ "conjugator": [
+  {
+   "title": "être – бути",
+   "table": {
+    "head": [
+     "Особа",
+     "Présent",
+     "Passé composé"
+    ],
+    "lang_columns": [
+     1,
+     2
+    ],
+    "rows": [
+     [
+      "je",
+      "suis",
+      "j'ai été"
+     ],
+     [
+      "tu",
+      "es",
+      "tu as été"
+     ],
+     [
+      "il / elle",
+      "est",
+      "il a été"
+     ],
+     [
+      "nous",
+      "sommes",
+      "nous avons été"
+     ],
+     [
+      "vous",
+      "êtes",
+      "vous avez été"
+     ],
+     [
+      "ils / elles",
+      "sont",
+      "ils ont été"
+     ]
+    ]
+   }
+  },
+  {
+   "title": "avoir – мати",
+   "table": {
+    "head": [
+     "Особа",
+     "Présent",
+     "Passé composé"
+    ],
+    "lang_columns": [
+     1,
+     2
+    ],
+    "rows": [
+     [
+      "j'",
+      "ai",
+      "j'ai eu"
+     ],
+     [
+      "tu",
+      "as",
+      "tu as eu"
+     ],
+     [
+      "il / elle",
+      "a",
+      "il a eu"
+     ],
+     [
+      "nous",
+      "avons",
+      "nous avons eu"
+     ],
+     [
+      "vous",
+      "avez",
+      "vous avez eu"
+     ],
+     [
+      "ils / elles",
+      "ont",
+      "ils ont eu"
+     ]
+    ]
+   }
+  },
+  {
+   "title": "aller – іти",
+   "paragraphs": [
+    "У passé composé aller відмінюється з être, і дієприкметник узгоджується з підметом: elle est allée."
+   ],
+   "table": {
+    "head": [
+     "Особа",
+     "Présent",
+     "Passé composé"
+    ],
+    "lang_columns": [
+     1,
+     2
+    ],
+    "rows": [
+     [
+      "je",
+      "vais",
+      "je suis allé(e)"
+     ],
+     [
+      "tu",
+      "vas",
+      "tu es allé(e)"
+     ],
+     [
+      "il / elle",
+      "va",
+      "il est allé / elle est allée"
+     ],
+     [
+      "nous",
+      "allons",
+      "nous sommes allé(e)s"
+     ],
+     [
+      "vous",
+      "allez",
+      "vous êtes allé(e)(s)"
+     ],
+     [
+      "ils / elles",
+      "vont",
+      "ils sont allés / elles sont allées"
+     ]
+    ]
+   }
+  }
+ ],
+ "course": [
+  {
+   "title": "Іспити рівнів C1 і C2",
+   "paragraphs": [
+    "Офіційні дипломи DALF C1 і DALF C2 (Diplôme approfondi de langue française) видає Міністерство освіти Франції; іспити організовує France Éducation international. Дипломи безстрокові.",
+    "TCF і TEF – тести, які часто вимагають для навчання, імміграції чи громадянства; їхні результати дійсні обмежений час.",
+    "Курс C1/C2 для французької ще готується: тут з'являться тренажери письма й усного мовлення, як у каталанському розділі."
+   ]
+  }
+ ]
+}

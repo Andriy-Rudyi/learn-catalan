@@ -1,0 +1,411 @@
+{
+ "explained_in": "uk",
+ "text_example": "Am Samstag fährt Paul mit dem Fahrrad in die Stadt. Er kauft Brot beim Bäcker und trinkt einen Kaffee mit seiner Schwester. Am Abend kocht er Suppe und liest ein Buch.",
+ "grammar": [
+  {
+   "title": "Рід і артиклі der, die, das",
+   "level": "A1",
+   "paragraphs": [
+    "У німецькій мові три роди: чоловічий (der), жіночий (die) і середній (das). Рід часто не збігається з українським: das Mädchen (дівчина) – середнього роду, die Sonne (сонце) – жіночого.",
+    "У множині для всіх родів артикль die. Іменники завжди пишуться з великої літери. Рід краще вчити разом зі словом."
+   ],
+   "examples": [
+    [
+     "der Tisch",
+     "стіл"
+    ],
+    [
+     "die Lampe",
+     "лампа"
+    ],
+    [
+     "das Buch",
+     "книжка"
+    ],
+    [
+     "die Bücher",
+     "книжки"
+    ]
+   ]
+  },
+  {
+   "title": "Відмінки й артикль",
+   "level": "A1",
+   "paragraphs": [
+    "У німецькій чотири відмінки: Nominativ (хто? що?), Akkusativ (кого? що?), Dativ (кому? чому?), Genitiv (чий?). Відмінок здебільшого видно з артикля."
+   ],
+   "table": {
+    "head": [
+     "Відмінок",
+     "Чоловічий",
+     "Жіночий",
+     "Середній",
+     "Множина"
+    ],
+    "lang_columns": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "rows": [
+     [
+      "Nominativ",
+      "der",
+      "die",
+      "das",
+      "die"
+     ],
+     [
+      "Akkusativ",
+      "den",
+      "die",
+      "das",
+      "die"
+     ],
+     [
+      "Dativ",
+      "dem",
+      "der",
+      "dem",
+      "den"
+     ],
+     [
+      "Genitiv",
+      "des",
+      "der",
+      "des",
+      "der"
+     ]
+    ]
+   },
+   "examples": [
+    [
+     "Der Mann liest.",
+     "Чоловік читає."
+    ],
+    [
+     "Ich sehe den Mann.",
+     "Я бачу чоловіка."
+    ],
+    [
+     "Ich helfe dem Mann.",
+     "Я допомагаю чоловікові."
+    ]
+   ]
+  },
+  {
+   "title": "Дієслово на другому місці",
+   "level": "A1",
+   "paragraphs": [
+    "У звичайному розповідному реченні змінюване дієслово стоїть на другому місці. Якщо речення починається не з підмета, підмет стає після дієслова.",
+    "У запитаннях без питального слова дієслово стоїть на першому місці."
+   ],
+   "examples": [
+    [
+     "Ich lerne heute Deutsch.",
+     "Я сьогодні вчу німецьку."
+    ],
+    [
+     "Heute lerne ich Deutsch.",
+     "Сьогодні я вчу німецьку."
+    ],
+    [
+     "Lernst du Deutsch?",
+     "Ти вчиш німецьку?"
+    ]
+   ]
+  }
+ ],
+ "phonetics": [
+  {
+   "title": "Умлаути і ß",
+   "level": "A1",
+   "paragraphs": [
+    "Ä звучить як «е» ([ɛ]); ö – як «е» з округленими губами ([ø] або [œ]); ü – як «і» з губами для «у» ([y]).",
+    "ß (eszett) – це довге [s] після довгого голосного чи дифтонга: Straße, groß. Після короткого голосного пишеться ss: Kuss."
+   ],
+   "examples": [
+    [
+     "schön",
+     "гарний"
+    ],
+    [
+     "müde",
+     "втомлений"
+    ],
+    [
+     "Mädchen",
+     "дівчина"
+    ],
+    [
+     "Straße",
+     "вулиця"
+    ]
+   ]
+  },
+  {
+   "title": "Ch, w, z і ei / ie",
+   "level": "A1",
+   "paragraphs": [
+    "Ch після a, o, u, au – гортанний [x] (Buch, ach), після інших голосних і приголосних – м'який [ç] (ich, Milch).",
+    "W читається як [v] (Wasser), v – здебільшого як [f] (Vater), z – як [ts] (Zeit).",
+    "Ei звучить як [aɪ] (mein), а ie – як довге [iː] (Liebe)."
+   ],
+   "examples": [
+    [
+     "Buch",
+     "книжка"
+    ],
+    [
+     "ich",
+     "я"
+    ],
+    [
+     "Wasser",
+     "вода"
+    ],
+    [
+     "Zeit",
+     "час"
+    ],
+    [
+     "mein – Liebe",
+     "мій – любов"
+    ]
+   ]
+  },
+  {
+   "title": "Оглушення в кінці слова",
+   "level": "A2",
+   "paragraphs": [
+    "Дзвінкі b, d, g у кінці слова чи складу вимовляються глухо: Hund [hʊnt], Tag [taːk], gelb [gɛlp]. У формах, де після них стоїть голосний, вони знову дзвінкі: Hunde [ˈhʊndə], Tage."
+   ],
+   "examples": [
+    [
+     "der Hund – die Hunde",
+     "собака – собаки"
+    ],
+    [
+     "der Tag – die Tage",
+     "день – дні"
+    ]
+   ]
+  }
+ ],
+ "conjugator": [
+  {
+   "title": "sein – бути",
+   "table": {
+    "head": [
+     "Особа",
+     "Präsens",
+     "Präteritum"
+    ],
+    "lang_columns": [
+     1,
+     2
+    ],
+    "rows": [
+     [
+      "ich",
+      "bin",
+      "war"
+     ],
+     [
+      "du",
+      "bist",
+      "warst"
+     ],
+     [
+      "er / sie / es",
+      "ist",
+      "war"
+     ],
+     [
+      "wir",
+      "sind",
+      "waren"
+     ],
+     [
+      "ihr",
+      "seid",
+      "wart"
+     ],
+     [
+      "sie / Sie",
+      "sind",
+      "waren"
+     ]
+    ]
+   }
+  },
+  {
+   "title": "haben – мати",
+   "table": {
+    "head": [
+     "Особа",
+     "Präsens",
+     "Präteritum"
+    ],
+    "lang_columns": [
+     1,
+     2
+    ],
+    "rows": [
+     [
+      "ich",
+      "habe",
+      "hatte"
+     ],
+     [
+      "du",
+      "hast",
+      "hattest"
+     ],
+     [
+      "er / sie / es",
+      "hat",
+      "hatte"
+     ],
+     [
+      "wir",
+      "haben",
+      "hatten"
+     ],
+     [
+      "ihr",
+      "habt",
+      "hattet"
+     ],
+     [
+      "sie / Sie",
+      "haben",
+      "hatten"
+     ]
+    ]
+   }
+  },
+  {
+   "title": "machen – робити (правильне дієслово)",
+   "table": {
+    "head": [
+     "Особа",
+     "Präsens",
+     "Präteritum",
+     "Perfekt"
+    ],
+    "lang_columns": [
+     1,
+     2,
+     3
+    ],
+    "rows": [
+     [
+      "ich",
+      "mache",
+      "machte",
+      "habe gemacht"
+     ],
+     [
+      "du",
+      "machst",
+      "machtest",
+      "hast gemacht"
+     ],
+     [
+      "er / sie / es",
+      "macht",
+      "machte",
+      "hat gemacht"
+     ],
+     [
+      "wir",
+      "machen",
+      "machten",
+      "haben gemacht"
+     ],
+     [
+      "ihr",
+      "macht",
+      "machtet",
+      "habt gemacht"
+     ],
+     [
+      "sie / Sie",
+      "machen",
+      "machten",
+      "haben gemacht"
+     ]
+    ]
+   }
+  },
+  {
+   "title": "gehen – іти (неправильне дієслово)",
+   "paragraphs": [
+    "Дієслова руху утворюють Perfekt із sein: ich bin gegangen."
+   ],
+   "table": {
+    "head": [
+     "Особа",
+     "Präsens",
+     "Präteritum",
+     "Perfekt"
+    ],
+    "lang_columns": [
+     1,
+     2,
+     3
+    ],
+    "rows": [
+     [
+      "ich",
+      "gehe",
+      "ging",
+      "bin gegangen"
+     ],
+     [
+      "du",
+      "gehst",
+      "gingst",
+      "bist gegangen"
+     ],
+     [
+      "er / sie / es",
+      "geht",
+      "ging",
+      "ist gegangen"
+     ],
+     [
+      "wir",
+      "gehen",
+      "gingen",
+      "sind gegangen"
+     ],
+     [
+      "ihr",
+      "geht",
+      "gingt",
+      "seid gegangen"
+     ],
+     [
+      "sie / Sie",
+      "gehen",
+      "gingen",
+      "sind gegangen"
+     ]
+    ]
+   }
+  }
+ ],
+ "course": [
+  {
+   "title": "Іспити рівнів C1 і C2",
+   "paragraphs": [
+    "Goethe-Institut проводить іспити Goethe-Zertifikat C1 і Goethe-Zertifikat C2: Großes Deutsches Sprachdiplom. Вони перевіряють читання, аудіювання, письмо й усне мовлення.",
+    "TestDaF і DSH – іспити для вступу до німецьких університетів; telc Deutsch C1 Hochschule теж приймають багато університетів.",
+    "Курс C1/C2 для німецької ще готується: тут з'являться тренажери письма й усного мовлення, як у каталанському розділі."
+   ]
+  }
+ ]
+}

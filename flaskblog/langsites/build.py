@@ -21,7 +21,7 @@ import json
 import os
 import re
 
-from flaskblog.langsites import dictionary
+from flaskblog.langsites import dictionary, kaikki
 from flaskblog.vocabulary import apertium, dacco, pivot, wiktionary
 
 _VOCABULARY_DATA = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
@@ -71,7 +71,7 @@ def _add_unique(items, values):
 
 
 @_builder('uk')
-def build_ukrainian():
+def build_ukrainian(extract=None):
     entries = {}
 
     def entry(word, pos):
@@ -156,7 +156,7 @@ _DACCO_POS = {'exclamation': 'interjection', 'verb form': 'verb', 'acronym': 'no
 
 
 @_builder('en')
-def build_english():
+def build_english(extract=None):
     """English: the meanings of Wiktionary's translation tables with their
     Ukrainian, Spanish and Catalan words, and DACCO's English-Catalan part."""
     entries = _Entries()
@@ -182,8 +182,38 @@ def build_english():
     return _write('en', entries)
 
 
+def _add_meanings(entries, extract, add_new=True):
+    """The English meanings of a Wiktionary extract (langsites/kaikki.py):
+    for the words the entries have, and, with *add_new*, new words."""
+    for found in kaikki.entries(extract):
+        item = entries.get((dictionary.key(found['w']), found['pos']))
+        if item is None:
+            if not add_new:
+                continue
+            item = entries.get_entry(found['w'], found['pos'])
+            if item is None:
+                continue
+        for sense in found['senses']:
+            if sense not in item['senses']:
+                item['senses'].append(sense)
+        if found.get('g') and not item.get('g'):
+            item['g'] = found['g']
+
+
+@_builder('de')
+def build_german(extract=None):
+    """German: the English Wiktionary's German words with their English
+    meanings and gender (an extract from kaikki.org)."""
+    if not extract:
+        raise ValueError('German needs a Wiktionary extract (kaikki.org-dictionary-German.jsonl.gz)')
+    entries = _Entries()
+    _add_meanings(entries, extract)
+    _write_meta('de', [_WIKTIONARY])
+    return _write('de', entries)
+
+
 @_builder('es')
-def build_spanish():
+def build_spanish(extract=None):
     """Spanish: Apertium's Spanish-Catalan pairs, the Ukrainian of the
     Spanish Wiktionary's tables and the English of the English one."""
     entries = _Entries()
@@ -197,6 +227,8 @@ def build_spanish():
     for row in wiktionary.load(wiktionary.SENSES):
         for spanish in row.get('es', ()):
             entries.add(spanish, row['pos'], 'en', [row['en']])
+    if extract:
+        _add_meanings(entries, extract)
     _write_meta('es', [_APERTIUM, _WIKTIONARY])
     return _write('es', entries)
 
@@ -211,7 +243,7 @@ _PARENS = re.compile(r'\([^)]*\)')
 
 
 @_builder('fr')
-def build_french():
+def build_french(extract=None):
     """French: the French translations of the site's Catalan words, turned
     round; the Ukrainian and English of the same Catalan word go with them."""
     entries = _Entries()
@@ -229,11 +261,13 @@ def build_french():
                 entries.add(word, 'phrase' if ' ' in word and pos != 'verb' else pos, 'uk', [ukrainian[term]])
             if term in english:
                 entries.add(word, 'phrase' if ' ' in word and pos != 'verb' else pos, 'en', [english[term]])
-    _write_meta('fr', [_SITE])
+    if extract:
+        _add_meanings(entries, extract)
+    _write_meta('fr', [_SITE, _WIKTIONARY] if extract else [_SITE])
     return _write('fr', entries)
 
 
-def build(code):
+def build(code, extract=None):
     if code not in BUILDERS:
         raise KeyError(code)
-    return BUILDERS[code]()
+    return BUILDERS[code](extract) if extract else BUILDERS[code]()

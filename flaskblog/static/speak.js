@@ -1,4 +1,6 @@
-/* "Listen" buttons: <button class="btn-speak" data-say="text">.
+/* "Listen" buttons: <button class="btn-speak" data-say="text">, with
+ * data-lang="en" (es, fr, de, uk...) for a word of another language section;
+ * Catalan by default.
  *
  * Uses the browser's own speech synthesis with a Catalan voice, so nothing is
  * sent to an outside service. Without a Catalan voice on the device we do not
@@ -12,14 +14,14 @@
     return;
   }
 
-  function catalanVoice() {
+  function voiceFor(lang) {
     var voices = window.speechSynthesis.getVoices();
-    var catalan = voices.filter(function (voice) {
-      return voice.lang && voice.lang.toLowerCase().replace('_', '-').indexOf('ca') === 0;
+    var matching = voices.filter(function (voice) {
+      return voice.lang && voice.lang.toLowerCase().replace('_', '-').split('-')[0] === lang;
     });
     // Prefer voices installed on the device (they work offline).
-    catalan.sort(function (a, b) { return (b.localService ? 1 : 0) - (a.localService ? 1 : 0); });
-    return catalan[0] || null;
+    matching.sort(function (a, b) { return (b.localService ? 1 : 0) - (a.localService ? 1 : 0); });
+    return matching[0] || null;
   }
 
   // Chrome fills the voice list asynchronously; asking early starts loading.
@@ -42,12 +44,15 @@
   document.addEventListener('click', function (event) {
     var button = event.target.closest ? event.target.closest('.btn-speak') : null;
     if (!button) { return; }
-    var voice = catalanVoice();
-    if (!voice) { showHint(); return; }
+    var lang = button.getAttribute('data-lang') || 'ca';
+    var voice = voiceFor(lang);
+    // The hint explains how to install a Catalan voice; other languages have
+    // a voice on almost every device, so the browser picks one.
+    if (!voice && lang === 'ca') { showHint(); return; }
     window.speechSynthesis.cancel();
     var utterance = new SpeechSynthesisUtterance(button.getAttribute('data-say'));
-    utterance.voice = voice;
-    utterance.lang = voice.lang;
+    if (voice) { utterance.voice = voice; }
+    utterance.lang = voice ? voice.lang : lang;
     utterance.rate = 0.85;
     button.classList.add('speaking');
     utterance.onend = utterance.onerror = function () { button.classList.remove('speaking'); };

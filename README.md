@@ -764,7 +764,7 @@ sees it in the menu as hidden; everybody else gets 404:
 | Address | What it shows |
 | --- | --- |
 | `/ukrainian/` (`/english/`, `/spanish/`, `/french/`, `/german/`) | the section's start page: its parts, as on the Catalan site |
-| `/ukrainian/grammar`, `lessons`, `conjugator`, `phonetics`, `course`, `text`, `reading`, `translator` | the same parts as the Catalan site; empty ("being prepared") until their material is written |
+| `/ukrainian/grammar`, `conjugator`, `phonetics`, `course`, `text`, `reading`, `translator` | the same parts as the Catalan site (see below); the translator still says it is being prepared |
 | `/ukrainian/dictionary?q=…` | search: the word itself, a translation (English, Spanish, Catalan), or the beginning of a word |
 | `/ukrainian/dictionary/<word>` | the word: part of speech, gender or aspect, meanings in English, Spanish and Catalan equivalents |
 
@@ -780,23 +780,58 @@ its pages:
 | --- | --- | --- |
 | Ukrainian (`uk`) | 44,102 | Wiktionary `uk-en`, `uk-es` and the derived Ukrainian-Catalan pairs |
 | English (`en`) | 39,707 | Wiktionary translation tables (`senses.jsonl`: meanings with Ukrainian, Spanish, Catalan) and DACCO English-Catalan |
-| Spanish (`es`) | 72,562 | Apertium Spanish-Catalan, Wiktionary `uk-es` (turned round) and the Spanish of `senses.jsonl` |
-| French (`fr`) | 5,591 | the French translations of this site's Catalan words, turned round (Ukrainian and English through the same Catalan word) |
-| German (`de`) | | not yet: needs a Wiktionary extract |
+| Spanish (`es`) | 132,327 | Apertium Spanish-Catalan, Wiktionary `uk-es` (turned round), the Spanish of `senses.jsonl`, and the English meanings of the Wiktionary Spanish extract |
+| French (`fr`) | 93,557 | the French translations of this site's Catalan words, turned round (Ukrainian and English through the same Catalan word), and the English meanings of the Wiktionary French extract |
+| German (`de`) | 93,458 | the Wiktionary German extract: English meanings and gender |
+
+The extracts are kaikki.org's files made from the English Wiktionary
+(`kaikki.org-dictionary-<Language>.jsonl.gz`, CC BY-SA), passed to the build:
+`flask langsites build de <extract>` (German needs one; Spanish and French
+take one for the English meanings). They are not kept in the project.
+
+**Word forms.** `flask langsites forms <code> <extract>` writes
+`langsites/data/<code>/forms.tsv` (`flaskblog/langsites/kaikki.py`): every
+inflected form of the section's words, sorted, with its dictionary forms
+(Ukrainian 327k, Spanish 1.08M, French 328k, German 367k forms). A word of
+a text is looked up there with a binary search in the file, so the table
+costs no memory. With it the word panel finds 93-99% of the words of the
+first chapter of *Martin Eden* in every language; the rest are mostly names
+and Martin's deliberately broken speech. English uses rules (plurals, past
+forms, -ing, a list of irregular forms) instead of a table. French elisions
+and hyphenated pronouns (`c'était`, `acheva-t-elle`) are split; a form that
+belongs to two words (French `suis`: `être`, `suivre`) shows both.
 
 A translation links to its word in the Catalan dictionary or in the section
-of its language. `/<section>/lookup?q=` finds a word as it stands in a text
-(English: plurals, past forms, -ing, a list of irregular forms) for the
-reading panel.
+of its language.
 
-**Reading** (`/<section>/reading`): the section's works, every word
-clickable (a panel shows its translations). A section reads its own works
-from `langsites/data/<code>/works/<slug>/` and the Catalan site's works
-whose original is in its language (`reader/data/works/<slug>/original/<code>/`).
-English has *Martin Eden* (the original of the Catalan translation, 46
-chapters) and *Othello* (15 scenes: the Moby Shakespeare text, public
-domain, in Jon Bosak's XML from the NLTK corpus, imported with
-`flask langsites import-play <xml> en othello ...`).
+**The parts of a section** are those of the Catalan site, with the same
+look (same templates' markup and CSS classes, the same word panel,
+`static/reader.js`):
+
+- **Grammar, Phonetics, Conjugator, C1/C2 course**: starter material from
+  `langsites/data/<code>/content.json` (`flaskblog/langsites/content.py`):
+  a few short, real units for each language (articles and the verb "to be",
+  the alphabet and the hardest sounds, the commonest verbs, the official
+  C1/C2 exams). The explanations are in Ukrainian, and in English for the
+  Ukrainian section, which is for people who do not speak Ukrainian yet.
+  Example sentences have a listen button in the language of the section
+  (`static/speak.js` takes `data-lang`).
+- **Text** (`/<section>/text`): paste a text and click its words, as on the
+  Catalan text page, without synonyms; the text is kept per section.
+- **Reading** (`/<section>/reading`): the works of the section, every word
+  clickable in the same panel as the Catalan reading
+  (`/<section>/word?w=` answers in its format). A section reads its own
+  works from `langsites/data/<code>/works/<slug>/` and the Catalan site's
+  works whose original is in its language
+  (`reader/data/works/<slug>/original/<code>/`). English has *Martin Eden*
+  (the original, 46 chapters) and *Othello* (15 scenes: the Moby
+  Shakespeare text, public domain, in Jon Bosak's XML from the NLTK corpus,
+  imported with `flask langsites import-play <xml> en othello ...`).
+  Ukrainian, Spanish, French and German have the first chapter of
+  *Martin Eden*, translated for this site from the English original,
+  paragraph for paragraph; dialogue is in quotation marks, as in the
+  Catalan translation. The other chapters will follow.
+- **Translator**: not yet.
 
 ## Testing
 

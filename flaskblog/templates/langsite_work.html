@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block content %}
+{% include "partials/langsite_header.html" %}
+<div class="reading">
+  <p class="small"><a href="{{ url_for('langsites.library', slug=lang_site.slug) }}">← {{ _('Читання') }}</a></p>
+
+  <div class="content-section reading-cover">
+    <span class="reading-card-author">{{ work.author }}</span>
+    <h1 class="reading-cover-title" lang="{{ lang_site.code }}">{{ work.title }}</h1>
+    <p class="text-muted mb-3">
+      {% if work.level %}{{ _('Рівень {level}', level=work.level) }} ·{% endif %}
+      {{ _('Слів: {count}', count='{:,}'.format(work.words).replace(',', ' ')) }}
+    </p>
+    {% if work.slug == 'othello' %}
+      <p>{{ _('Трагедія 1603 року. Венеційський генерал Отелло таємно одружується з Дездемоною; його алферес Яго, ображений тим, що лейтенантом став Кассіо, крок за кроком переконує Отелло, що дружина йому зраджує.') }}</p>
+    {% elif work.slug == 'martin-eden' %}
+      <p>{{ _('Роман 1909 року. Моряк Мартін Іден закохується в Рут Морс, дівчину з освіченої заможної родини, і заради неї береться за самоосвіту, щоб стати письменником. Успіх приходить, але не приносить того, на що він чекав.') }}</p>
+    {% endif %}
+    {% if work.source %}<p class="small text-muted mb-0" lang="en">{{ work.source }}</p>{% endif %}
+    <a class="btn btn-info mt-3" href="{{ url_for('langsites.read', slug=lang_site.slug, work_slug=work.slug, number=1) }}">{{ _('Почати читати') }}</a>
+  </div>
+
+  <div class="reading-columns">
+    <section class="content-section">
+      <h2 class="h5">{{ _('Зміст') }}</h2>
+      {% if work.kind == 'novel' %}
+        <ol class="reading-toc reading-toc-chapters">
+          {% for part in work.parts %}
+            <li>
+              <a href="{{ url_for('langsites.read', slug=lang_site.slug, work_slug=work.slug, number=part.number) }}">{{ _('Розділ') }} {{ part.chapter }}</a>
+              <span class="reading-toc-words">{{ _('Слів: {count}', count=part.words) }}</span>
+            </li>
+          {% endfor %}
+        </ol>
+      {% else %}
+        {% for act in work.acts %}
+          <h3 class="reading-act">{{ _('Дія') }} {{ act }}</h3>
+          <ol class="reading-toc">
+            {% for part in work.parts if part.act == act %}
+              <li>
+                <a href="{{ url_for('langsites.read', slug=lang_site.slug, work_slug=work.slug, number=part.number) }}">{{ _('Сцена {number}', number=part.scene) }}</a>
+                <span class="reading-toc-setting" lang="{{ lang_site.code }}">{{ part.setting }}</span>
+                <span class="reading-toc-words">{{ _('Слів: {count}', count=part.words) }}</span>
+              </li>
+            {% endfor %}
+          </ol>
+        {% endfor %}
+      {% endif %}
+    </section>
+  </div>
+</div>
+{% endblock content %}

@@ -1,22 +1,28 @@
 {% extends "layout.html" %}
 {% block content %}
 {% include "partials/langsite_header.html" %}
-<h1>{{ _('Читання') }}</h1>
-{% if works %}
-<p class="text-muted">{{ _('Натисніть на будь-яке слово в тексті, щоб побачити переклад.') }}</p>
-<ul class="list-unstyled">
-  {% for work in works %}
-  <li class="mb-3">
-    <a class="h5" href="{{ url_for('langsites.read', slug=lang_site.slug, work_slug=work.slug, number=1) }}" lang="{{ lang_site.code }}">{{ work.title }}</a>
-    <div class="text-muted">
-      {{ work.author }}{% if work.year %}, {{ work.year }}{% endif %}
-      {% if work.level %} · {{ work.level }}{% endif %}
-      · {% if work.kind == 'novel' %}{{ _('розділів') }}{% else %}{{ _('сцен') }}{% endif %}: {{ work.files | length }}
+<div class="reading">
+  <div class="page-head">
+    <div>
+      <h1 class="mb-1">{{ _('Читання') }} <span class="beta-badge beta-badge-lg">Beta</span></h1>
+      <p class="text-muted mb-0">{{ _('Натисніть на будь-яке слово в тексті, щоб побачити переклад.') }}</p>
     </div>
-  </li>
-  {% endfor %}
-</ul>
-{% else %}
-<p class="text-muted">{{ _('Матеріали для цієї частини ще готуються.') }}</p>
-{% endif %}
-{% endblock %}
+  </div>
+
+  <div class="reading-shelf">
+    {% for work in works %}
+      <a class="content-section reading-card" href="{{ url_for('langsites.work_page', slug=lang_site.slug, work_slug=work.slug) }}">
+        <span class="reading-card-author">{{ work.author }}</span>
+        <span class="reading-card-title" lang="{{ lang_site.code }}">{{ work.title }}</span>
+        <span class="reading-card-meta">
+          {% if work.level %}{{ _('Рівень {level}', level=work.level) }} ·{% endif %}
+          {{ _('Слів: {count}', count='{:,}'.format(work.words).replace(',', ' ')) }} ·
+          {% if work.kind == 'novel' %}{{ _('Розділів: {count}', count=work.parts|length) }}{% else %}{{ _('Сцен: {count}', count=work.parts|length) }}{% endif %}
+        </span>
+      </a>
+    {% else %}
+      <p class="text-muted">{{ _('Матеріали для цієї частини ще готуються.') }}</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}

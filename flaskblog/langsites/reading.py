@@ -70,7 +70,36 @@ def works(code):
                       'author': work.get('author'), 'year': work.get('year'),
                       'level': work.get('level'), 'source': info.get('source'),
                       'kind': kind, 'files': files})
-    return sorted(found, key=lambda work: work['title'])
+    return [_describe(item) for item in sorted(found, key=lambda work: work['title'])]
+
+
+def _count(path, kind):
+    text = _read(path)
+    if kind == 'novel':
+        words = ' '.join(text['paragraphs'])
+    else:
+        words = ' '.join(block.get('stage', '') + ' ' + ' '.join(block.get('lines', ()))
+                         for block in text['blocks'])
+    return len(WORD.findall(words)), text.get('setting', '')
+
+
+def _describe(work_info):
+    """Add the list of parts (number, act, scene or chapter, words) and the
+    total of words."""
+    parts = []
+    for number, path in enumerate(work_info['files'], 1):
+        words, setting = _count(path, work_info['kind'])
+        label = part_title(work_info, number)
+        item = {'number': number, 'words': words, 'setting': setting}
+        if work_info['kind'] == 'novel':
+            item['chapter'] = label
+        else:
+            item['act'], item['scene'] = label
+        parts.append(item)
+    work_info['parts'] = parts
+    work_info['words'] = sum(item['words'] for item in parts)
+    work_info['acts'] = sorted({item['act'] for item in parts if 'act' in item})
+    return work_info
 
 
 def work(code, slug):

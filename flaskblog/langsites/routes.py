@@ -4,7 +4,8 @@ from flask import Blueprint, abort, jsonify, render_template, request, url_for
 
 from flaskblog import sites
 from flaskblog.i18n import get_locale, gettext as _
-from flaskblog.langsites import dictionary, reading
+from flaskblog.langsites import content as sections_content, dictionary, reading
+from flaskblog.vocabulary.constants import part_of_speech_label
 from flaskblog.permissions import is_admin
 
 langsites = Blueprint('langsites', __name__)
@@ -21,7 +22,6 @@ _TRANSLATIONS = dictionary.LANGS
 # material is being prepared until it is written.
 PAGES = (
     ('grammar', 'Граматика', 'grammar'),
-    ('lessons', 'Уроки', 'new'),
     ('dictionary', 'Словник', 'dictionary'),
     ('conjugator', 'Дієвідміна', 'conjugator'),
     ('phonetics', 'Фонетика', 'phonetics'),
@@ -30,7 +30,8 @@ PAGES = (
     ('reading', 'Читання', 'book'),
     ('translator', 'Перекладач', 'translator'),
 )
-_EMPTY = tuple(key for key, _name, _icon in PAGES if key not in ('dictionary', 'reading'))
+# Parts that still show "being prepared" (the others have their own pages).
+_EMPTY = ('translator',)
 
 _GENDERS = {'m': 'чоловічий рід', 'f': 'жіночий рід', 'n': 'середній рід'}
 _ASPECTS = {'pf': 'доконаний вид', 'ipf': 'недоконаний вид'}
@@ -71,7 +72,9 @@ def _ready(site, page):
         return dictionary.available(site.code)
     if page == 'reading':
         return bool(reading.works(site.code))
-    return False
+    if page == 'text':
+        return dictionary.available(site.code)
+    return bool(sections_content.load(site.code).get(page))
 
 
 def _common(site):
@@ -80,7 +83,11 @@ def _common(site):
             return url_for('langsites.dictionary_page', slug=site.slug)
         if key == 'reading':
             return url_for('langsites.library', slug=site.slug)
-        return url_for('langsites.page', slug=site.slug, page=key)
+        if key == 'text':
+            return url_for('langsites.text_page', slug=site.slug)
+        if key in _EMPTY:
+            return url_for('langsites.page', slug=site.slug, page=key)
+        return url_for('langsites.content_page', slug=site.slug, page=key)
 
     pages = [{'key': key, 'name': _(name), 'icon': icon, 'ready': _ready(site, key), 'url': url(key)}
              for key, name, icon in PAGES]
@@ -139,24 +146,49 @@ def word(slug, word):
                            entries=entries, languages=_languages(site), **_common(site))
 
 
-@langsites.route(_PREFIX + '/lookup')
-def lookup(slug):
-    """A word as it stands in a text, for the reading panel (JSON)."""
+def _names():
+    return {'uk': _('Українська'), 'en': _('Англійська'), 'es': _('Іспанська'),
+            'ca': _('Каталанська'), 'fr': _('Французька'), 'de': _('Німецька')}
+
+
+@langsites.route(_PREFIX + '/word')
+def word_panel(slug):
+    """A word as it stands in a text, for the word panel of the reading and
+    text pages (static/reader.js, the same format as the Catalan one)."""
     site = _section(slug)
-    entries, form = dictionary.find(site.code, (request.args.get('q') or '')[:60])
-    languages = _languages(site)
-    names = {'uk': _('Українська'), 'en': _('Англійська'), 'es': _('Іспанська'),
-             'ca': _('Каталанська'), 'fr': _('Французька'), 'de': _('Німецька')}
-    found = []
+    surface = (request.args.get('w') or '')[:80]
+    clean = (reading.WORD.search(surface) or None)
+    clean = clean.group() if clean else ''
+    entries, form = dictionary.find(site.code, clean)
+    names = _names()
+    readings = []
     for entry in entries:
-        rows = []
-        for lang in languages:
+        parts = []
+        for lang in _languages(site):
             texts = dictionary.translations(entry, lang)
             if texts:
-                rows.append({'lang': names[lang], 'text': '; '.join(texts[:6])})
-        found.append({'word': entry['w'], 'pos': entry['pos'], 'translations': rows})
-    return jsonify({'form': form, 'entries': found,
-                    'url': url_for('langsites.word', slug=site.slug, word=form) if form else None})
+                parts.append('{}: {}'.format(names[lang], '; '.join(texts[:5])))
+        readings.append({
+            'lemma': entry['w'],
+            'part_of_speech': part_of_speech_label(entry['pos']),
+            'form': _('від «{lemma}»', lemma=entry['w']) if form and form != clean.lower() and
+                    form != clean else '',
+            'translation': ' · '.join(parts),
+            'url': url_for('langsites.word', slug=site.slug, word=entry['k']),
+        })
+    return jsonify({'word': clean, 'transcription': None, 'readings': readings, 'groups': []})
+
+
+def _panel_config(site, mode=None):
+    from flaskblog.reader.routes import panel_strings
+    strings = panel_strings()
+    strings['nothing'] = _('Цього слова в словнику поки немає.')
+    config = {'wordUrl': url_for('langsites.word_panel', slug=site.slug), 'loggedIn': False,
+              'strings': strings, 'synonyms': False, 'speechLang': site.code,
+              'store': 'langwave:{}:text:v1'.format(site.code)}
+    if mode:
+        config['mode'] = mode
+    return config
 
 
 @langsites.route(_PREFIX + '/reading')
@@ -164,6 +196,16 @@ def library(slug):
     site = _section(slug)
     return render_template('langsite_library.html', title=_('Читання'), page_key='reading',
                            works=reading.works(site.code), **_common(site))
+
+
+@langsites.route(_PREFIX + '/reading/<work_slug>')
+def work_page(slug, work_slug):
+    site = _section(slug)
+    work = reading.work(site.code, work_slug)
+    if work is None:
+        abort(404)
+    return render_template('langsite_work.html', title=work.get('short_title') or work['title'],
+                           page_key='reading', work=work, **_common(site))
 
 
 @langsites.route(_PREFIX + '/reading/<work_slug>/<int:number>')
@@ -177,5 +219,25 @@ def read(slug, work_slug, number):
         abort(404)
     return render_template('langsite_read.html', title=work.get('short_title') or work['title'],
                            page_key='reading', work=work, number=number, text=text,
-                           total=len(work['files']), tokens=reading.tokens,
-                           part_title=reading.part_title(work, number), **_common(site))
+                           total=len(work['files']), parts=work['parts'],
+                           panel_config=_panel_config(site, 'read'), **_common(site))
+
+
+@langsites.route(_PREFIX + '/text')
+def text_page(slug):
+    site = _section(slug)
+    content = sections_content.load(site.code)
+    return render_template('langsite_text.html', title=_('Робота з текстом'), page_key='text',
+                           example=content.get('text_example', ''),
+                           panel_config=dict(_panel_config(site), example=content.get('text_example', '')),
+                           **_common(site))
+
+
+@langsites.route(_PREFIX + '/<any(grammar,phonetics,conjugator,course):page>')
+def content_page(slug, page):
+    site = _section(slug)
+    content = sections_content.load(site.code)
+    name = next(_(label) for key, label, _icon in PAGES if key == page)
+    return render_template('langsite_content.html', title=name, page_key=page, page_name=name,
+                           items=content.get(page, ()), explained_in=content.get('explained_in', 'uk'),
+                           **_common(site))

@@ -17,7 +17,10 @@
   var config = JSON.parse(configNode.textContent);
   var S = config.strings;
   var READ_ONLY = config.mode === 'read';
-  var STORE = 'learn-catalan:text:v1';
+  // The language sections (flaskblog/langsites) keep their own text and
+  // have no synonyms; their words are spoken in their own language.
+  var STORE = config.store || 'learn-catalan:text:v1';
+  var SYNONYMS = config.synonyms !== false;
   var sourceNode = document.getElementById('reader-source');
   var MAX = (sourceNode && parseInt(sourceNode.getAttribute('maxlength'), 10)) || 20000;
 
@@ -245,6 +248,7 @@
       var listen = el('button', 'btn-speak btn-speak-sm', '🔊');
       listen.type = 'button';
       listen.setAttribute('data-say', data.word);
+      if (config.speechLang) { listen.setAttribute('data-lang', config.speechLang); }
       listen.setAttribute('aria-label', S.listen + ': ' + data.word);
       listen.title = S.listen;
       head.appendChild(listen);
@@ -264,6 +268,7 @@
     }
 
     data.readings.forEach(function (reading) { els.body.appendChild(readingCard(reading)); });
+    if (!SYNONYMS) { return; }
 
     var title = el('div', 'reader-panel-title', S.synonyms);
     title.setAttribute('role', 'heading');

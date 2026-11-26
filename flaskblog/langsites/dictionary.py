@@ -24,6 +24,7 @@ a page needs it. The index of translations, for searching in another
 language, is built only when somebody searches that way.
 """
 
+import array
 import bisect
 import functools
 import io
@@ -61,7 +62,7 @@ class _Index(object):
 
     def __init__(self, code):
         self.code = code
-        keys, offsets = [], []
+        keys, offsets = [], array.array('Q')  # 8 bytes an offset, not a Python int
         try:
             with io.open(path(code), 'rb') as handle:
                 offset = 0
@@ -288,10 +289,27 @@ def _english_bases(word):
 
 def find(code, word):
     """The entries for a word as it stands in a text: the word itself, then
-    its dictionary form (English: plurals, past forms, -ing...). Returns
-    (entries, the form found) or ([], None)."""
+    its dictionary form (the section's table of forms from Wiktionary;
+    English: plurals, past forms, -ing...). Returns (entries, the form
+    found) or ([], None)."""
+    from flaskblog.langsites import kaikki
+
     word = (word or '').strip().strip("'’").replace('’', "'")
-    candidates = [word, word.lower()]
+    for candidate in (word, word.lower()):
+        entries = lookup(code, candidate)
+        if entries:
+            return entries, candidate
+    # An inflected form: every dictionary form it can belong to (French
+    # "suis": "être" and "suivre"), from the table of forms (kaikki.py).
+    found, first = [], None
+    for lemma in kaikki.lemmas(code, word):
+        entries = lookup(code, lemma)
+        if entries:
+            found += entries
+            first = first or lemma
+    if found:
+        return found, first
+    candidates = []
     if code == 'en':
         candidates += list(_english_bases(word.lower()))
     seen = set()
@@ -302,4 +320,11 @@ def find(code, word):
         entries = lookup(code, candidate)
         if entries:
             return entries, candidate
+    # Elisions and hyphenated pronouns: c'est, j'suis, laisse-moi, acheva-t-elle.
+    parts = [part for part in re.split(r"['-]", word) if len(part) > 1]
+    if parts and parts != [word]:
+        for part in sorted(parts, key=len, reverse=True):
+            entries, form = find(code, part)
+            if entries:
+                return entries, form
     return [], None
