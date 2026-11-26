@@ -990,6 +990,15 @@ seeking; the site stores nothing), and the last job commits
 shown. Parts already in the release are not made again; to remake one,
 delete its `.mp3` and `.mp3.json` from the release.
 
+The release serves its files as downloads (`application/octet-stream`),
+which Safari on iPhone and older Android browsers refuse to play. So the
+workflow also publishes the MP3s on GitHub Pages
+(`https://andriy-rudyi.github.io/learn-catalan/audio/`), which serves
+`audio/mpeg`, and the list points there. This needs **Settings → Pages →
+Source: GitHub Actions** once; without it that job fails and the list keeps
+the release's address. A Pages site holds up to 1 GB: about 55 hours of
+audio at 40 kbit/s.
+
 ## Header and older browsers
 
 The header has two pickers: **Learning** (the language being learnt: every

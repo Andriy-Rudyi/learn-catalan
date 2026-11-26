@@ -122,10 +122,15 @@ def file_name(lang, slug, number):
 
 
 RELEASE = 'https://github.com/Andriy-Rudyi/learn-catalan/releases/download/audiobooks/'
+# The release keeps the files, but serves them as downloads
+# (application/octet-stream), which Safari on iPhone and older Android
+# browsers refuse to play. The workflow copies them to GitHub Pages, which
+# serves audio/mpeg, and the manifest points there (--base).
+PAGES = 'https://andriy-rudyi.github.io/learn-catalan/audio/'
 MANIFEST = os.path.join(ROOT, 'flaskblog', 'audiobooks.json')
 
 
-def write_manifest(out):
+def write_manifest(out, base=RELEASE):
     """flaskblog/audiobooks.json from the .json files next to the MP3s."""
     works = {}
     for path in sorted(glob.glob(os.path.join(out, '*.mp3.json'))):
@@ -134,7 +139,7 @@ def write_manifest(out):
         works.setdefault(info['lang'], {}).setdefault(info['slug'], []).append(
             (info['number'], {'file': os.path.basename(path)[:-5], 'seconds': info['seconds'],
                               'bytes': info['bytes']}))
-    data = {'base': RELEASE,
+    data = {'base': base,
             'voices': {lang: VOICES[lang][1] for lang in works},
             'works': {lang: {slug: [item for _number, item in sorted(found, key=lambda pair: pair[0])]
                              for slug, found in sorted(slugs.items())}
@@ -152,9 +157,11 @@ def main():
     parser.add_argument('--langs', default=','.join(VOICES))
     parser.add_argument('--manifest', action='store_true',
                         help='only write flaskblog/audiobooks.json from the files in --out')
+    parser.add_argument('--base', default=RELEASE,
+                        help='address the MP3s are played from (with --manifest)')
     args = parser.parse_args()
     if args.manifest:
-        print('parts:', write_manifest(args.out))
+        print('parts:', write_manifest(args.out, args.base))
         return
     from piper import PiperVoice
     os.makedirs(args.out, exist_ok=True)

@@ -91,8 +91,39 @@ jobs:
             gh release upload "$RELEASE" -R "$GITHUB_REPOSITORY" --clobber "$mp3" "$mp3.json"
           done
 
-  manifest:
+  # The MP3s again on GitHub Pages, which serves them as audio/mpeg (the
+  # release serves downloads, which iPhones and older Android refuse to
+  # play). Needs Settings → Pages → Source: GitHub Actions; until then this
+  # job fails and the site keeps playing from the release.
+  pages:
     needs: speak
+    if: always()
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    outputs:
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: The published MP3s
+        run: |
+          mkdir -p site/audio
+          gh release download "$RELEASE" -R "$GITHUB_REPOSITORY" --pattern "*.mp3" --dir site/audio
+          touch site/.nojekyll
+          echo '<!doctype html><meta charset="utf-8"><title>Audiobooks</title><p>Audio of the reading works of the site (one MP3 per chapter or scene).</p>' > site/index.html
+          du -sh site
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deploy
+        uses: actions/deploy-pages@v4
+
+  manifest:
+    needs: [speak, pages]
     if: always()
     runs-on: ubuntu-latest
     steps:
@@ -106,7 +137,13 @@ jobs:
         run: |
           mkdir -p out
           gh release download "$RELEASE" -R "$GITHUB_REPOSITORY" --pattern "*.mp3.json" --dir out
-          python scripts/make_audiobooks.py --out out --manifest
+          # From GitHub Pages when it is published, otherwise from the release.
+          base=https://github.com/${GITHUB_REPOSITORY}/releases/download/${RELEASE}/
+          if [ "${{ needs.pages.result }}" = success ] && [ -n "${{ needs.pages.outputs.url }}" ]; then
+            base="${{ needs.pages.outputs.url }}audio/"
+          fi
+          echo "Playing from $base"
+          python scripts/make_audiobooks.py --out out --manifest --base "$base"
       - name: Commit flaskblog/audiobooks.json
         run: |
           # status, not diff: the first time the file is new (untracked).
