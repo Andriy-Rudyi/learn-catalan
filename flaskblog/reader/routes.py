@@ -192,9 +192,22 @@ def listen(slug):
     else:
         labels = [works.scene_label(scene) for scene in found['scenes']]
         read_urls = [url_for('reader.scene', slug=slug, act=scene.act, scene=scene.scene) for scene in found['scenes']]
-    book, player = audiobooks.page('ca', slug, found['title'], found['author'], labels, read_urls)
+    text_urls = [url_for('reader.listen_text', slug=slug, number=number) for number in range(1, len(read_urls) + 1)]
+    book, player = audiobooks.page('ca', slug, found['title'], found['author'], labels, read_urls, text_urls)
     return render_template('audiobook.html', title=_('Аудіокнига') + ' · ' + found['short_title'],
                            book=book, player=player, back_url=url_for('reader.work', slug=slug))
+
+
+@reader.route('/reading/<slug>/listen/<int:number>.json')
+def listen_text(slug, number):
+    """The text of a part and when each sentence is read (the listening page)."""
+    from flaskblog import audiobooks
+
+    _reading_on()
+    found = audiobooks.text('ca', slug, number)
+    if found is None:
+        abort(404)
+    return jsonify(found)
 
 
 @reader.route('/reading/<slug>/<int:act>/<int:scene>')

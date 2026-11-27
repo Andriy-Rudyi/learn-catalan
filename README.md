@@ -990,6 +990,22 @@ seeking; the site stores nothing), and the last job commits
 shown. Parts already in the release are not made again; to remake one,
 delete its `.mp3` and `.mp3.json` from the release.
 
+**Text while listening.** Below the player the part's text is shown and
+the word being read lights up; tapping a word plays from there, and the
+text scrolls along ("Follow the text"). The script reads the text
+sentence by sentence (as `flaskblog/audiobook_text.py` lays it out, the
+same text the page shows; quotation marks are not read out) and keeps when
+each sentence starts and ends; the workflow commits these timings to
+`flaskblog/audiobook_timings/`, `/…/listen/<n>.json` gives them with the
+text, and the words of a sentence share its time by their length. The
+script's `VERSION` marks how a part was made: parts made by an older
+version are made again on the next run.
+
+**Old devices.** If a browser cannot load the sound from where it is
+published (an old Android tablet), the player switches to `/audio/<file>`,
+which passes the part on through the site 1 MB per request (so the single
+worker is never held for long), and remembers that in the browser.
+
 The release serves its files as downloads (`application/octet-stream`),
 which Safari on iPhone and older Android browsers refuse to play. So the
 workflow also publishes the MP3s on GitHub Pages

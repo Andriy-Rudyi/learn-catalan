@@ -40,6 +40,18 @@
     </div>
   </div>
 
+  <section class="content-section audiobook-text-section">
+    <div class="audiobook-text-head">
+      <h2 class="h5 mb-0">{{ _('Текст') }}</h2>
+      <label class="small text-muted audiobook-follow">
+        <input type="checkbox" id="ab-follow" checked> {{ _('Стежити за текстом') }}
+      </label>
+    </div>
+    <div id="ab-text" class="reader-text prose audiobook-text" lang="{{ book.lang }}"
+         aria-label="{{ _('Текст: натисніть слово, щоб слухати з нього') }}"></div>
+    <p class="small text-muted mt-2 mb-0">{{ _('Натисніть слово, щоб слухати з нього.') }}</p>
+  </section>
+
   <section class="content-section">
     <h2 class="h5">{{ _('Зміст') }}</h2>
     <ol class="reading-toc audiobook-list" id="ab-list">
@@ -57,6 +69,16 @@
 <style>
   .audiobook-list a.is-playing { font-weight: 600; }
   .audiobook-list a.is-playing::before { content: "▶ "; }
+  .audiobook-text-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: .75rem; }
+  .audiobook-follow { display: inline-flex; align-items: center; cursor: pointer; }
+  .audiobook-follow input { margin-right: .35rem; }
+  .audiobook-text { position: relative; max-height: 55vh; overflow-y: auto; padding-right: .25rem; }
+  .audiobook-text p { margin-bottom: .9rem; }
+  .audiobook-text .ab-heading { font-weight: 600; }
+  .audiobook-text .ab-w { cursor: pointer; border-radius: 3px; transition: background-color .12s ease; }
+  .audiobook-text .ab-w:hover { text-decoration: underline; }
+  .audiobook-text .ab-now { background: var(--brand, #3390ec); color: #fff; box-shadow: 0 0 0 2px var(--brand, #3390ec); }
+  .audiobook-text .ab-sentence-now { background: rgba(127, 127, 127, .08); }
 </style>
 <script type="application/json" id="audiobook-config">{{ player | tojson }}</script>
 {% endblock content %}

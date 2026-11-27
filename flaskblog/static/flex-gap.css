@@ -151,3 +151,12 @@ html.no-flex-gap[data-design="modern"] .lc-menu-link > :not(:last-child) { margi
 
 /* by hand, see EXTRA */
 html.no-flex-gap[data-design="modern"] .lc-logo::before { margin-right: 10px; }
+
+/* by hand, see EXTRA */
+html.no-flex-gap .d-flex.gap-1 > :not(:last-child) { margin-right: .25rem; }
+
+/* by hand, see EXTRA */
+html.no-flex-gap .d-flex.gap-2 > :not(:last-child) { margin-right: .5rem; }
+
+/* by hand, see EXTRA */
+html.no-flex-gap .d-flex.gap-3 > :not(:last-child) { margin-right: 1rem; }

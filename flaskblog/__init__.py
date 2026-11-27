@@ -68,6 +68,7 @@ def create_app(config_class=Config):
     from flaskblog.translator.routes import translator
     from flaskblog.course.routes import course
     from flaskblog.langsites.routes import langsites
+    from flaskblog.audiobooks import audio_files
     app.register_blueprint(users)
     app.register_blueprint(posts)
     app.register_blueprint(main)
@@ -81,6 +82,7 @@ def create_app(config_class=Config):
     app.register_blueprint(translator)
     app.register_blueprint(course)
     app.register_blueprint(langsites)
+    app.register_blueprint(audio_files)
 
     from flaskblog.conjugation.cli import conjugation_cli
     from flaskblog.grammar.cli import grammar_cli

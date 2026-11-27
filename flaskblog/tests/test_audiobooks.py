@@ -1,5 +1,6 @@
 # flaskblog/tests/test_audiobooks.py
 
+import io
 import json
 from unittest import mock
 
@@ -77,3 +78,74 @@ class AudiobookTests(AppTestCase):
         with mock.patch.object(audiobooks, 'manifest', return_value={}):
             self.assertEqual(404, self.client.get('/reading/martin-eden/listen').status_code)
             self.assertNotIn('/listen', self.client.get('/reading/martin-eden').get_data(as_text=True))
+
+
+class AudiobookTextTests(AppTestCase):
+    """The text shown while listening, and the sound passed on through the site."""
+
+    def setUp(self):
+        super().setUp()
+        patcher = mock.patch.object(audiobooks, 'manifest', return_value=MANIFEST)
+        patcher.start()
+        self.addCleanup(patcher.stop)
+        audiobooks.timing.cache_clear()
+        self.addCleanup(audiobooks.timing.cache_clear)
+
+    def test_sentences_and_what_is_spoken(self):
+        from flaskblog import audiobook_text
+        piece = '«Він розуміє», подумав він. «Він мені допоможе.» Та й годі! Кінець'
+        spans = audiobook_text.sentences(piece)
+        self.assertEqual(['«Він розуміє», подумав він.', '«Він мені допоможе.»', 'Та й годі!', 'Кінець'],
+                         [piece[start:end] for start, end in spans])
+        self.assertEqual('Він розуміє , подумав він.', audiobook_text.spoken('«Він розуміє», подумав він.'))
+
+    def test_pieces_are_the_ones_read_aloud(self):
+        from flaskblog import audiobook_text
+        pieces = audiobook_text.pieces('uk', 'martin-eden', 1)
+        self.assertEqual('Розділ 1.', pieces[0])
+        self.assertTrue(pieces[1].startswith('Перший'))
+        self.assertEqual(pieces, [found for slug, number, _title, found in audiobook_text.parts('uk')
+                                  if slug == 'martin-eden' and number == 1][0])
+        scene = audiobook_text.pieces('ca', 'othello', 1)
+        self.assertTrue(scene[0].startswith('Acte 1, escena 1'))
+        self.assertIsNone(audiobook_text.pieces('uk', 'martin-eden', 99))
+
+    def test_text_of_a_part(self):
+        timings = [[0, 0, 9, 0.0, 1.25], [1, 0, 115, 1.95, 9.87]]
+        with mock.patch.object(audiobooks, 'timing', return_value=timings):
+            data = self.client.get('/ukrainian/reading/martin-eden/listen/1.json').get_json()
+            self.assertEqual('Розділ 1.', data['pieces'][0])
+            self.assertEqual(timings, data['sentences'])
+            catalan = self.client.get('/reading/martin-eden/listen/2.json').get_json()
+            self.assertTrue(catalan['pieces'][0].startswith('Capítol'))
+        self.assertEqual([], self.client.get('/reading/othello/listen/1.json').get_json()['sentences'])
+        self.assertEqual(404, self.client.get('/ukrainian/reading/martin-eden/listen/2.json').status_code)
+        self.assertEqual(404, self.client.get('/german/reading/martin-eden/listen/1.json').status_code)
+
+    def test_page_links_text_and_relay(self):
+        body = self.client.get('/reading/martin-eden/listen').get_data(as_text=True)
+        self.assertIn('id="ab-text"', body)
+        start = body.index('id="audiobook-config">') + len('id="audiobook-config">')
+        config = json.loads(body[start:body.index('</script>', start)])
+        self.assertEqual('/reading/martin-eden/listen/1.json', config['parts'][0]['text'])
+        self.assertEqual('/audio/ca-martin-eden-01.mp3', config['parts'][0]['proxy'])
+
+    def test_relay_passes_a_piece(self):
+        class Reply(io.BytesIO):
+            status = 206
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *args):
+                return False
+
+        with mock.patch.object(audiobooks.urllib.request, 'urlopen', return_value=Reply(b'x' * 10)) as opened:
+            response = self.client.get('/audio/ca-martin-eden-01.mp3', headers={'Range': 'bytes=0-'})
+        self.assertEqual(206, response.status_code)
+        self.assertEqual('audio/mpeg', response.mimetype)
+        self.assertEqual('bytes 0-9/1', response.headers['Content-Range'])
+        self.assertEqual(BASE + 'ca-martin-eden-01.mp3', opened.call_args[0][0].full_url)
+        self.assertEqual('bytes=0-0', opened.call_args[0][0].get_header('Range'))
+        self.assertEqual(404, self.client.get('/audio/elsewhere.mp3', headers={'Range': 'bytes=0-'}).status_code)
+        self.assertEqual(302, self.client.get('/audio/ca-martin-eden-01.mp3').status_code)  # no range: the host

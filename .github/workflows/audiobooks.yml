@@ -5,8 +5,9 @@
 # and the MP3s go to the GitHub release "audiobooks", which serves them to
 # the site's player (flaskblog/audiobooks.py). Parts already in the release
 # are not made again. The last job writes flaskblog/audiobooks.json (the list
-# of parts, with their length) and commits it to dev, which redeploys the
-# site with the new audio.
+# of parts, with their length) and flaskblog/audiobook_timings/ (when each
+# sentence is read, for the text shown while listening) and commits them to
+# dev, which redeploys the site with the new audio.
 #
 # Runs when the texts or the script change on dev, and on demand
 # (Actions → Audiobooks → Run workflow). To make a part again, delete its
@@ -18,6 +19,7 @@ on:
     branches: [dev]
     paths:
       - scripts/make_audiobooks.py
+      - flaskblog/audiobook_text.py
       - .github/workflows/audiobooks.yml
       - flaskblog/reader/data/works/**
       - flaskblog/langsites/data/*/works/**
@@ -88,7 +90,7 @@ jobs:
           files=(out/*.mp3)
           if [ ${#files[@]} -eq 0 ]; then echo "Nothing new."; exit 0; fi
           for mp3 in "${files[@]}"; do
-            gh release upload "$RELEASE" -R "$GITHUB_REPOSITORY" --clobber "$mp3" "$mp3.json"
+            gh release upload "$RELEASE" -R "$GITHUB_REPOSITORY" --clobber "$mp3" "$mp3.json" "${mp3%.mp3}.timing.json"
           done
 
   # The MP3s again on GitHub Pages, which serves them as audio/mpeg (the
@@ -137,6 +139,7 @@ jobs:
         run: |
           mkdir -p out
           gh release download "$RELEASE" -R "$GITHUB_REPOSITORY" --pattern "*.mp3.json" --dir out
+          gh release download "$RELEASE" -R "$GITHUB_REPOSITORY" --pattern "*.timing.json" --dir out || true
           # From GitHub Pages when it is published, otherwise from the release.
           base=https://github.com/${GITHUB_REPOSITORY}/releases/download/${RELEASE}/
           if [ "${{ needs.pages.result }}" = success ] && [ -n "${{ needs.pages.outputs.url }}" ]; then
@@ -144,12 +147,12 @@ jobs:
           fi
           echo "Playing from $base"
           python scripts/make_audiobooks.py --out out --manifest --base "$base"
-      - name: Commit flaskblog/audiobooks.json
+      - name: Commit flaskblog/audiobooks.json and the timings
         run: |
-          # status, not diff: the first time the file is new (untracked).
-          if [ -z "$(git status --porcelain -- flaskblog/audiobooks.json)" ]; then echo "No change."; exit 0; fi
+          # status, not diff: new files are untracked.
+          if [ -z "$(git status --porcelain -- flaskblog/audiobooks.json flaskblog/audiobook_timings)" ]; then echo "No change."; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add flaskblog/audiobooks.json
+          git add flaskblog/audiobooks.json flaskblog/audiobook_timings
           git commit -m "Audiobooks: list of published parts"
           git push origin HEAD:dev

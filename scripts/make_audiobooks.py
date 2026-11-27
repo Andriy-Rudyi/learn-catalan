@@ -4,7 +4,9 @@ Piper (https://github.com/OHF-Voice/piper1-gpl) is an open text-to-speech
 engine that runs on a CPU; its voices are on Hugging Face
 (rhasspy/piper-voices). The site does not need either: the MP3s are made
 once, here, and published as assets of the GitHub release ``audiobooks``;
-``flaskblog/audiobooks.json`` lists them (``--manifest``).
+``flaskblog/audiobooks.json`` lists them (``--manifest``), and
+``flaskblog/audiobook_timings/`` keeps when each sentence is read, for the
+text shown while listening.
 
     pip install piper-tts lameenc
     python scripts/make_audiobooks.py --voices <folder with the .onnx voices> --out <folder>
@@ -14,11 +16,10 @@ once, here, and published as assets of the GitHub release ``audiobooks``;
 voices, makes the parts the release does not have yet, uploads them and
 commits the new flaskblog/audiobooks.json to dev.
 
-The texts are the site's own (flaskblog/reader/data/works for Catalan,
-flaskblog/langsites for the other languages). A chapter starts with its
-title; a scene with its act, number and setting, then the stage directions
-and the speeches, each with the speaker's name. Paragraphs are followed by
-a short pause. Mono MP3 at 40 kbit/s: about 18 MB an hour of speech.
+The texts are the site's own, as flaskblog/audiobook_text.py lays them
+out (the same text the listening page shows). They are read sentence by
+sentence, without the quotation marks; a short pause follows each sentence
+and a longer one each paragraph. Mono MP3 at 40 kbit/s: about 18 MB an hour of speech.
 """
 
 import argparse
@@ -26,7 +27,6 @@ import glob
 import io
 import json
 import os
-import re
 import sys
 import time
 
@@ -42,79 +42,81 @@ VOICES = {
     'fr': ('fr_FR-siwis-medium', 'Piper voice "siwis" (SIWIS corpus, CC BY 4.0)'),
     'de': ('de_DE-thorsten-medium', 'Piper voice "thorsten" (Thorsten-Voice, CC0)'),
 }
-CHAPTER = {'ca': 'Capítol', 'uk': 'Розділ', 'en': 'Chapter', 'es': 'Capítulo', 'fr': 'Chapitre',
-           'de': 'Kapitel'}
-ACT_SCENE = {'ca': 'Acte {act}, escena {scene}.', 'en': 'Act {act}, scene {scene}.'}
 BITRATE = 40
 PAUSE = 0.7  # seconds after a paragraph
+SENTENCE_PAUSE = 0.25  # seconds between the sentences of a paragraph
+# Version of the way a part is made: parts made otherwise are made again.
+# 2: sentence by sentence, with the timings for the text shown while
+#    listening; quotation marks no longer read out.
+VERSION = 2
 
 
 def parts(lang):
     """[(slug, number, title of the work, the text's pieces)] for a language."""
-    found = []
-    if lang == 'ca':
-        folders = sorted(glob.glob(os.path.join(ROOT, 'flaskblog', 'reader', 'data', 'works', '*')))
-        sources = [(os.path.basename(folder), folder, os.path.join(folder, 'work.json')) for folder in folders]
-    else:
-        from flaskblog.langsites import reading
-        sources = []
-        for work in reading.works(lang):
-            folder = os.path.dirname(work['files'][0])
-            sources.append((work['slug'], folder, None, work))
-    for source in sources:
-        slug, folder = source[0], source[1]
-        if lang == 'ca':
-            with io.open(source[2], encoding='utf-8') as handle:
-                info = json.load(handle)
-            title = info.get('title')
-        else:
-            info = source[3]
-            title = info.get('title')
-        chapters = sorted(glob.glob(os.path.join(folder, 'c[0-9]*.json')))
-        scenes = sorted(glob.glob(os.path.join(folder, 'a[0-9]*s[0-9]*.json')),
-                        key=lambda p: tuple(int(n) for n in re.search(r'a(\d+)s(\d+)', p).groups()))
-        for number, path in enumerate(chapters or scenes, 1):
-            with io.open(path, encoding='utf-8') as handle:
-                text = json.load(handle)
-            if chapters:
-                pieces = ['{} {}.'.format(CHAPTER[lang], text.get('chapter', number))] + text['paragraphs']
-            else:
-                pieces = [ACT_SCENE.get(lang, ACT_SCENE['en']).format(act=text['act'], scene=text['scene'])]
-                if text.get('setting'):
-                    pieces.append(text['setting'])
-                for block in text['blocks']:
-                    if block.get('stage'):
-                        pieces.append(block['stage'])
-                    else:
-                        pieces.append(block['speaker'].capitalize() + '. ' + ' '.join(block['lines']))
-            found.append((slug, number, title, pieces))
-    return found
+    from flaskblog import audiobook_text
+    return audiobook_text.parts(lang)
 
 
 def synthesize(voice, pieces, out_path):
+    """Read *pieces* aloud into an MP3, sentence by sentence.
+
+    Returns (seconds, bytes, timings): timings are
+    [piece, first character, end character, start second, end second] for
+    every sentence, the characters counted in the piece as it is shown.
+    """
     import lameenc
-    encoder, rate, seconds = None, 22050, 0.0
+
+    from flaskblog import audiobook_text
+
+    state = {'encoder': None, 'rate': 22050, 'samples': 0}
     data = bytearray()
-    for piece in pieces:
-        piece = re.sub(r'\s+', ' ', piece).strip()
-        if not piece:
-            continue
-        for chunk in voice.synthesize(piece):
-            if encoder is None:
-                rate = chunk.sample_rate
-                encoder = lameenc.Encoder()
-                encoder.set_bit_rate(BITRATE)
-                encoder.set_in_sample_rate(rate)
-                encoder.set_channels(1)
-                encoder.set_quality(5)
-            data += encoder.encode(chunk.audio_int16_bytes)
-            seconds += len(chunk.audio_int16_bytes) / 2.0 / rate
-        data += encoder.encode(bytes(int(rate * PAUSE) * 2))
-        seconds += PAUSE
-    data += encoder.flush()
+
+    def add(audio):
+        if state['encoder'] is None:
+            return
+        data.extend(state['encoder'].encode(audio))
+        state['samples'] += len(audio) // 2
+
+    def silence(seconds):
+        add(bytes(int(state['rate'] * seconds) * 2))
+
+    def now():
+        return state['samples'] / float(state['rate'])
+
+    timings = []
+    for index, piece in enumerate(pieces):
+        spans = audiobook_text.sentences(piece)
+        for position, (start, end) in enumerate(spans):
+            words = audiobook_text.spoken(piece[start:end])
+            if not words:
+                continue
+            began = None
+            for chunk in voice.synthesize(words):
+                if state['encoder'] is None:
+                    state['rate'] = chunk.sample_rate
+                    encoder = lameenc.Encoder()
+                    encoder.set_bit_rate(BITRATE)
+                    encoder.set_in_sample_rate(state['rate'])
+                    encoder.set_channels(1)
+                    encoder.set_quality(5)
+                    state['encoder'] = encoder
+                if began is None:
+                    began = now()
+                add(chunk.audio_int16_bytes)
+            if began is not None:
+                timings.append([index, start, end, round(began, 2), round(now(), 2)])
+            if position < len(spans) - 1:
+                silence(SENTENCE_PAUSE)
+        silence(PAUSE)
+    data += state['encoder'].flush()
     with open(out_path, 'wb') as handle:
         handle.write(data)
-    return round(seconds), len(data)
+    return round(now()), len(data), timings
+
+
+def timing_path(mp3_path):
+    """<part>.timing.json next to <part>.mp3."""
+    return mp3_path[:-len('.mp3')] + '.timing.json'
 
 
 def file_name(lang, slug, number):
@@ -128,6 +130,7 @@ RELEASE = 'https://github.com/Andriy-Rudyi/learn-catalan/releases/download/audio
 # serves audio/mpeg, and the manifest points there (--base).
 PAGES = 'https://andriy-rudyi.github.io/learn-catalan/audio/'
 MANIFEST = os.path.join(ROOT, 'flaskblog', 'audiobooks.json')
+TIMINGS = os.path.join(ROOT, 'flaskblog', 'audiobook_timings')
 
 
 def write_manifest(out, base=RELEASE):
@@ -147,6 +150,12 @@ def write_manifest(out, base=RELEASE):
     with io.open(MANIFEST, 'w', encoding='utf-8') as handle:
         json.dump(data, handle, ensure_ascii=False, indent=1)
         handle.write('\n')
+    # The timings of the sentences, for the text shown while listening.
+    os.makedirs(TIMINGS, exist_ok=True)
+    for path in sorted(glob.glob(os.path.join(out, '*.timing.json'))):
+        name = os.path.basename(path)[:-len('.timing.json')] + '.json'
+        with io.open(path, encoding='utf-8') as source, io.open(os.path.join(TIMINGS, name), 'w', encoding='utf-8') as target:
+            target.write(source.read())
     return sum(len(found) for slugs in works.values() for found in slugs.values())
 
 
@@ -174,13 +183,17 @@ def main():
             started = time.time()
             if os.path.exists(path + '.json'):
                 with io.open(path + '.json', encoding='utf-8') as handle:
-                    listing[file_name(lang, slug, number)] = json.load(handle)
-                continue
-            seconds, size = synthesize(voice, pieces, path)
+                    made = json.load(handle)
+                if made.get('version') == VERSION:
+                    listing[file_name(lang, slug, number)] = made
+                    continue
+            seconds, size, timings = synthesize(voice, pieces, path)
             info = {'lang': lang, 'slug': slug, 'number': number, 'title': title,
-                    'seconds': seconds, 'bytes': size}
+                    'seconds': seconds, 'bytes': size, 'version': VERSION}
             with io.open(path + '.json', 'w', encoding='utf-8') as handle:
                 json.dump(info, handle, ensure_ascii=False)
+            with io.open(timing_path(path), 'w', encoding='utf-8') as handle:
+                json.dump({'version': VERSION, 'sentences': timings}, handle, separators=(',', ':'))
             print('{} {}s audio in {:.0f}s'.format(file_name(lang, slug, number), seconds,
                                                    time.time() - started), flush=True)
 

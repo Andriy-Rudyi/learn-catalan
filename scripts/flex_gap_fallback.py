@@ -24,7 +24,11 @@ OUTPUT = os.path.join(ROOT, 'flex-gap.css')
 # The page itself: in the modern design the menu is fixed, out of the flow.
 SKIP = ('.lc-page',)
 # Gaps next to pseudo-elements, which "> :not(:last-child)" does not reach.
-EXTRA = ('html.no-flex-gap[data-design="modern"] .lc-logo::before { margin-right: 10px; }',)
+EXTRA = ('html.no-flex-gap[data-design="modern"] .lc-logo::before { margin-right: 10px; }',
+         # Bootstrap's gap utilities on flex rows (the audiobook player's buttons).
+         'html.no-flex-gap .d-flex.gap-1 > :not(:last-child) { margin-right: .25rem; }',
+         'html.no-flex-gap .d-flex.gap-2 > :not(:last-child) { margin-right: .5rem; }',
+         'html.no-flex-gap .d-flex.gap-3 > :not(:last-child) { margin-right: 1rem; }')
 
 _COMMENT = re.compile(r'/\*.*?\*/', re.S)
 

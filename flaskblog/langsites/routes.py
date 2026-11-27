@@ -239,11 +239,23 @@ def listen(slug, work_slug):
             labels.append('{} {}, {} {}'.format(_('Дія'), part['act'], _('сцена'), part['scene']))
     read_urls = [url_for('langsites.read', slug=site.slug, work_slug=work_slug, number=part['number'])
                  for part in work['parts']]
-    book, player = audiobooks.page(site.code, work_slug, work['title'], work.get('author'), labels, read_urls)
+    text_urls = [url_for('langsites.listen_text', slug=site.slug, work_slug=work_slug, number=part['number'])
+                 for part in work['parts']]
+    book, player = audiobooks.page(site.code, work_slug, work['title'], work.get('author'), labels, read_urls,
+                                   text_urls)
     return render_template('audiobook.html', title=_('Аудіокнига') + ' · ' + (work.get('short_title') or work['title']),
                            page_key='reading', book=book, player=player,
                            back_url=url_for('langsites.work_page', slug=site.slug, work_slug=work_slug),
                            **_common(site))
+
+
+@langsites.route(_PREFIX + '/reading/<work_slug>/listen/<int:number>.json')
+def listen_text(slug, work_slug, number):
+    site = _section(slug)
+    found = audiobooks.text(site.code, work_slug, number)
+    if found is None:
+        abort(404)
+    return jsonify(found)
 
 
 @langsites.route(_PREFIX + '/reading/<work_slug>/<int:number>')
