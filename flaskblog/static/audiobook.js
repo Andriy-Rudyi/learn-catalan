@@ -116,12 +116,12 @@
   }
 
   function showPlaying() {
-    els.play.textContent = '⏸';
+    els.play.classList.add('is-playing');  // the pause icon (SVG: old Android has no ⏸)
     els.play.setAttribute('aria-label', S.pause);
     if ('mediaSession' in navigator) { navigator.mediaSession.playbackState = 'playing'; }
   }
   function showPaused() {
-    els.play.textContent = '▶';
+    els.play.classList.remove('is-playing');
     els.play.setAttribute('aria-label', S.play);
     if ('mediaSession' in navigator) { navigator.mediaSession.playbackState = 'paused'; }
   }
