@@ -64,7 +64,11 @@
       {% endfor %}
     </ol>
   </section>
+  {% if book.human %}
+  <p class="small text-muted"><span lang="en">{{ book.voice }}</span> · <a href="https://librivox.org" rel="noopener">LibriVox</a></p>
+  {% else %}
   <p class="small text-muted" lang="en">{{ _('Озвучено синтезатором мовлення.') }} {{ book.voice }}</p>
+  {% endif %}
 </div>
 <style>
   .audiobook-list a.is-playing { font-weight: 600; }

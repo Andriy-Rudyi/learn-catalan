@@ -136,8 +136,11 @@ def available(lang, slug):
     return bool(parts(lang, slug))
 
 
-def voice(lang):
-    return manifest().get('voices', {}).get(lang, '')
+def voice(lang, slug=None):
+    """Who reads: the work's own credit (a LibriVox reader), else the voice of the language."""
+    data = manifest()
+    credit = data.get('credits', {}).get(lang, {}).get(slug) if slug else None
+    return credit or data.get('voices', {}).get(lang, '')
 
 
 def duration(lang, slug):
@@ -170,7 +173,8 @@ def page(lang, slug, title, author, labels, read_urls, text_urls=()):
                       'text_url': text_urls[index] if index < len(text_urls) else None,
                       'proxy': url_for('audiobooks.audio', name=part['file'])})
     book = {'lang': lang, 'title': title, 'author': author, 'parts': items,
-            'duration': clock(sum(item['seconds'] for item in items)), 'voice': voice(lang)}
+            'duration': clock(sum(item['seconds'] for item in items)), 'voice': voice(lang, slug),
+            'human': bool(manifest().get('credits', {}).get(lang, {}).get(slug))}
     config = {'title': title, 'author': author, 'store': 'audiobook:{}:{}'.format(lang, slug),
               'artwork': url_for('static', filename='og-image.png', _external=True),
               'parts': [{'title': item['title'], 'url': item['url'], 'seconds': item['seconds'],

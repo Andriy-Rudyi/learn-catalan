@@ -142,8 +142,15 @@ def write_manifest(out, base=RELEASE):
         works.setdefault(info['lang'], {}).setdefault(info['slug'], []).append(
             (info['number'], {'file': os.path.basename(path)[:-5], 'seconds': info['seconds'],
                               'bytes': info['bytes']}))
+    credits = {}
+    for path in sorted(glob.glob(os.path.join(out, '*.mp3.json'))):
+        with io.open(path, encoding='utf-8') as handle:
+            info = json.load(handle)
+        if info.get('credit'):
+            credits.setdefault(info['lang'], {})[info['slug']] = info['credit']
     data = {'base': base,
             'voices': {lang: VOICES[lang][1] for lang in works},
+            'credits': credits,
             'works': {lang: {slug: [item for _number, item in sorted(found, key=lambda pair: pair[0])]
                              for slug, found in sorted(slugs.items())}
                       for lang, slugs in sorted(works.items())}}
@@ -173,12 +180,16 @@ def main():
         print('parts:', write_manifest(args.out, args.base))
         return
     from piper import PiperVoice
+
+    import librivox_audiobooks
     os.makedirs(args.out, exist_ok=True)
     for lang in args.langs.split(','):
         name, _credit = VOICES[lang]
         voice = PiperVoice.load(os.path.join(args.voices, name + '.onnx'))
         listing = {}
         for slug, number, title, pieces in parts(lang):
+            if librivox_audiobooks.handled(lang, slug):
+                continue  # read by a person: scripts/librivox_audiobooks.py
             path = os.path.join(args.out, file_name(lang, slug, number))
             started = time.time()
             if os.path.exists(path + '.json'):

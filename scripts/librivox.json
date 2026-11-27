@@ -1,0 +1,70 @@
+{
+ "_about": "LibriVox recordings used for the audiobooks (scripts/librivox_audiobooks.py). All LibriVox recordings are in the public domain (Public Domain Mark 1.0).",
+ "en": {
+  "martin-eden": {
+   "item": "martineden_1101_librivox",
+   "librivox": "https://librivox.org/martin-eden-by-jack-london/",
+   "credit": "Read by Greg W. for LibriVox (public domain recording)",
+   "chapters": [
+    "martineden_01_london_64kb.mp3",
+    "martineden_02_london_64kb.mp3",
+    "martineden_03_london_64kb.mp3",
+    "martineden_04_london_64kb.mp3",
+    "martineden_05_london_64kb.mp3",
+    "martineden_06_london_64kb.mp3",
+    "martineden_07_london_64kb.mp3",
+    "martineden_08_london_64kb.mp3",
+    "martineden_09_london_64kb.mp3",
+    "martineden_10_london_64kb.mp3",
+    "martineden_11_london_64kb.mp3",
+    "martineden_12_london_64kb.mp3",
+    "martineden_13_london_64kb.mp3",
+    "martineden_14_london_64kb.mp3",
+    "martineden_15_london_64kb.mp3",
+    "martineden_16_london_64kb.mp3",
+    "martineden_17_london_64kb.mp3",
+    "martineden_18_london_64kb.mp3",
+    "martineden_19_london_64kb.mp3",
+    "martineden_20_london_64kb.mp3",
+    "martineden_21_london_64kb.mp3",
+    "martineden_22_london_64kb.mp3",
+    "martineden_23_london_64kb.mp3",
+    "martineden_24_london_64kb.mp3",
+    "martineden_25_london_64kb.mp3",
+    "martineden_26_london_64kb.mp3",
+    "martineden_27_london_64kb.mp3",
+    "martineden_28_london_64kb.mp3",
+    "martineden_29_london_64kb.mp3",
+    "martineden_30_london_64kb.mp3",
+    "martineden_31_london_64kb.mp3",
+    "martineden_32_london_64kb.mp3",
+    "martineden_33_london_64kb.mp3",
+    "martineden_34_london_64kb.mp3",
+    "martineden_35_london_64kb.mp3",
+    "martineden_36_london_64kb.mp3",
+    "martineden_37_london_64kb.mp3",
+    "martineden_38_london_64kb.mp3",
+    "martineden_39_london_64kb.mp3",
+    "martineden_40_london_64kb.mp3",
+    "martineden_41_london_64kb.mp3",
+    "martineden_42_london_64kb.mp3",
+    "martineden_43_london_64kb.mp3",
+    "martineden_44_london_64kb.mp3",
+    "martineden_45_london_64kb.mp3",
+    "martineden_46_london_64kb.mp3"
+   ]
+  },
+  "othello": {
+   "item": "othello_1005_librivox",
+   "librivox": "https://librivox.org/othello-by-william-shakespeare/",
+   "credit": "Dramatic reading by LibriVox volunteers (public domain recording)",
+   "acts": {
+    "1": "othello_1_shakespeare_64kb.mp3",
+    "2": "othello_2_shakespeare_64kb.mp3",
+    "3": "othello_3_shakespeare_64kb.mp3",
+    "4": "othello_4_shakespeare_64kb.mp3",
+    "5": "othello_5_shakespeare_64kb.mp3"
+   }
+  }
+ }
+}

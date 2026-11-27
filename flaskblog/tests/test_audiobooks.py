@@ -118,7 +118,8 @@ class AudiobookTextTests(AppTestCase):
             self.assertEqual(timings, data['sentences'])
             catalan = self.client.get('/reading/martin-eden/listen/2.json').get_json()
             self.assertTrue(catalan['pieces'][0].startswith('Capítol'))
-        self.assertEqual([], self.client.get('/reading/othello/listen/1.json').get_json()['sentences'])
+        with mock.patch.object(audiobooks, 'TIMINGS', '/nonexistent'):  # not made yet: the text alone
+            self.assertEqual([], self.client.get('/reading/othello/listen/1.json').get_json()['sentences'])
         self.assertEqual(404, self.client.get('/ukrainian/reading/martin-eden/listen/2.json').status_code)
         self.assertEqual(404, self.client.get('/german/reading/martin-eden/listen/1.json').status_code)
 
@@ -149,3 +150,48 @@ class AudiobookTextTests(AppTestCase):
         self.assertEqual('bytes=0-0', opened.call_args[0][0].get_header('Range'))
         self.assertEqual(404, self.client.get('/audio/elsewhere.mp3', headers={'Range': 'bytes=0-'}).status_code)
         self.assertEqual(302, self.client.get('/audio/ca-martin-eden-01.mp3').status_code)  # no range: the host
+
+
+class LibrivoxMatchTests(AppTestCase):
+    """scripts/librivox_audiobooks.py: what was heard, matched to the text."""
+
+    def setUp(self):
+        super().setUp()
+        import importlib.util
+        import os
+        import sys
+        scripts = os.path.join(os.path.dirname(__file__), '..', '..', 'scripts')
+        sys.path.insert(0, scripts)
+        self.addCleanup(sys.path.remove, scripts)
+        spec = importlib.util.spec_from_file_location('librivox_audiobooks', os.path.join(scripts, 'librivox_audiobooks.py'))
+        self.librivox = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(self.librivox)
+
+    def test_words_get_their_own_start(self):
+        pieces = ['Chapter 1.', 'The one opened the door. "He understands," he thought.']
+        heard = [('This', 0.0, 0.2), ('is', 0.2, 0.3), ('a', 0.3, 0.4), ('LibriVox', 0.4, 0.9), ('recording.', 0.9, 1.4),
+                 ('Chapter', 2.0, 2.4), ('one.', 2.4, 2.8),
+                 ('The', 3.0, 3.1), ('one', 3.1, 3.3), ('opened', 3.3, 3.7), ('a', 3.7, 3.8), ('door.', 3.8, 4.2),
+                 ('He', 4.6, 4.7), ('understands,', 4.7, 5.3), ('he', 5.3, 5.4), ('thought.', 5.4, 5.9)]
+        sentences = self.librivox.match(pieces, heard)
+        self.assertEqual([0, 1, 1], [item[0] for item in sentences])
+        first, second, third = sentences
+        self.assertEqual(2.0, first[3])  # the spoken notice before it is skipped
+        self.assertEqual([3.0, 3.1, 3.3, 3.7, 3.8], second[5])  # "the" heard as "a": in its place
+        self.assertEqual('"He understands," he thought.', pieces[1][third[1]:third[2]])
+        self.assertEqual([4.6, 4.7, 5.3, 5.4], third[5])
+        self.assertEqual(5.9, third[4])
+
+    def test_works_read_by_people(self):
+        self.assertTrue(self.librivox.handled('en', 'martin-eden'))
+        self.assertTrue(self.librivox.handled('en', 'othello'))
+        self.assertFalse(self.librivox.handled('ca', 'martin-eden'))
+        config = self.librivox.config()
+        self.assertEqual(46, len(config['en']['martin-eden']['chapters']))
+
+    def test_credit_on_the_page(self):
+        manifest = dict(MANIFEST, credits={'en': {'othello': 'Dramatic reading by LibriVox volunteers'}})
+        with mock.patch.object(audiobooks, 'manifest', return_value=manifest):
+            body = self.client.get('/english/reading/othello/listen').get_data(as_text=True)
+        self.assertIn('Dramatic reading by LibriVox volunteers', body)
+        self.assertIn('https://librivox.org', body)

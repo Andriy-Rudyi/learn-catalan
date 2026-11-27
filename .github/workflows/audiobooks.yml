@@ -19,6 +19,8 @@ on:
     branches: [dev]
     paths:
       - scripts/make_audiobooks.py
+      - scripts/librivox_audiobooks.py
+      - scripts/librivox.json
       - flaskblog/audiobook_text.py
       - .github/workflows/audiobooks.yml
       - flaskblog/reader/data/works/**
@@ -93,12 +95,57 @@ jobs:
             gh release upload "$RELEASE" -R "$GITHUB_REPOSITORY" --clobber "$mp3" "$mp3.json" "${mp3%.mp3}.timing.json"
           done
 
+  # Works read by people: LibriVox recordings (public domain), matched word
+  # by word to the site's text by scripts/librivox_audiobooks.py
+  # (scripts/librivox.json). Parts already published are not made again.
+  librivox:
+    needs: release
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {only: 'en:martin-eden', parts: '1-8'}
+          - {only: 'en:martin-eden', parts: '9-16'}
+          - {only: 'en:martin-eden', parts: '17-24'}
+          - {only: 'en:martin-eden', parts: '25-32'}
+          - {only: 'en:martin-eden', parts: '33-39'}
+          - {only: 'en:martin-eden', parts: '40-46'}
+          - {only: 'en:othello', parts: '1-15'}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install
+        run: |
+          pip install -r requirements.txt faster-whisper
+          ffmpeg -version | head -1
+      - name: Parts already published
+        run: |
+          mkdir -p out
+          gh release download "$RELEASE" -R "$GITHUB_REPOSITORY" --pattern "en-*.mp3.json" --dir out || true
+      - name: Listen and match
+        env:
+          OMP_NUM_THREADS: '4'
+        run: python scripts/librivox_audiobooks.py --out out --only "${{ matrix.only }}" --parts "${{ matrix.parts }}"
+      - name: Publish the new parts
+        run: |
+          shopt -s nullglob
+          for mp3 in out/*.mp3; do
+            # Only the parts made here (their .mp3.json says "librivox").
+            grep -q '"source": "librivox"' "$mp3.json" || continue
+            gh release upload "$RELEASE" -R "$GITHUB_REPOSITORY" --clobber "$mp3" "$mp3.json" "${mp3%.mp3}.timing.json"
+          done
+
   # The MP3s again on GitHub Pages, which serves them as audio/mpeg (the
   # release serves downloads, which iPhones and older Android refuse to
   # play). Needs Settings → Pages → Source: GitHub Actions; until then this
   # job fails and the site keeps playing from the release.
   pages:
-    needs: speak
+    needs: [speak, librivox]
     if: always()
     runs-on: ubuntu-latest
     permissions:
@@ -129,7 +176,7 @@ jobs:
         uses: actions/deploy-pages@v4
 
   manifest:
-    needs: [speak, pages]
+    needs: [speak, librivox, pages]
     if: always()
     runs-on: ubuntu-latest
     steps:

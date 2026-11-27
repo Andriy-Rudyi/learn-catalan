@@ -163,11 +163,14 @@
     return letters + 1;
   }
 
-  function addWords(holder, text, from, to) {
+  function addWords(holder, text, from, to, starts) {
+    // *starts*: each word's own start, when known (a recording matched word
+    // by word); otherwise the words share the sentence's time by length.
     var found = [], pattern = /\S+/g, match;
     while ((match = pattern.exec(text))) { found.push(match); }
     var total = 0;
     found.forEach(function (item) { total += weight(item[0]); });
+    var exact = starts && starts.length === found.length;
     var at = 0, time = from;
     found.forEach(function (item, position) {
       if (item.index > at) { holder.appendChild(document.createTextNode(text.slice(at, item.index))); }
@@ -175,6 +178,10 @@
       span.className = 'ab-w';
       span.textContent = item[0];
       var length = total ? (to - from) * weight(item[0]) / total : 0;
+      if (exact) {
+        time = starts[position];
+        length = (position + 1 < starts.length ? starts[position + 1] : to) - time;
+      }
       span.setAttribute('data-i', String(words.length));
       words.push({ el: span, sentence: holder, from: time, to: time + length });
       time += length;
@@ -200,7 +207,7 @@
         if (item[1] > at) { paragraph.appendChild(document.createTextNode(piece.slice(at, item[1]))); }
         var sentence = document.createElement('span');
         sentence.className = 'ab-s';
-        addWords(sentence, piece.slice(item[1], item[2]), item[3], item[4]);
+        addWords(sentence, piece.slice(item[1], item[2]), item[3], item[4], item[5]);
         paragraph.appendChild(sentence);
         at = item[2];
       });
