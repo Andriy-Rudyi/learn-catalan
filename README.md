@@ -1001,6 +1001,22 @@ text, and the words of a sentence share its time by their length. The
 script's `VERSION` marks how a part was made: parts made by an older
 version are made again on the next run.
 
+**Read by people (LibriVox).** Works listed in `scripts/librivox.json`
+use LibriVox recordings instead of Piper: volunteers' readings of public
+domain books, themselves in the public domain (Public Domain Mark), so they
+may be used freely, advertising included. Today: English *Martin Eden*
+(read by Greg W.) and *Othello* (a dramatic reading by LibriVox
+volunteers). `scripts/librivox_audiobooks.py` downloads each recording from
+archive.org, writes down what is heard with faster-whisper (MIT, Whisper
+models MIT) and matches it to the site's text with difflib: every word gets
+its own start (in chapter 1 of *Martin Eden* 96% of the words were heard
+exactly as written; the rest get times in between, and LibriVox's spoken
+notice at the start matches nothing). A play recorded act by act is cut
+into scenes where each scene's text starts. The page credits the reader
+and LibriVox. The workflow runs it in the job `librivox` (chapters in
+shards, about 8 times faster than real time on a runner);
+`make_audiobooks.py` leaves these works alone.
+
 **Old devices.** If a browser cannot load the sound from where it is
 published (an old Android tablet), the player switches to `/audio/<file>`,
 which passes the part on through the site 1 MB per request (so the single
