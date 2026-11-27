@@ -121,6 +121,10 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
+      # A large artifact (600 MB) is not always listed right after its
+      # upload, and deploy-pages then finds none: give it a moment.
+      - name: Wait for the artifact to be listed
+        run: sleep 45
       - id: deploy
         uses: actions/deploy-pages@v4
 
