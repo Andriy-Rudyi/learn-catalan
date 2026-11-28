@@ -8,7 +8,12 @@
   "fr": "Piper voice \"siwis\" (SIWIS corpus, CC BY 4.0)",
   "uk": "Piper voice \"tetiana\" (Apache 2.0)"
  },
- "credits": {},
+ "credits": {
+  "en": {
+   "martin-eden": "Read by Greg W. for LibriVox (public domain recording)",
+   "othello": "Dramatic reading by LibriVox volunteers (public domain recording)"
+  }
+ },
  "works": {
   "ca": {
    "martin-eden": [
@@ -334,310 +339,310 @@
    "martin-eden": [
     {
      "file": "en-martin-eden-01.mp3",
-     "seconds": 1518,
-     "bytes": 7591184
+     "seconds": 1670,
+     "bytes": 8352125
     },
     {
      "file": "en-martin-eden-02.mp3",
-     "seconds": 1340,
-     "bytes": 6701061
+     "seconds": 1574,
+     "bytes": 7871995
     },
     {
      "file": "en-martin-eden-03.mp3",
-     "seconds": 938,
-     "bytes": 4689371
+     "seconds": 1054,
+     "bytes": 5269416
     },
     {
      "file": "en-martin-eden-04.mp3",
-     "seconds": 634,
-     "bytes": 3171135
+     "seconds": 741,
+     "bytes": 3708207
     },
     {
      "file": "en-martin-eden-05.mp3",
-     "seconds": 760,
-     "bytes": 3801861
+     "seconds": 825,
+     "bytes": 4124206
     },
     {
      "file": "en-martin-eden-06.mp3",
-     "seconds": 1001,
-     "bytes": 5005453
+     "seconds": 1115,
+     "bytes": 5575962
     },
     {
      "file": "en-martin-eden-07.mp3",
-     "seconds": 1386,
-     "bytes": 6930939
+     "seconds": 1522,
+     "bytes": 7612861
     },
     {
      "file": "en-martin-eden-08.mp3",
-     "seconds": 1119,
-     "bytes": 5593469
+     "seconds": 1201,
+     "bytes": 6006985
     },
     {
      "file": "en-martin-eden-09.mp3",
-     "seconds": 1164,
-     "bytes": 5819167
+     "seconds": 1279,
+     "bytes": 6394248
     },
     {
      "file": "en-martin-eden-10.mp3",
-     "seconds": 793,
-     "bytes": 3965910
+     "seconds": 859,
+     "bytes": 4293349
     },
     {
      "file": "en-martin-eden-11.mp3",
-     "seconds": 965,
-     "bytes": 4825469
+     "seconds": 1047,
+     "bytes": 5237938
     },
     {
      "file": "en-martin-eden-12.mp3",
-     "seconds": 648,
-     "bytes": 3239706
+     "seconds": 706,
+     "bytes": 3532665
     },
     {
      "file": "en-martin-eden-13.mp3",
-     "seconds": 1366,
-     "bytes": 6828800
+     "seconds": 1461,
+     "bytes": 7307230
     },
     {
      "file": "en-martin-eden-14.mp3",
-     "seconds": 1583,
-     "bytes": 7914971
+     "seconds": 1756,
+     "bytes": 8779359
     },
     {
      "file": "en-martin-eden-15.mp3",
-     "seconds": 1069,
-     "bytes": 5345175
+     "seconds": 1217,
+     "bytes": 6084958
     },
     {
      "file": "en-martin-eden-16.mp3",
-     "seconds": 1028,
-     "bytes": 5142073
+     "seconds": 1083,
+     "bytes": 5416225
     },
     {
      "file": "en-martin-eden-17.mp3",
-     "seconds": 892,
-     "bytes": 4461453
+     "seconds": 972,
+     "bytes": 4862691
     },
     {
      "file": "en-martin-eden-18.mp3",
-     "seconds": 546,
-     "bytes": 2731363
+     "seconds": 595,
+     "bytes": 2978088
     },
     {
      "file": "en-martin-eden-19.mp3",
-     "seconds": 898,
-     "bytes": 4491755
+     "seconds": 1010,
+     "bytes": 5050249
     },
     {
      "file": "en-martin-eden-20.mp3",
-     "seconds": 917,
-     "bytes": 4583706
+     "seconds": 1067,
+     "bytes": 5335375
     },
     {
      "file": "en-martin-eden-21.mp3",
-     "seconds": 790,
-     "bytes": 3952588
+     "seconds": 875,
+     "bytes": 4377857
     },
     {
      "file": "en-martin-eden-22.mp3",
-     "seconds": 892,
-     "bytes": 4460930
+     "seconds": 945,
+     "bytes": 4727115
     },
     {
      "file": "en-martin-eden-23.mp3",
-     "seconds": 832,
-     "bytes": 4162090
+     "seconds": 841,
+     "bytes": 4206888
     },
     {
      "file": "en-martin-eden-24.mp3",
-     "seconds": 1165,
-     "bytes": 5827526
+     "seconds": 1249,
+     "bytes": 6245613
     },
     {
      "file": "en-martin-eden-25.mp3",
-     "seconds": 1258,
-     "bytes": 6291069
+     "seconds": 1429,
+     "bytes": 7143833
     },
     {
      "file": "en-martin-eden-26.mp3",
-     "seconds": 1413,
-     "bytes": 7065208
+     "seconds": 1584,
+     "bytes": 7918364
     },
     {
      "file": "en-martin-eden-27.mp3",
-     "seconds": 1772,
-     "bytes": 8860865
+     "seconds": 1973,
+     "bytes": 9866055
     },
     {
      "file": "en-martin-eden-28.mp3",
-     "seconds": 799,
-     "bytes": 3997257
+     "seconds": 904,
+     "bytes": 4522709
     },
     {
      "file": "en-martin-eden-29.mp3",
-     "seconds": 1435,
-     "bytes": 7173747
+     "seconds": 1614,
+     "bytes": 8071703
     },
     {
      "file": "en-martin-eden-30.mp3",
-     "seconds": 1098,
-     "bytes": 5489110
+     "seconds": 1208,
+     "bytes": 6040421
     },
     {
      "file": "en-martin-eden-31.mp3",
-     "seconds": 1146,
-     "bytes": 5728261
+     "seconds": 1285,
+     "bytes": 6427687
     },
     {
      "file": "en-martin-eden-32.mp3",
-     "seconds": 706,
-     "bytes": 3529535
+     "seconds": 775,
+     "bytes": 3878137
     },
     {
      "file": "en-martin-eden-33.mp3",
-     "seconds": 826,
-     "bytes": 4132571
+     "seconds": 868,
+     "bytes": 4339721
     },
     {
      "file": "en-martin-eden-34.mp3",
-     "seconds": 804,
-     "bytes": 4021682
+     "seconds": 877,
+     "bytes": 4386218
     },
     {
      "file": "en-martin-eden-35.mp3",
-     "seconds": 602,
-     "bytes": 3011526
+     "seconds": 681,
+     "bytes": 3404405
     },
     {
      "file": "en-martin-eden-36.mp3",
-     "seconds": 974,
-     "bytes": 4869355
+     "seconds": 1117,
+     "bytes": 5586153
     },
     {
      "file": "en-martin-eden-37.mp3",
-     "seconds": 1163,
-     "bytes": 5815118
+     "seconds": 1314,
+     "bytes": 6569795
     },
     {
      "file": "en-martin-eden-38.mp3",
-     "seconds": 594,
-     "bytes": 2972212
+     "seconds": 670,
+     "bytes": 3351510
     },
     {
      "file": "en-martin-eden-39.mp3",
-     "seconds": 920,
-     "bytes": 4601992
+     "seconds": 1030,
+     "bytes": 5151476
     },
     {
      "file": "en-martin-eden-40.mp3",
-     "seconds": 851,
-     "bytes": 4257306
+     "seconds": 942,
+     "bytes": 4713138
     },
     {
      "file": "en-martin-eden-41.mp3",
-     "seconds": 849,
-     "bytes": 4247771
+     "seconds": 965,
+     "bytes": 4823637
     },
     {
      "file": "en-martin-eden-42.mp3",
-     "seconds": 1191,
-     "bytes": 5955788
+     "seconds": 1379,
+     "bytes": 6897630
     },
     {
      "file": "en-martin-eden-43.mp3",
-     "seconds": 1218,
-     "bytes": 6091494
+     "seconds": 1376,
+     "bytes": 6882741
     },
     {
      "file": "en-martin-eden-44.mp3",
-     "seconds": 1008,
-     "bytes": 5040196
+     "seconds": 1114,
+     "bytes": 5570348
     },
     {
      "file": "en-martin-eden-45.mp3",
-     "seconds": 1804,
-     "bytes": 9020735
+     "seconds": 1911,
+     "bytes": 9554021
     },
     {
      "file": "en-martin-eden-46.mp3",
-     "seconds": 1486,
-     "bytes": 7431445
+     "seconds": 1625,
+     "bytes": 8125515
     }
    ],
    "othello": [
     {
      "file": "en-othello-01.mp3",
-     "seconds": 603,
-     "bytes": 3017143
+     "seconds": 639,
+     "bytes": 3195810
     },
     {
      "file": "en-othello-02.mp3",
-     "seconds": 348,
-     "bytes": 1740669
+     "seconds": 323,
+     "bytes": 1614880
     },
     {
      "file": "en-othello-03.mp3",
-     "seconds": 1278,
-     "bytes": 6392555
+     "seconds": 1357,
+     "bytes": 6788039
     },
     {
      "file": "en-othello-04.mp3",
-     "seconds": 1052,
-     "bytes": 5259755
+     "seconds": 1067,
+     "bytes": 5336806
     },
     {
      "file": "en-othello-05.mp3",
-     "seconds": 48,
-     "bytes": 242808
+     "seconds": 50,
+     "bytes": 248937
     },
     {
      "file": "en-othello-06.mp3",
-     "seconds": 1241,
-     "bytes": 6203951
+     "seconds": 1220,
+     "bytes": 6099451
     },
     {
      "file": "en-othello-07.mp3",
-     "seconds": 206,
-     "bytes": 1029747
+     "seconds": 192,
+     "bytes": 960251
     },
     {
      "file": "en-othello-08.mp3",
-     "seconds": 31,
-     "bytes": 155690
+     "seconds": 26,
+     "bytes": 130864
     },
     {
      "file": "en-othello-09.mp3",
-     "seconds": 1626,
-     "bytes": 8130743
+     "seconds": 1606,
+     "bytes": 8032251
     },
     {
      "file": "en-othello-10.mp3",
-     "seconds": 700,
-     "bytes": 3500930
+     "seconds": 625,
+     "bytes": 3123451
     },
     {
      "file": "en-othello-11.mp3",
-     "seconds": 1027,
-     "bytes": 5134890
+     "seconds": 908,
+     "bytes": 4540202
     },
     {
      "file": "en-othello-12.mp3",
-     "seconds": 872,
-     "bytes": 4360490
+     "seconds": 791,
+     "bytes": 3955321
     },
     {
      "file": "en-othello-13.mp3",
-     "seconds": 369,
-     "bytes": 1846857
+     "seconds": 381,
+     "bytes": 1906015
     },
     {
      "file": "en-othello-14.mp3",
-     "seconds": 557,
-     "bytes": 2785828
+     "seconds": 522,
+     "bytes": 2612496
     },
     {
      "file": "en-othello-15.mp3",
-     "seconds": 1416,
-     "bytes": 7079837
+     "seconds": 1380,
+     "bytes": 6899582
     }
    ]
   },
