@@ -1,5 +1,5 @@
 {
- "base": "https://andriy-rudyi.github.io/learn-catalan/audio/",
+ "base": "https://pub-704585c64076407bb8e8d36203d26603.r2.dev/audio/",
  "voices": {
   "ca": "Piper voice \"upc_ona\" (UPC Festcat corpus, CC BY-SA 3.0 ES)",
   "de": "Piper voice \"thorsten\" (Thorsten-Voice, CC0)",
