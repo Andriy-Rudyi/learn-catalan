@@ -1,0 +1,47 @@
+# Deploy the site to the Oracle Cloud server (deploy/oracle/).
+#
+# After every push to dev, and after the Audiobooks workflow (whose commits
+# of flaskblog/audiobooks.json do not start workflows themselves), this
+# logs in to the server over SSH and runs deploy/oracle/deploy.sh with the
+# latest dev. Needs three repository secrets; without them it does nothing:
+#
+#   ORACLE_HOST      the server's public IP address (or, later, its domain)
+#   ORACLE_SSH_KEY   the private SSH key made when the server was created
+#   ORACLE_APP_ENV   the site's settings, one KEY=value per line
+#                    (SECRET_KEY, DATABASE_URL, ... as on Render)
+name: Deploy to Oracle
+
+on:
+  push:
+    branches: [dev]
+  workflow_run:
+    workflows: [Audiobooks]
+    types: [completed]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-oracle
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      HOST: ${{ secrets.ORACLE_HOST }}
+      SSH_KEY: ${{ secrets.ORACLE_SSH_KEY }}
+      APP_ENV: ${{ secrets.ORACLE_APP_ENV }}
+    steps:
+      - name: Deploy the latest dev
+        run: |
+          if [ -z "$HOST" ] || [ -z "$SSH_KEY" ] || [ -z "$APP_ENV" ]; then
+            echo "The Oracle server is not set up yet: nothing to do."; exit 0
+          fi
+          mkdir -p ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/oracle
+          chmod 600 ~/.ssh/oracle
+          ssh-keyscan -T 20 -H "$HOST" >> ~/.ssh/known_hosts 2>/dev/null
+          ssh="ssh -i $HOME/.ssh/oracle -o ServerAliveInterval=30 ubuntu@$HOST"
+          # Bring the repository up to date first, so deploy.sh itself is current.
+          $ssh "sudo -u app git -C /srv/app/site fetch -q origin dev && sudo -u app git -C /srv/app/site checkout -q --force origin/dev"
+          printf '%s\n' "$APP_ENV" | $ssh "sudo bash /srv/app/site/deploy/oracle/deploy.sh origin/dev $HOST"

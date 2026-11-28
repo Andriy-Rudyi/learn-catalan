@@ -1,7 +1,7 @@
 #!/bin/bash
 # Put a commit of the site in place on the Oracle server and (re)start it.
 #
-#   sudo bash deploy.sh <commit> <host>    < the site's settings (KEY=value lines)
+#   sudo bash deploy.sh <commit or origin/dev> <host>    < the settings (KEY=value lines)
 #
 # Run by .github/workflows/deploy-oracle.yml over SSH; the settings come
 # from the repository secret ORACLE_APP_ENV. <host> is the server's public
@@ -29,8 +29,16 @@ fi
 sudo -u app env VIRTUAL_ENV="$venv" uv pip install -q -r "$site/requirements.txt"
 
 # Migrations and the idempotent seeds, as on Render.
+# The settings are read line by line (KEY=value, as systemd reads them),
+# not sourced, so that & or ? in a database address stay as they are.
 run_flask() {
-  sudo -u app bash -c "set -a; . <(cat); set +a; cd '$site'; FLASK_APP=run.py '$venv/bin/flask' $*" < "$env_file"
+  sudo -u app bash -c '
+    while IFS= read -r line || [ -n "$line" ]; do
+      line="${line%$'"'"'\r'"'"'}"
+      [[ "$line" =~ ^[A-Za-z_][A-Za-z0-9_]*= ]] && export "$line"
+    done
+    cd "$0" && FLASK_APP=run.py "$1/bin/flask" "${@:2}"
+  ' "$site" "$venv" "$@" < "$env_file"
 }
 run_flask db upgrade
 run_flask vocabulary seed --update

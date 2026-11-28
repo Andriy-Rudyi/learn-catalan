@@ -1104,6 +1104,37 @@ flask grammar seed
 The `Procfile` starts the site with `gunicorn run:app` and declares the same
 steps as a `release` command (Heroku runs it automatically).
 
+### Oracle Cloud (Always Free)
+
+The site moves to a free Oracle Cloud server (Ampere A1: up to 4 cores and
+24 GB of memory); the database stays on Neon for now, and Render keeps
+running until the new server is checked.
+
+1. Create the instance: Ubuntu 24.04 (aarch64), shape `VM.Standard.A1.Flex`,
+   a public IP, an SSH key pair (keep the private key), and as
+   "Initialization script":
+
+   ```bash
+   #!/bin/bash
+   curl -fsSL https://raw.githubusercontent.com/Andriy-Rudyi/learn-catalan/dev/deploy/oracle/setup.sh | bash
+   ```
+
+   `deploy/oracle/setup.sh` installs Caddy (HTTPS), uv with Python 3.11 and
+   the repository under `/srv/app`, and opens ports 80 and 443 in the
+   server's firewall.
+2. In the instance's subnet security list, allow TCP 80 and 443 from
+   anywhere (SSH is open by default).
+3. Repository secrets: `ORACLE_HOST` (the public IP), `ORACLE_SSH_KEY`
+   (the private key) and `ORACLE_APP_ENV` (the site's settings, one
+   `KEY=value` per line, as on Render: `SECRET_KEY`, `DATABASE_URL`, ...).
+4. `.github/workflows/deploy-oracle.yml` then deploys after every push to
+   `dev` (and after the Audiobooks workflow): it updates the repository on
+   the server and runs `deploy/oracle/deploy.sh`, which installs the
+   packages, runs the migrations and seeds as Render did, and restarts
+   gunicorn (systemd service `langsite`, 2 workers × 4 threads) behind
+   Caddy. Until there is a domain the site answers at
+   `https://<ip-with-dashes>.sslip.io`, a free name that points at the IP.
+
 ### Free: Render + Neon
 
 Both have free plans with no time limit. The site sleeps after 15 minutes
