@@ -1024,6 +1024,15 @@ published (an old Android tablet), the player switches to `/audio/<file>`,
 which passes the part on through the site 1 MB per request (so the single
 worker is never held for long), and remembers that in the browser.
 
+**Cloudflare R2.** When the repository has the secrets `R2_ACCOUNT_ID`,
+`R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`, `R2_BUCKET` and `R2_PUBLIC_URL`,
+the workflow's job `r2` also copies the MP3s to that bucket (only new or
+changed ones, as `audio/mpeg`) and the list of parts points there instead of
+GitHub Pages: 10 GB free, downloads not charged, no 1 GB limit. Without the
+secrets the job does nothing. The bucket's `r2.dev` address is rate-limited
+by Cloudflare and meant for small traffic; with the site's own domain on
+Cloudflare the bucket gets an address on it.
+
 The release serves its files as downloads (`application/octet-stream`),
 which Safari on iPhone and older Android browsers refuse to play. So the
 workflow also publishes the MP3s on GitHub Pages

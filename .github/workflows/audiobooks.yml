@@ -178,8 +178,42 @@ jobs:
       - id: deploy
         uses: actions/deploy-pages@v4
 
+  # The MP3s also in Cloudflare R2 (10 GB free, downloads not charged),
+  # once its secrets are set: R2_ACCOUNT_ID, R2_ACCESS_KEY_ID,
+  # R2_SECRET_ACCESS_KEY, R2_BUCKET and R2_PUBLIC_URL (the bucket's public
+  # address). The site then plays from there; without them this job does
+  # nothing and GitHub Pages stays in use.
+  r2:
+    needs: [speak, librivox]
+    if: always()
+    runs-on: ubuntu-latest
+    outputs:
+      url: ${{ steps.sync.outputs.url }}
+    env:
+      R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      AWS_DEFAULT_REGION: auto
+      R2_BUCKET: ${{ secrets.R2_BUCKET }}
+      R2_PUBLIC_URL: ${{ secrets.R2_PUBLIC_URL }}
+    steps:
+      - id: sync
+        name: Copy the MP3s to R2
+        run: |
+          if [ -z "$R2_ACCOUNT_ID" ] || [ -z "$AWS_ACCESS_KEY_ID" ] || [ -z "$R2_BUCKET" ] || [ -z "$R2_PUBLIC_URL" ]; then
+            echo "R2 is not set up: nothing to do."; exit 0
+          fi
+          pip install -q awscli
+          mkdir -p audio
+          gh release download "$RELEASE" -R "$GITHUB_REPOSITORY" --pattern "*.mp3" --dir audio
+          # Only what changed (size or new); the content type lets every browser play it.
+          aws s3 sync audio "s3://$R2_BUCKET/audio" --size-only --content-type audio/mpeg \
+            --cache-control "public, max-age=86400" \
+            --endpoint-url "https://$R2_ACCOUNT_ID.r2.cloudflarestorage.com"
+          echo "url=${R2_PUBLIC_URL%/}/audio/" >> "$GITHUB_OUTPUT"
+
   manifest:
-    needs: [speak, librivox, pages]
+    needs: [speak, librivox, pages, r2]
     if: always()
     runs-on: ubuntu-latest
     steps:
@@ -194,10 +228,13 @@ jobs:
           mkdir -p out
           gh release download "$RELEASE" -R "$GITHUB_REPOSITORY" --pattern "*.mp3.json" --dir out
           gh release download "$RELEASE" -R "$GITHUB_REPOSITORY" --pattern "*.timing.json" --dir out || true
-          # From GitHub Pages when it is published, otherwise from the release.
+          # From R2 when it is set up, else GitHub Pages, else the release.
           base=https://github.com/${GITHUB_REPOSITORY}/releases/download/${RELEASE}/
           if [ "${{ needs.pages.result }}" = success ] && [ -n "${{ needs.pages.outputs.url }}" ]; then
             base="${{ needs.pages.outputs.url }}audio/"
+          fi
+          if [ "${{ needs.r2.result }}" = success ] && [ -n "${{ needs.r2.outputs.url }}" ]; then
+            base="${{ needs.r2.outputs.url }}"
           fi
           echo "Playing from $base"
           python scripts/make_audiobooks.py --out out --manifest --base "$base"
