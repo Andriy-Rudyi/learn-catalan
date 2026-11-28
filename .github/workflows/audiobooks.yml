@@ -188,7 +188,9 @@ jobs:
     if: always()
     runs-on: ubuntu-latest
     outputs:
-      url: ${{ steps.sync.outputs.url }}
+      # A flag only: an output holding a secret's value is dropped by GitHub,
+      # so the manifest job reads R2_PUBLIC_URL itself.
+      synced: ${{ steps.sync.outputs.synced }}
     env:
       R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
       AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
@@ -210,7 +212,7 @@ jobs:
           aws s3 sync audio "s3://$R2_BUCKET/audio" --size-only --content-type audio/mpeg \
             --cache-control "public, max-age=86400" \
             --endpoint-url "https://$R2_ACCOUNT_ID.r2.cloudflarestorage.com"
-          echo "url=${R2_PUBLIC_URL%/}/audio/" >> "$GITHUB_OUTPUT"
+          echo "synced=yes" >> "$GITHUB_OUTPUT"
 
   manifest:
     needs: [speak, librivox, pages, r2]
@@ -224,6 +226,8 @@ jobs:
         with:
           python-version: '3.11'
       - name: List the published parts
+        env:
+          R2_PUBLIC_URL: ${{ secrets.R2_PUBLIC_URL }}
         run: |
           mkdir -p out
           gh release download "$RELEASE" -R "$GITHUB_REPOSITORY" --pattern "*.mp3.json" --dir out
@@ -233,8 +237,8 @@ jobs:
           if [ "${{ needs.pages.result }}" = success ] && [ -n "${{ needs.pages.outputs.url }}" ]; then
             base="${{ needs.pages.outputs.url }}audio/"
           fi
-          if [ "${{ needs.r2.result }}" = success ] && [ -n "${{ needs.r2.outputs.url }}" ]; then
-            base="${{ needs.r2.outputs.url }}"
+          if [ "${{ needs.r2.outputs.synced }}" = yes ] && [ -n "$R2_PUBLIC_URL" ]; then
+            base="${R2_PUBLIC_URL%/}/audio/"
           fi
           echo "Playing from $base"
           python scripts/make_audiobooks.py --out out --manifest --base "$base"
