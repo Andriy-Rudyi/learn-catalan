@@ -1,5 +1,6 @@
 #!/bin/bash
-# First boot of the Oracle Cloud server (Ubuntu 24.04, Ampere A1).
+# First boot of the Oracle Cloud server (Ubuntu 24.04: Ampere A1, or the
+# small AMD VM.Standard.E2.1.Micro while no Ampere server is available).
 #
 # Paste into "Initialization script" when creating the instance (or run
 # once with sudo). It installs what the site needs; the site itself is
@@ -16,6 +17,16 @@ export DEBIAN_FRONTEND=noninteractive
 apt-get update
 apt-get install -y git curl gnupg debian-keyring debian-archive-keyring apt-transport-https \
   iptables-persistent unattended-upgrades
+
+# A swap file, so the small Always Free AMD server (1 GB of memory) gets
+# through installing the packages and the seeds.
+if [ ! -f /swapfile ]; then
+  fallocate -l 2G /swapfile
+  chmod 600 /swapfile
+  mkswap /swapfile
+  swapon /swapfile
+  echo '/swapfile none swap sw 0 0' >> /etc/fstab
+fi
 
 # Oracle's Ubuntu images only let SSH in: open the web ports too (the
 # instance's security list must allow them as well).

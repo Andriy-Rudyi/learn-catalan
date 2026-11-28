@@ -49,6 +49,11 @@ run_flask vocabulary apertium-import
 run_flask vocabulary pivot-import
 run_flask grammar seed
 
+# Two workers where there is memory for them (Ampere: 6 GB and more), one
+# on the small AMD server (1 GB).
+memory_kb=$(awk '/MemTotal/ {print $2}' /proc/meminfo)
+if [ "$memory_kb" -ge 3000000 ]; then workers=2; else workers=1; fi
+
 cat > /etc/systemd/system/langsite.service <<UNIT
 [Unit]
 Description=Language learning site (gunicorn)
@@ -61,7 +66,7 @@ Group=app
 WorkingDirectory=$site
 EnvironmentFile=$env_file
 Environment=FLASK_APP=run.py
-ExecStart=$venv/bin/gunicorn run:app --bind 127.0.0.1:8000 --workers 2 --threads 4 --timeout 120 --max-requests 2000 --max-requests-jitter 200
+ExecStart=$venv/bin/gunicorn run:app --bind 127.0.0.1:8000 --workers $workers --threads 4 --timeout 120 --max-requests 2000 --max-requests-jitter 200
 Restart=always
 RestartSec=3
 

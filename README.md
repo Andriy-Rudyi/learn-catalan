@@ -1110,7 +1110,11 @@ The site moves to a free Oracle Cloud server (Ampere A1: up to 4 cores and
 24 GB of memory); the database stays on Neon for now, and Render keeps
 running until the new server is checked.
 
-1. Create the instance: Ubuntu 24.04 (aarch64), shape `VM.Standard.A1.Flex`,
+1. Create the instance: Ubuntu 24.04 (aarch64), shape `VM.Standard.A1.Flex`
+   (when Oracle has no Ampere capacity, the small Always Free AMD
+   `VM.Standard.E2.1.Micro` with the x86 Ubuntu 24.04 image works too: the
+   scripts add a 2 GB swap file and run one worker when memory is under
+   3 GB),
    a public IP, an SSH key pair (keep the private key), and as
    "Initialization script":
 
@@ -1131,7 +1135,7 @@ running until the new server is checked.
    `dev` (and after the Audiobooks workflow): it updates the repository on
    the server and runs `deploy/oracle/deploy.sh`, which installs the
    packages, runs the migrations and seeds as Render did, and restarts
-   gunicorn (systemd service `langsite`, 2 workers × 4 threads) behind
+   gunicorn (systemd service `langsite`, 1 or 2 workers × 4 threads) behind
    Caddy. Until there is a domain the site answers at
    `https://<ip-with-dashes>.sslip.io`, a free name that points at the IP.
 
