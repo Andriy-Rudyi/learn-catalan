@@ -65,7 +65,11 @@ else
   fi
 
   mkdir -p ~/.ssh
-  [ -f ~/.ssh/langsite ] || ssh-keygen -t ed25519 -N '' -C langsite -f ~/.ssh/langsite -q
+  # RSA: Cloud Shell runs in FIPS mode, which refuses ED25519 keys.
+  [ -f ~/.ssh/langsite.pub ] || { rm -f ~/.ssh/langsite; ssh-keygen -t rsa -b 4096 -m PEM -N '' -C langsite -f ~/.ssh/langsite -q; }
+  if [ ! -f ~/.ssh/langsite.pub ]; then
+    echo "Could not make the SSH key ~/.ssh/langsite." >&2; exit 1
+  fi
   printf '%s\n' "$INIT" > ~/langsite-init.sh
 
   declare -A images=()  # the newest Ubuntu 24.04 image for each shape
@@ -93,8 +97,10 @@ else
         break
       fi
       case "$out" in
-        *"Out of host capacity"*|*"Out of capacity"*|*"TooManyRequests"*) ;;
-        *) echo "$out" | tail -5 ;;
+        *"Out of host capacity"*|*"Out of capacity"*|*"TooManyRequests"*|*"InternalError"*) ;;
+        *) echo "$out" | tail -5
+           echo "Stopped: this is not a capacity problem; send this message to fix the script." >&2
+           exit 1 ;;
       esac
     done
     [ -n "$instance" ] || sleep 120
