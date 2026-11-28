@@ -1010,9 +1010,11 @@ volunteers). `scripts/librivox_audiobooks.py` downloads each recording from
 archive.org, writes down what is heard with faster-whisper (MIT, Whisper
 models MIT) and matches it to the site's text with difflib: every word gets
 its own start (in chapter 1 of *Martin Eden* 96% of the words were heard
-exactly as written; the rest get times in between, and LibriVox's spoken
-notice at the start matches nothing). A play recorded act by act is cut
-into scenes where each scene's text starts. The page credits the reader
+exactly as written; the rest get times in between). LibriVox's spoken
+notices before and after the text ("This is a LibriVox recording…",
+"End of chapter…") are cut off, at the quietest moment next to the first
+and last words. A play recorded act by act is cut into scenes where each
+scene's text starts. The page credits the reader
 and LibriVox. The workflow runs it in the job `librivox` (chapters in
 shards, about 8 times faster than real time on a runner);
 `make_audiobooks.py` leaves these works alone.

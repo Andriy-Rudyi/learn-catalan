@@ -14,7 +14,7 @@ For every part (a chapter, or a scene cut out of an act):
    with difflib, so every word of the text gets its start, and the words
    the reader said differently get times in between; LibriVox's spoken
    notice at the start ("This is a LibriVox recording...") matches nothing
-   and is simply skipped;
+   and is cut off, with the one at the end;
 4. the part is written as a mono MP3 (40 kbit/s, as the Piper parts) with
    its .mp3.json and .timing.json, the same files make_audiobooks.py
    writes, so the rest (release, GitHub Pages, flaskblog/audiobooks.json)
@@ -35,9 +35,11 @@ import os
 import re
 import subprocess
 import sys
+import struct
 import tempfile
 import time
 import urllib.request
+import wave
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
@@ -48,7 +50,8 @@ MODEL = 'small.en'
 BITRATE = 40
 # How parts made here are marked; make_audiobooks.py leaves them alone.
 SOURCE = 'librivox'
-VERSION = 3
+# 4: LibriVox's spoken notices before and after the text are cut off.
+VERSION = 4
 
 _WORD = re.compile(r'\S+')
 _PLAIN = re.compile(r"[^\w']+", re.UNICODE)
@@ -147,6 +150,34 @@ def transcribe(model, wav_path):
     return heard
 
 
+def shifted(sentences, by):
+    """*sentences* with every time moved *by* seconds earlier (never below 0)."""
+    def at(value):
+        return round(max(0.0, value - by), 2)
+    return [item[:3] + [at(item[3]), at(item[4]), [at(value) for value in item[5]]] for item in sentences]
+
+
+def quiet_point(wav_path, start, end):
+    """The quietest moment (50 ms) between *start* and *end* seconds of a
+    16 kHz mono WAV: where to cut without clipping a word, since Whisper's
+    word times can be off by a few tenths of a second."""
+    with wave.open(wav_path) as handle:
+        rate = handle.getframerate()
+        first = max(0, int(start * rate))
+        last = min(handle.getnframes(), int(end * rate))
+        if last - first < rate // 20:
+            return max(0.0, start)
+        handle.setpos(first)
+        samples = struct.unpack('<%dh' % (last - first), handle.readframes(last - first))
+    step = rate // 20
+    best, best_energy = start, None
+    for offset in range(0, len(samples) - step + 1, step // 2):
+        energy = sum(value * value for value in samples[offset:offset + step])
+        if best_energy is None or energy < best_energy:
+            best, best_energy = (first + offset + step // 2) / float(rate), energy
+    return best
+
+
 def ffmpeg(*args):
     subprocess.run(['ffmpeg', '-nostdin', '-loglevel', 'error', '-y'] + list(args), check=True)
 
@@ -243,9 +274,14 @@ def run(out, only=None, ask=None, model_name=MODEL):
                 model = model or WhisperModel(model_name, device='cpu', compute_type='int8')
                 heard = transcribe(model, wav)
                 sentences = match(pieces, heard)
+                # Without LibriVox's notices ("This is a LibriVox recording...",
+                # "End of chapter..."): from just before the first word of the
+                # text to just after its last one.
+                begin = quiet_point(wav, sentences[0][3] - 1.5, sentences[0][3] + 0.3) if sentences else 0.0
+                end = quiet_point(wav, sentences[-1][4] - 0.2, sentences[-1][4] + 1.5) if sentences else None
                 mp3 = os.path.join(out, file_name(lang, slug, number))
-                write_part(source, 0, None, mp3)
-                info = save(out, lang, slug, number, title, mp3, sentences, settings['credit'])
+                write_part(source, begin, end, mp3)
+                info = save(out, lang, slug, number, title, mp3, shifted(sentences, begin), settings['credit'])
                 print('{} {}s, {} words heard, {:.0f}s'.format(os.path.basename(mp3), info['seconds'], len(heard),
                                                                time.time() - started), flush=True)
         else:  # a play recorded act by act: every scene is cut out of its act
@@ -274,16 +310,22 @@ def run(out, only=None, ask=None, model_name=MODEL):
                     first_piece += len(pieces)
                 length = duration(source)
                 first_piece = 0
+                last_word = timings[-1][4] if timings else length
                 for position, (number, title, pieces) in enumerate(scenes):
-                    begin = 0.0 if position == 0 else max(0.0, (beginnings[position] or 0) - 1.5)
+                    # The act's first scene also loses LibriVox's notice before it,
+                    # and its last scene the notice after it.
+                    start_word = beginnings[position] or 0.0
+                    begin = quiet_point(wav, start_word - 1.5, start_word + 0.3)
                     following = beginnings[position + 1] if position + 1 < len(scenes) else None
-                    end = max(begin, following - 1.5) if following else length
+                    if following:
+                        end = max(begin, quiet_point(wav, following - 1.5, following + 0.3))
+                    else:
+                        end = min(length, quiet_point(wav, last_word - 0.2, last_word + 1.5))
                     if (number, title, pieces) in todo:
-                        mine = [[item[0] - first_piece] + item[1:3] + [round(item[3] - begin, 2), round(item[4] - begin, 2),
-                                                                        [round(t - begin, 2) for t in item[5]]]
-                                for item in timings if first_piece <= item[0] < first_piece + len(pieces)]
+                        mine = shifted([[item[0] - first_piece] + item[1:]
+                                        for item in timings if first_piece <= item[0] < first_piece + len(pieces)], begin)
                         mp3 = os.path.join(out, file_name(lang, slug, number))
-                        write_part(source, begin, end if following else None, mp3)
+                        write_part(source, begin, end, mp3)
                         save(out, lang, slug, number, title, mp3, mine, settings['credit'])
                     first_piece += len(pieces)
                 print('{} act {}: {} scenes, {} words heard, {:.0f}s'.format(slug, act, len(scenes), len(heard),
